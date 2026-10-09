@@ -1,0 +1,943 @@
+<title>섹터 전환 터미널</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Nanum+Gothic+Coding:wght@400;700&display=swap">
+<style>
+/* 단일 테마(터미널 블랙). 밝은 테마는 두지 않고 모든 색을 토큰으로 명시한다. */
+:root{
+  color-scheme:dark;
+  --bg:#000000; --band:#141414; --band-2:#1f1f1f; --hover:#181818; --line:#2c2c2c; --line-2:#3f3f3f;
+  --ink:#e8e8e8; --ink-2:#b4b4b4; --muted:#7c7c7c;
+  --amber:#ffa028; --amber-dim:#8a5a1e; --amber-soft:rgba(255,160,40,.16);
+  --go:#1fbf4c; --red:#ff3b3b; --green:#2fd046; --blue:#3d8bff; --yellow:#ffd23f;
+  --sel:#0b2d7a; --sel-2:#1444b8; --link:#5ab4ff; --chip:#c0111f; --neutral:#1a1a1a;
+  --hot:#2fd046; --cold:#ff3b3b;
+  --lead:#2fd046; --weak:#ffd23f; --lag:#ff3b3b; --impr:#3d8bff;
+  --bn:#ffa028; --hl:#5ec8ff;
+  --mono:"IBM Plex Mono","Nanum Gothic Coding","Apple SD Gothic Neo","Malgun Gothic",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+:root[data-conv="KR"]{--hot:#ff3b3b;--cold:#3d8bff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:12.5px/1.5 var(--mono);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+body.modal-open{overflow:hidden}
+.term{max-width:1720px;margin:0 auto;padding-inline:16px;padding-block:0}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;border-radius:0}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:1px solid var(--amber);outline-offset:1px}
+a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+b{font-weight:700}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* 명령줄 */
+.cmdline{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:8px;background:var(--bg);border-bottom:1px solid var(--line);padding:6px 0}
+.cmdline .prompt{color:var(--amber);font-weight:700;font-size:14px;padding-left:4px}
+.cmdline input{flex:1;min-width:0;background:#000;border:0;border-bottom:1px solid transparent;color:var(--amber);font:inherit;font-size:13px;font-weight:600;letter-spacing:.04em;padding:4px 6px;caret-color:var(--amber);text-transform:uppercase}
+.cmdline input::placeholder{color:var(--amber-dim);text-transform:none;font-weight:400;letter-spacing:0}
+.cmdline input:focus{background:#0c0c0c;border-bottom-color:var(--amber-dim);outline:0}
+.go{background:var(--go);color:#000;font-weight:700;font-size:11.5px;letter-spacing:.06em;padding:5px 10px;white-space:nowrap}
+.go:hover{filter:brightness(1.12)}
+
+/* 기능 툴바 */
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;background:var(--band);border-bottom:1px solid var(--line);padding:5px 8px}
+.fn{background:var(--chip);color:#fff;font-weight:700;font-size:11px;letter-spacing:.1em;padding:2px 7px}
+.ttl{font-weight:700;color:#fff;font-size:13px;white-space:nowrap}
+.msg{color:var(--muted);font-size:11.5px;flex:1 1 220px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.msg.err{color:var(--red)} .msg.ok{color:var(--green)}
+.tools{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;margin-left:auto}
+.mi{color:var(--ink);font-size:12px;padding:2px 5px;white-space:nowrap}
+.mi b{color:var(--amber)}
+.mi:hover{background:var(--band-2);color:#fff}
+.flag{font-size:10.5px;letter-spacing:.08em;color:var(--amber);border:1px solid var(--amber-dim);padding:1px 7px;text-transform:uppercase;white-space:nowrap}
+
+/* 탭 */
+.tabs{display:flex;flex-wrap:wrap;align-items:flex-end;gap:0 2px;border-bottom:1px solid var(--line);padding-top:6px}
+.tabs [role="tab"]{padding:6px 14px 5px;color:var(--ink-2);border-bottom:2px solid transparent;font-size:12.5px;white-space:nowrap}
+.tabs [role="tab"] b{color:var(--amber)}
+.tabs [role="tab"]:hover{color:#fff}
+.tabs [role="tab"][aria-selected="true"]{color:#fff;border-bottom-color:var(--amber);background:var(--band)}
+.tabinfo{margin-left:auto;color:var(--muted);font-size:11.5px;padding:6px 4px}
+
+/* 패널 배치 */
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 372px;gap:10px;padding-block:10px 4px;align-items:start}
+.panel{border:1px solid var(--line);background:var(--bg);min-width:0}
+.ph{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 12px;background:var(--band);border-bottom:1px solid var(--line);padding:4px 8px;min-height:30px}
+.pt{color:var(--amber);font-weight:700;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.pt small{color:var(--muted);font-weight:400;letter-spacing:.02em;text-transform:none;margin-left:8px}
+.pctl{display:flex;flex-wrap:wrap;gap:4px 14px}
+.grp{display:inline-flex;gap:2px}
+.grp button{font-size:11.5px;padding:2px 7px;color:var(--ink-2);border:1px solid transparent;white-space:nowrap}
+.grp button b{color:var(--amber)}
+.grp button:hover{background:var(--band-2);color:#fff}
+.grp button[aria-pressed="true"]{background:var(--sel);color:#fff;border-color:var(--sel-2)}
+
+/* 매트릭스 */
+.scroller{overflow-x:auto}
+table.m{border-collapse:separate;border-spacing:0;width:100%;min-width:980px;font-size:12px}
+.m thead th{background:var(--band);color:var(--ink-2);font-weight:700;font-size:11px;text-align:center;padding:4px 5px;border-bottom:1px solid var(--line);white-space:nowrap;letter-spacing:.03em}
+.m thead tr.grp2 th{color:var(--amber);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line-2);padding:5px 6px 3px}
+.m thead th.sortable{cursor:pointer;user-select:none}
+.m thead th.sortable:hover{color:#fff}
+.m thead th[aria-sort]{color:var(--amber)}
+.m thead th .arr{display:inline-block;width:0;height:0;margin-left:4px;vertical-align:middle;border-left:4px solid transparent;border-right:4px solid transparent;opacity:0}
+.m thead th[aria-sort="descending"] .arr{opacity:1;border-top:5px solid currentColor}
+.m thead th[aria-sort="ascending"] .arr{opacity:1;border-bottom:5px solid currentColor}
+.m th.c-etf,.m td.c-etf{position:sticky;left:0;z-index:1;text-align:left;width:168px;min-width:168px;border-right:1px solid var(--line)}
+.m thead th.c-etf{z-index:3}
+.m tbody td{padding:3px 4px;text-align:center;border-bottom:1px solid var(--line);vertical-align:middle;background:var(--bg)}
+.m tbody tr:last-child td{border-bottom:0}
+.m tbody tr{cursor:pointer}
+.m tbody tr:hover td{background:var(--hover)}
+.m tbody tr.sel td{background:var(--sel)}
+.m td.p{width:54px;min-width:54px;padding:3px 2px}
+.m td.p .cell{display:block;padding:5px 0;font-weight:700;font-size:12px;line-height:1.1;background:var(--neutral);color:var(--ink-2)}
+.m td.p .cell.na{color:var(--muted);font-weight:400;background:repeating-linear-gradient(135deg,transparent 0 3px,var(--line) 3px 4px)}
+.m td.sp{width:108px;min-width:108px}
+.m td.rr{width:178px;min-width:178px;text-align:left;white-space:nowrap;font-size:11.5px;letter-spacing:.05em;font-weight:700;line-height:1.25}
+.m td.sg{text-align:left;font-size:11.5px;color:var(--ink-2);line-height:1.4;min-width:200px}
+.m td.sg .s{display:block;white-space:nowrap}
+.m td.sg .s i{font-style:normal;display:inline-block;width:14px;color:var(--muted)}
+.m td.sg .s.hot i{color:var(--hot)} .m td.sg .s.cold i{color:var(--cold)}
+tr.sel td.sg{color:#dfe6ff}
+
+/* ETF 칸 */
+.etf{display:block;width:100%;text-align:left;padding:2px 4px;line-height:1.3}
+.etf .l1{display:flex;align-items:baseline;gap:6px}
+.etf .tk{color:#fff;font-weight:700;font-size:13px}
+.etf .ex{color:var(--muted);font-size:10.5px}
+.etf .cat{margin-left:auto;color:var(--amber);font-size:10px;letter-spacing:.1em}
+.etf .ko{display:block;color:var(--ink-2);font-size:11.5px;white-space:nowrap}
+tr:hover .etf .tk{color:var(--amber)}
+tr.sel .etf .ko{color:#dfe6ff}
+
+/* 거래소 상장 점: 티커 뒤(매트릭스)와 티커 아래(구성종목). 상장된 상품만 찍고, 없으면 아무것도 표시하지 않는다 */
+.dots{display:inline-flex;gap:3px;align-items:center;margin-left:1px;vertical-align:-1px}
+.dots i{display:inline-flex;align-items:center;justify-content:center;width:10px;height:10px;border-radius:50%;font-style:normal;font-size:7.5px;font-weight:700;line-height:1;box-sizing:border-box;font-family:var(--mono)}
+.dots i.b{background:var(--bn);color:#000}
+.dots i.p{background:var(--bn)}
+.dots i.h{background:var(--hl)}
+.mdots{display:flex;gap:2px;margin-top:2px;height:6px}
+.mdots i{display:block;width:6px;height:6px;border-radius:50%;box-sizing:border-box}
+.mdots i.b{border:1.5px solid var(--bn);background:transparent}
+.mdots i.p{background:var(--bn)}
+.mdots i.h{background:var(--hl)}
+
+/* 스파크라인: 흰 실선 = 비율, 주황 점선 = 이동평균, 끝점 색 = 이동평균 위/아래, 선 전체가 색을 띠면 최근 돌파·이탈 */
+.sp svg{display:block;margin:0 auto;overflow:visible}
+.hctx svg{display:inline-block;vertical-align:middle;margin-left:6px;overflow:visible}
+.sp-ma{fill:none;stroke:var(--amber);stroke-width:1;stroke-dasharray:2 2.2;opacity:.85}
+.sp-line{fill:none;stroke:#e8e8e8;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.sp-dot{stroke:#000;stroke-width:1.2}
+.sp-above .sp-dot{fill:var(--hot)} .sp-below .sp-dot{fill:var(--cold)}
+.sp-fresh.sp-above .sp-line{stroke:var(--hot);stroke-width:2} .sp-fresh.sp-below .sp-line{stroke:var(--cold);stroke-width:2}
+.sp-fresh .sp-dot{stroke-width:1.6}
+.sp-fresh .sp-ring{fill:none;stroke-width:1.2;opacity:.6} .sp-fresh.sp-above .sp-ring{stroke:var(--hot)} .sp-fresh.sp-below .sp-ring{stroke:var(--cold)}
+
+/* RRG 글리프와 국면 색 */
+.q{display:inline-grid;grid-template-columns:7px 7px;gap:1.5px;vertical-align:-3px;margin-right:7px}
+.q i{display:block;width:7px;height:7px;background:var(--line-2)}
+.q.Improving i:nth-child(1){background:var(--impr)} .q.Leading i:nth-child(2){background:var(--lead)}
+.q.Lagging i:nth-child(3){background:var(--lag)} .q.Weakening i:nth-child(4){background:var(--weak)}
+.ph-Leading{color:var(--lead)} .ph-Weakening{color:var(--weak)} .ph-Lagging{color:var(--lag)} .ph-Improving{color:var(--impr)}
+.m td.rr .vs{display:block;font-size:10px;letter-spacing:.06em;color:var(--muted);font-weight:400;line-height:1.2;margin-top:1px}
+.m td.rr .vs b{color:var(--amber);font-weight:700}
+.m td.rr .par{color:var(--muted);font-weight:400;letter-spacing:0}
+
+/* RRG 탭: 1단·2단 그래프 */
+.rrg{padding-block:10px 4px;display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:10px}
+.rrg .panel{min-width:0}
+.rrg .pb{padding:8px 10px 10px}
+.rrg svg{display:block;width:100%;height:auto;max-width:100%;font-family:var(--mono)}
+.rrg .ax{stroke:var(--line-2);stroke-width:1}
+.rrg .mid{stroke:var(--line-2);stroke-width:1;stroke-dasharray:3 3}
+.rrg .qlab{font-size:10px;letter-spacing:.1em;font-weight:700}
+.rrg .axlab{font-size:10px;fill:var(--muted)}
+.rrg .tail{fill:none;stroke-width:1.4;stroke-linejoin:round;stroke-linecap:round;opacity:.55}
+.rrg .tp{opacity:.5}
+.rrg .hd{stroke:#000;stroke-width:1.2}
+.rrg .lb{font-size:11px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:#000;stroke-width:3px;stroke-linejoin:round}
+.rrg .ck{cursor:pointer}
+.rrg .ck:hover .lb,.rrg .ck:focus-visible .lb{fill:var(--amber)}
+.rrg .ck:focus-visible{outline:none}
+.rrg .ck:focus-visible .hd{stroke:var(--amber);stroke-width:2}
+.rrg .selring{fill:none;stroke:var(--amber);stroke-width:1.6}
+.rrg .origin{fill:var(--amber-soft);stroke:var(--amber);stroke-width:1.6}
+.rrg .q-Leading{fill:var(--lead)} .rrg .q-Weakening{fill:var(--weak)} .rrg .q-Lagging{fill:var(--lag)} .rrg .q-Improving{fill:var(--impr)}
+.rrg .bg-Leading{fill:var(--lead);opacity:.07} .rrg .bg-Weakening{fill:var(--weak);opacity:.07} .rrg .bg-Lagging{fill:var(--lag);opacity:.07} .rrg .bg-Improving{fill:var(--impr);opacity:.07}
+.rrg .note{margin:8px 0 0;font-size:11px;color:var(--muted);line-height:1.55}
+.rrg .note b{color:var(--ink-2)}
+.rrg .lead-line{margin:0 0 8px;font-size:12px;color:var(--ink-2);line-height:1.5}
+.rrg .lead-line b{color:var(--amber)}
+.rrg .pick{display:flex;flex-wrap:wrap;gap:3px;margin:0 0 8px}
+.rrg .pick button{font-size:11px;padding:2px 7px;color:var(--ink-2);border:1px solid var(--line);white-space:nowrap}
+.rrg .pick button:hover{background:var(--band-2);color:#fff}
+.rrg .pick button[aria-pressed="true"]{background:var(--sel);color:#fff;border-color:var(--sel-2)}
+.rrg .pick button.none{color:var(--muted);border-style:dashed;cursor:default}
+.rrg table.rt{width:100%;border-collapse:collapse;font-size:11.5px;margin-top:8px}
+.rrg .rt th{color:var(--amber);font-weight:700;font-size:10.5px;letter-spacing:.08em;text-align:left;padding:4px 4px;border-bottom:1px solid var(--line-2);white-space:nowrap;text-transform:uppercase}
+.rrg .rt td{padding:3px 4px;border-bottom:1px solid var(--line);white-space:nowrap}
+.rrg .rt td.r{text-align:right}
+.rrg .rt td.tk{color:#fff;font-weight:700}
+.rrg .rt tr:last-child td{border-bottom:0}
+.rrg .rt tr.ck:hover td{background:var(--hover)}
+.rrg .rt tr.cur td{background:var(--sel)}
+@media (max-width:640px){.rrg{grid-template-columns:minmax(0,1fr)}}
+.nx{color:var(--muted);font-weight:400} .nx b{color:var(--ink-2)}
+
+/* 표 아래 줄 */
+.sortline{margin:0;padding:5px 8px;border-top:1px solid var(--line);font-size:11.5px;color:var(--ink-2)}
+.sortline b{color:var(--amber)}
+.dataline{margin:0;padding:5px 8px 7px;font-size:11px;color:var(--muted);line-height:1.55;max-width:120ch}
+.dataline b{color:var(--ink-2)}
+
+/* 오른쪽 레일: 구성종목 패널, 범례 패널 */
+.rail{display:flex;flex-direction:column;gap:10px;min-width:0}
+.hold .nav{display:flex;gap:4px;align-items:center}
+.hold .nav .pos{color:var(--muted);font-size:11px;margin-right:6px}
+.hold .nav button{font-size:11.5px;padding:2px 8px;color:var(--ink);border:1px solid var(--line-2);white-space:nowrap}
+.hold .nav button:hover{background:var(--band-2)}
+.hold .close{display:none;width:28px;text-align:center;padding-inline:0}
+.hbody{padding:8px 10px 10px;display:grid;gap:8px}
+.hh .tk{color:var(--amber);font-size:21px;font-weight:700;line-height:1.1}
+.hh .tk small{font-size:11.5px;color:var(--amber-dim);font-weight:700;margin-left:7px;letter-spacing:.04em}
+.hh .nm{color:#fff;font-size:12.5px;margin-top:3px}
+.hh .ko{color:var(--ink-2);font-size:11.5px}
+.hmeta{display:grid;grid-template-columns:max-content 1fr;gap:2px 12px;font-size:11.5px;margin:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 0}
+.hmeta dt{color:var(--muted)} .hmeta dd{margin:0;color:var(--ink)}
+.hctx{display:grid;gap:7px;font-size:11.5px;color:var(--ink-2)}
+.hctx .strip{display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
+.hctx .strip i{height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-style:normal;background:var(--neutral)}
+.hctx .lbls{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;font-size:10px;color:var(--muted);text-align:center;margin-top:2px}
+.hctx .row{display:flex;align-items:center;justify-content:space-between;gap:6px 14px;flex-wrap:wrap}
+.h-wrap{overflow-x:auto}
+table.h{width:100%;border-collapse:collapse;font-size:11.5px}
+.h th{color:var(--amber);font-weight:700;font-size:10.5px;letter-spacing:.08em;text-align:left;padding:5px 4px 4px;border-bottom:1px solid var(--line-2);white-space:nowrap;text-transform:uppercase}
+.h th.r,.h td.r{text-align:right}
+.h td{padding:4px 4px;border-bottom:1px solid var(--line);vertical-align:middle}
+.h tr:last-child td{border-bottom:0}
+.h td.rk{color:var(--muted);width:22px}
+.h td.sy{color:#fff;font-weight:700;white-space:nowrap}
+.h td.sy small{display:block;font-weight:400;font-size:9.5px;color:var(--muted);white-space:normal;max-width:110px;line-height:1.2}
+.h td.nm{color:var(--ink-2);font-size:11px}
+.h td.w{position:relative;width:86px;padding-left:10px;color:#fff}
+.h td.w .bar{position:absolute;left:4px;top:5px;bottom:5px;background:var(--amber-soft);z-index:0}
+.h td.w .v{position:relative;z-index:1}
+.h td.ch{color:var(--muted);width:56px}
+.hfn{margin:0;font-size:10.5px;color:var(--muted);line-height:1.5}
+
+.kbody{padding:8px 10px 10px;display:grid;gap:9px}
+.shape{display:flex;gap:10px;align-items:center}
+.strip{display:grid;grid-template-columns:repeat(5,14px);gap:2px;flex:none}
+.strip i{display:block;height:14px;background:var(--neutral)}
+.shape b{display:block;font-size:12px;color:#fff}
+.shape span{display:block;color:var(--ink-2);font-size:11px;line-height:1.45}
+.klegend{border-top:1px solid var(--line);padding-top:8px;display:grid;gap:5px;font-size:11px;color:var(--ink-2);line-height:1.5}
+.klegend .sw{display:inline-block;width:10px;height:10px;vertical-align:-1px;margin-right:5px}
+.klegend .lab{color:var(--amber);font-weight:700;letter-spacing:.08em;font-size:10.5px;margin-right:6px}
+
+/* 도움말 화면 */
+.help{padding-block:10px 4px;display:grid;gap:10px}
+.help .panel .pb{padding:10px 12px 12px}
+.rrg-note dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:0 0 8px;font-size:12px}
+.rrg-note dt{font-weight:700;letter-spacing:.05em} .rrg-note dd{margin:0;color:var(--ink-2);max-width:80ch}
+.rrg-note p{margin:0;color:var(--ink-2);font-size:12px;max-width:100ch;line-height:1.7}
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px 28px}
+.guide-grid section{max-width:64ch}
+.guide-grid h3{font-size:12px;color:var(--amber);margin:0 0 4px;letter-spacing:.05em;text-wrap:balance}
+.guide-grid p{margin:0 0 6px;color:var(--ink-2);font-size:12px;line-height:1.75}
+.guide-grid ol{margin:4px 0 0 18px;padding:0;color:var(--ink-2);font-size:12px;line-height:1.75}
+.guide-grid li{margin-bottom:3px}
+kbd.k{background:var(--band-2);border:1px solid var(--line-2);padding:0 5px;font-size:11px;color:var(--amber);font-family:var(--mono)}
+table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;margin-top:4px}
+.cmds th{text-align:left;color:var(--amber);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px;border-bottom:1px solid var(--line-2)}
+.cmds td{padding:4px 6px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+.cmds td:first-child{color:var(--amber);font-weight:700;white-space:nowrap}
+
+/* 상태 표시줄 */
+.status{position:sticky;bottom:0;z-index:10;display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;background:var(--band);border-top:1px solid var(--line);padding:5px 8px calc(5px + env(safe-area-inset-bottom,0px));font-size:11px;color:var(--muted);margin-top:8px}
+.status b{color:var(--ink-2)}
+.status .clk{color:var(--amber);white-space:nowrap;margin-left:16px}
+.status .mk{margin-left:10px;letter-spacing:.06em}
+.status .mk.open{color:var(--green)} .status .mk.closed{color:var(--muted)}
+
+/* 1280px 미만: 구성종목 패널은 행을 누를 때 전체 화면으로 열린다 */
+@media (max-width:1279px){
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .rail{display:contents}
+  #holdPanel{display:none;position:fixed;inset:0;z-index:40;overflow-y:auto;background:var(--bg);border:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  #holdPanel.open{display:block}
+  #holdPanel .ph{position:sticky;top:0;z-index:2}
+  .hold .close{display:inline-block}
+}
+@media (max-width:640px){
+  .m td.sg{min-width:180px}
+  .hh .tk{font-size:18px}
+  .tabinfo{margin-left:0;padding-left:0}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="term">
+  <div class="cmdline">
+    <span class="prompt" aria-hidden="true">›</span>
+    <label class="sr" for="cmd">명령줄. 티커나 명령을 입력하고 Enter를 누르세요.</label>
+    <input id="cmd" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="티커 또는 명령을 입력하고 Enter  (예: SMH · SEC · SHIFT · 3M · HELP)">
+    <button type="button" class="go" id="goBtn">&lt;GO&gt;</button>
+  </div>
+
+  <div class="toolbar">
+    <span class="fn">SRM</span>
+    <span class="ttl">섹터 전환 매트릭스</span>
+    <span class="msg" id="msg" aria-live="polite"></span>
+    <div class="tools">
+      <button type="button" class="mi" id="convBtn" aria-label="색 규약 바꾸기"><b>97)</b> <span id="convLabel">색 규약: 초록=강세 (US)</span> ▾</button>
+      <button type="button" class="mi" id="helpBtn"><b>98)</b> 도움말</button>
+      <span class="flag" title="__PRICE_SOURCE__ 조정 종가, SPY 기준 __PRICE_DAYS__거래일(__PRICE_FIRST__ ~ __PRICE_ASOF__). 백분위·비율선·RRG·신호를 이 가격으로 계산했습니다. 출처 저장소: tlzkrh1029/rrg">Prices __PRICE_ASOF__</span>
+      <span class="flag" style="color:var(--ink-2);border-color:var(--line-2)" title="구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷이며, 변동 %p는 __HOLD_PREV__ 스냅샷과 비교한 값입니다">Holdings __HOLD_ASOF__</span>
+      <span class="flag" style="color:var(--ink-2);border-color:var(--line-2)" title="바이낸스 bStocks, 바이낸스 TradFi 선물, 하이퍼리퀴드 HIP-3 목록을 __LIST_TS__에 수집해 대조한 결과입니다">Listing __LIST_ASOF__</span>
+    </div>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="화면">
+    <button type="button" role="tab" id="tab1" aria-selected="true" aria-controls="pane1"><b>1)</b> 매트릭스</button>
+    <button type="button" role="tab" id="tab3" aria-selected="false" aria-controls="pane3"><b>3)</b> RRG 1단·2단</button>
+    <button type="button" role="tab" id="tab2" aria-selected="false" aria-controls="pane2"><b>2)</b> 도움말</button>
+    <span class="tabinfo">관찰 대상 23 ETF · SPY 대비 상대수익률 백분위 · 종가 __PRICE_ASOF__ · 구성종목 __HOLD_ASOF__</span>
+  </div>
+
+  <div class="pane" id="pane1" role="tabpanel" aria-labelledby="tab1">
+    <div class="grid">
+      <section class="panel" aria-label="섹터 전환 매트릭스">
+        <header class="ph">
+          <span class="pt">Sector Rotation Matrix<small>1주 · 1개월 · 3개월 · 6개월 · 12개월</small></span>
+          <div class="pctl">
+            <span class="grp" role="group" aria-label="대상 필터">
+              <button type="button" data-cat="all" aria-pressed="true"><b>11)</b> 전체 23</button>
+              <button type="button" data-cat="sec" aria-pressed="false"><b>12)</b> 섹터 11</button>
+              <button type="button" data-cat="ind" aria-pressed="false"><b>13)</b> 산업·테마 12</button>
+            </span>
+            <span class="grp" role="group" aria-label="정렬 방식">
+              <button type="button" data-sort="col" aria-pressed="true"><b>21)</b> 열 기준</button>
+              <button type="button" data-sort="shift" aria-pressed="false"><b>22)</b> 전환순</button>
+            </span>
+          </div>
+        </header>
+        <div class="scroller">
+          <table class="m" id="matrix">
+            <thead>
+              <tr class="grp2">
+                <th class="c-etf" rowspan="2" scope="col">ETF</th>
+                <th colspan="5" scope="colgroup">SPY 대비 상대수익률 백분위 (0~100)</th>
+                <th colspan="2" scope="colgroup" title="흰 실선은 ETF 가격을 벤치마크 가격으로 나눈 비율, 주황 점선은 그 이동평균입니다. 끝점 색은 지금 이동평균 위인지 아래인지를 나타내고, 선 전체에 색이 들어가면 최근 3주 안에 돌파 또는 이탈이 있었다는 뜻입니다.">가격 비율 12주 · 점선 = 이동평균</th>
+                <th rowspan="2" scope="col" style="text-align:left" title="섹터는 SPY 대비, 산업·테마는 상위 섹터 ETF 대비 국면입니다. 괄호 안은 SPY 대비 국면입니다.">RRG 국면 · 벤치마크</th>
+                <th rowspan="2" scope="col" style="text-align:left">신호</th>
+              </tr>
+              <tr id="colhead">
+                <th class="sortable" data-col="0" scope="col">1W<span class="arr"></span></th>
+                <th class="sortable" data-col="1" scope="col">1M<span class="arr"></span></th>
+                <th class="sortable" data-col="2" scope="col">3M<span class="arr"></span></th>
+                <th class="sortable" data-col="3" scope="col">6M<span class="arr"></span></th>
+                <th class="sortable" data-col="4" scope="col">12M<span class="arr"></span></th>
+                <th scope="col">vs QQQ</th>
+                <th scope="col">vs SPY</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <p class="sortline" id="sortHint"></p>
+        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다.</p>
+      </section>
+
+      <aside class="rail">
+        <section class="panel hold" id="holdPanel" aria-labelledby="holdTitle">
+          <header class="ph">
+            <span class="pt" id="holdTitle">Holdings<small>구성종목 상위 10</small></span>
+            <div class="nav">
+              <span class="pos" id="holdPos"></span>
+              <button type="button" id="prevBtn" aria-label="이전 ETF">‹ 이전</button>
+              <button type="button" id="nextBtn" aria-label="다음 ETF">다음 ›</button>
+              <button type="button" id="closeBtn" class="close" aria-label="닫기">✕</button>
+            </div>
+          </header>
+          <div class="hbody" id="hbody" aria-live="polite"></div>
+        </section>
+
+        <section class="panel key" aria-label="읽는 법 범례">
+          <header class="ph"><span class="pt">Key<small>행 형태 읽는 법</small></span></header>
+          <div class="kbody">
+            <div class="shape"><div class="strip" id="lg1" aria-hidden="true"></div><div><b>왼쪽부터 <span data-w="hot">초록</span>: 전환 초기</b><span>단기(1W·1M) 열이 먼저 <span data-w="hot">초록</span> 색이 되고 장기 열은 아직 <span data-w="cold">붉은색</span>이거나 중립입니다. 가장 먼저 살펴볼 행입니다.</span></div></div>
+            <div class="shape"><div class="strip" id="lg2" aria-hidden="true"></div><div><b>전체 <span data-w="hot">초록</span>: 주도 지속</b><span>모든 기간에서 상위권입니다. 추세는 확인되었지만 진입 시점으로는 늦었을 수 있습니다.</span></div></div>
+            <div class="shape"><div class="strip" id="lg3" aria-hidden="true"></div><div><b>오른쪽만 <span data-w="hot">초록</span>: 소진 경계</b><span>장기 성과는 좋지만 단기 열이 식고 있습니다. 순위 하락이 이어지면 이탈을 검토합니다.</span></div></div>
+            <div class="klegend">
+              <div><span class="lab">RATIO</span>흰 실선은 ETF÷벤치마크 가격 비율, 주황 점선은 그 이동평균입니다. 끝점이 <span data-w="hot">초록</span>이면 지금 이동평균 위, <span data-w="cold">붉은색</span>이면 아래이고, 선 전체에 색이 들어가면 최근 3주 안에 돌파 또는 이탈이 있었다는 뜻입니다.</div>
+              <div><span class="lab">RRG</span><span class="sw" style="background:var(--lead)"></span>Leading <span class="sw" style="background:var(--weak);margin-left:8px"></span>Weakening <span class="sw" style="background:var(--lag);margin-left:8px"></span>Lagging <span class="sw" style="background:var(--impr);margin-left:8px"></span>Improving · 섹터는 SPY 대비, 산업·테마는 상위 섹터 대비 국면입니다. 그래프는 3) 탭, 뜻은 2) 도움말에 있습니다.</div>
+              <div><span class="lab">SIGNAL</span>★ SPY 대비 비율 52주 신고가 · ↗ 비율선 50·200일선 상향 돌파(최근 5일) · ↘ 하향 이탈 · ↑↓ 백분위 ±30 급변(6개월 → 1개월) · ≈ 1주 반등 미확인</div>
+              <div><span class="lab">LISTING</span><span class="dots" aria-hidden="true"><i class="b">b</i></span> 바이낸스 bStocks 현물 · <span class="dots" aria-hidden="true"><i class="p"></i></span> 바이낸스 perp · <span class="dots" aria-hidden="true"><i class="h"></i></span> 하이퍼리퀴드 perp. 티커 뒤에 상장된 상품만 점으로 찍히고, 없으면 아무것도 표시하지 않습니다. 구성종목 표에서는 티커 아래에 작은 점으로 찍히며, bStocks는 속이 빈 주황 원입니다.</div>
+              <div><span class="lab">COLOR</span>툴바의 97) 색 규약으로 초록=강세(US, 블룸버그 관례)와 붉음=강세(KR) 사이를 바꿀 수 있습니다. 설정은 이 브라우저에만 저장됩니다.</div>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <div class="pane rrg" id="pane3" role="tabpanel" aria-labelledby="tab3" hidden>
+    <section class="panel" aria-labelledby="rrg1Title">
+      <header class="ph"><span class="pt" id="rrg1Title">1단 · 섹터 ÷ SPY<small>어느 섹터가 시장을 이기는가</small></span><span class="pctl"><span class="grp"><button type="button" id="rrgMarket" aria-pressed="true"><b>41)</b> 섹터 11</button></span></span></header>
+      <div class="pb">
+        <p class="lead-line">섹터 11개를 모두 <b>SPY</b>에 견줍니다. 원점 (100, 100)은 SPY와 같은 수준입니다. 점을 누르면 오른쪽 2단이 그 섹터 대비로 바뀝니다.</p>
+        <div id="rrg1"></div>
+        <p class="note" id="rrg1Note"></p>
+      </div>
+    </section>
+    <section class="panel" aria-labelledby="rrg2Title">
+      <header class="ph"><span class="pt" id="rrg2Title">2단 · 하위 산업 ÷ 섹터<small id="rrg2Sub"></small></span><span class="pctl"><span class="grp"><button type="button" id="rrgBack"><b>42)</b> 1단으로</button></span></span></header>
+      <div class="pb">
+        <div class="pick" id="rrgPick" role="group" aria-label="2단 벤치마크 섹터 선택"></div>
+        <p class="lead-line" id="rrg2Lead"></p>
+        <div id="rrg2"></div>
+        <div id="rrg2Table"></div>
+        <p class="note" id="rrg2Note"></p>
+      </div>
+    </section>
+  </div>
+
+  <div class="pane help" id="pane2" role="tabpanel" aria-labelledby="tab2" hidden>
+    <section class="panel rrg-note">
+      <header class="ph"><span class="pt">RRG 국면 해설</span></header>
+      <div class="pb">
+        <dl>
+          <dt class="ph-Leading">LEADING</dt><dd>SPY 대비 가격 비율의 추세가 우위이고(RS-Ratio &gt; 100) 그 추세가 강해지는 중입니다(RS-Momentum &gt; 100). 주도 국면입니다.</dd>
+          <dt class="ph-Weakening">WEAKENING</dt><dd>비율의 추세는 아직 우위이지만 힘이 빠지고 있습니다(RS-Ratio &gt; 100, RS-Momentum &lt; 100). 주도가 끝나 가는 첫 신호입니다.</dd>
+          <dt class="ph-Lagging">LAGGING</dt><dd>비율의 추세가 열위이고 계속 약해지는 중입니다(둘 다 &lt; 100). 후행 국면입니다.</dd>
+          <dt class="ph-Improving">IMPROVING</dt><dd>비율의 추세는 아직 열위이지만 힘이 붙고 있습니다(RS-Ratio &lt; 100, RS-Momentum &gt; 100). 전환 초기에 해당하며, 다음 칸인 Leading으로 넘어가는지 지켜봅니다.</dd>
+        </dl>
+        <p>가로축 RS-Ratio는 ETF÷벤치마크 비율의 추세 수준을 100을 기준으로 정규화한 값이고, 세로축 RS-Momentum은 그 RS-Ratio의 변화율을 100을 기준으로 정규화한 값입니다. 국면은 보통 Improving → Leading → Weakening → Lagging → Improving 순서로 시계 방향으로 회전합니다. 표의 작은 사각형 네 칸은 이 사분면의 위치를 그대로 나타냅니다(왼쪽 위 Improving, 오른쪽 위 Leading, 오른쪽 아래 Weakening, 왼쪽 아래 Lagging).</p>
+        <p><b style="color:var(--amber)">벤치마크가 질문을 정합니다.</b> 이 화면은 2단 구조입니다. 섹터 11개는 SPY에 견주어 "시장보다 강한가"를 묻고(1단), 산업·테마 12개는 상위 섹터 ETF에 견주어 "그 섹터 안에서 강한가"를 묻습니다(2단). 매트릭스의 RRG 열에서 산업·테마 행은 2단 국면을 먼저 쓰고 괄호 안에 SPY 대비 국면을 함께 적습니다. 상위 섹터 배정은 SMH·IGV·DRAM → XLK, XBI·GNOM·ARKG → XLV, KRE → XLF, XHB → XLY, XME → XLB, ITA·PAVE → XLI, URA → XLE입니다. 3) 탭에서 1단 그래프의 섹터 점을 누르면 2단 그래프가 그 섹터 대비로 열립니다.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <header class="ph"><span class="pt">처음 보는 분을 위한 읽는 법</span></header>
+      <div class="pb guide-grid">
+        <section>
+          <h3>1. 왜 SPY 대비 상대수익률인가</h3>
+          <p>시장 전체가 오르는 국면에서는 거의 모든 섹터가 함께 오르기 때문에, 절대수익률만 보면 어디에 돈이 몰리는지 구별하기 어렵습니다. 그래서 각 ETF의 수익률에서 SPY의 수익률을 빼서 "시장보다 얼마나 더 올랐는가"만 남깁니다. 이 값이 계속 커지는 섹터가 자금이 유입되는 섹터입니다.</p>
+        </section>
+        <section>
+          <h3>2. 백분위 순위가 하는 일</h3>
+          <p>상대수익률의 크기는 기간마다 단위가 달라서 1주 값과 12개월 값을 같은 색으로 칠할 수 없습니다. 그래서 각 기간 안에서 23개 ETF의 등수를 매기고, 1등을 100, 꼴찌를 0으로 바꾸어 같은 잣대로 만듭니다. 학급 석차를 100점 만점으로 환산한 것과 같은 방식이므로, 96이라는 숫자는 "이 기간에는 상위 4% 안"이라는 뜻입니다.</p>
+        </section>
+        <section>
+          <h3>3. 다섯 시간축을 나란히 두는 이유</h3>
+          <p>같은 등수를 1주, 1개월, 3개월, 6개월, 12개월 창으로 다섯 번 재서 왼쪽부터 오른쪽으로 놓으면, 한 행이 그 섹터의 최근 이력이 됩니다. 새로 강해지는 섹터는 왼쪽(짧은 기간)부터 <span data-w="hot">초록</span> 색이 되고, 오래 강했던 섹터는 오른쪽까지 <span data-w="hot">초록</span> 색이며, 힘이 빠지는 섹터는 왼쪽부터 <span data-w="cold">붉은색</span>이 됩니다. 2025년 봄의 반도체가 바로 첫 번째 형태였을 것이고, 이 화면은 그 형태를 숫자를 읽지 않고도 눈에 띄게 만드는 것이 목적입니다.</p>
+        </section>
+        <section>
+          <h3>4. 비율선과 이동평균선</h3>
+          <p>비율선은 ETF 가격을 SPY(또는 QQQ) 가격으로 나눈 값을 시간순으로 이은 선입니다. 이 선이 오르면 ETF가 벤치마크보다 강하다는 뜻이고, 절대 가격이 내리는 중이라도 덜 내리면 선은 오릅니다. 점선은 이 비율의 이동평균이며, 실선이 점선을 아래에서 위로 막 뚫고 올라온 행은 <span data-w="hot">초록</span> 색으로, 위에서 아래로 막 뚫고 내려간 행은 <span data-w="cold">붉은색</span>으로 자동 강조됩니다. QQQ 대비 열을 함께 두는 이유는, 기술주가 시장을 이끄는 국면에서는 기술 관련 ETF가 SPY는 이기면서도 QQQ에는 지는 경우가 흔하기 때문입니다. 두 열이 모두 오르는 행이 진짜 주도 섹터입니다.</p>
+        </section>
+        <section>
+          <h3>5. RRG 국면은 무엇을 더해 주는가</h3>
+          <p>백분위는 "지금 몇 등인가"를 말하고, RRG는 "등수가 오르는 중인가 내리는 중인가"를 함께 말합니다. 비율의 추세 수준(RS-Ratio)을 가로축에, 그 추세의 변화 속도(RS-Momentum)를 세로축에 놓으면 네 개의 국면이 생기고, 섹터는 대체로 시계 방향으로 이 네 칸을 돕니다. 위의 해설에 각 국면의 뜻을 정리해 두었습니다.</p>
+        </section>
+        <section>
+          <h3>6. 매주 이 화면을 쓰는 순서</h3>
+          <ol>
+            <li>정렬을 <kbd class="k">22) 전환순</kbd>으로 바꾸어 맨 위 세 행을 봅니다. 최근에 순위가 가장 크게 오른 ETF입니다.</li>
+            <li>그 행의 SPY 대비·QQQ 대비 비율선이 <span data-w="hot">초록</span> 색으로 강조되어 있는지, 신호 열에 상대 신고가나 이동평균선 돌파가 있는지 확인합니다.</li>
+            <li>행을 눌러 구성종목을 열고, 상승을 이끄는 종목이 한두 개에 몰려 있는지 고르게 퍼져 있는지 봅니다. 고르게 퍼진 상승이 섹터 전환에 가깝습니다.</li>
+            <li><kbd class="k">3) RRG</kbd> 탭의 1단 그래프에서 Improving → Leading으로 넘어가는 섹터를 찾고, 그 점을 눌러 2단을 엽니다. 2단에서 그 섹터보다 강한(Leading) 하위 ETF가 섹터를 끌고 가는 주체입니다. 2025년이라면 1단에서 XLK, 2단에서 SMH였을 것입니다.</li>
+            <li>마지막으로 <kbd class="k">12M</kbd> 열로 정렬해 오른쪽만 <span data-w="hot">초록</span> 색인 행을 찾고, 보유 중인 섹터가 거기에 있으면 이탈 조건을 점검합니다.</li>
+          </ol>
+        </section>
+        <section>
+          <h3>7. 명령줄 사용법</h3>
+          <p>화면 맨 위 명령줄에 아래 명령을 입력하고 Enter 또는 &lt;GO&gt;를 누릅니다. 표 위에서 아무 글자나 입력하면 명령줄로 초점이 이동합니다. 명령줄 밖에서는 ←/→ 키로 이전·다음 ETF를 넘기고, Esc로 구성종목 화면을 닫습니다.</p>
+          <table class="cmds">
+            <thead><tr><th>입력</th><th>동작</th></tr></thead>
+            <tbody>
+              <tr><td>SMH · SMH US · SMH US EQUITY</td><td>그 ETF의 행을 선택하고 구성종목을 표시합니다. 필터에 가려져 있으면 필터를 전체로 되돌립니다.</td></tr>
+              <tr><td>11 ALL · 12 SEC · 13 IND</td><td>대상 필터를 전체, 섹터, 산업·테마로 바꿉니다.</td></tr>
+              <tr><td>21 COL · 22 SHIFT</td><td>열 기준 정렬과 전환순 정렬 사이를 바꿉니다.</td></tr>
+              <tr><td>1W · 1M · 3M · 6M · 12M</td><td>그 기간 열의 백분위가 높은 순으로 정렬합니다. 뒤에 ASC를 붙이면 낮은 순입니다(예: 3M ASC).</td></tr>
+              <tr><td>97 COLOR · US · KR</td><td>색 규약을 바꾸거나 지정합니다.</td></tr>
+              <tr><td>1 MATRIX · 2 HELP · 3 RRG</td><td>매트릭스, 도움말, RRG 1단·2단 화면을 오갑니다.</td></tr>
+              <tr><td>RRG XLK · XLK RRG</td><td>3) 탭을 열고 2단 그래프를 그 섹터 대비로 바꿉니다. 섹터 ETF 11개만 받습니다.</td></tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h3>8. 거래소 상장 점</h3>
+          <p>티커 뒤의 점은 그 ETF나 종목을 코인 거래소에서 거래할 수 있는지를 나타냅니다. <span class="dots" aria-hidden="true"><i class="b">b</i></span> 는 바이낸스 bStocks 현물(토큰화 주식), <span class="dots" aria-hidden="true"><i class="p"></i></span> 는 바이낸스 TradFi perp, <span class="dots" aria-hidden="true"><i class="h"></i></span> 는 하이퍼리퀴드 TradFi perp입니다. 세 가지가 모두 있으면 점 세 개, 일부만 있으면 있는 것만, 하나도 없으면 아무것도 찍지 않습니다. 점 위에 커서를 올리면 상품 이름이 나옵니다.</p>
+          <p>구성종목 표에서는 칸이 좁아서 티커 아래에 지름 6px짜리 점으로 같은 규칙을 적용하며, bStocks는 글자 대신 속이 빈 주황 원으로 표시합니다. DRAM의 총수익스왑 행은 기초 종목(마이크론, 삼성전자, SK하이닉스, CXMT)의 상장 여부를 그대로 보여 주고, 국채 행에는 점을 찍지 않습니다.</p>
+          <p>점의 근거는 __LIST_TS__에 수집한 세 목록입니다. 바이낸스 bStocks __LIST_B__종(태그 bStocks가 붙은 현물 자산), 바이낸스 TradFi 무기한 선물 __LIST_F__계약(TRADIFI_PERPETUAL·거래 중), 하이퍼리퀴드 HIP-3 주식 선물 __LIST_H__종(xyz·para·io·mkts dex, 상장폐지 제외)입니다. 대조는 미국 티커로 하고, 삼성전자(005930)와 SK하이닉스(000660)는 KRX 코드로, SK하이닉스의 나스닥 상장분은 SKHY로 맞춥니다. 세 거래소 모두 매주 종목을 추가하므로, 목록을 다시 수집하면 이 점들도 함께 갱신합니다.</p>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  <footer class="status">
+    <span><b>SRM</b> 섹터 전환 터미널 · 종가 __PRICE_ASOF__(__PRICE_SOURCE__, __PRICE_DAYS__거래일) · 구성종목 __HOLD_ASOF__ · 상장 목록 __LIST_ASOF__ · 신호 규칙: 52주 상대 신고가, 비율선 50·200일선 돌파(최근 5일), 백분위 ±30 급변</span>
+    <span><span class="hint">←/→ 이전·다음 ETF · ESC 닫기</span><span class="clk" id="clock"></span></span>
+  </footer>
+</div>
+
+<script>
+const HOLD = __HOLD__;
+
+/* ---- 관찰 대상 23개(메타데이터). 수치는 아래 DATA에서 들어온다 ---- */
+const ETFS = [
+  {t:'SMH', ko:'반도체', cat:'ind', tag:'산업'},
+  {t:'DRAM', ko:'메모리반도체', cat:'ind', tag:'테마', note:'총수익스왑(TRS)과 단기 국채가 포함되어 있어 같은 회사가 직접 보유분과 스왑으로 두 번 나타납니다. 삼성전자(005930)와 SK하이닉스(000660)는 한국 거래소 종목코드로 표시됩니다.'},
+  {t:'XLK', ko:'기술', cat:'sec', tag:'섹터'},
+  {t:'XLI', ko:'산업재', cat:'sec', tag:'섹터'},
+  {t:'ITA', ko:'항공우주·방산', cat:'ind', tag:'산업'},
+  {t:'URA', ko:'우라늄', cat:'ind', tag:'테마'},
+  {t:'XLC', ko:'커뮤니케이션', cat:'sec', tag:'섹터'},
+  {t:'PAVE', ko:'미국 인프라', cat:'ind', tag:'테마'},
+  {t:'XLF', ko:'금융', cat:'sec', tag:'섹터'},
+  {t:'KRE', ko:'지역은행', cat:'ind', tag:'산업'},
+  {t:'XLU', ko:'유틸리티', cat:'sec', tag:'섹터'},
+  {t:'XLB', ko:'소재', cat:'sec', tag:'섹터'},
+  {t:'XME', ko:'금속·광업', cat:'ind', tag:'산업'},
+  {t:'XLY', ko:'경기소비재', cat:'sec', tag:'섹터'},
+  {t:'GNOM', ko:'유전체학', cat:'ind', tag:'테마'},
+  {t:'ARKG', ko:'유전체학 (액티브)', cat:'ind', tag:'테마'},
+  {t:'XHB', ko:'주택건설', cat:'ind', tag:'산업'},
+  {t:'XLRE', ko:'부동산', cat:'sec', tag:'섹터'},
+  {t:'IGV', ko:'소프트웨어', cat:'ind', tag:'산업'},
+  {t:'XBI', ko:'바이오', cat:'ind', tag:'산업'},
+  {t:'XLE', ko:'에너지', cat:'sec', tag:'섹터'},
+  {t:'XLP', ko:'필수소비재', cat:'sec', tag:'섹터'},
+  {t:'XLV', ko:'헬스케어', cat:'sec', tag:'섹터'},
+];
+/* ---- 실제 계산값: rrg 저장소 output/prices_wide.csv(야후 조정 종가, SPY 기준 500거래일)로 계산. pct = SPY 대비 상대수익률 백분위, rel = 상대수익률(%), S/Q = 주봉 ETF÷SPY·÷QQQ 12주, rrgPath = 벤치마크(섹터는 SPY, 산업·테마는 상위 섹터) 대비 최근 5주 [RS-Ratio, RS-Momentum], rrgSpy = SPY 대비, sig = 신호 ---- */
+const DATA = __DATA__;
+const PRICE_ASOF = '__PRICE_ASOF__', PRICE_FIRST = '__PRICE_FIRST__', PRICE_DAYS = __PRICE_DAYS__, PRICE_WEEKS = __PRICE_WEEKS__;
+ETFS.forEach(e => { const d = DATA[e.t]; e.pct = d.pct; e.rel = d.rel; e.S = d.S; e.Q = d.Q; e.rrgPath = d.rrgPath; e.rrgSpy = d.rrgSpy; e.sig = d.sig; });
+const COLS = ['1주','1개월','3개월','6개월','12개월'];
+const CODES = ['1W','1M','3M','6M','12M'];
+const CATCODE = e => e.cat === 'sec' ? 'SECT' : (e.tag === '테마' ? 'THM' : 'IND');
+
+/* ---- 2단 구조: 산업·테마 ETF의 상위 섹터(2단 벤치마크). 섹터 11개는 SPY가 벤치마크 ---- */
+const PARENT = { SMH:'XLK', IGV:'XLK', DRAM:'XLK', XBI:'XLV', GNOM:'XLV', ARKG:'XLV', KRE:'XLF', XHB:'XLY', XME:'XLB', ITA:'XLI', PAVE:'XLI', URA:'XLE' };
+ETFS.forEach(e => { e.parent = PARENT[e.t] || null; });
+
+const phaseOf = (r, m) => r >= 100 ? (m >= 100 ? 'Leading' : 'Weakening') : (m >= 100 ? 'Improving' : 'Lagging');
+const NEXT_PHASE = { Improving:'Leading', Leading:'Weakening', Weakening:'Lagging', Lagging:'Improving' };
+/* RRG 국면은 DATA의 주봉 계산값에서 읽는다. 주봉 39주(SMA 30 + 9)가 안 되는 ETF(DRAM)는 경로가 비어 있어 국면을 매기지 않는다. */
+ETFS.forEach(e => {
+  e.rrgPath = e.rrgPath || []; e.rrgSpy = e.rrgSpy || [];
+  if (!e.rrgPath.length) { e.rrg = null; e.rrgVsSpy = null; e.next = null; return; }
+  const [r, m] = e.rrgPath[e.rrgPath.length - 1];
+  e.rrg = phaseOf(r, m);
+  const [rs, ms] = e.rrgSpy[e.rrgSpy.length - 1];
+  e.rrgVsSpy = phaseOf(rs, ms);
+  /* 다음 국면 예고: 사분면 경계까지 0.6 이내이고 그쪽으로 움직이는 중이면 표시 */
+  const prev = e.rrgPath[e.rrgPath.length - 2] || [r, m];
+  const dr = r - prev[0], dm = m - prev[1];
+  let nx = null;
+  if (e.rrg === 'Improving' && r < 100 && 100 - r <= 0.6 && dr > 0) nx = 'Leading';
+  else if (e.rrg === 'Leading' && m >= 100 && m - 100 <= 0.6 && dm < 0) nx = 'Weakening';
+  else if (e.rrg === 'Weakening' && r >= 100 && r - 100 <= 0.6 && dr < 0) nx = 'Lagging';
+  else if (e.rrg === 'Lagging' && m < 100 && 100 - m <= 0.6 && dm > 0) nx = 'Improving';
+  e.next = nx;
+});
+
+/* ---- 거래소 상장(수집 __LIST_TS__): b = 바이낸스 bStocks 현물, p = 바이낸스 TradFi perp, h = 하이퍼리퀴드 HIP-3 perp. 표에 없는 티커는 세 목록 어디에도 없다는 뜻.
+   출처: github.com/tlzkrh1029/tradfi-ticker-lists (bStocks 80종, 바이낸스 TradFi 선물 188계약, 하이퍼리퀴드 HIP-3 주식 121종)를 23개 ETF와 상위 10개 구성종목에 대조한 결과 ---- */
+const LIST_ASOF = '__LIST_ASOF__';
+const ELST = __ELST__;
+ETFS.forEach(e => { e.lst = ELST[e.t] || ''; });
+const LST = __LST__;
+/* DRAM의 총수익스왑 행은 기초 종목(마이크론 MU, 삼성전자 KRX:005930, SK하이닉스 KRX:000660, CXMT SSE:688825)의 상장 여부를 그대로 보여 준다. 국채 행은 대상이 아니다. */
+const SWAPS = __SWAPS__;
+const LSTNAME = { b:'바이낸스 bStocks 현물', p:'바이낸스 perp', h:'하이퍼리퀴드 perp' };
+const lstLabel = s => s ? '상장: ' + [...s].map(k => LSTNAME[k]).join(' · ') + ` (${LIST_ASOF} 기준)` : '';
+const dots = s => s ? `<span class="dots" role="img" aria-label="${lstLabel(s)}" title="${lstLabel(s)}">${s.includes('b') ? '<i class="b">b</i>' : ''}${s.includes('p') ? '<i class="p"></i>' : ''}${s.includes('h') ? '<i class="h"></i>' : ''}</span>` : '';
+const mdots = s => s ? `<span class="mdots" role="img" aria-label="${lstLabel(s)}" title="${lstLabel(s)}">${s.includes('b') ? '<i class="b"></i>' : ''}${s.includes('p') ? '<i class="p"></i>' : ''}${s.includes('h') ? '<i class="h"></i>' : ''}</span>` : '';
+
+
+/* ---- 색 규약: US = 초록이 강세(블룸버그 관례), KR = 붉음이 강세 ---- */
+const CONV = {
+  US: { hot: [47, 208, 70], cold: [255, 59, 59], hotW: '초록', coldW: '붉은색', label: '색 규약: 초록=강세 (US)' },
+  KR: { hot: [255, 59, 59], cold: [61, 139, 255], hotW: '붉은색', coldW: '파란색', label: '색 규약: 붉음=강세 (KR)' },
+};
+const NEUTRAL = [26, 26, 26];
+let conv = 'US';
+try { const s = localStorage.getItem('srm-conv'); if (CONV[s]) conv = s; } catch (e) {}
+const lum = rgb => { const f = c => { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); }; return 0.2126 * f(rgb[0]) + 0.7152 * f(rgb[1]) + 0.0722 * f(rgb[2]); };
+function cellStyle(p) {
+  if (p == null) return '';
+  const s = Math.abs(p - 50) / 50, m = Math.pow(s, 0.85) * 0.95;
+  const base = p > 50 ? CONV[conv].hot : CONV[conv].cold;
+  const rgb = base.map((c, i) => Math.round(NEUTRAL[i] + (c - NEUTRAL[i]) * m));
+  return `background:rgb(${rgb.join(',')});color:${lum(rgb) > 0.17 ? '#000' : '#ededed'}`;
+}
+
+function spark(raw) {
+  const w = 96, h = 26;
+  const src = (raw || []).filter(v => v != null);
+  if (src.length < 4) return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" aria-hidden="true"><text x="${w / 2}" y="17" text-anchor="middle" font-size="10" fill="var(--muted)">n/a</text></svg>`;
+  /* 비율을 평균으로 나눠 1.0 근처로 정규화한다. 그래야 0.08(SMH÷SPY)과 0.78(XLK÷SPY)처럼 크기가 다른 비율선을 같은 눈금으로 그린다 */
+  const mean = src.reduce((s, x) => s + x, 0) / src.length, vals = src.map(x => x / mean), n = vals.length;
+  const mn = Math.min(...vals), mx = Math.max(...vals);
+  const rng = Math.max(mx - mn, 0.08), lo = (mx + mn) / 2 - rng / 2;   // 12주 상대 변동 8% 미만인 행은 작게 보이도록 최소 범위를 둠
+  const xs = i => 3 + i * (w - 6) / (n - 1), ys = v => h - 3 - ((v - lo) / rng) * (h - 6);
+  const ma = vals.map((_, i) => { const a = vals.slice(Math.max(0, i - 3), i + 1); return a.reduce((s, x) => s + x, 0) / a.length; });
+  const d = vals.map((v, i) => v - ma[i]);
+  const last = d[n - 1], recent = d.slice(n - 6, n - 1), thr = Math.max(0.003, rng * 0.03);   // 최근 5주 안의 돌파·이탈만 '갓' 돌파로 표시
+  const above = last >= 0;
+  const fresh = (last > thr && recent.some(x => x <= 0)) || (last < -thr && recent.some(x => x >= 0));
+  const cls = (above ? 'sp-above' : 'sp-below') + (fresh ? ' sp-fresh' : '');
+  const P = a => a.map((v, i) => `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
+  const ex = xs(n - 1).toFixed(1), ey = ys(vals[n - 1]).toFixed(1);
+  return `<svg class="${cls}" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" aria-hidden="true"><polyline class="sp-ma" points="${P(ma)}"/><polyline class="sp-line" points="${P(vals)}"/>${fresh ? `<circle class="sp-ring" cx="${ex}" cy="${ey}" r="5.5"/>` : ''}<circle class="sp-dot" cx="${ex}" cy="${ey}" r="2.8"/></svg>`;
+}
+const pctChange12w = s => { const v = (s || []).filter(x => x != null); return v.length < 2 ? null : (v[v.length - 1] / v[0] - 1) * 100; };
+/* 주봉 수: DATA[t].weeks (상장 후 주봉 개수) */
+const PRICE_WEEKS_OF = e => (DATA[e.t] && DATA[e.t].weeks) || PRICE_WEEKS;
+
+const state = { cat: 'all', mode: 'col', col: 1, dir: -1 };
+const shiftScore = e => (e.pct[0] + e.pct[1]) / 2 - (e.pct[4] == null ? e.pct[3] : e.pct[4]);
+let current = [], selT = null;
+
+function visible() {
+  let list = ETFS.filter(e => state.cat === 'all' || e.cat === state.cat);
+  if (state.mode === 'shift') list.sort((a, b) => shiftScore(b) - shiftScore(a));
+  else list.sort((a, b) => {
+    const pa = a.pct[state.col], pb = b.pct[state.col];
+    if (pa == null && pb == null) return 0; if (pa == null) return 1; if (pb == null) return -1;
+    return state.dir < 0 ? pb - pa : pa - pb;
+  });
+  return list;
+}
+
+function render() {
+  current = visible();
+  const tb = document.getElementById('rows');
+  tb.innerHTML = current.map(e => {
+    const cells = e.pct.map((p, i) => p == null
+      ? `<td class="p"><span class="cell na" title="${COLS[i]}: 상장 기간이 짧아 산출 불가">n/a</span></td>`
+      : `<td class="p"><span class="cell" style="${cellStyle(p)}" title="${COLS[i]} SPY 대비 상대수익률 ${e.rel[i] >= 0 ? '+' : ''}${e.rel[i].toFixed(1)}% · 23개 중 백분위 ${p}">${p}</span></td>`).join('');
+    const sig = e.sig.length ? e.sig.map(s => `<span class="s ${s[2]}"><i>${s[0]}</i>${s[1]}</span>`).join('') : '<span class="s" style="color:var(--muted)">—</span>';
+    const rr = e.rrg
+      ? `<span class="q ${e.rrg}" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="ph-${e.rrg}">${e.rrg.toUpperCase()}</span>${e.next ? ` <span class="nx">→ <b>${e.next.toUpperCase()}</b></span>` : ''}`
+        + (e.parent
+          ? `<span class="vs">vs <b>${e.parent}</b> · SPY 대비 <span class="ph-${e.rrgVsSpy}">${e.rrgVsSpy.toUpperCase()}</span></span>`
+          : `<span class="vs">vs <b>SPY</b> · 1단</span>`)
+      : `<span class="q" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span style="color:var(--muted)">N/A</span><span class="vs">주봉 39주 필요 · 상장 ${PRICE_WEEKS_OF(e)}주</span>`;
+    const chQ = pctChange12w(e.Q), chS = pctChange12w(e.S);
+    const chT = v => v == null ? '' : ` · 12주 ${v >= 0 ? '+' : ''}${v.toFixed(1)}%`;
+    return `<tr data-t="${e.t}"${e.t === selT ? ' class="sel"' : ''}>
+      <td class="c-etf"><button type="button" class="etf" data-t="${e.t}" aria-label="${e.t} ${e.ko} 구성종목 보기"><span class="l1"><span class="tk">${e.t}</span><span class="ex">US</span>${dots(e.lst)}<span class="cat">${CATCODE(e)}</span></span><span class="ko">${e.ko}</span></button></td>
+      ${cells}
+      <td class="sp" title="QQQ 대비 가격 비율 (주봉 12주)${chT(chQ)}">${spark(e.Q)}</td>
+      <td class="sp" title="SPY 대비 가격 비율 (주봉 12주)${chT(chS)}">${spark(e.S)}</td>
+      <td class="rr">${rr}</td>
+      <td class="sg">${sig}</td>
+    </tr>`;
+  }).join('');
+
+  document.querySelectorAll('#colhead th.sortable').forEach(th => {
+    const c = +th.dataset.col;
+    if (state.mode === 'col' && c === state.col) th.setAttribute('aria-sort', state.dir < 0 ? 'descending' : 'ascending');
+    else th.removeAttribute('aria-sort');
+  });
+  const hint = document.getElementById('sortHint');
+  hint.innerHTML = state.mode === 'shift'
+    ? 'SORT · <b>전환 점수</b> 높은 순 (1W·1M 백분위 평균 − 12M 백분위). 최근에 순위가 가장 크게 오른 ETF가 위로 옵니다.'
+    : `SORT · <b>${CODES[state.col]} ${COLS[state.col]}</b> 백분위 ${state.dir < 0 ? '높은' : '낮은'} 순. 열 머리글을 누르면 기준 열이 바뀌고, 같은 열을 다시 누르면 순서가 뒤집힙니다.`;
+  updatePos();
+}
+
+/* ---- 구성종목 패널 ---- */
+const overlayMode = () => window.matchMedia('(max-width:1279px)').matches;
+const holdPanel = document.getElementById('holdPanel');
+const overlayOpen = () => holdPanel.classList.contains('open');
+function updatePos() {
+  const i = current.findIndex(x => x.t === selT);
+  document.getElementById('holdPos').textContent = i < 0 ? '' : `${i + 1} / ${current.length}`;
+}
+function renderHold(t) {
+  const e = ETFS.find(x => x.t === t), h = HOLD[t];
+  if (!e || !h) return;
+  const maxW = Math.max(...h.rows.map(r => parseFloat(r[2])));
+  const rows = h.rows.map((r, i) => {
+    const w = parseFloat(r[2]);
+    const isSwap = /TRS|^B\.0/.test(r[0]);
+    const sym = isSwap ? `<span style="color:var(--muted)">SWAP/T-BILL</span><small>${r[0]}</small>` : `${r[0]}${r[4] ? `<span style="color:var(--muted);font-weight:400;font-size:9.5px;margin-left:4px">${r[4]}</span>` : ''}`;
+    const l = isSwap ? (SWAPS[r[0]] || '') : (LST[r[0]] || '');
+    const ch = r[3] == null
+      ? `<span style="color:var(--amber);font-size:10px;letter-spacing:.08em" title="${h.prev} 상위 10개에 없던 종목">NEW</span>`
+      : (r[3] === 0 ? '<span style="color:var(--muted)">0.00</span>' : `<span style="color:var(--${r[3] > 0 ? 'hot' : 'cold'})">${r[3] > 0 ? '+' : ''}${r[3].toFixed(2)}</span>`);
+    return `<tr><td class="rk">${i + 1}</td><td class="sy">${sym}${mdots(l)}</td><td class="nm">${r[1]}</td><td class="w r"><span class="bar" style="width:${(w / maxW * 100).toFixed(1)}%"></span><span class="v">${r[2]}</span></td><td class="ch r" title="${h.prev} 대비 비중 변화 (%p)">${ch}</td></tr>`;
+  }).join('');
+  const flagOf = r => /TRS|^B\.0/.test(r[0]) ? (SWAPS[r[0]] || '') : (LST[r[0]] || '');
+  const cnt = k => h.rows.filter(r => flagOf(r).includes(k)).length;
+  document.getElementById('hbody').innerHTML = `
+    <div class="hh"><div class="tk">${e.t}<small>US EQUITY</small>${e.lst ? `<span style="margin-left:10px;vertical-align:3px">${dots(e.lst)}</span>` : ''}</div><div class="nm">${h.name}</div><div class="ko">${e.ko} · ${e.tag} ETF</div></div>
+    <dl class="hmeta"><dt>순자산</dt><dd>${h.aum} <span style="color:var(--muted)">(${h.aumAsof} 기준)</span></dd><dt>보유 종목</dt><dd>${h.n}개</dd><dt>상위 10개 비중</dt><dd>${h.top10}</dd><dt>기준일</dt><dd>${h.asof} <span style="color:var(--muted)">· 이전 ${h.prev}</span></dd><dt>출처</dt><dd><a href="${h.url}" target="_blank" rel="noopener">stockanalysis.com</a></dd><dt>상장 (상위 10)</dt><dd><span class="dots" aria-hidden="true"><i class="b">b</i></span> ${cnt('b')} · <span class="dots" aria-hidden="true"><i class="p"></i></span> ${cnt('p')} · <span class="dots" aria-hidden="true"><i class="h"></i></span> ${cnt('h')} <span style="color:var(--muted)">행 · ${LIST_ASOF}</span></dd></dl>
+    <div class="hctx">
+      <div><div class="strip">${e.pct.map(p => p == null ? '<i style="color:var(--muted)">n/a</i>' : `<i style="${cellStyle(p)}">${p}</i>`).join('')}</div><div class="lbls">${CODES.map(c => `<span>${c}</span>`).join('')}</div></div>
+      <div class="row"><span>RRG vs <b style="color:var(--amber)">${e.parent || 'SPY'}</b> ${e.rrg ? `<b class="ph-${e.rrg}">${e.rrg.toUpperCase()}</b>${e.next ? ` <span class="nx">→ ${e.next.toUpperCase()}</span>` : ''}${e.parent ? ` <span class="nx">· vs SPY <span class="ph-${e.rrgVsSpy}">${e.rrgVsSpy.toUpperCase()}</span></span>` : ''}` : '<span style="color:var(--muted)">N/A · 주봉 39주 필요</span>'}</span><span>전환 점수 <b style="color:#fff">${shiftScore(e).toFixed(0)}</b></span></div>
+      <div class="row"><span>vs SPY 12W ${spark(e.S)}</span><span>vs QQQ 12W ${spark(e.Q)}</span></div>
+    </div>
+    <div class="h-wrap"><table class="h"><thead><tr><th>#</th><th>티커</th><th>종목명</th><th class="r">비중</th><th class="r"><abbr title="${h.prev} 스냅샷 대비 비중 변화(%p). NEW는 그때 상위 10개에 없던 종목">변동 %p</abbr></th></tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="hfn">${e.note ? e.note + ' ' : ''}${h.entered.length || h.left.length ? `상위 10개 진입: <b style="color:var(--ink-2)">${h.entered.join(', ') || '없음'}</b> · 이탈: <b style="color:var(--ink-2)">${h.left.join(', ') || '없음'}</b> (${h.prev} → ${h.asof}). ` : `${h.prev} 이후 상위 10개 구성에 변화가 없습니다. `}변동 %p는 두 스냅샷의 비중 차이입니다.</p>`;
+}
+function select(t, opts = {}) {
+  if (!ETFS.some(x => x.t === t)) return;
+  selT = t;
+  const e = ETFS.find(x => x.t === t);
+  /* 섹터를 고르면 2단 벤치마크도 그 섹터로, 하위 ETF를 고르면 그 상위 섹터로 맞춘다 */
+  rrgSector = e.cat === 'sec' ? e.t : (e.parent || rrgSector);
+  if (curTab === 3) renderRRG();
+  document.querySelectorAll('#rows tr').forEach(r => r.classList.toggle('sel', r.dataset.t === t));
+  renderHold(t);
+  updatePos();
+  if (opts.scroll) { const r = document.querySelector(`#rows tr[data-t="${t}"]`); if (r) r.scrollIntoView({ block: 'nearest' }); }
+  if (opts.open && overlayMode()) openOverlay();
+}
+function openOverlay() {
+  holdPanel.classList.add('open'); document.body.classList.add('modal-open');
+  holdPanel.setAttribute('role', 'dialog'); holdPanel.setAttribute('aria-modal', 'true');
+  document.getElementById('closeBtn').focus();
+}
+function closeOverlay() {
+  holdPanel.classList.remove('open'); document.body.classList.remove('modal-open');
+  holdPanel.removeAttribute('role'); holdPanel.removeAttribute('aria-modal');
+  const btn = selT && document.querySelector(`.etf[data-t="${selT}"]`); if (btn) btn.focus();
+}
+function step(d) {
+  if (!current.length) return;
+  const i = current.findIndex(x => x.t === selT);
+  const n = i < 0 ? current[0] : current[(i + d + current.length) % current.length];
+  select(n.t, { scroll: true });
+}
+
+/* ---- 범례 스트립과 색 규약 ---- */
+const strip = (id, vals) => { document.getElementById(id).innerHTML = vals.map(p => `<i style="${cellStyle(p)}"></i>`).join(''); };
+function applyConv() {
+  document.documentElement.dataset.conv = conv;
+  document.getElementById('convLabel').textContent = CONV[conv].label;
+  document.querySelectorAll('[data-w]').forEach(el => { el.textContent = el.dataset.w === 'hot' ? CONV[conv].hotW : CONV[conv].coldW; });
+  strip('lg1', [96, 90, 70, 50, 38]); strip('lg2', [88, 86, 84, 80, 78]); strip('lg3', [30, 38, 52, 74, 88]);
+  render(); if (selT) renderHold(selT);
+  try { localStorage.setItem('srm-conv', conv); } catch (e) {}
+}
+function setConv(c) { conv = c; applyConv(); msg(`색 규약 → ${CONV[conv].label.replace('색 규약: ', '')}`, 'ok'); }
+
+/* ---- 툴바 상태 메시지 ---- */
+let msgTimer = null;
+function msg(text, cls) {
+  const el = document.getElementById('msg'); el.textContent = text; el.className = 'msg' + (cls ? ' ' + cls : '');
+  clearTimeout(msgTimer); msgTimer = setTimeout(() => { el.textContent = ''; el.className = 'msg'; }, 8000);
+}
+
+/* ---- 탭 ---- */
+let curTab = 1;
+function showTab(n) {
+  curTab = n;
+  [1, 2, 3].forEach(k => {
+    document.getElementById('pane' + k).hidden = k !== n;
+    document.getElementById('tab' + k).setAttribute('aria-selected', k === n);
+  });
+  if (n !== 1 && overlayOpen()) closeOverlay();
+  if (n === 3) renderRRG();
+}
+
+/* ---- RRG 그래프: 1단(섹터 ÷ SPY)과 2단(하위 ETF ÷ 섹터) ---- */
+let rrgSector = 'XLK';
+const SECTORS = ETFS.filter(e => e.cat === 'sec');
+const childrenOf = s => ETFS.filter(e => e.parent === s);
+function rrgSvg(items, opts) {
+  /* items: [{t, ko, path:[[r,m],...], sel}] · opts: {bench, originLabel, sel} */
+  const W = 520, H = 400, L = 44, R = 16, T = 18, B = 40;
+  const pw = W - L - R, ph = H - T - B;
+  let lo = 97.2, hi = 102.8;
+  items.forEach(it => it.path.forEach(([r, m]) => { lo = Math.min(lo, r - .4, m - .4); hi = Math.max(hi, r + .4, m + .4); }));
+  const X = v => L + (v - lo) / (hi - lo) * pw, Y = v => T + (hi - v) / (hi - lo) * ph;
+  const cx = X(100), cy = Y(100);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.aria}">`;
+  s += `<rect class="bg-Improving" x="${L}" y="${T}" width="${cx - L}" height="${cy - T}"/><rect class="bg-Leading" x="${cx}" y="${T}" width="${L + pw - cx}" height="${cy - T}"/>`;
+  s += `<rect class="bg-Lagging" x="${L}" y="${cy}" width="${cx - L}" height="${T + ph - cy}"/><rect class="bg-Weakening" x="${cx}" y="${cy}" width="${L + pw - cx}" height="${T + ph - cy}"/>`;
+  s += `<rect class="ax" x="${L}" y="${T}" width="${pw}" height="${ph}" fill="none"/>`;
+  s += `<line class="mid" x1="${cx}" y1="${T}" x2="${cx}" y2="${T + ph}"/><line class="mid" x1="${L}" y1="${cy}" x2="${L + pw}" y2="${cy}"/>`;
+  s += `<text class="qlab q-Improving" x="${L + 6}" y="${T + 13}">IMPROVING</text><text class="qlab q-Leading" x="${L + pw - 6}" y="${T + 13}" text-anchor="end">LEADING</text>`;
+  s += `<text class="qlab q-Lagging" x="${L + 6}" y="${T + ph - 5}">LAGGING</text><text class="qlab q-Weakening" x="${L + pw - 6}" y="${T + ph - 5}" text-anchor="end">WEAKENING</text>`;
+  s += `<text class="axlab" x="${L + pw / 2}" y="${H - 8}" text-anchor="middle">RS-RATIO ÷ ${opts.bench} → (100 = ${opts.bench}와 같은 수준)</text>`;
+  s += `<text class="axlab" x="12" y="${T + ph / 2}" text-anchor="middle" transform="rotate(-90 12 ${T + ph / 2})">RS-MOMENTUM →</text>`;
+  s += `<text class="axlab" x="${cx}" y="${T + ph + 12}" text-anchor="middle">100</text><text class="axlab" x="${L - 6}" y="${cy + 3}" text-anchor="end">100</text>`;
+  if (opts.originLabel) s += `<circle class="origin" cx="${cx}" cy="${cy}" r="6"/><text class="lb" x="${cx + 10}" y="${cy - 8}" style="fill:var(--amber)">${opts.originLabel} = 원점</text>`;
+  items.forEach(it => {
+    const p = it.path, last = p[p.length - 1], ph2 = phaseOf(last[0], last[1]);
+    const col = `var(--${{ Leading:'lead', Weakening:'weak', Lagging:'lag', Improving:'impr' }[ph2]})`;
+    const pts = p.map(([r, m]) => `${X(r).toFixed(1)},${Y(m).toFixed(1)}`).join(' ');
+    s += `<g class="${it.click ? 'ck' : ''}" ${it.click ? `tabindex="0" role="button" data-sec="${it.t}" aria-label="${it.t} ${it.ko} 2단 열기"` : ''}>`;
+    s += `<polyline class="tail" points="${pts}" stroke="${col}"/>`;
+    p.slice(0, -1).forEach(([r, m], i) => { s += `<circle class="tp" cx="${X(r).toFixed(1)}" cy="${Y(m).toFixed(1)}" r="${1.6 + i * .4}" fill="${col}"/>`; });
+    if (it.sel) s += `<circle class="selring" cx="${X(last[0]).toFixed(1)}" cy="${Y(last[1]).toFixed(1)}" r="10"/>`;
+    s += `<circle class="hd" cx="${X(last[0]).toFixed(1)}" cy="${Y(last[1]).toFixed(1)}" r="5" fill="${col}"/>`;
+    s += `<text class="lb" x="${(X(last[0]) + 8).toFixed(1)}" y="${(Y(last[1]) + 4).toFixed(1)}">${it.t}</text>`;
+    s += `</g>`;
+  });
+  return s + '</svg>';
+}
+function renderRRG() {
+  /* 1단 */
+  const items1 = SECTORS.map(e => ({ t: e.t, ko: e.ko, path: e.rrgPath, click: true, sel: e.t === rrgSector }));
+  document.getElementById('rrg1').innerHTML = rrgSvg(items1, { bench: 'SPY', aria: '섹터 11개의 SPY 대비 RRG. 점을 누르면 그 섹터의 2단이 열립니다.' });
+  const movers = SECTORS.filter(e => e.next).map(e => `${e.t} ${e.rrg} → ${e.next}`);
+  document.getElementById('rrg1Note').innerHTML = `꼬리는 지난 5주 궤적(작은 점 → 큰 점이 지금). 국면 경계에 가까운 섹터: ${movers.length ? '<b>' + movers.join('</b>, <b>') + '</b>' : '없음'}. RS-Ratio = 100 × SMA(RS,10) ÷ SMA(RS,30), RS-Momentum = 100 × RS-Ratio ÷ SMA(RS-Ratio,9), 주봉 기준, ${PRICE_ASOF} 종가까지.`;
+  document.querySelectorAll('#rrg1 .ck').forEach(g => {
+    g.addEventListener('click', () => setRRGSector(g.dataset.sec));
+    g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); setRRGSector(g.dataset.sec); } });
+  });
+  /* 2단 */
+  const sec = ETFS.find(e => e.t === rrgSector), kids = childrenOf(rrgSector);
+  document.getElementById('rrgPick').innerHTML = SECTORS.map(e => {
+    const n = childrenOf(e.t).length;
+    return `<button type="button" data-pick="${e.t}" aria-pressed="${e.t === rrgSector}" class="${n ? '' : 'none'}" title="${n ? `하위 ETF ${n}개` : '관찰 중인 하위 ETF 없음'}">${e.t}${n ? ` <span style="color:var(--muted)">${n}</span>` : ''}</button>`;
+  }).join('');
+  document.querySelectorAll('#rrgPick [data-pick]').forEach(b => b.addEventListener('click', () => setRRGSector(b.dataset.pick)));
+  document.getElementById('rrg2Sub').textContent = `${sec.t} ${sec.ko} 안에서 누가 끌고 가는가`;
+  if (!kids.length) {
+    document.getElementById('rrg2Lead').innerHTML = `<b>${sec.t}</b>(${sec.ko})의 하위 산업·테마 ETF는 아직 관찰 대상에 없습니다. 1단에서 ${sec.t}는 SPY 대비 <span class="ph-${sec.rrg}">${sec.rrg.toUpperCase()}</span>입니다.`;
+    document.getElementById('rrg2').innerHTML = '';
+    document.getElementById('rrg2Table').innerHTML = '';
+    document.getElementById('rrg2Note').textContent = '하위 ETF를 추가하면 이 그래프가 채워집니다. 후보: ' + ({ XLC:'SOCL, PBS', XLU:'GRID, ICLN', XLP:'PBJ', XLRE:'REZ, INDS' }[sec.t] || '해당 섹터의 산업 ETF');
+    return;
+  }
+  const plotted = kids.filter(e => e.rrgPath.length), unplotted = kids.filter(e => !e.rrgPath.length);
+  const items2 = plotted.map(e => ({ t: e.t, ko: e.ko, path: e.rrgPath, click: false, sel: e.t === selT }));
+  document.getElementById('rrg2Lead').innerHTML = `<b>${sec.t}</b>(${sec.ko})를 벤치마크로 둡니다. 원점이 ${sec.t}와 같은 수준이므로, 오른쪽 위 Leading에 있는 ETF가 섹터를 끌고 가는 주체이고 왼쪽 아래 Lagging에 있는 ETF는 섹터에 끌려가는 쪽입니다. 1단에서 ${sec.t}는 SPY 대비 <span class="ph-${sec.rrg}">${sec.rrg.toUpperCase()}</span>입니다.`;
+  document.getElementById('rrg2').innerHTML = rrgSvg(items2, { bench: sec.t, originLabel: sec.t, aria: `${sec.t} 하위 ETF ${plotted.length}개의 ${sec.t} 대비 RRG` });
+  const rows = kids.map(e => {
+    if (!e.rrgPath.length) return `<tr class="ck${e.t === selT ? ' cur' : ''}" data-t="${e.t}"><td class="tk">${e.t}</td><td style="color:var(--ink-2)">${e.ko}</td><td class="r" style="color:var(--muted)">—</td><td class="r" style="color:var(--muted)">—</td><td style="color:var(--muted)">N/A · 주봉 39주 필요</td><td style="color:var(--muted)">—</td><td>${dots(e.lst) || '<span style="color:var(--muted)">—</span>'}</td></tr>`;
+    const [r, m] = e.rrgPath[e.rrgPath.length - 1], [rs, ms] = e.rrgSpy[e.rrgSpy.length - 1];
+    return `<tr class="ck${e.t === selT ? ' cur' : ''}" data-t="${e.t}"><td class="tk">${e.t}</td><td style="color:var(--ink-2)">${e.ko}</td><td class="r">${r.toFixed(1)}</td><td class="r">${m.toFixed(1)}</td><td class="ph-${e.rrg}" style="font-weight:700">${e.rrg.toUpperCase()}${e.next ? ` <span class="nx">→ ${e.next.toUpperCase()}</span>` : ''}</td><td class="ph-${e.rrgVsSpy}">${e.rrgVsSpy.toUpperCase()}</td><td>${dots(e.lst) || '<span style="color:var(--muted)">—</span>'}</td></tr>`;
+  }).join('');
+  document.getElementById('rrg2Table').innerHTML = `<table class="rt"><thead><tr><th>ETF</th><th></th><th class="r">RS-Ratio</th><th class="r">RS-Mom</th><th>vs ${sec.t}</th><th>vs SPY</th><th>상장</th></tr></thead><tbody>${rows}</tbody></table>`;
+  document.querySelectorAll('#rrg2Table tr.ck').forEach(tr => tr.addEventListener('click', () => { select(tr.dataset.t, { scroll: false }); showTab(1); select(tr.dataset.t, { open: true, scroll: true }); }));
+  const lead = plotted.filter(e => e.rrg === 'Leading').map(e => e.t), lag = plotted.filter(e => e.rrg === 'Lagging').map(e => e.t);
+  document.getElementById('rrg2Note').innerHTML = `읽는 법: ${lead.length ? `<b>${lead.join(', ')}</b> 은(는) ${sec.t}보다 강해 섹터를 끌고 갑니다.` : `${sec.t}보다 강한 하위 ETF는 아직 없습니다.`} ${lag.length ? `<b>${lag.join(', ')}</b> 은(는) ${sec.t}보다 약해 끌려가는 쪽입니다.` : ''}${unplotted.length ? ` ${unplotted.map(e => e.t).join(', ')} 은(는) 상장 기간이 짧아 그리지 않습니다.` : ''} 표의 행을 누르면 매트릭스에서 그 ETF가 선택됩니다. 좌표는 ${PRICE_ASOF} 종가까지의 주봉으로 계산한 값입니다.`;
+}
+function setRRGSector(s) {
+  if (!SECTORS.some(e => e.t === s)) return;
+  rrgSector = s; renderRRG();
+  msg(`RRG 2단 → ${s} 대비`, 'ok');
+}
+document.getElementById('rrgBack').addEventListener('click', () => { showTab(1); });
+document.getElementById('rrgMarket').addEventListener('click', () => { document.getElementById('rrg1').scrollIntoView({ block: 'nearest' }); });
+
+/* ---- 필터·정렬 ---- */
+function setCat(c) {
+  state.cat = c; document.querySelectorAll('[data-cat]').forEach(x => x.setAttribute('aria-pressed', x.dataset.cat === c)); render();
+}
+function setSort(m) {
+  state.mode = m; document.querySelectorAll('[data-sort]').forEach(x => x.setAttribute('aria-pressed', x.dataset.sort === m)); render();
+}
+function sortCol(c, dir) {
+  state.col = c; state.dir = dir; setSort('col');
+}
+document.querySelectorAll('[data-cat]').forEach(b => b.addEventListener('click', () => setCat(b.dataset.cat)));
+document.querySelectorAll('[data-sort]').forEach(b => b.addEventListener('click', () => setSort(b.dataset.sort)));
+document.querySelectorAll('#colhead th.sortable').forEach(th => th.addEventListener('click', () => {
+  const c = +th.dataset.col;
+  if (state.mode === 'col' && state.col === c) sortCol(c, -state.dir); else sortCol(c, -1);
+}));
+
+/* ---- 행 선택 ---- */
+document.getElementById('rows').addEventListener('click', ev => {
+  const tr = ev.target.closest('tr[data-t]'); if (!tr) return;
+  if (ev.target.closest('a')) return;
+  select(tr.dataset.t, { open: true });
+});
+document.getElementById('prevBtn').addEventListener('click', () => step(-1));
+document.getElementById('nextBtn').addEventListener('click', () => step(1));
+document.getElementById('closeBtn').addEventListener('click', closeOverlay);
+document.getElementById('convBtn').addEventListener('click', () => setConv(conv === 'US' ? 'KR' : 'US'));
+document.getElementById('helpBtn').addEventListener('click', () => showTab(2));
+document.getElementById('tab1').addEventListener('click', () => showTab(1));
+document.getElementById('tab2').addEventListener('click', () => showTab(2));
+document.getElementById('tab3').addEventListener('click', () => showTab(3));
+
+/* ---- 명령줄 ---- */
+const cmd = document.getElementById('cmd');
+function runCmd(raw) {
+  let c = raw.trim().toUpperCase().replace(/\s+/g, ' ');
+  if (!c) return;
+  const asc = / ASC$/.test(c); c = c.replace(/ (ASC|DESC)$/, '');
+  const rm = c.match(/^(?:RRG ([A-Z]+)|([A-Z]+) RRG)$/);
+  if (rm) {
+    const s = rm[1] || rm[2];
+    if (SECTORS.some(e => e.t === s)) { showTab(3); setRRGSector(s); return; }
+    const child = ETFS.find(e => e.t === s && e.parent);
+    if (child) { showTab(3); selT = child.t; setRRGSector(child.parent); msg(`RRG 2단 → ${child.parent} 대비 · ${child.t} 강조`, 'ok'); return; }
+    msg(`RRG 뒤에는 섹터 ETF 11개 중 하나를 적습니다 (예: RRG XLK)`, 'err'); return;
+  }
+  const tk = c.replace(/ US( EQUITY)?$/, '');
+  const e = ETFS.find(x => x.t === tk);
+  if (e) {
+    showTab(1);
+    if (state.cat !== 'all' && e.cat !== state.cat) setCat('all');
+    select(e.t, { open: true, scroll: true });
+    msg(`${e.t} US Equity · ${e.ko} → 구성종목 표시`, 'ok'); return;
+  }
+  const colIdx = CODES.indexOf(c);
+  if (colIdx >= 0) { showTab(1); sortCol(colIdx, asc ? 1 : -1); msg(`정렬 → ${CODES[colIdx]} 백분위 ${asc ? '낮은' : '높은'} 순`, 'ok'); return; }
+  const table = {
+    '1': () => showTab(1), 'MATRIX': () => showTab(1), 'MAIN': () => showTab(1),
+    '2': () => showTab(2), 'HELP': () => showTab(2), '98': () => showTab(2),
+    '3': () => showTab(3), 'RRG': () => showTab(3), '41': () => showTab(3), '42': () => showTab(1),
+    '11': () => setCat('all'), 'ALL': () => setCat('all'),
+    '12': () => setCat('sec'), 'SEC': () => setCat('sec'), 'SECT': () => setCat('sec'),
+    '13': () => setCat('ind'), 'IND': () => setCat('ind'), 'THM': () => setCat('ind'),
+    '21': () => setSort('col'), 'COL': () => setSort('col'),
+    '22': () => setSort('shift'), 'SHIFT': () => setSort('shift'),
+    '97': () => setConv(conv === 'US' ? 'KR' : 'US'), 'COLOR': () => setConv(conv === 'US' ? 'KR' : 'US'), 'CONV': () => setConv(conv === 'US' ? 'KR' : 'US'),
+    'US': () => setConv('US'), 'KR': () => setConv('KR'),
+  };
+  const labels = { '1': '매트릭스 화면', 'MATRIX': '매트릭스 화면', 'MAIN': '매트릭스 화면', '2': '도움말 화면', 'HELP': '도움말 화면', '98': '도움말 화면',
+    '3': 'RRG 1단·2단 화면', 'RRG': 'RRG 1단·2단 화면', '41': 'RRG 1단·2단 화면', '42': '매트릭스 화면',
+    '11': '필터 → 전체 23', 'ALL': '필터 → 전체 23', '12': '필터 → 섹터 11', 'SEC': '필터 → 섹터 11', 'SECT': '필터 → 섹터 11',
+    '13': '필터 → 산업·테마 12', 'IND': '필터 → 산업·테마 12', 'THM': '필터 → 산업·테마 12', '21': '정렬 → 열 기준', 'COL': '정렬 → 열 기준', '22': '정렬 → 전환순', 'SHIFT': '정렬 → 전환순' };
+  if (table[c]) { if (!/^(97|COLOR|CONV|US|KR|2|3|HELP|RRG|98|41|42)$/.test(c)) showTab(1); table[c](); if (labels[c]) msg(labels[c], 'ok'); return; }
+  msg(`알 수 없는 명령: ${c} · 2) 도움말의 명령줄 표를 참고하세요`, 'err');
+}
+cmd.addEventListener('keydown', ev => { if (ev.key === 'Enter') { runCmd(cmd.value); cmd.value = ''; } });
+document.getElementById('goBtn').addEventListener('click', () => { runCmd(cmd.value); cmd.value = ''; cmd.focus(); });
+
+/* ---- 키보드: 명령줄 밖에서 ←/→ 이전·다음, Esc 닫기, 글자 입력 시 명령줄로 이동 ---- */
+document.addEventListener('keydown', ev => {
+  const tag = (ev.target && ev.target.tagName || '').toLowerCase();
+  const typing = tag === 'input' || tag === 'textarea';
+  if (ev.key === 'Escape') { if (overlayOpen()) { closeOverlay(); ev.preventDefault(); } else if (typing) ev.target.blur(); return; }
+  if (typing) return;
+  if (ev.key === 'ArrowRight') { step(1); ev.preventDefault(); return; }
+  if (ev.key === 'ArrowLeft') { step(-1); ev.preventDefault(); return; }
+  if (ev.key.length === 1 && /[a-z0-9]/i.test(ev.key) && !ev.ctrlKey && !ev.metaKey && !ev.altKey) cmd.focus();
+});
+
+/* ---- 상태 표시줄 시계: KST와 뉴욕 시간, 정규장 개장 여부(휴장일 미반영) ---- */
+function tzParts(tz) {
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', weekday: 'short', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })
+    .formatToParts(new Date()).forEach(x => { p[x.type] = x.value; });
+  return p;
+}
+function tick() {
+  try {
+    const k = tzParts('Asia/Seoul'), n = tzParts('America/New_York');
+    const mins = (+n.hour) * 60 + (+n.minute);
+    const open = /^(Mon|Tue|Wed|Thu|Fri)$/.test(n.weekday) && mins >= 570 && mins < 960;
+    document.getElementById('clock').innerHTML =
+      `${k.year}-${k.month}-${k.day} ${k.hour}:${k.minute}:${k.second} KST · NY ${n.hour}:${n.minute}<span class="mk ${open ? 'open' : 'closed'}" title="뉴욕 정규장(09:30~16:00 ET) 기준, 휴장일은 반영하지 않습니다">NYSE ${open ? 'OPEN' : 'CLOSED'}</span>`;
+  } catch (e) { document.getElementById('clock').textContent = ''; }
+}
+
+/* ---- 시작 ---- */
+applyConv();
+if (current.length) select(current[0].t);
+if (location.hash === '#help') showTab(2);
+else if (location.hash === '#rrg') showTab(3);
+tick(); setInterval(tick, 1000);
+</script>

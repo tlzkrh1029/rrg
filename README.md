@@ -80,3 +80,40 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 - 구성종목은 stockanalysis.com의 ETF holdings 페이지(`https://stockanalysis.com/etf/smh/holdings/`)에서 첫 번째 표를 읽습니다. 이 사이트는 브라우저처럼 보이는 Accept 헤더가 없으면 403을 돌려주고, 자동 수집을 막을 수 있습니다. 한 ETF가 막히면 그 ETF만 건너뛰고 `holdings_failed`에 적으며 종료 코드는 2가 됩니다. 전부 막히면 운용사 공식 페이지의 CSV로 출처를 바꾸는 편이 낫습니다.
 - 구성종목의 `symbol`은 페이지에 적힌 그대로입니다. 해외 상장 종목은 `TSX: NXE`, `KRX: 005930`처럼 거래소가 붙고, DRAM처럼 스왑으로 노출을 얻는 ETF는 스왑 계약 식별자가 들어갑니다. 비중은 페이지 갱신 시점의 값이며 당일 종가 기준이 아닐 수 있습니다.
 - 결과 CSV는 2026-10-09 실행 스냅샷(기준 축 2024-10-10 ~ 2026-10-08)입니다. 매주 보드를 갱신하려면 스크립트를 다시 실행해야 합니다.
+
+## 자동 갱신 (GitHub Actions → GitHub Pages → 텔레그램)
+
+`.github/workflows/terminal.yml` 이 사람 손 없이 보드를 갱신합니다. 흐름은 수집 → 계산 → 페이지 생성 → 커밋 → 알림이며, 모든 단계가 표준 라이브러리만 씁니다.
+
+| 시각 (KST) | 하는 일 |
+|---|---|
+| 화~토 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(실패하면 그 저장소에 커밋된 목록을 씀), `fetch_prices.py` 로 가격·구성종목을 받고, `scripts/compute_terminal.py` → `scripts/build_terminal.py` 로 `docs/` 를 다시 만들어 커밋합니다. 직전 빌드와 비교해 변화가 있으면 텔레그램으로 조건 알림을 보냅니다. |
+| 월 07:40 | 수집 없이 직전 빌드의 주간 브리핑(`docs/data/brief.txt`)을 텔레그램으로 보냅니다. |
+
+Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `digest` 를 켜면 브리핑도 함께 보냅니다.
+
+### 한 번만 해 두는 설정
+
+1. **GitHub Pages**: 저장소 Settings → Pages → Build and deployment 에서 Source 를 `Deploy from a branch`, Branch 를 `main` / `/docs` 로 두고 저장합니다. 이후 `https://tlzkrh1029.github.io/rrg/` 가 최신 보드입니다.
+2. **텔레그램**: @BotFather 에게 `/newbot` 을 보내 봇을 만들고 토큰을 받습니다. 그 봇에게 아무 메시지나 보낸 뒤 `https://api.telegram.org/bot<토큰>/getUpdates` 를 열어 `"chat":{"id":…}` 의 숫자를 확인합니다. 저장소 Settings → Secrets and variables → Actions 에 `TELEGRAM_BOT_TOKEN` 과 `TELEGRAM_CHAT_ID` 를 추가합니다. 두 값이 없으면 알림 단계는 건너뛰고 나머지는 정상 동작합니다.
+
+### 파일
+
+| 파일 | 역할 |
+|---|---|
+| `scripts/compute_terminal.py` | `output/prices_wide.csv` 로 백분위·비율선·RRG(1단 섹터 ÷ SPY, 2단 산업·테마 ÷ 상위 섹터)·신호를 계산해 `output/terminal-data.json` 을 씁니다. 규칙은 파일 머리의 설명에 있습니다. |
+| `scripts/build_terminal.py` | 계산값, 최신 두 구성종목 스냅샷(변동 %p), 상장 목록, `data/etf_meta.json` 을 `template/terminal.html` 에 끼워 `docs/index.html`(Pages 용)과 `docs/terminal.artifact.html`(Claude 아티팩트 발행용)을 만듭니다. 직전 빌드(`docs/data/terminal-data.json`)와 비교해 `docs/data/alerts.json`·`alerts.txt` 와 주간 브리핑 `docs/data/brief.txt` 를 씁니다. |
+| `scripts/notify_telegram.py` | `brief.txt`(`--mode digest`) 또는 `alerts.txt`(`--mode alerts`, 비어 있으면 보내지 않음)를 텔레그램 봇 API 로 보냅니다. |
+| `template/terminal.html` | 터미널 화면 템플릿. `__HOLD__`, `__DATA__`, `__PRICE_ASOF__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. |
+| `data/etf_meta.json` | ETF 이름·순자산·보유 종목 수·출처 URL(2026-09-26 stockanalysis 기준). 순자산은 자동 갱신되지 않습니다. |
+| `output/holdings/2026-09-26.csv` | 변동 %p 의 첫 비교 기준이 되는 스냅샷(시안 v2 의 구성종목 데이터에서 복원). |
+
+### 알림 조건
+
+직전 빌드와 비교해 다음이 생기면 `alerts.txt` 에 적고 텔레그램으로 보냅니다. RRG 국면 변화(벤치마크 대비, 산업·테마는 SPY 대비도), 새로 켜진 신호(52주 상대 신고가, 비율선 50·200일선 돌파·이탈, 백분위 ±30 급변, 1주 반등 미확인), 전환순 상위 3 진입. 같은 종가로 다시 빌드하면 변화로 치지 않습니다.
+
+### 한계
+
+- GitHub 의 실행 서버는 미국에 있어 바이낸스 API 가 451 을 돌려줍니다. `tradfi-ticker-lists` 스크립트는 미러로 넘어가도록 되어 있지만, 미러까지 막히면 그 저장소에 마지막으로 커밋된 목록을 씁니다(상장 점이 그 날짜에 멈춥니다).
+- stockanalysis.com 이 자동 수집을 막으면 구성종목 스냅샷이 빠지고 `변동 %p` 가 마지막 성공 스냅샷 기준으로 남습니다.
+- DRAM 처럼 주봉이 39주 미만인 ETF 는 RRG 국면이 N/A 입니다. 시간이 지나면 자동으로 채워집니다.
