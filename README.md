@@ -87,8 +87,8 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 
 | 시각 (KST) | 하는 일 |
 |---|---|
-| 화~토 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `fetch_prices.py` 로 가격·구성종목을 받고, `scripts/compute_terminal.py` → `scripts/build_terminal.py` 로 `docs/` 를 다시 만들어 커밋합니다. 직전 빌드와 비교해 변화가 있으면 텔레그램으로 조건 알림을 보냅니다. |
-| 월 07:40 | 수집 없이 직전 빌드의 주간 브리핑(`docs/data/brief.txt`)을 텔레그램으로 보냅니다. |
+| 화~금 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `fetch_prices.py` 로 가격·구성종목을 받고, `scripts/compute_terminal.py` → `scripts/build_terminal.py` 로 `docs/` 를 다시 만들어 커밋합니다. 직전 빌드와 비교해 변화가 있으면 텔레그램으로 조건 알림을 보냅니다. |
+| 토 07:05 | 금요일 종가로 위와 같은 일을 한 뒤, 주간 브리핑(`docs/data/brief.txt`)을 텔레그램으로 보냅니다. |
 
 Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `digest` 를 켜면 브리핑도 함께 보냅니다.
 
