@@ -69,16 +69,16 @@ XLC,7,TMUS,"T-Mobile US, Inc.",4.43
 XLC,8,APP,AppLovin Corporation,4.32
 XLC,9,VZ,Verizon Communications Inc.,4.31
 XLC,10,NFLX,"Netflix, Inc.",4.29
-XLI,1,CAT,Caterpillar Inc.,7.0
-XLI,2,GE,GE Aerospace,5.9
+XLI,1,CAT,Caterpillar Inc.,6.83
+XLI,2,GE,GE Aerospace,5.92
 XLI,3,GEV,GE Vernova Inc.,4.97
-XLI,4,RTX,RTX Corporation,4.55
-XLI,5,ETN,Eaton Corporation plc,3.14
-XLI,6,DE,Deere & Company,3.09
-XLI,7,UNP,Union Pacific Corporation,3.06
-XLI,8,BA,The Boeing Company,2.79
-XLI,9,UBER,"Uber Technologies, Inc.",2.62
-XLI,10,PH,Parker-Hannifin Corporation,2.25
+XLI,4,RTX,RTX Corporation,4.64
+XLI,5,UNP,Union Pacific Corporation,3.08
+XLI,6,ETN,Eaton Corporation plc,3.08
+XLI,7,DE,Deere & Company,3.06
+XLI,8,BA,The Boeing Company,2.77
+XLI,9,UBER,"Uber Technologies, Inc.",2.68
+XLI,10,PH,Parker-Hannifin Corporation,2.23
 XLP,1,WMT,Walmart Inc.,10.67
 XLP,2,COST,Costco Wholesale Corporation,9.25
 XLP,3,PG,The Procter & Gamble Company,7.6
@@ -169,16 +169,16 @@ GNOM,7,HKG: 1548,Genscript Biotech Corporation,4.67
 GNOM,8,TECH,Bio-Techne Corporation,3.57
 GNOM,9,VRTX,Vertex Pharmaceuticals Incorporated,3.33
 GNOM,10,QGEN,Qiagen N.V.,3.23
-ARKG,1,TXG,"10x Genomics, Inc.",8.97
-ARKG,2,TWST,Twist Bioscience Corporation,8.65
-ARKG,3,TEM,"Tempus AI, Inc.",8.33
-ARKG,4,CRSP,CRISPR Therapeutics AG,5.38
-ARKG,5,ILMN,"Illumina, Inc.",4.77
-ARKG,6,GH,"Guardant Health, Inc.",4.73
+ARKG,1,TXG,"10x Genomics, Inc.",9.23
+ARKG,2,TWST,Twist Bioscience Corporation,8.55
+ARKG,3,TEM,"Tempus AI, Inc.",8.3
+ARKG,4,CRSP,CRISPR Therapeutics AG,5.25
+ARKG,5,ILMN,"Illumina, Inc.",4.78
+ARKG,6,GH,"Guardant Health, Inc.",4.71
 ARKG,7,NTRA,"Natera, Inc.",4.71
-ARKG,8,ABSI,Absci Corporation,4.7
-ARKG,9,CDNA,"CareDx, Inc.",4.3
-ARKG,10,PSNL,"Personalis, Inc.",4.1
+ARKG,8,ABSI,Absci Corporation,4.62
+ARKG,9,CDNA,"CareDx, Inc.",4.14
+ARKG,10,PSNL,"Personalis, Inc.",4.01
 KRE,1,EWBC,"East West Bancorp, Inc.",1.15
 KRE,2,UBSI,"United Bankshares, Inc.",1.14
 KRE,3,ONB,Old National Bancorp,1.14

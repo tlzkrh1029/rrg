@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T12:03:53Z",
+  "generated_at": "2026-10-09T13:47:21Z",
   "source_order": [
     "stooq",
     "yahoo"
@@ -11,7 +11,7 @@
       "attempts": {
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -24,9 +24,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "URLError(ConnectionResetError(104, 'Connection reset by peer'))"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -41,7 +41,7 @@
       "attempts": {
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -56,7 +56,7 @@
       "attempts": {
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -69,9 +69,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "URLError(ConnectionResetError(104, 'Connection reset by peer'))"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -84,9 +84,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -99,9 +99,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -114,9 +114,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -129,9 +129,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -144,9 +144,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -159,9 +159,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -174,9 +174,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -189,9 +189,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -204,9 +204,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -219,9 +219,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -234,9 +234,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -249,9 +249,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -264,9 +264,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -279,9 +279,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -294,9 +294,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -309,9 +309,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -324,9 +324,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -339,9 +339,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -354,9 +354,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2024-10-10",
       "last_date": "2026-10-08",
       "gap_days": 0,
@@ -369,9 +369,9 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
-      "partial_bar_dropped": null,
+      "partial_bar_dropped": "2026-10-09",
       "first_date": "2026-04-02",
       "last_date": "2026-10-08",
       "gap_days": 0,
