@@ -28,27 +28,42 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
+      # 상장 목록: tradfi-ticker-lists 는 비공개 저장소라 LISTS_TOKEN(읽기 권한 PAT) 이 있을 때만 받는다.
+      # 받지 못하거나 스크립트가 실패하면 이 저장소에 보관한 사본(data/lists)을 쓴다. 어느 경우에도 이 단계는 실패하지 않는다.
       - name: 상장 목록 (tradfi-ticker-lists)
         if: env.DIGEST_ONLY != 'true'
+        env:
+          LISTS_TOKEN: ${{ secrets.LISTS_TOKEN }}
         run: |
-          git clone --depth 1 https://github.com/tlzkrh1029/tradfi-ticker-lists /tmp/lists
           set +e
-          (cd /tmp/lists && python fetch_tradfi_tickers.py --out /tmp/lists/fresh)
-          rc=$?
-          set -e
-          if [ "$rc" = "0" ] || [ "$rc" = "2" ]; then
-            echo "LISTS_DIR=/tmp/lists/fresh" >> "$GITHUB_ENV"
-            echo "fresh lists (exit $rc)"
+          LISTS_DIR="data/lists"
+          if [ -n "$LISTS_TOKEN" ]; then
+            git clone --depth 1 "https://x-access-token:${LISTS_TOKEN}@github.com/tlzkrh1029/tradfi-ticker-lists" /tmp/lists
           else
-            echo "LISTS_DIR=/tmp/lists/output" >> "$GITHUB_ENV"
-            echo "::warning::list fetch failed (exit $rc); using the lists committed in tradfi-ticker-lists"
+            git clone --depth 1 https://github.com/tlzkrh1029/tradfi-ticker-lists /tmp/lists
           fi
+          if [ -d /tmp/lists ]; then
+            (cd /tmp/lists && python fetch_tradfi_tickers.py --out /tmp/lists/fresh)
+            rc=$?
+            if [ "$rc" = "0" ] || [ "$rc" = "2" ]; then
+              echo "fresh lists (exit $rc)"
+              cp /tmp/lists/fresh/binance_spot_bstocks.csv /tmp/lists/fresh/binance_futures_tradfi.csv /tmp/lists/fresh/hyperliquid_hip3_stocks.csv /tmp/lists/fresh/summary.json data/lists/
+            elif [ -f /tmp/lists/output/summary.json ]; then
+              echo "::warning::list fetch failed (exit $rc); using the lists committed in tradfi-ticker-lists"
+              cp /tmp/lists/output/binance_spot_bstocks.csv /tmp/lists/output/binance_futures_tradfi.csv /tmp/lists/output/hyperliquid_hip3_stocks.csv /tmp/lists/output/summary.json data/lists/
+            fi
+          else
+            echo "::warning::tradfi-ticker-lists could not be cloned (private repo without LISTS_TOKEN?); using data/lists kept in this repo"
+          fi
+          echo "LISTS_DIR=$LISTS_DIR" >> "$GITHUB_ENV"
+          python -c "import json;print('lists as of', json.load(open('data/lists/summary.json'))['generated_at'])"
+          exit 0
 
       - name: 가격·구성종목 수집
         if: env.DIGEST_ONLY != 'true'
@@ -71,7 +86,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output docs
+          git add output docs data/lists
           if git diff --cached --quiet; then
             echo "no changes"
           else
