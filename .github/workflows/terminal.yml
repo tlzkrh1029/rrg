@@ -1,0 +1,94 @@
+name: terminal
+
+# 화~토 08:10 KST (월~금 23:10 UTC): 가격·구성종목·상장 목록 수집 → 계산 → docs/ 생성 → 커밋 → 변화가 있으면 텔레그램 조건 알림
+# 월 07:40 KST (일 22:40 UTC): 수집 없이 직전 빌드의 주간 브리핑을 텔레그램으로 전송
+on:
+  schedule:
+    - cron: "10 23 * * 1-5"
+    - cron: "40 22 * * 0"
+  workflow_dispatch:
+    inputs:
+      digest:
+        description: "주간 브리핑도 함께 보낸다"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: terminal
+  cancel-in-progress: false
+
+env:
+  DIGEST_ONLY: ${{ github.event.schedule == '40 22 * * 0' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 상장 목록 (tradfi-ticker-lists)
+        if: env.DIGEST_ONLY != 'true'
+        run: |
+          git clone --depth 1 https://github.com/tlzkrh1029/tradfi-ticker-lists /tmp/lists
+          set +e
+          (cd /tmp/lists && python fetch_tradfi_tickers.py --out /tmp/lists/fresh)
+          rc=$?
+          set -e
+          if [ "$rc" = "0" ] || [ "$rc" = "2" ]; then
+            echo "LISTS_DIR=/tmp/lists/fresh" >> "$GITHUB_ENV"
+            echo "fresh lists (exit $rc)"
+          else
+            echo "LISTS_DIR=/tmp/lists/output" >> "$GITHUB_ENV"
+            echo "::warning::list fetch failed (exit $rc); using the lists committed in tradfi-ticker-lists"
+          fi
+
+      - name: 가격·구성종목 수집
+        if: env.DIGEST_ONLY != 'true'
+        run: |
+          set +e
+          python fetch_prices.py
+          rc=$?
+          set -e
+          if [ "$rc" = "1" ]; then echo "::error::price fetch failed"; exit 1; fi
+          if [ "$rc" = "2" ]; then echo "::warning::some holdings pages failed; see output/prices_summary.json"; fi
+
+      - name: 계산·페이지 생성
+        if: env.DIGEST_ONLY != 'true'
+        run: |
+          python scripts/compute_terminal.py
+          python scripts/build_terminal.py --lists "$LISTS_DIR"
+
+      - name: 커밋·푸시
+        if: env.DIGEST_ONLY != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output docs
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "terminal $(python -c 'import json;print(json.load(open("output/terminal-data.json"))["asof"])')"
+            git push
+          fi
+
+      - name: 텔레그램 조건 알림
+        if: env.DIGEST_ONLY != 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notify_telegram.py --mode alerts
+
+      - name: 텔레그램 주간 브리핑
+        if: env.DIGEST_ONLY == 'true' || inputs.digest == true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notify_telegram.py --mode digest

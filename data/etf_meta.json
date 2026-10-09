@@ -1,0 +1,163 @@
+{
+ "XLK": {
+  "name": "Technology Select Sector SPDR ETF",
+  "aum": "$126.50B",
+  "aum_asof": "2026-09-26",
+  "n": "77",
+  "url": "https://stockanalysis.com/etf/xlk/"
+ },
+ "XLF": {
+  "name": "Financial Select Sector SPDR ETF",
+  "aum": "$51.55B",
+  "aum_asof": "2026-09-26",
+  "n": "80",
+  "url": "https://stockanalysis.com/etf/xlf/"
+ },
+ "XLV": {
+  "name": "Health Care Select Sector SPDR ETF",
+  "aum": "$42.81B",
+  "aum_asof": "2026-09-26",
+  "n": "64",
+  "url": "https://stockanalysis.com/etf/xlv/"
+ },
+ "XLY": {
+  "name": "Consumer Discretionary Select Sector SPDR ETF",
+  "aum": "$22.00B",
+  "aum_asof": "2026-09-26",
+  "n": "50",
+  "url": "https://stockanalysis.com/etf/xly/"
+ },
+ "XLC": {
+  "name": "Communication Services Select Sector SPDR ETF",
+  "aum": "$23.28B",
+  "aum_asof": "2026-09-26",
+  "n": "26",
+  "url": "https://stockanalysis.com/etf/xlc/"
+ },
+ "XLI": {
+  "name": "Industrial Select Sector SPDR ETF",
+  "aum": "$30.42B",
+  "aum_asof": "2026-09-26",
+  "n": "86",
+  "url": "https://stockanalysis.com/etf/xli/"
+ },
+ "XLP": {
+  "name": "Consumer Staples Select Sector SPDR ETF",
+  "aum": "$13.64B",
+  "aum_asof": "2026-09-26",
+  "n": "37",
+  "url": "https://stockanalysis.com/etf/xlp/"
+ },
+ "XLE": {
+  "name": "Energy Select Sector SPDR ETF",
+  "aum": "$40.02B",
+  "aum_asof": "2026-09-26",
+  "n": "24",
+  "url": "https://stockanalysis.com/etf/xle/"
+ },
+ "XLU": {
+  "name": "Utilities Select Sector SPDR ETF",
+  "aum": "$20.95B",
+  "aum_asof": "2026-09-26",
+  "n": "34",
+  "url": "https://stockanalysis.com/etf/xlu/"
+ },
+ "XLB": {
+  "name": "Materials Select Sector SPDR ETF",
+  "aum": "$8.02B",
+  "aum_asof": "2026-09-26",
+  "n": "28",
+  "url": "https://stockanalysis.com/etf/xlb/"
+ },
+ "XLRE": {
+  "name": "Real Estate Select Sector SPDR ETF",
+  "aum": "$7.78B",
+  "aum_asof": "2026-09-26",
+  "n": "33",
+  "url": "https://stockanalysis.com/etf/xlre/"
+ },
+ "SMH": {
+  "name": "VanEck Semiconductor ETF",
+  "aum": "$72.81B",
+  "aum_asof": "2026-09-26",
+  "n": "26",
+  "url": "https://stockanalysis.com/etf/smh/"
+ },
+ "IGV": {
+  "name": "iShares Expanded Tech-Software Sector ETF",
+  "aum": "$13.83B",
+  "aum_asof": "2026-09-26",
+  "n": "111",
+  "url": "https://stockanalysis.com/etf/igv/"
+ },
+ "XBI": {
+  "name": "SPDR S&P Biotech ETF",
+  "aum": "$10.44B",
+  "aum_asof": "2026-09-26",
+  "n": "167",
+  "url": "https://stockanalysis.com/etf/xbi/"
+ },
+ "GNOM": {
+  "name": "Global X Genomics & Biotechnology ETF",
+  "aum": "$105.46M",
+  "aum_asof": "2026-09-26",
+  "n": "52",
+  "url": "https://stockanalysis.com/etf/gnom/"
+ },
+ "ARKG": {
+  "name": "ARK Genomic Revolution ETF",
+  "aum": "$2.22B",
+  "aum_asof": "2026-09-26",
+  "n": "33",
+  "url": "https://stockanalysis.com/etf/arkg/"
+ },
+ "KRE": {
+  "name": "SPDR S&P Regional Banking ETF",
+  "aum": "$3.82B",
+  "aum_asof": "2026-09-26",
+  "n": "169",
+  "url": "https://stockanalysis.com/etf/kre/"
+ },
+ "XHB": {
+  "name": "SPDR S&P Homebuilders ETF",
+  "aum": "$1.57B",
+  "aum_asof": "2026-09-26",
+  "n": "37",
+  "url": "https://stockanalysis.com/etf/xhb/"
+ },
+ "XME": {
+  "name": "SPDR S&P Metals & Mining ETF",
+  "aum": "$4.51B",
+  "aum_asof": "2026-09-26",
+  "n": "40",
+  "url": "https://stockanalysis.com/etf/xme/"
+ },
+ "URA": {
+  "name": "Global X Uranium ETF",
+  "aum": "$6.11B",
+  "aum_asof": "2026-09-26",
+  "n": "62",
+  "url": "https://stockanalysis.com/etf/ura/"
+ },
+ "ITA": {
+  "name": "iShares U.S. Aerospace & Defense ETF",
+  "aum": "$12.66B",
+  "aum_asof": "2026-09-26",
+  "n": "54",
+  "url": "https://stockanalysis.com/etf/ita/"
+ },
+ "PAVE": {
+  "name": "Global X U.S. Infrastructure Development ETF",
+  "aum": "$13.35B",
+  "aum_asof": "2026-09-26",
+  "n": "102",
+  "url": "https://stockanalysis.com/etf/pave/"
+ },
+ "DRAM": {
+  "name": "Roundhill Memory ETF",
+  "aum": "$26.40B",
+  "aum_asof": "2026-09-26",
+  "n": "24",
+  "url": "https://stockanalysis.com/etf/dram/"
+ }
+}
