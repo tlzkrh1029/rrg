@@ -1,0 +1,419 @@
+{
+  "generated_at": "2026-10-09T12:03:53Z",
+  "source_order": [
+    "stooq",
+    "yahoo"
+  ],
+  "tickers": {
+    "SPY": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "QQQ": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "URLError(ConnectionResetError(104, 'Connection reset by peer'))"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XLK": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XLF": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XLV": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "URLError(ConnectionResetError(104, 'Connection reset by peer'))"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XLY": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XLC": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XLI": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XLP": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XLE": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XLU": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XLB": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XLRE": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "SMH": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "IGV": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XBI": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "GNOM": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "ARKG": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "KRE": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XHB": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "XME": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "URA": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "ITA": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "PAVE": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2024-10-10",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 500,
+      "missing_days": 0,
+      "off_axis_dates": [],
+      "rows_before_axis": 754
+    },
+    "DRAM": {
+      "source": "yahoo",
+      "adj_close_available": true,
+      "attempts": {
+        "stooq": "skipped: unreachable for the previous tickers"
+      },
+      "partial_bar_dropped": null,
+      "first_date": "2026-04-02",
+      "last_date": "2026-10-08",
+      "gap_days": 0,
+      "rows": 131,
+      "missing_days": 369,
+      "off_axis_dates": [],
+      "rows_before_axis": 0
+    }
+  },
+  "base_axis": {
+    "ticker": "SPY",
+    "first_date": "2024-10-10",
+    "last_date": "2026-10-08",
+    "days": 500
+  },
+  "failed_tickers": [],
+  "parent_sector": {
+    "SMH": "XLK",
+    "IGV": "XLK",
+    "DRAM": "XLK",
+    "XBI": "XLV",
+    "GNOM": "XLV",
+    "ARKG": "XLV",
+    "KRE": "XLF",
+    "XHB": "XLY",
+    "XME": "XLB",
+    "ITA": "XLI",
+    "PAVE": "XLI",
+    "URA": "XLE"
+  },
+  "holdings": {
+    "file": "holdings/2026-10-09.csv",
+    "source": "stockanalysis.com",
+    "etfs": 25,
+    "rows": 250
+  },
+  "holdings_failed": {},
+  "checks": {
+    "wide_rows_equal_base_axis_days": true,
+    "core_missing_days_over_limit": {},
+    "last_date_differs_from_base": {},
+    "tickers_without_adj_close": []
+  },
+  "warnings": []
+}
