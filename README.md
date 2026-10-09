@@ -87,7 +87,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 
 | 시각 (KST) | 하는 일 |
 |---|---|
-| 화~토 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(실패하면 그 저장소에 커밋된 목록을 씀), `fetch_prices.py` 로 가격·구성종목을 받고, `scripts/compute_terminal.py` → `scripts/build_terminal.py` 로 `docs/` 를 다시 만들어 커밋합니다. 직전 빌드와 비교해 변화가 있으면 텔레그램으로 조건 알림을 보냅니다. |
+| 화~토 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `fetch_prices.py` 로 가격·구성종목을 받고, `scripts/compute_terminal.py` → `scripts/build_terminal.py` 로 `docs/` 를 다시 만들어 커밋합니다. 직전 빌드와 비교해 변화가 있으면 텔레그램으로 조건 알림을 보냅니다. |
 | 월 07:40 | 수집 없이 직전 빌드의 주간 브리핑(`docs/data/brief.txt`)을 텔레그램으로 보냅니다. |
 
 Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `digest` 를 켜면 브리핑도 함께 보냅니다.
@@ -95,7 +95,8 @@ Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `dige
 ### 한 번만 해 두는 설정
 
 1. **GitHub Pages**: 저장소 Settings → Pages → Build and deployment 에서 Source 를 `Deploy from a branch`, Branch 를 `main` / `/docs` 로 두고 저장합니다. 이후 `https://tlzkrh1029.github.io/rrg/` 가 최신 보드입니다.
-2. **텔레그램**: @BotFather 에게 `/newbot` 을 보내 봇을 만들고 토큰을 받습니다. 그 봇에게 아무 메시지나 보낸 뒤 `https://api.telegram.org/bot<토큰>/getUpdates` 를 열어 `"chat":{"id":…}` 의 숫자를 확인합니다. 저장소 Settings → Secrets and variables → Actions 에 `TELEGRAM_BOT_TOKEN` 과 `TELEGRAM_CHAT_ID` 를 추가합니다. 두 값이 없으면 알림 단계는 건너뛰고 나머지는 정상 동작합니다.
+2. **상장 목록(선택)**: `tradfi-ticker-lists` 는 비공개 저장소라 Actions 가 그냥은 받지 못합니다. 이 저장소의 `data/lists/` 에 사본(2026-09-27)을 두었으므로 그대로 두어도 동작하지만, 상장 점을 매주 새로 받으려면 둘 중 하나를 합니다. (a) `tradfi-ticker-lists` 를 공개로 전환, (b) GitHub Settings → Developer settings → Personal access tokens → Fine-grained 에서 `tradfi-ticker-lists` 의 Contents 읽기 권한만 가진 토큰을 만들어 이 저장소 Secrets 에 `LISTS_TOKEN` 으로 추가. 새 목록을 받으면 `data/lists/` 도 함께 갱신·커밋됩니다.
+3. **텔레그램**: @BotFather 에게 `/newbot` 을 보내 봇을 만들고 토큰을 받습니다. 그 봇에게 아무 메시지나 보낸 뒤 `https://api.telegram.org/bot<토큰>/getUpdates` 를 열어 `"chat":{"id":…}` 의 숫자를 확인합니다. 저장소 Settings → Secrets and variables → Actions 에 `TELEGRAM_BOT_TOKEN` 과 `TELEGRAM_CHAT_ID` 를 추가합니다. 두 값이 없으면 알림 단계는 건너뛰고 나머지는 정상 동작합니다.
 
 ### 파일
 
@@ -114,6 +115,6 @@ Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `dige
 
 ### 한계
 
-- GitHub 의 실행 서버는 미국에 있어 바이낸스 API 가 451 을 돌려줍니다. `tradfi-ticker-lists` 스크립트는 미러로 넘어가도록 되어 있지만, 미러까지 막히면 그 저장소에 마지막으로 커밋된 목록을 씁니다(상장 점이 그 날짜에 멈춥니다).
+- GitHub 의 실행 서버는 미국에 있어 바이낸스 API 가 451 을 돌려줍니다. `tradfi-ticker-lists` 스크립트는 미러로 넘어가도록 되어 있지만, 미러까지 막히거나 저장소를 받지 못하면 `data/lists/` 의 마지막 사본을 씁니다(상장 점이 그 날짜에 멈춥니다).
 - stockanalysis.com 이 자동 수집을 막으면 구성종목 스냅샷이 빠지고 `변동 %p` 가 마지막 성공 스냅샷 기준으로 남습니다.
 - DRAM 처럼 주봉이 39주 미만인 ETF 는 RRG 국면이 N/A 입니다. 시간이 지나면 자동으로 채워집니다.
