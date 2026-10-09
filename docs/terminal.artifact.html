@@ -231,6 +231,20 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .klegend .sw{display:inline-block;width:10px;height:10px;vertical-align:-1px;margin-right:5px}
 .klegend .lab{color:var(--amber);font-weight:700;letter-spacing:.08em;font-size:10.5px;margin-right:6px}
 
+/* 변화 패널 */
+.chg .cbody{padding:8px 10px 10px;display:grid;gap:6px}
+.chg .cl{display:flex;gap:8px;align-items:flex-start;font-size:11.5px;line-height:1.45;color:var(--ink-2);width:100%;text-align:left;padding:3px 4px;border:1px solid transparent}
+.chg .cl:hover{background:var(--hover);color:#fff;border-color:var(--line)}
+.chg .cl b{color:#fff;font-weight:700;white-space:nowrap}
+.chg .cl i{font-style:normal;flex:none;width:14px;text-align:center;color:var(--amber);font-weight:700}
+.chg .cl.rrg i{color:var(--impr)} .chg .cl.signal i{color:var(--amber)} .chg .cl.shift i{color:var(--lead)}
+.chg .none{font-size:11.5px;color:var(--muted);line-height:1.5;padding:2px 4px}
+/* 브리핑 탭 */
+.brief{padding-block:10px 4px;display:grid;gap:10px}
+.brief .pb{padding:10px 12px 12px}
+.brief pre{margin:0;font:12.5px/1.65 var(--mono);color:var(--ink);white-space:pre-wrap;word-break:keep-all;max-width:90ch}
+.brief .meta{font-size:11.5px;color:var(--muted);margin:0 0 8px;line-height:1.5}
+.brief .meta b{color:var(--ink-2)}
 /* 도움말 화면 */
 .help{padding-block:10px 4px;display:grid;gap:10px}
 .help .panel .pb{padding:10px 12px 12px}
@@ -297,6 +311,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
   <div class="tabs" role="tablist" aria-label="화면">
     <button type="button" role="tab" id="tab1" aria-selected="true" aria-controls="pane1"><b>1)</b> 매트릭스</button>
     <button type="button" role="tab" id="tab3" aria-selected="false" aria-controls="pane3"><b>3)</b> RRG 1단·2단</button>
+    <button type="button" role="tab" id="tab4" aria-selected="false" aria-controls="pane4"><b>4)</b> 주간 브리핑</button>
     <button type="button" role="tab" id="tab2" aria-selected="false" aria-controls="pane2"><b>2)</b> 도움말</button>
     <span class="tabinfo">관찰 대상 23 ETF · SPY 대비 상대수익률 백분위 · 종가 2026-10-08 · 구성종목 2026-10-09</span>
   </div>
@@ -359,6 +374,11 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
           <div class="hbody" id="hbody" aria-live="polite"></div>
         </section>
 
+        <section class="panel chg" aria-labelledby="chgTitle">
+          <header class="ph"><span class="pt" id="chgTitle">Changes<small id="chgSub"></small></span></header>
+          <div class="cbody" id="chgBody"></div>
+        </section>
+
         <section class="panel key" aria-label="읽는 법 범례">
           <header class="ph"><span class="pt">Key<small>행 형태 읽는 법</small></span></header>
           <div class="kbody">
@@ -376,6 +396,55 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
         </section>
       </aside>
     </div>
+  </div>
+
+  <div class="pane brief" id="pane4" role="tabpanel" aria-labelledby="tab4" hidden>
+    <section class="panel">
+      <header class="ph"><span class="pt">Weekly Brief<small>텔레그램으로 보낸 주간 브리핑과 같은 본문</small></span></header>
+      <div class="pb">
+        <p class="meta">GitHub Actions가 토요일 07:05 KST에 금요일 종가로 계산해 생성한 본문입니다. 텔레그램 봇과 Claude 푸시 알림으로 같은 내용이 전달되고, 이 아티팩트는 토요일 07:52 KST에 같은 데이터로 다시 발행됩니다. 빌드 시각 <b>2026-10-09 23:12 KST</b>.</p>
+        <pre id="briefText">📊 섹터 전환 터미널 · 2026-10-08 종가 기준
+
+전환순 상위 3 (1W·1M 평균 − 12M 백분위)
+  IGV 소프트웨어: +65  [68/100/91/86/19]
+  XLY 경기소비재: +58  [86/59/45/45/14]
+  XLU 유틸리티: +56  [91/41/18/5/10]
+
+1단 RRG (섹터 ÷ SPY)
+  Leading: XLV XLE
+  Improving: XLC XLP
+  Weakening: XLK XLF
+  Lagging: XLY XLI XLU XLB XLRE
+
+2단 RRG (하위 ETF ÷ 상위 섹터)
+  XLK: SMH Lagging · IGV Leading · DRAM N/A
+  XLF: KRE Lagging
+  XLV: XBI Weakening · GNOM Leading · ARKG Leading
+  XLY: XHB Lagging
+  XLI: ITA Lagging · PAVE Lagging
+  XLE: URA Improving
+  XLB: XME Improving
+
+신호
+  ≈ XLF: 1주 반등, 1개월 이상에서는 미확인
+  ↗ XLV: SPY 비율 200일선 상향 돌파
+  ↑ XLC: 백분위 36점 상승 (6개월 → 1개월)
+  ↑ XLU: 백분위 36점 상승 (6개월 → 1개월)
+  ≈ XLB: 1주 반등, 1개월 이상에서는 미확인
+  ↘ XBI: SPY 비율 200일선 하향 이탈
+  ↓ XBI: 백분위 46점 하락 (6개월 → 1개월)
+  ↑ XHB: 백분위 31점 상승 (6개월 → 1개월)
+  ↘ DRAM: SPY 비율 50일선 하향 이탈
+  ↓ DRAM: 백분위 86점 하락 (6개월 → 1개월)
+
+직전 빌드(없음) 대비 변화
+  없음
+
+구성종목 상위 10 변화: XLK(+1/−1), XLF(+1/−1), XLC(+1/−1), SMH(+2/−2), IGV(+1/−1), XBI(+2/−2), GNOM(+1/−1), KRE(+2/−2), XHB(+5/−5), XME(+1/−1), URA(+1/−1), PAVE(+1/−1), DRAM(+1/−1)
+
+https://tlzkrh1029.github.io/rrg/</pre>
+      </div>
+    </section>
   </div>
 
   <div class="pane rrg" id="pane3" role="tabpanel" aria-labelledby="tab3" hidden>
@@ -458,7 +527,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
               <tr><td>21 COL · 22 SHIFT</td><td>열 기준 정렬과 전환순 정렬 사이를 바꿉니다.</td></tr>
               <tr><td>1W · 1M · 3M · 6M · 12M</td><td>그 기간 열의 백분위가 높은 순으로 정렬합니다. 뒤에 ASC를 붙이면 낮은 순입니다(예: 3M ASC).</td></tr>
               <tr><td>97 COLOR · US · KR</td><td>색 규약을 바꾸거나 지정합니다.</td></tr>
-              <tr><td>1 MATRIX · 2 HELP · 3 RRG</td><td>매트릭스, 도움말, RRG 1단·2단 화면을 오갑니다.</td></tr>
+              <tr><td>1 MATRIX · 2 HELP · 3 RRG · 4 BRIEF</td><td>매트릭스, 도움말, RRG 1단·2단, 주간 브리핑 화면을 오갑니다.</td></tr>
               <tr><td>RRG XLK · XLK RRG</td><td>3) 탭을 열고 2단 그래프를 그 섹터 대비로 바꿉니다. 섹터 ETF 11개만 받습니다.</td></tr>
             </tbody>
           </table>
@@ -474,7 +543,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
   </div>
 
   <footer class="status">
-    <span><b>SRM</b> 섹터 전환 터미널 · 종가 2026-10-08(야후 파이낸스, 500거래일) · 구성종목 2026-10-09 · 상장 목록 2026-09-27 · 신호 규칙: 52주 상대 신고가, 비율선 50·200일선 돌파(최근 5일), 백분위 ±30 급변</span>
+    <span><b>SRM</b> 섹터 전환 터미널 · 종가 2026-10-08(야후 파이낸스, 500거래일) · 구성종목 2026-10-09 · 상장 목록 2026-09-27 · 빌드 2026-10-09 23:12 KST · 신호 규칙: 52주 상대 신고가, 비율선 50·200일선 돌파(최근 5일), 백분위 ±30 급변</span>
     <span><span class="hint">←/→ 이전·다음 ETF · ESC 닫기</span><span class="clk" id="clock"></span></span>
   </footer>
 </div>
@@ -544,6 +613,8 @@ ETFS.forEach(e => {
 /* ---- 거래소 상장(수집 2026-09-27 12:34:14 UTC): b = 바이낸스 bStocks 현물, p = 바이낸스 TradFi perp, h = 하이퍼리퀴드 HIP-3 perp. 표에 없는 티커는 세 목록 어디에도 없다는 뜻.
    출처: github.com/tlzkrh1029/tradfi-ticker-lists (bStocks 80종, 바이낸스 TradFi 선물 188계약, 하이퍼리퀴드 HIP-3 주식 121종)를 23개 ETF와 상위 10개 구성종목에 대조한 결과 ---- */
 const LIST_ASOF = '2026-09-27';
+/* 직전 빌드 대비 변화 (build_terminal.py 가 채움): {asof, prev_asof, alerts:[{etf,type,text}]} */
+const ALERTS = {"asof":"2026-10-08","prev_asof":null,"alerts":[]};
 const ELST = {"XLE":"ph","SMH":"bph","IGV":"h","XBI":"ph","DRAM":"bph"};
 ETFS.forEach(e => { e.lst = ELST[e.t] || ''; });
 const LST = {"NVDA":"bph","AAPL":"bph","MSFT":"bph","AMD":"bph","AVGO":"bph","MU":"bph","INTC":"bph","CSCO":"p","PLTR":"bph","AMAT":"bph","BRK.B":"p","JPM":"p","V":"p","GS":"bp","LLY":"ph","MRK":"p","AMZN":"bph","TSLA":"bph","HD":"p","META":"bph","GOOGL":"bph","DIS":"p","TTWO":"ph","APP":"p","NFLX":"bph","CAT":"p","GEV":"ph","UBER":"p","WMT":"p","COST":"ph","KO":"p","CVX":"h","VST":"ph","TSM":"bph","MRVL":"bph","TXN":"p","KLAC":"p","ASML":"bph","PANW":"p","CRWD":"bph","ORCL":"bph","NOW":"ph","CRM":"bp","MRNA":"bph","TEM":"p","005930":"ph","000660":"ph","SNDK":"bph"};
@@ -649,7 +720,7 @@ function render() {
 }
 
 /* ---- 구성종목 패널 ---- */
-const overlayMode = () => window.matchMedia('(max-width:1279px)').matches;
+const overlayMode = () => !!(window.matchMedia && window.matchMedia('(max-width:1279px)').matches);
 const holdPanel = document.getElementById('holdPanel');
 const overlayOpen = () => holdPanel.classList.contains('open');
 function updatePos() {
@@ -736,7 +807,7 @@ function msg(text, cls) {
 let curTab = 1;
 function showTab(n) {
   curTab = n;
-  [1, 2, 3].forEach(k => {
+  [1, 2, 3, 4].forEach(k => {
     document.getElementById('pane' + k).hidden = k !== n;
     document.getElementById('tab' + k).setAttribute('aria-selected', k === n);
   });
@@ -859,6 +930,28 @@ document.getElementById('helpBtn').addEventListener('click', () => showTab(2));
 document.getElementById('tab1').addEventListener('click', () => showTab(1));
 document.getElementById('tab2').addEventListener('click', () => showTab(2));
 document.getElementById('tab3').addEventListener('click', () => showTab(3));
+document.getElementById('tab4').addEventListener('click', () => showTab(4));
+
+/* ---- 변화 패널: 직전 빌드 대비 RRG 국면 변화, 새 신호, 전환순 상위 3 진입 ---- */
+function renderChanges() {
+  const sub = document.getElementById('chgSub'), body = document.getElementById('chgBody');
+  const a = ALERTS || { alerts: [] };
+  if (!a.prev_asof) {
+    sub.textContent = '직전 빌드 대비';
+    body.innerHTML = '<p class="none">첫 빌드라 비교 대상이 없습니다. 다음 빌드부터 직전 빌드 대비 RRG 국면 변화, 새로 켜진 신호, 전환순 상위 3 진입을 여기에 적습니다.</p>';
+    return;
+  }
+  sub.textContent = `${a.prev_asof} → ${a.asof} · ${a.alerts.length}건`;
+  if (!a.alerts.length) { body.innerHTML = '<p class="none">직전 빌드와 견주어 국면 변화, 새 신호, 전환순 상위 3 진입이 없습니다.</p>'; return; }
+  const icon = { rrg: '↻', signal: '!', shift: '▲' };
+  body.innerHTML = a.alerts.map(x => {
+    const m = x.text.match(/^(\S+) ([^:]+): (.*)$/);
+    const label = m ? `<b>${m[1]}</b> <span style="color:var(--muted)">${m[2]}</span> · ${m[3]}` : x.text;
+    return `<button type="button" class="cl ${x.type}" data-t="${x.etf}" title="누르면 매트릭스에서 ${x.etf} 행을 선택합니다"><i>${icon[x.type] || '·'}</i><span>${label}</span></button>`;
+  }).join('');
+  body.querySelectorAll('.cl').forEach(b => b.addEventListener('click', () => { showTab(1); if (state.cat !== 'all') setCat('all'); select(b.dataset.t, { open: true, scroll: true }); }));
+}
+renderChanges();
 
 /* ---- 명령줄 ---- */
 const cmd = document.getElementById('cmd');
@@ -888,6 +981,7 @@ function runCmd(raw) {
     '1': () => showTab(1), 'MATRIX': () => showTab(1), 'MAIN': () => showTab(1),
     '2': () => showTab(2), 'HELP': () => showTab(2), '98': () => showTab(2),
     '3': () => showTab(3), 'RRG': () => showTab(3), '41': () => showTab(3), '42': () => showTab(1),
+    '4': () => showTab(4), 'BRIEF': () => showTab(4),
     '11': () => setCat('all'), 'ALL': () => setCat('all'),
     '12': () => setCat('sec'), 'SEC': () => setCat('sec'), 'SECT': () => setCat('sec'),
     '13': () => setCat('ind'), 'IND': () => setCat('ind'), 'THM': () => setCat('ind'),
@@ -897,10 +991,10 @@ function runCmd(raw) {
     'US': () => setConv('US'), 'KR': () => setConv('KR'),
   };
   const labels = { '1': '매트릭스 화면', 'MATRIX': '매트릭스 화면', 'MAIN': '매트릭스 화면', '2': '도움말 화면', 'HELP': '도움말 화면', '98': '도움말 화면',
-    '3': 'RRG 1단·2단 화면', 'RRG': 'RRG 1단·2단 화면', '41': 'RRG 1단·2단 화면', '42': '매트릭스 화면',
+    '3': 'RRG 1단·2단 화면', 'RRG': 'RRG 1단·2단 화면', '41': 'RRG 1단·2단 화면', '42': '매트릭스 화면', '4': '주간 브리핑 화면', 'BRIEF': '주간 브리핑 화면',
     '11': '필터 → 전체 23', 'ALL': '필터 → 전체 23', '12': '필터 → 섹터 11', 'SEC': '필터 → 섹터 11', 'SECT': '필터 → 섹터 11',
     '13': '필터 → 산업·테마 12', 'IND': '필터 → 산업·테마 12', 'THM': '필터 → 산업·테마 12', '21': '정렬 → 열 기준', 'COL': '정렬 → 열 기준', '22': '정렬 → 전환순', 'SHIFT': '정렬 → 전환순' };
-  if (table[c]) { if (!/^(97|COLOR|CONV|US|KR|2|3|HELP|RRG|98|41|42)$/.test(c)) showTab(1); table[c](); if (labels[c]) msg(labels[c], 'ok'); return; }
+  if (table[c]) { if (!/^(97|COLOR|CONV|US|KR|2|3|4|HELP|RRG|BRIEF|98|41|42)$/.test(c)) showTab(1); table[c](); if (labels[c]) msg(labels[c], 'ok'); return; }
   msg(`알 수 없는 명령: ${c} · 2) 도움말의 명령줄 표를 참고하세요`, 'err');
 }
 cmd.addEventListener('keydown', ev => { if (ev.key === 'Enter') { runCmd(cmd.value); cmd.value = ''; } });
@@ -939,5 +1033,6 @@ applyConv();
 if (current.length) select(current[0].t);
 if (location.hash === '#help') showTab(2);
 else if (location.hash === '#rrg') showTab(3);
+else if (location.hash === '#brief') showTab(4);
 tick(); setInterval(tick, 1000);
 </script>

@@ -61,6 +61,15 @@ def long_date(iso):
     return d.strftime("%b %-d, %Y") if os.name != "nt" else d.strftime("%b %d, %Y")
 
 
+def html_escape(s):
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def built_at_kst():
+    now = dt.datetime.now(dt.timezone(dt.timedelta(hours=9)))
+    return now.strftime("%Y-%m-%d %H:%M KST")
+
+
 def phase(r, m):
     return ("Leading" if m >= 100 else "Weakening") if r >= 100 else ("Improving" if m >= 100 else "Lagging")
 
@@ -309,6 +318,9 @@ def main():
         "__ELST__": json.dumps(elst, ensure_ascii=False, separators=(",", ":")),
         "__LST__": json.dumps(lst, ensure_ascii=False, separators=(",", ":")),
         "__SWAPS__": json.dumps(swaps, ensure_ascii=False, separators=(",", ":")),
+        "__ALERTS__": json.dumps({"asof": cur["asof"], "prev_asof": prev_for_alerts.get("asof") if prev_for_alerts else None, "alerts": alerts}, ensure_ascii=False, separators=(",", ":")),
+        "__BRIEF__": html_escape(brief),
+        "__BUILT_AT__": built_at_kst(),
     }
     page = open(args.template, encoding="utf-8").read()
     for k, v in tokens.items():
