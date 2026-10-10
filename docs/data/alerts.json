@@ -1,5 +1,31 @@
 {
- "asof": "2026-10-08",
- "prev_asof": null,
- "alerts": []
+ "asof": "2026-10-09",
+ "prev_asof": "2026-10-08",
+ "alerts": [
+  {
+   "etf": "XLF",
+   "type": "signal",
+   "text": "XLF 금융: ↓ 백분위 41점 하락 (6개월 → 1개월)"
+  },
+  {
+   "etf": "XBI",
+   "type": "signal",
+   "text": "XBI 바이오: ↗ SPY 비율 200일선 상향 돌파"
+  },
+  {
+   "etf": "XBI",
+   "type": "signal",
+   "text": "XBI 바이오: ↓ 백분위 37점 하락 (6개월 → 1개월)"
+  },
+  {
+   "etf": "KRE",
+   "type": "signal",
+   "text": "KRE 지역은행: ↓ 백분위 41점 하락 (6개월 → 1개월)"
+  },
+  {
+   "etf": "DRAM",
+   "type": "signal",
+   "text": "DRAM 메모리반도체: ↓ 백분위 68점 하락 (6개월 → 1개월)"
+  }
+ ]
 }
