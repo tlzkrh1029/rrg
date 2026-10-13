@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch daily bars for the US sector / industry ETFs on the weekly
+"""Fetch daily bars for the US sector / industry / style ETFs on the weekly
 relative-strength board, aligned to SPY's trading days.
 
 Standard library only. Writes to --out (default output/):
@@ -10,8 +10,9 @@ Standard library only. Writes to --out (default output/):
 
 This script only collects raw prices. The relative-return percentiles, the
 ETF / SPY and ETF / QQQ ratio lines and the RS-Ratio / RS-Momentum of the
-two-tier RRG (sector / SPY, industry / parent sector) are computed elsewhere
-from prices_wide.csv, which is why every ticker is written on one date axis.
+two-tier RRG (sector / SPY, industry / parent sector, style / SPY) are computed
+elsewhere from prices_wide.csv, which is why every ticker is written on one
+date axis.
 
 Sources (no API key): Stooq daily CSV first, Yahoo Finance chart second.
 Stooq serves a single price series with no separate adjusted column, so a
@@ -34,13 +35,19 @@ import urllib.parse
 import urllib.request
 
 # ------------------------------------------------------------------ universe
-# Keep the three lists in board order: the CSV columns and rows follow it.
+# Keep the lists in board order: the CSV columns and rows follow it. STYLE is
+# appended last, so adding to it never shifts the existing columns.
 
 BENCHMARKS = ["SPY", "QQQ"]
 SECTORS = ["XLK", "XLF", "XLV", "XLY", "XLC", "XLI", "XLP", "XLE", "XLU", "XLB", "XLRE"]
 INDUSTRIES = ["SMH", "IGV", "XBI", "GNOM", "ARKG", "KRE", "XHB", "XME", "URA", "ITA", "PAVE", "DRAM"]
+# Style / concentration ETFs: neither sectors nor industries. Measured against
+# SPY like the sectors, but kept out of the 11-sector counts downstream.
+STYLE = ["MAGS"]
 
-# Second-tier RRG benchmark: industry / theme ETF -> the sector ETF it sits in.
+# RRG benchmark of every non-sector member: the column its ratio line divides by.
+# Industry / theme ETF -> the sector ETF it sits in. MAGS (equal-weight Mag 7)
+# straddles XLK, XLC and XLY, so it is measured against SPY instead.
 PARENT_SECTOR = {
     "SMH": "XLK", "IGV": "XLK", "DRAM": "XLK",
     "XBI": "XLV", "GNOM": "XLV", "ARKG": "XLV",
@@ -49,11 +56,13 @@ PARENT_SECTOR = {
     "XME": "XLB",
     "ITA": "XLI", "PAVE": "XLI",
     "URA": "XLE",
+    "MAGS": "SPY",
 }
 
-TICKERS = BENCHMARKS + SECTORS + INDUSTRIES
-BASE_TICKER = "SPY"          # its trading days are the date axis
-CORE = BENCHMARKS + SECTORS  # expected to be gap-free on the axis
+TICKERS = BENCHMARKS + SECTORS + INDUSTRIES + STYLE
+GROUPS = {"benchmarks": BENCHMARKS, "sectors": SECTORS, "industries": INDUSTRIES, "style": STYLE}
+BASE_TICKER = "SPY"                  # its trading days are the date axis
+CORE = BENCHMARKS + SECTORS + STYLE  # expected to be gap-free on the axis
 MAX_CORE_MISSING = 5
 
 # ------------------------------------------------------------------- sources
@@ -328,6 +337,7 @@ def main():
         "base_axis": None,
         "failed_tickers": [],
         "parent_sector": PARENT_SECTOR,
+        "groups": GROUPS,
         "holdings": None,
         "holdings_failed": {},
         "checks": {},
