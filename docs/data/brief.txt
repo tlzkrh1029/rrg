@@ -10,8 +10,6 @@
   Improving: XLC XLP
   Weakening: XLK XLF
   Lagging: XLY XLI XLU XLB XLRE
-스타일·집중도 (÷ SPY · 섹터 집계 제외)
-  MAGS 매그니피센트 7: Leading (RS-Ratio 101.1, RS-Mom 102.0)  [65/87/83/74/68]
 
 2단 RRG (하위 ETF ÷ 상위 섹터)
   XLK: SMH Lagging · IGV Leading · DRAM N/A
@@ -35,9 +33,16 @@
   ↘ DRAM: SPY 비율 50일선 하향 이탈
   ↓ DRAM: 백분위 86점 하락 (6개월 → 1개월)
 
-직전 빌드(없음) 대비 변화
-  없음
+직전 빌드(2026-10-09) 대비 변화
+  · XLF 금융: ↓ 백분위 32점 하락 (6개월 → 1개월)
+  · XLV 헬스케어: ↗ SPY 비율 50일선 상향 돌파
+  · XLU 유틸리티: ↑ 백분위 41점 상승 (6개월 → 1개월)
+  · XLRE 부동산: ≈ 1주 반등, 1개월 이상에서는 미확인
+  · XBI 바이오: ↓ 백분위 32점 하락 (6개월 → 1개월)
+  · KRE 지역은행: ↓ 백분위 32점 하락 (6개월 → 1개월)
+  · URA 우라늄: RRG Improving → Lagging (vs XLE)
+  · DRAM 메모리반도체: ↓ 백분위 86점 하락 (6개월 → 1개월)
 
-구성종목 상위 10 변화: XLY(+1/−1), XLC(+1/−1), SMH(+1/−1), IGV(+1/−1), XBI(+1/−1), KRE(+1/−1), XHB(+1/−1)
+구성종목 상위 10 변화: XLY(+1/−1), XLC(+1/−1), SMH(+1/−1), IGV(+1/−1), XBI(+1/−1), KRE(+1/−1)
 
 https://tlzkrh1029.github.io/rrg/
