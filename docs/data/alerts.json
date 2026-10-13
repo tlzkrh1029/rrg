@@ -1,46 +1,5 @@
 {
  "asof": "2026-10-12",
- "prev_asof": "2026-10-09",
- "alerts": [
-  {
-   "etf": "XLF",
-   "type": "signal",
-   "text": "XLF 금융: ↓ 백분위 32점 하락 (6개월 → 1개월)"
-  },
-  {
-   "etf": "XLV",
-   "type": "signal",
-   "text": "XLV 헬스케어: ↗ SPY 비율 50일선 상향 돌파"
-  },
-  {
-   "etf": "XLU",
-   "type": "signal",
-   "text": "XLU 유틸리티: ↑ 백분위 41점 상승 (6개월 → 1개월)"
-  },
-  {
-   "etf": "XLRE",
-   "type": "signal",
-   "text": "XLRE 부동산: ≈ 1주 반등, 1개월 이상에서는 미확인"
-  },
-  {
-   "etf": "XBI",
-   "type": "signal",
-   "text": "XBI 바이오: ↓ 백분위 32점 하락 (6개월 → 1개월)"
-  },
-  {
-   "etf": "KRE",
-   "type": "signal",
-   "text": "KRE 지역은행: ↓ 백분위 32점 하락 (6개월 → 1개월)"
-  },
-  {
-   "etf": "URA",
-   "type": "rrg",
-   "text": "URA 우라늄: RRG Improving → Lagging (vs XLE)"
-  },
-  {
-   "etf": "DRAM",
-   "type": "signal",
-   "text": "DRAM 메모리반도체: ↓ 백분위 86점 하락 (6개월 → 1개월)"
-  }
- ]
+ "prev_asof": null,
+ "alerts": []
 }

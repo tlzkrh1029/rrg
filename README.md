@@ -104,11 +104,11 @@ Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `dige
 
 | 파일 | 역할 |
 |---|---|
-| `scripts/compute_terminal.py` | `output/prices_wide.csv` 로 백분위·비율선·RRG(1단 섹터 ÷ SPY, 2단 산업·테마 ÷ 상위 섹터)·신호를 계산해 `output/terminal-data.json` 을 씁니다. 규칙은 파일 머리의 설명에 있습니다. |
+| `scripts/compute_terminal.py` | `output/prices_wide.csv` 로 백분위·비율선·RRG(1단 섹터 ÷ SPY, 2단 산업·테마 ÷ 상위 섹터, 스타일 MAGS ÷ SPY)·신호를 계산해 `output/terminal-data.json` 을 씁니다. 규칙은 파일 머리의 설명에 있습니다. |
 | `scripts/build_terminal.py` | 계산값, 최신 두 구성종목 스냅샷(변동 %p), 상장 목록, `data/etf_meta.json` 을 `template/terminal.html` 에 끼워 `docs/index.html`(Pages 용)과 `docs/terminal.artifact.html`(Claude 아티팩트 발행용)을 만듭니다. 직전 빌드(`docs/data/terminal-data.json`)와 비교해 `docs/data/alerts.json`·`alerts.txt` 와 주간 브리핑 `docs/data/brief.txt` 를 씁니다. |
 | `scripts/notify_telegram.py` | `brief.txt`(`--mode digest`) 또는 `alerts.txt`(`--mode alerts`, 비어 있으면 보내지 않음)를 텔레그램 봇 API 로 보냅니다. |
 | `template/terminal.html` | 터미널 화면 템플릿. `__HOLD__`, `__DATA__`, `__PRICE_ASOF__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. |
-| `data/etf_meta.json` | ETF 이름·순자산·보유 종목 수·출처 URL(2026-09-26 stockanalysis 기준). 순자산은 자동 갱신되지 않습니다. |
+| `data/etf_meta.json` | ETF 이름·순자산·보유 종목 수·출처 URL(2026-09-26 stockanalysis 기준, MAGS 는 2026-10-13). 순자산은 자동 갱신되지 않습니다. |
 | `output/holdings/2026-09-26.csv` | 변동 %p 의 첫 비교 기준이 되는 스냅샷(시안 v2 의 구성종목 데이터에서 복원). |
 
 ### 알림 조건
@@ -120,3 +120,4 @@ Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `dige
 - GitHub 의 실행 서버는 미국에 있어 바이낸스 API 가 451 을 돌려줍니다. `tradfi-ticker-lists` 스크립트는 미러로 넘어가도록 되어 있지만, 미러까지 막히거나 저장소를 받지 못하면 `data/lists/` 의 마지막 사본을 씁니다(상장 점이 그 날짜에 멈춥니다).
 - stockanalysis.com 이 자동 수집을 막으면 구성종목 스냅샷이 빠지고 `변동 %p` 가 마지막 성공 스냅샷 기준으로 남습니다.
 - DRAM 처럼 주봉이 39주 미만인 ETF 는 RRG 국면이 N/A 입니다. 시간이 지나면 자동으로 채워집니다.
+- MAGS 는 스타일·집중도 행입니다. 백분위는 섹터·산업 23개 사이에 끼워 넣었을 때의 위치만 적고(다른 ETF 의 백분위는 바뀌지 않음), RRG 는 SPY 대비로 1단 그래프에 마름모로 그리되 섹터 집계·전환순 상위 3 에는 넣지 않습니다. 구성종목 표에서 이전 스냅샷에 없던 ETF 는 변동 %p 를 계산하지 않습니다.
