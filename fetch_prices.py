@@ -45,7 +45,7 @@ INDUSTRIES = ["SMH", "IGV", "XBI", "GNOM", "ARKG", "KRE", "XHB", "XME", "URA", "
 # SPY like the sectors, but kept out of the 11-sector counts downstream.
 STYLE = ["MAGS"]
 
-# RRG benchmark of every non-sector member: the column its ratio line divides by.
+# RRG benchmark of every industry / style member: the column its ratio line divides by.
 # Industry / theme ETF -> the sector ETF it sits in. MAGS (equal-weight Mag 7)
 # straddles XLK, XLC and XLY, so it is measured against SPY instead.
 PARENT_SECTOR = {
