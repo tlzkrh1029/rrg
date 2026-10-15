@@ -1,6 +1,6 @@
 # 미국 섹터·산업 ETF 상대 강도 데이터 (RRG)
 
-미국 섹터·산업 ETF의 상대 강도를 매주 계산하기 위한 원본 데이터를 모으는 저장소입니다. (1) SPY 대비 상대수익률 백분위, (2) ETF÷SPY·ETF÷QQQ 비율선, (3) RRG 1단(섹터÷SPY)과 2단(산업·테마÷상위 섹터 ETF)의 RS-Ratio·RS-Momentum은 여기서 계산하지 않습니다. 이 저장소의 스크립트는 일봉 종가와 구성종목 스냅샷을 정확하게 받아서 저장하는 일만 합니다.
+미국 섹터·산업 ETF의 상대 강도를 매주 계산하기 위한 원본 데이터를 모으는 저장소입니다. (1) SPY 대비 상대수익률 백분위, (2) ETF÷SPY·ETF÷QQQ 비율선, (3) RRG 1단(섹터÷SPY, 스타일÷SPY)과 2단(산업·테마÷상위 섹터 ETF)의 RS-Ratio·RS-Momentum은 여기서 계산하지 않습니다. 이 저장소의 스크립트는 일봉 종가와 구성종목 스냅샷을 정확하게 받아서 저장하는 일만 합니다.
 
 스크립트는 [tradfi-ticker-lists](https://github.com/tlzkrh1029/tradfi-ticker-lists)의 `fetch_tradfi_tickers.py`와 같은 규칙을 따릅니다. 표준 라이브러리만 사용하고, 결과는 `output/`에 UTF-8 BOM CSV로 저장하며, 실행할 때마다 전체를 새로 받아 덮어씁니다.
 
@@ -8,7 +8,7 @@
 
 ### 결론
 
-`fetch_prices.py`는 벤치마크 2개, 섹터 ETF 11개, 산업·테마 ETF 12개의 일봉을 API 키 없는 공개 출처에서 받아, SPY의 거래일을 기준 날짜 축으로 삼아 한 표에 정렬합니다. 같은 실행에서 각 ETF의 구성종목 상위 10개도 받아 날짜별 파일로 남깁니다.
+`fetch_prices.py`는 벤치마크 2개, 섹터 ETF 11개, 산업·테마 ETF 12개, 스타일·집중도 ETF 1개(MAGS)의 일봉을 API 키 없는 공개 출처에서 받아, SPY의 거래일을 기준 날짜 축으로 삼아 한 표에 정렬합니다. 같은 실행에서 각 ETF의 구성종목 상위 10개도 받아 날짜별 파일로 남깁니다.
 
 ```
 python3 fetch_prices.py                  # 가격 + 구성종목, output/ 에 저장 (약 2분)
@@ -18,13 +18,13 @@ python3 fetch_prices.py --source yahoo   # 야후만 사용 (조정 종가를 �
 python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 변경 (기본 500)
 ```
 
-종료 코드는 0(정상), 1(가격 수집에 실패한 티커가 하나라도 있음), 2(가격은 정상이지만 구성종목 일부 실패)입니다. 실행 중에는 티커마다 한 줄씩 출처와 받은 행 수를 출력하고, 마지막에 `warnings`를 표준 오류로 출력합니다. 2026-10-09 실행은 0으로 끝났고 경고는 없었습니다.
+종료 코드는 0(정상), 1(가격 수집에 실패한 티커가 하나라도 있음), 2(가격은 정상이지만 구성종목 일부 실패)입니다. 실행 중에는 티커마다 한 줄씩 출처와 받은 행 수를 출력하고, 마지막에 `warnings`를 표준 오류로 출력합니다. 2026-10-13 실행은 0으로 끝났고 경고는 없었습니다.
 
 ### 수집 대상
 
-티커 목록은 스크립트 상단의 `BENCHMARKS`, `SECTORS`, `INDUSTRIES`에 있으며, 산업·테마 ETF의 상위 섹터는 `PARENT_SECTOR` 표에 있습니다. 티커를 추가하려면 이 목록만 고치면 됩니다. CSV의 열 순서와 행 순서는 이 목록 순서를 따릅니다.
+티커 목록은 스크립트 상단의 `BENCHMARKS`, `SECTORS`, `INDUSTRIES`, `STYLE`에 있으며, 산업·테마·스타일 티커를 무엇으로 나눌지는 `PARENT_SECTOR` 표에 있습니다. 티커를 추가하려면 이 목록만 고치면 됩니다. CSV의 열 순서와 행 순서는 이 목록 순서를 따르고, `STYLE`은 맨 뒤에 붙으므로 여기에 티커를 더해도 기존 열의 위치는 바뀌지 않습니다. `prices_summary.json`의 `groups`에 네 목록이 그대로 들어 있습니다. 2단 RRG의 대상은 `groups.industries`이고, `parent_sector`는 각 티커를 나누는 ETF만 알려 줍니다. `parent_sector`에는 MAGS도 들어 있으므로, 그 키 목록을 산업 목록으로 쓰면 안 됩니다.
 
-| 구분 | 티커 | 2단 RRG 벤치마크(상위 섹터) |
+| 구분 | 티커 | RRG 벤치마크(나누는 ETF) |
 |---|---|---|
 | 벤치마크 | SPY, QQQ | |
 | 섹터 | XLK, XLF, XLV, XLY, XLC, XLI, XLP, XLE, XLU, XLB, XLRE | SPY (1단) |
@@ -35,6 +35,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 | | XME | XLB |
 | | ITA, PAVE | XLI |
 | | URA | XLE |
+| 스타일·집중도 | MAGS | SPY. 1단 보드에 섹터와 같은 축으로 그리되, 섹터 11개를 대상으로 하는 집계(사분면 개수, 섹터 간 순위)에는 넣지 않음 |
 
 ### 출력 파일
 
@@ -43,8 +44,8 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 | 파일 | 형식 | 열 |
 |---|---|---|
 | `prices.csv` | long. 날짜 오름차순, 같은 날짜 안에서는 수집 대상 순서 | `date`, `ticker`, `open`, `high`, `low`, `close`, `adj_close`, `volume` |
-| `prices_wide.csv` | wide. 행은 SPY 기준 축의 날짜, 열은 티커별 `adj_close`. 이 파일 하나로 비율 계산이 됩니다 | `date`, `SPY`, `QQQ`, `XLK`, …, `DRAM` |
-| `prices_summary.json` | 실행 결과 요약 | `generated_at`(UTC), `source_order`, 티커별 `{source, adj_close_available, first_date, last_date, rows, missing_days, gap_days, off_axis_dates, partial_bar_dropped, attempts}`, `base_axis {ticker, first_date, last_date, days}`, `failed_tickers`, `parent_sector`, `holdings`, `holdings_failed`, `checks`, `warnings` |
+| `prices_wide.csv` | wide. 행은 SPY 기준 축의 날짜, 열은 티커별 `adj_close`. 이 파일 하나로 비율 계산이 됩니다 | `date`, `SPY`, `QQQ`, `XLK`, …, `DRAM`, `MAGS` |
+| `prices_summary.json` | 실행 결과 요약 | `generated_at`(UTC), `source_order`, `tickers`(티커별 `{source, adj_close_available, first_date, last_date, rows, missing_days, gap_days, off_axis_dates, rows_before_axis, partial_bar_dropped, attempts}`), `base_axis {ticker, first_date, last_date, days}`, `failed_tickers`, `parent_sector`, `groups`, `holdings`, `holdings_failed`, `checks`, `warnings` |
 | `holdings/YYYY-MM-DD.csv` | 구성종목 상위 10개 스냅샷. 파일명은 실행일이며 같은 날짜 파일은 덮어씁니다 | `etf`, `rank`, `symbol`, `name`, `weight_pct` |
 
 `prices_wide.csv`의 빈 칸은 그 날짜에 그 티커의 데이터가 없다는 뜻입니다. 직전 값으로 채우지 않으므로, 비율을 계산할 때 빈 칸은 건너뛰어야 합니다.
@@ -54,7 +55,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 모든 티커의 종가가 같은 날짜 축에 놓여야 산업·테마 ETF ÷ 상위 섹터 ETF를 날짜별로 나눌 수 있습니다. 그래서 다음 규칙으로 정렬합니다.
 
 - SPY의 거래일 중 최근 500일(`--days`)이 기준 축입니다. `base_axis`에 축의 첫 날짜, 마지막 날짜, 길이를 적습니다.
-- 어떤 티커에 축의 날짜 데이터가 없으면 그 칸은 빈 값으로 둡니다. 빈 칸 수는 티커별 `missing_days`에 적고, 상장 이후 구간에서만 센 빈 칸 수는 `gap_days`에 따로 적습니다. 2026-04-02에 상장한 DRAM은 `missing_days`가 369이지만 `gap_days`는 0입니다.
+- 어떤 티커에 축의 날짜 데이터가 없으면 그 칸은 빈 값으로 둡니다. 빈 칸 수는 티커별 `missing_days`에 적고, 상장 이후 구간에서만 센 빈 칸 수는 `gap_days`에 따로 적습니다. 2026-04-02에 상장한 DRAM은 축 500일 중 367일이 상장 전이라 `missing_days`가 367이지만 `gap_days`는 0입니다.
 - 축에 없는 날짜에만 데이터가 있는 티커가 있으면 그 날짜는 버리고 `off_axis_dates`와 `warnings`에 적습니다.
 - 축보다 앞선 날짜의 데이터는 조용히 버리고 `rows_before_axis`에 개수만 적습니다.
 - 뉴욕 시간 16:15 이전에 실행하면 그날의 봉은 아직 장중 값이므로 버리고 `partial_bar_dropped`에 날짜를 적습니다.
@@ -64,22 +65,23 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 | 항목 | `checks` 키 |
 |---|---|
 | `prices_wide.csv`의 행 수가 `base_axis.days`와 같은가 | `wide_rows_equal_base_axis_days` |
-| SPY, QQQ, 섹터 11개의 `missing_days`가 5 이하인가 | `core_missing_days_over_limit` (넘은 티커와 개수) |
+| SPY, QQQ, 섹터 11개, MAGS의 `missing_days`가 5 이하인가 | `core_missing_days_over_limit` (넘은 티커와 개수) |
 | 모든 티커의 `last_date`가 SPY의 `last_date`와 같은가 | `last_date_differs_from_base` (다른 티커와 날짜) |
 | 조정 종가가 없는 출처로 받은 티커가 있는가 | `tickers_without_adj_close` |
 
 ### 출처와 한계
 
-가격은 티커마다 1순위 Stooq 일봉 CSV(`https://stooq.com/q/d/l/?s=spy.us&i=d`), 2순위 야후 파이낸스 chart 엔드포인트(`https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d`) 순서로 시도하고, 실제로 쓴 출처를 `source`에, 실패한 시도의 원인을 `attempts`에 적습니다.
+가격은 티커마다 1순위 Stooq 일봉 CSV(`https://stooq.com/q/d/l/?s=spy.us&i=d`), 2순위 야후 파이낸스 chart 엔드포인트(`https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d`, `range`는 `--days`에 따라 2y·5y·10y·max 중 하나) 순서로 시도하고, 실제로 쓴 출처를 `source`에, 실패한 시도의 원인을 `attempts`에 적습니다.
 
 - **Stooq에는 조정 종가 열이 따로 없습니다.** Stooq에서 받은 티커는 `close`를 `adj_close`에 복사하고 `adj_close_available`을 `false`로 둡니다. 야후에서 받은 티커의 `adj_close`는 배당·분할 조정 종가입니다. 한 실행 안에서 두 종류가 섞이면 비율선이 배당만큼 어긋나므로 `warnings`에 기록합니다. 이때는 `--source yahoo`로 다시 실행하면 전 티커가 같은 기준이 됩니다.
-- Stooq는 일일 요청 한도를 넘으면 CSV 대신 안내 문구를 돌려주며, 연결이 아예 되지 않는 환경도 있습니다. 연결 수준의 실패가 3번 이어지면 남은 티커에서는 Stooq를 건너뛰고(`attempts`에 `skipped`로 표시) 바로 야후로 갑니다. 저장소의 2026-10-09 결과물을 만든 환경에서는 Stooq에 연결할 수 없어서(TLS 연결이 끊기거나 CSV 대신 HTML 페이지가 옴) 25개 티커 모두 야후에서 받았습니다.
+- Stooq는 일일 요청 한도를 넘으면 CSV 대신 안내 문구를 돌려주며, 연결이 아예 되지 않는 환경도 있습니다. 연결 수준의 실패가 3번 이어지면 남은 티커에서는 Stooq를 건너뛰고(`attempts`에 `skipped`로 표시) 바로 야후로 갑니다. 저장소의 2026-10-13 결과물을 만든 환경에서는 Stooq에 연결할 수 없어서(TLS 연결이 끊기거나 CSV 대신 HTML 페이지가 옴) 26개 티커 모두 야후에서 받았습니다.
 - 야후 chart 엔드포인트는 공식 지원 대상이 아니며, User-Agent가 없으면 거부합니다. HTTP 429를 받으면 기다렸다가 다시 시도하고, `query1`이 실패하면 `query2`로 넘어갑니다. 조정 종가는 배당이 지급될 때마다 과거 값이 전부 다시 계산되므로, 일부만 이어 붙이지 말고 매번 전체를 다시 받아야 합니다. 이 스크립트는 그렇게 동작합니다.
 - 기본 축 길이 500 거래일을 받기 위해 야후에서는 5년치를 요청하고 축 밖의 과거 데이터는 버립니다. 단일 종목이 아닌 ETF만 다루므로 상장폐지·티커 변경은 고려하지 않습니다.
-- DRAM은 2026년 4월 상장이라 2026-10-09 기준 131개 봉만 있습니다. 상장 전 구간은 빈 칸으로 두며 오류나 경고로 다루지 않습니다.
+- DRAM은 2026년 4월 상장이라 2026-10-13 기준 133개 봉만 있습니다. 상장 전 구간은 빈 칸으로 두며 오류나 경고로 다루지 않습니다.
+- MAGS(Roundhill Magnificent Seven ETF)는 AAPL, MSFT, NVDA, AMZN, TSLA, META, GOOGL 일곱 종목을 동일가중(각 약 14%)으로 담고 분기마다 리밸런스합니다. 노출의 대부분을 총수익스왑으로 얻고 담보로 단기 국채를 보유하므로, 구성종목 상위 10개에는 국채·현금성 ETF(XBOX)·종목별 직접 보유분(5~6%)이 나오고 MSFT는 10위 밖에 있습니다. 이 표로는 종목별 실제 노출을 읽을 수 없습니다. 일곱 종목이 IT(XLK), 경기소비재(XLY), 커뮤니케이션(XLC) 세 섹터에 걸쳐 있어서 상위 섹터 하나를 고를 수 없으므로 SPY로 나눕니다. MAGS÷SPY는 "동일가중 Mag 7이 시장을 이기는가"를 뜻하며, 시가총액가중인 SPY가 일곱 종목을 약 35% 담고 있어서 진폭이 다소 줄어듭니다. 동일가중이라 한 종목의 기여가 7분의 1로 제한되므로(NVDA 비중: MAGS 약 14%, SPY 8.2%, XLK 15.3%), NVDA 한 종목이 끌고 나머지 여섯이 뒤처지는 장에서는 MAGS÷SPY의 상승 폭이 시가총액가중 Mag 7 바스켓보다 작게 나오거나 내려갈 수도 있습니다. 그래서 XLK÷SPY, QQQ÷SPY와 같이 읽어야 합니다. MAGS는 2023-04-11 상장이라 기본 500일 축에는 빈 칸이 없지만, `--days`를 약 880 이상으로 늘리면 상장 전 구간이 생겨 `core_missing_days_over_limit`에 걸립니다. 스왑 금융비용과 보수 때문에 이론적인 동일가중 바스켓보다 연 1.5% 안팎 뒤처지는데, 주간 RRG에는 영향이 없지만 긴 비율선에는 보입니다.
 - 구성종목은 stockanalysis.com의 ETF holdings 페이지(`https://stockanalysis.com/etf/smh/holdings/`)에서 첫 번째 표를 읽습니다. 이 사이트는 브라우저처럼 보이는 Accept 헤더가 없으면 403을 돌려주고, 자동 수집을 막을 수 있습니다. 한 ETF가 막히면 그 ETF만 건너뛰고 `holdings_failed`에 적으며 종료 코드는 2가 됩니다. 전부 막히면 운용사 공식 페이지의 CSV로 출처를 바꾸는 편이 낫습니다.
-- 구성종목의 `symbol`은 페이지에 적힌 그대로입니다. 해외 상장 종목은 `TSX: NXE`, `KRX: 005930`처럼 거래소가 붙고, DRAM처럼 스왑으로 노출을 얻는 ETF는 스왑 계약 식별자가 들어갑니다. 비중은 페이지 갱신 시점의 값이며 당일 종가 기준이 아닐 수 있습니다.
-- 결과 CSV는 2026-10-09 실행 스냅샷(기준 축 2024-10-10 ~ 2026-10-08)입니다. 매주 보드를 갱신하려면 스크립트를 다시 실행해야 합니다.
+- 구성종목의 `symbol`은 페이지에 적힌 그대로입니다. 해외 상장 종목은 `TSX: NXE`, `KRX: 005930`처럼 거래소가 붙고, DRAM처럼 스왑 계약이 상위 10개에 드는 ETF는 스왑 계약 식별자가, MAGS처럼 담보로 국채를 보유하는 ETF는 국채 식별자(`B.0 12.03.26`)가 들어갑니다. 비중은 페이지 갱신 시점의 값이며 당일 종가 기준이 아닐 수 있습니다.
+- 결과 CSV는 2026-10-13 실행 스냅샷(기준 축 2024-10-14 ~ 2026-10-12)입니다. 매주 보드를 갱신하려면 스크립트를 다시 실행해야 합니다. `holdings/`에는 실행일별 파일이 쌓입니다.
 
 ## 자동 갱신 (GitHub Actions → GitHub Pages → 텔레그램)
 
@@ -102,11 +104,11 @@ Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `dige
 
 | 파일 | 역할 |
 |---|---|
-| `scripts/compute_terminal.py` | `output/prices_wide.csv` 로 백분위·비율선·RRG(1단 섹터 ÷ SPY, 2단 산업·테마 ÷ 상위 섹터)·신호를 계산해 `output/terminal-data.json` 을 씁니다. 규칙은 파일 머리의 설명에 있습니다. |
+| `scripts/compute_terminal.py` | `output/prices_wide.csv` 로 백분위·비율선·RRG(1단 섹터 ÷ SPY, 2단 산업·테마 ÷ 상위 섹터, 스타일 MAGS ÷ SPY)·신호를 계산해 `output/terminal-data.json` 을 씁니다. 규칙은 파일 머리의 설명에 있습니다. |
 | `scripts/build_terminal.py` | 계산값, 최신 두 구성종목 스냅샷(변동 %p), 상장 목록, `data/etf_meta.json` 을 `template/terminal.html` 에 끼워 `docs/index.html`(Pages 용)과 `docs/terminal.artifact.html`(Claude 아티팩트 발행용)을 만듭니다. 직전 빌드(`docs/data/terminal-data.json`)와 비교해 `docs/data/alerts.json`·`alerts.txt` 와 주간 브리핑 `docs/data/brief.txt` 를 씁니다. |
 | `scripts/notify_telegram.py` | `brief.txt`(`--mode digest`) 또는 `alerts.txt`(`--mode alerts`, 비어 있으면 보내지 않음)를 텔레그램 봇 API 로 보냅니다. |
 | `template/terminal.html` | 터미널 화면 템플릿. `__HOLD__`, `__DATA__`, `__PRICE_ASOF__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. |
-| `data/etf_meta.json` | ETF 이름·순자산·보유 종목 수·출처 URL(2026-09-26 stockanalysis 기준). 순자산은 자동 갱신되지 않습니다. |
+| `data/etf_meta.json` | ETF 이름·순자산·보유 종목 수·출처 URL(2026-09-26 stockanalysis 기준, MAGS 는 2026-10-13). 순자산은 자동 갱신되지 않습니다. |
 | `output/holdings/2026-09-26.csv` | 변동 %p 의 첫 비교 기준이 되는 스냅샷(시안 v2 의 구성종목 데이터에서 복원). |
 
 ### 알림 조건
@@ -118,3 +120,4 @@ Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `dige
 - GitHub 의 실행 서버는 미국에 있어 바이낸스 API 가 451 을 돌려줍니다. `tradfi-ticker-lists` 스크립트는 미러로 넘어가도록 되어 있지만, 미러까지 막히거나 저장소를 받지 못하면 `data/lists/` 의 마지막 사본을 씁니다(상장 점이 그 날짜에 멈춥니다).
 - stockanalysis.com 이 자동 수집을 막으면 구성종목 스냅샷이 빠지고 `변동 %p` 가 마지막 성공 스냅샷 기준으로 남습니다.
 - DRAM 처럼 주봉이 39주 미만인 ETF 는 RRG 국면이 N/A 입니다. 시간이 지나면 자동으로 채워집니다.
+- MAGS 는 스타일·집중도 행입니다. 백분위는 섹터·산업 23개 사이에 끼워 넣었을 때의 위치만 적고(다른 ETF 의 백분위는 바뀌지 않음), RRG 는 SPY 대비로 1단 그래프에 마름모로 그리되 섹터 집계·전환순 상위 3 에는 넣지 않습니다. 구성종목 표에서 이전 스냅샷에 없던 ETF 는 변동 %p 를 계산하지 않습니다.

@@ -5,12 +5,14 @@
 
 계산 규칙
 - 상대수익률: ETF 수익률 − SPY 수익률. 기간은 1주 5, 1개월 21, 3개월 63, 6개월 126, 12개월 252 거래일.
-- 백분위: 기간마다 값이 있는 ETF 안에서 등수를 매겨 1등 100, 꼴찌 0.
+- 백분위: 기간마다 값이 있는 ETF 안에서 등수를 매겨 1등 100, 꼴찌 0. 순위를 매기는 대상은 섹터 11개와 산업·테마 12개(RANKED)뿐이다.
+  스타일·집중도 ETF(STYLE, MAGS)는 그 23개 사이에 끼워 넣었을 때의 위치를 백분위로 적고, 다른 ETF 의 백분위에는 영향을 주지 않는다.
 - 비율선: 주봉(그 주 마지막 거래일) 종가 기준 ETF ÷ SPY, ETF ÷ QQQ 의 최근 12주.
 - RRG: 주봉 RS = 100 × ETF ÷ 벤치마크.
     RS-Ratio    = 100 × SMA(RS, 10) ÷ SMA(RS, 30)
     RS-Momentum = 100 × RS-Ratio ÷ SMA(RS-Ratio, 9)
   1단은 섹터 11개 ÷ SPY, 2단은 산업·테마 12개 ÷ 상위 섹터(PARENT). 산업·테마의 SPY 대비도 따로 계산한다.
+  스타일·집중도 ETF 는 SPY 로 나누어 1단과 같은 축에 놓되, 섹터 11개를 세는 집계에는 넣지 않는다.
   최근 5주 좌표를 궤적으로 남긴다. 주봉이 38주 미만이면 좌표가 비어 있다.
 - 신호: 52주 상대 신고가(ETF÷SPY 일봉 비율), 비율선의 50·200일선 돌파·이탈(최근 5거래일 안),
   백분위 ±30 급변(6개월 → 1개월), 1주 반등 미확인(1주 ≥ 70, 1개월 ≤ 40).
@@ -28,7 +30,11 @@ SECTORS = ["XLK", "XLF", "XLV", "XLY", "XLC", "XLI", "XLP", "XLE", "XLU", "XLB",
 INDUSTRY = ["SMH", "IGV", "XBI", "GNOM", "ARKG", "KRE", "XHB", "XME", "URA", "ITA", "PAVE", "DRAM"]
 PARENT = {"SMH": "XLK", "IGV": "XLK", "DRAM": "XLK", "XBI": "XLV", "GNOM": "XLV", "ARKG": "XLV",
           "KRE": "XLF", "XHB": "XLY", "XME": "XLB", "ITA": "XLI", "PAVE": "XLI", "URA": "XLE"}
-ETFS = SECTORS + INDUSTRY
+# 스타일·집중도: 동일가중 Mag 7 은 XLK·XLC·XLY 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 로 나눈다.
+STYLE = ["MAGS"]
+RANKED = SECTORS + INDUSTRY   # 백분위 순위를 매기는 23개
+ETFS = RANKED + STYLE
+GROUP = {**{t: "sector" for t in SECTORS}, **{t: "industry" for t in INDUSTRY}, **{t: "style" for t in STYLE}}
 WINDOWS = [5, 21, 63, 126, 252]
 WINDOW_NAMES = ["1W", "1M", "3M", "6M", "12M"]
 
@@ -83,10 +89,16 @@ def main():
                 continue
             vals[t] = r - rs
             rel[t][i] = round((r - rs) * 100, 2)
-        n = len(vals)
-        order = sorted(vals, key=lambda k: vals[k], reverse=True)
+        order = sorted((t for t in RANKED if t in vals), key=lambda k: vals[k], reverse=True)
+        n = len(order)
         for rank, t in enumerate(order, 1):
             pct[t][i] = round((n - rank) / (n - 1) * 100) if n > 1 else 100
+        # 스타일 ETF: 23개 사이에 끼워 넣었을 때의 위치(동률은 위로). 다른 ETF 의 백분위는 바꾸지 않는다.
+        pool = [vals[t] for t in order]
+        for t in STYLE:
+            if t in vals and n > 0:
+                rank = 1 + sum(1 for v in pool if v > vals[t])
+                pct[t][i] = round((n + 1 - rank) / n * 100)
 
     # ---- 주봉: 각 ISO 주의 마지막 거래일 ----
     week_idx = []
@@ -152,6 +164,7 @@ def main():
         "source": sorted({(summary.get("tickers") or {}).get(t, {}).get("source", "?") for t in tickers}),
         "windows": dict(zip(WINDOW_NAMES, WINDOWS)),
         "parent": PARENT,
+        "groups": {"sectors": SECTORS, "industries": INDUSTRY, "style": STYLE},
         "etfs": {},
     }
     for t in ETFS:
@@ -159,6 +172,7 @@ def main():
         wk = weekly(t)
         out["etfs"][t] = {
             "parent": PARENT.get(t),
+            "group": GROUP[t],
             "pct": pct[t], "rel": rel[t],
             "S": ratio_series(t, "SPY"), "Q": ratio_series(t, "QQQ"),
             "rrgPath": rrg_path(t, bench), "rrgSpy": rrg_path(t, "SPY"),

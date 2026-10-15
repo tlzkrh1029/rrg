@@ -31,8 +31,11 @@ PAGE_URL = "https://tlzkrh1029.github.io/rrg/"
 KO = {"XLK": "기술", "XLF": "금융", "XLV": "헬스케어", "XLY": "경기소비재", "XLC": "커뮤니케이션", "XLI": "산업재",
       "XLP": "필수소비재", "XLE": "에너지", "XLU": "유틸리티", "XLB": "소재", "XLRE": "부동산",
       "SMH": "반도체", "IGV": "소프트웨어", "XBI": "바이오", "GNOM": "유전체학", "ARKG": "유전체학 (액티브)", "KRE": "지역은행",
-      "XHB": "주택건설", "XME": "금속·광업", "URA": "우라늄", "ITA": "항공우주·방산", "PAVE": "미국 인프라", "DRAM": "메모리반도체"}
+      "XHB": "주택건설", "XME": "금속·광업", "URA": "우라늄", "ITA": "항공우주·방산", "PAVE": "미국 인프라", "DRAM": "메모리반도체",
+      "MAGS": "매그니피센트 7"}
 SECTORS = ["XLK", "XLF", "XLV", "XLY", "XLC", "XLI", "XLP", "XLE", "XLU", "XLB", "XLRE"]
+# 스타일·집중도 ETF: SPY 대비 국면과 신호는 알리되, 전환순 상위 3 같은 순위 집계에는 넣지 않는다
+STYLE = ["MAGS"]
 SWAP_RE = re.compile(r"TRS|^B\.0")
 # DRAM 의 총수익스왑 행: 기초 종목의 상장 여부를 그대로 쓴다
 SWAP_UNDERLYING = {"595112103.TRS 050427 NM": "MU", "595112103.TRS 052427 GS": "MU", "6771720.TRS 052427 GS": "KRX:005930",
@@ -89,19 +92,22 @@ def build_hold(snapshots, meta):
     hold = {}
     for t, m in meta.items():
         rows = cur.get(t, [])
-        oldw = {norm_sym(r["symbol"]): float(r["weight_pct"]) for r in prev.get(t, [])}
+        # 이전 스냅샷에 이 ETF 가 통째로 없으면(새로 추가한 ETF) 변동 %p 와 진입·이탈을 계산하지 않는다
+        has_prev = prev_date is not None and t in prev
+        oldw = {norm_sym(r["symbol"]): float(r["weight_pct"]) for r in prev.get(t, [])} if has_prev else {}
         out = []
         for r in rows:
             sym = norm_sym(r["symbol"])
             w = float(r["weight_pct"])
-            ch = None if (prev_date is None or sym not in oldw) else round(w - oldw[sym], 2)
+            ch = None if (not has_prev or sym not in oldw) else round(w - oldw[sym], 2)
             out.append([sym, r["name"], f"{w:.2f}%", ch, exch_of(r["symbol"])])
         newset = {norm_sym(r["symbol"]) for r in rows}
         hold[t] = {
             "name": m["name"], "aum": m["aum"], "aumAsof": m["aum_asof"][5:], "n": m["n"],
             "top10": f"{sum(float(r['weight_pct']) for r in rows):.2f}%",
             "asof": long_date(cur_date), "prev": long_date(prev_date) if prev_date else "없음", "url": m["url"], "rows": out,
-            "entered": [norm_sym(r["symbol"]) for r in rows if prev_date and norm_sym(r["symbol"]) not in oldw],
+            "prevMissing": bool(prev_date) and not has_prev,
+            "entered": [norm_sym(r["symbol"]) for r in rows if has_prev and norm_sym(r["symbol"]) not in oldw],
             "left": [s for s in oldw if s not in newset],
         }
     return hold, cur_date, prev_date
@@ -195,8 +201,8 @@ def make_alerts(prev, cur):
         for s in e["sig"]:
             if s[1] not in old_sig:
                 alerts.append({"etf": t, "type": "signal", "text": f"{t} {KO[t]}: {s[0]} {s[1]}"})
-    top_prev = [t for t, _ in sorted(((t, shift_score(e)) for t, e in prev["etfs"].items() if shift_score(e) is not None), key=lambda x: -x[1])[:3]]
-    top_cur = [t for t, _ in sorted(((t, shift_score(e)) for t, e in cur["etfs"].items() if shift_score(e) is not None), key=lambda x: -x[1])[:3]]
+    top_prev = [t for t, _ in sorted(((t, shift_score(e)) for t, e in prev["etfs"].items() if t not in STYLE and shift_score(e) is not None), key=lambda x: -x[1])[:3]]
+    top_cur = [t for t, _ in sorted(((t, shift_score(e)) for t, e in cur["etfs"].items() if t not in STYLE and shift_score(e) is not None), key=lambda x: -x[1])[:3]]
     for t in top_cur:
         if t not in top_prev:
             alerts.append({"etf": t, "type": "shift", "text": f"{t} {KO[t]}: 전환순 상위 3 진입 (점수 {shift_score(cur['etfs'][t]):.0f})"})
@@ -207,11 +213,11 @@ def make_brief(cur, hold, alerts, prev_asof):
     E = cur["etfs"]
     ph = phases(cur)
     lines = [f"📊 섹터 전환 터미널 · {cur['asof']} 종가 기준", ""]
-    ranked = sorted(((t, shift_score(e)) for t, e in E.items() if shift_score(e) is not None), key=lambda x: -x[1])
+    strip = lambda p: "/".join("n/a" if v is None else str(v) for v in p)
+    ranked = sorted(((t, shift_score(e)) for t, e in E.items() if t not in STYLE and shift_score(e) is not None), key=lambda x: -x[1])
     lines.append("전환순 상위 3 (1W·1M 평균 − 12M 백분위)")
     for t, s in ranked[:3]:
-        p = E[t]["pct"]
-        lines.append(f"  {t} {KO[t]}: {s:+.0f}  [{'/'.join('n/a' if v is None else str(v) for v in p)}]")
+        lines.append(f"  {t} {KO[t]}: {s:+.0f}  [{strip(E[t]['pct'])}]")
     lines.append("")
     by = {}
     for t in SECTORS:
@@ -220,6 +226,13 @@ def make_brief(cur, hold, alerts, prev_asof):
     for k in ("Leading", "Improving", "Weakening", "Lagging"):
         if by.get(k):
             lines.append(f"  {k}: {' '.join(by[k])}")
+    styled = [t for t in STYLE if t in E]
+    if styled:
+        lines.append("스타일·집중도 (÷ SPY · 섹터 집계 제외)")
+        for t in styled:
+            last = E[t]["rrgPath"][-1] if E[t]["rrgPath"] else None
+            coords = f" (RS-Ratio {last[0]:.1f}, RS-Mom {last[1]:.1f})" if last else ""
+            lines.append(f"  {t} {KO[t]}: {ph[t]['bench'] or 'N/A'}{coords}  [{strip(E[t]['pct'])}]")
     lines.append("")
     lines.append("2단 RRG (하위 ETF ÷ 상위 섹터)")
     for s in SECTORS:
@@ -269,7 +282,8 @@ def main():
     os.makedirs(os.path.join(args.docs, "data"), exist_ok=True)
     prev_path = os.path.join(args.docs, "data", "terminal-data.json")
     prev = json.load(open(prev_path, encoding="utf-8")) if os.path.exists(prev_path) else None
-    if prev and prev.get("asof") == cur.get("asof"):
+    same_asof = bool(prev and prev.get("asof") == cur.get("asof"))
+    if same_asof:
         prev_for_alerts = None   # 같은 종가로 다시 빌드한 경우에는 변화가 없다
     else:
         prev_for_alerts = prev
@@ -318,7 +332,7 @@ def main():
         "__ELST__": json.dumps(elst, ensure_ascii=False, separators=(",", ":")),
         "__LST__": json.dumps(lst, ensure_ascii=False, separators=(",", ":")),
         "__SWAPS__": json.dumps(swaps, ensure_ascii=False, separators=(",", ":")),
-        "__ALERTS__": json.dumps({"asof": cur["asof"], "prev_asof": prev_for_alerts.get("asof") if prev_for_alerts else None, "alerts": alerts}, ensure_ascii=False, separators=(",", ":")),
+        "__ALERTS__": json.dumps({"asof": cur["asof"], "prev_asof": prev_for_alerts.get("asof") if prev_for_alerts else None, "same_asof": same_asof, "alerts": alerts}, ensure_ascii=False, separators=(",", ":")),
         "__BRIEF__": html_escape(brief),
         "__BUILT_AT__": built_at_kst(),
     }

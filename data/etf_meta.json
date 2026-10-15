@@ -159,5 +159,12 @@
   "aum_asof": "2026-09-26",
   "n": "24",
   "url": "https://stockanalysis.com/etf/dram/"
+ },
+ "MAGS": {
+  "name": "Roundhill Magnificent Seven ETF",
+  "aum": "$5.79B",
+  "aum_asof": "2026-10-13",
+  "n": "38",
+  "url": "https://stockanalysis.com/etf/mags/"
  }
 }

@@ -313,7 +313,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
     <button type="button" role="tab" id="tab3" aria-selected="false" aria-controls="pane3"><b>3)</b> RRG 1단·2단</button>
     <button type="button" role="tab" id="tab4" aria-selected="false" aria-controls="pane4"><b>4)</b> 주간 브리핑</button>
     <button type="button" role="tab" id="tab2" aria-selected="false" aria-controls="pane2"><b>2)</b> 도움말</button>
-    <span class="tabinfo">관찰 대상 23 ETF · SPY 대비 상대수익률 백분위 · 종가 __PRICE_ASOF__ · 구성종목 __HOLD_ASOF__</span>
+    <span class="tabinfo">관찰 대상 24 ETF (섹터 11 · 산업·테마 12 · 스타일 1) · SPY 대비 상대수익률 백분위 · 종가 __PRICE_ASOF__ · 구성종목 __HOLD_ASOF__</span>
   </div>
 
   <div class="pane" id="pane1" role="tabpanel" aria-labelledby="tab1">
@@ -323,9 +323,10 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
           <span class="pt">Sector Rotation Matrix<small>1주 · 1개월 · 3개월 · 6개월 · 12개월</small></span>
           <div class="pctl">
             <span class="grp" role="group" aria-label="대상 필터">
-              <button type="button" data-cat="all" aria-pressed="true"><b>11)</b> 전체 23</button>
+              <button type="button" data-cat="all" aria-pressed="true"><b>11)</b> 전체 24</button>
               <button type="button" data-cat="sec" aria-pressed="false"><b>12)</b> 섹터 11</button>
               <button type="button" data-cat="ind" aria-pressed="false"><b>13)</b> 산업·테마 12</button>
+              <button type="button" data-cat="sty" aria-pressed="false" title="스타일·집중도: 동일가중 매그니피센트 7 (MAGS). SPY 대비로 재되 섹터 집계와 순위 계산에는 넣지 않습니다"><b>14)</b> 스타일 1</button>
             </span>
             <span class="grp" role="group" aria-label="정렬 방식">
               <button type="button" data-sort="col" aria-pressed="true"><b>21)</b> 열 기준</button>
@@ -340,7 +341,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
                 <th class="c-etf" rowspan="2" scope="col">ETF</th>
                 <th colspan="5" scope="colgroup">SPY 대비 상대수익률 백분위 (0~100)</th>
                 <th colspan="2" scope="colgroup" title="흰 실선은 ETF 가격을 벤치마크 가격으로 나눈 비율, 주황 점선은 그 이동평균입니다. 끝점 색은 지금 이동평균 위인지 아래인지를 나타내고, 선 전체에 색이 들어가면 최근 3주 안에 돌파 또는 이탈이 있었다는 뜻입니다.">가격 비율 12주 · 점선 = 이동평균</th>
-                <th rowspan="2" scope="col" style="text-align:left" title="섹터는 SPY 대비, 산업·테마는 상위 섹터 ETF 대비 국면입니다. 괄호 안은 SPY 대비 국면입니다.">RRG 국면 · 벤치마크</th>
+                <th rowspan="2" scope="col" style="text-align:left" title="섹터와 스타일(MAGS)은 SPY 대비, 산업·테마는 상위 섹터 ETF 대비 국면입니다. 괄호 안은 SPY 대비 국면입니다.">RRG 국면 · 벤치마크</th>
                 <th rowspan="2" scope="col" style="text-align:left">신호</th>
               </tr>
               <tr id="colhead">
@@ -357,7 +358,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
           </table>
         </div>
         <p class="sortline" id="sortHint"></p>
-        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다.</p>
+        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다. MAGS(동일가중 매그니피센트 7)는 스타일·집중도 행입니다. 일곱 종목이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 대비로 재고, 백분위는 23개 ETF 사이에 끼워 넣었을 때의 위치만 적으며 다른 행의 순위 계산과 섹터 집계에는 넣지 않습니다. 3) 탭의 1단 그래프에는 마름모로 함께 그립니다.</p>
       </section>
 
       <aside class="rail">
@@ -387,7 +388,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
             <div class="shape"><div class="strip" id="lg3" aria-hidden="true"></div><div><b>오른쪽만 <span data-w="hot">초록</span>: 소진 경계</b><span>장기 성과는 좋지만 단기 열이 식고 있습니다. 순위 하락이 이어지면 이탈을 검토합니다.</span></div></div>
             <div class="klegend">
               <div><span class="lab">RATIO</span>흰 실선은 ETF÷벤치마크 가격 비율, 주황 점선은 그 이동평균입니다. 끝점이 <span data-w="hot">초록</span>이면 지금 이동평균 위, <span data-w="cold">붉은색</span>이면 아래이고, 선 전체에 색이 들어가면 최근 3주 안에 돌파 또는 이탈이 있었다는 뜻입니다.</div>
-              <div><span class="lab">RRG</span><span class="sw" style="background:var(--lead)"></span>Leading <span class="sw" style="background:var(--weak);margin-left:8px"></span>Weakening <span class="sw" style="background:var(--lag);margin-left:8px"></span>Lagging <span class="sw" style="background:var(--impr);margin-left:8px"></span>Improving · 섹터는 SPY 대비, 산업·테마는 상위 섹터 대비 국면입니다. 그래프는 3) 탭, 뜻은 2) 도움말에 있습니다.</div>
+              <div><span class="lab">RRG</span><span class="sw" style="background:var(--lead)"></span>Leading <span class="sw" style="background:var(--weak);margin-left:8px"></span>Weakening <span class="sw" style="background:var(--lag);margin-left:8px"></span>Lagging <span class="sw" style="background:var(--impr);margin-left:8px"></span>Improving · 섹터와 MAGS는 SPY 대비, 산업·테마는 상위 섹터 대비 국면입니다. 그래프는 3) 탭, 뜻은 2) 도움말에 있습니다.</div>
               <div><span class="lab">SIGNAL</span>★ SPY 대비 비율 52주 신고가 · ↗ 비율선 50·200일선 상향 돌파(최근 5일) · ↘ 하향 이탈 · ↑↓ 백분위 ±30 급변(6개월 → 1개월) · ≈ 1주 반등 미확인</div>
               <div><span class="lab">LISTING</span><span class="dots" aria-hidden="true"><i class="b">b</i></span> 바이낸스 bStocks 현물 · <span class="dots" aria-hidden="true"><i class="p"></i></span> 바이낸스 perp · <span class="dots" aria-hidden="true"><i class="h"></i></span> 하이퍼리퀴드 perp. 티커 뒤에 상장된 상품만 점으로 찍히고, 없으면 아무것도 표시하지 않습니다. 구성종목 표에서는 티커 아래에 작은 점으로 찍히며, bStocks는 속이 빈 주황 원입니다.</div>
               <div><span class="lab">COLOR</span>툴바의 97) 색 규약으로 초록=강세(US, 블룸버그 관례)와 붉음=강세(KR) 사이를 바꿀 수 있습니다. 설정은 이 브라우저에만 저장됩니다.</div>
@@ -410,9 +411,9 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
 
   <div class="pane rrg" id="pane3" role="tabpanel" aria-labelledby="tab3" hidden>
     <section class="panel" aria-labelledby="rrg1Title">
-      <header class="ph"><span class="pt" id="rrg1Title">1단 · 섹터 ÷ SPY<small>어느 섹터가 시장을 이기는가</small></span><span class="pctl"><span class="grp"><button type="button" id="rrgMarket" aria-pressed="true"><b>41)</b> 섹터 11</button></span></span></header>
+      <header class="ph"><span class="pt" id="rrg1Title">1단 · 섹터 ÷ SPY<small>어느 섹터가 시장을 이기는가</small></span><span class="pctl"><span class="grp"><button type="button" id="rrgMarket" aria-pressed="true"><b>41)</b> 섹터 11 + MAGS</button></span></span></header>
       <div class="pb">
-        <p class="lead-line">섹터 11개를 모두 <b>SPY</b>에 견줍니다. 원점 (100, 100)은 SPY와 같은 수준입니다. 점을 누르면 오른쪽 2단이 그 섹터 대비로 바뀝니다.</p>
+        <p class="lead-line">섹터 11개를 모두 <b>SPY</b>에 견줍니다. 원점 (100, 100)은 SPY와 같은 수준입니다. 점을 누르면 오른쪽 2단이 그 섹터 대비로 바뀝니다. 마름모 <b>MAGS</b>(동일가중 매그니피센트 7)는 "시장을 몇 종목이 끌고 가는가"를 보는 집중도 지표로, 같은 SPY 대비 축에 함께 그리되 섹터 집계에는 넣지 않습니다.</p>
         <div id="rrg1"></div>
         <p class="note" id="rrg1Note"></p>
       </div>
@@ -440,7 +441,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
           <dt class="ph-Improving">IMPROVING</dt><dd>비율의 추세는 아직 열위이지만 힘이 붙고 있습니다(RS-Ratio &lt; 100, RS-Momentum &gt; 100). 전환 초기에 해당하며, 다음 칸인 Leading으로 넘어가는지 지켜봅니다.</dd>
         </dl>
         <p>가로축 RS-Ratio는 ETF÷벤치마크 비율의 추세 수준을 100을 기준으로 정규화한 값이고, 세로축 RS-Momentum은 그 RS-Ratio의 변화율을 100을 기준으로 정규화한 값입니다. 국면은 보통 Improving → Leading → Weakening → Lagging → Improving 순서로 시계 방향으로 회전합니다. 표의 작은 사각형 네 칸은 이 사분면의 위치를 그대로 나타냅니다(왼쪽 위 Improving, 오른쪽 위 Leading, 오른쪽 아래 Weakening, 왼쪽 아래 Lagging).</p>
-        <p><b style="color:var(--amber)">벤치마크가 질문을 정합니다.</b> 이 화면은 2단 구조입니다. 섹터 11개는 SPY에 견주어 "시장보다 강한가"를 묻고(1단), 산업·테마 12개는 상위 섹터 ETF에 견주어 "그 섹터 안에서 강한가"를 묻습니다(2단). 매트릭스의 RRG 열에서 산업·테마 행은 2단 국면을 먼저 쓰고 괄호 안에 SPY 대비 국면을 함께 적습니다. 상위 섹터 배정은 SMH·IGV·DRAM → XLK, XBI·GNOM·ARKG → XLV, KRE → XLF, XHB → XLY, XME → XLB, ITA·PAVE → XLI, URA → XLE입니다. 3) 탭에서 1단 그래프의 섹터 점을 누르면 2단 그래프가 그 섹터 대비로 열립니다.</p>
+        <p><b style="color:var(--amber)">벤치마크가 질문을 정합니다.</b> 이 화면은 2단 구조입니다. 섹터 11개는 SPY에 견주어 "시장보다 강한가"를 묻고(1단), 산업·테마 12개는 상위 섹터 ETF에 견주어 "그 섹터 안에서 강한가"를 묻습니다(2단). 매트릭스의 RRG 열에서 산업·테마 행은 2단 국면을 먼저 쓰고 괄호 안에 SPY 대비 국면을 함께 적습니다. 상위 섹터 배정은 SMH·IGV·DRAM → XLK, XBI·GNOM·ARKG → XLV, KRE → XLF, XHB → XLY, XME → XLB, ITA·PAVE → XLI, URA → XLE입니다. 3) 탭에서 1단 그래프의 섹터 점을 누르면 2단 그래프가 그 섹터 대비로 열립니다. 스타일·집중도 행인 MAGS(동일가중 매그니피센트 7)는 AAPL·MSFT·NVDA·AMZN·TSLA·META·GOOGL이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY로 나눕니다. MAGS÷SPY가 오르면 "동일가중 Mag 7이 시장을 이기는 중", 곧 소수 대형주 집중 국면이라는 뜻이고, XLK÷SPY·QQQ÷SPY와 같이 읽어야 합니다. 동일가중이라 NVDA 한 종목이 끌고 나머지 여섯이 뒤처지는 장에서는 시가총액가중 바스켓보다 상승 폭이 작게 나올 수 있습니다.</p>
       </div>
     </section>
 
@@ -453,7 +454,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
         </section>
         <section>
           <h3>2. 백분위 순위가 하는 일</h3>
-          <p>상대수익률의 크기는 기간마다 단위가 달라서 1주 값과 12개월 값을 같은 색으로 칠할 수 없습니다. 그래서 각 기간 안에서 23개 ETF의 등수를 매기고, 1등을 100, 꼴찌를 0으로 바꾸어 같은 잣대로 만듭니다. 학급 석차를 100점 만점으로 환산한 것과 같은 방식이므로, 96이라는 숫자는 "이 기간에는 상위 4% 안"이라는 뜻입니다.</p>
+          <p>상대수익률의 크기는 기간마다 단위가 달라서 1주 값과 12개월 값을 같은 색으로 칠할 수 없습니다. 그래서 각 기간 안에서 섹터·산업 23개 ETF의 등수를 매기고, 1등을 100, 꼴찌를 0으로 바꾸어 같은 잣대로 만듭니다. 학급 석차를 100점 만점으로 환산한 것과 같은 방식이므로, 96이라는 숫자는 "이 기간에는 상위 4% 안"이라는 뜻입니다. 스타일 행인 MAGS는 이 23개 사이에 끼워 넣었을 때의 위치만 적고 등수 계산에서는 빼므로, 다른 행의 값은 MAGS를 추가하기 전과 같습니다.</p>
         </section>
         <section>
           <h3>3. 다섯 시간축을 나란히 두는 이유</h3>
@@ -484,12 +485,12 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
             <thead><tr><th>입력</th><th>동작</th></tr></thead>
             <tbody>
               <tr><td>SMH · SMH US · SMH US EQUITY</td><td>그 ETF의 행을 선택하고 구성종목을 표시합니다. 필터에 가려져 있으면 필터를 전체로 되돌립니다.</td></tr>
-              <tr><td>11 ALL · 12 SEC · 13 IND</td><td>대상 필터를 전체, 섹터, 산업·테마로 바꿉니다.</td></tr>
+              <tr><td>11 ALL · 12 SEC · 13 IND · 14 STY</td><td>대상 필터를 전체, 섹터, 산업·테마, 스타일로 바꿉니다.</td></tr>
               <tr><td>21 COL · 22 SHIFT</td><td>열 기준 정렬과 전환순 정렬 사이를 바꿉니다.</td></tr>
               <tr><td>1W · 1M · 3M · 6M · 12M</td><td>그 기간 열의 백분위가 높은 순으로 정렬합니다. 뒤에 ASC를 붙이면 낮은 순입니다(예: 3M ASC).</td></tr>
               <tr><td>97 COLOR · US · KR</td><td>색 규약을 바꾸거나 지정합니다.</td></tr>
               <tr><td>1 MATRIX · 2 HELP · 3 RRG · 4 BRIEF</td><td>매트릭스, 도움말, RRG 1단·2단, 주간 브리핑 화면을 오갑니다.</td></tr>
-              <tr><td>RRG XLK · XLK RRG</td><td>3) 탭을 열고 2단 그래프를 그 섹터 대비로 바꿉니다. 섹터 ETF 11개만 받습니다.</td></tr>
+              <tr><td>RRG XLK · XLK RRG</td><td>3) 탭을 열고 2단 그래프를 그 섹터 대비로 바꿉니다. 하위 ETF를 적으면 그 상위 섹터의 2단을 열고 그 ETF를 강조하며, MAGS를 적으면 1단에서 마름모를 강조합니다.</td></tr>
             </tbody>
           </table>
         </section>
@@ -512,7 +513,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
 <script>
 const HOLD = __HOLD__;
 
-/* ---- 관찰 대상 23개(메타데이터). 수치는 아래 DATA에서 들어온다 ---- */
+/* ---- 관찰 대상 24개(메타데이터): 섹터 11, 산업·테마 12, 스타일·집중도 1. 수치는 아래 DATA에서 들어온다 ---- */
 const ETFS = [
   {t:'SMH', ko:'반도체', cat:'ind', tag:'산업'},
   {t:'DRAM', ko:'메모리반도체', cat:'ind', tag:'테마', note:'총수익스왑(TRS)과 단기 국채가 포함되어 있어 같은 회사가 직접 보유분과 스왑으로 두 번 나타납니다. 삼성전자(005930)와 SK하이닉스(000660)는 한국 거래소 종목코드로 표시됩니다.'},
@@ -537,14 +538,18 @@ const ETFS = [
   {t:'XLE', ko:'에너지', cat:'sec', tag:'섹터'},
   {t:'XLP', ko:'필수소비재', cat:'sec', tag:'섹터'},
   {t:'XLV', ko:'헬스케어', cat:'sec', tag:'섹터'},
+  {t:'MAGS', ko:'매그니피센트 7', cat:'sty', tag:'스타일', note:'동일가중 매그니피센트 7(AAPL·MSFT·NVDA·AMZN·TSLA·META·GOOGL, 각 약 14%, 분기 리밸런스)입니다. 노출의 대부분을 총수익스왑으로 얻고 담보로 단기 국채를 보유하므로, 상위 10개에는 국채·현금성 ETF(XBOX)·종목별 직접 보유분(5~6%)이 나오고 MSFT는 10위 밖에 있습니다. 이 표로는 종목별 실제 노출을 읽을 수 없습니다.'},
 ];
 /* ---- 실제 계산값: rrg 저장소 output/prices_wide.csv(야후 조정 종가, SPY 기준 500거래일)로 계산. pct = SPY 대비 상대수익률 백분위, rel = 상대수익률(%), S/Q = 주봉 ETF÷SPY·÷QQQ 12주, rrgPath = 벤치마크(섹터는 SPY, 산업·테마는 상위 섹터) 대비 최근 5주 [RS-Ratio, RS-Momentum], rrgSpy = SPY 대비, sig = 신호 ---- */
 const DATA = __DATA__;
 const PRICE_ASOF = '__PRICE_ASOF__', PRICE_FIRST = '__PRICE_FIRST__', PRICE_DAYS = __PRICE_DAYS__, PRICE_WEEKS = __PRICE_WEEKS__;
-ETFS.forEach(e => { const d = DATA[e.t]; e.pct = d.pct; e.rel = d.rel; e.S = d.S; e.Q = d.Q; e.rrgPath = d.rrgPath; e.rrgSpy = d.rrgSpy; e.sig = d.sig; });
+ETFS.forEach(e => {
+  const d = DATA[e.t] || { pct: [null, null, null, null, null], rel: [null, null, null, null, null], S: [], Q: [], rrgPath: [], rrgSpy: [], sig: [] };   /* 가격 자료에 아직 없는 ETF는 빈 행으로 둔다 */
+  e.pct = d.pct; e.rel = d.rel; e.S = d.S; e.Q = d.Q; e.rrgPath = d.rrgPath; e.rrgSpy = d.rrgSpy; e.sig = d.sig;
+});
 const COLS = ['1주','1개월','3개월','6개월','12개월'];
 const CODES = ['1W','1M','3M','6M','12M'];
-const CATCODE = e => e.cat === 'sec' ? 'SECT' : (e.tag === '테마' ? 'THM' : 'IND');
+const CATCODE = e => e.cat === 'sec' ? 'SECT' : e.cat === 'sty' ? 'STYLE' : (e.tag === '테마' ? 'THM' : 'IND');
 
 /* ---- 2단 구조: 산업·테마 ETF의 상위 섹터(2단 벤치마크). 섹터 11개는 SPY가 벤치마크 ---- */
 const PARENT = { SMH:'XLK', IGV:'XLK', DRAM:'XLK', XBI:'XLV', GNOM:'XLV', ARKG:'XLV', KRE:'XLF', XHB:'XLY', XME:'XLB', ITA:'XLI', PAVE:'XLI', URA:'XLE' };
@@ -572,7 +577,7 @@ ETFS.forEach(e => {
 });
 
 /* ---- 거래소 상장(수집 __LIST_TS__): b = 바이낸스 bStocks 현물, p = 바이낸스 TradFi perp, h = 하이퍼리퀴드 HIP-3 perp. 표에 없는 티커는 세 목록 어디에도 없다는 뜻.
-   출처: github.com/tlzkrh1029/tradfi-ticker-lists (bStocks 80종, 바이낸스 TradFi 선물 188계약, 하이퍼리퀴드 HIP-3 주식 121종)를 23개 ETF와 상위 10개 구성종목에 대조한 결과 ---- */
+   출처: github.com/tlzkrh1029/tradfi-ticker-lists (bStocks 80종, 바이낸스 TradFi 선물 188계약, 하이퍼리퀴드 HIP-3 주식 121종)를 24개 ETF와 상위 10개 구성종목에 대조한 결과 ---- */
 const LIST_ASOF = '__LIST_ASOF__';
 /* 직전 빌드 대비 변화 (build_terminal.py 가 채움): {asof, prev_asof, alerts:[{etf,type,text}]} */
 const ALERTS = __ALERTS__;
@@ -648,13 +653,13 @@ function render() {
   tb.innerHTML = current.map(e => {
     const cells = e.pct.map((p, i) => p == null
       ? `<td class="p"><span class="cell na" title="${COLS[i]}: 상장 기간이 짧아 산출 불가">n/a</span></td>`
-      : `<td class="p"><span class="cell" style="${cellStyle(p)}" title="${COLS[i]} SPY 대비 상대수익률 ${e.rel[i] >= 0 ? '+' : ''}${e.rel[i].toFixed(1)}% · 23개 중 백분위 ${p}">${p}</span></td>`).join('');
+      : `<td class="p"><span class="cell" style="${cellStyle(p)}" title="${COLS[i]} SPY 대비 상대수익률 ${e.rel[i] >= 0 ? '+' : ''}${e.rel[i].toFixed(1)}% · ${e.cat === 'sty' ? `섹터·산업 23개 사이에 끼워 넣은 위치 ${p} (순위 계산 제외)` : `23개 중 백분위 ${p}`}">${p}</span></td>`).join('');
     const sig = e.sig.length ? e.sig.map(s => `<span class="s ${s[2]}"><i>${s[0]}</i>${s[1]}</span>`).join('') : '<span class="s" style="color:var(--muted)">—</span>';
     const rr = e.rrg
       ? `<span class="q ${e.rrg}" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="ph-${e.rrg}">${e.rrg.toUpperCase()}</span>${e.next ? ` <span class="nx">→ <b>${e.next.toUpperCase()}</b></span>` : ''}`
         + (e.parent
           ? `<span class="vs">vs <b>${e.parent}</b> · SPY 대비 <span class="ph-${e.rrgVsSpy}">${e.rrgVsSpy.toUpperCase()}</span></span>`
-          : `<span class="vs">vs <b>SPY</b> · 1단</span>`)
+          : `<span class="vs">vs <b>SPY</b> · ${e.cat === 'sty' ? '스타일 (1단 축)' : '1단'}</span>`)
       : `<span class="q" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span style="color:var(--muted)">N/A</span><span class="vs">주봉 39주 필요 · 상장 ${PRICE_WEEKS_OF(e)}주</span>`;
     const chQ = pctChange12w(e.Q), chS = pctChange12w(e.S);
     const chT = v => v == null ? '' : ` · 12주 ${v >= 0 ? '+' : ''}${v.toFixed(1)}%`;
@@ -698,7 +703,9 @@ function renderHold(t) {
     const sym = isSwap ? `<span style="color:var(--muted)">SWAP/T-BILL</span><small>${r[0]}</small>` : `${r[0]}${r[4] ? `<span style="color:var(--muted);font-weight:400;font-size:9.5px;margin-left:4px">${r[4]}</span>` : ''}`;
     const l = isSwap ? (SWAPS[r[0]] || '') : (LST[r[0]] || '');
     const ch = r[3] == null
-      ? `<span style="color:var(--amber);font-size:10px;letter-spacing:.08em" title="${h.prev} 상위 10개에 없던 종목">NEW</span>`
+      ? (h.prevMissing
+        ? `<span style="color:var(--muted)" title="${h.prev} 스냅샷에는 이 ETF가 없어 변동을 계산하지 않았습니다">—</span>`
+        : `<span style="color:var(--amber);font-size:10px;letter-spacing:.08em" title="${h.prev} 상위 10개에 없던 종목">NEW</span>`)
       : (r[3] === 0 ? '<span style="color:var(--muted)">0.00</span>' : `<span style="color:var(--${r[3] > 0 ? 'hot' : 'cold'})">${r[3] > 0 ? '+' : ''}${r[3].toFixed(2)}</span>`);
     return `<tr><td class="rk">${i + 1}</td><td class="sy">${sym}${mdots(l)}</td><td class="nm">${r[1]}</td><td class="w r"><span class="bar" style="width:${(w / maxW * 100).toFixed(1)}%"></span><span class="v">${r[2]}</span></td><td class="ch r" title="${h.prev} 대비 비중 변화 (%p)">${ch}</td></tr>`;
   }).join('');
@@ -713,7 +720,9 @@ function renderHold(t) {
       <div class="row"><span>vs SPY 12W ${spark(e.S)}</span><span>vs QQQ 12W ${spark(e.Q)}</span></div>
     </div>
     <div class="h-wrap"><table class="h"><thead><tr><th>#</th><th>티커</th><th>종목명</th><th class="r">비중</th><th class="r"><abbr title="${h.prev} 스냅샷 대비 비중 변화(%p). NEW는 그때 상위 10개에 없던 종목">변동 %p</abbr></th></tr></thead><tbody>${rows}</tbody></table></div>
-    <p class="hfn">${e.note ? e.note + ' ' : ''}${h.entered.length || h.left.length ? `상위 10개 진입: <b style="color:var(--ink-2)">${h.entered.join(', ') || '없음'}</b> · 이탈: <b style="color:var(--ink-2)">${h.left.join(', ') || '없음'}</b> (${h.prev} → ${h.asof}). ` : `${h.prev} 이후 상위 10개 구성에 변화가 없습니다. `}변동 %p는 두 스냅샷의 비중 차이입니다.</p>`;
+    <p class="hfn">${e.note ? e.note + ' ' : ''}${h.prevMissing
+      ? `${h.prev} 스냅샷에는 이 ETF가 없어 변동 %p와 진입·이탈을 계산하지 않았습니다. 다음 스냅샷부터 표시됩니다.`
+      : `${h.entered.length || h.left.length ? `상위 10개 진입: <b style="color:var(--ink-2)">${h.entered.join(', ') || '없음'}</b> · 이탈: <b style="color:var(--ink-2)">${h.left.join(', ') || '없음'}</b> (${h.prev} → ${h.asof}). ` : `${h.prev} 이후 상위 10개 구성에 변화가 없습니다. `}변동 %p는 두 스냅샷의 비중 차이입니다.`}</p>`;
 }
 function select(t, opts = {}) {
   if (!ETFS.some(x => x.t === t)) return;
@@ -779,9 +788,10 @@ function showTab(n) {
 /* ---- RRG 그래프: 1단(섹터 ÷ SPY)과 2단(하위 ETF ÷ 섹터) ---- */
 let rrgSector = 'XLK';
 const SECTORS = ETFS.filter(e => e.cat === 'sec');
+const STYLES = ETFS.filter(e => e.cat === 'sty');   /* 1단 축에 마름모로 함께 그리되 섹터 집계에는 넣지 않는다 */
 const childrenOf = s => ETFS.filter(e => e.parent === s);
 function rrgSvg(items, opts) {
-  /* items: [{t, ko, path:[[r,m],...], sel}] · opts: {bench, originLabel, sel} */
+  /* items: [{t, ko, path:[[r,m],...], sel, click, style}] · opts: {bench, originLabel, aria} · style 항목은 점선 꼬리와 마름모 머리로 그린다 */
   const W = 520, H = 400, L = 44, R = 16, T = 18, B = 40;
   const pw = W - L - R, ph = H - T - B;
   let lo = 97.2, hi = 102.8;
@@ -803,22 +813,31 @@ function rrgSvg(items, opts) {
     const p = it.path, last = p[p.length - 1], ph2 = phaseOf(last[0], last[1]);
     const col = `var(--${{ Leading:'lead', Weakening:'weak', Lagging:'lag', Improving:'impr' }[ph2]})`;
     const pts = p.map(([r, m]) => `${X(r).toFixed(1)},${Y(m).toFixed(1)}`).join(' ');
+    const hx = X(last[0]).toFixed(1), hy = Y(last[1]).toFixed(1);
     s += `<g class="${it.click ? 'ck' : ''}" ${it.click ? `tabindex="0" role="button" data-sec="${it.t}" aria-label="${it.t} ${it.ko} 2단 열기"` : ''}>`;
-    s += `<polyline class="tail" points="${pts}" stroke="${col}"/>`;
+    s += `<polyline class="tail" points="${pts}" stroke="${col}"${it.style ? ' stroke-dasharray="3 3"' : ''}/>`;
     p.slice(0, -1).forEach(([r, m], i) => { s += `<circle class="tp" cx="${X(r).toFixed(1)}" cy="${Y(m).toFixed(1)}" r="${1.6 + i * .4}" fill="${col}"/>`; });
-    if (it.sel) s += `<circle class="selring" cx="${X(last[0]).toFixed(1)}" cy="${Y(last[1]).toFixed(1)}" r="10"/>`;
-    s += `<circle class="hd" cx="${X(last[0]).toFixed(1)}" cy="${Y(last[1]).toFixed(1)}" r="5" fill="${col}"/>`;
-    s += `<text class="lb" x="${(X(last[0]) + 8).toFixed(1)}" y="${(Y(last[1]) + 4).toFixed(1)}">${it.t}</text>`;
+    if (it.sel) s += `<circle class="selring" cx="${hx}" cy="${hy}" r="10"/>`;
+    s += it.style
+      ? `<rect class="hd" x="${(X(last[0]) - 5).toFixed(1)}" y="${(Y(last[1]) - 5).toFixed(1)}" width="10" height="10" transform="rotate(45 ${hx} ${hy})" fill="${col}"><title>${it.t} ${it.ko} · 스타일·집중도 (섹터 집계 제외)</title></rect>`
+      : `<circle class="hd" cx="${hx}" cy="${hy}" r="5" fill="${col}"/>`;
+    s += `<text class="lb" x="${(X(last[0]) + 8).toFixed(1)}" y="${(Y(last[1]) + 4).toFixed(1)}"${it.style ? ' font-style="italic"' : ''}>${it.t}</text>`;
     s += `</g>`;
   });
   return s + '</svg>';
 }
 function renderRRG() {
   /* 1단 */
-  const items1 = SECTORS.map(e => ({ t: e.t, ko: e.ko, path: e.rrgPath, click: true, sel: e.t === rrgSector }));
-  document.getElementById('rrg1').innerHTML = rrgSvg(items1, { bench: 'SPY', aria: '섹터 11개의 SPY 대비 RRG. 점을 누르면 그 섹터의 2단이 열립니다.' });
+  const items1 = SECTORS.map(e => ({ t: e.t, ko: e.ko, path: e.rrgPath, click: true, sel: e.t === rrgSector }))
+    .concat(STYLES.filter(e => e.rrgPath.length).map(e => ({ t: e.t, ko: e.ko, path: e.rrgPath, click: false, style: true, sel: e.t === selT })));
+  document.getElementById('rrg1').innerHTML = rrgSvg(items1, { bench: 'SPY', aria: '섹터 11개와 MAGS의 SPY 대비 RRG. 섹터 점을 누르면 그 섹터의 2단이 열립니다.' });
   const movers = SECTORS.filter(e => e.next).map(e => `${e.t} ${e.rrg} → ${e.next}`);
-  document.getElementById('rrg1Note').innerHTML = `꼬리는 지난 5주 궤적(작은 점 → 큰 점이 지금). 국면 경계에 가까운 섹터: ${movers.length ? '<b>' + movers.join('</b>, <b>') + '</b>' : '없음'}. RS-Ratio = 100 × SMA(RS,10) ÷ SMA(RS,30), RS-Momentum = 100 × RS-Ratio ÷ SMA(RS-Ratio,9), 주봉 기준, ${PRICE_ASOF} 종가까지.`;
+  const styNote = STYLES.map(e => {
+    if (!e.rrgPath.length) return ` 마름모 <b>${e.t}</b>(${e.ko})는 주봉 39주가 되지 않아 아직 그리지 않습니다.`;
+    const [r, m] = e.rrgPath[e.rrgPath.length - 1];
+    return ` 마름모 <b>${e.t}</b>(${e.ko})는 SPY 대비 <b class="ph-${e.rrg}">${e.rrg.toUpperCase()}</b>${e.next ? ` <span class="nx">→ ${e.next.toUpperCase()}</span>` : ''} (RS-Ratio ${r.toFixed(1)}, RS-Momentum ${m.toFixed(1)})이며, 섹터 집계와 국면 경계 목록에는 넣지 않습니다.`;
+  }).join('');
+  document.getElementById('rrg1Note').innerHTML = `꼬리는 지난 5주 궤적(작은 점 → 큰 점이 지금). 국면 경계에 가까운 섹터: ${movers.length ? '<b>' + movers.join('</b>, <b>') + '</b>' : '없음'}.${styNote} RS-Ratio = 100 × SMA(RS,10) ÷ SMA(RS,30), RS-Momentum = 100 × RS-Ratio ÷ SMA(RS-Ratio,9), 주봉 기준, ${PRICE_ASOF} 종가까지.`;
   document.querySelectorAll('#rrg1 .ck').forEach(g => {
     g.addEventListener('click', () => setRRGSector(g.dataset.sec));
     g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); setRRGSector(g.dataset.sec); } });
@@ -899,7 +918,9 @@ function renderChanges() {
   const a = ALERTS || { alerts: [] };
   if (!a.prev_asof) {
     sub.textContent = '직전 빌드 대비';
-    body.innerHTML = '<p class="none">첫 빌드라 비교 대상이 없습니다. 다음 빌드부터 직전 빌드 대비 RRG 국면 변화, 새로 켜진 신호, 전환순 상위 3 진입을 여기에 적습니다.</p>';
+    body.innerHTML = a.same_asof
+      ? `<p class="none">같은 종가(${a.asof})로 다시 빌드해 비교 대상이 없습니다. 다음 종가의 빌드부터 직전 빌드 대비 RRG 국면 변화, 새로 켜진 신호, 전환순 상위 3 진입을 여기에 적습니다.</p>`
+      : '<p class="none">첫 빌드라 비교 대상이 없습니다. 다음 빌드부터 직전 빌드 대비 RRG 국면 변화, 새로 켜진 신호, 전환순 상위 3 진입을 여기에 적습니다.</p>';
     return;
   }
   sub.textContent = `${a.prev_asof} → ${a.asof} · ${a.alerts.length}건`;
@@ -926,7 +947,9 @@ function runCmd(raw) {
     if (SECTORS.some(e => e.t === s)) { showTab(3); setRRGSector(s); return; }
     const child = ETFS.find(e => e.t === s && e.parent);
     if (child) { showTab(3); selT = child.t; setRRGSector(child.parent); msg(`RRG 2단 → ${child.parent} 대비 · ${child.t} 강조`, 'ok'); return; }
-    msg(`RRG 뒤에는 섹터 ETF 11개 중 하나를 적습니다 (예: RRG XLK)`, 'err'); return;
+    const sty = STYLES.find(e => e.t === s);
+    if (sty) { showTab(3); selT = sty.t; renderRRG(); msg(`RRG 1단 → ${sty.t} 마름모 강조 (SPY 대비)`, 'ok'); return; }
+    msg(`RRG 뒤에는 관찰 대상 ETF 중 하나를 적습니다 (예: RRG XLK, RRG SMH, RRG MAGS)`, 'err'); return;
   }
   const tk = c.replace(/ US( EQUITY)?$/, '');
   const e = ETFS.find(x => x.t === tk);
@@ -946,6 +969,7 @@ function runCmd(raw) {
     '11': () => setCat('all'), 'ALL': () => setCat('all'),
     '12': () => setCat('sec'), 'SEC': () => setCat('sec'), 'SECT': () => setCat('sec'),
     '13': () => setCat('ind'), 'IND': () => setCat('ind'), 'THM': () => setCat('ind'),
+    '14': () => setCat('sty'), 'STY': () => setCat('sty'), 'STYLE': () => setCat('sty'),
     '21': () => setSort('col'), 'COL': () => setSort('col'),
     '22': () => setSort('shift'), 'SHIFT': () => setSort('shift'),
     '97': () => setConv(conv === 'US' ? 'KR' : 'US'), 'COLOR': () => setConv(conv === 'US' ? 'KR' : 'US'), 'CONV': () => setConv(conv === 'US' ? 'KR' : 'US'),
@@ -953,8 +977,9 @@ function runCmd(raw) {
   };
   const labels = { '1': '매트릭스 화면', 'MATRIX': '매트릭스 화면', 'MAIN': '매트릭스 화면', '2': '도움말 화면', 'HELP': '도움말 화면', '98': '도움말 화면',
     '3': 'RRG 1단·2단 화면', 'RRG': 'RRG 1단·2단 화면', '41': 'RRG 1단·2단 화면', '42': '매트릭스 화면', '4': '주간 브리핑 화면', 'BRIEF': '주간 브리핑 화면',
-    '11': '필터 → 전체 23', 'ALL': '필터 → 전체 23', '12': '필터 → 섹터 11', 'SEC': '필터 → 섹터 11', 'SECT': '필터 → 섹터 11',
-    '13': '필터 → 산업·테마 12', 'IND': '필터 → 산업·테마 12', 'THM': '필터 → 산업·테마 12', '21': '정렬 → 열 기준', 'COL': '정렬 → 열 기준', '22': '정렬 → 전환순', 'SHIFT': '정렬 → 전환순' };
+    '11': '필터 → 전체 24', 'ALL': '필터 → 전체 24', '12': '필터 → 섹터 11', 'SEC': '필터 → 섹터 11', 'SECT': '필터 → 섹터 11',
+    '13': '필터 → 산업·테마 12', 'IND': '필터 → 산업·테마 12', 'THM': '필터 → 산업·테마 12', '14': '필터 → 스타일 1', 'STY': '필터 → 스타일 1', 'STYLE': '필터 → 스타일 1',
+    '21': '정렬 → 열 기준', 'COL': '정렬 → 열 기준', '22': '정렬 → 전환순', 'SHIFT': '정렬 → 전환순' };
   if (table[c]) { if (!/^(97|COLOR|CONV|US|KR|2|3|4|HELP|RRG|BRIEF|98|41|42)$/.test(c)) showTab(1); table[c](); if (labels[c]) msg(labels[c], 'ok'); return; }
   msg(`알 수 없는 명령: ${c} · 2) 도움말의 명령줄 표를 참고하세요`, 'err');
 }
