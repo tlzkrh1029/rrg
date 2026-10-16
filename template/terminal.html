@@ -368,7 +368,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
           </table>
         </div>
         <p class="sortline" id="sortHint"></p>
-        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷(MAGS·DRAM은 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출)이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다. MAGS(동일가중 매그니피센트 7)는 스타일·집중도 행입니다. 일곱 종목이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 대비로 재고, 백분위는 23개 ETF 사이에 끼워 넣었을 때의 위치만 적으며 다른 행의 순위 계산과 섹터 집계에는 넣지 않습니다. 3) 탭의 1단 그래프에는 마름모로 함께 그립니다.</p>
+        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷(MAGS·DRAM은 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출)이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다. MAGS(동일가중 매그니피센트 7)는 스타일·집중도 행입니다. 일곱 종목이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 대비로 재고, 백분위는 23개 ETF 사이에 끼워 넣었을 때의 위치만 적으며 다른 행의 순위 계산과 섹터 집계에는 넣지 않습니다. 3) 탭의 1단 그래프에는 점선 꼬리를 단 점으로 함께 그립니다.</p>
       </section>
 
       <aside class="rail">
@@ -423,7 +423,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
     <section class="panel" aria-labelledby="rrg1Title">
       <header class="ph"><span class="pt" id="rrg1Title">1단 · 섹터 ÷ SPY<small>어느 섹터가 시장을 이기는가</small></span><span class="pctl"><span class="grp"><button type="button" id="rrgMarket" aria-pressed="true"><b>41)</b> 섹터 11 + MAGS</button></span></span></header>
       <div class="pb">
-        <p class="lead-line">섹터 11개를 모두 <b>SPY</b>에 견줍니다. 원점 (100, 100)은 SPY와 같은 수준입니다. 점을 누르면 2단이 그 섹터 대비로 바뀌고 오른쪽 Holdings 패널에 그 ETF의 구성종목이 열립니다. 마름모 <b>MAGS</b>(동일가중 매그니피센트 7)는 "시장을 몇 종목이 끌고 가는가"를 보는 집중도 지표로, 같은 SPY 대비 축에 함께 그리되 섹터 집계에는 넣지 않습니다. 마름모를 눌러도 구성종목이 열립니다.</p>
+        <p class="lead-line">섹터 11개를 모두 <b>SPY</b>에 견줍니다. 원점 (100, 100)은 SPY와 같은 수준입니다. 점을 누르면 2단이 그 섹터 대비로 바뀌고 오른쪽 Holdings 패널에 그 ETF의 구성종목이 열립니다. 점선 꼬리를 단 <b>MAGS</b>(동일가중 매그니피센트 7)는 "시장을 몇 종목이 끌고 가는가"를 보는 집중도 지표로, 같은 SPY 대비 축에 함께 그리되 섹터 집계에는 넣지 않습니다. 이 점을 눌러도 구성종목이 열립니다.</p>
         <div id="rrg1"></div>
         <p class="note" id="rrg1Note"></p>
       </div>
@@ -503,7 +503,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
               <tr><td>1W · 1M · 3M · 6M · 12M</td><td>그 기간 열의 백분위가 높은 순으로 정렬합니다. 뒤에 ASC를 붙이면 낮은 순입니다(예: 3M ASC).</td></tr>
               <tr><td>97 COLOR · US · KR</td><td>색 규약을 바꾸거나 지정합니다.</td></tr>
               <tr><td>1 MATRIX · 2 HELP · 3 RRG · 4 BRIEF</td><td>매트릭스, 도움말, RRG 1단·2단, 주간 브리핑 화면을 오갑니다.</td></tr>
-              <tr><td>RRG XLK · XLK RRG</td><td>3) 탭을 열고 2단 그래프를 그 섹터 대비로 바꿉니다. 하위 ETF를 적으면 그 상위 섹터의 2단을 열고 그 ETF를 강조하며, MAGS를 적으면 1단에서 마름모를 강조합니다. 3) 탭에서는 1단·2단의 점과 2단 표의 행을 눌러도 탭을 벗어나지 않고 오른쪽 Holdings 패널에 그 ETF의 구성종목이 열립니다.</td></tr>
+              <tr><td>RRG XLK · XLK RRG</td><td>3) 탭을 열고 2단 그래프를 그 섹터 대비로 바꿉니다. 하위 ETF를 적으면 그 상위 섹터의 2단을 열고 그 ETF를 강조하며, MAGS를 적으면 1단에서 MAGS 점을 강조합니다. 3) 탭에서는 1단·2단의 점과 2단 표의 행을 눌러도 탭을 벗어나지 않고 오른쪽 Holdings 패널에 그 ETF의 구성종목이 열립니다.</td></tr>
             </tbody>
           </table>
         </section>
@@ -873,10 +873,10 @@ function showTab(n) {
 /* ---- RRG 그래프: 1단(섹터 ÷ SPY)과 2단(하위 ETF ÷ 섹터) ---- */
 let rrgSector = 'XLK';
 const SECTORS = ETFS.filter(e => e.cat === 'sec');
-const STYLES = ETFS.filter(e => e.cat === 'sty');   /* 1단 축에 마름모로 함께 그리되 섹터 집계에는 넣지 않는다 */
+const STYLES = ETFS.filter(e => e.cat === 'sty');   /* 1단 축에 점선 꼬리를 단 점으로 함께 그리되 섹터 집계에는 넣지 않는다 */
 const childrenOf = s => ETFS.filter(e => e.parent === s);
 function rrgSvg(items, opts) {
-  /* items: [{t, ko, path:[[r,m],...], sel, click, style}] · opts: {bench, originLabel, aria} · style 항목은 점선 꼬리와 마름모 머리로 그린다 */
+  /* items: [{t, ko, path:[[r,m],...], sel, click, style}] · opts: {bench, originLabel, aria} · style 항목은 꼬리만 점선으로 그리고 머리는 다른 점과 같은 원이다 */
   const W = 520, H = 400, L = 44, R = 16, T = 18, B = 40;
   const pw = W - L - R, ph = H - T - B;
   let lo = 97.2, hi = 102.8;
@@ -903,10 +903,8 @@ function rrgSvg(items, opts) {
     s += `<polyline class="tail" points="${pts}" stroke="${col}"${it.style ? ' stroke-dasharray="3 3"' : ''}/>`;
     p.slice(0, -1).forEach(([r, m], i) => { s += `<circle class="tp" cx="${X(r).toFixed(1)}" cy="${Y(m).toFixed(1)}" r="${1.6 + i * .4}" fill="${col}"/>`; });
     if (it.sel) s += `<circle class="selring" cx="${hx}" cy="${hy}" r="10"/>`;
-    s += it.style
-      ? `<rect class="hd" x="${(X(last[0]) - 5).toFixed(1)}" y="${(Y(last[1]) - 5).toFixed(1)}" width="10" height="10" transform="rotate(45 ${hx} ${hy})" fill="${col}"><title>${it.t} ${it.ko} · 스타일·집중도 (섹터 집계 제외)</title></rect>`
-      : `<circle class="hd" cx="${hx}" cy="${hy}" r="5" fill="${col}"/>`;
-    s += `<text class="lb" x="${(X(last[0]) + 8).toFixed(1)}" y="${(Y(last[1]) + 4).toFixed(1)}"${it.style ? ' font-style="italic"' : ''}>${it.t}</text>`;
+    s += `<circle class="hd" cx="${hx}" cy="${hy}" r="5" fill="${col}">${it.style ? `<title>${it.t} ${it.ko} · 스타일·집중도 (섹터 집계 제외)</title>` : ''}</circle>`;
+    s += `<text class="lb" x="${(X(last[0]) + 8).toFixed(1)}" y="${(Y(last[1]) + 4).toFixed(1)}">${it.t}</text>`;
     s += `</g>`;
   });
   return s + '</svg>';
@@ -920,16 +918,16 @@ function wireRRG(container) {
   });
 }
 function renderRRG() {
-  /* 1단: 선택 고리는 선택한 ETF 가 스타일(MAGS)이면 그 마름모에, 아니면 2단 벤치마크 섹터에 */
+  /* 1단: 선택 고리는 선택한 ETF 가 스타일(MAGS)이면 그 점에, 아니면 2단 벤치마크 섹터에 */
   const styleSel = STYLES.some(e => e.t === selT);
   const items1 = SECTORS.map(e => ({ t: e.t, ko: e.ko, path: e.rrgPath, click: true, sector: true, sel: !styleSel && e.t === rrgSector }))
     .concat(STYLES.filter(e => e.rrgPath.length).map(e => ({ t: e.t, ko: e.ko, path: e.rrgPath, click: true, style: true, sel: e.t === selT })));
   document.getElementById('rrg1').innerHTML = rrgSvg(items1, { bench: 'SPY', aria: '섹터 11개와 MAGS의 SPY 대비 RRG. 점을 누르면 그 ETF가 선택되고, 섹터는 2단도 그 섹터 대비로 바뀝니다.' });
   const movers = SECTORS.filter(e => e.next).map(e => `${e.t} ${e.rrg} → ${e.next}`);
   const styNote = STYLES.map(e => {
-    if (!e.rrgPath.length) return ` 마름모 <b>${e.t}</b>(${e.ko})는 주봉 39주가 되지 않아 아직 그리지 않습니다.`;
+    if (!e.rrgPath.length) return ` 점선 꼬리의 <b>${e.t}</b>(${e.ko})는 주봉 39주가 되지 않아 아직 그리지 않습니다.`;
     const [r, m] = e.rrgPath[e.rrgPath.length - 1];
-    return ` 마름모 <b>${e.t}</b>(${e.ko})는 SPY 대비 <b class="ph-${e.rrg}">${e.rrg.toUpperCase()}</b>${e.next ? ` <span class="nx">→ ${e.next.toUpperCase()}</span>` : ''} (RS-Ratio ${r.toFixed(1)}, RS-Momentum ${m.toFixed(1)})이며, 섹터 집계와 국면 경계 목록에는 넣지 않습니다.`;
+    return ` 점선 꼬리의 <b>${e.t}</b>(${e.ko})는 SPY 대비 <b class="ph-${e.rrg}">${e.rrg.toUpperCase()}</b>${e.next ? ` <span class="nx">→ ${e.next.toUpperCase()}</span>` : ''} (RS-Ratio ${r.toFixed(1)}, RS-Momentum ${m.toFixed(1)})이며, 섹터 집계와 국면 경계 목록에는 넣지 않습니다.`;
   }).join('');
   document.getElementById('rrg1Note').innerHTML = `꼬리는 지난 5주 궤적(작은 점 → 큰 점이 지금). 국면 경계에 가까운 섹터: ${movers.length ? '<b>' + movers.join('</b>, <b>') + '</b>' : '없음'}.${styNote} RS-Ratio = 100 × SMA(RS,10) ÷ SMA(RS,30), RS-Momentum = 100 × RS-Ratio ÷ SMA(RS-Ratio,9), 주봉 기준, ${PRICE_ASOF} 종가까지.`;
   wireRRG(document.getElementById('rrg1'));
@@ -946,6 +944,7 @@ function renderRRG() {
     document.getElementById('rrg2').innerHTML = '';
     document.getElementById('rrg2Table').innerHTML = '';
     document.getElementById('rrg2Note').textContent = '하위 ETF를 추가하면 이 그래프가 채워집니다. 후보: ' + ({ XLC:'SOCL, PBS', XLU:'GRID, ICLN', XLP:'PBJ', XLRE:'REZ, INDS' }[sec.t] || '해당 섹터의 산업 ETF');
+    alignRRG();
     return;
   }
   const plotted = kids.filter(e => e.rrgPath.length), unplotted = kids.filter(e => !e.rrgPath.length);
@@ -962,7 +961,21 @@ function renderRRG() {
   document.querySelectorAll('#rrg2Table tr.ck').forEach(tr => tr.addEventListener('click', () => { const e = ETFS.find(x => x.t === tr.dataset.t); select(tr.dataset.t, { open: true }); msg(`${e.t} ${e.ko} 선택 · 구성종목 표시`, 'ok'); }));
   const lead = plotted.filter(e => e.rrg === 'Leading').map(e => e.t), lag = plotted.filter(e => e.rrg === 'Lagging').map(e => e.t);
   document.getElementById('rrg2Note').innerHTML = `읽는 법: ${lead.length ? `<b>${lead.join(', ')}</b> 은(는) ${sec.t}보다 강해 섹터를 끌고 갑니다.` : `${sec.t}보다 강한 하위 ETF는 아직 없습니다.`} ${lag.length ? `<b>${lag.join(', ')}</b> 은(는) ${sec.t}보다 약해 끌려가는 쪽입니다.` : ''}${unplotted.length ? ` ${unplotted.map(e => e.t).join(', ')} 은(는) 상장 기간이 짧아 그리지 않습니다.` : ''} 표의 행을 누르면 오른쪽 Holdings 패널에 그 ETF의 구성종목이 열립니다. 좌표는 ${PRICE_ASOF} 종가까지의 주봉으로 계산한 값입니다.`;
+  alignRRG();
 }
+/* 두 그래프가 나란히 놓일 때 위쪽 글의 줄 수가 달라도 사분면의 윗변이 같은 높이에 오도록, 낮은 쪽 그래프에 여백을 준다 */
+function alignRRG() {
+  const a = document.getElementById('rrg1'), b = document.getElementById('rrg2');
+  a.style.paddingTop = ''; b.style.paddingTop = '';   /* margin 은 앞 문단의 아래 여백과 겹쳐(collapse) 어긋나므로 padding 을 쓴다 */
+  if (!a.querySelector('svg') || !b.querySelector('svg')) return;
+  const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+  if (Math.abs(ra.left - rb.left) < 10) return;   /* 세로로 쌓인 좁은 화면에서는 맞추지 않는다 */
+  const d = ra.top - rb.top;
+  if (Math.abs(d) < 1) return;
+  if (d < 0) a.style.paddingTop = `${-d}px`; else b.style.paddingTop = `${d}px`;
+}
+let alignTimer = null;
+window.addEventListener('resize', () => { if (curTab !== 3) return; clearTimeout(alignTimer); alignTimer = setTimeout(alignRRG, 80); });
 function setRRGSector(s) {
   if (!SECTORS.some(e => e.t === s)) return;
   rrgSector = s; renderRRG();
@@ -1044,9 +1057,9 @@ function runCmd(raw0) {
     const s = rm[1] || rm[2];
     if (SECTORS.some(e => e.t === s)) { showTab(3); setRRGSector(s); return; }
     const child = ETFS.find(e => e.t === s && e.parent);
-    if (child) { showTab(3); selT = child.t; setRRGSector(child.parent); msg(`RRG 2단 → ${child.parent} 대비 · ${child.t} 강조`, 'ok'); return; }
+    if (child) { showTab(3); select(child.t); msg(`RRG 2단 → ${child.parent} 대비 · ${child.t} 강조 · 구성종목 표시`, 'ok'); return; }
     const sty = STYLES.find(e => e.t === s);
-    if (sty) { showTab(3); selT = sty.t; renderRRG(); msg(`RRG 1단 → ${sty.t} 마름모 강조 (SPY 대비)`, 'ok'); return; }
+    if (sty) { showTab(3); select(sty.t); msg(`RRG 1단 → ${sty.t} 강조 (SPY 대비) · 구성종목 표시`, 'ok'); return; }
     msg(`RRG 뒤에는 관찰 대상 ETF 중 하나를 적습니다 (예: RRG XLK, RRG SMH, RRG MAGS)`, 'err'); return;
   }
   const tk = c.replace(/ US( EQUITY)?$/, '');
