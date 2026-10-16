@@ -1,0 +1,261 @@
+﻿etf,rank,symbol,name,weight_pct
+SPY,1,NVDA,NVIDIA Corporation,8.05
+SPY,2,AAPL,Apple Inc.,7.53
+SPY,3,MSFT,Microsoft Corporation,5.96
+SPY,4,AMZN,"Amazon.com, Inc.",3.75
+SPY,5,GOOGL,Alphabet Inc.,3.07
+SPY,6,AVGO,Broadcom Inc.,2.48
+SPY,7,GOOG,Alphabet Inc.,2.46
+SPY,8,META,"Meta Platforms, Inc.",2.45
+SPY,9,TSLA,"Tesla, Inc.",1.56
+SPY,10,MU,"Micron Technology, Inc.",1.55
+QQQ,1,NVDA,NVIDIA Corporation,8.2
+QQQ,2,AAPL,Apple Inc.,7.7
+QQQ,3,MSFT,Microsoft Corporation,6.09
+QQQ,4,MU,"Micron Technology, Inc.",4.38
+QQQ,5,AMZN,"Amazon.com, Inc.",4.21
+QQQ,6,AMD,"Advanced Micro Devices, Inc.",3.96
+QQQ,7,META,"Meta Platforms, Inc.",3.37
+QQQ,8,GOOGL,Alphabet Inc.,3.14
+QQQ,9,TSLA,"Tesla, Inc.",2.97
+QQQ,10,GOOG,Alphabet Inc.,2.92
+XLK,1,NVDA,NVIDIA Corporation,15.38
+XLK,2,AAPL,Apple Inc.,14.38
+XLK,3,MSFT,Microsoft Corporation,11.38
+XLK,4,AMD,"Advanced Micro Devices, Inc.",4.85
+XLK,5,AVGO,Broadcom Inc.,4.73
+XLK,6,MU,"Micron Technology, Inc.",3.93
+XLK,7,INTC,Intel Corporation,2.84
+XLK,8,PLTR,Palantir Technologies Inc.,2.69
+XLK,9,CSCO,"Cisco Systems, Inc.",2.61
+XLK,10,LRCX,Lam Research Corporation,2.09
+XLF,1,BRK.B,Berkshire Hathaway Inc.,12.76
+XLF,2,JPM,JPMorgan Chase & Co.,11.6
+XLF,3,V,Visa Inc.,8.68
+XLF,4,MA,Mastercard Incorporated,6.35
+XLF,5,BAC,Bank of America Corporation,4.35
+XLF,6,GS,"The Goldman Sachs Group, Inc.",3.33
+XLF,7,WFC,Wells Fargo & Company,3.18
+XLF,8,MS,Morgan Stanley,2.82
+XLF,9,C,Citigroup Inc.,2.67
+XLF,10,AXP,American Express Company,2.1
+XLV,1,LLY,Eli Lilly and Company,15.33
+XLV,2,JNJ,Johnson & Johnson,9.7
+XLV,3,ABBV,AbbVie Inc.,7.89
+XLV,4,MRK,"Merck & Co., Inc.",5.76
+XLV,5,UNH,UnitedHealth Group Incorporated,5.63
+XLV,6,TMO,Thermo Fisher Scientific Inc.,3.94
+XLV,7,AMGN,Amgen Inc.,3.65
+XLV,8,GILD,"Gilead Sciences, Inc.",3.02
+XLV,9,ABT,Abbott Laboratories,2.81
+XLV,10,PFE,Pfizer Inc.,2.64
+XLY,1,AMZN,"Amazon.com, Inc.",23.3
+XLY,2,TSLA,"Tesla, Inc.",17.86
+XLY,3,HD,"The Home Depot, Inc.",5.09
+XLY,4,TJX,"The TJX Companies, Inc.",4.29
+XLY,5,MCD,McDonald's Corporation,4.26
+XLY,6,BKNG,Booking Holdings Inc.,3.29
+XLY,7,SBUX,Starbucks Corporation,2.89
+XLY,8,LOW,"Lowe's Companies, Inc.",2.87
+XLY,9,MAR,"Marriott International, Inc.",2.16
+XLY,10,ROST,"Ross Stores, Inc.",2.01
+XLC,1,META,"Meta Platforms, Inc.",23.8
+XLC,2,GOOGL,Alphabet Inc.,12.41
+XLC,3,GOOG,Alphabet Inc.,9.94
+XLC,4,DIS,The Walt Disney Company,4.92
+XLC,5,TTWO,"Take-Two Interactive Software, Inc.",4.48
+XLC,6,NFLX,"Netflix, Inc.",4.37
+XLC,7,T,AT&T Inc.,4.31
+XLC,8,VZ,Verizon Communications Inc.,4.2
+XLC,9,TMUS,"T-Mobile US, Inc.",4.18
+XLC,10,APP,AppLovin Corporation,4.04
+XLI,1,CAT,Caterpillar Inc.,6.48
+XLI,2,GE,GE Aerospace,5.99
+XLI,3,RTX,RTX Corporation,4.73
+XLI,4,GEV,GE Vernova Inc.,4.72
+XLI,5,UNP,Union Pacific Corporation,3.2
+XLI,6,DE,Deere & Company,3.07
+XLI,7,ETN,Eaton Corporation plc,2.99
+XLI,8,BA,The Boeing Company,2.75
+XLI,9,UBER,"Uber Technologies, Inc.",2.66
+XLI,10,PH,Parker-Hannifin Corporation,2.27
+XLP,1,WMT,Walmart Inc.,10.88
+XLP,2,COST,Costco Wholesale Corporation,9.16
+XLP,3,PG,The Procter & Gamble Company,7.65
+XLP,4,KO,The Coca-Cola Company,7.47
+XLP,5,PM,Philip Morris International Inc.,6.74
+XLP,6,MO,"Altria Group, Inc.",4.57
+XLP,7,CL,Colgate-Palmolive Company,4.47
+XLP,8,MDLZ,"Mondelez International, Inc.",4.25
+XLP,9,TGT,Target Corporation,4.18
+XLP,10,PEP,"PepsiCo, Inc.",4.01
+XLE,1,XOM,ExxonMobil Holdings Corporation,23.81
+XLE,2,CVX,Chevron Corporation,17.88
+XLE,3,COP,ConocoPhillips,6.97
+XLE,4,MPC,Marathon Petroleum Corporation,5.25
+XLE,5,VLO,Valero Energy Corporation,5.11
+XLE,6,PSX,Phillips 66,4.93
+XLE,7,WMB,"The Williams Companies, Inc.",4.19
+XLE,8,EOG,"EOG Resources, Inc.",3.93
+XLE,9,SLB,SLB N.V.,3.5
+XLE,10,KMI,"Kinder Morgan, Inc.",3.17
+XLU,1,NEE,"NextEra Energy, Inc.",12.46
+XLU,2,SO,The Southern Company,7.84
+XLU,3,DUK,Duke Energy Corporation,7.11
+XLU,4,CEG,Constellation Energy Corporation,7.02
+XLU,5,AEP,"American Electric Power Company, Inc.",5.23
+XLU,6,D,"Dominion Energy, Inc.",4.21
+XLU,7,SRE,Sempra,4.09
+XLU,8,ETR,Entergy Corporation,3.72
+XLU,9,VST,Vistra Corp.,3.65
+XLU,10,XEL,Xcel Energy Inc.,3.59
+XLB,1,LIN,Linde plc,13.1
+XLB,2,NEM,Newmont Corporation,6.78
+XLB,3,FCX,Freeport-McMoRan Inc.,5.75
+XLB,4,ECL,Ecolab Inc.,5.13
+XLB,5,SHW,The Sherwin-Williams Company,4.92
+XLB,6,STLD,"Steel Dynamics, Inc.",4.9
+XLB,7,NUE,Nucor Corporation,4.84
+XLB,8,APD,"Air Products and Chemicals, Inc.",4.81
+XLB,9,VMC,Vulcan Materials Company,4.7
+XLB,10,MLM,"Martin Marietta Materials, Inc.",4.51
+XLRE,1,WELL,Welltower Inc.,11.62
+XLRE,2,PLD,"Prologis, Inc.",8.61
+XLRE,3,EQIX,"Equinix, Inc.",6.83
+XLRE,4,AMT,American Tower Corporation,5.81
+XLRE,5,PSA,Public Storage,4.58
+XLRE,6,SPG,"Simon Property Group, Inc.",4.54
+XLRE,7,VTR,"Ventas, Inc.",4.41
+XLRE,8,VMRK,Vivmark Residential,4.38
+XLRE,9,O,Realty Income Corporation,4.29
+XLRE,10,CBRE,"CBRE Group, Inc.",4.27
+SMH,1,NVDA,NVIDIA Corporation,20.04
+SMH,2,TSM,Taiwan Semiconductor Manufacturing Company Limited,9.33
+SMH,3,AMD,"Advanced Micro Devices, Inc.",5.7
+SMH,4,AVGO,Broadcom Inc.,5.47
+SMH,5,TXN,Texas Instruments Incorporated,4.84
+SMH,6,MRVL,"Marvell Technology, Inc.",4.7
+SMH,7,MU,"Micron Technology, Inc.",4.55
+SMH,8,KLAC,KLA Corporation,4.43
+SMH,9,ASML,ASML Holding N.V.,4.38
+SMH,10,ADI,"Analog Devices, Inc.",4.38
+IGV,1,PLTR,Palantir Technologies Inc.,9.62
+IGV,2,PANW,"Palo Alto Networks, Inc.",9.26
+IGV,3,MSFT,Microsoft Corporation,8.64
+IGV,4,CRWD,"CrowdStrike Holdings, Inc.",8.39
+IGV,5,ORCL,Oracle Corporation,6.93
+IGV,6,NOW,"ServiceNow, Inc.",4.38
+IGV,7,CRM,"Salesforce, Inc.",4.03
+IGV,8,FTNT,"Fortinet, Inc.",3.91
+IGV,9,DDOG,"Datadog, Inc.",3.15
+IGV,10,SNPS,"Synopsys, Inc.",3.15
+XBI,1,MRNA,"Moderna, Inc.",2.58
+XBI,2,NTRA,"Natera, Inc.",1.84
+XBI,3,TWST,Twist Bioscience Corporation,1.82
+XBI,4,ABBV,AbbVie Inc.,1.73
+XBI,5,BIIB,Biogen Inc.,1.71
+XBI,6,AMGN,Amgen Inc.,1.68
+XBI,7,HALO,"Halozyme Therapeutics, Inc.",1.68
+XBI,8,IOVA,"Iovance Biotherapeutics, Inc.",1.67
+XBI,9,UTHR,United Therapeutics Corporation,1.64
+XBI,10,GILD,"Gilead Sciences, Inc.",1.63
+GNOM,1,MRNA,"Moderna, Inc.",11.43
+GNOM,2,TWST,Twist Bioscience Corporation,6.83
+GNOM,3,TXG,"10x Genomics, Inc.",6.23
+GNOM,4,ILMN,"Illumina, Inc.",6.11
+GNOM,5,NTRA,"Natera, Inc.",5.59
+GNOM,6,GH,"Guardant Health, Inc.",5.32
+GNOM,7,HKG:1548,Genscript Biotech Corporation,3.95
+GNOM,8,TECH,Bio-Techne Corporation,3.63
+GNOM,9,QGEN,Qiagen N.V.,3.34
+GNOM,10,VRTX,Vertex Pharmaceuticals Incorporated,3.26
+ARKG,1,TXG,"10x Genomics, Inc.",8.97
+ARKG,2,TWST,Twist Bioscience Corporation,8.57
+ARKG,3,TEM,"Tempus AI, Inc.",8.42
+ARKG,4,CRSP,CRISPR Therapeutics AG,5.54
+ARKG,5,ILMN,"Illumina, Inc.",5.04
+ARKG,6,GH,"Guardant Health, Inc.",4.93
+ARKG,7,NTRA,"Natera, Inc.",4.89
+ARKG,8,ABSI,Absci Corporation,4.64
+ARKG,9,LLY,Eli Lilly and Company,3.96
+ARKG,10,CDNA,"CareDx, Inc.",3.82
+KRE,1,UBSI,"United Bankshares, Inc.",1.16
+KRE,2,EWBC,"East West Bancorp, Inc.",1.15
+KRE,3,HWC,Hancock Whitney Corporation,1.14
+KRE,4,ONB,Old National Bancorp,1.14
+KRE,5,FBP,First BanCorp.,1.14
+KRE,6,EBC,"Eastern Bankshares, Inc.",1.14
+KRE,7,NIC,"Nicolet Bankshares, Inc.",1.13
+KRE,8,HOMB,"Home BancShares, Inc.",1.13
+KRE,9,FHB,"First Hawaiian, Inc.",1.13
+KRE,10,WSFS,WSFS Financial Corporation,1.13
+XHB,1,SN,"SharkNinja, Inc.",3.74
+XHB,2,WSM,"Williams-Sonoma, Inc.",3.62
+XHB,3,TT,Trane Technologies plc,3.6
+XHB,4,JCI,Johnson Controls International plc,3.57
+XHB,5,W,Wayfair Inc.,3.55
+XHB,6,ALLE,Allegion plc,3.41
+XHB,7,MAS,Masco Corporation,3.4
+XHB,8,SSD,"Simpson Manufacturing Co., Inc.",3.29
+XHB,9,CSL,Carlisle Companies Incorporated,3.28
+XHB,10,TOL,"Toll Brothers, Inc.",3.28
+XME,1,CLF,Cleveland-Cliffs Inc.,5.88
+XME,2,RS,"Reliance, Inc.",5.82
+XME,3,STLD,"Steel Dynamics, Inc.",5.7
+XME,4,NUE,Nucor Corporation,5.63
+XME,5,CMC,Commercial Metals Company,5.35
+XME,6,FCX,Freeport-McMoRan Inc.,5.15
+XME,7,MTRN,Materion Corporation,4.99
+XME,8,NEM,Newmont Corporation,4.9
+XME,9,RGLD,"Royal Gold, Inc.",4.84
+XME,10,AA,Alcoa Corporation,4.46
+URA,1,CCJ,Cameco Corporation,23.46
+URA,2,,Sprott Physical Uranium Trust,7.29
+URA,3,TSX:NXE,NexGen Energy Ltd.,5.97
+URA,4,OKLO,Oklo Inc.,5.27
+URA,5,LON:KAP,National Atomic Company Kazatomprom JSC,4.57
+URA,6,UEC,Uranium Energy Corp.,4.37
+URA,7,ASX:PDN,Paladin Energy Ltd,2.82
+URA,8,LEU,Centrus Energy Corp.,2.77
+URA,9,UUUU,Energy Fuels Inc.,2.6
+URA,10,JSE:SSW,Sibanye Stillwater Limited,2.59
+ITA,1,GE,GE Aerospace,20.9
+ITA,2,RTX,RTX Corporation,16.49
+ITA,3,BA,The Boeing Company,7.53
+ITA,4,LMT,Lockheed Martin Corporation,4.78
+ITA,5,TDG,TransDigm Group Incorporated,4.74
+ITA,6,NOC,Northrop Grumman Corporation,4.62
+ITA,7,GD,General Dynamics Corporation,4.56
+ITA,8,HWM,Howmet Aerospace Inc.,4.49
+ITA,9,HONA,Honeywell Aerospace Inc.,3.91
+ITA,10,LHX,"L3Harris Technologies, Inc.",3.48
+PAVE,1,EMR,Emerson Electric Co.,3.64
+PAVE,2,FAST,Fastenal Company,3.59
+PAVE,3,DE,Deere & Company,3.44
+PAVE,4,PWR,"Quanta Services, Inc.",3.4
+PAVE,5,NUE,Nucor Corporation,3.39
+PAVE,6,ETN,Eaton Corporation plc,3.33
+PAVE,7,TT,Trane Technologies plc,3.21
+PAVE,8,PH,Parker-Hannifin Corporation,3.12
+PAVE,9,ROK,"Rockwell Automation, Inc.",3.03
+PAVE,10,URI,"United Rentals, Inc.",3.0
+DRAM,1,KRX:005930,"Samsung Electronics Co., Ltd.",18.91
+DRAM,2,KRX:000660,SK hynix Inc.,15.43
+DRAM,3,B.0 11.03.26,United States Treasury Bill 11/03/2026,14.76
+DRAM,4,595112103.TRS 050427 NM,MICRON TECHNOLOGY INC SWAP NM,12.62
+DRAM,5,595112103.TRS 052427 GS,"MICRON TECHNOLOGY, INC.-SWAP-GOLD-L",10.85
+DRAM,6,6771720.TRS 052427 GS,SAMSUNG ELECTRONICS -SWAP-GOLD-L,6.74
+DRAM,7,6450267.TRS 052427 GS,SK HYNIX INC-SWAP-GOLD-L,5.59
+DRAM,8,BTMTQT8.TRS 052427 GS,CXMT CORPORATION-SWAP-GOLD-L,5.06
+DRAM,9,B.0 10.15.26,United States Treasury Bill 10/15/2026,4.93
+DRAM,10,B.0 12.03.26,United States Treasury Bill 12/03/2026,4.91
+MAGS,1,B.0 12.03.26,United States Treasury Bill 12/03/2026,17.21
+MAGS,2,B.0 11.03.26,United States Treasury Bill 11/03/2026,8.63
+MAGS,3,B.0 01.05.27,United States Treasury Bill 01/05/2027,8.57
+MAGS,4,XBOX,Roundhill Ultra Short Duration No Dividend Target ETF,5.79
+MAGS,5,TSLA,"Tesla, Inc.",5.75
+MAGS,6,AAPL,Apple Inc.,5.65
+MAGS,7,AMZN,"Amazon.com, Inc.",5.62
+MAGS,8,META,"Meta Platforms, Inc.",5.57
+MAGS,9,GOOGL,Alphabet Inc.,5.51
+MAGS,10,NVDA,NVIDIA Corporation,5.32

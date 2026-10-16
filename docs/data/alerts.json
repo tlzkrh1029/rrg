@@ -1,46 +1,41 @@
 {
- "asof": "2026-10-14",
- "prev_asof": "2026-10-13",
+ "asof": "2026-10-15",
+ "prev_asof": "2026-10-14",
  "alerts": [
   {
-   "etf": "XLV",
+   "etf": "XLK",
    "type": "signal",
-   "text": "XLV 헬스케어: ↗ SPY 비율 50일선 상향 돌파"
+   "text": "XLK 기술: ↘ SPY 비율 50일선 하향 이탈"
+  },
+  {
+   "etf": "XLY",
+   "type": "signal",
+   "text": "XLY 경기소비재: ↑ 백분위 44점 상승 (6개월 → 1개월)"
   },
   {
    "etf": "XLP",
    "type": "signal",
-   "text": "XLP 필수소비재: ↗ SPY 비율 50일선 상향 돌파"
-  },
-  {
-   "etf": "XLU",
-   "type": "signal",
-   "text": "XLU 유틸리티: ↑ 백분위 37점 상승 (6개월 → 1개월)"
-  },
-  {
-   "etf": "SMH",
-   "type": "signal",
-   "text": "SMH 반도체: ↘ SPY 비율 50일선 하향 이탈"
-  },
-  {
-   "etf": "IGV",
-   "type": "signal",
-   "text": "IGV 소프트웨어: ↓ 백분위 31점 하락 (6개월 → 1개월)"
+   "text": "XLP 필수소비재: ↑ 백분위 32점 상승 (6개월 → 1개월)"
   },
   {
    "etf": "XBI",
    "type": "signal",
-   "text": "XBI 바이오: ↓ 백분위 50점 하락 (6개월 → 1개월)"
+   "text": "XBI 바이오: ↗ SPY 비율 200일선 상향 돌파"
+  },
+  {
+   "etf": "XBI",
+   "type": "signal",
+   "text": "XBI 바이오: ↓ 백분위 44점 하락 (6개월 → 1개월)"
   },
   {
    "etf": "KRE",
    "type": "signal",
-   "text": "KRE 지역은행: ↓ 백분위 38점 하락 (6개월 → 1개월)"
+   "text": "KRE 지역은행: ↓ 백분위 31점 하락 (6개월 → 1개월)"
   },
   {
-   "etf": "XLP",
+   "etf": "XLY",
    "type": "shift",
-   "text": "XLP 필수소비재: 전환순 상위 3 진입 (점수 32)"
+   "text": "XLY 경기소비재: 전환순 상위 3 진입 (점수 41)"
   }
  ]
 }
