@@ -261,17 +261,21 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .rrg-note dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:0 0 8px;font-size:12px}
 .rrg-note dt{font-weight:700;letter-spacing:.05em} .rrg-note dd{margin:0;color:var(--ink-2);max-width:80ch}
 .rrg-note p{margin:0;color:var(--ink-2);font-size:12px;max-width:100ch;line-height:1.7}
-.guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px 28px}
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:14px 28px}
 .guide-grid section{max-width:64ch}
+/* 명령줄 표와 상장 점 설명은 한 줄을 다 쓴다. 좁은 칸에 들어가면 동작 열이 몇 글자씩 끊겨 세로로 길어진다 */
+.guide-grid section.wide{grid-column:1 / -1;max-width:none}
+.guide-grid section.wide p{max-width:110ch}
 .guide-grid h3{font-size:12px;color:var(--amber);margin:0 0 4px;letter-spacing:.05em;text-wrap:balance}
 .guide-grid p{margin:0 0 6px;color:var(--ink-2);font-size:12px;line-height:1.75}
 .guide-grid ol{margin:4px 0 0 18px;padding:0;color:var(--ink-2);font-size:12px;line-height:1.75}
 .guide-grid li{margin-bottom:3px}
 kbd.k{background:var(--band-2);border:1px solid var(--line-2);padding:0 5px;font-size:11px;color:var(--amber);font-family:var(--mono)}
-table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;margin-top:4px}
+table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:1080px;margin-top:4px}
 .cmds th{text-align:left;color:var(--amber);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px;border-bottom:1px solid var(--line-2)}
 .cmds td{padding:4px 6px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
-.cmds td:first-child{color:var(--amber);font-weight:700;white-space:nowrap}
+.cmds td:first-child{color:var(--amber);font-weight:700;white-space:nowrap;width:1%;padding-right:18px}
+.cmds td:last-child{line-height:1.6}
 
 /* 상태 표시줄 */
 .status{position:sticky;bottom:0;z-index:10;display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;background:var(--band);border-top:1px solid var(--line);padding:5px 8px calc(5px + env(safe-area-inset-bottom,0px));font-size:11px;color:var(--muted);margin-top:8px}
@@ -489,7 +493,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
             <li>마지막으로 <kbd class="k">12M</kbd> 열로 정렬해 오른쪽만 <span data-w="hot">초록</span> 색인 행을 찾고, 보유 중인 섹터가 거기에 있으면 이탈 조건을 점검합니다.</li>
           </ol>
         </section>
-        <section>
+        <section class="wide">
           <h3>7. 명령줄 사용법</h3>
           <p>화면 맨 위 명령줄에 아래 명령을 입력하고 Enter 또는 &lt;GO&gt;를 누릅니다. 표 위에서 아무 글자나 입력하면 명령줄로 초점이 이동합니다. 명령줄 밖에서는 ←/→ 키로 이전·다음 ETF를 넘기고, Esc로 구성종목 화면을 닫습니다.</p>
           <table class="cmds">
@@ -507,7 +511,7 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:640px;
             </tbody>
           </table>
         </section>
-        <section>
+        <section class="wide">
           <h3>8. 거래소 상장 점</h3>
           <p>티커 뒤의 점은 그 ETF나 종목을 코인 거래소에서 거래할 수 있는지를 나타냅니다. <span class="dots" aria-hidden="true"><i class="b">b</i></span> 는 바이낸스 bStocks 현물(토큰화 주식), <span class="dots" aria-hidden="true"><i class="p"></i></span> 는 바이낸스 TradFi perp, <span class="dots" aria-hidden="true"><i class="h"></i></span> 는 하이퍼리퀴드 TradFi perp입니다. 세 가지가 모두 있으면 점 세 개, 일부만 있으면 있는 것만, 하나도 없으면 아무것도 찍지 않습니다. 점 위에 커서를 올리면 상품 이름이 나옵니다.</p>
           <p>구성종목 표에서는 칸이 좁아서 티커 아래에 지름 6px짜리 점으로 같은 규칙을 적용하며, bStocks는 글자 대신 속이 빈 주황 원으로 표시합니다. 스왑으로 노출을 얻는 Roundhill 펀드(MAGS, DRAM)는 운용사의 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출로 보여 주므로, 점은 그 기초 종목(마이크론, 삼성전자, SK하이닉스, CXMT 등)의 상장 여부이고 담보로 보유한 국채·MMF는 표에서 뺍니다. 이 파일을 받지 못한 날에는 stockanalysis.com의 표로 대체되어 스왑 계약과 국채 행이 따로 보이며, 그때는 스왑 행에 기초 종목의 상장 여부를 그대로 찍고 국채 행에는 점을 찍지 않습니다.</p>
