@@ -92,8 +92,12 @@ def build_hold(snapshots, meta):
     hold = {}
     for t, m in meta.items():
         rows = cur.get(t, [])
-        # 이전 스냅샷에 이 ETF 가 통째로 없으면(새로 추가한 ETF) 변동 %p 와 진입·이탈을 계산하지 않는다
-        has_prev = prev_date is not None and t in prev
+        # 이전 스냅샷에 이 ETF 가 통째로 없으면(새로 추가한 ETF) 변동 %p 와 진입·이탈을 계산하지 않는다.
+        # 출처가 바뀐 경우(스왑·국채 행이 따로 있는 stockanalysis 표 ↔ 스왑 노출을 합산한 Roundhill 표)도 비중의 뜻이 달라 비교하지 않는다.
+        raw_prev = any(SWAP_RE.search(norm_sym(r["symbol"])) for r in prev.get(t, []))
+        raw_cur = any(SWAP_RE.search(norm_sym(r["symbol"])) for r in rows)
+        source_changed = prev_date is not None and t in prev and bool(rows) and raw_prev != raw_cur
+        has_prev = prev_date is not None and t in prev and not source_changed
         oldw = {norm_sym(r["symbol"]): float(r["weight_pct"]) for r in prev.get(t, [])} if has_prev else {}
         out = []
         for r in rows:
@@ -107,6 +111,7 @@ def build_hold(snapshots, meta):
             "top10": f"{sum(float(r['weight_pct']) for r in rows):.2f}%",
             "asof": long_date(cur_date), "prev": long_date(prev_date) if prev_date else "없음", "url": m["url"], "rows": out,
             "prevMissing": bool(prev_date) and not has_prev,
+            "sourceChanged": source_changed,
             "entered": [norm_sym(r["symbol"]) for r in rows if has_prev and norm_sym(r["symbol"]) not in oldw],
             "left": [s for s in oldw if s not in newset],
         }
@@ -184,36 +189,67 @@ def phases(data):
     return out
 
 
+def pct_strip(p):
+    return "/".join("n/a" if v is None else str(v) for v in p)
+
+
 def make_alerts(prev, cur):
-    """prev 가 없으면 빈 목록. 조건: RRG 국면 변화, 새로 켜진 신호, 전환순 상위 3 진입."""
+    """prev 가 없으면 빈 목록. 조건: RRG 국면 변화, 새로 켜진 신호, 전환순 상위 3 진입.
+
+    항목마다 etf, type, text(ETF 접두어 포함), detail(접두어 없는 본문), pct(1W~12M 백분위), phase(벤치마크 대비 국면)를 담고,
+    1W 백분위가 높은 ETF 부터(같으면 보드 순서) 정렬한다. 텔레그램 본문과 Changes 패널이 이 순서를 그대로 쓴다.
+    """
     alerts = []
     if not prev:
         return alerts
     pp, pc = phases(prev), phases(cur)
+    order = list(cur["etfs"])
+
+    def add(t, kind, detail):
+        e = cur["etfs"][t]
+        alerts.append({"etf": t, "type": kind, "text": f"{t} {KO[t]}: {detail}", "detail": detail,
+                       "pct": e["pct"], "phase": pc[t]["bench"], "bench": e["parent"] or "SPY"})
+
     for t in cur["etfs"]:
         e = cur["etfs"][t]
         bench = e["parent"] or "SPY"
         if pp.get(t, {}).get("bench") and pc[t]["bench"] and pp[t]["bench"] != pc[t]["bench"]:
-            alerts.append({"etf": t, "type": "rrg", "text": f"{t} {KO[t]}: RRG {pp[t]['bench']} → {pc[t]['bench']} (vs {bench})"})
+            add(t, "rrg", f"RRG {pp[t]['bench']} → {pc[t]['bench']} (vs {bench})")
         if e["parent"] and pp.get(t, {}).get("spy") and pc[t]["spy"] and pp[t]["spy"] != pc[t]["spy"]:
-            alerts.append({"etf": t, "type": "rrg", "text": f"{t} {KO[t]}: RRG {pp[t]['spy']} → {pc[t]['spy']} (vs SPY)"})
+            add(t, "rrg", f"RRG {pp[t]['spy']} → {pc[t]['spy']} (vs SPY)")
         old_sig = {s[1] for s in prev["etfs"].get(t, {}).get("sig", [])}
         for s in e["sig"]:
             if s[1] not in old_sig:
-                alerts.append({"etf": t, "type": "signal", "text": f"{t} {KO[t]}: {s[0]} {s[1]}"})
+                add(t, "signal", f"{s[0]} {s[1]}")
     top_prev = [t for t, _ in sorted(((t, shift_score(e)) for t, e in prev["etfs"].items() if t not in STYLE and shift_score(e) is not None), key=lambda x: -x[1])[:3]]
     top_cur = [t for t, _ in sorted(((t, shift_score(e)) for t, e in cur["etfs"].items() if t not in STYLE and shift_score(e) is not None), key=lambda x: -x[1])[:3]]
     for t in top_cur:
         if t not in top_prev:
-            alerts.append({"etf": t, "type": "shift", "text": f"{t} {KO[t]}: 전환순 상위 3 진입 (점수 {shift_score(cur['etfs'][t]):.0f})"})
+            add(t, "shift", f"전환순 상위 3 진입 (점수 {shift_score(cur['etfs'][t]):.0f})")
+    # 1W 백분위 내림차순, 같으면 보드 순서. 백분위가 없는 ETF 는 맨 뒤.
+    alerts.sort(key=lambda a: (-(a["pct"][0] if a["pct"][0] is not None else -1), order.index(a["etf"])))
     return alerts
+
+
+def alerts_text(cur, alerts):
+    """텔레그램 조건 알림 본문: ETF 단위로 묶고, 머리글에 1W~12M 백분위와 RRG 국면을 적는다."""
+    lines = [f"🔔 섹터 전환 터미널 · {cur['asof']} 종가 · 변화 {len(alerts)}건",
+             "1W 백분위 높은 순 · [1W/1M/3M/6M/12M 백분위] · RRG 는 벤치마크 대비 국면", ""]
+    seen = []
+    for a in alerts:
+        if a["etf"] not in seen:
+            seen.append(a["etf"])
+            lines.append(f"{a['etf']} {KO[a['etf']]}  [{pct_strip(a['pct'])}]  {a['phase'] or 'N/A'} vs {a['bench']}")
+        lines.append(f"  · {a['detail']}")
+    lines += ["", PAGE_URL]
+    return "\n".join(lines)
 
 
 def make_brief(cur, hold, alerts, prev_asof):
     E = cur["etfs"]
     ph = phases(cur)
     lines = [f"📊 섹터 전환 터미널 · {cur['asof']} 종가 기준", ""]
-    strip = lambda p: "/".join("n/a" if v is None else str(v) for v in p)
+    strip = pct_strip
     ranked = sorted(((t, shift_score(e)) for t, e in E.items() if t not in STYLE and shift_score(e) is not None), key=lambda x: -x[1])
     lines.append("전환순 상위 3 (1W·1M 평균 − 12M 백분위)")
     for t, s in ranked[:3]:
@@ -252,10 +288,14 @@ def make_brief(cur, hold, alerts, prev_asof):
     else:
         lines.append("  없음")
     lines.append("")
-    lines.append(f"직전 빌드({prev_asof or '없음'}) 대비 변화")
+    lines.append(f"직전 빌드({prev_asof or '없음'}) 대비 변화 (1W 백분위 높은 순, [1W/1M/3M/6M/12M])")
     if alerts:
+        seen = []
         for a in alerts:
-            lines.append(f"  · {a['text']}")
+            if a["etf"] not in seen:
+                seen.append(a["etf"])
+                lines.append(f"  {a['etf']} {KO[a['etf']]}  [{strip(a['pct'])}]  {a['phase'] or 'N/A'} vs {a['bench']}")
+            lines.append(f"    · {a['detail']}")
     else:
         lines.append("  없음")
     changed = [t for t, h in hold.items() if h["entered"] or h["left"]]
@@ -318,7 +358,7 @@ def main():
     alerts = make_alerts(prev_for_alerts, cur)
     brief = make_brief(cur, hold, alerts, prev_for_alerts.get("asof") if prev_for_alerts else None)
 
-    data_slim = {t: {k: v for k, v in e.items() if k in ("pct", "rel", "S", "Q", "rrgPath", "rrgSpy", "sig", "weeks")} for t, e in cur["etfs"].items()}
+    data_slim = {t: {k: v for k, v in e.items() if k in ("pct", "rel", "S", "Q", "rrgPath", "rrgSpy", "sig", "weeks", "stale")} for t, e in cur["etfs"].items()}
     src = "·".join(cur.get("source") or ["yahoo"])
     src_ko = {"yahoo": "야후 파이낸스", "stooq": "Stooq"}.get(src, src)
     tokens = {
@@ -357,7 +397,7 @@ def main():
         f.write(brief)
     with open(os.path.join(args.docs, "data", "alerts.txt"), "w", encoding="utf-8") as f:
         if alerts:
-            f.write(f"🔔 섹터 전환 터미널 · {cur['asof']} 종가 · 변화 {len(alerts)}건\n" + "\n".join("· " + a["text"] for a in alerts) + f"\n{PAGE_URL}")
+            f.write(alerts_text(cur, alerts))
     open(os.path.join(args.docs, ".nojekyll"), "a").close()
     print(f"built docs/ for {cur['asof']} · holdings {hold_asof} (prev {hold_prev}) · lists {list_asof} ({counts['b']}/{counts['f']}/{counts['h']}) · alerts {len(alerts)}")
 

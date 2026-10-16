@@ -68,11 +68,22 @@ def main():
     if os.path.exists(args.summary):
         summary = json.load(open(args.summary, encoding="utf-8"))
 
+    # 출처 지연으로 마지막 봉이 비어 있는 티커는 최근 3거래일 안의 마지막 값을 끝값으로 쓰고 stale 에 그 날짜를 적는다.
+    # (n/a 로 비우면 그 ETF 가 백분위 풀에서 빠져 다른 ETF 의 순위까지 흔들린다.)
+    END = {}
+    for t in tickers:
+        idx = n_days - 1
+        while idx > max(0, n_days - 3) and px[t][idx] is None:
+            idx -= 1
+        END[t] = idx
+    stale = {t: (dates[END[t]] if END[t] != n_days - 1 and px[t][END[t]] is not None else None) for t in tickers}
+
     def ret(t, w):
-        i = n_days - 1 - w
+        iend = END[t]
+        i = iend - w
         if i < 0:
             return None
-        a, b = px[t][n_days - 1], px[t][i]
+        a, b = px[t][iend], px[t][i]
         if a is None or b is None:
             return None
         return a / b - 1
@@ -100,16 +111,28 @@ def main():
                 rank = 1 + sum(1 for v in pool if v > vals[t])
                 pct[t][i] = round((n + 1 - rank) / n * 100)
 
-    # ---- 주봉: 각 ISO 주의 마지막 거래일 ----
-    week_idx = []
+    # ---- 주봉: 각 ISO 주의 마지막 거래일. 그 날 값이 비어 있으면(출처 지연) 그 주 안의 마지막 값을 쓴다 ----
+    week_idx, week_members = [], []
     for i in range(n_days):
         d = dt.date.fromisoformat(dates[i])
         nxt = dt.date.fromisoformat(dates[i + 1]) if i + 1 < n_days else None
+        if not week_members or dt.date.fromisoformat(dates[week_members[-1][-1]]).isocalendar()[:2] != d.isocalendar()[:2]:
+            week_members.append([i])
+        else:
+            week_members[-1].append(i)
         if nxt is None or nxt.isocalendar()[:2] != d.isocalendar()[:2]:
             week_idx.append(i)
 
     def weekly(t):
-        return [px[t][i] for i in week_idx]
+        out = []
+        for members in week_members:
+            v = None
+            for i in reversed(members):
+                if px[t][i] is not None:
+                    v = px[t][i]
+                    break
+            out.append(v)
+        return out
 
     def ratio_series(t, bench, weeks=12):
         a, b = weekly(t), weekly(bench)
@@ -128,7 +151,8 @@ def main():
 
     def signals(t):
         sig = []
-        rr = [None if px[t][i] is None or px["SPY"][i] is None else px[t][i] / px["SPY"][i] for i in range(n_days)]
+        iend = END[t]
+        rr = [None if px[t][i] is None or px["SPY"][i] is None else px[t][i] / px["SPY"][i] for i in range(iend + 1)]
         valid = [v for v in rr if v is not None]
         if len(valid) >= 20 and rr[-1] is not None:
             hi52 = max(v for v in rr[-252:] if v is not None)
@@ -138,7 +162,7 @@ def main():
                 if len(valid) < n + 6:
                     continue
                 ma = sma(rr, n)
-                d = [None if rr[i] is None or ma[i] is None else rr[i] - ma[i] for i in range(n_days)]
+                d = [None if rr[i] is None or ma[i] is None else rr[i] - ma[i] for i in range(len(rr))]
                 if d[-1] is None:
                     continue
                 recent = [x for x in d[-6:-1] if x is not None]
@@ -178,8 +202,10 @@ def main():
             "rrgPath": rrg_path(t, bench), "rrgSpy": rrg_path(t, "SPY"),
             "sig": signals(t),
             "weeks": sum(1 for v in wk if v is not None),
-            "lastClose": px[t][-1],
+            "lastClose": px[t][END[t]],
+            "stale": stale[t],
         }
+    out["stale"] = {t: d for t, d in stale.items() if d}
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
     missing = [t for t in ETFS if not out["etfs"][t]["rrgPath"]]

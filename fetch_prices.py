@@ -6,7 +6,10 @@ Standard library only. Writes to --out (default output/):
   prices.csv              long: date, ticker, open, high, low, close, adj_close, volume
   prices_wide.csv         wide: date (SPY axis) + one adj_close column per ticker
   prices_summary.json     per-ticker source and coverage, base axis, checks, warnings
-  holdings/<run date>.csv top-10 holdings of every ETF (stockanalysis.com)
+  holdings/<run date>.csv top-10 holdings of every ETF (stockanalysis.com; the
+                          Roundhill funds MAGS and DRAM come from Roundhill's own
+                          daily holdings file with swap exposure folded into the
+                          underlying stock, the way Roundhill's site shows them)
 
 This script only collects raw prices. The relative-return percentiles, the
 ETF / SPY and ETF / QQQ ratio lines and the RS-Ratio / RS-Momentum of the
@@ -26,6 +29,7 @@ import csv
 import datetime as dt
 import html.parser
 import http.client
+import io
 import json
 import os
 import sys
@@ -73,6 +77,23 @@ YAHOO_URL = "{host}/v8/finance/chart/{sym}?range={rng}&interval=1d"
 HOLDINGS_URL = "https://stockanalysis.com/etf/{sym}/holdings/"
 HOLDINGS_TOP = 10
 HOLDINGS_FIELDS = ["etf", "rank", "symbol", "name", "weight_pct"]
+
+# Roundhill publishes one daily holdings CSV for all of its funds, named with the
+# US date (MMDDYYYY). Its fund pages try today's file and step back a day at a
+# time when it is missing (the file for a date appears during that US day), so
+# we do the same. Swap-based funds (MAGS, DRAM) hold total-return swaps plus a
+# direct stock position per name; Roundhill's "Top Holdings" adds the two up,
+# which is the exposure that matters for the board.
+ROUNDHILL_URL = "https://www.roundhillinvestments.com/assets/data/FilepointRoundhill.40RU.RU_Holdings_{mmddyyyy}.csv"
+ROUNDHILL_BACK_DAYS = 15
+ROUNDHILL_FUNDS = {"MAGS": "MAGS", "DRAM": "DRAM"}   # board ticker -> Account column in the file
+# Bloomberg-style exchange suffix in the file -> the "EXCH: code" prefix stockanalysis uses
+# (build_terminal.py already maps those prefixes to the listing lists).
+BBG_SUFFIX = {"KS": "KRX", "KQ": "KRX", "TT": "TWSE", "JP": "TSE", "C1": "SSE", "C2": "SZSE",
+              "HK": "HKG", "LN": "LON", "AU": "ASX", "CN": "TSX", "GR": "XETRA", "SW": "SIX"}
+# Swap-only exposures (no direct stock line to take the symbol and name from):
+# identifier token of the swap -> (symbol, name)
+SWAP_ONLY = {"BTMTQT8": ("SSE: 688825", "CXMT Corp")}
 PRICE_FIELDS = ["date", "ticker", "open", "high", "low", "close", "adj_close", "volume"]
 SOURCE_ORDER = {"auto": ["stooq", "yahoo"], "stooq": ["stooq"], "yahoo": ["yahoo"]}
 
@@ -183,7 +204,22 @@ def fetch_yahoo(ticker, days):
         rows[date] = bar(date, col("open")[i], col("high")[i], col("low")[i], c, a, col("volume")[i])
     if not rows:
         raise ValueError("no price rows")
-    return rows, adj is not None
+    # For some ETFs Yahoo's chart series gets the finished session's bar hours after the
+    # close, while the quote in meta already carries that session's last price. When the
+    # quote is from a later day than the last bar and the session is over, add the day's
+    # bar from the quote (adj_close = close: the day's own adjustment is always 1).
+    filled = None
+    rmt, rmp = meta.get("regularMarketTime"), meta.get("regularMarketPrice")
+    if rmt and rmp is not None:
+        qdt = dt.datetime.fromtimestamp(rmt, tz)
+        qdate = qdt.strftime("%Y-%m-%d")
+        reg_end = ((meta.get("currentTradingPeriod") or {}).get("regular") or {}).get("end")
+        session_over = (reg_end is not None and rmt >= reg_end - 120) or qdt.time() >= dt.time(16, 0)
+        if qdate > max(rows) and session_over:
+            rows[qdate] = bar(qdate, meta.get("regularMarketOpen"), meta.get("regularMarketDayHigh"),
+                              meta.get("regularMarketDayLow"), rmp, rmp, meta.get("regularMarketVolume"))
+            filled = qdate
+    return rows, adj is not None, filled
 
 
 def drop_partial_bar(rows):
@@ -200,14 +236,18 @@ def drop_partial_bar(rows):
 
 
 def fetch_prices(ticker, days, order, state):
-    """Try the sources in order. Returns (rows, source, adj_available, attempts, dropped)."""
+    """Try the sources in order. Returns (rows, source, adj_available, attempts, dropped, filled)."""
     attempts = {}
     for source in order:
         if source == "stooq" and state["stooq_down"]:
             attempts[source] = "skipped: unreachable for the previous tickers"
             continue
         try:
-            rows, adj = fetch_stooq(ticker) if source == "stooq" else fetch_yahoo(ticker, days)
+            filled = None
+            if source == "stooq":
+                rows, adj = fetch_stooq(ticker)
+            else:
+                rows, adj, filled = fetch_yahoo(ticker, days)
         except Exception as e:
             attempts[source] = repr(e)
             if source == "stooq":
@@ -223,7 +263,9 @@ def fetch_prices(ticker, days, order, state):
         if not rows:
             attempts[source] = "only today's partial bar"
             continue
-        return rows, source, adj, attempts, dropped
+        if filled and dropped == filled:
+            filled = None
+        return rows, source, adj, attempts, dropped, filled
     raise RuntimeError("; ".join(f"{s}: {e}" for s, e in attempts.items()))
 
 
@@ -299,6 +341,108 @@ def fetch_holdings(ticker):
     return out
 
 
+class RoundhillFile:
+    """Roundhill's daily holdings CSV, fetched once and shared by the funds that use it."""
+
+    def __init__(self):
+        self.text, self.date, self.error = None, None, None
+
+    def load(self):
+        if self.text is not None or self.error is not None:
+            return self.text
+        today = dt.datetime.now(NY).date() if NY else dt.date.today()
+        last = None
+        for back in range(ROUNDHILL_BACK_DAYS):
+            d = today - dt.timedelta(days=back)
+            url = ROUNDHILL_URL.format(mmddyyyy=d.strftime("%m%d%Y"))
+            try:
+                body = http_get(url, headers=BROWSER, retries=2, timeout=60).decode("utf-8-sig", "replace")
+            except urllib.error.HTTPError as e:
+                last = f"{d.isoformat()}: HTTP {e.code}"
+                continue
+            except Exception as e:  # network-level failure: no point in trying older dates
+                self.error = f"{d.isoformat()}: {e}"
+                return None
+            # A missing file comes back as the site's 404 page with HTTP 200.
+            if not body.lstrip().startswith("Date,"):
+                last = f"{d.isoformat()}: not a holdings file"
+                continue
+            self.text, self.date = body, d.isoformat()
+            return body
+        self.error = f"no holdings file in the last {ROUNDHILL_BACK_DAYS} days (last try {last})"
+        return None
+
+
+ROUNDHILL = RoundhillFile()
+
+
+def roundhill_symbol(ticker):
+    """'005930 KS' -> 'KRX: 005930', 'AAPL' -> 'AAPL'."""
+    parts = ticker.split()
+    if len(parts) == 2 and parts[1].upper() in BBG_SUFFIX:
+        return f"{BBG_SUFFIX[parts[1].upper()]}: {parts[0]}"
+    return ticker
+
+
+def clean_swap_name(name):
+    n = name.replace(" SWAP GS", "").replace(" SWAP NM", "").replace(" SWAP", "")
+    n = n.split("-SWAP")[0].strip(" -")
+    suffixes = {"INC", "INC.", "CORP", "CORP.", "LTD", "LTD.", "CO", "CO.", "PLC", "AG", "SA", "NV", "CORPORATION", "LIMITED", "HOLDINGS"}
+    return " ".join(w if (w.isupper() and len(w) <= 4 and w not in suffixes) else w.capitalize() for w in n.split())
+
+
+def fetch_roundhill_holdings(ticker):
+    """Top holdings of a Roundhill fund with swap exposure folded into the underlying stock.
+
+    Direct stock lines carry the ticker and a CUSIP/SEDOL; swap lines carry
+    '<identifier> TRS <expiry> <counterparty>' in both the ticker and CUSIP
+    columns, and the identifier is the underlying's CUSIP/SEDOL. Adding the
+    weights of lines that share that identifier reproduces the weights on
+    Roundhill's page. Collateral (T-bills, money market, the box-spread ETF)
+    and the negative Cash & Other line that balances the swaps are left out.
+    """
+    text = ROUNDHILL.load()
+    if text is None:
+        raise ValueError(f"roundhill file unavailable: {ROUNDHILL.error}")
+    account = ROUNDHILL_FUNDS[ticker]
+    rows = [r for r in csv.DictReader(io.StringIO(text)) if (r.get("Account") or "").strip() == account]
+    if not rows:
+        raise ValueError(f"no rows for account {account} in the roundhill file of {ROUNDHILL.date}")
+    exposures = {}
+    for r in rows:
+        tk = (r.get("StockTicker") or "").strip()
+        cusip = (r.get("CUSIP") or "").strip()
+        name = (r.get("SecurityName") or "").strip()
+        try:
+            w = float((r.get("Weightings") or "").replace("%", "").strip())
+        except ValueError:
+            continue
+        if (tk == "Cash&Other" or cusip.upper().startswith("CASH") or (r.get("MoneyMarketFlag") or "").strip() == "Y"
+                or name.lower().startswith("united states treasury") or tk == "XBOX"):
+            continue
+        swap = " TRS " in tk.upper()
+        key = tk.split()[0].upper() if swap else cusip.upper()
+        e = exposures.setdefault(key, {"symbol": None, "name": None, "weight": 0.0, "swap_name": None})
+        e["weight"] += w
+        if not swap:
+            e["symbol"], e["name"] = roundhill_symbol(tk), name
+        elif e["swap_name"] is None:
+            e["swap_name"] = clean_swap_name(name)
+    out = []
+    for key, e in sorted(exposures.items(), key=lambda kv: -kv[1]["weight"]):
+        if e["symbol"] is None:
+            e["symbol"], e["name"] = SWAP_ONLY.get(key, (key, e["swap_name"] or key))
+        if e["weight"] <= 0:
+            continue
+        out.append({"etf": ticker, "rank": len(out) + 1, "symbol": e["symbol"], "name": e["name"],
+                    "weight_pct": round(e["weight"], 4)})
+        if len(out) == HOLDINGS_TOP:
+            break
+    if not out:
+        raise ValueError("no exposures after combining")
+    return out
+
+
 # --------------------------------------------------------------------- output
 
 
@@ -359,7 +503,7 @@ def main():
     data, state = {}, {"stooq_failures": 0, "stooq_down": False}
     for t in TICKERS:
         try:
-            rows, source, adj, attempts, dropped = fetch_prices(t, args.days, order, state)
+            rows, source, adj, attempts, dropped, filled = fetch_prices(t, args.days, order, state)
         except Exception as e:
             summary["failed_tickers"].append(t)
             summary["tickers"][t] = {"source": None, "error": str(e)}
@@ -367,9 +511,10 @@ def main():
             continue
         data[t] = rows
         summary["tickers"][t] = {"source": source, "adj_close_available": adj, "attempts": attempts,
-                                 "partial_bar_dropped": dropped}
+                                 "partial_bar_dropped": dropped, "last_bar_from_quote": filled}
         print(f"{t:<5} {source:<6} {len(rows):>5} rows  {min(rows)}..{max(rows)}"
-              + (f"  (dropped today's partial bar {dropped})" if dropped else ""))
+              + (f"  (dropped today's partial bar {dropped})" if dropped else "")
+              + (f"  (last bar {filled} taken from the quote in meta)" if filled else ""))
 
     if BASE_TICKER not in data:
         # No axis, nothing can be aligned: blank the CSVs so no older run passes for this one.
@@ -441,18 +586,29 @@ def main():
         os.makedirs(hdir, exist_ok=True)
         hfile = os.path.join(hdir, dt.date.today().isoformat() + ".csv")
         rows = []
+        sources = {}
         for t in TICKERS:
-            try:
-                got = fetch_holdings(t)
-            except Exception as e:
-                summary["holdings_failed"][t] = str(e)
-                print(f"holdings {t:<5} FAILED  {e}")
-            else:
+            got = None
+            if t in ROUNDHILL_FUNDS:
+                try:
+                    got = fetch_roundhill_holdings(t)
+                    sources[t] = f"roundhill {ROUNDHILL.date}"
+                except Exception as e:
+                    warn(f"roundhill holdings failed for {t} ({e}); using stockanalysis.com")
+            if got is None:
+                try:
+                    got = fetch_holdings(t)
+                    sources[t] = "stockanalysis.com"
+                except Exception as e:
+                    summary["holdings_failed"][t] = str(e)
+                    print(f"holdings {t:<5} FAILED  {e}")
+            if got:
                 rows.extend(got)
-                print(f"holdings {t:<5} {len(got):>2} rows  top: {got[0]['symbol']} {got[0]['weight_pct']}%")
+                print(f"holdings {t:<5} {len(got):>2} rows  top: {got[0]['symbol']} {got[0]['weight_pct']}%  ({sources[t]})")
             time.sleep(1)  # one page per second is polite
         write_csv(hfile, HOLDINGS_FIELDS, rows)
         summary["holdings"] = {"file": os.path.relpath(hfile, args.out), "source": "stockanalysis.com",
+                               "roundhill_file": ROUNDHILL.date, "sources": sources,
                                "etfs": len(TICKERS) - len(summary["holdings_failed"]), "rows": len(rows)}
         if summary["holdings_failed"]:
             warn("holdings failed for: " + ", ".join(summary["holdings_failed"]))
