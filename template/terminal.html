@@ -390,6 +390,41 @@ body.cover-open{overflow:hidden}
   .cv-caption{position:absolute;top:14px;left:16px;right:16px;max-width:none;padding:7px 11px}}
 @media (max-width:560px){.cv-sheet{padding:20px 20px 32px;gap:32px}.cv-hero{gap:14px;padding-top:10px}.cv-launch{width:100%;min-height:64px;padding-left:28px;justify-content:space-between}.cv-launch .txt{flex:1;text-align:center;padding-left:40px}
   .cv-key{padding:16px 14px 14px}.cv-key table{font-size:13px}.cv-key th.read-h,.cv-key td.read{display:none}.cv-foot .row{display:grid;gap:2px}.cv-foot a{min-height:40px}}
+
+/* ---- 대문 마감 (A · Lacquer): 구성은 위와 같고, 재질·글꼴·색·세부만 다듬는다 ---- */
+.cover{--cv-paper:rgba(14,12,10,.95);--cv-card:#16130f;--cv-s2:#1c1813;--cv-border:#2a251e;--cv-rule:#3d362c;--cv-ink:#fbf6ea;--cv-fg:#e9e2d3;--cv-lede:#d2c9b5;--cv-muted:#a69c87;--cv-faint:#8c8370;
+  --cv-hl:#e9b949;--cv-hl-hover:#f2c75c;--cv-hl-ink:#1a1408;--cv-halo:rgba(233,185,73,.14);--cv-band:rgba(233,185,73,.55)}
+.cv-sheet{gap:40px;counter-reset:sec}
+.cover h1{font-size:clamp(40px,5vw,60px);line-height:1.1;letter-spacing:-.015em;font-kerning:normal}
+.cv-eyebrow{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.cv-lede{font-size:18px;line-height:1.7;max-width:30em}
+.cv-hero{background:radial-gradient(55% 45% at 50% 82%,rgba(233,185,73,.07),rgba(233,185,73,0) 70%)}
+.cover h2.num::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);font-family:var(--cv-serif);font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--cv-hl);margin-right:10px;vertical-align:2px}
+.cover h2.num::after{content:"";display:inline-block;width:24px;height:1px;background:var(--cv-hl);margin:0 0 5px 10px;vertical-align:middle}
+.cv-card{box-shadow:inset 0 1px 0 rgba(255,255,255,.04);background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.018) 0 1px,transparent 1px 7px)}
+.cv-card,.cv-now,.cv-key{border-color:var(--cv-border)}
+.cv-now{padding:20px 22px 18px}
+.cv-now .row{row-gap:10px;align-items:center}
+.cv-now .tk{line-height:1.4}
+.tkc{display:inline-flex;align-items:center;gap:6px;padding:2px 8px 2px 7px;border:1px solid var(--cv-rule);border-radius:6px;font-family:var(--mono);font-weight:600;font-size:12.5px;color:var(--cv-fg);margin:2px 6px 2px 0;vertical-align:middle;background:var(--cv-s2)}
+.tkc::before{content:"";width:7px;height:7px;border-radius:999px;background:var(--ph,var(--cv-rule));flex:none}
+.tkc.sty{border-style:dashed}
+.cv-now .st{display:inline-flex;align-items:center;gap:7px;margin:2px 14px 2px 0;vertical-align:middle}
+.cv-now .st b{font-family:var(--mono);font-weight:600;color:var(--cv-ink);min-width:3ch;text-align:right}
+.cv-now .pcs{display:inline-flex;gap:1px}
+.cv-now .pcs i{display:inline-flex;align-items:center;justify-content:center;width:18px;height:14px;font-family:var(--mono);font-size:9px;font-weight:700;font-style:normal;background:var(--cv-s2);border-radius:2px}
+.cv-key .chip{box-shadow:inset 0 0 0 1px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.1)}
+.cv-key td.cond{letter-spacing:0}
+.cv-formula{border-color:var(--cv-rule);color:var(--cv-ink)}
+.cv-scale .ticks{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--cv-faint);margin-top:-2px;padding:0 2px}
+.cv-fact .big .num{font-family:var(--mono);font-weight:500;font-size:30px}
+.cv-week i{border-radius:3px}
+.cv-launch{background:linear-gradient(180deg,#f3c45a,#dfa93a);box-shadow:0 0 0 1px var(--cv-hl-ink),0 0 0 8px var(--cv-halo),0 14px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.35)}
+.cv-launch:hover{background:linear-gradient(180deg,#f7cf6e,#e8b448);box-shadow:0 0 0 1px var(--cv-hl-ink),0 0 0 10px var(--cv-halo),0 18px 48px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.4)}
+.cv-launch .ico{background:#1a1408;color:#e9b949}
+.cv-pill::before{background:#e9b949;box-shadow:0 0 0 3px rgba(233,185,73,.16)}
+.cv-foot a{font-weight:600;text-decoration-color:rgba(233,185,73,.35)}
+.cv-foot a:hover{text-decoration-color:#e9b949}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
 
@@ -415,12 +450,12 @@ body.cover-open{overflow:hidden}
       </header>
 
       <section class="cv-card cv-now" aria-labelledby="h-now">
-        <div class="cv-head" style="margin-bottom:2px"><h2 id="h-now" style="font-size:18px">Tonight's tape</h2><p id="coverAsof"></p></div>
+        <div class="cv-head" style="margin-bottom:2px"><h2 id="h-now" class="num" style="font-size:18px">Tonight's tape</h2><p id="coverAsof"></p></div>
         <div id="coverNow"></div>
       </section>
 
       <section class="cv-card cv-key" aria-labelledby="h-key">
-        <div class="kh"><h2 id="h-key">Field key</h2><span class="cv-formula">RS-Ratio = 100 × SMA(RS,10) ÷ SMA(RS,30)</span></div>
+        <div class="kh"><h2 id="h-key" class="num">Field key</h2><span class="cv-formula">RS-Ratio = 100 × SMA(RS,10) ÷ SMA(RS,30)</span></div>
         <table>
           <thead><tr><th scope="col">Quadrant</th><th scope="col">Gate</th><th scope="col" class="read-h">Reading</th></tr></thead>
           <tbody>
@@ -432,12 +467,13 @@ body.cover-open{overflow:hidden}
         </table>
         <div class="cv-scale">
           <div class="cells" id="coverScale" role="img" aria-label="Percentile scale from 0 to 100: deep red is the weakest, deep green the strongest among the 23 ranked ETFs"></div>
+          <div class="ticks" aria-hidden="true"><span>0 · weakest</span><span>50</span><span>100 · strongest</span></div>
           <p>Percentile of the return over SPY among the 23 ranked ETFs, five windows from one week to twelve months. Sectors are measured against SPY, industries against their sector, MAGS against SPY but outside the sector counts.</p>
         </div>
       </section>
 
       <section aria-labelledby="h-beat">
-        <div class="cv-head"><h2 id="h-beat">Cadence</h2><p>The numbers move on this beat.</p></div>
+        <div class="cv-head"><h2 id="h-beat" class="num">Cadence</h2><p>The numbers move on this beat.</p></div>
         <div class="cv-facts">
           <article class="cv-card cv-fact">
             <span class="label">BEAT 1 · TUE–FRI</span>
@@ -1344,14 +1380,20 @@ function tick() {
 
 /* ---- 대문: 해시 없이 들어왔고 건너뛰기를 켜지 않았을 때만 보드 위에 덮인다. 배경은 뒤에 그려진 보드 자체 ---- */
 const cover = document.getElementById('cover'), termRoot = document.querySelector('.term');
+const PHASE_COLOR = { Leading: 'var(--lead)', Weakening: 'var(--weak)', Lagging: 'var(--lag)', Improving: 'var(--impr)' };
+const coverChip = (t, ph, extra) => `<i class="tkc${extra || ''}" style="--ph:${ph ? PHASE_COLOR[ph] : 'var(--cv-rule)'}" title="${ph || 'N/A'}">${t}</i>`;
+const coverCells = e => `<span class="pcs" title="1W · 1M · 3M · 6M · 12M">${e.pct.map(p => p == null ? '<i>·</i>' : `<i style="${cellStyle(p)}">${p}</i>`).join('')}</span>`;
 function coverNow() {
-  const by = {}; SECTORS.forEach(e => { if (e.rrg) (by[e.rrg] = by[e.rrg] || []).push(e.t); });
-  const mags = STYLES.map(e => `${e.t} ${e.rrg ? e.rrg : 'N/A'}`).join(', ');
-  const top = ETFS.filter(e => e.cat !== 'sty' && e.pct[0] != null && e.pct[1] != null).sort((a, b) => shiftScore(b) - shiftScore(a)).slice(0, 3).map(e => `${e.t} <i>${shiftScore(e) >= 0 ? '+' : ''}${shiftScore(e).toFixed(0)}</i>`).join('  ');
+  const by = {}; SECTORS.forEach(e => { if (e.rrg) (by[e.rrg] = by[e.rrg] || []).push(e); });
+  const top = ETFS.filter(e => e.cat !== 'sty' && e.pct[0] != null && e.pct[1] != null).sort((a, b) => shiftScore(b) - shiftScore(a)).slice(0, 3);
   const fired = ETFS.reduce((n, e) => n + e.sig.length, 0);
   const row = (lb, v) => `<span class="lb">${lb}</span><span class="tk">${v}</span>`;
+  const phases = ['Leading', 'Improving', 'Weakening', 'Lagging'].map(k => row(k.toUpperCase(), (by[k] || []).map(e => coverChip(e.t, k)).join('') || '<i>none</i>')).join('');
+  const sty = row('STYLE', STYLES.map(e => coverChip(e.t, e.rrg, ' sty') + `<i style="margin-left:2px">${e.rrg || 'N/A'} vs SPY</i>`).join(''));
+  const shift = row('SHIFT TOP 3', top.map(e => `<span class="st">${coverChip(e.t, e.rrg)}<b>${shiftScore(e) >= 0 ? '+' : ''}${shiftScore(e).toFixed(0)}</b>${coverCells(e)}</span>`).join(''));
+  const sig = row('SIGNALS', `${fired} <i>live</i>${STALE.length ? ` · <i>${STALE.length} on the previous close</i>` : ''}`);
   document.getElementById('coverAsof').textContent = `${PRICE_ASOF} close · holdings __HOLD_ASOF__ · listings ${LIST_ASOF}`;
-  document.getElementById('coverNow').innerHTML = `<div class="row">${['Leading', 'Improving', 'Weakening', 'Lagging'].map(k => row(k.toUpperCase(), (by[k] || []).join(' ') || '<i>none</i>')).join('')}${row('STYLE', mags)}${row('SHIFT TOP 3', top)}${row('SIGNALS', `${fired} <i>live</i>${STALE.length ? ` · <i>${STALE.length} on the previous close</i>` : ''}`)}</div>`;
+  document.getElementById('coverNow').innerHTML = `<div class="row">${phases}${sty}${shift}${sig}</div>`;
   document.getElementById('coverScale').innerHTML = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(p => `<i style="${cellStyle(p)}">${p}</i>`).join('');
 }
 function showCover() {
