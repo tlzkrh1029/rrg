@@ -26,7 +26,7 @@ import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-PAGE_URL = "https://tlzkrh1029.github.io/rrg/"
+PAGE_URL = "https://tlzkrh1029.github.io/rrg/#board"   # #board 는 대문을 건너뛰고 바로 보드를 연다
 
 KO = {"XLK": "기술", "XLF": "금융", "XLV": "헬스케어", "XLY": "경기소비재", "XLC": "커뮤니케이션", "XLI": "산업재",
       "XLP": "필수소비재", "XLE": "에너지", "XLU": "유틸리티", "XLB": "소재", "XLRE": "부동산",

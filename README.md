@@ -109,7 +109,7 @@ Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `dige
 | `scripts/compute_terminal.py` | `output/prices_wide.csv` 로 백분위·비율선·RRG(1단 섹터 ÷ SPY, 2단 산업·테마 ÷ 상위 섹터, 스타일 MAGS ÷ SPY)·신호를 계산해 `output/terminal-data.json` 을 씁니다. 규칙은 파일 머리의 설명에 있습니다. |
 | `scripts/build_terminal.py` | 계산값, 최신 두 구성종목 스냅샷(변동 %p), 상장 목록, `data/etf_meta.json` 을 `template/terminal.html` 에 끼워 `docs/index.html`(Pages 용)과 `docs/terminal.artifact.html`(Claude 아티팩트 발행용)을 만듭니다. 직전 빌드(`docs/data/terminal-data.json`)와 비교해 `docs/data/alerts.json`·`alerts.txt` 와 주간 브리핑 `docs/data/brief.txt` 를 씁니다. |
 | `scripts/notify_telegram.py` | `brief.txt`(`--mode digest`) 또는 `alerts.txt`(`--mode alerts`, 비어 있으면 보내지 않음)를 텔레그램 봇 API 로 보냅니다. |
-| `template/terminal.html` | 터미널 화면 템플릿. `__HOLD__`, `__DATA__`, `__PRICE_ASOF__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. |
+| `template/terminal.html` | 터미널 화면 템플릿. `__HOLD__`, `__DATA__`, `__PRICE_ASOF__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. 주소에 해시가 없으면 보드 위에 대문(cover)이 먼저 덮이고 LAUNCH TERMINAL 로 엽니다. `#board`·`#rrg`·`#brief`·`#help` 로 들어오면 대문을 건너뛰며(텔레그램 링크는 `#board`), 대문의 Skip 을 켜면 그 브라우저에서는 다시 보이지 않습니다. 보드에서 `0` 또는 `COVER` 를 입력하면 다시 엽니다. |
 | `data/etf_meta.json` | ETF 이름·순자산·보유 종목 수·출처 URL(2026-09-26 stockanalysis 기준, MAGS 는 2026-10-13). 순자산은 자동 갱신되지 않습니다. |
 | `output/holdings/2026-09-26.csv` | 변동 %p 의 첫 비교 기준이 되는 스냅샷(시안 v2 의 구성종목 데이터에서 복원). |
 
