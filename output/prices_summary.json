@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T01:17:56Z",
+  "generated_at": "2026-10-17T00:20:44Z",
   "source_order": [
     "stooq",
     "yahoo"
@@ -12,13 +12,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "QQQ": {
       "source": "yahoo",
@@ -27,13 +28,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLK": {
       "source": "yahoo",
@@ -42,13 +44,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLF": {
       "source": "yahoo",
@@ -57,13 +60,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLV": {
       "source": "yahoo",
@@ -72,13 +76,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLY": {
       "source": "yahoo",
@@ -87,13 +92,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLC": {
       "source": "yahoo",
@@ -102,13 +108,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-14",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
-      "rows": 499,
-      "missing_days": 1,
+      "rows": 500,
+      "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLI": {
       "source": "yahoo",
@@ -117,13 +124,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLP": {
       "source": "yahoo",
@@ -132,13 +140,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLE": {
       "source": "yahoo",
@@ -147,13 +156,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLU": {
       "source": "yahoo",
@@ -162,13 +172,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLB": {
       "source": "yahoo",
@@ -177,13 +188,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLRE": {
       "source": "yahoo",
@@ -192,13 +204,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-14",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
-      "rows": 499,
-      "missing_days": 1,
+      "rows": 500,
+      "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "SMH": {
       "source": "yahoo",
@@ -207,13 +220,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "IGV": {
       "source": "yahoo",
@@ -222,13 +236,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XBI": {
       "source": "yahoo",
@@ -237,13 +252,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "GNOM": {
       "source": "yahoo",
@@ -252,13 +268,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-14",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
-      "rows": 499,
-      "missing_days": 1,
+      "rows": 500,
+      "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "ARKG": {
       "source": "yahoo",
@@ -267,13 +284,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-14",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
-      "rows": 499,
-      "missing_days": 1,
+      "rows": 500,
+      "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "KRE": {
       "source": "yahoo",
@@ -282,13 +300,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XHB": {
       "source": "yahoo",
@@ -297,13 +316,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XME": {
       "source": "yahoo",
@@ -312,13 +332,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "URA": {
       "source": "yahoo",
@@ -327,13 +348,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "ITA": {
       "source": "yahoo",
@@ -342,13 +364,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-15",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "PAVE": {
       "source": "yahoo",
@@ -357,13 +380,14 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-14",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
-      "rows": 499,
-      "missing_days": 1,
+      "rows": 500,
+      "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "DRAM": {
       "source": "yahoo",
@@ -372,11 +396,12 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
+      "last_bar_from_quote": "2026-10-16",
       "first_date": "2026-04-02",
-      "last_date": "2026-10-14",
+      "last_date": "2026-10-16",
       "gap_days": 0,
-      "rows": 135,
-      "missing_days": 365,
+      "rows": 137,
+      "missing_days": 363,
       "off_axis_dates": [],
       "rows_before_axis": 0
     },
@@ -387,19 +412,20 @@
         "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "first_date": "2024-10-17",
-      "last_date": "2026-10-14",
+      "last_bar_from_quote": "2026-10-16",
+      "first_date": "2024-10-18",
+      "last_date": "2026-10-16",
       "gap_days": 0,
-      "rows": 499,
-      "missing_days": 1,
+      "rows": 500,
+      "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 383
+      "rows_before_axis": 384
     }
   },
   "base_axis": {
     "ticker": "SPY",
-    "first_date": "2024-10-17",
-    "last_date": "2026-10-15",
+    "first_date": "2024-10-18",
+    "last_date": "2026-10-16",
     "days": 500
   },
   "failed_tickers": [],
@@ -455,33 +481,46 @@
     ]
   },
   "holdings": {
-    "file": "holdings/2026-10-16.csv",
+    "file": "holdings/2026-10-17.csv",
     "source": "stockanalysis.com",
+    "roundhill_file": "2026-10-16",
+    "sources": {
+      "SPY": "stockanalysis.com",
+      "QQQ": "stockanalysis.com",
+      "XLK": "stockanalysis.com",
+      "XLF": "stockanalysis.com",
+      "XLV": "stockanalysis.com",
+      "XLY": "stockanalysis.com",
+      "XLC": "stockanalysis.com",
+      "XLI": "stockanalysis.com",
+      "XLP": "stockanalysis.com",
+      "XLE": "stockanalysis.com",
+      "XLU": "stockanalysis.com",
+      "XLB": "stockanalysis.com",
+      "XLRE": "stockanalysis.com",
+      "SMH": "stockanalysis.com",
+      "IGV": "stockanalysis.com",
+      "XBI": "stockanalysis.com",
+      "GNOM": "stockanalysis.com",
+      "ARKG": "stockanalysis.com",
+      "KRE": "stockanalysis.com",
+      "XHB": "stockanalysis.com",
+      "XME": "stockanalysis.com",
+      "URA": "stockanalysis.com",
+      "ITA": "stockanalysis.com",
+      "PAVE": "stockanalysis.com",
+      "DRAM": "roundhill 2026-10-16",
+      "MAGS": "roundhill 2026-10-16"
+    },
     "etfs": 26,
-    "rows": 260
+    "rows": 257
   },
   "holdings_failed": {},
   "checks": {
     "wide_rows_equal_base_axis_days": true,
     "core_missing_days_over_limit": {},
-    "last_date_differs_from_base": {
-      "XLC": "2026-10-14",
-      "XLRE": "2026-10-14",
-      "GNOM": "2026-10-14",
-      "ARKG": "2026-10-14",
-      "PAVE": "2026-10-14",
-      "DRAM": "2026-10-14",
-      "MAGS": "2026-10-14"
-    },
+    "last_date_differs_from_base": {},
     "tickers_without_adj_close": []
   },
-  "warnings": [
-    "XLC: last date 2026-10-14 differs from SPY 2026-10-15",
-    "XLRE: last date 2026-10-14 differs from SPY 2026-10-15",
-    "GNOM: last date 2026-10-14 differs from SPY 2026-10-15",
-    "ARKG: last date 2026-10-14 differs from SPY 2026-10-15",
-    "PAVE: last date 2026-10-14 differs from SPY 2026-10-15",
-    "DRAM: last date 2026-10-14 differs from SPY 2026-10-15",
-    "MAGS: last date 2026-10-14 differs from SPY 2026-10-15"
-  ]
+  "warnings": []
 }
