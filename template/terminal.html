@@ -485,7 +485,7 @@ body.cover-open{overflow:hidden}
               </div>
               <div class="cv-keyline"><span><i style="background:#c9cfd9"></i>rebuild</span><span><i style="background:var(--cv-hl)"></i>weekly run</span></div>
             </div>
-            <p>Prices, holdings and listings, then the board. GitHub's queue often slides it an hour or two.</p>
+            <p>Prices, holdings and listings, then the board. GitHub's queue often slides it an hour or two; once the build lands, a Claude task republishes this artifact (checks at 09:22 and 14:22).</p>
           </article>
           <article class="cv-card cv-fact">
             <span class="label">BEAT 2 · SATURDAY</span>
@@ -495,9 +495,9 @@ body.cover-open{overflow:hidden}
               <div class="cv-week" role="img" aria-label="Saturday only">
                 <span><i></i>Mo</span><span><i></i>Tu</span><span><i></i>We</span><span><i></i>Th</span><span><i></i>Fr</span><span><i class="full"></i><b>Sa</b></span><span><i></i>Su</span>
               </div>
-              <div class="cv-keyline"><span><i style="background:var(--cv-hl)"></i>brief · artifact 09:22 / 14:22</span></div>
+              <div class="cv-keyline"><span><i style="background:var(--cv-hl)"></i>weekly brief to Telegram</span></div>
             </div>
-            <p>Friday's close, read once: shift leaders, both RRG tiers, live signals. The artifact follows once the build has landed: a Claude task checks at 09:22 and again at 14:22, because GitHub's queue usually runs this build two to four hours late.</p>
+            <p>Friday's close, read once: shift leaders, both RRG tiers, live signals. The artifact follows the same way as on weekdays, once the build has landed.</p>
           </article>
           <article class="cv-card cv-fact">
             <span class="label">BEAT 3 · ON CHANGE</span>
@@ -644,7 +644,7 @@ body.cover-open{overflow:hidden}
     <section class="panel">
       <header class="ph"><span class="pt">Weekly Brief<small>텔레그램으로 보낸 주간 브리핑과 같은 본문</small></span></header>
       <div class="pb">
-        <p class="meta">GitHub Actions가 토요일 07:05 KST에 금요일 종가로 계산해 생성한 본문입니다. 텔레그램 봇과 Claude 푸시 알림으로 같은 내용이 전달되고, 이 아티팩트는 Claude 예약 작업이 토요일 09:22 KST(14:22에 다시 확인)에 그날 빌드가 main에 올라온 것을 확인한 뒤 같은 데이터로 다시 발행합니다. GitHub의 예약 실행은 보통 2~4시간 늦게 시작됩니다. 빌드 시각 <b>__BUILT_AT__</b>.</p>
+        <p class="meta">GitHub Actions가 화~토 아침(평일 08:10 KST, 토요일 07:05 KST 예약)에 직전 종가로 계산해 생성한 본문입니다. 토요일 본문은 텔레그램 봇과 Claude 푸시 알림으로도 전달됩니다. 이 아티팩트는 Claude 예약 작업이 화~토 09:22 KST(14:22에 다시 확인)에 그날 빌드가 main에 올라온 것을 확인한 뒤 같은 데이터로 다시 발행하므로 Pages와 같은 빌드를 보여 줍니다. GitHub의 예약 실행은 보통 2~4시간 늦게 시작됩니다. 빌드 시각 <b>__BUILT_AT__</b>.</p>
         <pre id="briefText">__BRIEF__</pre>
       </div>
     </section>

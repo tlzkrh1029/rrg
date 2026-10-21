@@ -96,7 +96,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 
 Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `digest` 를 켜면 브리핑도 함께 보냅니다.
 
-GitHub 의 예약 실행은 보통 예약 시각보다 2~4시간 늦게 시작됩니다(토요일 빌드 커밋이 10월 10일에는 10:42, 10월 17일에는 09:21 KST). Claude 아티팩트(📊 Weekly RRG)는 Claude 예약 작업이 토요일 09:22 KST 와 14:22 KST 에 main 의 `docs/terminal.artifact.html` 을 읽어 다시 발행하는데, 그날 만들어진 빌드(`docs/data/terminal-data.json` 의 `generated_at` 이 당일)가 올라올 때까지 10분 간격으로 기다렸다가 발행하고, 첫 실행에서 발행했으면 두 번째 실행은 확인만 하고 끝냅니다. 토요일 빌드가 끝내 오지 않으면 두 번째 실행이 main 의 마지막 빌드로 발행하고 그 사실을 보고합니다.
+GitHub 의 예약 실행은 보통 예약 시각보다 2~4시간 늦게 시작됩니다(빌드 커밋이 평일에는 10:18~12:32 KST, 토요일에는 09:21~10:42 KST 사이였습니다). Claude 아티팩트(📊 Weekly RRG)는 Claude 예약 작업이 화~토 09:22 KST 와 14:22 KST 에 main 의 `docs/terminal.artifact.html` 을 읽어 다시 발행하므로 Pages 와 같은 빌드를 보여 줍니다. 이 작업은 그날 만들어진 빌드(`docs/data/terminal-data.json` 의 `generated_at` 이 당일)가 올라올 때까지 10분 간격으로 기다렸다가 발행하고, 첫 실행에서 발행했으면 두 번째 실행은 확인만 하고 끝냅니다. 그날 빌드가 끝내 오지 않으면 두 번째 실행이 main 의 마지막 빌드로 발행하고 그 사실을 보고합니다. 보고는 토요일에는 `brief.txt`, 평일에는 `alerts.txt` 의 내용입니다.
 
 ### 한 번만 해 두는 설정
 
