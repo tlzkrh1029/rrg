@@ -1,39 +1,25 @@
-🔔 섹터 전환 터미널 · 2026-10-19 종가 · 변화 20건
+🔔 섹터 전환 터미널 · 2026-10-20 종가 · 변화 11건
 1W 백분위 높은 순 · [1W/1M/3M/6M/12M 백분위] · RRG 는 벤치마크 대비 국면
 
-XLP 필수소비재  [100/95/77/59/57]  Improving vs SPY
-  · ↑ 백분위 36점 상승 (6개월 → 1개월)
-XLB 소재  [95/82/68/45/62]  Improving vs SPY
-  · RRG Lagging → Improving (vs SPY)
-  · ↑ 백분위 37점 상승 (6개월 → 1개월)
-XLY 경기소비재  [82/86/59/36/29]  Lagging vs SPY
-  · ↗ SPY 비율 50일선 상향 돌파
-  · ↑ 백분위 50점 상승 (6개월 → 1개월)
-ITA 항공우주·방산  [77/32/14/14/33]  Lagging vs XLI
+XLV 헬스케어  [100/91/82/86/71]  Leading vs SPY
+  · ★ SPY 대비 비율 52주 신고가
+XBI 바이오  [95/36/55/64/81]  Lagging vs XLV
+  · ↗ SPY 비율 200일선 상향 돌파
   · ≈ 1주 반등, 1개월 이상에서는 미확인
-XHB 주택건설  [73/41/9/9/5]  Lagging vs XLY
-  · ↑ 백분위 32점 상승 (6개월 → 1개월)
-XLU 유틸리티  [55/73/23/18/10]  Lagging vs SPY
-  · ↘ SPY 비율 50일선 하향 이탈
-  · ↑ 백분위 55점 상승 (6개월 → 1개월)
-PAVE 미국 인프라  [50/64/36/32/52]  Lagging vs XLI
-  · ↑ 백분위 32점 상승 (6개월 → 1개월)
-XLC 커뮤니케이션  [45/68/64/23/24]  Improving vs SPY
+XLB 소재  [82/86/64/45/62]  Improving vs SPY
+  · ↑ 백분위 41점 상승 (6개월 → 1개월)
+XLY 경기소비재  [77/77/68/32/29]  Lagging vs SPY
   · ↑ 백분위 45점 상승 (6개월 → 1개월)
-GNOM 유전체학  [36/50/95/95/90]  Leading vs XLV
+XHB 주택건설  [68/55/14/9/5]  Lagging vs XLY
+  · ↑ 백분위 46점 상승 (6개월 → 1개월)
+ARKG 유전체학 (액티브)  [45/18/100/100/86]  Weakening vs XLV
+  · ↓ 백분위 82점 하락 (6개월 → 1개월)
+XLU 유틸리티  [41/82/18/18/10]  Lagging vs SPY
   · ↗ SPY 비율 50일선 상향 돌파
-  · ↓ 백분위 45점 하락 (6개월 → 1개월)
-XBI 바이오  [32/18/45/64/81]  Lagging vs XLV
-  · RRG Weakening → Lagging (vs XLV)
-  · ↓ 백분위 46점 하락 (6개월 → 1개월)
-ARKG 유전체학 (액티브)  [23/9/100/100/86]  Weakening vs XLV
-  · RRG Leading → Weakening (vs XLV)
-IGV 소프트웨어  [18/77/86/82/14]  Leading vs XLK
-  · ↗ SPY 비율 50일선 상향 돌파
-XLK 기술  [14/36/73/77/76]  Weakening vs SPY
-  · ↓ 백분위 41점 하락 (6개월 → 1개월)
-SMH 반도체  [5/23/41/68/95]  Lagging vs XLK
-  · RRG Weakening → Lagging (vs SPY)
-  · ↓ 백분위 45점 하락 (6개월 → 1개월)
+  · ↑ 백분위 64점 상승 (6개월 → 1개월)
+XLK 기술  [14/23/73/73/76]  Weakening vs SPY
+  · ↓ 백분위 50점 하락 (6개월 → 1개월)
+SMH 반도체  [5/9/27/68/90]  Lagging vs XLK
+  · ↓ 백분위 59점 하락 (6개월 → 1개월)
 
 https://tlzkrh1029.github.io/rrg/#board
