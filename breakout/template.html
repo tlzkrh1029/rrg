@@ -1035,4 +1035,10 @@ document.getElementById('lstAsof').textContent = LST_ASOF;
 document.getElementById('statusLine').textContent = `블록 ${DATA.etfs.length} · 칸 ${NCELLS} · 종가 ${PRICE_ASOF} · 구성종목 ${DATA.holdings_asof} · 상장 목록 ${LST_ASOF.slice(0, 10)} (bStocks ${LISTING.counts.b} · 선물 ${LISTING.counts.p} · HL ${LISTING.counts.h}) · 초록=강세 (US)`;
 document.querySelectorAll('.tabs [data-mode]').forEach(x => x.setAttribute('aria-selected', x.dataset.mode === state.mode));
 render();
+/* 주소의 해시가 티커나 ETF 이면 그 칸·블록으로 간다(매트릭스의 종목 상세가 "돌파 지도에서 보기"로 보내는 주소). 해시는 글자·숫자·점만 받는다 */
+(function () {
+  const h = decodeURIComponent((location.hash || '').slice(1)).trim().toUpperCase();
+  if (!h || !/^[A-Z0-9.\-]{1,12}$/.test(h)) return;
+  const inp = document.getElementById('cmd'); inp.value = h; runCmd();
+})();
 </script>
