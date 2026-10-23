@@ -64,7 +64,7 @@ python3 breakout/build_breakout.py
 
 ## 아티팩트
 
-`docs/breakout/breakout.artifact.html` 이 Claude 아티팩트 발행용 본문입니다(문서 골격 없이 `<title>` 부터). 매트릭스 아티팩트처럼 Claude 예약 작업으로 매일 다시 발행하려면 같은 방식의 작업을 하나 더 만들면 되고, 아직 만들지 않았습니다.
+`docs/breakout/breakout.artifact.html` 이 Claude 아티팩트 발행용 본문입니다(문서 골격 없이 `<title>` 부터). 매트릭스 아티팩트를 다시 발행하는 Claude 예약 작업(화~토 09:22·14:22 KST, 그날 빌드를 기다렸다가 발행)이 2026-10-23 부터 이 본문도 같은 차례에 돌파 지도 아티팩트로 발행합니다. 본문의 `Prices YYYY-MM-DD` 가 아티팩트의 것과 같으면 건너뛰고, 그날 돌파 지도 단계가 실패해 본문이 직전 빌드로 남아 있으면 그 사실만 보고합니다.
 
 ## 화면의 명령
 
