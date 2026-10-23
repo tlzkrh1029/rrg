@@ -22,6 +22,6 @@
 
 약세 신호 65: AMD(XLK·SMH) 20일 이탈 5일, AVGO(XLK·SMH) 55일 이탈 5일, MU(XLK·SMH·DRAM) 55일 이탈 1일, INTC(XLK) 55일 이탈 1일, CSCO(XLK) 55일 이탈 1일, BAC(XLF) 55일 이탈 7일, MS(XLF) 55일 이탈 8일, C(XLF) 55일 이탈 8일, ABT(XLV) 실패, TSLA(XLY) 실패, GOOGL(XLC) 55일 이탈 1일, GOOG(XLC) 55일 이탈 1일, VZ(XLC) 20일 이탈 10일, TMUS(XLC) 55일 이탈 10일, CAT(XLI) 55일 이탈 8일, GE(XLI·ITA) 55일 이탈 3일, GEV(XLI) 55일 이탈 1일, ETN(XLI·PAVE·GRID) 55일 이탈 3일, PH(XLI·PAVE) 55일 이탈 1일, FCX(XLB·XME) 55일 이탈 1일, PLD(XLRE) 55일 이탈 5일, EQIX(XLRE) 55일 이탈 5일, DLR(XLRE) 55일 이탈 1일, TSM(SMH) 20일 이탈 6일, ASML(SMH) 55일 이탈 1일, KLAC(SMH) 55일 이탈 5일, PANW(IGV) 20일 이탈 5일, CRWD(IGV) 20일 이탈 5일, BPOP(KRE) 실패, JCI(XHB·GRID) 20일 이탈 1일, MTRN(XME) 55일 이탈 1일, AA(XME) 55일 이탈 1일, CCJ(URA) 55일 이탈 7일, NXE(URA) 55일 이탈 1일, UEC(URA) 55일 이탈 1일, SSW(URA) 55일 이탈 1일, DML(URA) 55일 이탈 1일, EMR(PAVE) 실패, 005930(DRAM) 20일 이탈 8일, 000660(DRAM) 55일 이탈 6일, 688825(DRAM) 55일 이탈 7일, SNDK(DRAM) 20일 이탈 9일, STX(DRAM) 55일 이탈 7일, 285A(DRAM) 20일 이탈 8일, 2408(DRAM) 20일 이탈 7일, AEM(GDX) 20일 이탈 1일, ABX(GDX) 55일 이탈 1일, WPM(GDX) 20일 이탈 1일, FNV(GDX) 20일 이탈 1일, AU(GDX) 55일 이탈 1일, PAAS(GDX) 55일 이탈 1일, PWR(GRID) 55일 이탈 3일, ABBN(GRID) 55일 이탈 4일, SU(GRID) 55일 이탈 4일, NG(GRID) 실패, PRY(GRID) 55일 이탈 7일, NVT(GRID) 55일 이탈 5일, HUBB(GRID) 20일 이탈 1일, FSLR(TAN) 55일 이탈 1일, AAL(JETS) 55일 이탈 9일, UAL(JETS) 55일 이탈 8일, SKYW(JETS) 20일 이탈 9일, ALGT(JETS) 55일 이탈 7일, ULCC(JETS) 55일 이탈 7일, ALK(JETS) 55일 이탈 9일
 
-켜진 종목 84 중 크립토 거래소 상장 13 (목록 2026-09-27)
+켜진 종목 84 중 크립토 거래소 상장 15 (목록 2026-10-23)
 
 https://tlzkrh1029.github.io/rrg/breakout/

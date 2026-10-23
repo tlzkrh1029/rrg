@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-23T05:25:28Z",
+ "generated_at": "2026-10-23T06:24:43Z",
  "holdings_snapshot": "2026-10-23",
  "axis_first": "2024-10-24",
  "axis_last": "2026-10-22",
@@ -54,7 +54,7 @@
    "filled_from_quote": null,
    "ath_old": 132.4047088623047,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AAPL": {
    "symbol": "AAPL",
@@ -71,7 +71,7 @@
    "filled_from_quote": null,
    "ath_old": 235.6201171875,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MSFT": {
    "symbol": "MSFT",
@@ -88,7 +88,7 @@
    "filled_from_quote": null,
    "ath_old": 417.7090759277344,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AMD": {
    "symbol": "AMD",
@@ -105,7 +105,7 @@
    "filled_from_quote": null,
    "ath_old": 192.52999877929688,
    "ath_old_date": "2023-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AVGO": {
    "symbol": "AVGO",
@@ -122,7 +122,7 @@
    "filled_from_quote": null,
    "ath_old": 169.5638427734375,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MU": {
    "symbol": "MU",
@@ -139,7 +139,7 @@
    "filled_from_quote": null,
    "ath_old": 124.09069061279297,
    "ath_old_date": "2024-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PLTR": {
    "symbol": "PLTR",
@@ -156,7 +156,7 @@
    "filled_from_quote": null,
    "ath_old": 44.86000061035156,
    "ath_old_date": "2024-10-21",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "INTC": {
    "symbol": "INTC",
@@ -173,7 +173,7 @@
    "filled_from_quote": null,
    "ath_old": 56.098514556884766,
    "ath_old_date": "2020-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CSCO": {
    "symbol": "CSCO",
@@ -190,7 +190,7 @@
    "filled_from_quote": null,
    "ath_old": 55.260311126708984,
    "ath_old_date": "2021-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "LRCX": {
    "symbol": "LRCX",
@@ -207,7 +207,7 @@
    "filled_from_quote": null,
    "ath_old": 90.46407318115234,
    "ath_old_date": "2024-05-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "BRK.B": {
    "symbol": "BRK-B",
@@ -224,7 +224,7 @@
    "filled_from_quote": null,
    "ath_old": 475.9200134277344,
    "ath_old_date": "2024-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "JPM": {
    "symbol": "JPM",
@@ -241,7 +241,7 @@
    "filled_from_quote": null,
    "ath_old": 239.9224090576172,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "V": {
    "symbol": "V",
@@ -258,7 +258,7 @@
    "filled_from_quote": null,
    "ath_old": 285.5450439453125,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MA": {
    "symbol": "MA",
@@ -275,7 +275,7 @@
    "filled_from_quote": null,
    "ath_old": 493.563232421875,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "BAC": {
    "symbol": "BAC",
@@ -292,7 +292,7 @@
    "filled_from_quote": null,
    "ath_old": 42.27486038208008,
    "ath_old_date": "2021-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "GS": {
    "symbol": "GS",
@@ -309,7 +309,7 @@
    "filled_from_quote": null,
    "ath_old": 497.6481018066406,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "WFC": {
    "symbol": "WFC",
@@ -326,7 +326,7 @@
    "filled_from_quote": null,
    "ath_old": 73.34260559082031,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MS": {
    "symbol": "MS",
@@ -343,7 +343,7 @@
    "filled_from_quote": null,
    "ath_old": 111.25001525878906,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "C": {
    "symbol": "C",
@@ -360,7 +360,7 @@
    "filled_from_quote": null,
    "ath_old": 368.1442565917969,
    "ath_old_date": "2006-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AXP": {
    "symbol": "AXP",
@@ -377,7 +377,7 @@
    "filled_from_quote": null,
    "ath_old": 298.0764465332031,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "LLY": {
    "symbol": "LLY",
@@ -394,7 +394,7 @@
    "filled_from_quote": null,
    "ath_old": 946.7628173828125,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "JNJ": {
    "symbol": "JNJ",
@@ -411,7 +411,7 @@
    "filled_from_quote": null,
    "ath_old": 158.69757080078125,
    "ath_old_date": "2022-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ABBV": {
    "symbol": "ABBV",
@@ -428,7 +428,7 @@
    "filled_from_quote": null,
    "ath_old": 191.25827026367188,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "UNH": {
    "symbol": "UNH",
@@ -445,7 +445,7 @@
    "filled_from_quote": null,
    "ath_old": 557.4261474609375,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MRK": {
    "symbol": "MRK",
@@ -462,7 +462,7 @@
    "filled_from_quote": null,
    "ath_old": 122.0562744140625,
    "ath_old_date": "2024-01-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TMO": {
    "symbol": "TMO",
@@ -479,7 +479,7 @@
    "filled_from_quote": null,
    "ath_old": 623.8535766601562,
    "ath_old_date": "2021-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AMGN": {
    "symbol": "AMGN",
@@ -496,7 +496,7 @@
    "filled_from_quote": null,
    "ath_old": 314.3099060058594,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "GILD": {
    "symbol": "GILD",
@@ -513,7 +513,7 @@
    "filled_from_quote": null,
    "ath_old": 84.17002868652344,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ABT": {
    "symbol": "ABT",
@@ -530,7 +530,7 @@
    "filled_from_quote": null,
    "ath_old": 113.95805358886719,
    "ath_old_date": "2021-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PFE": {
    "symbol": "PFE",
@@ -547,7 +547,7 @@
    "filled_from_quote": null,
    "ath_old": 41.716331481933594,
    "ath_old_date": "2022-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AMZN": {
    "symbol": "AMZN",
@@ -564,7 +564,7 @@
    "filled_from_quote": null,
    "ath_old": 193.25,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TSLA": {
    "symbol": "TSLA",
@@ -581,7 +581,7 @@
    "filled_from_quote": null,
    "ath_old": 381.586669921875,
    "ath_old_date": "2021-11-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "HD": {
    "symbol": "HD",
@@ -598,7 +598,7 @@
    "filled_from_quote": null,
    "ath_old": 409.7946472167969,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MCD": {
    "symbol": "MCD",
@@ -615,7 +615,7 @@
    "filled_from_quote": null,
    "ath_old": 290.103271484375,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TJX": {
    "symbol": "TJX",
@@ -632,7 +632,7 @@
    "filled_from_quote": null,
    "ath_old": 123.00878143310547,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "BKNG": {
    "symbol": "BKNG",
@@ -649,7 +649,7 @@
    "filled_from_quote": null,
    "ath_old": 184.0330810546875,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SBUX": {
    "symbol": "SBUX",
@@ -666,7 +666,7 @@
    "filled_from_quote": null,
    "ath_old": 107.44268798828125,
    "ath_old_date": "2021-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "LOW": {
    "symbol": "LOW",
@@ -683,7 +683,7 @@
    "filled_from_quote": null,
    "ath_old": 261.3348388671875,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MAR": {
    "symbol": "MAR",
@@ -700,7 +700,7 @@
    "filled_from_quote": null,
    "ath_old": 255.4075927734375,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "HLT": {
    "symbol": "HLT",
@@ -717,7 +717,7 @@
    "filled_from_quote": null,
    "ath_old": 233.84896850585938,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "META": {
    "symbol": "META",
@@ -734,7 +734,7 @@
    "filled_from_quote": null,
    "ath_old": 568.7166137695312,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "GOOGL": {
    "symbol": "GOOGL",
@@ -751,7 +751,7 @@
    "filled_from_quote": null,
    "ath_old": 180.64012145996094,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "GOOG": {
    "symbol": "GOOG",
@@ -768,7 +768,7 @@
    "filled_from_quote": null,
    "ath_old": 181.90577697753906,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "DIS": {
    "symbol": "DIS",
@@ -785,7 +785,7 @@
    "filled_from_quote": null,
    "ath_old": 178.90380859375,
    "ath_old_date": "2021-01-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TTWO": {
    "symbol": "TTWO",
@@ -802,7 +802,7 @@
    "filled_from_quote": null,
    "ath_old": 207.7899932861328,
    "ath_old_date": "2020-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CMCSA": {
    "symbol": "CMCSA",
@@ -819,7 +819,7 @@
    "filled_from_quote": null,
    "ath_old": 47.57854461669922,
    "ath_old_date": "2021-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "APP": {
    "symbol": "APP",
@@ -836,7 +836,7 @@
    "filled_from_quote": null,
    "ath_old": 161.6300048828125,
    "ath_old_date": "2024-10-21",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "VZ": {
    "symbol": "VZ",
@@ -853,7 +853,7 @@
    "filled_from_quote": null,
    "ath_old": 41.02368927001953,
    "ath_old_date": "2021-02-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "T": {
    "symbol": "T",
@@ -870,7 +870,7 @@
    "filled_from_quote": null,
    "ath_old": 20.591121673583984,
    "ath_old_date": "2024-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TMUS": {
    "symbol": "TMUS",
@@ -887,7 +887,7 @@
    "filled_from_quote": null,
    "ath_old": 215.47509765625,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CAT": {
    "symbol": "CAT",
@@ -904,7 +904,7 @@
    "filled_from_quote": null,
    "ath_old": 381.59027099609375,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "GE": {
    "symbol": "GE",
@@ -921,7 +921,7 @@
    "filled_from_quote": null,
    "ath_old": 186.41799926757812,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "RTX": {
    "symbol": "RTX",
@@ -938,7 +938,7 @@
    "filled_from_quote": null,
    "ath_old": 117.04271697998047,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "GEV": {
    "symbol": "GEV",
@@ -955,7 +955,7 @@
    "filled_from_quote": null,
    "ath_old": 292.30474853515625,
    "ath_old_date": "2024-10-21",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "UNP": {
    "symbol": "UNP",
@@ -972,7 +972,7 @@
    "filled_from_quote": null,
    "ath_old": 246.45765686035156,
    "ath_old_date": "2022-01-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "DE": {
    "symbol": "DE",
@@ -989,7 +989,7 @@
    "filled_from_quote": null,
    "ath_old": 454.2593688964844,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ETN": {
    "symbol": "ETN",
@@ -1006,7 +1006,7 @@
    "filled_from_quote": null,
    "ath_old": 367.5715026855469,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "BA": {
    "symbol": "BA",
@@ -1023,7 +1023,7 @@
    "filled_from_quote": null,
    "ath_old": 376.0252685546875,
    "ath_old_date": "2019-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "UBER": {
    "symbol": "UBER",
@@ -1040,7 +1040,7 @@
    "filled_from_quote": null,
    "ath_old": 86.33999633789062,
    "ath_old_date": "2024-10-07",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PH": {
    "symbol": "PH",
@@ -1057,7 +1057,7 @@
    "filled_from_quote": null,
    "ath_old": 691.857421875,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "WMT": {
    "symbol": "WMT",
@@ -1074,7 +1074,7 @@
    "filled_from_quote": null,
    "ath_old": 80.48104858398438,
    "ath_old_date": "2024-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "COST": {
    "symbol": "COST",
@@ -1091,7 +1091,7 @@
    "filled_from_quote": null,
    "ath_old": 907.50830078125,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PG": {
    "symbol": "PG",
@@ -1108,7 +1108,7 @@
    "filled_from_quote": null,
    "ath_old": 164.10287475585938,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "KO": {
    "symbol": "KO",
@@ -1125,7 +1125,7 @@
    "filled_from_quote": null,
    "ath_old": 67.95528411865234,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PM": {
    "symbol": "PM",
@@ -1142,7 +1142,7 @@
    "filled_from_quote": null,
    "ath_old": 123.54961395263672,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MO": {
    "symbol": "MO",
@@ -1159,7 +1159,7 @@
    "filled_from_quote": null,
    "ath_old": 46.53844451904297,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CL": {
    "symbol": "CL",
@@ -1176,7 +1176,7 @@
    "filled_from_quote": null,
    "ath_old": 94.10877990722656,
    "ath_old_date": "2024-05-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MDLZ": {
    "symbol": "MDLZ",
@@ -1193,7 +1193,7 @@
    "filled_from_quote": null,
    "ath_old": 69.35624694824219,
    "ath_old_date": "2023-04-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PEP": {
    "symbol": "PEP",
@@ -1210,7 +1210,7 @@
    "filled_from_quote": null,
    "ath_old": 162.04856872558594,
    "ath_old_date": "2022-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TGT": {
    "symbol": "TGT",
@@ -1227,7 +1227,7 @@
    "filled_from_quote": null,
    "ath_old": 222.63209533691406,
    "ath_old_date": "2021-05-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "XOM": {
    "symbol": "XOM",
@@ -1244,7 +1244,7 @@
    "filled_from_quote": null,
    "ath_old": 109.943115234375,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CVX": {
    "symbol": "CVX",
@@ -1261,7 +1261,7 @@
    "filled_from_quote": null,
    "ath_old": 153.9373321533203,
    "ath_old_date": "2022-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "COP": {
    "symbol": "COP",
@@ -1278,7 +1278,7 @@
    "filled_from_quote": null,
    "ath_old": 108.91204833984375,
    "ath_old_date": "2022-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MPC": {
    "symbol": "MPC",
@@ -1295,7 +1295,7 @@
    "filled_from_quote": null,
    "ath_old": 191.90109252929688,
    "ath_old_date": "2024-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "VLO": {
    "symbol": "VLO",
@@ -1312,7 +1312,7 @@
    "filled_from_quote": null,
    "ath_old": 159.66017150878906,
    "ath_old_date": "2024-01-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PSX": {
    "symbol": "PSX",
@@ -1329,7 +1329,7 @@
    "filled_from_quote": null,
    "ath_old": 150.39236450195312,
    "ath_old_date": "2024-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "WMB": {
    "symbol": "WMB",
@@ -1346,7 +1346,7 @@
    "filled_from_quote": null,
    "ath_old": 54.86982727050781,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "EOG": {
    "symbol": "EOG",
@@ -1363,7 +1363,7 @@
    "filled_from_quote": null,
    "ath_old": 122.04052734375,
    "ath_old_date": "2024-04-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SLB": {
    "symbol": "SLB",
@@ -1380,7 +1380,7 @@
    "filled_from_quote": null,
    "ath_old": 78.8344955444336,
    "ath_old_date": "2014-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "KMI": {
    "symbol": "KMI",
@@ -1397,7 +1397,7 @@
    "filled_from_quote": null,
    "ath_old": 24.417572021484375,
    "ath_old_date": "2015-04-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NEE": {
    "symbol": "NEE",
@@ -1414,7 +1414,7 @@
    "filled_from_quote": null,
    "ath_old": 75.02937316894531,
    "ath_old_date": "2022-05-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SO": {
    "symbol": "SO",
@@ -1431,7 +1431,7 @@
    "filled_from_quote": null,
    "ath_old": 84.17403411865234,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "DUK": {
    "symbol": "DUK",
@@ -1448,7 +1448,7 @@
    "filled_from_quote": null,
    "ath_old": 110.08280944824219,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CEG": {
    "symbol": "CEG",
@@ -1465,7 +1465,7 @@
    "filled_from_quote": null,
    "ath_old": 282.2322082519531,
    "ath_old_date": "2024-09-30",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AEP": {
    "symbol": "AEP",
@@ -1482,7 +1482,7 @@
    "filled_from_quote": null,
    "ath_old": 95.9842300415039,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "D": {
    "symbol": "D",
@@ -1499,7 +1499,7 @@
    "filled_from_quote": null,
    "ath_old": 68.42203521728516,
    "ath_old_date": "2022-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SRE": {
    "symbol": "SRE",
@@ -1516,7 +1516,7 @@
    "filled_from_quote": null,
    "ath_old": 78.64620971679688,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ETR": {
    "symbol": "ETR",
@@ -1533,7 +1533,7 @@
    "filled_from_quote": null,
    "ath_old": 74.59273529052734,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "VST": {
    "symbol": "VST",
@@ -1550,7 +1550,7 @@
    "filled_from_quote": null,
    "ath_old": 123.53355407714844,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "XEL": {
    "symbol": "XEL",
@@ -1567,7 +1567,7 @@
    "filled_from_quote": null,
    "ath_old": 63.637420654296875,
    "ath_old_date": "2022-05-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "LIN": {
    "symbol": "LIN",
@@ -1584,7 +1584,7 @@
    "filled_from_quote": null,
    "ath_old": 464.52764892578125,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NEM": {
    "symbol": "NEM",
@@ -1601,7 +1601,7 @@
    "filled_from_quote": null,
    "ath_old": 62.95695114135742,
    "ath_old_date": "2021-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "FCX": {
    "symbol": "FCX",
@@ -1618,7 +1618,7 @@
    "filled_from_quote": null,
    "ath_old": 51.150848388671875,
    "ath_old_date": "2024-05-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "VMC": {
    "symbol": "VMC",
@@ -1635,7 +1635,7 @@
    "filled_from_quote": null,
    "ath_old": 269.9561462402344,
    "ath_old_date": "2024-05-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ECL": {
    "symbol": "ECL",
@@ -1652,7 +1652,7 @@
    "filled_from_quote": null,
    "ath_old": 240.6462860107422,
    "ath_old_date": "2024-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SHW": {
    "symbol": "SHW",
@@ -1669,7 +1669,7 @@
    "filled_from_quote": null,
    "ath_old": 391.1017150878906,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "STLD": {
    "symbol": "STLD",
@@ -1686,7 +1686,7 @@
    "filled_from_quote": null,
    "ath_old": 143.3415985107422,
    "ath_old_date": "2024-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NUE": {
    "symbol": "NUE",
@@ -1703,7 +1703,7 @@
    "filled_from_quote": null,
    "ath_old": 184.93869018554688,
    "ath_old_date": "2023-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "APD": {
    "symbol": "APD",
@@ -1720,7 +1720,7 @@
    "filled_from_quote": null,
    "ath_old": 317.57855224609375,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MLM": {
    "symbol": "MLM",
@@ -1737,7 +1737,7 @@
    "filled_from_quote": null,
    "ath_old": 605.3268432617188,
    "ath_old_date": "2024-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "WELL": {
    "symbol": "WELL",
@@ -1754,7 +1754,7 @@
    "filled_from_quote": null,
    "ath_old": 134.34999084472656,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PLD": {
    "symbol": "PLD",
@@ -1771,7 +1771,7 @@
    "filled_from_quote": null,
    "ath_old": 145.88111877441406,
    "ath_old_date": "2021-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "EQIX": {
    "symbol": "EQIX",
@@ -1788,7 +1788,7 @@
    "filled_from_quote": null,
    "ath_old": 870.2609252929688,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AMT": {
    "symbol": "AMT",
@@ -1805,7 +1805,7 @@
    "filled_from_quote": null,
    "ath_old": 249.89572143554688,
    "ath_old_date": "2021-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PSA": {
    "symbol": "PSA",
@@ -1822,7 +1822,7 @@
    "filled_from_quote": null,
    "ath_old": 303.6864013671875,
    "ath_old_date": "2024-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SPG": {
    "symbol": "SPG",
@@ -1839,7 +1839,7 @@
    "filled_from_quote": null,
    "ath_old": 153.945068359375,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "VTR": {
    "symbol": "VTR",
@@ -1856,7 +1856,7 @@
    "filled_from_quote": null,
    "ath_old": 62.066688537597656,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "VMRK": {
    "symbol": "VMRK",
@@ -1873,7 +1873,7 @@
    "filled_from_quote": null,
    "ath_old": 74.59165954589844,
    "ath_old_date": "2022-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CBRE": {
    "symbol": "CBRE",
@@ -1890,7 +1890,7 @@
    "filled_from_quote": null,
    "ath_old": 130.97000122070312,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "DLR": {
    "symbol": "DLR",
@@ -1907,7 +1907,7 @@
    "filled_from_quote": null,
    "ath_old": 168.32730102539062,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TSM": {
    "symbol": "TSM",
@@ -1924,7 +1924,7 @@
    "filled_from_quote": null,
    "ath_old": 185.9495391845703,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TXN": {
    "symbol": "TXN",
@@ -1941,7 +1941,7 @@
    "filled_from_quote": null,
    "ath_old": 202.8302001953125,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ADI": {
    "symbol": "ADI",
@@ -1958,7 +1958,7 @@
    "filled_from_quote": null,
    "ath_old": 227.12335205078125,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MRVL": {
    "symbol": "MRVL",
@@ -1975,7 +1975,7 @@
    "filled_from_quote": null,
    "ath_old": 85.94247436523438,
    "ath_old_date": "2021-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ASML": {
    "symbol": "ASML",
@@ -1992,7 +1992,7 @@
    "filled_from_quote": null,
    "ath_old": 1004.0111694335938,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "KLAC": {
    "symbol": "KLAC",
@@ -2009,7 +2009,7 @@
    "filled_from_quote": null,
    "ath_old": 81.07630157470703,
    "ath_old_date": "2024-04-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PANW": {
    "symbol": "PANW",
@@ -2026,7 +2026,7 @@
    "filled_from_quote": null,
    "ath_old": 181.36000061035156,
    "ath_old_date": "2024-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CRWD": {
    "symbol": "CRWD",
@@ -2043,7 +2043,7 @@
    "filled_from_quote": null,
    "ath_old": 97.41999816894531,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ORCL": {
    "symbol": "ORCL",
@@ -2060,7 +2060,7 @@
    "filled_from_quote": null,
    "ath_old": 180.6031951904297,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NOW": {
    "symbol": "NOW",
@@ -2077,7 +2077,7 @@
    "filled_from_quote": null,
    "ath_old": 186.59800720214844,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CRM": {
    "symbol": "CRM",
@@ -2094,7 +2094,7 @@
    "filled_from_quote": null,
    "ath_old": 303.0350036621094,
    "ath_old_date": "2024-02-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "FTNT": {
    "symbol": "FTNT",
@@ -2111,7 +2111,7 @@
    "filled_from_quote": null,
    "ath_old": 78.66000366210938,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ADBE": {
    "symbol": "ADBE",
@@ -2128,7 +2128,7 @@
    "filled_from_quote": null,
    "ath_old": 650.3599853515625,
    "ath_old_date": "2021-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "INTU": {
    "symbol": "INTU",
@@ -2145,7 +2145,7 @@
    "filled_from_quote": null,
    "ath_old": 646.4974365234375,
    "ath_old_date": "2024-02-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MRNA": {
    "symbol": "MRNA",
@@ -2162,7 +2162,7 @@
    "filled_from_quote": null,
    "ath_old": 449.3800048828125,
    "ath_old_date": "2021-09-06",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NTRA": {
    "symbol": "NTRA",
@@ -2179,7 +2179,7 @@
    "filled_from_quote": null,
    "ath_old": 126.94999694824219,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TWST": {
    "symbol": "TWST",
@@ -2196,7 +2196,7 @@
    "filled_from_quote": null,
    "ath_old": 190.63999938964844,
    "ath_old_date": "2021-01-18",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "HALO": {
    "symbol": "HALO",
@@ -2213,7 +2213,7 @@
    "filled_from_quote": null,
    "ath_old": 63.849998474121094,
    "ath_old_date": "2024-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "BIIB": {
    "symbol": "BIIB",
@@ -2230,7 +2230,7 @@
    "filled_from_quote": null,
    "ath_old": 422.239990234375,
    "ath_old_date": "2015-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "IOVA": {
    "symbol": "IOVA",
@@ -2247,7 +2247,7 @@
    "filled_from_quote": null,
    "ath_old": 145.0,
    "ath_old_date": "2011-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "UTHR": {
    "symbol": "UTHR",
@@ -2264,7 +2264,7 @@
    "filled_from_quote": null,
    "ath_old": 373.9700012207031,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "EXEL": {
    "symbol": "EXEL",
@@ -2281,7 +2281,7 @@
    "filled_from_quote": null,
    "ath_old": 45.0,
    "ath_old_date": "2000-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TXG": {
    "symbol": "TXG",
@@ -2298,7 +2298,7 @@
    "filled_from_quote": null,
    "ath_old": 197.8000030517578,
    "ath_old_date": "2021-04-26",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ILMN": {
    "symbol": "ILMN",
@@ -2315,7 +2315,7 @@
    "filled_from_quote": null,
    "ath_old": 482.2470703125,
    "ath_old_date": "2021-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "GH": {
    "symbol": "GH",
@@ -2332,7 +2332,7 @@
    "filled_from_quote": null,
    "ath_old": 179.10000610351562,
    "ath_old_date": "2021-02-08",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "1548": {
    "symbol": "1548.HK",
@@ -2349,7 +2349,7 @@
    "filled_from_quote": null,
    "ath_old": 41.0,
    "ath_old_date": "2021-11-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TECH": {
    "symbol": "TECH",
@@ -2366,7 +2366,7 @@
    "filled_from_quote": null,
    "ath_old": 127.95722198486328,
    "ath_old_date": "2021-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "QGEN": {
    "symbol": "QGEN",
@@ -2383,7 +2383,7 @@
    "filled_from_quote": null,
    "ath_old": 55.088348388671875,
    "ath_old_date": "2021-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "VRTX": {
    "symbol": "VRTX",
@@ -2400,7 +2400,7 @@
    "filled_from_quote": null,
    "ath_old": 495.8900146484375,
    "ath_old_date": "2024-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TEM": {
    "symbol": "TEM",
@@ -2417,7 +2417,7 @@
    "filled_from_quote": null,
    "ath_old": 64.94999694824219,
    "ath_old_date": "2024-08-19",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CRSP": {
    "symbol": "CRSP",
@@ -2434,7 +2434,7 @@
    "filled_from_quote": null,
    "ath_old": 165.6999969482422,
    "ath_old_date": "2021-01-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ABSI": {
    "symbol": "ABSI",
@@ -2451,7 +2451,7 @@
    "filled_from_quote": null,
    "ath_old": 28.479999542236328,
    "ath_old_date": "2021-07-26",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CDNA": {
    "symbol": "CDNA",
@@ -2468,7 +2468,7 @@
    "filled_from_quote": null,
    "ath_old": 91.5199966430664,
    "ath_old_date": "2021-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "EWBC": {
    "symbol": "EWBC",
@@ -2485,7 +2485,7 @@
    "filled_from_quote": null,
    "ath_old": 92.73773956298828,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "UCB": {
    "symbol": "UCB",
@@ -2502,7 +2502,7 @@
    "filled_from_quote": null,
    "ath_old": 115.87367248535156,
    "ath_old_date": "2006-11-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "UBSI": {
    "symbol": "UBSI",
@@ -2519,7 +2519,7 @@
    "filled_from_quote": null,
    "ath_old": 39.180625915527344,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "EBC": {
    "symbol": "EBC",
@@ -2536,7 +2536,7 @@
    "filled_from_quote": null,
    "ath_old": 19.652456283569336,
    "ath_old_date": "2021-05-17",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PNFP": {
    "symbol": "PNFP",
@@ -2553,7 +2553,7 @@
    "filled_from_quote": null,
    "ath_old": 102.67813873291016,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "FHB": {
    "symbol": "FHB",
@@ -2570,7 +2570,7 @@
    "filled_from_quote": null,
    "ath_old": 23.854793548583984,
    "ath_old_date": "2022-02-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "HOMB": {
    "symbol": "HOMB",
@@ -2587,7 +2587,7 @@
    "filled_from_quote": null,
    "ath_old": 26.574764251708984,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "OZK": {
    "symbol": "OZK",
@@ -2604,7 +2604,7 @@
    "filled_from_quote": null,
    "ath_old": 44.4246711730957,
    "ath_old_date": "2023-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "FBP": {
    "symbol": "FBP",
@@ -2621,7 +2621,7 @@
    "filled_from_quote": null,
    "ath_old": 332.8255615234375,
    "ath_old_date": "2004-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "BPOP": {
    "symbol": "BPOP",
@@ -2638,7 +2638,7 @@
    "filled_from_quote": null,
    "ath_old": 172.9846649169922,
    "ath_old_date": "2005-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SN": {
    "symbol": "SN",
@@ -2655,7 +2655,7 @@
    "filled_from_quote": null,
    "ath_old": 109.72000122070312,
    "ath_old_date": "2024-09-30",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "W": {
    "symbol": "W",
@@ -2672,7 +2672,7 @@
    "filled_from_quote": null,
    "ath_old": 315.7099914550781,
    "ath_old_date": "2021-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "WSM": {
    "symbol": "WSM",
@@ -2689,7 +2689,7 @@
    "filled_from_quote": null,
    "ath_old": 179.9654998779297,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MAS": {
    "symbol": "MAS",
@@ -2706,7 +2706,7 @@
    "filled_from_quote": null,
    "ath_old": 78.02763366699219,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TT": {
    "symbol": "TT",
@@ -2723,7 +2723,7 @@
    "filled_from_quote": null,
    "ath_old": 409.49896240234375,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ALLE": {
    "symbol": "ALLE",
@@ -2740,7 +2740,7 @@
    "filled_from_quote": null,
    "ath_old": 142.46792602539062,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "JCI": {
    "symbol": "JCI",
@@ -2757,7 +2757,7 @@
    "filled_from_quote": null,
    "ath_old": 82.08911895751953,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SSD": {
    "symbol": "SSD",
@@ -2774,7 +2774,7 @@
    "filled_from_quote": null,
    "ath_old": 204.9130096435547,
    "ath_old_date": "2024-02-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CSL": {
    "symbol": "CSL",
@@ -2791,7 +2791,7 @@
    "filled_from_quote": null,
    "ath_old": 412.46026611328125,
    "ath_old_date": "2024-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CLF": {
    "symbol": "CLF",
@@ -2808,7 +2808,7 @@
    "filled_from_quote": null,
    "ath_old": 89.19218444824219,
    "ath_old_date": "2008-05-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "RS": {
    "symbol": "RS",
@@ -2825,7 +2825,7 @@
    "filled_from_quote": null,
    "ath_old": 321.5977478027344,
    "ath_old_date": "2024-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CMC": {
    "symbol": "CMC",
@@ -2842,7 +2842,7 @@
    "filled_from_quote": null,
    "ath_old": 60.29801559448242,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "RGLD": {
    "symbol": "RGLD",
@@ -2859,7 +2859,7 @@
    "filled_from_quote": null,
    "ath_old": 143.47900390625,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MTRN": {
    "symbol": "MTRN",
@@ -2876,7 +2876,7 @@
    "filled_from_quote": null,
    "ath_old": 132.8225860595703,
    "ath_old_date": "2023-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AA": {
    "symbol": "AA",
@@ -2893,7 +2893,7 @@
    "filled_from_quote": null,
    "ath_old": 85.83234405517578,
    "ath_old_date": "2022-01-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CCJ": {
    "symbol": "CCJ",
@@ -2910,7 +2910,7 @@
    "filled_from_quote": null,
    "ath_old": 55.29438400268555,
    "ath_old_date": "2024-05-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NXE": {
    "symbol": "NXE.TO",
@@ -2927,7 +2927,7 @@
    "filled_from_quote": null,
    "ath_old": 10.619999885559082,
    "ath_old_date": "2024-05-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "OKLO": {
    "symbol": "OKLO",
@@ -2944,7 +2944,7 @@
    "filled_from_quote": null,
    "ath_old": 19.110000610351562,
    "ath_old_date": "2024-10-21",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "KAP": {
    "symbol": "KAP.L",
@@ -2961,7 +2961,7 @@
    "filled_from_quote": null,
    "ath_old": null,
    "ath_old_date": null,
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "UEC": {
    "symbol": "UEC",
@@ -2978,7 +2978,7 @@
    "filled_from_quote": null,
    "ath_old": 7.639999866485596,
    "ath_old_date": "2024-01-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SSW": {
    "symbol": "SSW.JO",
@@ -2995,7 +2995,7 @@
    "filled_from_quote": "2026-10-22",
    "ath_old": 7347.03857421875,
    "ath_old_date": "2022-02-28",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "8001": {
    "symbol": "8001.T",
@@ -3012,7 +3012,7 @@
    "filled_from_quote": null,
    "ath_old": 1481.03759765625,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PDN": {
    "symbol": "PDN.AX",
@@ -3029,7 +3029,7 @@
    "filled_from_quote": null,
    "ath_old": 85.18568420410156,
    "ath_old_date": "2007-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "DML": {
    "symbol": "DML.TO",
@@ -3046,7 +3046,7 @@
    "filled_from_quote": null,
    "ath_old": 11.98815631866455,
    "ath_old_date": "2007-02-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "LMT": {
    "symbol": "LMT",
@@ -3063,7 +3063,7 @@
    "filled_from_quote": null,
    "ath_old": 554.245361328125,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NOC": {
    "symbol": "NOC",
@@ -3080,7 +3080,7 @@
    "filled_from_quote": null,
    "ath_old": 503.95123291015625,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "TDG": {
    "symbol": "TDG",
@@ -3097,7 +3097,7 @@
    "filled_from_quote": null,
    "ath_old": 1264.740234375,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "GD": {
    "symbol": "GD",
@@ -3114,7 +3114,7 @@
    "filled_from_quote": null,
    "ath_old": 289.4595031738281,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "HWM": {
    "symbol": "HWM",
@@ -3131,7 +3131,7 @@
    "filled_from_quote": null,
    "ath_old": 99.76286315917969,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "HONA": {
    "symbol": "HONA",
@@ -3148,7 +3148,7 @@
    "filled_from_quote": null,
    "ath_old": null,
    "ath_old_date": null,
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "LHX": {
    "symbol": "LHX",
@@ -3165,7 +3165,7 @@
    "filled_from_quote": null,
    "ath_old": 238.66761779785156,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "FAST": {
    "symbol": "FAST",
@@ -3182,7 +3182,7 @@
    "filled_from_quote": null,
    "ath_old": 37.65781021118164,
    "ath_old_date": "2024-08-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "EMR": {
    "symbol": "EMR",
@@ -3199,7 +3199,7 @@
    "filled_from_quote": null,
    "ath_old": 128.92007446289062,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ROK": {
    "symbol": "ROK",
@@ -3216,7 +3216,7 @@
    "filled_from_quote": null,
    "ath_old": 310.2864074707031,
    "ath_old_date": "2021-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NSC": {
    "symbol": "NSC",
@@ -3233,7 +3233,7 @@
    "filled_from_quote": null,
    "ath_old": 266.6743469238281,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "005930": {
    "symbol": "005930.KS",
@@ -3250,7 +3250,7 @@
    "filled_from_quote": null,
    "ath_old": 80860.5,
    "ath_old_date": "2024-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "000660": {
    "symbol": "000660.KS",
@@ -3267,7 +3267,7 @@
    "filled_from_quote": null,
    "ath_old": 233143.171875,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "688825": {
    "symbol": "688825.SS",
@@ -3284,7 +3284,7 @@
    "filled_from_quote": null,
    "ath_old": null,
    "ath_old_date": null,
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SNDK": {
    "symbol": "SNDK",
@@ -3301,7 +3301,7 @@
    "filled_from_quote": null,
    "ath_old": null,
    "ath_old_date": null,
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "STX": {
    "symbol": "STX",
@@ -3318,7 +3318,7 @@
    "filled_from_quote": null,
    "ath_old": 106.30591583251953,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "WDC": {
    "symbol": "WDC",
@@ -3335,7 +3335,7 @@
    "filled_from_quote": null,
    "ath_old": 69.93880462646484,
    "ath_old_date": "2014-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "285A": {
    "symbol": "285A.T",
@@ -3352,7 +3352,7 @@
    "filled_from_quote": null,
    "ath_old": null,
    "ath_old_date": null,
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "2408": {
    "symbol": "2408.TW",
@@ -3369,7 +3369,7 @@
    "filled_from_quote": null,
    "ath_old": 573.7506713867188,
    "ath_old_date": "2002-01-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "2344": {
    "symbol": "2344.TW",
@@ -3386,7 +3386,7 @@
    "filled_from_quote": null,
    "ath_old": 57.770145416259766,
    "ath_old_date": "2000-05-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AEM": {
    "symbol": "AEM.TO",
@@ -3403,7 +3403,7 @@
    "filled_from_quote": null,
    "ath_old": 117.33769226074219,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ABX": {
    "symbol": "ABX.TO",
@@ -3420,7 +3420,7 @@
    "filled_from_quote": null,
    "ath_old": 40.70815658569336,
    "ath_old_date": "2011-11-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "WPM": {
    "symbol": "WPM.TO",
@@ -3437,7 +3437,7 @@
    "filled_from_quote": null,
    "ath_old": 90.64705657958984,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "FNV": {
    "symbol": "FNV.TO",
@@ -3454,7 +3454,7 @@
    "filled_from_quote": null,
    "ath_old": 201.96755981445312,
    "ath_old_date": "2020-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AU": {
    "symbol": "AU",
@@ -3471,7 +3471,7 @@
    "filled_from_quote": null,
    "ath_old": 47.25880813598633,
    "ath_old_date": "2006-01-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "EDG": {
    "symbol": "EDG.F",
@@ -3484,11 +3484,11 @@
    "days": 500,
    "filled_days": 11,
    "adj_close_available": true,
-   "dropped_partial": null,
+   "dropped_partial": "2026-10-23",
    "filled_from_quote": null,
    "ath_old": 14.121933937072754,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "K": {
    "symbol": "K.TO",
@@ -3505,7 +3505,7 @@
    "filled_from_quote": null,
    "ath_old": 20.84935188293457,
    "ath_old_date": "2008-02-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NST": {
    "symbol": "NST.AX",
@@ -3522,7 +3522,7 @@
    "filled_from_quote": null,
    "ath_old": 16.85646629333496,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PAAS": {
    "symbol": "PAAS.TO",
@@ -3539,7 +3539,7 @@
    "filled_from_quote": null,
    "ath_old": 44.733734130859375,
    "ath_old_date": "2020-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PWR": {
    "symbol": "PWR",
@@ -3556,7 +3556,7 @@
    "filled_from_quote": null,
    "ath_old": 301.032958984375,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ABBN": {
    "symbol": "ABBN.SW",
@@ -3573,7 +3573,7 @@
    "filled_from_quote": null,
    "ath_old": 48.24925231933594,
    "ath_old_date": "2024-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SU": {
    "symbol": "SU.PA",
@@ -3590,7 +3590,7 @@
    "filled_from_quote": "2026-10-22",
    "ath_old": 229.42495727539062,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NG": {
    "symbol": "NG.L",
@@ -3607,7 +3607,7 @@
    "filled_from_quote": "2026-10-22",
    "ath_old": 1191.3914794921875,
    "ath_old_date": "2022-04-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "EOAN": {
    "symbol": "EOAN.DE",
@@ -3624,7 +3624,7 @@
    "filled_from_quote": "2026-10-22",
    "ath_old": 17.08463478088379,
    "ath_old_date": "2007-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PRY": {
    "symbol": "PRY.MI",
@@ -3641,7 +3641,7 @@
    "filled_from_quote": "2026-10-22",
    "ath_old": 63.56479263305664,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NVT": {
    "symbol": "NVT",
@@ -3658,7 +3658,7 @@
    "filled_from_quote": null,
    "ath_old": 83.67205810546875,
    "ath_old_date": "2024-05-20",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "HUBB": {
    "symbol": "HUBB",
@@ -3675,7 +3675,7 @@
    "filled_from_quote": null,
    "ath_old": 450.07659912109375,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "DINO": {
    "symbol": "DINO",
@@ -3692,7 +3692,7 @@
    "filled_from_quote": null,
    "ath_old": 59.114688873291016,
    "ath_old_date": "2018-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "MUR": {
    "symbol": "MUR",
@@ -3709,7 +3709,7 @@
    "filled_from_quote": null,
    "ath_old": 43.60232162475586,
    "ath_old_date": "2008-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "APA": {
    "symbol": "APA",
@@ -3726,7 +3726,7 @@
    "filled_from_quote": null,
    "ath_old": 96.37242126464844,
    "ath_old_date": "2011-02-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "OVV": {
    "symbol": "OVV",
@@ -3743,7 +3743,7 @@
    "filled_from_quote": null,
    "ath_old": 154.0439910888672,
    "ath_old_date": "2008-06-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "PBF": {
    "symbol": "PBF",
@@ -3760,7 +3760,7 @@
    "filled_from_quote": null,
    "ath_old": 52.94912338256836,
    "ath_old_date": "2024-03-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "NXT": {
    "symbol": "NXT",
@@ -3777,7 +3777,7 @@
    "filled_from_quote": null,
    "ath_old": 60.310001373291016,
    "ath_old_date": "2024-02-12",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "FSLR": {
    "symbol": "FSLR",
@@ -3794,7 +3794,7 @@
    "filled_from_quote": null,
    "ath_old": 291.989990234375,
    "ath_old_date": "2008-04-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ENLT": {
    "symbol": "ENLT.TA",
@@ -3811,7 +3811,7 @@
    "filled_from_quote": "2026-10-22",
    "ath_old": 10050.0,
    "ath_old_date": "2000-02-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ENPH": {
    "symbol": "ENPH",
@@ -3828,7 +3828,7 @@
    "filled_from_quote": null,
    "ath_old": 320.5899963378906,
    "ath_old_date": "2022-11-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "HASI": {
    "symbol": "HASI",
@@ -3845,7 +3845,7 @@
    "filled_from_quote": null,
    "ath_old": 47.89652633666992,
    "ath_old_date": "2020-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "DORL": {
    "symbol": "DORL.TA",
@@ -3862,7 +3862,7 @@
    "filled_from_quote": "2026-10-22",
    "ath_old": 1794.0,
    "ath_old_date": "2021-01-18",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "3800": {
    "symbol": "3800.HK",
@@ -3879,7 +3879,7 @@
    "filled_from_quote": null,
    "ath_old": 4.691965579986572,
    "ath_old_date": "2011-04-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "CWEN": {
    "symbol": "CWEN",
@@ -3896,7 +3896,7 @@
    "filled_from_quote": null,
    "ath_old": 29.687602996826172,
    "ath_old_date": "2022-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SEDG": {
    "symbol": "SEDG",
@@ -3913,7 +3913,7 @@
    "filled_from_quote": null,
    "ath_old": 360.1300048828125,
    "ath_old_date": "2022-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "RUN": {
    "symbol": "RUN",
@@ -3930,7 +3930,7 @@
    "filled_from_quote": null,
    "ath_old": 77.06999969482422,
    "ath_old_date": "2020-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "LUV": {
    "symbol": "LUV",
@@ -3947,7 +3947,7 @@
    "filled_from_quote": null,
    "ath_old": 58.41679763793945,
    "ath_old_date": "2017-10-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "DAL": {
    "symbol": "DAL",
@@ -3964,7 +3964,7 @@
    "filled_from_quote": null,
    "ath_old": 57.92025375366211,
    "ath_old_date": "2019-07-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AAL": {
    "symbol": "AAL",
@@ -3981,7 +3981,7 @@
    "filled_from_quote": null,
    "ath_old": 53.510005950927734,
    "ath_old_date": "2006-11-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "UAL": {
    "symbol": "UAL",
@@ -3998,7 +3998,7 @@
    "filled_from_quote": null,
    "ath_old": 96.69999694824219,
    "ath_old_date": "2018-11-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "SKYW": {
    "symbol": "SKYW",
@@ -4015,7 +4015,7 @@
    "filled_from_quote": null,
    "ath_old": 114.73999786376953,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ALGT": {
    "symbol": "ALGT",
@@ -4032,7 +4032,7 @@
    "filled_from_quote": null,
    "ath_old": 243.75143432617188,
    "ath_old_date": "2021-02-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ULCC": {
    "symbol": "ULCC",
@@ -4049,7 +4049,7 @@
    "filled_from_quote": null,
    "ath_old": 21.3700008392334,
    "ath_old_date": "2021-04-05",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "ALK": {
    "symbol": "ALK",
@@ -4066,7 +4066,7 @@
    "filled_from_quote": null,
    "ath_old": 92.1906967163086,
    "ath_old_date": "2016-12-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "AC": {
    "symbol": "AC.TO",
@@ -4083,7 +4083,7 @@
    "filled_from_quote": null,
    "ath_old": 50.04999923706055,
    "ath_old_date": "2019-11-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "JBLU": {
    "symbol": "JBLU",
@@ -4100,7 +4100,7 @@
    "filled_from_quote": null,
    "ath_old": 27.057777404785156,
    "ath_old_date": "2003-09-01",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   }
  },
  "warnings": [],
