@@ -1,91 +1,76 @@
 {
- "asof": "2026-10-21",
- "prev_asof": "2026-10-20",
+ "asof": "2026-10-22",
+ "prev_asof": "2026-10-21",
  "alerts": [
   {
-   "etf": "GNOM",
+   "etf": "XLP",
    "type": "signal",
-   "text": "GNOM 유전체학: ↓ 백분위 40점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 40점 하락 (6개월 → 1개월)",
+   "text": "XLP 필수소비재: ↗ SPY 비율 200일선 상향 돌파",
+   "detail": "↗ SPY 비율 200일선 상향 돌파",
    "pct": [
     100,
-    55,
-    95,
-    95,
-    90
-   ],
-   "phase": "Leading",
-   "bench": "XLV"
-  },
-  {
-   "etf": "XBI",
-   "type": "signal",
-   "text": "XBI 바이오: ↓ 백분위 41점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 41점 하락 (6개월 → 1개월)",
-   "pct": [
-    95,
-    23,
-    50,
-    64,
-    81
-   ],
-   "phase": "Lagging",
-   "bench": "XLV"
-  },
-  {
-   "etf": "XLY",
-   "type": "signal",
-   "text": "XLY 경기소비재: ↑ 백분위 50점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 50점 상승 (6개월 → 1개월)",
-   "pct": [
-    91,
-    82,
+    100,
     77,
-    32,
-    33
+    59,
+    57
    ],
-   "phase": "Lagging",
+   "phase": "Improving",
    "bench": "SPY"
   },
   {
-   "etf": "ARKG",
+   "etf": "XLP",
    "type": "signal",
-   "text": "ARKG 유전체학 (액티브): ↗ SPY 비율 50일선 상향 돌파",
-   "detail": "↗ SPY 비율 50일선 상향 돌파",
+   "text": "XLP 필수소비재: ↑ 백분위 41점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 41점 상승 (6개월 → 1개월)",
    "pct": [
-    82,
-    18,
     100,
     100,
-    86
+    77,
+    59,
+    57
    ],
-   "phase": "Weakening",
-   "bench": "XLV"
+   "phase": "Improving",
+   "bench": "SPY"
   },
   {
-   "etf": "ARKG",
+   "etf": "KRE",
    "type": "signal",
-   "text": "ARKG 유전체학 (액티브): ≈ 1주 반등, 1개월 이상에서는 미확인",
-   "detail": "≈ 1주 반등, 1개월 이상에서는 미확인",
+   "text": "KRE 지역은행: ↗ SPY 비율 50일선 상향 돌파",
+   "detail": "↗ SPY 비율 50일선 상향 돌파",
    "pct": [
-    82,
-    18,
-    100,
-    100,
-    86
+    95,
+    73,
+    45,
+    50,
+    67
    ],
-   "phase": "Weakening",
-   "bench": "XLV"
+   "phase": "Lagging",
+   "bench": "XLF"
   },
   {
    "etf": "XHB",
    "type": "signal",
-   "text": "XHB 주택건설: ↑ 백분위 32점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 32점 상승 (6개월 → 1개월)",
+   "text": "XHB 주택건설: ↗ SPY 비율 50일선 상향 돌파",
+   "detail": "↗ SPY 비율 50일선 상향 돌파",
    "pct": [
-    73,
-    41,
-    14,
+    91,
+    64,
+    23,
+    9,
+    5
+   ],
+   "phase": "Lagging",
+   "bench": "XLY"
+  },
+  {
+   "etf": "XHB",
+   "type": "signal",
+   "text": "XHB 주택건설: ↑ 백분위 55점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 55점 상승 (6개월 → 1개월)",
+   "pct": [
+    91,
+    64,
+    23,
     9,
     5
    ],
@@ -95,14 +80,14 @@
   {
    "etf": "XLU",
    "type": "signal",
-   "text": "XLU 유틸리티: ↘ SPY 비율 50일선 하향 이탈",
-   "detail": "↘ SPY 비율 50일선 하향 이탈",
+   "text": "XLU 유틸리티: ↗ SPY 비율 50일선 상향 돌파",
+   "detail": "↗ SPY 비율 50일선 상향 돌파",
    "pct": [
-    27,
     86,
-    18,
-    23,
-    10
+    91,
+    32,
+    27,
+    33
    ],
    "phase": "Lagging",
    "bench": "SPY"
@@ -110,42 +95,147 @@
   {
    "etf": "XLU",
    "type": "signal",
-   "text": "XLU 유틸리티: ↑ 백분위 63점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 63점 상승 (6개월 → 1개월)",
+   "text": "XLU 유틸리티: ↑ 백분위 64점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 64점 상승 (6개월 → 1개월)",
    "pct": [
-    27,
     86,
-    18,
-    23,
-    10
+    91,
+    32,
+    27,
+    33
    ],
    "phase": "Lagging",
    "bench": "SPY"
   },
   {
-   "etf": "PAVE",
+   "etf": "XLF",
    "type": "signal",
-   "text": "PAVE 미국 인프라: ↑ 백분위 32점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 32점 상승 (6개월 → 1개월)",
+   "text": "XLF 금융: ↗ SPY 비율 200일선 상향 돌파",
+   "detail": "↗ SPY 비율 200일선 상향 돌파",
    "pct": [
-    23,
-    59,
-    23,
-    27,
+    82,
+    77,
+    55,
+    64,
     52
    ],
+   "phase": "Weakening",
+   "bench": "SPY"
+  },
+  {
+   "etf": "XLF",
+   "type": "signal",
+   "text": "XLF 금융: ↗ SPY 비율 50일선 상향 돌파",
+   "detail": "↗ SPY 비율 50일선 상향 돌파",
+   "pct": [
+    82,
+    77,
+    55,
+    64,
+    52
+   ],
+   "phase": "Weakening",
+   "bench": "SPY"
+  },
+  {
+   "etf": "XLV",
+   "type": "signal",
+   "text": "XLV 헬스케어: ★ SPY 대비 비율 52주 신고가",
+   "detail": "★ SPY 대비 비율 52주 신고가",
+   "pct": [
+    77,
+    86,
+    82,
+    82,
+    71
+   ],
+   "phase": "Leading",
+   "bench": "SPY"
+  },
+  {
+   "etf": "XLY",
+   "type": "signal",
+   "text": "XLY 경기소비재: ↑ 백분위 46점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 46점 상승 (6개월 → 1개월)",
+   "pct": [
+    64,
+    82,
+    73,
+    36,
+    29
+   ],
    "phase": "Lagging",
-   "bench": "XLI"
+   "bench": "SPY"
+  },
+  {
+   "etf": "IGV",
+   "type": "signal",
+   "text": "IGV 소프트웨어: ↓ 백분위 36점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 36점 하락 (6개월 → 1개월)",
+   "pct": [
+    45,
+    55,
+    95,
+    91,
+    14
+   ],
+   "phase": "Leading",
+   "bench": "XLK"
+  },
+  {
+   "etf": "GNOM",
+   "type": "signal",
+   "text": "GNOM 유전체학: ↓ 백분위 59점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 59점 하락 (6개월 → 1개월)",
+   "pct": [
+    36,
+    36,
+    91,
+    95,
+    90
+   ],
+   "phase": "Leading",
+   "bench": "XLV"
+  },
+  {
+   "etf": "ARKG",
+   "type": "signal",
+   "text": "ARKG 유전체학 (액티브): ↘ SPY 비율 50일선 하향 이탈",
+   "detail": "↘ SPY 비율 50일선 하향 이탈",
+   "pct": [
+    27,
+    23,
+    100,
+    100,
+    86
+   ],
+   "phase": "Weakening",
+   "bench": "XLV"
+  },
+  {
+   "etf": "ARKG",
+   "type": "signal",
+   "text": "ARKG 유전체학 (액티브): ↓ 백분위 77점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 77점 하락 (6개월 → 1개월)",
+   "pct": [
+    27,
+    23,
+    100,
+    100,
+    86
+   ],
+   "phase": "Weakening",
+   "bench": "XLV"
   },
   {
    "etf": "XLK",
    "type": "signal",
-   "text": "XLK 기술: ↓ 백분위 41점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 41점 하락 (6개월 → 1개월)",
+   "text": "XLK 기술: ↓ 백분위 55점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 55점 하락 (6개월 → 1개월)",
    "pct": [
-    14,
-    32,
-    73,
+    23,
+    18,
+    68,
     73,
     76
    ],
@@ -155,16 +245,46 @@
   {
    "etf": "SMH",
    "type": "signal",
-   "text": "SMH 반도체: ↓ 백분위 54점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 54점 하락 (6개월 → 1개월)",
+   "text": "SMH 반도체: ↘ SPY 비율 200일선 하향 이탈",
+   "detail": "↘ SPY 비율 200일선 하향 이탈",
    "pct": [
+    5,
     9,
-    14,
-    41,
-    68,
+    27,
+    55,
     95
    ],
    "phase": "Lagging",
+   "bench": "XLK"
+  },
+  {
+   "etf": "SMH",
+   "type": "signal",
+   "text": "SMH 반도체: ↓ 백분위 46점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 46점 하락 (6개월 → 1개월)",
+   "pct": [
+    5,
+    9,
+    27,
+    55,
+    95
+   ],
+   "phase": "Lagging",
+   "bench": "XLK"
+  },
+  {
+   "etf": "DRAM",
+   "type": "signal",
+   "text": "DRAM 메모리반도체: ↓ 백분위 86점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 86점 하락 (6개월 → 1개월)",
+   "pct": [
+    0,
+    0,
+    9,
+    86,
+    null
+   ],
+   "phase": null,
    "bench": "XLK"
   }
  ]
