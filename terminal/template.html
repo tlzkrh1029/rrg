@@ -228,7 +228,6 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .hfn{margin:0;font-size:10.5px;color:var(--muted);line-height:1.5}
 /* 종목 상세: 구성종목 표의 행을 누르면 그 아래에 펼쳐진다(돌파 지도의 종목 상세와 같은 내용). 한 번에 하나만 열린다 */
 .h tr.rowk{cursor:pointer} .h tr.rowk:hover td{background:var(--hover)} .h tr.rowk.open td{background:var(--band-2)}
-.h tr.rowk td.sy::after{content:"▸";color:var(--muted);font-size:9px;margin-left:5px} .h tr.rowk.open td.sy::after{content:"▾"}
 .h tr.sd td{padding:0;background:var(--band);border-bottom:1px solid var(--line-2)}
 .sd .sdb{padding:8px 8px 10px;display:grid;gap:7px;font-size:11.5px;color:var(--ink-2)}
 .sd .sdh{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;line-height:1.3}
@@ -256,7 +255,7 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .sd .wb button{color:var(--ink);font-weight:700;text-align:left} .sd .wb button:hover{color:var(--amber)}
 .sd .wb .wt{height:8px;background:var(--amber-soft);overflow:hidden} .sd .wb .wt i{display:block;height:100%;background:var(--amber-dim)} .sd .wb.cur .wt i{background:var(--amber)} .sd .wb.cur button{color:var(--amber)}
 .sd .wb .wv{text-align:right;white-space:nowrap} .sd .wb .wv b{color:var(--ink)}
-.sd .links{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11px} .sd .st{font-size:10.5px;color:var(--muted);line-height:1.5}
+.sd .links{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11px}
 
 .kbody{padding:8px 10px 10px;display:grid;gap:9px}
 .shape{display:flex;gap:10px;align-items:center}
@@ -1148,7 +1147,6 @@ function stockDetailHTML(k, etf) {
     <table class="hz">${sHorizonRows(k, mode)}</table>
     <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${wb || '<span class="mu">없음</span>'}
     <div class="links"><a href="${BREAKOUT_URL}${BREAKOUT_URL.indexOf('#') < 0 ? '#' + encodeURIComponent(k) : ''}" target="${NAV_TARGET}" rel="noopener">돌파 지도에서 보기 ↗</a>${st.sym && /^[A-Z.\-]+$/.test(st.sym) ? `<a href="https://stockanalysis.com/stocks/${st.sym.toLowerCase().replace('.', '-')}/" target="_blank" rel="noopener">stockanalysis.com ↗</a>` : ''}</div>
-    <div class="st">돌파 지도와 같은 규칙입니다. 선반은 지평 고점에서 최근 5일을 뺀 값, 돌파는 그 위로 처음 올라선 날, 이탈은 바닥 아래로 처음 내려선 날이고, 사상 최고 수준 ${st.ath}${st.athFrom ? ` (이력 ${st.athFrom}부터)` : ''} · 52주 고점 수준 ${st.h52} 입니다. 이동평균은 50일 단순(주황), 89일·144일 헐(노랑·파랑)이며 눈금은 가격과 선반만으로 잡습니다.</div>
   </div></td></tr>`;
 }
 function toggleStock(k) {
