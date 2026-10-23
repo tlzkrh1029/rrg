@@ -2,7 +2,7 @@
 
 28개 ETF 의 구성 비중 상위 10개 종목을 칸으로 놓고, 칸마다 최근 30일 종가 선을 그리며, 종가가 지평별 고점(선반)을 처음 넘은 칸을 켜는 화면입니다. 섹터 전환 매트릭스(`terminal/`)의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 것이 블록이고, 같은 ETF 를 매트릭스의 행과 이어 보도록 만들었습니다.
 
-- Pages: `https://tlzkrh1029.github.io/rrg/breakout/` (매트릭스의 `5) 돌파 지도` 탭, 돌파 지도의 사이트 줄 `1) 매트릭스`)
+- Pages: `https://tlzkrh1029.github.io/rrg/breakout/` (매트릭스의 `3) 돌파 지도` 탭, 돌파 지도의 사이트 줄 `1) 매트릭스`)
 - Claude 아티팩트: `https://claude.ai/artifact/AMAB2TMoSxwXPuLPWjtjGB` (`docs/breakout/breakout.artifact.html` 을 발행)
 
 ## 흐름
@@ -29,7 +29,7 @@ python3 breakout/build_breakout.py
 |---|---|
 | `fetch_stock_prices.py` | 최신 구성종목 스냅샷에서 `data/etf_meta.json` 의 `screens` 에 `breakout` 이 든 ETF 의 상위 10개 종목을 모아 Yahoo chart(2y)에서 조정 종가를 받고(미국 종목은 Stooq 를 2순위로), SPY 축에 맞춰 `output/stocks/prices_wide.csv` 를 씁니다. 비미국 종목의 현지 휴일은 직전 종가로 채웁니다. 처음 보는 종목은 전체 이력(range=max)을 한 번 받아 "2년 창 이전의 최고 종가"를 `output/stocks/ath.json` 에 캐시하고, 30일이 지났거나 기준일 종가가 2% 넘게 달라지면(액면분할·배당 재조정) 다시 받습니다. 종료 코드 0 정상, 1 축 없음, 2 일부 실패(`summary.json` 의 `failed`·`warnings`). |
 | `match_listing.py` | `tradfi-ticker-lists` 의 세 목록(바이낸스 bStocks, 바이낸스 TradFi 선물, 하이퍼리퀴드 HIP-3)을 종목·ETF 에 대조해 거래소 원본 심볼까지 모읍니다. 미국 종목은 티커로, 비미국 종목은 `거래소:코드`(KRX:005930, HKEX:0100)로, 미국에도 상장된 비미국 표기는 `DUAL` 표로 미국 티커까지 찾습니다. 단독 실행하면 `output/stocks/listing.json` 과 ETF 별 집계를 출력합니다. |
-| `compute_breakout.py` | 종목마다 마지막 90거래일 종가(`c`), 창 이전 52주 고점(`h52`: 창 앞 192거래일의 최고, 판정 창 첫날 기준 252일), 창 이전 사상 최고(`ath`: 캐시 + 2년 창), SPY·QQQ 비율의 같은 수준(`rspy`, `rqqq`)을 만들고, 세 기준 × 네 지평의 판정을 파이썬으로도 내려 `judge` 와 요약 `stats` 를 씁니다. 페이지의 JS 판정과 같은 규칙이며 2,892개 칸·기준·지평 조합에서 결과가 일치하는 것을 확인했습니다. |
+| `compute_breakout.py` | 종목마다 마지막 90거래일 종가(`c`)와 그 앞 160거래일 종가(`cx`, 종목 상세의 50 SMA·89 HMA·144 HMA 용; `spyx`·`qqqx` 는 같은 구간의 지수), 창 이전 52주 고점(`h52`: 창 앞 192거래일의 최고, 판정 창 첫날 기준 252일), 창 이전 사상 최고(`ath`: 캐시 + 2년 창), SPY·QQQ 비율의 같은 수준(`rspy`, `rqqq`)을 만들고, 세 기준 × 네 지평의 판정을 파이썬으로도 내려 `judge` 와 요약 `stats` 를 씁니다. 페이지의 JS 판정과 같은 규칙이며 2,892개 칸·기준·지평 조합에서 결과가 일치하는 것을 확인했습니다. |
 | `build_breakout.py` | `template.html` 의 토큰을 채워 두 본문을 만듭니다. Pages 본문의 매트릭스 링크는 `../#board`, 아티팩트 본문은 매트릭스 아티팩트를 새 탭으로 엽니다. 직전 빌드(`docs/breakout/data/breakout-data.json`)와 비교해 알림을 만듭니다. |
 | `template.html` | 화면. `__DATA__`, `__LISTING__`, `__PRICE_ASOF__`, `__TERMINAL_URL__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. |
 
@@ -65,6 +65,10 @@ python3 breakout/build_breakout.py
 ## 아티팩트
 
 `docs/breakout/breakout.artifact.html` 이 Claude 아티팩트 발행용 본문입니다(문서 골격 없이 `<title>` 부터). 매트릭스 아티팩트를 다시 발행하는 Claude 예약 작업(화~토 09:22·14:22 KST, 그날 빌드를 기다렸다가 발행)이 2026-10-23 부터 이 본문도 같은 차례에 돌파 지도 아티팩트로 발행합니다. 본문의 `Prices YYYY-MM-DD` 가 아티팩트의 것과 같으면 건너뛰고, 그날 돌파 지도 단계가 실패해 본문이 직전 빌드로 남아 있으면 그 사실만 보고합니다.
+
+## 칸 아래 변동률과 종목 상세의 이동평균
+
+칸 아래 세 줄은 그 종목의 변동률입니다. `D` 일간(전일 종가 대비), `W` 주간(5거래일 전 대비), `M` 30일(칸에 그린 기간, 30거래일 전 대비)이며 탭의 자(USD · QQQ 대비 · SPY 대비)를 따릅니다. 종목 상세 패널에는 같은 세 값이 "일간 · 주간 · 30일" 행으로 있고, 90일 차트에는 50일 단순이동평균(주황 굵은 실선), 89일 헐 이동평균(노랑 일점쇄선), 144일 헐 이동평균(파랑 일점쇄선)이 들어갑니다. 눈금은 가격과 선반만으로 잡으므로 멀리 떨어진 이동평균은 잘려 나가고, 그때는 차트 가장자리에 현재가 대비 거리를 적습니다. 헐 이동평균은 `HMA(n) = WMA(2·WMA(n/2) − WMA(n), √n)` 이며 페이지에서 `cx + c` 로 계산합니다. 차트 위의 `USD · vs QQQ · vs SPY` 토글은 위의 1·2·3 탭과 같은 동작으로 지도 전체의 자를 바꿉니다.
 
 ## 화면의 명령
 

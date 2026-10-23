@@ -13,6 +13,7 @@
   dates/spy/qqq        마지막 NARR(90) 거래일과 그날의 SPY·QQQ 종가
   stocks[key]          n 이름, x 거래소 접두어, sym Yahoo 심볼, src 출처, c 90일 종가,
                        h52 창 이전 52주 고점, ath 창 이전 사상 최고, rspy/rqqq [52주 고점, 최고] (비율),
+                       cx 창 앞 PRE_MA(160)거래일 종가(종목 상세의 50 SMA·89 HMA·144 HMA 계산용; 상장이 짧으면 그만큼만),
                        ipo 상장일(90일 창을 다 못 채운 종목만; 앞을 첫 종가로 채웠다)
   etfs[]               t ko cat tag name aum n top10 asof url rows[[key, w]] rows_all[[sym, name, w, key|null, note]] c(ETF 종가 90일|null)
   listing              match_listing 결과
@@ -46,6 +47,7 @@ NARR = 90                    # 페이지에 보내는 종가 창(판정 창 30�
 PRE52 = 252 + W - NARR       # 52주 고점에 쓰는 창 이전 구간(거래일). 판정 창의 첫날 기준으로 252일이 된다
 MIN_DAYS = W + GAP + 10      # 이보다 짧은 이력은 칸을 만들지 않는다
 HS = ("20", "55", "52w", "ath")
+PRE_MA = 160                      # 창 앞에 더 내보내는 종가 수: HMA 144 는 144 + 12 - 1 = 155 봉이 먼저 있어야 창 첫날부터 그려진다
 MODES = ("usd", "qqq", "spy")
 
 
@@ -219,6 +221,7 @@ def main():
         rec = {"n": st["name"], "x": st["exch"], "sym": sym, "src": tinfo.get(key, {}).get("source") or "",
                "c": [round(v, 4) for v in c], "h52": round(h52, 4), "ath": round(ath, 4),
                "athFrom": cache.get("history_from") or (axis[first_i] if first_i >= 0 else None)}
+        rec["cx"] = [round(v, 2) for v in seq[max(first_i, i0 - PRE_MA):i0]]   # 이동평균용이라 소수 둘째 자리면 충분하다
         if first_i > 0 and first_i > i0 - PRE52:
             rec["ipo"] = axis[first_i]
         for bname, bfull in (("spy", spy_full), ("qqq", qqq_full)):
@@ -298,6 +301,7 @@ def main():
         "holdings_asof": hold_date, "generated_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "stock_prices_at": ssum.get("generated_at"), "sources": sorted({v["src"] for v in stocks.values() if v["src"]}),
         "dates": dates, "spy": [round(v, 4) for v in spy], "qqq": [round(v, 4) for v in qqq],
+        "spyx": [round(v, 2) for v in spy_full[max(0, i0 - PRE_MA):i0]], "qqqx": [round(v, 2) for v in qqq_full[max(0, i0 - PRE_MA):i0]],
         "stocks": stocks, "etfs": out_etfs, "listing": listing, "judge": jd, "stats": stats,
     }
     os.makedirs(os.path.dirname(args.out), exist_ok=True)

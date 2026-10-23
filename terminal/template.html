@@ -552,10 +552,10 @@ body.cover-open{overflow:hidden}
 
   <div class="tabs" role="tablist" aria-label="화면">
     <button type="button" role="tab" id="tab1" aria-selected="true" aria-controls="pane1"><b>1)</b> 매트릭스</button>
-    <button type="button" role="tab" id="tab3" aria-selected="false" aria-controls="pane3"><b>3)</b> RRG 1단·2단</button>
+    <button type="button" role="tab" id="tab3" aria-selected="false" aria-controls="pane3"><b>2)</b> RRG 1단·2단</button>
+    <a role="tab" id="tab5" href="__BREAKOUT_URL__" target="__NAV_TARGET__" rel="noopener" title="돌파 지도(BKM)로 이동: 이 보드의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 28개 ETF 의 상위 10개 구성종목"><b>3)</b> 돌파 지도<small>BKM</small></a>
     <button type="button" role="tab" id="tab4" aria-selected="false" aria-controls="pane4"><b>4)</b> 주간 브리핑</button>
-    <button type="button" role="tab" id="tab2" aria-selected="false" aria-controls="pane2"><b>2)</b> 도움말</button>
-    <a role="tab" id="tab5" href="__BREAKOUT_URL__" target="__NAV_TARGET__" rel="noopener" title="돌파 지도(BKM)로 이동: 이 보드의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 28개 ETF 의 상위 10개 구성종목"><b>5)</b> 돌파 지도<small>BKM</small></a>
+    <button type="button" role="tab" id="tab2" aria-selected="false" aria-controls="pane2"><b>5)</b> 도움말</button>
     <span class="tabinfo">관찰 대상 24 ETF (섹터 11 · 산업·테마 12 · 스타일 1) · SPY 대비 상대수익률 백분위 · 종가 __PRICE_ASOF__ · 구성종목 __HOLD_ASOF__</span>
   </div>
 
@@ -601,7 +601,7 @@ body.cover-open{overflow:hidden}
           </table>
         </div>
         <p class="sortline" id="sortHint"></p>
-        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷(MAGS·DRAM은 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출)이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다. MAGS(동일가중 매그니피센트 7)는 스타일·집중도 행입니다. 일곱 종목이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 대비로 재고, 백분위는 23개 ETF 사이에 끼워 넣었을 때의 위치만 적으며 다른 행의 순위 계산과 섹터 집계에는 넣지 않습니다. 3) 탭의 1단 그래프에는 점선 꼬리를 단 점으로 함께 그립니다.</p>
+        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷(MAGS·DRAM은 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출)이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다. MAGS(동일가중 매그니피센트 7)는 스타일·집중도 행입니다. 일곱 종목이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 대비로 재고, 백분위는 23개 ETF 사이에 끼워 넣었을 때의 위치만 적으며 다른 행의 순위 계산과 섹터 집계에는 넣지 않습니다. 2) 탭의 1단 그래프에는 점선 꼬리를 단 점으로 함께 그립니다.</p>
       </section>
 
       <aside class="rail">
@@ -631,7 +631,7 @@ body.cover-open{overflow:hidden}
             <div class="shape"><div class="strip" id="lg3" aria-hidden="true"></div><div><b>오른쪽만 <span data-w="hot">초록</span>: 소진 경계</b><span>장기 성과는 좋지만 단기 열이 식고 있습니다. 순위 하락이 이어지면 이탈을 검토합니다.</span></div></div>
             <div class="klegend">
               <div><span class="lab">RATIO</span>흰 실선은 ETF÷벤치마크 가격 비율, 주황 점선은 그 이동평균입니다. 끝점이 <span data-w="hot">초록</span>이면 지금 이동평균 위, <span data-w="cold">붉은색</span>이면 아래이고, 선 전체에 색이 들어가면 최근 3주 안에 돌파 또는 이탈이 있었다는 뜻입니다.</div>
-              <div><span class="lab">RRG</span><span class="sw" style="background:var(--lead)"></span>Leading <span class="sw" style="background:var(--weak);margin-left:8px"></span>Weakening <span class="sw" style="background:var(--lag);margin-left:8px"></span>Lagging <span class="sw" style="background:var(--impr);margin-left:8px"></span>Improving · 섹터와 MAGS는 SPY 대비, 산업·테마는 상위 섹터 대비 국면입니다. 그래프는 3) 탭, 뜻은 2) 도움말에 있습니다.</div>
+              <div><span class="lab">RRG</span><span class="sw" style="background:var(--lead)"></span>Leading <span class="sw" style="background:var(--weak);margin-left:8px"></span>Weakening <span class="sw" style="background:var(--lag);margin-left:8px"></span>Lagging <span class="sw" style="background:var(--impr);margin-left:8px"></span>Improving · 섹터와 MAGS는 SPY 대비, 산업·테마는 상위 섹터 대비 국면입니다. 그래프는 2) 탭, 뜻은 5) 도움말에 있습니다.</div>
               <div><span class="lab">SIGNAL</span>★ SPY 대비 비율 52주 신고가 · ↗ 비율선 50·200일선 상향 돌파(최근 5일) · ↘ 하향 이탈 · ↑↓ 백분위 ±30 급변(6개월 → 1개월) · ≈ 1주 반등 미확인</div>
               <div><span class="lab">LISTING</span><span class="dots" aria-hidden="true"><i class="b">b</i></span> 바이낸스 bStocks 현물 · <span class="dots" aria-hidden="true"><i class="p"></i></span> 바이낸스 perp · <span class="dots" aria-hidden="true"><i class="h"></i></span> 하이퍼리퀴드 perp. 티커 뒤에 상장된 상품만 점으로 찍히고, 없으면 아무것도 표시하지 않습니다. 구성종목 표에서는 티커 아래에 작은 점으로 찍히며, bStocks는 속이 빈 주황 원입니다.</div>
               <div><span class="lab">COLOR</span>툴바의 97) 색 규약으로 초록=강세(US, 블룸버그 관례)와 붉음=강세(KR) 사이를 바꿀 수 있습니다. 설정은 이 브라우저에만 저장됩니다.</div>
@@ -685,7 +685,7 @@ body.cover-open{overflow:hidden}
           <dt class="ph-Improving">IMPROVING</dt><dd>비율의 추세는 아직 열위이지만 힘이 붙고 있습니다(RS-Ratio &lt; 100, RS-Momentum &gt; 100). 전환 초기에 해당하며, 다음 칸인 Leading으로 넘어가는지 지켜봅니다.</dd>
         </dl>
         <p>가로축 RS-Ratio는 ETF÷벤치마크 비율의 추세 수준을 100을 기준으로 정규화한 값이고, 세로축 RS-Momentum은 그 RS-Ratio의 변화율을 100을 기준으로 정규화한 값입니다. 국면은 보통 Improving → Leading → Weakening → Lagging → Improving 순서로 시계 방향으로 회전합니다. 표의 작은 사각형 네 칸은 이 사분면의 위치를 그대로 나타냅니다(왼쪽 위 Improving, 오른쪽 위 Leading, 오른쪽 아래 Weakening, 왼쪽 아래 Lagging).</p>
-        <p><b style="color:var(--amber)">벤치마크가 질문을 정합니다.</b> 이 화면은 2단 구조입니다. 섹터 11개는 SPY에 견주어 "시장보다 강한가"를 묻고(1단), 산업·테마 12개는 상위 섹터 ETF에 견주어 "그 섹터 안에서 강한가"를 묻습니다(2단). 매트릭스의 RRG 열에서 산업·테마 행은 2단 국면을 먼저 쓰고 괄호 안에 SPY 대비 국면을 함께 적습니다. 상위 섹터 배정은 SMH·IGV·DRAM → XLK, XBI·GNOM·ARKG → XLV, KRE → XLF, XHB → XLY, XME → XLB, ITA·PAVE → XLI, URA → XLE입니다. 3) 탭에서 1단 그래프의 섹터 점을 누르면 2단 그래프가 그 섹터 대비로 열립니다. 스타일·집중도 행인 MAGS(동일가중 매그니피센트 7)는 AAPL·MSFT·NVDA·AMZN·TSLA·META·GOOGL이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY로 나눕니다. MAGS÷SPY가 오르면 "동일가중 Mag 7이 시장을 이기는 중", 곧 소수 대형주 집중 국면이라는 뜻이고, XLK÷SPY·QQQ÷SPY와 같이 읽어야 합니다. 동일가중이라 NVDA 한 종목이 끌고 나머지 여섯이 뒤처지는 장에서는 시가총액가중 바스켓보다 상승 폭이 작게 나올 수 있습니다.</p>
+        <p><b style="color:var(--amber)">벤치마크가 질문을 정합니다.</b> 이 화면은 2단 구조입니다. 섹터 11개는 SPY에 견주어 "시장보다 강한가"를 묻고(1단), 산업·테마 12개는 상위 섹터 ETF에 견주어 "그 섹터 안에서 강한가"를 묻습니다(2단). 매트릭스의 RRG 열에서 산업·테마 행은 2단 국면을 먼저 쓰고 괄호 안에 SPY 대비 국면을 함께 적습니다. 상위 섹터 배정은 SMH·IGV·DRAM → XLK, XBI·GNOM·ARKG → XLV, KRE → XLF, XHB → XLY, XME → XLB, ITA·PAVE → XLI, URA → XLE입니다. 2) 탭에서 1단 그래프의 섹터 점을 누르면 2단 그래프가 그 섹터 대비로 열립니다. 스타일·집중도 행인 MAGS(동일가중 매그니피센트 7)는 AAPL·MSFT·NVDA·AMZN·TSLA·META·GOOGL이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY로 나눕니다. MAGS÷SPY가 오르면 "동일가중 Mag 7이 시장을 이기는 중", 곧 소수 대형주 집중 국면이라는 뜻이고, XLK÷SPY·QQQ÷SPY와 같이 읽어야 합니다. 동일가중이라 NVDA 한 종목이 끌고 나머지 여섯이 뒤처지는 장에서는 시가총액가중 바스켓보다 상승 폭이 작게 나올 수 있습니다.</p>
       </div>
     </section>
 
@@ -718,7 +718,7 @@ body.cover-open{overflow:hidden}
             <li>정렬을 <kbd class="k">22) 전환순</kbd>으로 바꾸어 맨 위 세 행을 봅니다. 최근에 순위가 가장 크게 오른 ETF입니다.</li>
             <li>그 행의 SPY 대비·QQQ 대비 비율선이 <span data-w="hot">초록</span> 색으로 강조되어 있는지, 신호 열에 상대 신고가나 이동평균선 돌파가 있는지 확인합니다.</li>
             <li>행을 눌러 구성종목을 열고, 상승을 이끄는 종목이 한두 개에 몰려 있는지 고르게 퍼져 있는지 봅니다. 고르게 퍼진 상승이 섹터 전환에 가깝습니다.</li>
-            <li><kbd class="k">3) RRG</kbd> 탭의 1단 그래프에서 Improving → Leading으로 넘어가는 섹터를 찾고, 그 점을 눌러 2단을 엽니다. 2단에서 그 섹터보다 강한(Leading) 하위 ETF가 섹터를 끌고 가는 주체입니다. 2025년이라면 1단에서 XLK, 2단에서 SMH였을 것입니다.</li>
+            <li><kbd class="k">2) RRG</kbd> 탭의 1단 그래프에서 Improving → Leading으로 넘어가는 섹터를 찾고, 그 점을 눌러 2단을 엽니다. 2단에서 그 섹터보다 강한(Leading) 하위 ETF가 섹터를 끌고 가는 주체입니다. 2025년이라면 1단에서 XLK, 2단에서 SMH였을 것입니다.</li>
             <li>마지막으로 <kbd class="k">12M</kbd> 열로 정렬해 오른쪽만 <span data-w="hot">초록</span> 색인 행을 찾고, 보유 중인 섹터가 거기에 있으면 이탈 조건을 점검합니다.</li>
           </ol>
         </section>
@@ -735,10 +735,10 @@ body.cover-open{overflow:hidden}
               <tr><td>21 COL · 22 SHIFT</td><td>열 기준 정렬과 전환순 정렬 사이를 바꿉니다.</td></tr>
               <tr><td>1W · 1M · 3M · 6M · 12M</td><td>그 기간 열의 백분위가 높은 순으로 정렬합니다. 뒤에 ASC를 붙이면 낮은 순입니다(예: 3M ASC).</td></tr>
               <tr><td>97 COLOR · US · KR</td><td>색 규약을 바꾸거나 지정합니다.</td></tr>
-              <tr><td>1 MATRIX · 2 HELP · 3 RRG · 4 BRIEF</td><td>매트릭스, 도움말, RRG 1단·2단, 주간 브리핑 화면을 오갑니다.</td></tr>
-              <tr><td>5 BKM · BREAKOUT · MAP</td><td>돌파 지도(BKM)로 이동합니다. 이 보드의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 28개 ETF 의 상위 10개 구성종목을 칸으로 놓고, 20일·55일·52주·사상 최고 고점 돌파와 저점 이탈을 USD·QQQ 대비·SPY 대비로 보여 줍니다.</td></tr>
+              <tr><td>1 MATRIX · 2 RRG · 4 BRIEF · 5 HELP</td><td>매트릭스, RRG 1단·2단, 주간 브리핑, 도움말 화면을 오갑니다. 3 은 돌파 지도로 이동합니다.</td></tr>
+              <tr><td>3 BKM · BREAKOUT · MAP</td><td>돌파 지도(BKM)로 이동합니다. 이 보드의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 28개 ETF 의 상위 10개 구성종목을 칸으로 놓고, 20일·55일·52주·사상 최고 고점 돌파와 저점 이탈을 USD·QQQ 대비·SPY 대비로 보여 줍니다.</td></tr>
               <tr><td>0 COVER</td><td>대문 화면을 다시 엽니다. 대문은 주소에 #rrg·#brief·#board 같은 해시가 없을 때만 처음에 보이고, 대문의 "Skip this door"를 켜면 이 브라우저에서는 건너뜁니다.</td></tr>
-              <tr><td>RRG XLK · XLK RRG</td><td>3) 탭을 열고 2단 그래프를 그 섹터 대비로 바꿉니다. 하위 ETF를 적으면 그 상위 섹터의 2단을 열고 그 ETF를 강조하며, MAGS를 적으면 1단에서 MAGS 점을 강조합니다. 3) 탭에서는 1단·2단의 점과 2단 표의 행을 눌러도 탭을 벗어나지 않고 오른쪽 Holdings 패널에 그 ETF의 구성종목이 열립니다.</td></tr>
+              <tr><td>RRG XLK · XLK RRG</td><td>2) 탭을 열고 2단 그래프를 그 섹터 대비로 바꿉니다. 하위 ETF를 적으면 그 상위 섹터의 2단을 열고 그 ETF를 강조하며, MAGS를 적으면 1단에서 MAGS 점을 강조합니다. 2) 탭에서는 1단·2단의 점과 2단 표의 행을 눌러도 탭을 벗어나지 않고 오른쪽 Holdings 패널에 그 ETF의 구성종목이 열립니다.</td></tr>
             </tbody>
           </table>
         </section>
@@ -1088,13 +1088,13 @@ function msg(text, cls) {
 
 /* ---- 탭 ---- */
 let curTab = 1;
-/* Holdings 패널은 하나뿐이며, 1) 매트릭스의 오른쪽 레일과 3) RRG 탭의 오른쪽 레일 사이를 옮겨 다닌다 */
+/* Holdings 패널은 하나뿐이며, 1) 매트릭스의 오른쪽 레일과 2) RRG 탭의 오른쪽 레일 사이를 옮겨 다닌다 */
 const holdHome = document.querySelector('#pane1 .rail'), chgPanel = document.querySelector('.panel.chg'), rrgRail = document.getElementById('rrgRail');
 function placeHold(n) {
   if (n === 3) { if (holdPanel.parentNode !== rrgRail) rrgRail.appendChild(holdPanel); }
   else if (holdPanel.parentNode !== holdHome) holdHome.insertBefore(holdPanel, chgPanel);
 }
-/* 5) 돌파 지도: 같은 저장소의 별도 화면(Pages 에서는 breakout/, 아티팩트에서는 돌파 지도 아티팩트) */
+/* 3) 돌파 지도: 같은 저장소의 별도 화면(Pages 에서는 breakout/, 아티팩트에서는 돌파 지도 아티팩트) */
 const BREAKOUT_URL = '__BREAKOUT_URL__', NAV_TARGET = '__NAV_TARGET__';
 function goBreakout() { if (NAV_TARGET === '_blank') window.open(BREAKOUT_URL, '_blank', 'noopener'); else location.href = BREAKOUT_URL; }
 function showTab(n) {
@@ -1313,10 +1313,10 @@ function runCmd(raw0) {
   if (colIdx >= 0) { showTab(1); sortCol(colIdx, asc ? 1 : -1); msg(`정렬 → ${CODES[colIdx]} 백분위 ${asc ? '낮은' : '높은'} 순`, 'ok'); return; }
   const table = {
     '1': () => showTab(1), 'MATRIX': () => showTab(1), 'MAIN': () => showTab(1),
-    '2': () => showTab(2), 'HELP': () => showTab(2), '98': () => showTab(2),
-    '3': () => showTab(3), 'RRG': () => showTab(3), '41': () => showTab(3), '42': () => showTab(1),
+    '2': () => showTab(3), 'RRG': () => showTab(3), '41': () => showTab(3), '42': () => showTab(1),
+    '3': () => goBreakout(), 'BKM': () => goBreakout(), 'BREAKOUT': () => goBreakout(), 'MAP': () => goBreakout(),
     '4': () => showTab(4), 'BRIEF': () => showTab(4),
-    '5': () => goBreakout(), 'BKM': () => goBreakout(), 'BREAKOUT': () => goBreakout(), 'MAP': () => goBreakout(),
+    '5': () => showTab(2), 'HELP': () => showTab(2), '98': () => showTab(2),
     '0': () => showCover(), 'COVER': () => showCover(), 'DOOR': () => showCover(),
     '11': () => setCat('all'), 'ALL': () => setCat('all'),
     '12': () => setCat('sec'), 'SEC': () => setCat('sec'), 'SECT': () => setCat('sec'),
@@ -1327,8 +1327,8 @@ function runCmd(raw0) {
     '97': () => setConv(conv === 'US' ? 'KR' : 'US'), 'COLOR': () => setConv(conv === 'US' ? 'KR' : 'US'), 'CONV': () => setConv(conv === 'US' ? 'KR' : 'US'),
     'US': () => setConv('US'), 'KR': () => setConv('KR'),
   };
-  const labels = { '1': '매트릭스 화면', 'MATRIX': '매트릭스 화면', 'MAIN': '매트릭스 화면', '2': '도움말 화면', 'HELP': '도움말 화면', '98': '도움말 화면',
-    '3': 'RRG 1단·2단 화면', 'RRG': 'RRG 1단·2단 화면', '41': 'RRG 1단·2단 화면', '42': '매트릭스 화면', '4': '주간 브리핑 화면', 'BRIEF': '주간 브리핑 화면', '5': '돌파 지도(BKM)로 이동', 'BKM': '돌파 지도(BKM)로 이동', 'BREAKOUT': '돌파 지도(BKM)로 이동', 'MAP': '돌파 지도(BKM)로 이동',
+  const labels = { '1': '매트릭스 화면', 'MATRIX': '매트릭스 화면', 'MAIN': '매트릭스 화면', '5': '도움말 화면', 'HELP': '도움말 화면', '98': '도움말 화면',
+    '2': 'RRG 1단·2단 화면', 'RRG': 'RRG 1단·2단 화면', '41': 'RRG 1단·2단 화면', '42': '매트릭스 화면', '4': '주간 브리핑 화면', 'BRIEF': '주간 브리핑 화면', '3': '돌파 지도(BKM)로 이동', 'BKM': '돌파 지도(BKM)로 이동', 'BREAKOUT': '돌파 지도(BKM)로 이동', 'MAP': '돌파 지도(BKM)로 이동',
     '11': '필터 → 전체 24', 'ALL': '필터 → 전체 24', '12': '필터 → 섹터 11', 'SEC': '필터 → 섹터 11', 'SECT': '필터 → 섹터 11',
     '13': '필터 → 산업·테마 12', 'IND': '필터 → 산업·테마 12', 'THM': '필터 → 산업·테마 12', '14': '필터 → 스타일 1', 'STY': '필터 → 스타일 1', 'STYLE': '필터 → 스타일 1',
     '21': '정렬 → 열 기준', 'COL': '정렬 → 열 기준', '22': '정렬 → 전환순', 'SHIFT': '정렬 → 전환순' };
@@ -1351,7 +1351,7 @@ function runCmd(raw0) {
     select(current[0].t, { open: true, scroll: true });
     msg(`ETF 검색 · "${raw}" → ${koHits.map(x => x.t).join(', ')}`, 'ok'); return;
   }
-  msg(`알 수 없는 명령 또는 종목: ${c} · 2) 도움말의 명령줄 표를 참고하세요`, 'err');
+  msg(`알 수 없는 명령 또는 종목: ${c} · 5) 도움말의 명령줄 표를 참고하세요`, 'err');
 }
 cmd.addEventListener('keydown', ev => { if (ev.key === 'Enter') { runCmd(cmd.value); cmd.value = ''; } });
 document.getElementById('goBtn').addEventListener('click', () => { runCmd(cmd.value); cmd.value = ''; cmd.focus(); });

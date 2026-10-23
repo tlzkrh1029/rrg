@@ -7,7 +7,7 @@
 | **섹터 전환 매트릭스** (SRM) | `https://tlzkrh1029.github.io/rrg/` | `terminal/` | 24 ETF 의 SPY 대비 상대수익률 백분위, 비율선, RRG 1단·2단, 신호, 주간 브리핑 |
 | **돌파 지도** (BKM) | `https://tlzkrh1029.github.io/rrg/breakout/` | `breakout/` | 28 ETF 의 상위 10개 구성종목을 칸으로 놓고 20일·55일·52주·사상 최고 고점 돌파와 저점 이탈을 USD·QQQ 대비·SPY 대비로 표시 |
 
-두 화면은 서로 탭으로 이어집니다(매트릭스의 `5) 돌파 지도`, 돌파 지도의 사이트 줄 `1) 매트릭스`). 돌파 지도의 설계와 판정 규칙은 [breakout/README.md](breakout/README.md) 에 있습니다.
+두 화면은 서로 탭으로 이어집니다(매트릭스의 `3) 돌파 지도`, 돌파 지도의 사이트 줄 `1) 매트릭스`). 매트릭스의 탭 순서는 1) 매트릭스 · 2) RRG 1단·2단 · 3) 돌파 지도 · 4) 주간 브리핑 · 5) 도움말이고 명령줄의 `1`~`5` 도 같은 뜻입니다. 돌파 지도의 설계와 판정 규칙은 [breakout/README.md](breakout/README.md) 에 있습니다.
 
 ```
 fetch_prices.py          ETF 가격·구성종목 수집기 (두 화면이 함께 씀)

@@ -145,6 +145,12 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .outline path{fill:none;stroke:var(--up);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .outline path.d{stroke:var(--down)}
 .bf{display:flex;justify-content:space-between;gap:8px;margin-top:6px;font-size:11px;color:var(--muted);padding:0 6px}
+/* 칸 아래 변동률: D 일간(전일 대비) · W 주간(5거래일) · M 30일(칸에 그린 기간). 탭의 자(USD·QQQ 대비·SPY 대비)를 따른다 */
+.cw{display:flex;flex-direction:column;width:var(--cw);min-width:0}
+.chg{display:grid;gap:1px;padding:3px 2px 0;font-size:9.5px;line-height:1.2;font-variant-numeric:tabular-nums;white-space:nowrap}
+.chg span{display:flex;gap:4px} .chg i{font-style:normal;color:var(--muted);width:7px;flex:none} .chg em{font-style:normal}
+.chg .up{color:var(--up)} .chg .dn{color:var(--down)} .chg .z{color:var(--muted)}
+.cell.dim + .chg{opacity:.3}
 
 /* 구획 62) 상자: 블록 테두리 + 칸 테두리 + 군집 테두리 (v3의 모습) */
 :root[data-frame="boxes"] .block{border:1px solid var(--hair);background:var(--surface);padding:0 0 6px}
@@ -195,6 +201,20 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .side .big .fl{fill:var(--up);opacity:.3} .side .big .fd{fill:var(--down);opacity:.3}
 .side .big text{font-size:9.5px;fill:var(--muted)}
 .side .big .ax{stroke:var(--hair)}
+/* 종목 상세의 이동평균: 50 SMA 주황 굵은 실선, 89 HMA 노랑 일점쇄선, 144 HMA 파랑 일점쇄선. 눈금은 가격·선반만으로 잡고 벗어나면 잘린다 */
+.side .ma50{fill:none;stroke:var(--amber);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
+.side .ma89{fill:none;stroke:#ffe95c;stroke-width:1.3;stroke-linejoin:round;stroke-dasharray:6 2.5 1.5 2.5}
+.side .ma144{fill:none;stroke:#4d9cff;stroke-width:1.3;stroke-linejoin:round;stroke-dasharray:6 2.5 1.5 2.5}
+.side .big .edge{font-size:9px;font-weight:600} .side .big .edge.y{fill:#ffe95c} .side .big .edge.b{fill:#4d9cff} .side .big .edge.o{fill:var(--amber)}
+.side .lgd{display:flex;flex-wrap:wrap;gap:3px 12px;margin:4px 0 8px;font-size:11px;color:var(--ink-2)}
+.side .lgd span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.side .lgd svg{width:26px;height:10px;overflow:visible;display:block} .side .lgd b{color:var(--ink);font-weight:500} .side .lgd i{font-style:normal;color:var(--muted)}
+.side .ttlrow{display:flex;align-items:baseline;gap:10px;margin:6px 0 4px;font-size:11px;letter-spacing:.06em;color:var(--amber);text-transform:uppercase;font-weight:600}
+.side .ttlrow .tog{margin-left:auto;display:flex;letter-spacing:0;text-transform:none;font-weight:500}
+.side .ttlrow .tog button{background:transparent;border:0;color:var(--muted);font:inherit;font-size:11.5px;padding:0 6px;cursor:pointer;border-left:1px solid var(--hair);white-space:nowrap}
+.side .ttlrow .tog button:first-child{border-left:0} .side .ttlrow .tog button:hover{color:var(--ink)}
+.side .ttlrow .tog button[aria-pressed="true"]{color:var(--amber);font-weight:600}
+.side .ttlrow .tog button:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
 .side table{border-collapse:collapse;width:100%;font-size:11.5px;margin-bottom:8px}
 .side td{padding:2px 6px 2px 0;white-space:nowrap} .side td.k{color:var(--muted)} .side td.v{color:var(--ink);text-align:right}
 .side .on{color:var(--up);font-weight:600} .side .dn{color:var(--down);font-weight:600} .side .nr{color:var(--near);font-weight:600}
@@ -321,9 +341,10 @@ kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);borde
 <div class="wrap">
   <nav class="site" aria-label="화면">
     <a href="__TERMINAL_URL__#board" target="__NAV_TARGET__" rel="noopener" title="섹터 전환 매트릭스(SRM)로 이동"><b>1)</b> 매트릭스</a>
-    <a href="__TERMINAL_URL__#rrg" target="__NAV_TARGET__" rel="noopener"><b>3)</b> RRG</a>
+    <a href="__TERMINAL_URL__#rrg" target="__NAV_TARGET__" rel="noopener"><b>2)</b> RRG</a>
+    <span class="cur"><b>3)</b> 돌파 지도</span>
     <a href="__TERMINAL_URL__#brief" target="__NAV_TARGET__" rel="noopener"><b>4)</b> 주간 브리핑</a>
-    <span class="cur"><b>5)</b> 돌파 지도</span>
+    <a href="__TERMINAL_URL__#help" target="__NAV_TARGET__" rel="noopener"><b>5)</b> 도움말</a>
     <span class="flags"><span class="flag" title="__PRICE_SOURCE__ 조정 종가. SPY 거래일 축의 마지막 __PRICE_DAYS__거래일(__PRICE_FIRST__ ~ __PRICE_ASOF__)을 칸에 그리고, 그 앞 2년과 전체 이력 최고가로 52주·사상 최고 수준을 잡았습니다">Prices __PRICE_ASOF__</span><span class="flag dim" title="구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷입니다(DRAM·MAGS 는 Roundhill 일일 보유 파일)">Holdings __HOLD_ASOF__</span><span class="flag dim" title="바이낸스 bStocks, 바이낸스 TradFi 선물, 하이퍼리퀴드 HIP-3 목록을 __LIST_TS__에 수집해 대조했습니다">Listing __LIST_ASOF__</span></span>
   </nav>
   <div class="cmd">
@@ -442,6 +463,7 @@ kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);borde
       </section>
       <section>
         <h3>4. 선과 표 읽기</h3>
+        <p>칸 아래의 세 줄은 그 종목의 변동률입니다. D 는 일간(전일 종가 대비), W 는 주간(5거래일 전 대비), M 은 30일(칸에 그린 기간, 30거래일 전 대비)이며, 초록은 상승, 빨강은 하락, 회색은 0 입니다. 탭의 자를 따르므로 vs. SPY 탭에서는 SPY 대비 비율의 변동률이 됩니다. 종목 상세의 차트에는 50일 단순이동평균(주황 굵은 실선), 89일 헐 이동평균(노랑 일점쇄선), 144일 헐 이동평균(파랑 일점쇄선)이 들어가고, 눈금은 가격과 선반만으로 잡기 때문에 멀리 떨어진 이동평균은 잘려 나가며 그 경우 차트 가장자리에 현재가 대비 거리를 적습니다. 차트 위의 USD · vs QQQ · vs SPY 는 위의 1·2·3 탭과 같은 구실을 합니다.</p>
         <p>흰 선이 종가, 호박색 점선이 지평 기준의 고점(천장)입니다. 종가가 천장을 처음 넘은 날 칸이 켜지고, 점선은 실선(바닥)으로 바뀌며 선 위로 넘친 부분이 채워집니다. 이탈은 그 거울로, 바닥 아래로 흐른 부분이 빨간색으로 채워집니다. 오른쪽 위의 표는 경과일이고, 미돌파 칸에는 천장까지 남은 거리가 적힙니다. 1일이 가장 진하고 10일이 지나면 색이 꺼집니다.</p>
       </section>
       <section>
@@ -507,6 +529,25 @@ for (const [k, s] of Object.entries(DATA.stocks)) {
     spy: { c: s.c.map((v, i) => v / DATA.spy[i]), h52: s.rspy[0], ath: s.rspy[1] },
   };
 }
+/* 이동평균: 창 앞 종가(cx, 최대 160거래일)를 이어 붙여 50 SMA · 89 HMA · 144 HMA 를 구하고 창(90일)만 남긴다. 비율 탭은 비율선의 이동평균 */
+const maCache = {};
+function wma(seq, n) { const out = new Array(seq.length).fill(null), ws = n * (n + 1) / 2; for (let i = n - 1; i < seq.length; i++) { let s = 0, ok = true; for (let j = 0; j < n; j++) { const v = seq[i - n + 1 + j]; if (v == null) { ok = false; break; } s += v * (j + 1); } out[i] = ok ? s / ws : null; } return out; }
+function sma(seq, n) { const out = new Array(seq.length).fill(null); for (let i = n - 1; i < seq.length; i++) { let s = 0, ok = true; for (let j = i - n + 1; j <= i; j++) { if (seq[j] == null) { ok = false; break; } s += seq[j]; } out[i] = ok ? s / n : null; } return out; }
+function hma(seq, n) { const a = wma(seq, Math.floor(n / 2)), b = wma(seq, n); return wma(a.map((x, i) => x == null || b[i] == null ? null : 2 * x - b[i]), Math.round(Math.sqrt(n))); }
+function maOf(k, mode) {
+  const key = k + '|' + mode; if (maCache[key]) return maCache[key];
+  const s = DATA.stocks[k], cx = s.cx || [], n = cx.length;
+  const bx = mode === 'usd' ? null : (mode === 'qqq' ? DATA.qqqx : DATA.spyx), b = mode === 'usd' ? null : (mode === 'qqq' ? DATA.qqq : DATA.spy);
+  const pre = bx ? cx.map((v, i) => { const d = bx[bx.length - n + i]; return d ? v / d : null; }) : cx.slice();
+  const full = pre.concat(series[k][mode].c);
+  const cut = a => a.slice(n);
+  return (maCache[key] = { sma50: cut(sma(full, 50)), hma89: cut(hma(full, 89)), hma144: cut(hma(full, 144)) });
+}
+const MSHORT = { usd: 'USD', qqq: 'QQQ 대비', spy: 'SPY 대비' };
+const pct1 = x => (x >= 0 ? '+' : '') + (x * 100).toFixed(1);
+const pcls = x => Math.abs(x) < 0.0005 ? 'z' : x > 0 ? 'up' : 'dn';
+function changes(k, mode) { const c = series[k][mode].c, n = c.length; return { d: c[n - 1] / c[n - 2] - 1, w: c[n - 1] / c[n - 6] - 1, m: c[n - 1] / c[n - W] - 1 }; }
+const chgHTML = (k, mode) => { const ch = changes(k, mode); return `<div class="chg"><span><i>D</i><em class="${pcls(ch.d)}">${pct1(ch.d)}%</em></span><span><i>W</i><em class="${pcls(ch.w)}">${pct1(ch.w)}%</em></span><span><i>M</i><em class="${pcls(ch.m)}">${pct1(ch.m)}%</em></span></div>`; };
 
 /* ---- 판정: 상방(돌파)과 하방(이탈)을 같은 규칙으로 ---- */
 function shelfAt(c, t, H, h52, ath) {
@@ -674,7 +715,7 @@ function render() {
       const r = J(k, state.mode, state.H), top = r.st === 'lit' ? topHorizon(k, state.mode) : null;
       const cls = 'cell ' + r.st + (top === '52w' || top === 'ath' ? ' h52' : '') + (state.picked && state.picked.k === k && state.picked.etf === e.t ? ' picked' : '') + (state.lst === 'listed' && !lstOf(k) ? ' dim' : '');
       order.push({ k, etf: e.t });
-      return `<button type="button" class="${cls}" data-k="${k}" data-etf="${e.t}" aria-label="${k} ${DATA.stocks[k].n}">${cellSVG(k, r, e.t)}</button>`;
+      return `<div class="cw"><button type="button" class="${cls}" data-k="${k}" data-etf="${e.t}" aria-label="${k} ${DATA.stocks[k].n}">${cellSVG(k, r, e.t)}</button>${chgHTML(k, state.mode)}</div>`;
     }).join('');
     const alarm = s.ratio >= 0.5, downOn = s.dratio >= 0.5, exh = s.fratio >= 0.3 || downOn;
     return `<section class="block${alarm ? ' alarm-on' : ''}${downOn ? ' down-on' : ''}${state.selBlock === e.t ? ' selected' : ''}" id="blk-${e.t}" aria-label="${e.t} ${e.ko}">
@@ -756,7 +797,7 @@ const tip = document.getElementById('tip');
 function tipHTML(k, etf) {
   const st = DATA.stocks[k], c = series[k][state.mode].c, n = c.length, ret30 = c[n - 1] / c[n - W] - 1;
   return `<div class="h"><span class="tk">${k}</span><span class="nm">${st.n}</span></div>
-    <div class="in">${st.x ? st.x + ' 상장 · ' : ''}${MLAB[state.mode]} 30일 ${(ret30 >= 0 ? '+' : '') + (ret30 * 100).toFixed(1)}%</div>
+    <div class="in">${st.x ? st.x + ' 상장 · ' : ''}${MSHORT[state.mode]} 일간 <span class="${changes(k, state.mode).d >= 0 ? 'on' : 'dn'}">${pct1(changes(k, state.mode).d)}%</span> · 주간 <span class="${changes(k, state.mode).w >= 0 ? 'on' : 'dn'}">${pct1(changes(k, state.mode).w)}%</span> · 30일 <span class="${ret30 >= 0 ? 'on' : 'dn'}">${pct1(ret30)}%</span></div>
     <div class="in">${dotsHTML(lstOf(k), 'sm')} ${venueText(lstOf(k))}</div>
     <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${weightBars(k, etf)}
     <table>${horizonRows(k)}</table>
@@ -790,8 +831,24 @@ function bigChart(k) {
     const yl = ys(r.ceiling).toFixed(1); out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/><text x="${Wd - R + 3}" y="${(+yl + 3).toFixed(1)}">천장 ${HLAB[state.H]}</text>`;
   }
   if (h52 >= lo && h52 <= hi && state.H !== '52w' && state.H !== 'ath') { const y5 = ys(h52).toFixed(1); out += `<line class="s52" x1="${L}" y1="${y5}" x2="${Wd - R}" y2="${y5}"/><text x="${Wd - R + 3}" y="${(+y5 + 3).toFixed(1)}">52주 고점</text>`; }
+  /* 이동평균: 눈금을 바꾸지 않고, 그림 영역 밖은 잘라 낸다. 마지막 값이 눈금 밖이면 가장자리에 현재가 대비 거리를 적는다 */
+  const ma = maOf(k, state.mode), P = a => a.map((v, i) => v == null ? null : `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).filter(Boolean).join(' ');
+  out += `<clipPath id="bcm"><rect x="${L}" y="${T - 2}" width="${Wd - L - R}" height="${Hd - T - B + 2}"/></clipPath><g clip-path="url(#bcm)"><polyline class="ma144" points="${P(ma.hma144)}"/><polyline class="ma89" points="${P(ma.hma89)}"/><polyline class="ma50" points="${P(ma.sma50)}"/></g>`;
+  const last = c[n - 1];
+  [['sma50', 'o', '50 SMA'], ['hma89', 'y', '89 HMA'], ['hma144', 'b', '144 HMA']].forEach(([key, cls, lab], j) => {
+    const v = ma[key][n - 1]; if (v == null) return;
+    const dd = v / last - 1, d = (dd >= 0 ? '+' : '') + (dd * 100).toFixed(0);
+    if (v > hi) out += `<text class="edge ${cls}" x="${Wd - R - 2}" y="${T + 8 + j * 9}" text-anchor="end">▲ ${lab} ${d}%</text>`;
+    else if (v < lo) out += `<text class="edge ${cls}" x="${Wd - R - 2}" y="${Hd - B - 3 - j * 9}" text-anchor="end">▼ ${lab} ${d}%</text>`;
+  });
   out += `<polyline class="l" points="${pts}"/>`;
   return out + '</svg>';
+}
+function maLegend(k) {
+  const ma = maOf(k, state.mode), n = series[k][state.mode].c.length, fmt = v => state.mode === 'usd' ? (v >= 1000 ? v.toFixed(0) : v.toFixed(2)) : v.toFixed(4);
+  const sw = cls => `<svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" class="${cls}"/></svg>`;
+  const item = (cls, lab, key) => { const v = ma[key][n - 1]; return `<span>${sw(cls)}<b>${lab}</b> ${v == null ? '<i>이력 부족</i>' : fmt(v)}</span>`; };
+  return `<div class="lgd">${item('ma50', '50 SMA', 'sma50')}${item('ma89', '89 HMA', 'hma89')}${item('ma144', '144 HMA', 'hma144')}</div>`;
 }
 /* ---- ETF 시계열: ETF 자체 종가(e.c)가 있으면 그것을, 없으면 구성 상위 종목의 비중 가중 평균(각 종목을 첫날=1로 정규화) ---- */
 const etfCache = {};
@@ -874,7 +931,7 @@ function renderSide() {
   }
   if (!state.picked) { side.innerHTML = ''; return; }
   const { k, etf } = state.picked, st = DATA.stocks[k], idx = order.findIndex(o => o.k === k && o.etf === etf);
-  const c = series[k][state.mode].c, n = c.length, ret30 = c[n - 1] / c[n - W] - 1;
+  const c = series[k][state.mode].c, n = c.length, ret30 = c[n - 1] / c[n - W] - 1, ch = changes(k, state.mode);
   const blocks = etfsOf[k].map(t => { const e = DATA.etfs.find(x => x.t === t), s = blockStats(e); return `<div class="blk"><span>${t}</span><span class="mt"><i style="width:${(s.ratio * 100).toFixed(0)}%"></i><i class="d" style="width:${(s.dratio * 100).toFixed(0)}%"></i></span><span class="c">${s.lit}/${s.n}${s.down ? ` ▼${s.down}` : ''}</span></div>`; }).join('');
   const e = DATA.etfs.find(x => x.t === etf);
   side.innerHTML = `<div class="sh">Stock<small>종목 상세</small><span class="nav"><span style="color:var(--muted);margin-right:4px;font-weight:400;letter-spacing:0">${idx + 1}/${order.length}</span><button type="button" id="prevC" title="이전 칸">‹</button><button type="button" id="nextC" title="다음 칸">›</button></span></div>
@@ -882,14 +939,16 @@ function renderSide() {
     <div class="nm">${st.n}</div>
     <div class="ko">${e ? e.ko + ' · ' + e.tag + ' ETF ' + etf : ''}</div>
     <div class="ven">${venueText(lstOf(k), '<br>')}${lstOf(k) ? `<br><span style="color:var(--muted)">확인 ${LST_ASOF}</span>` : ''}</div>
-    <dl><dt>${MLAB[state.mode]} 30일</dt><dd class="${ret30 >= 0 ? 'on' : 'dn'}">${(ret30 >= 0 ? '+' : '') + (ret30 * 100).toFixed(1)}%</dd><dt>종가</dt><dd>${PRICE_ASOF}${st.sym ? ' · ' + st.sym : ''}${st.src ? ' (' + st.src + ')' : ''}</dd>${st.ipo ? `<dt>상장</dt><dd>${st.ipo} · 그 앞은 첫 종가로 채움</dd>` : ''}<dt>구성종목</dt><dd>${e ? e.asof : ''} · <a href="${e ? e.url : '#'}" target="_blank" rel="noopener">stockanalysis.com</a></dd></dl>
-    <div class="big">${bigChart(k)}</div>
+    <dl><dt>${MSHORT[state.mode]} 일간</dt><dd class="${ch.d >= 0 ? 'on' : 'dn'}">${pct1(ch.d)}%</dd><dt>${MSHORT[state.mode]} 주간</dt><dd class="${ch.w >= 0 ? 'on' : 'dn'}">${pct1(ch.w)}%</dd><dt>${MSHORT[state.mode]} 30일</dt><dd class="${ret30 >= 0 ? 'on' : 'dn'}">${pct1(ret30)}%</dd><dt>종가</dt><dd>${PRICE_ASOF}${st.sym ? ' · ' + st.sym : ''}${st.src ? ' (' + st.src + ')' : ''}</dd>${st.ipo ? `<dt>상장</dt><dd>${st.ipo} · 그 앞은 첫 종가로 채움</dd>` : ''}<dt>구성종목</dt><dd>${e ? e.asof : ''} · <a href="${e ? e.url : '#'}" target="_blank" rel="noopener">stockanalysis.com</a></dd></dl>
+    <div class="ttlrow"><span>90일 · ${MLAB[state.mode]}</span><span class="tog" role="group" aria-label="차트와 지도의 자"><button type="button" data-tog="usd" aria-pressed="${state.mode === 'usd'}">USD</button><button type="button" data-tog="qqq" aria-pressed="${state.mode === 'qqq'}">vs QQQ</button><button type="button" data-tog="spy" aria-pressed="${state.mode === 'spy'}">vs SPY</button></span></div>
+    <div class="big">${bigChart(k)}</div>${maLegend(k)}
     <table>${horizonRows(k)}</table>
     <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${weightBars(k, etf)}
     <div class="wlab" style="margin-top:8px">블록 상태</div>${blocks}
     <div class="st">사상 최고 수준 ${st.ath} (이력 ${st.athFrom || '2년 창'}부터) · 52주 고점 수준 ${st.h52} · 창 ${DATA.first} ~ ${DATA.asof}.</div>`;
   document.getElementById('prevC').addEventListener('click', () => stepPick(-1));
   document.getElementById('nextC').addEventListener('click', () => stepPick(1));
+  side.querySelectorAll('[data-tog]').forEach(b => b.addEventListener('click', () => setMode(b.dataset.tog)));   /* 위의 1·2·3 탭과 같은 동작: 지도 전체의 자가 바뀐다 */
   side.querySelectorAll('[data-goetf]').forEach(el => el.addEventListener('click', () => openEtf(el.dataset.goetf, true)));
 }
 function stepBlock(d) {
@@ -921,7 +980,7 @@ blocksEl.addEventListener('mouseout', ev => { const b = ev.target.closest('.cell
 blocksEl.addEventListener('focusin', ev => { const b = ev.target.closest('.cell'); if (b) showTip(b); });
 blocksEl.addEventListener('focusout', hideTip);
 blocksEl.addEventListener('click', ev => {
-  const b = ev.target.closest('.cell'); if (b) { hideTip(); pick(b.dataset.k, b.dataset.etf, false); return; }
+  const b = ev.target.closest('.cell') || (ev.target.closest('.cw') && ev.target.closest('.cw').querySelector('.cell')); if (b) { hideTip(); pick(b.dataset.k, b.dataset.etf, false); return; }
   const h = ev.target.closest('.bh'); if (h) openEtf(h.dataset.blk, false);
 });
 blocksEl.addEventListener('keydown', ev => { const h = ev.target.closest('.bh'); if (h && (ev.key === 'Enter' || ev.key === ' ')) { ev.preventDefault(); openEtf(h.dataset.blk, false); } });
