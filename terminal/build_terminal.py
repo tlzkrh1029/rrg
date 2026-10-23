@@ -6,7 +6,7 @@
   output/holdings/<date>.csv       구성종목 스냅샷(최신 두 개를 써서 변동 %p 를 계산)
   data/etf_meta.json               ETF 이름·순자산·보유 종목 수·출처 URL
   --lists DIR                      tradfi-ticker-lists 의 output 폴더(상장 점). 없으면 점을 비운다.
-  template/terminal.html           토큰이 든 HTML 템플릿
+  terminal/template.html           토큰이 든 HTML 템플릿
 
 출력 (docs/)
   index.html                       GitHub Pages 용 완전한 문서
@@ -27,6 +27,9 @@ import re
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 PAGE_URL = "https://tlzkrh1029.github.io/rrg/#board"   # #board 는 대문을 건너뛰고 바로 보드를 연다
+# 5) 돌파 지도 탭이 가리키는 곳. Pages 본문은 같은 사이트의 breakout/ 를, 아티팩트 본문은 돌파 지도 아티팩트를 새 탭으로 연다.
+BREAKOUT_PAGE = "breakout/"
+BREAKOUT_ARTIFACT = "https://claude.ai/artifact/AMAB2TMoSxwXPuLPWjtjGB"
 
 KO = {"XLK": "기술", "XLF": "금융", "XLV": "헬스케어", "XLY": "경기소비재", "XLC": "커뮤니케이션", "XLI": "산업재",
       "XLP": "필수소비재", "XLE": "에너지", "XLU": "유틸리티", "XLB": "소재", "XLRE": "부동산",
@@ -91,6 +94,8 @@ def build_hold(snapshots, meta):
     prev_date, prev = snapshots[-2] if len(snapshots) > 1 else (None, {})
     hold = {}
     for t, m in meta.items():
+        if "terminal" not in m.get("screens", ["terminal"]):   # 돌파 지도 전용 ETF(GDX 등)는 이 화면에 없다
+            continue
         rows = cur.get(t, [])
         # 이전 스냅샷에 이 ETF 가 통째로 없으면(새로 추가한 ETF) 변동 %p 와 진입·이탈을 계산하지 않는다.
         # 출처가 바뀐 경우(스왑·국채 행이 따로 있는 stockanalysis 표 ↔ 스왑 노출을 합산한 Roundhill 표)도 비중의 뜻이 달라 비교하지 않는다.
@@ -313,8 +318,9 @@ def main():
     ap.add_argument("--holdings", default=os.path.join(ROOT, "output", "holdings"))
     ap.add_argument("--meta", default=os.path.join(ROOT, "data", "etf_meta.json"))
     ap.add_argument("--lists", default=None, help="tradfi-ticker-lists 의 output 폴더")
-    ap.add_argument("--template", default=os.path.join(ROOT, "template", "terminal.html"))
+    ap.add_argument("--template", default=os.path.join(HERE, "template.html"))
     ap.add_argument("--docs", default=os.path.join(ROOT, "docs"))
+    ap.add_argument("--breakout-artifact", default=BREAKOUT_ARTIFACT, help="아티팩트 본문의 5) 돌파 지도 탭이 열 주소")
     args = ap.parse_args()
 
     cur = json.load(open(args.data, encoding="utf-8"))
@@ -376,19 +382,27 @@ def main():
         "__BRIEF__": html_escape(brief),
         "__BUILT_AT__": built_at_kst(),
     }
-    page = open(args.template, encoding="utf-8").read()
-    for k, v in tokens.items():
-        if k not in page:
+    tmpl = open(args.template, encoding="utf-8").read()
+    for k in tokens:
+        if k not in tmpl:
             raise SystemExit(f"template token missing: {k}")
-        page = page.replace(k, v)
-    leftover = re.findall(r"__[A-Z_]+__", page)
-    if leftover:
-        raise SystemExit(f"unreplaced tokens: {sorted(set(leftover))}")
 
+    def fill(extra):
+        page = tmpl
+        for k, v in {**tokens, **extra}.items():
+            page = page.replace(k, v)
+        leftover = re.findall(r"__[A-Z_]+__", page)
+        if leftover:
+            raise SystemExit(f"unreplaced tokens: {sorted(set(leftover))}")
+        return page
+
+    # 두 본문은 5) 돌파 지도 탭의 주소만 다르다
+    page_site = fill({"__BREAKOUT_URL__": BREAKOUT_PAGE, "__NAV_TARGET__": "_self"})
+    page_artifact = fill({"__BREAKOUT_URL__": args.breakout_artifact, "__NAV_TARGET__": "_blank"})
     with open(os.path.join(args.docs, "terminal.artifact.html"), "w", encoding="utf-8") as f:
-        f.write(page)
+        f.write(page_artifact)
     with open(os.path.join(args.docs, "index.html"), "w", encoding="utf-8") as f:
-        f.write(SKELETON_HEAD + page + SKELETON_TAIL)
+        f.write(SKELETON_HEAD + page_site + SKELETON_TAIL)
     with open(prev_path, "w", encoding="utf-8") as f:
         json.dump(cur, f, ensure_ascii=False, indent=1)
     with open(os.path.join(args.docs, "data", "alerts.json"), "w", encoding="utf-8") as f:

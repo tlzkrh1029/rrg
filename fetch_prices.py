@@ -48,6 +48,9 @@ INDUSTRIES = ["SMH", "IGV", "XBI", "GNOM", "ARKG", "KRE", "XHB", "XME", "URA", "
 # Style / concentration ETFs: neither sectors nor industries. Measured against
 # SPY like the sectors, but kept out of the 11-sector counts downstream.
 STYLE = ["MAGS"]
+# Breakout-map-only ETFs (breakout/): priced and snapshotted like the others so the
+# map's blocks have top-10 holdings, but not part of the terminal's board or RRG.
+EXTRA = ["GDX", "GRID", "XOP", "TAN", "JETS"]
 
 # RRG benchmark of every industry / style member: the column its ratio line divides by.
 # Industry / theme ETF -> the sector ETF it sits in. MAGS (equal-weight Mag 7)
@@ -63,8 +66,8 @@ PARENT_SECTOR = {
     "MAGS": "SPY",
 }
 
-TICKERS = BENCHMARKS + SECTORS + INDUSTRIES + STYLE
-GROUPS = {"benchmarks": BENCHMARKS, "sectors": SECTORS, "industries": INDUSTRIES, "style": STYLE}
+TICKERS = BENCHMARKS + SECTORS + INDUSTRIES + STYLE + EXTRA
+GROUPS = {"benchmarks": BENCHMARKS, "sectors": SECTORS, "industries": INDUSTRIES, "style": STYLE, "extra": EXTRA}
 BASE_TICKER = "SPY"                  # its trading days are the date axis
 CORE = BENCHMARKS + SECTORS + STYLE  # expected to be gap-free on the axis
 MAX_CORE_MISSING = 5

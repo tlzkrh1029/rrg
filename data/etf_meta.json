@@ -4,167 +4,399 @@
   "aum": "$126.50B",
   "aum_asof": "2026-09-26",
   "n": "77",
-  "url": "https://stockanalysis.com/etf/xlk/"
+  "url": "https://stockanalysis.com/etf/xlk/",
+  "ko": "기술",
+  "tag": "섹터",
+  "cat": "sec",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XLF": {
   "name": "Financial Select Sector SPDR ETF",
   "aum": "$51.55B",
   "aum_asof": "2026-09-26",
   "n": "80",
-  "url": "https://stockanalysis.com/etf/xlf/"
+  "url": "https://stockanalysis.com/etf/xlf/",
+  "ko": "금융",
+  "tag": "섹터",
+  "cat": "sec",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XLV": {
   "name": "Health Care Select Sector SPDR ETF",
   "aum": "$42.81B",
   "aum_asof": "2026-09-26",
   "n": "64",
-  "url": "https://stockanalysis.com/etf/xlv/"
+  "url": "https://stockanalysis.com/etf/xlv/",
+  "ko": "헬스케어",
+  "tag": "섹터",
+  "cat": "sec",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XLY": {
   "name": "Consumer Discretionary Select Sector SPDR ETF",
   "aum": "$22.00B",
   "aum_asof": "2026-09-26",
   "n": "50",
-  "url": "https://stockanalysis.com/etf/xly/"
+  "url": "https://stockanalysis.com/etf/xly/",
+  "ko": "경기소비재",
+  "tag": "섹터",
+  "cat": "sec",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XLC": {
   "name": "Communication Services Select Sector SPDR ETF",
   "aum": "$23.28B",
   "aum_asof": "2026-09-26",
   "n": "26",
-  "url": "https://stockanalysis.com/etf/xlc/"
+  "url": "https://stockanalysis.com/etf/xlc/",
+  "ko": "커뮤니케이션",
+  "tag": "섹터",
+  "cat": "sec",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XLI": {
   "name": "Industrial Select Sector SPDR ETF",
   "aum": "$30.42B",
   "aum_asof": "2026-09-26",
   "n": "86",
-  "url": "https://stockanalysis.com/etf/xli/"
+  "url": "https://stockanalysis.com/etf/xli/",
+  "ko": "산업재",
+  "tag": "섹터",
+  "cat": "sec",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XLP": {
   "name": "Consumer Staples Select Sector SPDR ETF",
   "aum": "$13.64B",
   "aum_asof": "2026-09-26",
   "n": "37",
-  "url": "https://stockanalysis.com/etf/xlp/"
+  "url": "https://stockanalysis.com/etf/xlp/",
+  "ko": "필수소비재",
+  "tag": "섹터",
+  "cat": "sec",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XLE": {
   "name": "Energy Select Sector SPDR ETF",
   "aum": "$40.02B",
   "aum_asof": "2026-09-26",
   "n": "24",
-  "url": "https://stockanalysis.com/etf/xle/"
+  "url": "https://stockanalysis.com/etf/xle/",
+  "ko": "에너지",
+  "tag": "섹터",
+  "cat": "sec",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XLU": {
   "name": "Utilities Select Sector SPDR ETF",
   "aum": "$20.95B",
   "aum_asof": "2026-09-26",
   "n": "34",
-  "url": "https://stockanalysis.com/etf/xlu/"
+  "url": "https://stockanalysis.com/etf/xlu/",
+  "ko": "유틸리티",
+  "tag": "섹터",
+  "cat": "sec",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XLB": {
   "name": "Materials Select Sector SPDR ETF",
   "aum": "$8.02B",
   "aum_asof": "2026-09-26",
   "n": "28",
-  "url": "https://stockanalysis.com/etf/xlb/"
+  "url": "https://stockanalysis.com/etf/xlb/",
+  "ko": "소재",
+  "tag": "섹터",
+  "cat": "sec",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XLRE": {
   "name": "Real Estate Select Sector SPDR ETF",
   "aum": "$7.78B",
   "aum_asof": "2026-09-26",
   "n": "33",
-  "url": "https://stockanalysis.com/etf/xlre/"
+  "url": "https://stockanalysis.com/etf/xlre/",
+  "ko": "부동산",
+  "tag": "섹터",
+  "cat": "sec",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "SMH": {
   "name": "VanEck Semiconductor ETF",
   "aum": "$72.81B",
   "aum_asof": "2026-09-26",
   "n": "26",
-  "url": "https://stockanalysis.com/etf/smh/"
+  "url": "https://stockanalysis.com/etf/smh/",
+  "ko": "반도체",
+  "tag": "산업",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "IGV": {
   "name": "iShares Expanded Tech-Software Sector ETF",
   "aum": "$13.83B",
   "aum_asof": "2026-09-26",
   "n": "111",
-  "url": "https://stockanalysis.com/etf/igv/"
+  "url": "https://stockanalysis.com/etf/igv/",
+  "ko": "소프트웨어",
+  "tag": "산업",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XBI": {
   "name": "SPDR S&P Biotech ETF",
   "aum": "$10.44B",
   "aum_asof": "2026-09-26",
   "n": "167",
-  "url": "https://stockanalysis.com/etf/xbi/"
+  "url": "https://stockanalysis.com/etf/xbi/",
+  "ko": "바이오",
+  "tag": "산업",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "GNOM": {
   "name": "Global X Genomics & Biotechnology ETF",
   "aum": "$105.46M",
   "aum_asof": "2026-09-26",
   "n": "52",
-  "url": "https://stockanalysis.com/etf/gnom/"
+  "url": "https://stockanalysis.com/etf/gnom/",
+  "ko": "유전체학",
+  "tag": "테마",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "ARKG": {
   "name": "ARK Genomic Revolution ETF",
   "aum": "$2.22B",
   "aum_asof": "2026-09-26",
   "n": "33",
-  "url": "https://stockanalysis.com/etf/arkg/"
+  "url": "https://stockanalysis.com/etf/arkg/",
+  "ko": "유전체학 (액티브)",
+  "tag": "테마",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "KRE": {
   "name": "SPDR S&P Regional Banking ETF",
   "aum": "$3.82B",
   "aum_asof": "2026-09-26",
   "n": "169",
-  "url": "https://stockanalysis.com/etf/kre/"
+  "url": "https://stockanalysis.com/etf/kre/",
+  "ko": "지역은행",
+  "tag": "산업",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XHB": {
   "name": "SPDR S&P Homebuilders ETF",
   "aum": "$1.57B",
   "aum_asof": "2026-09-26",
   "n": "37",
-  "url": "https://stockanalysis.com/etf/xhb/"
+  "url": "https://stockanalysis.com/etf/xhb/",
+  "ko": "주택건설",
+  "tag": "산업",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "XME": {
   "name": "SPDR S&P Metals & Mining ETF",
   "aum": "$4.51B",
   "aum_asof": "2026-09-26",
   "n": "40",
-  "url": "https://stockanalysis.com/etf/xme/"
+  "url": "https://stockanalysis.com/etf/xme/",
+  "ko": "금속·광업",
+  "tag": "산업",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "URA": {
   "name": "Global X Uranium ETF",
   "aum": "$6.11B",
   "aum_asof": "2026-09-26",
   "n": "62",
-  "url": "https://stockanalysis.com/etf/ura/"
+  "url": "https://stockanalysis.com/etf/ura/",
+  "ko": "우라늄",
+  "tag": "테마",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "ITA": {
   "name": "iShares U.S. Aerospace & Defense ETF",
   "aum": "$12.66B",
   "aum_asof": "2026-09-26",
   "n": "54",
-  "url": "https://stockanalysis.com/etf/ita/"
+  "url": "https://stockanalysis.com/etf/ita/",
+  "ko": "항공우주·방산",
+  "tag": "산업",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "PAVE": {
   "name": "Global X U.S. Infrastructure Development ETF",
   "aum": "$13.35B",
   "aum_asof": "2026-09-26",
   "n": "102",
-  "url": "https://stockanalysis.com/etf/pave/"
+  "url": "https://stockanalysis.com/etf/pave/",
+  "ko": "미국 인프라",
+  "tag": "테마",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "DRAM": {
   "name": "Roundhill Memory ETF",
   "aum": "$26.40B",
   "aum_asof": "2026-09-26",
   "n": "24",
-  "url": "https://stockanalysis.com/etf/dram/"
+  "url": "https://stockanalysis.com/etf/dram/",
+  "ko": "메모리반도체",
+  "tag": "테마",
+  "cat": "ind",
+  "screens": [
+   "terminal",
+   "breakout"
+  ]
  },
  "MAGS": {
   "name": "Roundhill Magnificent Seven ETF",
   "aum": "$5.79B",
   "aum_asof": "2026-10-13",
   "n": "38",
-  "url": "https://stockanalysis.com/etf/mags/"
+  "url": "https://stockanalysis.com/etf/mags/",
+  "ko": "매그니피센트 7",
+  "tag": "스타일",
+  "cat": "sty",
+  "screens": [
+   "terminal"
+  ]
+ },
+ "GDX": {
+  "name": "VanEck Gold Miners ETF",
+  "aum": "$28.09B",
+  "aum_asof": "2026-09-25",
+  "n": "63",
+  "url": "https://stockanalysis.com/etf/gdx/",
+  "ko": "금광",
+  "tag": "산업",
+  "cat": "ind",
+  "screens": [
+   "breakout"
+  ]
+ },
+ "GRID": {
+  "name": "First Trust Nasdaq Clean Edge Smart Grid Infrastructure Index Fund",
+  "aum": "$12.07B",
+  "aum_asof": "2026-09-22",
+  "n": "135",
+  "url": "https://stockanalysis.com/etf/grid/",
+  "ko": "전력망·전기설비",
+  "tag": "테마",
+  "cat": "ind",
+  "screens": [
+   "breakout"
+  ]
+ },
+ "XOP": {
+  "name": "SPDR S&P Oil & Gas Exploration & Production ETF",
+  "aum": "$4.07B",
+  "aum_asof": "2026-08-21",
+  "n": "54",
+  "url": "https://stockanalysis.com/etf/xop/",
+  "ko": "석유·가스 탐사",
+  "tag": "산업",
+  "cat": "ind",
+  "screens": [
+   "breakout"
+  ]
+ },
+ "TAN": {
+  "name": "Invesco Solar ETF",
+  "aum": "$1.04B",
+  "aum_asof": "2026-08-28",
+  "n": "46",
+  "url": "https://stockanalysis.com/etf/tan/",
+  "ko": "태양광",
+  "tag": "테마",
+  "cat": "ind",
+  "screens": [
+   "breakout"
+  ]
+ },
+ "JETS": {
+  "name": "U.S. Global Jets ETF",
+  "aum": "$727.32M",
+  "aum_asof": "2026-08-13",
+  "n": "56",
+  "url": "https://stockanalysis.com/etf/jets/",
+  "ko": "항공",
+  "tag": "산업",
+  "cat": "ind",
+  "screens": [
+   "breakout"
+  ]
  }
 }

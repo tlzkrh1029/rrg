@@ -1,0 +1,979 @@
+<title>돌파 지도</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* 단일 터미널 팔레트: 다섯 색에 하나씩 역할 — 호박(장치·라벨), 흰색(값), 파랑(선택·직전), 초록(상방), 빨강(하방) */
+:root{
+  color-scheme:dark;
+  --bg:#000; --surface:#0a0a0a; --surface-2:#0f0f0f; --tile:#0d0d0d; --ink:#f2f2f2; --ink-2:#cfcfcf; --muted:#8c8c8c;
+  --hair:#262626; --hair-2:#1a1a1a; --line:#3a3a3a; --amber:#ffb000; --amber-dim:#8a6a1a; --amber-bg:#2a1d00;
+  --up:#2fd46e; --down:#ff5252; --near:#4d9cff; --fn:#2b5fd9; --sel:#0b2559; --unlit:#4f4f4f;
+  --tint-up:#0c2616; --tint-down:#2a0f0f; --tint-near:#08101c; --tag-up:#0f3a1d; --tag-down:#3a1010;
+  --shadow:0 12px 40px rgba(0,0,0,.85);
+  --cw:62px; --ch:42px; --cwmin:62px; --cg:4px; --cols:5;
+  --sans:"IBM Plex Sans KR",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:12.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:none;margin:0 auto;padding-block:10px 48px;padding-inline:16px}
+a{color:var(--amber)}
+button{font:inherit;color:inherit}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* 사이트 줄: 같은 저장소의 다른 화면으로 가는 길 */
+.site{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin:0 0 6px;font-size:11.5px;color:var(--muted)}
+.site a{color:var(--ink-2);text-decoration:none;padding:2px 0} .site a:hover{color:#fff;text-decoration:underline}
+.site a b,.site .cur b{color:var(--amber);font-weight:600} .site .cur{color:#fff;padding:2px 0;box-shadow:inset 0 -2px 0 var(--amber)}
+.site .sep{color:var(--hair)} .site .flags{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px 6px}
+.flag{font-size:10.5px;letter-spacing:.08em;color:var(--amber);border:1px solid var(--amber-dim);padding:1px 7px;text-transform:uppercase;white-space:nowrap}
+.flag.dim{color:var(--ink-2);border-color:var(--hair)}
+/* 명령줄 */
+.cmd{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:12.5px}
+.cmd .pr{color:var(--amber);font-weight:600}
+.cmd input{flex:1;background:transparent;border:0;border-bottom:1px solid var(--hair);color:var(--ink);font:inherit;padding:4px 2px;outline:none;min-width:0}
+.cmd input::placeholder{color:var(--amber);opacity:.75}
+.cmd input:focus{border-bottom-color:var(--amber)}
+.cmd .go{background:var(--up);color:#000;border:0;padding:3px 10px;font-weight:600;cursor:pointer;letter-spacing:.04em}
+.cmd .msg{color:var(--muted);font-size:11.5px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:40%}
+.cmd .msg.err{color:var(--down)}
+
+/* 제목줄 */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin:0 0 4px}
+h1{font-size:14px;font-weight:600;margin:0;display:flex;align-items:center;gap:10px;letter-spacing:0}
+h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spacing:.08em;padding:2px 7px}
+.badges{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.badge{font-size:11px;letter-spacing:.02em;padding:1px 8px;border:1px solid var(--amber);color:var(--amber);background:transparent}
+.fnlink{background:transparent;border:0;color:var(--amber);font-size:12px;cursor:pointer;padding:2px 4px}
+.fnlink:hover{text-decoration:underline}
+
+/* 탭 */
+.tabs{display:flex;gap:2px;border-bottom:1px solid var(--hair);margin:6px 0 10px;align-items:flex-end}
+.tabs button{background:transparent;border:0;padding:6px 14px;cursor:pointer;font-size:12.5px;font-weight:500;color:var(--amber);letter-spacing:.01em}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{background:var(--surface-2);color:var(--ink);box-shadow:inset 0 -2px 0 var(--amber)}
+.tabs button:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.tabs .status{margin-left:auto;font-size:11.5px;color:var(--muted);padding-bottom:6px}
+
+/* 요약 띠 */
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin:0 0 12px}
+.tile{background:var(--surface);border:1px solid var(--hair);padding:8px 12px;min-width:0}
+.tile .lab{font-size:11px;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:4px;font-weight:600}
+.tile .big{font-size:22px;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.tile .big small{font-size:12px;color:var(--ink-2);font-weight:400;margin-left:6px}
+.tile .big .dn{font-size:13px;color:var(--down);margin-left:14px;font-weight:600}
+.tile .rates{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:8px;font-size:12px;color:var(--ink-2)}
+.tile .rates b{font-weight:500;color:var(--ink)}
+.tile .rates .on{color:var(--up);font-weight:600}
+.tile ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px;font-size:12px}
+.tile li button{background:transparent;border:0;padding:0;cursor:pointer;text-align:left;display:flex;align-items:center;gap:8px;width:100%}
+.tile li .tk{font-weight:600;width:48px;flex:none;color:var(--ink)}
+.tile li .ko{color:var(--ink-2);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--sans)}
+.tile li .mt{width:70px;height:6px;background:var(--hair-2);overflow:hidden;flex:none;display:flex}
+.tile li .mt i{display:block;height:100%;background:var(--up)} .tile li .mt i.d{background:var(--down)}
+.tile li .ct{font-size:12px;width:62px;text-align:right;flex:none}
+.tile li .ct .d{color:var(--down)}
+.tile li button:hover .tk{color:var(--amber)}
+.tile li button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.alarm{font-size:12px;line-height:1.5}
+.alarm p{margin:0 0 4px}
+.alarm .k{display:inline-block;font-size:11px;letter-spacing:.03em;padding:0 6px;margin-right:6px;font-weight:600;line-height:1.7}
+.alarm .k.on{background:var(--tag-up);color:var(--up)} .alarm .k.ex{background:var(--tag-down);color:var(--down)} .alarm .k.no{background:var(--hair-2);color:var(--muted)}
+.alarm .who{font-size:12px}
+
+/* 패널 */
+.panel{border:1px solid var(--hair);background:var(--surface);padding:8px 10px 10px;margin-bottom:12px}
+.ph{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-bottom:8px}
+.ph .title{font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.ph .title small{font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);margin-left:8px}
+.ph .right{margin-left:auto;font-size:11.5px;color:var(--muted)}
+.ctl{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin:0 0 8px}
+.seg{display:inline-flex;gap:2px}
+.seg button{background:transparent;border:1px solid transparent;padding:3px 9px;cursor:pointer;color:var(--amber);font-size:12px;white-space:nowrap}
+.seg button::before{content:attr(data-fn) ") "}
+.seg button[aria-pressed="true"]{background:var(--fn);color:#fff;border-color:var(--fn)}
+.seg button:focus-visible,.cell:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.hint{font-size:11.5px;color:var(--muted);margin:0 0 10px}
+.hint b{font-weight:600;color:var(--amber)}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 372px;gap:12px;align-items:start}
+
+/* 블록: 기본은 괘선(상자 없음). data-frame 으로 상자·레일 전환 */
+.blocks{display:grid;grid-template-columns:repeat(auto-fill,minmax(calc(var(--cols)*var(--cwmin) + (var(--cols) - 1)*var(--cg) + 14px),1fr));gap:14px 16px;align-items:start;min-width:0}
+.block{position:relative;min-width:0;scroll-margin-top:12px;padding:0 0 4px}
+.block.selected{background:var(--sel)}
+.bh{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:0 8px;padding:4px 6px 4px;margin-bottom:6px;min-height:38px;border-bottom:1px solid var(--hair);cursor:pointer;user-select:none}
+.bh:hover .tk{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
+.bh:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.block.selected .bh .tk{color:var(--amber)}
+.bh .meter{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--up);transition:width .25s ease}
+.bh .meter.d{left:auto;right:0;background:var(--down)}
+.bh .tk{font-weight:600;font-size:13px;color:var(--ink)}
+.bh .us{font-size:10px;color:var(--muted)}
+.bh .ko{flex:1 1 100%;order:9;font-size:11px;line-height:1.3;color:var(--ink-2);font-family:var(--sans);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.bh .cat{font-size:10.5px;letter-spacing:.04em;color:var(--amber);font-weight:600}
+.bh .ct{font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap;margin-left:auto}
+.bh .ct b{font-weight:600;color:var(--up)}
+.bh .ct .dn{color:var(--down)}
+.bh .chip{font-size:10.5px;letter-spacing:.03em;padding:0 5px;line-height:1.7;font-weight:600;white-space:nowrap}
+.bh .chip.on{background:var(--amber);color:#000} .bh .chip.ex{background:var(--down);color:#000}
+.gridwrap{position:relative;padding:0 4px}
+.cells{display:grid;grid-template-columns:repeat(var(--cols),var(--cw));gap:var(--cg);justify-content:start}
+.cell{position:relative;width:var(--cw);height:var(--ch);background:var(--tile);border:1px solid transparent;padding:0;cursor:pointer;display:block;overflow:visible}
+.cell svg{display:block;width:100%;height:100%;overflow:visible}
+.cell.lit{background:var(--tint-up)} .cell.down{background:var(--tint-down)} .cell.near{background:var(--tint-near)}
+.cell.failed{border:1px dashed var(--down)}
+.cell.picked{outline:2px solid var(--near);outline-offset:1px}
+.cell:hover{border-color:var(--line)}
+.cell .tk{font-size:10px;font-weight:600}
+.cell.none .tk,.cell.quiet .tk{fill:var(--muted)} .cell.lit .tk,.cell.down .tk,.cell.near .tk{fill:var(--ink)} .cell.failed .tk{fill:var(--ink-2)}
+.cell .line{fill:none;stroke-width:1.4;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke:#fff}
+.cell.none .line,.cell.failed .line{stroke:#c4c4c4}
+.cell .shelf{fill:none;stroke-width:1;vector-effect:non-scaling-stroke;stroke:var(--amber);stroke-dasharray:2.5 2}
+.cell.quiet .shelf,.cell.lit .shelf,.cell.down .shelf{stroke-dasharray:none}
+.cell .over{fill:var(--up)} .cell .under{fill:var(--down)}
+.cell .dot{stroke:#000;stroke-width:1.2;fill:var(--unlit)}
+.cell.lit .dot{fill:var(--up)} .cell.down .dot{fill:var(--down)} .cell.near .dot{fill:var(--near)} .cell.quiet .dot{fill:var(--ink-2)}
+.cell .ring{fill:none;stroke-width:1.1;opacity:.7} .cell.lit .ring{stroke:var(--up)} .cell.down .ring{stroke:var(--down)}
+.cell .fx{fill:none;stroke:var(--down);stroke-width:1.4;vector-effect:non-scaling-stroke}
+.cell .tag{font-size:10px;font-weight:600}
+.cell .tagbg{fill:transparent}
+.cell.lit .tagbg{fill:var(--tag-up)} .cell.lit .tag{fill:var(--up)}
+.cell.lit.h52 .tagbg{fill:var(--up)} .cell.lit.h52 .tag{fill:#000}
+.cell.down .tagbg{fill:var(--tag-down)} .cell.down .tag{fill:var(--down)}
+.cell.failed .tagbg{fill:var(--tag-down)} .cell.failed .tag{fill:var(--down)}
+.cell.near .tag{fill:var(--near)} .cell.none .tag,.cell.quiet .tag{fill:var(--muted);font-weight:400}
+.outline{display:none;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.outline path{fill:none;stroke:var(--up);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.outline path.d{stroke:var(--down)}
+.bf{display:flex;justify-content:space-between;gap:8px;margin-top:6px;font-size:11px;color:var(--muted);padding:0 6px}
+
+/* 구획 62) 상자: 블록 테두리 + 칸 테두리 + 군집 테두리 (v3의 모습) */
+:root[data-frame="boxes"] .block{border:1px solid var(--hair);background:var(--surface);padding:0 0 6px}
+:root[data-frame="boxes"] .block.alarm-on{border-color:var(--up)}
+:root[data-frame="boxes"] .block.selected{border-color:var(--fn)}
+:root[data-frame="boxes"] .cell{background:#000;border-color:var(--hair)}
+:root[data-frame="boxes"] .cell.lit{background:var(--tint-up);border-color:transparent} :root[data-frame="boxes"] .cell.down{background:var(--tint-down);border-color:transparent}
+:root[data-frame="boxes"] .outline{display:block}
+:root[data-frame="boxes"] .gridwrap{padding:0 6px}
+/* 구획 63) 레일: 괘선 + 켜진 블록의 왼쪽 레일 + 켜진 칸의 위쪽 띠 */
+:root[data-frame="rail"] .block.alarm-on{box-shadow:inset 3px 0 0 var(--up)} :root[data-frame="rail"] .block.down-on{box-shadow:inset 3px 0 0 var(--down)}
+:root[data-frame="rail"] .block.alarm-on .bh,:root[data-frame="rail"] .block.down-on .bh{padding-left:10px}
+:root[data-frame="rail"] .block.alarm-on .gridwrap,:root[data-frame="rail"] .block.down-on .gridwrap{padding-left:8px}
+:root[data-frame="rail"] .cell.lit::before,:root[data-frame="rail"] .cell.down::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--up)}
+:root[data-frame="rail"] .cell.down::before{background:var(--down)}
+
+/* 행 배치(장부): ETF 하나가 한 줄, 괘선으로만 구분 */
+:root[data-layout="row"] .blocks{grid-template-columns:1fr;gap:0}
+:root[data-layout="row"] .block{display:grid;grid-template-columns:250px 1fr;gap:12px;align-items:center;padding:5px 6px;border-bottom:1px solid var(--hair-2)}
+:root[data-layout="row"] .block:first-child{border-top:1px solid var(--hair-2)}
+:root[data-layout="row"] .bh{margin:0;border-bottom:0;min-height:0;padding:2px 10px 2px 4px;box-shadow:inset -1px 0 0 var(--hair)}
+:root[data-layout="row"] .bh .meter{bottom:0}
+:root[data-layout="row"] .cells{grid-template-columns:repeat(10,var(--cw))}
+:root[data-layout="row"] .bf{display:none}
+:root[data-layout="row"] .rowhead{display:grid;grid-template-columns:250px 1fr;gap:12px;padding:4px 6px 6px;font-size:11px;letter-spacing:.06em;color:var(--amber);text-transform:uppercase;font-weight:600}
+:root[data-layout="row"] .rowhead span:last-child{letter-spacing:0;text-transform:none;color:var(--muted);font-weight:400}
+:root[data-layout="row"][data-frame="boxes"] .blocks{gap:6px}
+:root[data-layout="row"][data-frame="boxes"] .block{border:1px solid var(--hair);padding:6px 10px}
+:root[data-layout="row"][data-frame="boxes"] .bh{box-shadow:none}
+.rowhead{display:none}
+
+/* 상세 패널 */
+.side{display:block;position:sticky;top:12px;border:1px solid var(--hair);background:var(--surface);padding:10px 12px 12px;font-size:12px;min-width:0}
+.side .sh{display:flex;align-items:center;gap:8px;color:var(--amber);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12px;border-bottom:1px solid var(--hair);padding-bottom:6px;margin-bottom:8px;white-space:nowrap}
+.side .sh small{font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);white-space:nowrap}
+.side .sh .nav{margin-left:auto;display:flex;gap:4px;align-items:center;white-space:nowrap;flex:none}
+.side .sh .nav button{background:transparent;border:1px solid var(--line);color:var(--ink);font:inherit;font-size:11px;padding:1px 7px;cursor:pointer;white-space:nowrap;line-height:1.5}
+.side .sh .nav button:hover{border-color:var(--amber)}
+.side .tk{font-size:20px;font-weight:600;color:var(--amber)} .side .tk small{font-size:11px;color:var(--muted);font-weight:400;margin-left:6px;letter-spacing:.06em}
+.side .nm{color:var(--ink);font-size:12.5px} .side .ko{color:var(--muted);font-size:11.5px;margin-bottom:8px;font-family:var(--sans)}
+.side dl{display:grid;grid-template-columns:max-content 1fr;gap:2px 12px;margin:0 0 8px;font-size:11.5px}
+.side dt{color:var(--muted)} .side dd{margin:0;color:var(--ink)}
+.side .big{margin:6px 0 8px}
+.side .big svg{display:block;width:100%;height:auto;overflow:visible}
+.side .big .l{fill:none;stroke:#fff;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.side .big .s20{fill:none;stroke:var(--amber);stroke-width:1;stroke-dasharray:3 3}
+.side .big .s52{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:1.5 3}
+.side .big .fl{fill:var(--up);opacity:.3} .side .big .fd{fill:var(--down);opacity:.3}
+.side .big text{font-size:9.5px;fill:var(--muted)}
+.side .big .ax{stroke:var(--hair)}
+.side table{border-collapse:collapse;width:100%;font-size:11.5px;margin-bottom:8px}
+.side td{padding:2px 6px 2px 0;white-space:nowrap} .side td.k{color:var(--muted)} .side td.v{color:var(--ink);text-align:right}
+.side .on{color:var(--up);font-weight:600} .side .dn{color:var(--down);font-weight:600} .side .nr{color:var(--near);font-weight:600}
+.side .wlab{color:var(--amber);font-size:11px;letter-spacing:.06em;margin:4px 0 4px;text-transform:uppercase}
+.side .wb{display:grid;grid-template-columns:44px 1fr 96px;align-items:center;gap:8px;margin-bottom:4px}
+.side .wb .wl{color:var(--ink);font-weight:600}
+.side .wb .wt{height:9px;background:var(--amber-bg);overflow:hidden} .side .wb .wt i{display:block;height:100%;background:var(--amber-dim)}
+.side .wb.cur .wt i{background:var(--amber)} .side .wb.cur .wl{color:var(--amber)}
+.side .wb .wv{text-align:right;color:var(--ink-2);white-space:nowrap} .side .wb .wv b{color:var(--ink);font-weight:600}
+.side .blk{display:grid;grid-template-columns:52px 1fr 52px;gap:8px;align-items:center;font-size:11.5px;margin-bottom:3px}
+.side .blk .mt{height:6px;background:var(--hair-2);display:flex} .side .blk .mt i{display:block;height:100%;background:var(--up)} .side .blk .mt i.d{background:var(--down)}
+.side .blk .c{text-align:right;color:var(--ink)}
+.side .st{margin-top:8px;font-size:11px;color:var(--muted)}
+
+/* 상장 점: 속 빈 주황 = bStocks, 속 찬 주황 = 바이낸스 perp, 속 찬 하늘색 = 하이퍼리퀴드 perp */
+.ld{display:inline-flex;align-items:center;gap:4px;vertical-align:middle;margin-left:6px}
+.ld i{display:inline-block;width:6px;height:6px;border-radius:50%;box-sizing:border-box}
+.ld i.b{border:1.4px solid var(--amber)} .ld i.p{background:var(--amber)} .ld i.h{background:var(--near)}
+.ld.lg{gap:4px} .ld.lg i{width:10px;height:10px;font-size:7.5px;font-weight:700;line-height:10px;text-align:center;color:#000;font-family:var(--mono)}
+.ld.lg i.b{border:0;background:var(--amber)}
+.ld.sm{gap:3px;margin-left:0} .ld.sm i{width:5px;height:5px} .ld.sm i.b{border-width:1.2px}
+.cell.dim{opacity:.3}
+.cell .ldot{stroke:none} .cell .ldot.b{fill:none;stroke:var(--amber);stroke-width:1.1;vector-effect:non-scaling-stroke} .cell .ldot.p{fill:var(--amber)} .cell .ldot.h{fill:var(--near)}
+.side .ven{font-size:11px;color:var(--ink-2);margin:-4px 0 8px;line-height:1.55} .side .ven b{color:var(--amber);font-weight:600;display:inline-block;min-width:96px}
+.side .lst{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;font-size:11.5px;color:var(--ink-2);margin:-2px 0 8px;white-space:nowrap}
+.side .lst .ld{margin-left:0}
+.side .ht td.sy .ld{display:flex;margin:2px 0 0}
+.tile .lstn{margin-top:6px;font-size:12px;color:var(--ink-2)} .tile .lstn b{color:var(--ink);font-weight:600}
+.t td.ld-cell{white-space:nowrap}
+
+/* ETF 패널: 매트릭스의 HOLDINGS 패널과 같은 구성 */
+.side .kv{display:grid;grid-template-columns:max-content 1fr;gap:3px 14px;margin:0 0 10px;font-size:12px}
+.side .kv dt{color:var(--muted)} .side .kv dd{margin:0;color:var(--ink);font-weight:600}
+.side .hs{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin:8px 0 2px}
+.side .hs .c{background:var(--tile);color:var(--ink);text-align:center;font-weight:600;padding:5px 2px;font-size:12.5px;border:1px solid var(--hair)}
+.side .hs .c.on{background:var(--tint-up);border-color:var(--up)} .side .hs .c.hi{background:var(--up);color:#000;border-color:var(--up)}
+.side .hs .c small{display:block;font-weight:400;font-size:10px;color:var(--down)}
+.side .hs .c.hi small{color:#000}
+.side .hl{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;font-size:10px;color:var(--muted);text-align:center;margin-bottom:8px}
+.side .chips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px;font-size:11px}
+.side .chips span{padding:0 6px;line-height:1.7;font-weight:600}
+.side .chips .on{background:var(--amber);color:#000} .side .chips .ex{background:var(--down);color:#000} .side .chips .no{background:var(--hair-2);color:var(--muted)}
+.side .sp{display:grid;grid-template-columns:76px 1fr;align-items:center;gap:8px;margin:4px 0;font-size:11.5px;color:var(--ink-2)}
+.side .sp svg{display:block;width:100%;height:28px;overflow:visible}
+.side .sp .ma{fill:none;stroke:var(--amber);stroke-width:1;stroke-dasharray:2 2.5;opacity:.85}
+.side .sp .ln{fill:none;stroke:#fff;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.side .sp .dt{stroke:#000;stroke-width:1.2} .side .sp .dt.u{fill:var(--up)} .side .sp .dt.d{fill:var(--down)}
+.side .sp .rg{fill:none;stroke-width:1.1;opacity:.7} .side .sp .rg.u{stroke:var(--up)} .side .sp .rg.d{stroke:var(--down)}
+.side table.ht{border-collapse:collapse;width:100%;font-size:11.5px;margin-top:6px;table-layout:fixed}
+.side .ht th{text-align:left;color:var(--amber);font-weight:600;font-size:10.5px;padding:4px 4px 4px 0;border-bottom:1px solid var(--hair);letter-spacing:.04em;white-space:nowrap}
+.side .ht th.r,.side .ht td.r{text-align:right}
+.side .ht td{padding:4px 4px 4px 0;border-bottom:1px solid var(--hair-2);vertical-align:middle}
+.side .ht tr:last-child td{border-bottom:0}
+.side .ht td.rk{color:var(--muted);width:18px}
+.side .ht td.sy{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.side .ht td.sy small{display:block;font-weight:400;font-size:9.5px;color:var(--muted);white-space:normal;max-width:96px;line-height:1.2}
+.side .ht td.sy .sw{color:var(--muted);font-weight:600}
+.side .ht td.nm{color:var(--ink-2);font-family:var(--sans);font-size:11px;line-height:1.25;white-space:normal;overflow-wrap:anywhere}
+.side .ht td.w{position:relative;padding-left:6px;white-space:nowrap}
+.side .ht td.w .bar{position:absolute;left:0;top:4px;bottom:4px;background:var(--amber-bg);z-index:0}
+.side .ht td.w span{position:relative;z-index:1;font-weight:600}
+.side .ht td.stt{font-weight:600;white-space:nowrap}
+.side .ht td.stt .on{color:var(--up)} .side .ht td.stt .dn{color:var(--down)} .side .ht td.stt .nr{color:var(--near)} .side .ht td.stt .mu{color:var(--muted);font-weight:400}
+.side .ht tr.rowk{cursor:pointer} .side .ht tr.rowk:hover td{background:var(--surface-2)}
+.side .ht tr.cur td{background:var(--sel)}
+.side .wb .wl{cursor:pointer} .side .wb .wl:hover{text-decoration:underline}
+
+/* 툴팁 */
+.tip{position:fixed;z-index:60;width:300px;max-width:calc(100vw - 16px);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);padding:10px 12px;font-size:12px;line-height:1.5;pointer-events:none}
+.tip[hidden]{display:none}
+.tip .h{display:flex;align-items:baseline;gap:8px;margin-bottom:2px;min-width:0}
+.tip .h .tk{font-weight:600;font-size:14px;flex:none;color:var(--amber)}
+.tip .h .nm{color:var(--ink-2);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.tip .in{color:var(--muted);font-size:11.5px;margin-bottom:6px}
+.tip .wlab{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);margin:4px 0 2px}
+.tip .wb{display:grid;grid-template-columns:44px 1fr 92px;align-items:center;gap:8px;font-size:12px;margin-bottom:3px}
+.tip .wb .wl{font-weight:600}
+.tip .wb .wt{height:9px;background:var(--amber-bg);overflow:hidden} .tip .wb .wt i{display:block;height:100%;background:var(--amber-dim)}
+.tip .wb.cur .wt i{background:var(--amber)} .tip .wb.cur .wl{color:var(--amber)}
+.tip .wb .wv{font-variant-numeric:tabular-nums;color:var(--ink-2);white-space:nowrap;text-align:right} .tip .wb .wv b{font-weight:600;color:var(--ink)}
+.tip table{border-collapse:collapse;font-size:12px;margin-top:6px}
+.tip td{padding:1px 8px 1px 0;white-space:nowrap} .tip td.k{color:var(--muted)} .tip td.v{font-variant-numeric:tabular-nums}
+.tip .on{color:var(--up);font-weight:600} .tip .dn{color:var(--down);font-weight:600} .tip .nr{color:var(--near);font-weight:600}
+.tip .st{margin-top:6px;font-size:11.5px;color:var(--muted)}
+
+/* 표 */
+h2{font-size:12.5px;font-weight:600;margin:28px 0 8px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.tblwrap{overflow-x:auto;border:1px solid var(--hair);background:var(--surface)}
+table.t{width:100%;border-collapse:collapse;font-size:12px;min-width:640px}
+.t th{text-align:left;font-weight:600;color:var(--amber);font-size:11px;padding:8px 10px;border-bottom:1px solid var(--hair);white-space:nowrap;text-transform:uppercase;letter-spacing:.05em}
+.t td{padding:5px 10px;border-bottom:1px solid var(--hair-2);vertical-align:middle}
+.t tr:last-child td{border-bottom:0}
+.t td.m{font-variant-numeric:tabular-nums;white-space:nowrap}
+.t td.r,.t th.r{text-align:right}
+.t td.nm{color:var(--ink-2);max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--sans)}
+.t .on{color:var(--up);font-weight:600} .t .dn{color:var(--down);font-weight:600}
+.t .etfs span{font-size:12px;margin-right:6px}
+.empty{padding:14px;color:var(--muted);font-size:12px}
+
+/* 각주와 안내 */
+.notes{margin:14px 2px 0;font-size:12px;color:var(--ink-2);display:grid;gap:8px;max-width:1000px;font-family:var(--sans)}
+.notes p{margin:0}
+.notes .lab{display:inline-block;font-size:11px;letter-spacing:.06em;color:var(--amber);text-transform:uppercase;margin-right:8px;font-family:var(--mono);font-weight:600}
+.defs{padding:10px 12px;border-left:2px solid var(--amber);background:var(--surface)}
+.defs dl{display:grid;grid-template-columns:max-content 1fr;gap:3px 12px;margin:4px 0 0}
+.defs dt{font-weight:600;color:var(--amber);font-size:12px;font-family:var(--mono)} .defs dd{margin:0}
+details.guide{margin-top:28px;border-top:1px solid var(--hair);padding-top:14px}
+details.guide summary{cursor:pointer;font-weight:600;font-size:12.5px;list-style:none;display:flex;align-items:center;gap:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+details.guide summary::-webkit-details-marker{display:none}
+details.guide summary::before{content:"";width:8px;height:8px;border-right:1.5px solid var(--amber);border-bottom:1.5px solid var(--amber);transform:rotate(-45deg);transition:transform .2s}
+details.guide[open] summary::before{transform:rotate(45deg)}
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px 28px;margin-top:14px;font-family:var(--sans)}
+.guide-grid section{max-width:60ch}
+.guide-grid h3{font-size:13.5px;font-weight:600;margin:0 0 4px;color:var(--ink)}
+.guide-grid p{margin:0 0 6px;color:var(--ink-2);font-size:13px}
+.guide-grid ol{margin:4px 0 0 18px;padding:0;color:var(--ink-2);font-size:13px}
+.guide-grid li{margin-bottom:3px}
+kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);border:1px solid var(--hair);padding:0 5px}
+@media (prefers-reduced-motion: reduce){.bh .meter{transition:none}}
+@media (max-width:960px){.main{grid-template-columns:1fr}.side{position:static}}
+@media (max-width:640px){.wrap{padding-inline:12px}.blocks{grid-template-columns:1fr}:root[data-layout="row"] .block{grid-template-columns:1fr}:root[data-layout="row"] .cells{grid-template-columns:repeat(5,var(--cw))}:root[data-layout="row"] .bh{box-shadow:none}}
+</style>
+
+<div class="wrap">
+  <nav class="site" aria-label="화면">
+    <a href="__TERMINAL_URL__#board" target="__NAV_TARGET__" rel="noopener" title="섹터 전환 매트릭스(SRM)로 이동"><b>1)</b> 매트릭스</a>
+    <a href="__TERMINAL_URL__#rrg" target="__NAV_TARGET__" rel="noopener"><b>3)</b> RRG</a>
+    <a href="__TERMINAL_URL__#brief" target="__NAV_TARGET__" rel="noopener"><b>4)</b> 주간 브리핑</a>
+    <span class="cur"><b>5)</b> 돌파 지도</span>
+    <span class="flags"><span class="flag" title="__PRICE_SOURCE__ 조정 종가. SPY 거래일 축의 마지막 __PRICE_DAYS__거래일(__PRICE_FIRST__ ~ __PRICE_ASOF__)을 칸에 그리고, 그 앞 2년과 전체 이력 최고가로 52주·사상 최고 수준을 잡았습니다">Prices __PRICE_ASOF__</span><span class="flag dim" title="구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷입니다(DRAM·MAGS 는 Roundhill 일일 보유 파일)">Holdings __HOLD_ASOF__</span><span class="flag dim" title="바이낸스 bStocks, 바이낸스 TradFi 선물, 하이퍼리퀴드 HIP-3 목록을 __LIST_TS__에 수집해 대조했습니다">Listing __LIST_ASOF__</span></span>
+  </nav>
+  <div class="cmd">
+    <span class="pr">&gt;</span>
+    <input id="cmd" type="text" autocomplete="off" spellcheck="false" placeholder="티커 또는 명령을 입력하고 Enter (예: NVDA · SMH · SPY · 52W · ROW · HELP · SRM)" aria-label="명령줄">
+    <span class="msg" id="cmdMsg"></span>
+    <button type="button" class="go" id="cmdGo">&lt;GO&gt;</button>
+  </div>
+  <header class="top">
+    <h1><span class="code">BKM</span>돌파 지도</h1>
+    <div class="badges">
+      <button type="button" class="fnlink" id="fnHelp">98) 도움말</button>
+      <span class="badge" id="badgeAsof">종가 __PRICE_ASOF__ · 빌드 __BUILT_AT__</span>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="가격 기준">
+    <button type="button" role="tab" data-mode="usd" aria-selected="true">1) vs. USD</button>
+    <button type="button" role="tab" data-mode="qqq" aria-selected="false">2) vs. QQQ</button>
+    <button type="button" role="tab" data-mode="spy" aria-selected="false">3) vs. SPY</button>
+    <span class="status" id="statusLine"></span>
+  </div>
+
+  <div class="strip">
+    <div class="tile">
+      <div class="lab">Breadth · 켜진 칸</div>
+      <div class="big"><span id="litN">0</span><small id="litP"></small><span class="dn" id="downN"></span></div>
+      <div class="rates" id="rates"></div>
+      <div class="lstn" id="lstn"></div>
+    </div>
+    <div class="tile">
+      <div class="lab">Cluster · 켜진 비율이 높은 블록</div>
+      <ul id="cluster"></ul>
+    </div>
+    <div class="tile alarm">
+      <div class="lab">Alert · 알림 조건 미리보기 (초안)</div>
+      <div id="alarm"></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span class="title">Breakout map<small id="phSub"></small></span><span class="right" id="phRight"></span></div>
+    <div class="ctl">
+      <div class="seg" role="group" aria-label="돌파 지평">
+        <button type="button" data-h="20" data-fn="11" aria-pressed="true">20일</button>
+        <button type="button" data-h="55" data-fn="12" aria-pressed="false">55일</button>
+        <button type="button" data-h="52w" data-fn="13" aria-pressed="false">52주</button>
+        <button type="button" data-h="ath" data-fn="14" aria-pressed="false">사상 최고</button>
+      </div>
+      <div class="seg" role="group" aria-label="블록 정렬">
+        <button type="button" data-sort="ratio" data-fn="21" aria-pressed="true">켜진 비율순</button>
+        <button type="button" data-sort="down" data-fn="22" aria-pressed="false">이탈 비율순</button>
+        <button type="button" data-sort="fixed" data-fn="23" aria-pressed="false">매트릭스 순</button>
+      </div>
+      <div class="seg" role="group" aria-label="배치">
+        <button type="button" data-layout="block" data-fn="31" aria-pressed="true">블록</button>
+        <button type="button" data-layout="row" data-fn="32" aria-pressed="false">행(장부)</button>
+      </div>
+      <div class="seg" role="group" aria-label="상장 필터">
+        <button type="button" data-lst="all" data-fn="71" aria-pressed="true">전체</button>
+        <button type="button" data-lst="listed" data-fn="72" aria-pressed="false">상장만</button>
+      </div>
+      <div class="seg" role="group" aria-label="구획">
+        <button type="button" data-frame="rules" data-fn="61" aria-pressed="true">괘선</button>
+        <button type="button" data-frame="rail" data-fn="62" aria-pressed="false">괘선+레일</button>
+        <button type="button" data-frame="boxes" data-fn="63" aria-pressed="false">상자</button>
+      </div>
+    </div>
+    <p class="hint" id="hint"></p>
+    <div class="main" id="main">
+      <div>
+        <div class="rowhead"><span>ETF · 켜진 칸</span><span>구성 비중 1위 → 10위</span></div>
+        <div class="blocks" id="blocks"></div>
+      </div>
+      <aside class="side" id="side" aria-label="종목 상세"></aside>
+    </div>
+  </div>
+
+  <div class="notes">
+    <p><span class="lab">데이터</span>칸의 종목과 비중은 stockanalysis.com 의 ETF 구성종목 표(__HOLD_ASOF__ 스냅샷, DRAM·MAGS 는 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 값)이고, 가격은 __PRICE_SOURCE__ 조정 종가입니다. 칸의 선은 SPY 거래일 축의 마지막 __PRICE_DAYS__거래일(__PRICE_FIRST__ ~ __PRICE_ASOF__)이며, 판정은 그중 마지막 30일에 대해 내립니다. 52주 고점은 그 앞 2년 종가에서, 사상 최고는 전체 이력(Yahoo range=max, 월 1회 갱신하는 캐시)에서 잡았습니다. QQQ·SPY 대비 탭은 같은 날의 종가 비율에 같은 판정을 적용하되, 비율의 사상 최고는 2년 창 안의 최고 비율입니다. 미국 밖 상장 종목(KRX, TWSE, TSE, TSX, LON 등)은 현지 거래소 종가를 현지 통화 그대로 쓰고 미국 휴장일이 아닌 현지 휴일에는 직전 종가를 두었으며, 칸에는 거래소 접두어를 빼고 종목코드만 적었습니다. 같은 종목이 여러 ETF 에 들어 있으면(NVDA 는 XLK 와 SMH) 두 블록에 모두 나타나며 같은 가격을 씁니다. 가격을 받지 못했거나 상장한 지 45거래일이 안 된 종목은 칸 없이 구성종목 패널의 표에만 남고, 90일 창을 다 채우지 못한 신규 상장 종목은 상장 전 구간을 첫 종가로 채우고 패널에 상장일을 적습니다. 매일 아침(화~토, 한국 시간) GitHub Actions 가 직전 종가로 다시 만들며, 빌드 시각은 <b>__BUILT_AT__</b> 입니다. 저장소 <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">tlzkrh1029/rrg</a> 의 breakout/ 폴더가 이 화면의 코드이고, 판정 규칙은 아래와 같습니다.</p>
+    <div class="defs">
+      <span class="lab">판정 정의</span>
+      <dl>
+        <dt>상장 점</dt><dd>티커 아래 작은 점은 세 거래소의 상장 여부입니다. 속 빈 주황은 바이낸스 bStocks(토큰화 현물), 속 찬 주황은 바이낸스 TradFi 선물(perp), 속 찬 하늘색은 하이퍼리퀴드 HIP-3 주식 선물입니다. 있는 것만 이 순서로 찍고, 없으면 아무것도 없습니다. 블록 머리글의 큰 점은 ETF 자체의 상장이며, b 글자가 든 주황 원이 bStocks입니다. 목록은 저장소 tlzkrh1029/tradfi-ticker-lists 의 output(<span id="lstAsof"></span> 수집, bStocks __LIST_B__종 · 선물 __LIST_F__계약 · HIP-3 __LIST_H__종)이고, 미국 종목은 티커로, 비미국 종목은 거래소:코드(KRX:005930, HKEX:0100)로 대조했으며, 미국에도 상장된 비미국 표기(TSX:ABX → B)는 미국 티커로도 찾았습니다.</dd>
+        <dt>선반</dt><dd>지평 N일(20일·55일) 동안의 최고 종가에서 최근 5일을 뺀 값입니다. 52주와 사상 최고는 창 이전의 고점 수준과 창 안의 종가를 함께 봅니다. 최근 5일을 빼는 이유는, 오르는 중인 종목이 어제의 고점을 오늘 조금 더 넘는 것을 돌파로 세지 않기 위해서입니다.</dd>
+        <dt>돌파</dt><dd>직전 5일의 종가가 모두 선반의 100.5% 이하였다가 오늘 종가가 그 위로 처음 올라선 날입니다. 그날이 경과 1일입니다.</dd>
+        <dt>켜짐</dt><dd>돌파 후 10일 이내이고, 종가가 아직 선반의 99% 위에 있는 칸입니다. 날이 갈수록 채움이 옅어집니다.</dd>
+        <dt>실패</dt><dd>돌파 후 5일 안에 종가가 선반의 99% 아래로 되돌아온 칸입니다. 되돌아온 뒤 5일 동안 빨간 점선 테두리로 표시하고, 봉우리에 빈 원을 남깁니다.</dd>
+        <dt>이탈</dt><dd>돌파의 거울입니다. 바닥(최근 5일을 뺀 N일 최저 종가)의 99.5% 아래로 처음 내려선 날이 이탈 1일이고, 10일 이내에 아직 바닥의 101% 아래에 있으면 빨간색으로 켜집니다. 52주·사상 최고 지평에서는 55일 바닥을 씁니다.</dd>
+        <dt>직전</dt><dd>돌파도 이탈도 아니지만 종가가 천장(지평 고점)의 1% 안에 붙어 있는 칸입니다. 내일 켜질 후보라서 파란 점만 찍습니다.</dd>
+        <dt>유지</dt><dd>돌파한 지 10일이 지났지만 아직 선반 위에 있는 칸입니다. 색은 빼고 선반을 실선으로만 남깁니다.</dd>
+        <dt>표의 진한 색</dt><dd>경과일 표가 진한 초록으로 채워진 칸은 선택한 지평뿐 아니라 52주 고점(또는 사상 최고)까지 넘은 칸입니다.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h2>켜진 칸 목록</h2>
+  <div class="tblwrap"><table class="t" id="litTbl"><thead><tr><th>경과</th><th>종목</th><th>상장</th><th>이름</th><th>ETF</th><th>넘은 지평</th><th class="r">선반 대비</th><th class="r">30일 변화</th></tr></thead><tbody></tbody></table></div>
+  <h2>약세 신호 · 실패한 돌파와 하향 이탈</h2>
+  <div class="tblwrap"><table class="t" id="failTbl"><thead><tr><th>구분</th><th>경과</th><th>종목</th><th>상장</th><th>이름</th><th>ETF</th><th class="r">기준선 대비</th><th class="r">30일 변화</th></tr></thead><tbody></tbody></table></div>
+
+  <details class="guide" open id="guide">
+    <summary>처음 보는 분을 위한 읽는 법</summary>
+    <div class="guide-grid">
+      <section>
+        <h3>1. 칸과 블록</h3>
+        <p>칸 하나가 종목 하나이고, 블록 하나가 ETF 하나입니다. 블록의 칸은 그 ETF의 구성 비중 상위 10개이며, 순서는 비중 순입니다. 가격이 없는 행(심볼이 없는 신탁, 상장 45거래일 미만)은 칸 없이 패널의 표에만 있습니다. 칸을 누르면 종목 상세가, ETF 이름을 누르면 그 행이 파랗게 선택되며 매트릭스와 같은 구성종목 패널(순자산·보유 종목·지평별 켜진 칸·vs SPY·vs QQQ 비율선·구성종목 표)이 오른쪽에 열립니다. 패널의 종목 행을 누르면 그 칸으로 이동합니다. 섹터 전환 매트릭스의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 다섯을 더한 28개가 블록이라서, 매트릭스의 행과 이어 볼 수 있습니다. 맨 위 사이트 줄의 1) 매트릭스를 누르거나 명령줄에 SRM 을 치면 매트릭스로 돌아갑니다. 32) 행(장부) 배치로 바꾸면 매트릭스처럼 ETF 한 줄에 10칸이 놓입니다.</p>
+      </section>
+      <section>
+        <h3>2. 다섯 색에 하나씩 역할</h3>
+        <p>호박색은 장치와 라벨, 흰색은 값, 파란색은 선택된 것과 직전(내일 켜질 후보), 초록은 돌파, 빨강은 이탈과 실패입니다. 색 규약은 매트릭스와 같은 초록=강세(US)입니다.</p>
+      </section>
+      <section>
+        <h3>3. 세 탭은 같은 판정을 다른 자로 잰다</h3>
+        <p>vs. USD는 절대 가격, vs. QQQ와 vs. SPY는 그 지수로 나눈 비율입니다. 시장 전체가 오르는 국면에서는 USD 탭이 온통 켜지고, SPY 탭에서는 시장을 이긴 종목만 남습니다. 세 탭 모두에서 켜진 칸이 진짜 주도주이고, USD에서는 켜졌는데 SPY에서 이탈한 칸은 시장에 얹혀 오른 것입니다.</p>
+      </section>
+      <section>
+        <h3>4. 선과 표 읽기</h3>
+        <p>흰 선이 종가, 호박색 점선이 지평 기준의 고점(천장)입니다. 종가가 천장을 처음 넘은 날 칸이 켜지고, 점선은 실선(바닥)으로 바뀌며 선 위로 넘친 부분이 채워집니다. 이탈은 그 거울로, 바닥 아래로 흐른 부분이 빨간색으로 채워집니다. 오른쪽 위의 표는 경과일이고, 미돌파 칸에는 천장까지 남은 거리가 적힙니다. 1일이 가장 진하고 10일이 지나면 색이 꺼집니다.</p>
+      </section>
+      <section>
+        <h3>상장 점</h3>
+        <p>칸의 티커 아래, ETF 이름 뒤, 구성종목 표, 켜진 칸 목록에 같은 점이 찍힙니다. 돌파한 칸에 점이 있으면 그 종목을 크립토 거래소에서 바로 잡을 수 있다는 뜻이고, 점이 없으면 증권 계좌로만 접근할 수 있습니다. 72) 상장만을 누르면 점이 없는 칸이 흐려집니다. 종목 상세 패널에는 거래소의 원본 심볼(예: NVDAUSDT, xyz:NVDA)과 확인일이 적힙니다.</p>
+      </section>
+      <section>
+        <h3>5. 구획 방식</h3>
+        <p>61) 괘선은 상자 없이 가로 괘선과 칸의 바탕색만으로 구분하고, 62) 괘선+레일은 켜진 블록의 왼쪽에 초록 레일을, 켜진 칸의 위쪽에 띠를 더합니다. 63) 상자는 블록과 칸을 모두 테두리로 감싸는 이전 방식입니다.</p>
+      </section>
+      <section>
+        <h3>6. 명령줄과 번호</h3>
+        <p>맨 위 명령줄에 티커(NVDA)나 ETF(SMH)를 치면 그 칸과 블록으로 이동하고, USD·QQQ·SPY는 탭을, 20·55·52W·ATH는 지평을, ROW·BLOCK은 배치를, HELP는 이 안내를 열고, SRM·MATRIX 는 섹터 전환 매트릭스로 갑니다. 버튼 앞의 번호는 같은 명령입니다(예: 13은 52주).</p>
+      </section>
+      <section>
+        <h3>7. 매주 쓰는 순서</h3>
+        <ol>
+          <li>군집 타일에서 켜진 비율이 가장 높은 블록 세 개를 봅니다. 매트릭스의 전환순 상위 행과 겹치는지 확인합니다.</li>
+          <li>그 블록으로 이동해 켜진 칸이 몰려 있는지, 한두 칸에 그치는지 봅니다. 몰려 있어야 섹터 전환입니다.</li>
+          <li>탭을 vs. SPY로 바꾸어 그 블록의 칸이 남아 있는지 봅니다. 남아 있으면 시장을 이기는 전환입니다.</li>
+          <li>22) 이탈 비율순으로 정렬해 빨간 칸이 몰린 블록을 찾고, 보유 중인 섹터가 거기에 있으면 이탈 조건을 점검합니다.</li>
+        </ol>
+      </section>
+    </div>
+  </details>
+</div>
+
+<div class="tip" id="tip" hidden role="tooltip"></div>
+
+<script>
+const DATA = __DATA__;
+const LISTING = __LISTING__;
+const LST_ASOF = LISTING.asof ? LISTING.asof.replace('T',' ').replace(/:\d\dZ$/,' UTC') : '목록 없음';
+const PRICE_ASOF = DATA.asof, TERMINAL_URL = '__TERMINAL_URL__', NAV_TARGET = '__NAV_TARGET__';
+function goTerminal(hash) { const u = TERMINAL_URL + (hash || ''); if (NAV_TARGET === '_blank') window.open(u, '_blank', 'noopener'); else location.href = u; }
+const VEN = { b: 'bStocks', p: '바이낸스 선물', h: '하이퍼리퀴드' };
+const lstOf = k => LISTING.stocks[k] || null;
+function dotsHTML(f, size) {   // f = {b:[],p:[],h:[]} → <span class="ld"><i class="b">b</i>…</span>
+  if (!f) return '';
+  const parts = [];
+  if (f.b && f.b.length) parts.push(`<i class="b" title="${VEN.b} ${f.b.join(', ')}">${size === 'lg' ? 'b' : ''}</i>`);
+  if (f.p && f.p.length) parts.push(`<i class="p" title="${VEN.p} ${f.p.join(', ')}"></i>`);
+  if (f.h && f.h.length) parts.push(`<i class="h" title="${VEN.h} ${f.h.join(', ')}"></i>`);
+  return parts.length ? `<span class="ld ${size || ''}" aria-label="상장: ${['b','p','h'].filter(x => f[x] && f[x].length).map(x => VEN[x]).join(', ')}">${parts.join('')}</span>` : '';
+}
+function venueText(f, sep) {
+  if (!f) return '세 곳 미상장';
+  return ['b','p','h'].filter(x => f[x] && f[x].length).map(x => `<b>${VEN[x]}</b> ${f[x].join(', ')}`).join(sep || ' · ');
+}
+const PRESET = {};
+const HS = ['20','55','52w','ath'];
+const HLAB = {'20':'20일','55':'55일','52w':'52주','ath':'사상 최고'};
+const MLAB = {usd:'USD (절대 가격)', qqq:'QQQ 대비 비율', spy:'SPY 대비 비율'};
+const CATCODE = {'섹터':'SECT','산업':'IND','테마':'THM'};
+const TOL = 0.99, MAXAGE = 10, FAILWIN = 5, MARGIN = 1.005, GAP = 5, W = 30, NEAR = 0.01;
+
+/* ---- 시계열: usd / qqq / spy ---- */
+const series = {};
+for (const [k, s] of Object.entries(DATA.stocks)) {
+  series[k] = {
+    usd: { c: s.c, h52: s.h52, ath: s.ath },
+    qqq: { c: s.c.map((v, i) => v / DATA.qqq[i]), h52: s.rqqq[0], ath: s.rqqq[1] },
+    spy: { c: s.c.map((v, i) => v / DATA.spy[i]), h52: s.rspy[0], ath: s.rspy[1] },
+  };
+}
+
+/* ---- 판정: 상방(돌파)과 하방(이탈)을 같은 규칙으로 ---- */
+function shelfAt(c, t, H, h52, ath) {
+  if (H === '20' || H === '55') { const N = +H; let m = -Infinity; for (let i = Math.max(0, t - N); i < t - GAP; i++) if (c[i] > m) m = c[i]; return m; }
+  let m = H === '52w' ? h52 : ath; for (let i = 0; i < t - GAP; i++) if (c[i] > m) m = c[i]; return m;
+}
+function floorAt(c, t, H) {
+  const N = (H === '20') ? 20 : 55; let m = Infinity; for (let i = Math.max(0, t - N); i < t - GAP; i++) if (c[i] < m) m = c[i]; return m;
+}
+function ceilingAt(c, t, H, h52, ath) {
+  if (H === '20' || H === '55') { const N = +H; let m = -Infinity; for (let i = Math.max(0, t - N); i < t; i++) if (c[i] > m) m = c[i]; return m; }
+  let m = H === '52w' ? h52 : ath; for (let i = 0; i < t; i++) if (c[i] > m) m = c[i]; return m;
+}
+function judge(c, H, h52, ath) {
+  const last = c.length - 1, up = [], dn = [];
+  for (let t = last - W + 1; t <= last; t++) {
+    const sh = shelfAt(c, t, H, h52, ath) * MARGIN, fl = floorAt(c, t, H) / MARGIN;
+    let pm = -Infinity, pn = Infinity; for (let i = t - GAP; i < t; i++) { if (c[i] > pm) pm = c[i]; if (c[i] < pn) pn = c[i]; }
+    if (c[t] > sh && pm <= sh) up.push([t, sh / MARGIN]);
+    if (c[t] < fl && pn >= fl) dn.push([t, fl * MARGIN]);
+  }
+  const ceiling = ceilingAt(c, last, H, h52, ath), base = { ceiling };
+  const lastUp = up.length ? up[up.length - 1][0] : -1, lastDn = dn.length ? dn[dn.length - 1][0] : -1;
+  if (lastDn > lastUp) {
+    const [le, lvl] = dn[dn.length - 1], days = last - le + 1;
+    let back = null; for (let d = le + 1; d <= last; d++) if (c[d] > lvl / TOL) { back = d; break; }
+    let trough = le; for (let d = le; d <= (back == null ? last : back); d++) if (c[d] < c[trough]) trough = d;
+    if (back == null && days <= MAXAGE) return { ...base, st: 'down', le, lvl, days, trough, over: c[last] / lvl - 1 };
+    return nearOrNone(c, last, ceiling, base);
+  }
+  if (lastUp >= 0) {
+    const [le, lvl] = up[up.length - 1], days = last - le + 1;
+    let fail = null; for (let d = le + 1; d <= last; d++) if (c[d] < lvl * TOL) { fail = d; break; }
+    let peak = le; for (let d = le; d <= (fail == null ? last : fail); d++) if (c[d] > c[peak]) peak = d;
+    if (fail == null) return { ...base, st: days <= MAXAGE ? 'lit' : 'quiet', le, lvl, days, peak, over: c[last] / lvl - 1 };
+    if (fail - le <= FAILWIN && last - fail < FAILWIN) return { ...base, st: 'failed', le, lvl, days, fail, peak, over: c[last] / lvl - 1 };
+  }
+  return nearOrNone(c, last, ceiling, base);
+}
+function nearOrNone(c, last, ceiling, base) {
+  const d = ceiling / c[last] - 1;
+  if (d > 0 && d <= NEAR) return { ...base, st: 'near', dist: d };
+  return { ...base, st: 'none', dist: d };
+}
+const cache = {};
+function J(k, mode, H) {
+  const key = k + '|' + mode + '|' + H; if (cache[key]) return cache[key];
+  const s = series[k][mode]; return (cache[key] = judge(s.c, H, s.h52, s.ath));
+}
+const litAt = (k, mode, H) => J(k, mode, H).st === 'lit';
+function topHorizon(k, mode) { for (const H of ['ath', '52w', '55', '20']) if (litAt(k, mode, H)) return H; return null; }
+const NCELLS = DATA.etfs.reduce((a, e) => a + e.rows.length, 0);
+const etfsOf = {}, weightOf = {};
+DATA.etfs.forEach(e => e.rows.forEach(([k, w], i) => { (etfsOf[k] = etfsOf[k] || []).push(e.t); weightOf[k + '|' + e.t] = { w: parseFloat(w), rank: i + 1, n: e.rows.length }; }));
+
+/* ---- 상태 ---- */
+const state = Object.assign({ H: '20', mode: 'usd', sort: 'ratio', layout: 'block', frame: 'rules', picked: null, selBlock: null, panel: 'stock', lst: 'all' }, PRESET);
+try { const saved = JSON.parse(localStorage.getItem('bmap-view4') || 'null'); if (saved) Object.assign(state, saved); } catch (e) {}
+function applyView() {
+  const root = document.documentElement;
+  root.setAttribute('data-layout', state.layout); root.setAttribute('data-frame', state.frame);
+  try { localStorage.setItem('bmap-view4', JSON.stringify({ layout: state.layout, frame: state.frame })); } catch (e) {}
+}
+
+/* ---- 칸 크기: 폭에 맞춰 계산 ---- */
+const K = { cw: 62, ch: 48, cg: 4, pad: 14, gap: 16 };
+let CW = 62, CH = 48;
+function sizeCells() {
+  const Wc = document.getElementById('blocks').clientWidth || 1200;
+  let cw;
+  if (state.layout === 'row') {
+    const head = Wc <= 640 ? 0 : 250 + 12, inner = Wc - head - 16, cols = Wc <= 640 ? 5 : 10;
+    cw = Math.max(62, Math.min(150, Math.floor((inner - (cols - 1) * K.cg) / cols)));
+  } else {
+    const minBlock = 5 * K.cw + 4 * K.cg + K.pad, n = Math.max(1, Math.floor((Wc + K.gap) / (minBlock + K.gap)));
+    const inner = (Wc - (n - 1) * K.gap) / n - K.pad;
+    cw = Math.max(K.cw, Math.min(120, Math.floor((inner - 4 * K.cg) / 5)));
+  }
+  CW = cw; CH = Math.max(K.ch, Math.min(68, Math.round(cw * 0.72)));
+  document.documentElement.style.setProperty('--cw', CW + 'px');
+  document.documentElement.style.setProperty('--ch', CH + 'px');
+}
+function cellSVG(k, r, blk) {
+  const PX0 = 3, PX1 = CW - 3, PY0 = 22, PY1 = CH - 3;
+  const s = series[k][state.mode], c = s.c, n = c.length, seg = c.slice(n - W);
+  const label = k.length > 6 ? k.slice(0, 6) : k;
+  const lf = lstOf(k);
+  let lo = Math.min(...seg), hi = Math.max(...seg);
+  const lvl = (r.st === 'none' || r.st === 'near') ? r.ceiling : r.lvl;
+  const showLvl = lvl != null && lvl <= hi * 1.15 && lvl >= lo * 0.85;
+  if (showLvl) { lo = Math.min(lo, lvl); hi = Math.max(hi, lvl); }
+  const pad = (hi - lo) * 0.08 || 1; lo -= pad; hi += pad;
+  const xs = i => PX0 + i * (PX1 - PX0) / (W - 1), ys = v => PY1 - (v - lo) / (hi - lo) * (PY1 - PY0);
+  const pts = seg.map((v, i) => `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
+  const cid = `cp_${blk}_${k.replace(/[^A-Za-z0-9]/g, '_')}`;
+  let out = `<svg viewBox="0 0 ${CW} ${CH}" aria-hidden="true">`;
+  out += `<text class="tk" x="4" y="11">${label}</text>`;
+  if (lf) { let dx = 6.5; for (const v of ['b','p','h']) { if (lf[v] && lf[v].length) { out += v === 'b' ? `<circle class="ldot b" cx="${dx}" cy="17.5" r="1.9"/>` : `<circle class="ldot ${v}" cx="${dx}" cy="17.5" r="2.3"/>`; dx += 7; } } }
+  if (showLvl) out += `<line class="shelf" x1="${PX0}" y1="${ys(lvl).toFixed(1)}" x2="${PX1}" y2="${ys(lvl).toFixed(1)}"/>`;
+  if (r.st === 'lit' || r.st === 'down') {
+    const i0 = Math.max(0, r.le - (n - W)), op = Math.max(0.16, 0.5 - 0.034 * (r.days - 1)), yl = ys(r.lvl).toFixed(1);
+    const poly = seg.slice(i0).map((v, i) => `${xs(i0 + i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
+    const rect = r.st === 'lit' ? `<rect x="0" y="0" width="${CW}" height="${yl}"/>` : `<rect x="0" y="${yl}" width="${CW}" height="${CH}"/>`;
+    out += `<clipPath id="${cid}">${rect}</clipPath>`;
+    out += `<polygon class="${r.st === 'lit' ? 'over' : 'under'}" style="opacity:${op.toFixed(2)}" clip-path="url(#${cid})" points="${poly} ${PX1},${yl} ${xs(i0).toFixed(1)},${yl}"/>`;
+  }
+  out += `<polyline class="line" points="${pts}"/>`;
+  if (r.st === 'failed') { const pi = r.peak - (n - W); out += `<circle class="fx" cx="${xs(pi).toFixed(1)}" cy="${ys(c[r.peak]).toFixed(1)}" r="2.6"/>`; }
+  const ex = PX1, ey = ys(seg[W - 1]).toFixed(1);
+  if ((r.st === 'lit' || r.st === 'down') && r.days <= 3) out += `<circle class="ring" cx="${ex}" cy="${ey}" r="4.6"/>`;
+  out += `<circle class="dot" cx="${ex}" cy="${ey}" r="2.1"/>`;
+  let tag = null;
+  if (r.st === 'lit') tag = `${r.days}d`;
+  else if (r.st === 'down') tag = `▼${r.days}d`;
+  else if (r.st === 'failed') tag = `×${r.days}d`;
+  else if ((r.st === 'none' || r.st === 'near') && r.dist != null) tag = r.dist < 0.001 ? '고점' : `↑${r.dist < 0.095 ? (r.dist * 100).toFixed(1) : Math.round(r.dist * 100)}%`;
+  if (tag) {
+    const w = (/[가-힣]/.test(tag) ? tag.length * 10 : tag.length * 6.2) + 6;
+    out += `<rect class="tagbg" x="${(CW - 3 - w).toFixed(1)}" y="2" width="${w.toFixed(1)}" height="12"/>`;
+    out += `<text class="tag" x="${(CW - 3 - w / 2).toFixed(1)}" y="11.2" text-anchor="middle">${tag}</text>`;
+  }
+  return out + '</svg>';
+}
+
+/* ---- 블록 ---- */
+function blockStats(e) {
+  let lit = 0, down = 0, failed = 0, n = e.rows.length;
+  e.rows.forEach(([k]) => { const st = J(k, state.mode, state.H).st; if (st === 'lit') lit++; else if (st === 'down') down++; else if (st === 'failed') failed++; });
+  return { lit, down, failed, n, ratio: n ? lit / n : 0, dratio: n ? down / n : 0, fratio: n ? failed / n : 0 };
+}
+function drawOutlines() {
+  document.querySelectorAll('.gridwrap').forEach(gw => {
+    const cells = [...gw.querySelectorAll('.cell')], n = cells.length; if (!n) return;
+    const top0 = cells[0].offsetTop, cols = Math.max(1, cells.filter(c => Math.abs(c.offsetTop - top0) < 2).length);
+    const paths = { lit: '', down: '' };
+    for (const cls of ['lit', 'down']) {
+      const is = i => i >= 0 && i < n && cells[i].classList.contains(cls);
+      const o = 2.5;
+      for (let i = 0; i < n; i++) {
+        if (!is(i)) continue;
+        const el = cells[i], r = Math.floor(i / cols), cc = i % cols;
+        const x0 = el.offsetLeft - o, y0 = el.offsetTop - o, x1 = el.offsetLeft + el.offsetWidth + o, y1 = el.offsetTop + el.offsetHeight + o;
+        const up = r > 0 && is(i - cols), dn = is(i + cols), lf = cc > 0 && is(i - 1), rt = cc < cols - 1 && is(i + 1);
+        let d = '';
+        if (!up) d += `M${x0},${y0}L${x1},${y0}`; if (!dn) d += `M${x0},${y1}L${x1},${y1}`;
+        if (!lf) d += `M${x0},${y0}L${x0},${y1}`; if (!rt) d += `M${x1},${y0}L${x1},${y1}`;
+        paths[cls] += d;
+      }
+    }
+    let svg = gw.querySelector('svg.outline');
+    if (!svg) { svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('class', 'outline'); svg.setAttribute('aria-hidden', 'true'); gw.appendChild(svg); }
+    svg.innerHTML = (paths.lit ? `<path d="${paths.lit}"/>` : '') + (paths.down ? `<path class="d" d="${paths.down}"/>` : '');
+  });
+}
+let order = [], blockOrder = [];
+function render() {
+  const blocks = document.getElementById('blocks');
+  sizeCells();
+  let list = DATA.etfs.map(e => ({ e, s: blockStats(e) }));
+  if (state.sort === 'ratio') list.sort((a, b) => b.s.ratio - a.s.ratio || b.s.lit - a.s.lit || a.s.dratio - b.s.dratio);
+  else if (state.sort === 'down') list.sort((a, b) => b.s.dratio - a.s.dratio || b.s.down - a.s.down || b.s.fratio - a.s.fratio);
+  order = []; blockOrder = list.map(x => x.e.t);
+  blocks.innerHTML = list.map(({ e, s }) => {
+    const cells = e.rows.map(([k]) => {
+      const r = J(k, state.mode, state.H), top = r.st === 'lit' ? topHorizon(k, state.mode) : null;
+      const cls = 'cell ' + r.st + (top === '52w' || top === 'ath' ? ' h52' : '') + (state.picked && state.picked.k === k && state.picked.etf === e.t ? ' picked' : '') + (state.lst === 'listed' && !lstOf(k) ? ' dim' : '');
+      order.push({ k, etf: e.t });
+      return `<button type="button" class="${cls}" data-k="${k}" data-etf="${e.t}" aria-label="${k} ${DATA.stocks[k].n}">${cellSVG(k, r, e.t)}</button>`;
+    }).join('');
+    const alarm = s.ratio >= 0.5, downOn = s.dratio >= 0.5, exh = s.fratio >= 0.3 || downOn;
+    return `<section class="block${alarm ? ' alarm-on' : ''}${downOn ? ' down-on' : ''}${state.selBlock === e.t ? ' selected' : ''}" id="blk-${e.t}" aria-label="${e.t} ${e.ko}">
+      <div class="bh" role="button" tabindex="0" data-blk="${e.t}" aria-label="${e.t} ${e.ko} ETF 상세"><span class="meter" style="width:${(s.ratio * 100).toFixed(0)}%"></span>${s.down ? `<span class="meter d" style="width:${(s.dratio * 100).toFixed(0)}%"></span>` : ''}
+        <span class="tk">${e.t}</span><span class="us">US</span><span class="ko">${e.ko}</span><span class="cat">${CATCODE[e.tag]}</span>${dotsHTML(LISTING.etfs[e.t], 'lg')}
+        ${alarm ? '<span class="chip on">알림</span>' : ''}${exh ? '<span class="chip ex">약세</span>' : ''}
+        <span class="ct"><b>${s.lit}</b>/${s.n}${s.down ? ` <span class="dn">▼${s.down}</span>` : ''}${s.failed ? ` <span class="dn">×${s.failed}</span>` : ''}</span></div>
+      <div class="gridwrap"><div class="cells">${cells}</div></div>
+      <div class="bf"><span>상위 ${s.n}개 · 비중 ${e.top10}</span><span>${e.asof}</span></div>
+    </section>`;
+  }).join('');
+  drawOutlines();
+  renderSummary(list);
+  renderTables();
+  renderSide();
+  document.getElementById('hint').innerHTML = `기준: <b>${MLAB[state.mode]}</b>의 ${HLAB[state.H]} 고점 돌파와 ${state.H === '20' ? '20일' : '55일'} 저점 이탈. 칸을 누르면 종목 상세가, ETF 이름을 누르면 구성종목 패널이 오른쪽에 열립니다.`;
+  document.getElementById('phSub').textContent = `${state.mode.toUpperCase()} · ${HLAB[state.H]}`;
+  document.getElementById('phRight').textContent = `블록 ${DATA.etfs.length} · 칸 ${NCELLS} · 종가 ${PRICE_ASOF} · 구성종목 ${DATA.holdings_asof}`;
+}
+function renderSummary(list) {
+  const total = DATA.etfs.reduce((a, e) => a + e.rows.length, 0);
+  const counts = {}, dcount = list.reduce((a, x) => a + x.s.down, 0);
+  for (const H of HS) { let n = 0; DATA.etfs.forEach(e => e.rows.forEach(([k]) => { if (litAt(k, state.mode, H)) n++; })); counts[H] = n; }
+  const lit = counts[state.H];
+  document.getElementById('litN').textContent = lit;
+  document.getElementById('litP').textContent = `/ ${total} 칸 · ${(lit / total * 100).toFixed(0)}%`;
+  document.getElementById('downN').textContent = dcount ? `▼ 이탈 ${dcount}` : '';
+  document.getElementById('rates').innerHTML = HS.map(H => `<span class="${H === state.H ? 'on' : ''}">${HLAB[H]} <b>${(counts[H] / total * 100).toFixed(0)}%</b></span>`).join('');
+  { const seen = new Set(); let any = 0, b = 0, p = 0, h = 0, litU = 0;
+    DATA.etfs.forEach(e => e.rows.forEach(([k]) => { if (seen.has(k) || !litAt(k, state.mode, state.H)) return; seen.add(k); litU++; const f = lstOf(k); if (f) { any++; if (f.b.length) b++; if (f.p.length) p++; if (f.h.length) h++; } }));
+    document.getElementById('lstn').innerHTML = `켜진 종목 ${litU} 중 거래소 상장 <b>${any}</b> · ${dotsHTML({ b: ['x'], p: [], h: [] }, 'sm')} ${b} · ${dotsHTML({ b: [], p: ['x'], h: [] }, 'sm')} ${p} · ${dotsHTML({ b: [], p: [], h: ['x'] }, 'sm')} ${h}`; }
+  const ranked = list.slice().sort((a, b) => b.s.ratio - a.s.ratio || b.s.lit - a.s.lit).filter(x => x.s.lit > 0).slice(0, 6);
+  document.getElementById('cluster').innerHTML = ranked.length ? ranked.map(({ e, s }) =>
+    `<li><button type="button" data-go="${e.t}"><span class="tk">${e.t}</span><span class="ko">${e.ko}</span><span class="mt"><i style="width:${(s.ratio * 100).toFixed(0)}%"></i><i class="d" style="width:${(s.dratio * 100).toFixed(0)}%"></i></span><span class="ct">${s.lit}/${s.n}${s.down ? `<span class="d"> ▼${s.down}</span>` : ''}</span></button></li>`).join('')
+    : '<li style="color:var(--muted)">켜진 블록이 없습니다.</li>';
+  const on = list.filter(x => x.s.ratio >= 0.5), ex = list.filter(x => x.s.fratio >= 0.3), dn = list.filter(x => x.s.dratio >= 0.5);
+  document.getElementById('alarm').innerHTML =
+    `<p><span class="k ${on.length ? 'on' : 'no'}">켜진 칸 50% 이상</span>${on.length ? `<span class="who">${on.map(x => `${x.e.t} ${x.s.lit}/${x.s.n}`).join(' · ')}</span>` : '<span style="color:var(--muted)">해당 블록 없음</span>'}</p>
+     <p><span class="k ${dn.length ? 'ex' : 'no'}">이탈 칸 50% 이상</span>${dn.length ? `<span class="who">${dn.map(x => `${x.e.t} ▼${x.s.down}/${x.s.n}`).join(' · ')}</span>` : '<span style="color:var(--muted)">해당 블록 없음</span>'}</p>
+     <p><span class="k ${ex.length ? 'ex' : 'no'}">실패 돌파 30% 이상</span>${ex.length ? `<span class="who">${ex.map(x => `${x.e.t} ×${x.s.failed}/${x.s.n}`).join(' · ')}</span>` : '<span style="color:var(--muted)">해당 블록 없음</span>'}</p>
+     <p style="color:var(--muted);font-size:11.5px;margin-top:6px">임계값은 초안입니다. 실제 데이터에서 비율의 분포를 본 뒤 정합니다.</p>`;
+}
+function renderTables() {
+  const rowsLit = [], rowsWeak = [], seen = new Set();
+  const pct = v => (v >= 0 ? '+' : '') + (v * 100).toFixed(1) + '%';
+  DATA.etfs.forEach(e => e.rows.forEach(([k]) => {
+    if (seen.has(k)) return; seen.add(k);
+    const r = J(k, state.mode, state.H), c = series[k][state.mode].c, n = c.length, ret30 = c[n - 1] / c[n - W] - 1;
+    if (r.st === 'lit') rowsLit.push({ k, r, top: topHorizon(k, state.mode), ret30 });
+    else if (r.st === 'failed' || r.st === 'down') rowsWeak.push({ k, r, ret30 });
+  }));
+  rowsLit.sort((a, b) => a.r.days - b.r.days || b.r.over - a.r.over);
+  rowsWeak.sort((a, b) => a.r.days - b.r.days);
+  const etfTags = k => `<span class="etfs">${etfsOf[k].map(t => `<span>${t}</span>`).join('')}</span>`;
+  document.querySelector('#litTbl tbody').innerHTML = rowsLit.length ? rowsLit.map(x => `<tr><td class="m on">${x.r.days}일째</td><td class="m">${x.k}</td><td class="ld-cell">${dotsHTML(lstOf(x.k), 'sm') || '<span style="color:var(--muted)">—</span>'}</td><td class="nm">${DATA.stocks[x.k].n}</td><td>${etfTags(x.k)}</td><td>${HLAB[x.top]}</td><td class="m r">${pct(x.r.over)}</td><td class="m r">${pct(x.ret30)}</td></tr>`).join('')
+    : `<tr><td colspan="8" class="empty">이 기준·지평에서 켜진 칸이 없습니다.</td></tr>`;
+  document.querySelector('#failTbl tbody').innerHTML = rowsWeak.length ? rowsWeak.map(x => `<tr><td class="dn">${x.r.st === 'down' ? '이탈' : '실패'}</td><td class="m dn">${x.r.days}일</td><td class="m">${x.k}</td><td class="ld-cell">${dotsHTML(lstOf(x.k), 'sm') || '<span style="color:var(--muted)">—</span>'}</td><td class="nm">${DATA.stocks[x.k].n}</td><td>${etfTags(x.k)}</td><td class="m r">${pct(x.r.over)}</td><td class="m r">${pct(x.ret30)}</td></tr>`).join('')
+    : `<tr><td colspan="8" class="empty">이 기준·지평에서 약세 신호가 없습니다.</td></tr>`;
+}
+
+/* ---- 상세: 툴팁과 오른쪽 패널 ---- */
+function horizonRows(k) {
+  const c = series[k][state.mode].c, n = c.length;
+  return HS.map(H => {
+    const r = J(k, state.mode, H);
+    if (r.st === 'lit') return `<tr><td class="k">${HLAB[H]}</td><td class="v on">돌파 ${r.days}일째 · 선반 +${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'down') return `<tr><td class="k">${HLAB[H]}</td><td class="v dn">이탈 ${r.days}일째 · 바닥 ${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'failed') return `<tr><td class="k">${HLAB[H]}</td><td class="v dn">실패 · 돌파 후 ${r.days}일, 선반 ${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'quiet') return `<tr><td class="k">${HLAB[H]}</td><td class="v">유지 ${r.days}일째 · 선반 +${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'near') return `<tr><td class="k">${HLAB[H]}</td><td class="v nr">직전 · 고점까지 ${(r.dist * 100).toFixed(1)}%</td></tr>`;
+    return `<tr><td class="k">${HLAB[H]}</td><td class="v" style="color:var(--muted)">${r.dist == null ? '–' : r.dist <= 0.001 ? '고점 부근' : '고점까지 ' + (r.dist * 100).toFixed(1) + '%'}</td></tr>`;
+  }).join('');
+}
+function weightBars(k, etf) {
+  const mem = etfsOf[k].map(t => ({ t, ...weightOf[k + '|' + t] })).sort((a, b) => b.w - a.w), scale = Math.max(25, ...mem.map(m => m.w));
+  return mem.map(m => `<div class="wb${m.t === etf ? ' cur' : ''}"><span class="wl" data-goetf="${m.t}" title="${m.t} 블록 보기">${m.t}</span><span class="wt"><i style="width:${(m.w / scale * 100).toFixed(1)}%"></i></span><span class="wv"><b>${m.w.toFixed(2)}%</b> · ${m.rank}위</span></div>`).join('');
+}
+const tip = document.getElementById('tip');
+function tipHTML(k, etf) {
+  const st = DATA.stocks[k], c = series[k][state.mode].c, n = c.length, ret30 = c[n - 1] / c[n - W] - 1;
+  return `<div class="h"><span class="tk">${k}</span><span class="nm">${st.n}</span></div>
+    <div class="in">${st.x ? st.x + ' 상장 · ' : ''}${MLAB[state.mode]} 30일 ${(ret30 >= 0 ? '+' : '') + (ret30 * 100).toFixed(1)}%</div>
+    <div class="in">${dotsHTML(lstOf(k), 'sm')} ${venueText(lstOf(k))}</div>
+    <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${weightBars(k, etf)}
+    <table>${horizonRows(k)}</table>
+    <div class="st">종가 ${PRICE_ASOF}${st.sym ? ' · ' + st.sym : ''}${st.ipo ? ' · 상장 ' + st.ipo : ''}</div>`;
+}
+function showTip(btn) {
+  tip.innerHTML = tipHTML(btn.dataset.k, btn.dataset.etf); tip.hidden = false;
+  const r = btn.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = r.left + r.width / 2 - tw / 2, y = r.bottom + 8;
+  if (x + tw > window.innerWidth - 8) x = window.innerWidth - tw - 8; if (x < 8) x = 8;
+  if (y + th > window.innerHeight - 8) y = r.top - th - 8;
+  tip.style.left = x + 'px'; tip.style.top = Math.max(8, y) + 'px';
+}
+const hideTip = () => { tip.hidden = true; };
+function bigChart(k) {
+  const s = series[k][state.mode], c = s.c, n = c.length, Wd = 276, Hd = 110, L = 4, R = 44, T = 8, B = 14;
+  const r = J(k, state.mode, state.H);
+  let lo = Math.min(...c), hi = Math.max(...c);
+  const h52 = s.h52; if (h52 <= hi * 1.12) hi = Math.max(hi, h52);
+  const pad = (hi - lo) * 0.06; lo -= pad; hi += pad;
+  const xs = i => L + i * (Wd - L - R) / (n - 1), ys = v => Hd - B - (v - lo) / (hi - lo) * (Hd - T - B);
+  const pts = c.map((v, i) => `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
+  let out = `<svg viewBox="0 0 ${Wd} ${Hd}" aria-hidden="true">`;
+  out += `<line class="ax" x1="${L}" y1="${Hd - B}" x2="${Wd - R}" y2="${Hd - B}"/>`;
+  [0, n - W, n - 1].forEach(i => { const d = DATA.dates[i] || ''; out += `<text x="${xs(i).toFixed(1)}" y="${Hd - 3}" text-anchor="${i === n - 1 ? 'end' : i === 0 ? 'start' : 'middle'}">${i === n - W ? '−30일 ' + d.slice(5) : d.slice(5)}</text>`; });
+  if (r.lvl != null && r.lvl >= lo && r.lvl <= hi) {
+    const yl = ys(r.lvl).toFixed(1), i0 = r.le, poly = c.slice(i0).map((v, i) => `${xs(i0 + i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
+    if (r.st === 'lit' || r.st === 'down') out += `<clipPath id="bc"><rect x="0" y="${r.st === 'lit' ? 0 : yl}" width="${Wd}" height="${r.st === 'lit' ? yl : Hd}"/></clipPath><polygon class="${r.st === 'lit' ? 'fl' : 'fd'}" clip-path="url(#bc)" points="${poly} ${xs(n - 1).toFixed(1)},${yl} ${xs(i0).toFixed(1)},${yl}"/>`;
+    out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/><text x="${Wd - R + 3}" y="${(+yl + 3).toFixed(1)}">${r.st === 'down' ? '바닥' : '선반'} ${HLAB[state.H]}</text>`;
+  } else if (r.ceiling != null && r.ceiling >= lo && r.ceiling <= hi) {
+    const yl = ys(r.ceiling).toFixed(1); out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/><text x="${Wd - R + 3}" y="${(+yl + 3).toFixed(1)}">천장 ${HLAB[state.H]}</text>`;
+  }
+  if (h52 >= lo && h52 <= hi && state.H !== '52w' && state.H !== 'ath') { const y5 = ys(h52).toFixed(1); out += `<line class="s52" x1="${L}" y1="${y5}" x2="${Wd - R}" y2="${y5}"/><text x="${Wd - R + 3}" y="${(+y5 + 3).toFixed(1)}">52주 고점</text>`; }
+  out += `<polyline class="l" points="${pts}"/>`;
+  return out + '</svg>';
+}
+/* ---- ETF 시계열: ETF 자체 종가(e.c)가 있으면 그것을, 없으면 구성 상위 종목의 비중 가중 평균(각 종목을 첫날=1로 정규화) ---- */
+const etfCache = {};
+function etfSeries(t, mode) {
+  const key = t + '|' + mode; if (etfCache[key]) return etfCache[key];
+  const e = DATA.etfs.find(x => x.t === t), n = DATA.spy.length, out = new Array(n).fill(0);
+  if (e.c && e.c.length === n) { for (let i = 0; i < n; i++) out[i] = e.c[i] / e.c[0]; }
+  else {
+    let wsum = 0;
+    e.rows.forEach(([k, w]) => { const wv = parseFloat(w) || 1, c = DATA.stocks[k].c; wsum += wv; for (let i = 0; i < n; i++) out[i] += wv * c[i] / c[0]; });
+    for (let i = 0; i < n; i++) out[i] /= wsum || 1;
+  }
+  if (mode !== 'usd') { const b = mode === 'spy' ? DATA.spy : DATA.qqq; for (let i = 0; i < n; i++) out[i] = out[i] / (b[i] / b[0]); }
+  return (etfCache[key] = out);
+}
+function miniSpark(vals) {   // 매트릭스의 비율선과 같은 문법: 흰 선, 호박 점선 이동평균, 끝점 색은 이동평균 위(초록)·아래(빨강)
+  const w = 200, h = 28, n = vals.length, mn = Math.min(...vals), mx = Math.max(...vals), rng = (mx - mn) || 1;
+  const xs = i => 2 + i * (w - 4) / (n - 1), ys = v => h - 3 - (v - mn) / rng * (h - 6);
+  const ma = vals.map((_, i) => { const a = vals.slice(Math.max(0, i - 19), i + 1); return a.reduce((s, x) => s + x, 0) / a.length; });
+  const d = vals.map((v, i) => v - ma[i]), last = d[n - 1], above = last >= 0, fresh = d.slice(n - 6, n - 1).some(x => (x >= 0) !== above);
+  const P = a => a.map((v, i) => `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
+  const ex = xs(n - 1).toFixed(1), ey = ys(vals[n - 1]).toFixed(1), c = above ? 'u' : 'd';
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><polyline class="ma" points="${P(ma)}" vector-effect="non-scaling-stroke"/><polyline class="ln" points="${P(vals)}" vector-effect="non-scaling-stroke"/>${fresh ? `<circle class="rg ${c}" cx="${ex}" cy="${ey}" r="5"/>` : ''}<circle class="dt ${c}" cx="${ex}" cy="${ey}" r="2.6"/></svg>`;
+}
+function stateTag(k, etf) {
+  const r = J(k, state.mode, state.H);
+  if (r.st === 'lit') return `<span class="on">${r.days}d</span>`;
+  if (r.st === 'down') return `<span class="dn">▼${r.days}d</span>`;
+  if (r.st === 'failed') return `<span class="dn">×${r.days}d</span>`;
+  if (r.st === 'near') return `<span class="nr">↑${(r.dist * 100).toFixed(1)}%</span>`;
+  if (r.st === 'quiet') return `<span class="mu">유지</span>`;
+  return `<span class="mu">${r.dist == null ? '–' : r.dist <= 0.001 ? '고점' : '↑' + (r.dist < 0.095 ? (r.dist * 100).toFixed(1) : Math.round(r.dist * 100)) + '%'}</span>`;
+}
+function etfPanelHTML(t) {
+  const e = DATA.etfs.find(x => x.t === t), s = blockStats(e), idx = blockOrder.indexOf(t);
+  const counts = HS.map(H => { let l = 0, d = 0; e.rows.forEach(([k]) => { const st = J(k, state.mode, H).st; if (st === 'lit') l++; else if (st === 'down') d++; }); return { H, l, d }; });
+  const strip = counts.map(x => { const r = x.l / e.rows.length; const cls = r >= 0.5 ? 'hi' : (x.l ? 'on' : ''); return `<div class="c ${cls}">${x.l}/${e.rows.length}${x.d ? `<small>▼${x.d}</small>` : ''}</div>`; }).join('');
+  const labels = HS.map(H => `<span>${HLAB[H]}</span>`).join('');
+  const alarm = s.ratio >= 0.5, downOn = s.dratio >= 0.5, exh = s.fratio >= 0.3;
+  const chips = `<span class="${alarm ? 'on' : 'no'}">알림 ${alarm ? '켜짐' : '꺼짐'}</span><span class="${downOn ? 'ex' : 'no'}">이탈 ${downOn ? '주의' : '없음'}</span><span class="${exh ? 'ex' : 'no'}">실패 ${exh ? '몰림' : '없음'}</span>`;
+  const spy = etfSeries(t, 'spy').slice(-60), qqq = etfSeries(t, 'qqq').slice(-60);
+  let lb = 0, lp = 0, lh = 0, ln = 0;
+  e.rows_all.forEach(([sym, , , k]) => { const f = k ? lstOf(k) : (LISTING.swaps[sym] || null); if (!f) return; ln++; if (f.b.length) lb++; if (f.p.length) lp++; if (f.h.length) lh++; });
+  const lstLine = `<div class="lst"><span style="color:var(--muted)">상장 (상위 ${e.rows_all.length})</span>${dotsHTML({ b: ['x'], p: [], h: [] }, 'sm')} ${lb} · ${dotsHTML({ b: [], p: ['x'], h: [] }, 'sm')} ${lp} · ${dotsHTML({ b: [], p: [], h: ['x'] }, 'sm')} ${lh} 행 · 확인 ${LST_ASOF.slice(0, 10)}</div>`;
+  const maxW = Math.max(...e.rows_all.map(r => parseFloat(r[2])));
+  const rows = e.rows_all.map((r, i) => {
+    const [sym, name, w, k, note] = r, wv = parseFloat(w);
+    const isSwap = k == null, cur = state.picked && k && state.picked.k === k && state.picked.etf === t;
+    const lf = isSwap ? (LISTING.swaps[sym] || null) : lstOf(k);
+    const NOTE = { swap: 'SWAP/T-BILL', nosym: '심볼 없음', nodata: '가격 없음' };
+    const sy = (isSwap ? `<span class="sw">${NOTE[note] || '칸 없음'}</span><small>${sym || name}</small>` : k) + dotsHTML(lf, 'sm');
+    return `<tr class="${k ? 'rowk' : ''}${cur ? ' cur' : ''}" ${k ? `data-k="${k}"` : ''}><td class="rk">${i + 1}</td><td class="sy">${sy}</td><td class="nm">${name}</td><td class="w r"><span class="bar" style="width:${(wv / maxW * 100).toFixed(1)}%"></span><span>${w}</span></td><td class="stt r">${k ? stateTag(k, t) : '<span class="mu">—</span>'}</td></tr>`;
+  }).join('');
+  return `<div class="sh">Holdings<small>구성종목 상위 10</small><span class="nav"><span style="color:var(--muted);margin-right:4px;font-weight:400;letter-spacing:0">${idx + 1}/${blockOrder.length}</span><button type="button" id="prevB" title="이전 ETF">‹ 이전</button><button type="button" id="nextB" title="다음 ETF">다음 ›</button></span></div>
+    <div class="tk">${e.t}${dotsHTML(LISTING.etfs[e.t], 'lg')}<small>US EQUITY</small></div>
+    <div class="nm">${e.name}</div>
+    <div class="ko">${e.ko} · ${e.tag} ETF</div>
+    <dl class="kv"><dt>순자산</dt><dd>${e.aum}</dd><dt>보유 종목</dt><dd>${e.n}개</dd><dt>상위 10개 비중</dt><dd>${e.top10}</dd><dt>기준일</dt><dd>${e.asof}</dd><dt>출처</dt><dd><a href="${e.url}" target="_blank" rel="noopener">stockanalysis.com</a></dd></dl>
+    ${lstLine}
+    <div class="wlab">돌파 폭 · 지평별 켜진 칸 (${MLAB[state.mode]})</div>
+    <div class="hs">${strip}</div><div class="hl">${labels}</div>
+    <div class="chips">${chips}</div>
+    <div class="sp"><span>vs SPY 12W</span>${miniSpark(spy)}</div>
+    <div class="sp"><span>vs QQQ 12W</span>${miniSpark(qqq)}</div>
+    <table class="ht"><colgroup><col style="width:20px"><col style="width:84px"><col><col style="width:66px"><col style="width:46px"></colgroup><thead><tr><th>#</th><th>티커</th><th>종목명</th><th class="r">비중</th><th class="r">상태</th></tr></thead><tbody>${rows}</tbody></table>
+    <div class="st">${e.c ? 'vs SPY·vs QQQ 는 ETF 종가를 지수로 나눈 12주 비율선(호박 점선은 20일 이동평균)입니다.' : '이 ETF 의 종가가 아직 없어 비율선은 상위 구성종목의 비중 가중 평균으로 그렸습니다.'} 종가 ${PRICE_ASOF} · 구성종목 ${e.asof}.</div>`;
+}
+function renderSide() {
+  const side = document.getElementById('side');
+  if (state.panel === 'etf' && state.selBlock && DATA.etfs.some(x => x.t === state.selBlock)) {
+    side.innerHTML = etfPanelHTML(state.selBlock);
+    document.getElementById('prevB').addEventListener('click', () => stepBlock(-1));
+    document.getElementById('nextB').addEventListener('click', () => stepBlock(1));
+    side.querySelectorAll('tr.rowk').forEach(tr => tr.addEventListener('click', () => pick(tr.dataset.k, state.selBlock, true)));
+    return;
+  }
+  if (!state.picked || !series[state.picked.k]) {
+    const first = order.find(o => J(o.k, state.mode, state.H).st === 'lit') || order[0];
+    if (first) state.picked = first;
+  }
+  if (!state.picked) { side.innerHTML = ''; return; }
+  const { k, etf } = state.picked, st = DATA.stocks[k], idx = order.findIndex(o => o.k === k && o.etf === etf);
+  const c = series[k][state.mode].c, n = c.length, ret30 = c[n - 1] / c[n - W] - 1;
+  const blocks = etfsOf[k].map(t => { const e = DATA.etfs.find(x => x.t === t), s = blockStats(e); return `<div class="blk"><span>${t}</span><span class="mt"><i style="width:${(s.ratio * 100).toFixed(0)}%"></i><i class="d" style="width:${(s.dratio * 100).toFixed(0)}%"></i></span><span class="c">${s.lit}/${s.n}${s.down ? ` ▼${s.down}` : ''}</span></div>`; }).join('');
+  const e = DATA.etfs.find(x => x.t === etf);
+  side.innerHTML = `<div class="sh">Stock<small>종목 상세</small><span class="nav"><span style="color:var(--muted);margin-right:4px;font-weight:400;letter-spacing:0">${idx + 1}/${order.length}</span><button type="button" id="prevC" title="이전 칸">‹</button><button type="button" id="nextC" title="다음 칸">›</button></span></div>
+    <div class="tk">${k}${dotsHTML(lstOf(k), 'lg')}<small>${st.x ? st.x : (/^\d{6}$/.test(k) ? 'KRX' : 'US')} EQUITY</small></div>
+    <div class="nm">${st.n}</div>
+    <div class="ko">${e ? e.ko + ' · ' + e.tag + ' ETF ' + etf : ''}</div>
+    <div class="ven">${venueText(lstOf(k), '<br>')}${lstOf(k) ? `<br><span style="color:var(--muted)">확인 ${LST_ASOF}</span>` : ''}</div>
+    <dl><dt>${MLAB[state.mode]} 30일</dt><dd class="${ret30 >= 0 ? 'on' : 'dn'}">${(ret30 >= 0 ? '+' : '') + (ret30 * 100).toFixed(1)}%</dd><dt>종가</dt><dd>${PRICE_ASOF}${st.sym ? ' · ' + st.sym : ''}${st.src ? ' (' + st.src + ')' : ''}</dd>${st.ipo ? `<dt>상장</dt><dd>${st.ipo} · 그 앞은 첫 종가로 채움</dd>` : ''}<dt>구성종목</dt><dd>${e ? e.asof : ''} · <a href="${e ? e.url : '#'}" target="_blank" rel="noopener">stockanalysis.com</a></dd></dl>
+    <div class="big">${bigChart(k)}</div>
+    <table>${horizonRows(k)}</table>
+    <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${weightBars(k, etf)}
+    <div class="wlab" style="margin-top:8px">블록 상태</div>${blocks}
+    <div class="st">사상 최고 수준 ${st.ath} (이력 ${st.athFrom || '2년 창'}부터) · 52주 고점 수준 ${st.h52} · 창 ${DATA.first} ~ ${DATA.asof}.</div>`;
+  document.getElementById('prevC').addEventListener('click', () => stepPick(-1));
+  document.getElementById('nextC').addEventListener('click', () => stepPick(1));
+  side.querySelectorAll('[data-goetf]').forEach(el => el.addEventListener('click', () => openEtf(el.dataset.goetf, true)));
+}
+function stepBlock(d) {
+  const idx = blockOrder.indexOf(state.selBlock), nx = blockOrder[(idx + d + blockOrder.length) % blockOrder.length]; openEtf(nx, true);
+}
+function openEtf(t, scroll) {
+  state.panel = 'etf';
+  state.selBlock = t;
+  document.querySelectorAll('.block.selected').forEach(x => x.classList.remove('selected'));
+  const el = document.getElementById('blk-' + t);
+  if (el) { el.classList.add('selected'); if (scroll) el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' }); }
+  renderSide();
+}
+function stepPick(d) {
+  const idx = order.findIndex(o => o.k === state.picked.k && o.etf === state.picked.etf);
+  const nx = order[(idx + d + order.length) % order.length]; pick(nx.k, nx.etf, true);
+}
+function pick(k, etf, scroll) {
+  document.querySelectorAll('.cell.picked').forEach(x => x.classList.remove('picked'));
+  state.picked = { k, etf }; state.panel = 'stock';
+  const el = document.querySelector(`.cell[data-k="${CSS.escape(k)}"][data-etf="${etf}"]`);
+  if (el) { el.classList.add('picked'); if (scroll) el.scrollIntoView({ block: 'nearest', behavior: 'auto' }); }
+  renderSide();
+}
+function selectBlock(t) { openEtf(t, true); }
+const blocksEl = document.getElementById('blocks');
+blocksEl.addEventListener('mouseover', ev => { const b = ev.target.closest('.cell'); if (b) showTip(b); });
+blocksEl.addEventListener('mouseout', ev => { const b = ev.target.closest('.cell'); if (b && !b.contains(ev.relatedTarget)) hideTip(); });
+blocksEl.addEventListener('focusin', ev => { const b = ev.target.closest('.cell'); if (b) showTip(b); });
+blocksEl.addEventListener('focusout', hideTip);
+blocksEl.addEventListener('click', ev => {
+  const b = ev.target.closest('.cell'); if (b) { hideTip(); pick(b.dataset.k, b.dataset.etf, false); return; }
+  const h = ev.target.closest('.bh'); if (h) openEtf(h.dataset.blk, false);
+});
+blocksEl.addEventListener('keydown', ev => { const h = ev.target.closest('.bh'); if (h && (ev.key === 'Enter' || ev.key === ' ')) { ev.preventDefault(); openEtf(h.dataset.blk, false); } });
+document.addEventListener('keydown', ev => { if (ev.key === 'Escape') hideTip(); });
+window.addEventListener('scroll', hideTip, { passive: true });
+
+/* ---- 컨트롤 ---- */
+function press(sel, attr, val) { document.querySelectorAll(sel).forEach(b => b.setAttribute('aria-pressed', b.dataset[attr] === val)); }
+function setMode(m) { state.mode = m; document.querySelectorAll('.tabs [data-mode]').forEach(x => x.setAttribute('aria-selected', x.dataset.mode === m)); render(); }
+function setH(h) { state.H = h; press('[data-h]', 'h', h); render(); }
+function setSort(s) { state.sort = s; press('[data-sort]', 'sort', s); render(); }
+function setLayout(l) { state.layout = l; press('[data-layout]', 'layout', l); applyView(); render(); }
+function setFrame(f) { state.frame = f; press('[data-frame]', 'frame', f); applyView(); drawOutlines(); }
+function setLst(v) { state.lst = v; press('[data-lst]', 'lst', v); document.querySelectorAll('.cell').forEach(c => c.classList.toggle('dim', v === 'listed' && !lstOf(c.dataset.k))); }
+document.querySelectorAll('.tabs [data-mode]').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+document.querySelectorAll('[data-h]').forEach(b => b.addEventListener('click', () => setH(b.dataset.h)));
+document.querySelectorAll('[data-sort]').forEach(b => b.addEventListener('click', () => setSort(b.dataset.sort)));
+document.querySelectorAll('[data-layout]').forEach(b => b.addEventListener('click', () => setLayout(b.dataset.layout)));
+document.querySelectorAll('[data-frame]').forEach(b => b.addEventListener('click', () => setFrame(b.dataset.frame)));
+document.querySelectorAll('[data-lst]').forEach(b => b.addEventListener('click', () => setLst(b.dataset.lst)));
+document.getElementById('fnHelp').addEventListener('click', () => { const g = document.getElementById('guide'); g.open = true; g.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+document.getElementById('cluster').addEventListener('click', ev => { const b = ev.target.closest('[data-go]'); if (b) selectBlock(b.dataset.go); });
+
+/* ---- 명령줄 ---- */
+const FN = { '1': () => setMode('usd'), '2': () => setMode('qqq'), '3': () => setMode('spy'), '11': () => setH('20'), '12': () => setH('55'), '13': () => setH('52w'), '14': () => setH('ath'),
+  '21': () => setSort('ratio'), '22': () => setSort('down'), '23': () => setSort('fixed'), '31': () => setLayout('block'), '32': () => setLayout('row'),
+  '61': () => setFrame('rules'), '62': () => setFrame('rail'), '63': () => setFrame('boxes'), '71': () => setLst('all'), '72': () => setLst('listed'), '98': () => document.getElementById('fnHelp').click() };
+const GO = { SRM: '#board', MATRIX: '#board', TERMINAL: '#board', RRG: '#rrg', BRIEF: '#brief' };
+const ALIAS = { USD: '1', QQQ: '2', SPY: '3', '20': '11', '20D': '11', '55': '12', '55D': '12', '52W': '13', ATH: '14', ROW: '32', BLOCK: '31', RULES: '61', RAIL: '62', BOXES: '63', ALL: '71', LISTED: '72', HELP: '98' };
+function runCmd() {
+  const inp = document.getElementById('cmd'), msg = document.getElementById('cmdMsg'), raw = inp.value.trim().toUpperCase().replace(/\)$/, '');
+  if (!raw) return;
+  msg.className = 'msg';
+  if (FN[raw]) { FN[raw](); msg.textContent = `실행: ${raw})`; inp.value = ''; return; }
+  if (ALIAS[raw]) { FN[ALIAS[raw]](); msg.textContent = `실행: ${raw} → ${ALIAS[raw]})`; inp.value = ''; return; }
+  if (raw in GO) { msg.textContent = `섹터 전환 매트릭스로 이동`; inp.value = ''; goTerminal(GO[raw]); return; }
+  const etf = DATA.etfs.find(e => e.t === raw);
+  if (etf) { openEtf(etf.t, true); msg.textContent = `${etf.t} ${etf.ko} 블록으로 이동`; inp.value = ''; return; }
+  const key = Object.keys(DATA.stocks).find(k => k.toUpperCase() === raw);
+  if (key) { const o = order.find(x => x.k === key); if (o) { state.selBlock = o.etf; document.querySelectorAll('.block.selected').forEach(x => x.classList.remove('selected')); const bl = document.getElementById('blk-' + o.etf); if (bl) bl.classList.add('selected'); pick(o.k, o.etf, true); } msg.textContent = `${key} 선택 (${etfsOf[key].join(', ')})`; inp.value = ''; return; }
+  msg.className = 'msg err'; msg.textContent = `"${raw}"을(를) 찾지 못했습니다. 티커, ETF, USD/QQQ/SPY, 20/55/52W/ATH, ROW/BLOCK, HELP, SRM`;
+}
+document.getElementById('cmd').addEventListener('keydown', ev => { if (ev.key === 'Enter') runCmd(); });
+document.getElementById('cmdGo').addEventListener('click', runCmd);
+let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(render, 150); });
+document.fonts && document.fonts.ready.then(drawOutlines);
+
+/* ---- 시작 ---- */
+applyView();
+press('[data-h]', 'h', state.H); press('[data-sort]', 'sort', state.sort); press('[data-layout]', 'layout', state.layout); press('[data-frame]', 'frame', state.frame); press('[data-lst]', 'lst', state.lst);
+document.getElementById('lstAsof').textContent = LST_ASOF;
+document.getElementById('statusLine').textContent = `블록 ${DATA.etfs.length} · 칸 ${NCELLS} · 종가 ${PRICE_ASOF} · 구성종목 ${DATA.holdings_asof} · 상장 목록 ${LST_ASOF.slice(0, 10)} (bStocks ${LISTING.counts.b} · 선물 ${LISTING.counts.p} · HL ${LISTING.counts.h}) · 초록=강세 (US)`;
+document.querySelectorAll('.tabs [data-mode]').forEach(x => x.setAttribute('aria-selected', x.dataset.mode === state.mode));
+render();
+</script>
