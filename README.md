@@ -112,7 +112,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 
 | 시각 (KST) | 하는 일 |
 |---|---|
-| 화~금 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `fetch_prices.py` 로 ETF 가격·구성종목을 받고, `terminal/compute_terminal.py` → `terminal/build_terminal.py` 로 `docs/` 를 다시 만듭니다. 이어서 `breakout/fetch_stock_prices.py` 로 구성종목 약 240개의 일봉을 받고 `breakout/compute_breakout.py` → `breakout/build_breakout.py` 로 `docs/breakout/` 을 만듭니다(이 세 단계가 실패해도 매트릭스 쪽 빌드와 커밋은 그대로 진행되고, 돌파 지도는 직전 빌드로 남습니다). 모두 커밋한 뒤 직전 빌드와 비교해 변화가 있으면 텔레그램으로 매트릭스 조건 알림을 보냅니다. |
+| 화~금 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `fetch_prices.py` 로 ETF 가격·구성종목을 받고, `breakout/fetch_stock_prices.py` 로 구성종목 약 240개의 일봉을 받아 `breakout/compute_breakout.py` 로 계산한 뒤(실패해도 다음 단계는 계속), `terminal/compute_terminal.py` → `terminal/build_terminal.py` 로 `docs/` 를 다시 만듭니다(종목 상세에 그 계산을 끼움). 이어서 `breakout/compute_breakout.py` → `breakout/build_breakout.py` 로 `docs/breakout/` 을 만듭니다(이 세 단계가 실패해도 매트릭스 쪽 빌드와 커밋은 그대로 진행되고, 돌파 지도는 직전 빌드로 남습니다). 모두 커밋한 뒤 직전 빌드와 비교해 변화가 있으면 텔레그램으로 매트릭스 조건 알림을 보냅니다. |
 | 토 07:05 | 금요일 종가로 위와 같은 일을 한 뒤, 주간 브리핑(`docs/data/brief.txt`)을 텔레그램으로 보냅니다. |
 
 돌파 지도의 알림 채널은 아직 정하지 않았습니다. 빌드는 매일 `docs/breakout/data/alerts.txt`(새 돌파·새 이탈·실패·블록 알림)와 `brief.txt`(주간 브리핑)를 써 두기만 하고, 저장소 Variables 에 `BREAKOUT_TELEGRAM` = `true` 를 추가하면 같은 봇으로 보내기 시작합니다.
@@ -132,7 +132,7 @@ GitHub 의 예약 실행은 보통 예약 시각보다 2~4시간 늦게 시작�
 | 파일 | 역할 |
 |---|---|
 | `terminal/compute_terminal.py` | `output/prices_wide.csv` 로 백분위·비율선·RRG(1단 섹터 ÷ SPY, 2단 산업·테마 ÷ 상위 섹터, 스타일 MAGS ÷ SPY)·신호를 계산해 `output/terminal-data.json` 을 씁니다. 규칙은 파일 머리의 설명에 있습니다. |
-| `terminal/build_terminal.py` | 계산값, 최신 두 구성종목 스냅샷(변동 %p), 상장 목록, `data/etf_meta.json` 을 `terminal/template.html` 에 끼워 `docs/index.html`(Pages 용)과 `docs/terminal.artifact.html`(Claude 아티팩트 발행용)을 만듭니다. 두 본문은 `5) 돌파 지도` 탭의 주소만 다릅니다(Pages 는 `breakout/`, 아티팩트는 돌파 지도 아티팩트를 새 탭으로). 직전 빌드(`docs/data/terminal-data.json`)와 비교해 `docs/data/alerts.json`·`alerts.txt` 와 주간 브리핑 `docs/data/brief.txt` 를 씁니다. |
+| `terminal/build_terminal.py` | 계산값, 최신 두 구성종목 스냅샷(변동 %p), 상장 목록, `data/etf_meta.json` 을 `terminal/template.html` 에 끼워 `docs/index.html`(Pages 용)과 `docs/terminal.artifact.html`(Claude 아티팩트 발행용)을 만듭니다. 두 본문은 `5) 돌파 지도` 탭의 주소만 다릅니다(Pages 는 `breakout/`, 아티팩트는 돌파 지도 아티팩트를 새 탭으로). 직전 빌드(`docs/data/terminal-data.json`)와 비교해 `docs/data/alerts.json`·`alerts.txt` 와 주간 브리핑 `docs/data/brief.txt` 를 씁니다. 구성종목 표의 종목 행을 누르면 펼쳐지는 종목 상세(일간·주간·30일 변동률, 90일 가격선과 50 SMA·89 HMA·144 HMA, 네 지평의 돌파 상태, 그 종목을 담은 다른 ETF)는 `output/breakout-data.json`(없으면 `docs/breakout/data/` 의 직전 사본)에서 이 보드의 구성종목만 추려 끼워 넣습니다. |
 | `terminal/template.html` | 터미널 화면 템플릿. `__HOLD__`, `__DATA__`, `__PRICE_ASOF__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. 주소에 해시가 없으면 보드 위에 대문(cover)이 먼저 덮이고 LAUNCH TERMINAL 로 엽니다. `#board`·`#rrg`·`#brief`·`#help` 로 들어오면 대문을 건너뛰며(텔레그램 링크는 `#board`), 대문의 Skip 을 켜면 그 브라우저에서는 다시 보이지 않습니다. 보드에서 `0` 또는 `COVER` 를 입력하면 다시 엽니다. |
 | `breakout/` | 돌파 지도. 수집기 `fetch_stock_prices.py`, 상장 대조 `match_listing.py`, 계산 `compute_breakout.py`, 페이지 생성 `build_breakout.py`(`docs/breakout/index.html` 과 `docs/breakout/breakout.artifact.html`), 템플릿 `template.html`. 자세한 설명은 [breakout/README.md](breakout/README.md). |
 | `scripts/notify_telegram.py` | `brief.txt`(`--mode digest`) 또는 `alerts.txt`(`--mode alerts`, 비어 있으면 보내지 않음)를 텔레그램 봇 API 로 보냅니다. `--docs docs/breakout` 으로 돌파 지도의 본문을 보냅니다. |

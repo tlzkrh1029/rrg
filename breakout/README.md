@@ -14,7 +14,7 @@ breakout/compute_breakout.py     90일 창·기준 수준·판정 → output/bre
 breakout/build_breakout.py       템플릿에 끼움 → docs/breakout/index.html, breakout.artifact.html, data/{breakout-data,alerts}.json, alerts.txt, brief.txt
 ```
 
-GitHub Actions(`.github/workflows/terminal.yml`)가 화~토 아침에 매트릭스 다음 순서로 실행합니다. 돌파 지도 단계가 실패해도 매트릭스 빌드와 커밋은 막지 않습니다. 손으로 돌릴 때는 루트에서 위 순서대로 실행하면 되고, 모두 표준 라이브러리만 씁니다.
+GitHub Actions(`.github/workflows/terminal.yml`)가 화~토 아침에 수집·계산을 매트릭스보다 먼저 실행하고(매트릭스의 종목 상세가 `output/breakout-data.json` 을 끼워 넣기 때문), 페이지 생성은 매트릭스 다음에 합니다. 돌파 지도 단계가 실패해도 매트릭스 빌드와 커밋은 막지 않습니다. 주소 끝에 `#NVDA` 처럼 티커나 ETF 를 붙이면 그 칸·블록으로 바로 갑니다. 손으로 돌릴 때는 루트에서 위 순서대로 실행하면 되고, 모두 표준 라이브러리만 씁니다.
 
 ```
 python3 fetch_prices.py

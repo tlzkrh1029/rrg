@@ -6,6 +6,7 @@
   output/holdings/<date>.csv       구성종목 스냅샷(최신 두 개를 써서 변동 %p 를 계산)
   data/etf_meta.json               ETF 이름·순자산·보유 종목 수·출처 URL
   --lists DIR                      tradfi-ticker-lists 의 output 폴더(상장 점). 없으면 점을 비운다.
+  output/breakout-data.json        돌파 지도 계산 결과(종목 상세용 가격·이동평균 재료). 없으면 docs/breakout/data/ 의 직전 사본, 그것도 없으면 종목 상세 없이 만든다.
   terminal/template.html           토큰이 든 HTML 템플릿
 
 출력 (docs/)
@@ -312,6 +313,36 @@ def make_brief(cur, hold, alerts, prev_asof):
     return "\n".join(lines)
 
 
+def load_stocks(args, hold):
+    """종목 상세용 가격. 돌파 지도 계산 결과에서 이 보드의 구성종목(상위 10개에 든 종목)만 추린다.
+
+    후보는 output/breakout-data.json(그날 계산)과 docs/breakout/data/breakout-data.json(직전 빌드의 사본)이고, 종가 기준일(asof)이 새 것을 쓴다.
+    그날 돌파 지도 단계가 실패하면 자연히 전날 것이 쓰이고, 페이지는 종가 기준일이 다르다는 표시를 한다. 아무것도 없으면 None 을 넣고 행을 눌러도 펼쳐지지 않는다.
+    """
+    cands = [args.stocks] if args.stocks else [os.path.join(ROOT, "output", "breakout-data.json"), os.path.join(args.docs, "breakout", "data", "breakout-data.json")]
+    best, best_path = None, None
+    for p in cands:
+        if not p or not os.path.exists(p):
+            continue
+        try:
+            bd = json.load(open(p, encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        if not isinstance(bd, dict) or "stocks" not in bd or "spy" not in bd or "dates" not in bd:
+            continue
+        if best is None or str(bd.get("asof", "")) > str(best.get("asof", "")):
+            best, best_path = bd, p
+    if best is None:
+        return None, None
+    keys = {str(r[0]).upper() for rows in hold.values() for r in rows.get("rows", []) if r[0] and str(r[0]).upper() in best["stocks"]}
+    fields = ("n", "x", "sym", "c", "cx", "h52", "ath", "rspy", "rqqq", "ipo", "athFrom")
+    out = {"asof": best["asof"], "dates": best["dates"], "spy": best["spy"], "qqq": best["qqq"],
+           "spyx": best.get("spyx", []), "qqqx": best.get("qqqx", []),
+           "stocks": {k: {f: best["stocks"][k][f] for f in fields if f in best["stocks"][k]} for k in sorted(keys)},
+           "listing": {k: v for k, v in (best.get("listing", {}).get("stocks", {})).items() if k in keys}}
+    return out, best_path
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--data", default=os.path.join(ROOT, "output", "terminal-data.json"))
@@ -320,7 +351,8 @@ def main():
     ap.add_argument("--lists", default=None, help="tradfi-ticker-lists 의 output 폴더")
     ap.add_argument("--template", default=os.path.join(HERE, "template.html"))
     ap.add_argument("--docs", default=os.path.join(ROOT, "docs"))
-    ap.add_argument("--breakout-artifact", default=BREAKOUT_ARTIFACT, help="아티팩트 본문의 5) 돌파 지도 탭이 열 주소")
+    ap.add_argument("--breakout-artifact", default=BREAKOUT_ARTIFACT, help="아티팩트 본문의 3) 돌파 지도 탭이 열 주소")
+    ap.add_argument("--stocks", default=None, help="종목 상세용 돌파 지도 계산 결과(breakout-data.json). 기본은 output/breakout-data.json 과 docs/breakout/data/breakout-data.json 가운데 종가 기준일이 새 것")
     args = ap.parse_args()
 
     cur = json.load(open(args.data, encoding="utf-8"))
@@ -365,6 +397,7 @@ def main():
     brief = make_brief(cur, hold, alerts, prev_for_alerts.get("asof") if prev_for_alerts else None)
 
     data_slim = {t: {k: v for k, v in e.items() if k in ("pct", "rel", "S", "Q", "rrgPath", "rrgSpy", "sig", "weeks", "stale")} for t, e in cur["etfs"].items()}
+    stocks_tok, stocks_src = load_stocks(args, hold)
     src = "·".join(cur.get("source") or ["yahoo"])
     src_ko = {"yahoo": "야후 파이낸스", "stooq": "Stooq"}.get(src, src)
     tokens = {
@@ -379,6 +412,7 @@ def main():
         "__LST__": json.dumps(lst, ensure_ascii=False, separators=(",", ":")),
         "__SWAPS__": json.dumps(swaps, ensure_ascii=False, separators=(",", ":")),
         "__ALERTS__": json.dumps({"asof": cur["asof"], "prev_asof": prev_for_alerts.get("asof") if prev_for_alerts else None, "same_asof": same_asof, "alerts": alerts}, ensure_ascii=False, separators=(",", ":")),
+        "__STOCKS__": json.dumps(stocks_tok, ensure_ascii=False, separators=(",", ":")),
         "__BRIEF__": html_escape(brief),
         "__BUILT_AT__": built_at_kst(),
     }
@@ -413,7 +447,8 @@ def main():
         if alerts:
             f.write(alerts_text(cur, alerts))
     open(os.path.join(args.docs, ".nojekyll"), "a").close()
-    print(f"built docs/ for {cur['asof']} · holdings {hold_asof} (prev {hold_prev}) · lists {list_asof} ({counts['b']}/{counts['f']}/{counts['h']}) · alerts {len(alerts)}")
+    print(f"built docs/ for {cur['asof']} · holdings {hold_asof} (prev {hold_prev}) · lists {list_asof} ({counts['b']}/{counts['f']}/{counts['h']}) · alerts {len(alerts)}"
+          + (f" · stock details {len(stocks_tok['stocks'])} (asof {stocks_tok['asof']}, {os.path.relpath(stocks_src, ROOT)})" if stocks_tok else " · stock details none"))
 
 
 if __name__ == "__main__":
