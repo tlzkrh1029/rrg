@@ -139,16 +139,16 @@ SMH,7,ADI,"Analog Devices, Inc.",4.53
 SMH,8,MRVL,"Marvell Technology, Inc.",4.52
 SMH,9,ASML,ASML Holding N.V.,4.52
 SMH,10,KLAC,KLA Corporation,4.16
-IGV,1,PLTR,Palantir Technologies Inc.,9.21
-IGV,2,MSFT,Microsoft Corporation,8.77
-IGV,3,PANW,"Palo Alto Networks, Inc.",8.23
-IGV,4,CRWD,"CrowdStrike Holdings, Inc.",7.58
-IGV,5,ORCL,Oracle Corporation,6.58
-IGV,6,NOW,"ServiceNow, Inc.",4.9
-IGV,7,CRM,"Salesforce, Inc.",4.26
+IGV,1,PLTR,Palantir Technologies Inc.,9.47
+IGV,2,MSFT,Microsoft Corporation,8.63
+IGV,3,PANW,"Palo Alto Networks, Inc.",8.25
+IGV,4,CRWD,"CrowdStrike Holdings, Inc.",7.83
+IGV,5,ORCL,Oracle Corporation,6.36
+IGV,6,NOW,"ServiceNow, Inc.",4.92
+IGV,7,CRM,"Salesforce, Inc.",4.17
 IGV,8,FTNT,"Fortinet, Inc.",3.63
-IGV,9,ADBE,Adobe Inc.,3.52
-IGV,10,INTU,Intuit Inc.,3.16
+IGV,9,ADBE,Adobe Inc.,3.43
+IGV,10,INTU,Intuit Inc.,3.11
 XBI,1,MRNA,"Moderna, Inc.",2.69
 XBI,2,NTRA,"Natera, Inc.",1.86
 XBI,3,TWST,Twist Bioscience Corporation,1.76
@@ -219,16 +219,16 @@ URA,7,JSE:SSW,Sibanye Stillwater Limited,2.76
 URA,8,TYO:8001,ITOCHU Corporation,2.73
 URA,9,ASX:PDN,Paladin Energy Ltd,2.7
 URA,10,TSX:DML,Denison Mines Corp.,2.47
-ITA,1,GE,GE Aerospace,20.22
-ITA,2,RTX,RTX Corporation,16.94
-ITA,3,BA,The Boeing Company,7.7
-ITA,4,LMT,Lockheed Martin Corporation,4.98
-ITA,5,NOC,Northrop Grumman Corporation,4.93
-ITA,6,TDG,TransDigm Group Incorporated,4.83
-ITA,7,GD,General Dynamics Corporation,4.65
-ITA,8,HWM,Howmet Aerospace Inc.,4.33
-ITA,9,HONA,Honeywell Aerospace Inc.,3.96
-ITA,10,LHX,"L3Harris Technologies, Inc.",3.62
+ITA,1,GE,GE Aerospace,19.99
+ITA,2,RTX,RTX Corporation,16.81
+ITA,3,BA,The Boeing Company,7.79
+ITA,4,LMT,Lockheed Martin Corporation,5.01
+ITA,5,NOC,Northrop Grumman Corporation,4.99
+ITA,6,TDG,TransDigm Group Incorporated,4.79
+ITA,7,GD,General Dynamics Corporation,4.66
+ITA,8,HWM,Howmet Aerospace Inc.,4.27
+ITA,9,HONA,Honeywell Aerospace Inc.,4.03
+ITA,10,LHX,"L3Harris Technologies, Inc.",3.6
 PAVE,1,FAST,Fastenal Company,3.71
 PAVE,2,EMR,Emerson Electric Co.,3.67
 PAVE,3,NUE,Nucor Corporation,3.58
@@ -256,3 +256,53 @@ MAGS,4,AMZN,Amazon.com Inc,14.64
 MAGS,5,GOOGL,Alphabet Inc,13.61
 MAGS,6,NVDA,NVIDIA Corp,13.48
 MAGS,7,META,Meta Platforms Inc,12.95
+GDX,1,NEM,Newmont Corporation,11.43
+GDX,2,TSX:AEM,Agnico Eagle Mines Limited,11.39
+GDX,3,TSX:ABX,Barrick Mining Corporation,8.03
+GDX,4,TSX:WPM,Wheaton Precious Metals Corp.,5.54
+GDX,5,TSX:FNV,Franco-Nevada Corporation,5.25
+GDX,6,AU,AngloGold Ashanti plc,4.84
+GDX,7,FRA:EDG,Gold Fields Limited,3.88
+GDX,8,TSX:K,Kinross Gold Corporation,3.85
+GDX,9,ASX:NST,Northern Star Resources Limited,2.96
+GDX,10,TSX:PAAS,Pan American Silver Corp.,2.68
+GRID,1,JCI,Johnson Controls International plc,8.77
+GRID,2,PWR,"Quanta Services, Inc.",8.31
+GRID,3,ETN,Eaton Corporation plc,8.04
+GRID,4,SWX:ABBN,ABB Ltd,7.45
+GRID,5,EPA:SU,Schneider Electric S.E.,6.79
+GRID,6,LON:NG,National Grid plc,4.32
+GRID,7,ETR:EOAN,E.ON SE,4.14
+GRID,8,BIT:PRY,Prysmian S.p.A.,3.55
+GRID,9,NVT,nVent Electric plc,2.7
+GRID,10,HUBB,Hubbell Incorporated,2.65
+XOP,1,MPC,Marathon Petroleum Corporation,3.06
+XOP,2,DINO,HF Sinclair Corporation,2.98
+XOP,3,MUR,Murphy Oil Corporation,2.89
+XOP,4,PSX,Phillips 66,2.87
+XOP,5,VLO,Valero Energy Corporation,2.87
+XOP,6,APA,APA Corporation,2.87
+XOP,7,OVV,Ovintiv Inc.,2.81
+XOP,8,PBF,PBF Energy Inc.,2.79
+XOP,9,XOM,ExxonMobil Holdings Corporation,2.79
+XOP,10,EOG,"EOG Resources, Inc.",2.77
+TAN,1,NXT,Nextpower Inc.,10.73
+TAN,2,FSLR,"First Solar, Inc.",9.39
+TAN,3,TLV:ENLT,Enlight Renewable Energy Ltd,8.46
+TAN,4,ENPH,"Enphase Energy, Inc.",7.35
+TAN,5,HASI,"HA Sustainable Infrastructure Capital, Inc.",5.01
+TAN,6,TLV:DORL,Doral Group Renewable Energy Resources Ltd,4.64
+TAN,7,HKG:3800,GCL Technology Holdings Limited,4.23
+TAN,8,CWEN,"Clearway Energy, Inc.",4.09
+TAN,9,SEDG,"SolarEdge Technologies, Inc.",4.04
+TAN,10,RUN,Sunrun Inc.,3.86
+JETS,1,LUV,Southwest Airlines Co.,11.7
+JETS,2,DAL,"Delta Air Lines, Inc.",11.05
+JETS,3,AAL,American Airlines Group Inc.,10.69
+JETS,4,UAL,"United Airlines Holdings, Inc.",10.31
+JETS,5,SKYW,"SkyWest, Inc.",3.68
+JETS,6,ALGT,Allegiant Travel Company,3.51
+JETS,7,ULCC,"Frontier Group Holdings, Inc.",3.33
+JETS,8,ALK,"Alaska Air Group, Inc.",3.27
+JETS,9,TSX:AC,Air Canada,2.85
+JETS,10,JBLU,JetBlue Airways Corporation,2.47

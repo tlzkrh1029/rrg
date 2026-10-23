@@ -1,0 +1,557 @@
+{
+ "asof": "2026-10-22",
+ "prev_asof": null,
+ "alerts": [
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "AAPL",
+   "name": "Apple Inc.",
+   "etfs": [
+    "XLK"
+   ],
+   "over": 0.01534,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "BRK.B",
+   "name": "Berkshire Hathaway Inc.",
+   "etfs": [
+    "XLF"
+   ],
+   "over": 0.01328,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "LLY",
+   "name": "Eli Lilly and Company",
+   "etfs": [
+    "XLV",
+    "ARKG"
+   ],
+   "over": 0.02058,
+   "spy": "lit",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "AMGN",
+   "name": "Amgen Inc.",
+   "etfs": [
+    "XLV",
+    "XBI"
+   ],
+   "over": 0.00712,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "FAST",
+   "name": "Fastenal Company",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": 0.00668,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
+   "key": "PG",
+   "name": "The Procter & Gamble Company",
+   "etfs": [
+    "XLP"
+   ],
+   "over": 0.00528,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
+   "key": "MDLZ",
+   "name": "Mondelez International, Inc.",
+   "etfs": [
+    "XLP"
+   ],
+   "over": 0.01195,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
+   "key": "UCB",
+   "name": "United Community Banks, Inc.",
+   "etfs": [
+    "KRE"
+   ],
+   "over": 0.01121,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "SO",
+   "name": "The Southern Company",
+   "etfs": [
+    "XLU"
+   ],
+   "over": 0.01606,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "DUK",
+   "name": "Duke Energy Corporation",
+   "etfs": [
+    "XLU"
+   ],
+   "over": 0.01137,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "ECL",
+   "name": "Ecolab Inc.",
+   "etfs": [
+    "XLB"
+   ],
+   "over": 0.00852,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "UTHR",
+   "name": "United Therapeutics Corporation",
+   "etfs": [
+    "XBI"
+   ],
+   "over": 0.02347,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "MAS",
+   "name": "Masco Corporation",
+   "etfs": [
+    "XHB"
+   ],
+   "over": 0.01138,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "ALLE",
+   "name": "Allegion plc",
+   "etfs": [
+    "XHB"
+   ],
+   "over": 0.04858,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "VTR",
+   "name": "Ventas, Inc.",
+   "etfs": [
+    "XLRE"
+   ],
+   "over": 0.00544,
+   "spy": "lit",
+   "qqq": "failed"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "VRTX",
+   "name": "Vertex Pharmaceuticals Incorporated",
+   "etfs": [
+    "GNOM"
+   ],
+   "over": 0.01421,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "UBSI",
+   "name": "United Bankshares, Inc.",
+   "etfs": [
+    "KRE"
+   ],
+   "over": 0.03019,
+   "spy": "lit",
+   "qqq": "failed"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "EBC",
+   "name": "Eastern Bankshares, Inc.",
+   "etfs": [
+    "KRE"
+   ],
+   "over": 0.03005,
+   "spy": "lit",
+   "qqq": "none"
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "MU",
+   "name": "Micron Technology, Inc.",
+   "etfs": [
+    "XLK",
+    "SMH",
+    "DRAM"
+   ],
+   "over": -0.00508
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "INTC",
+   "name": "Intel Corporation",
+   "etfs": [
+    "XLK"
+   ],
+   "over": -0.02028
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "CSCO",
+   "name": "Cisco Systems, Inc.",
+   "etfs": [
+    "XLK"
+   ],
+   "over": -0.01065
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "GOOGL",
+   "name": "Alphabet Inc.",
+   "etfs": [
+    "XLC"
+   ],
+   "over": -0.01945
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "GOOG",
+   "name": "Alphabet Inc.",
+   "etfs": [
+    "XLC"
+   ],
+   "over": -0.0232
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "GEV",
+   "name": "GE Vernova Inc.",
+   "etfs": [
+    "XLI"
+   ],
+   "over": -0.05412
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "PH",
+   "name": "Parker-Hannifin Corporation",
+   "etfs": [
+    "XLI",
+    "PAVE"
+   ],
+   "over": -0.0278
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "FCX",
+   "name": "Freeport-McMoRan Inc.",
+   "etfs": [
+    "XLB",
+    "XME"
+   ],
+   "over": -0.02398
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "DLR",
+   "name": "Digital Realty Trust, Inc.",
+   "etfs": [
+    "XLRE"
+   ],
+   "over": -0.00668
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "ASML",
+   "name": "ASML Holding N.V.",
+   "etfs": [
+    "SMH"
+   ],
+   "over": -0.00928
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "MTRN",
+   "name": "Materion Corporation",
+   "etfs": [
+    "XME"
+   ],
+   "over": -0.04664
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "AA",
+   "name": "Alcoa Corporation",
+   "etfs": [
+    "XME"
+   ],
+   "over": -0.03443
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "NXE",
+   "name": "NexGen Energy Ltd.",
+   "etfs": [
+    "URA"
+   ],
+   "over": -0.00958
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "UEC",
+   "name": "Uranium Energy Corp.",
+   "etfs": [
+    "URA"
+   ],
+   "over": -0.02857
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "SSW",
+   "name": "Sibanye Stillwater Limited",
+   "etfs": [
+    "URA"
+   ],
+   "over": -0.02039
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "DML",
+   "name": "Denison Mines Corp.",
+   "etfs": [
+    "URA"
+   ],
+   "over": -0.00974
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "ABX",
+   "name": "Barrick Mining Corporation",
+   "etfs": [
+    "GDX"
+   ],
+   "over": -0.02294
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "AU",
+   "name": "AngloGold Ashanti plc",
+   "etfs": [
+    "GDX"
+   ],
+   "over": -0.02128
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "PAAS",
+   "name": "Pan American Silver Corp.",
+   "etfs": [
+    "GDX"
+   ],
+   "over": -0.04369
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "FSLR",
+   "name": "First Solar, Inc.",
+   "etfs": [
+    "TAN"
+   ],
+   "over": -0.005
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "JCI",
+   "name": "Johnson Controls International plc",
+   "etfs": [
+    "XHB",
+    "GRID"
+   ],
+   "over": -0.01624
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "AEM",
+   "name": "Agnico Eagle Mines Limited",
+   "etfs": [
+    "GDX"
+   ],
+   "over": -0.02033
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "WPM",
+   "name": "Wheaton Precious Metals Corp.",
+   "etfs": [
+    "GDX"
+   ],
+   "over": -0.06131
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "FNV",
+   "name": "Franco-Nevada Corporation",
+   "etfs": [
+    "GDX"
+   ],
+   "over": -0.02799
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "HUBB",
+   "name": "Hubbell Incorporated",
+   "etfs": [
+    "GRID"
+   ],
+   "over": -0.0172
+  },
+  {
+   "type": "block_down",
+   "etf": "XLK",
+   "down": 5,
+   "n": 10
+  },
+  {
+   "type": "block_on",
+   "etf": "XLV",
+   "lit": 6,
+   "n": 10
+  },
+  {
+   "type": "block_on",
+   "etf": "XLP",
+   "lit": 5,
+   "n": 10
+  },
+  {
+   "type": "block_on",
+   "etf": "XLU",
+   "lit": 6,
+   "n": 10
+  },
+  {
+   "type": "block_on",
+   "etf": "XLRE",
+   "lit": 5,
+   "n": 10
+  },
+  {
+   "type": "block_on",
+   "etf": "XBI",
+   "lit": 5,
+   "n": 10
+  },
+  {
+   "type": "block_on",
+   "etf": "KRE",
+   "lit": 8,
+   "n": 10
+  },
+  {
+   "type": "block_on",
+   "etf": "XHB",
+   "lit": 6,
+   "n": 10
+  },
+  {
+   "type": "block_down",
+   "etf": "URA",
+   "down": 5,
+   "n": 9
+  },
+  {
+   "type": "block_down",
+   "etf": "DRAM",
+   "down": 6,
+   "n": 10
+  },
+  {
+   "type": "block_down",
+   "etf": "GDX",
+   "down": 6,
+   "n": 10
+  },
+  {
+   "type": "block_down",
+   "etf": "GRID",
+   "down": 6,
+   "n": 10
+  },
+  {
+   "type": "block_down",
+   "etf": "JETS",
+   "down": 5,
+   "n": 10
+  }
+ ]
+}
