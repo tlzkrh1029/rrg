@@ -1,14 +1,33 @@
-# 미국 섹터·산업 ETF 상대 강도 데이터 (RRG)
+# 미국 섹터·산업 ETF 모니터링 (섹터 전환 매트릭스 · 돌파 지도)
 
-미국 섹터·산업 ETF의 상대 강도를 매주 계산하기 위한 원본 데이터를 모으는 저장소입니다. (1) SPY 대비 상대수익률 백분위, (2) ETF÷SPY·ETF÷QQQ 비율선, (3) RRG 1단(섹터÷SPY, 스타일÷SPY)과 2단(산업·테마÷상위 섹터 ETF)의 RS-Ratio·RS-Momentum은 여기서 계산하지 않습니다. 이 저장소의 스크립트는 일봉 종가와 구성종목 스냅샷을 정확하게 받아서 저장하는 일만 합니다.
+미국 섹터·산업 ETF 를 매일 아침 두 화면으로 보는 저장소입니다. 둘 다 같은 가격·구성종목 수집기 위에 서 있고, GitHub Actions 가 함께 만들어 GitHub Pages 로 냅니다.
 
-스크립트는 [tradfi-ticker-lists](https://github.com/tlzkrh1029/tradfi-ticker-lists)의 `fetch_tradfi_tickers.py`와 같은 규칙을 따릅니다. 표준 라이브러리만 사용하고, 결과는 `output/`에 UTF-8 BOM CSV로 저장하며, 실행할 때마다 전체를 새로 받아 덮어씁니다.
+| 화면 | 주소 | 코드 | 내용 |
+|---|---|---|---|
+| **섹터 전환 매트릭스** (SRM) | `https://tlzkrh1029.github.io/rrg/` | `terminal/` | 24 ETF 의 SPY 대비 상대수익률 백분위, 비율선, RRG 1단·2단, 신호, 주간 브리핑 |
+| **돌파 지도** (BKM) | `https://tlzkrh1029.github.io/rrg/breakout/` | `breakout/` | 28 ETF 의 상위 10개 구성종목을 칸으로 놓고 20일·55일·52주·사상 최고 고점 돌파와 저점 이탈을 USD·QQQ 대비·SPY 대비로 표시 |
+
+두 화면은 서로 탭으로 이어집니다(매트릭스의 `5) 돌파 지도`, 돌파 지도의 사이트 줄 `1) 매트릭스`). 돌파 지도의 설계와 판정 규칙은 [breakout/README.md](breakout/README.md) 에 있습니다.
+
+```
+fetch_prices.py          ETF 가격·구성종목 수집기 (두 화면이 함께 씀)
+terminal/                섹터 전환 매트릭스: compute_terminal.py → build_terminal.py, template.html
+breakout/                돌파 지도: fetch_stock_prices.py → compute_breakout.py → build_breakout.py, match_listing.py, template.html
+scripts/notify_telegram.py   텔레그램 전송 (--docs 로 두 화면 모두 보냄)
+data/etf_meta.json       ETF 메타. screens 로 어느 화면에 들어가는지 표시 (terminal / breakout)
+data/lists/              tradfi-ticker-lists 의 상장 목록 사본
+output/                  수집·계산 결과 (prices_wide.csv, holdings/, stocks/, terminal-data.json, breakout-data.json)
+docs/                    GitHub Pages 본문. docs/index.html 이 매트릭스, docs/breakout/index.html 이 돌파 지도
+.github/workflows/terminal.yml   매일 아침의 수집 → 계산 → 생성 → 커밋 → 알림
+```
+
+아래의 "가격 수집" 절은 수집기(`fetch_prices.py`)의 설명이고, "자동 갱신" 절이 매일의 흐름입니다. 스크립트는 [tradfi-ticker-lists](https://github.com/tlzkrh1029/tradfi-ticker-lists)의 `fetch_tradfi_tickers.py`와 같은 규칙을 따릅니다. 표준 라이브러리만 사용하고, 결과는 `output/`에 UTF-8 BOM CSV로 저장하며, 실행할 때마다 전체를 새로 받아 덮어씁니다.
 
 ## 가격 수집
 
 ### 결론
 
-`fetch_prices.py`는 벤치마크 2개, 섹터 ETF 11개, 산업·테마 ETF 12개, 스타일·집중도 ETF 1개(MAGS)의 일봉을 API 키 없는 공개 출처에서 받아, SPY의 거래일을 기준 날짜 축으로 삼아 한 표에 정렬합니다. 같은 실행에서 각 ETF의 구성종목 상위 10개도 받아 날짜별 파일로 남깁니다.
+`fetch_prices.py`는 벤치마크 2개, 섹터 ETF 11개, 산업·테마 ETF 12개, 스타일·집중도 ETF 1개(MAGS), 그리고 돌파 지도에만 쓰는 ETF 5개(GDX, GRID, XOP, TAN, JETS)의 일봉을 API 키 없는 공개 출처에서 받아, SPY의 거래일을 기준 날짜 축으로 삼아 한 표에 정렬합니다. 같은 실행에서 각 ETF의 구성종목 상위 10개도 받아 날짜별 파일로 남깁니다.
 
 ```
 python3 fetch_prices.py                  # 가격 + 구성종목, output/ 에 저장 (약 2분)
@@ -22,7 +41,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 
 ### 수집 대상
 
-티커 목록은 스크립트 상단의 `BENCHMARKS`, `SECTORS`, `INDUSTRIES`, `STYLE`에 있으며, 산업·테마·스타일 티커를 무엇으로 나눌지는 `PARENT_SECTOR` 표에 있습니다. 티커를 추가하려면 이 목록만 고치면 됩니다. CSV의 열 순서와 행 순서는 이 목록 순서를 따르고, `STYLE`은 맨 뒤에 붙으므로 여기에 티커를 더해도 기존 열의 위치는 바뀌지 않습니다. `prices_summary.json`의 `groups`에 네 목록이 그대로 들어 있습니다. 2단 RRG의 대상은 `groups.industries`이고, `parent_sector`는 각 티커를 나누는 ETF만 알려 줍니다. `parent_sector`에는 MAGS도 들어 있으므로, 그 키 목록을 산업 목록으로 쓰면 안 됩니다.
+티커 목록은 스크립트 상단의 `BENCHMARKS`, `SECTORS`, `INDUSTRIES`, `STYLE`, `EXTRA`에 있으며, 산업·테마·스타일 티커를 무엇으로 나눌지는 `PARENT_SECTOR` 표에 있습니다. 티커를 추가하려면 이 목록만 고치면 됩니다. CSV의 열 순서와 행 순서는 이 목록 순서를 따르고, `STYLE`·`EXTRA`는 맨 뒤에 붙으므로 여기에 티커를 더해도 기존 열의 위치는 바뀌지 않습니다. `EXTRA`(GDX, GRID, XOP, TAN, JETS)는 돌파 지도의 블록으로만 쓰고 매트릭스의 보드·RRG 에는 넣지 않습니다(`data/etf_meta.json` 의 `screens` 가 어느 화면에 들어가는지 정합니다). `prices_summary.json`의 `groups`에 다섯 목록이 그대로 들어 있습니다. 2단 RRG의 대상은 `groups.industries`이고, `parent_sector`는 각 티커를 나누는 ETF만 알려 줍니다. `parent_sector`에는 MAGS도 들어 있으므로, 그 키 목록을 산업 목록으로 쓰면 안 됩니다.
 
 | 구분 | 티커 | RRG 벤치마크(나누는 ETF) |
 |---|---|---|
@@ -36,6 +55,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 | | ITA, PAVE | XLI |
 | | URA | XLE |
 | 스타일·집중도 | MAGS | SPY. 1단 보드에 섹터와 같은 축으로 그리되, 섹터 11개를 대상으로 하는 집계(사분면 개수, 섹터 간 순위)에는 넣지 않음 |
+| 돌파 지도 전용 | GDX, GRID, XOP, TAN, JETS | RRG 에는 넣지 않음. 가격은 돌파 지도 구성종목 패널의 비율선에, 구성종목은 블록에 씀 |
 
 ### 출력 파일
 
@@ -44,9 +64,10 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 | 파일 | 형식 | 열 |
 |---|---|---|
 | `prices.csv` | long. 날짜 오름차순, 같은 날짜 안에서는 수집 대상 순서 | `date`, `ticker`, `open`, `high`, `low`, `close`, `adj_close`, `volume` |
-| `prices_wide.csv` | wide. 행은 SPY 기준 축의 날짜, 열은 티커별 `adj_close`. 이 파일 하나로 비율 계산이 됩니다 | `date`, `SPY`, `QQQ`, `XLK`, …, `DRAM`, `MAGS` |
+| `prices_wide.csv` | wide. 행은 SPY 기준 축의 날짜, 열은 티커별 `adj_close`. 이 파일 하나로 비율 계산이 됩니다 | `date`, `SPY`, `QQQ`, `XLK`, …, `DRAM`, `MAGS`, `GDX`, …, `JETS` |
 | `prices_summary.json` | 실행 결과 요약 | `generated_at`(UTC), `source_order`, `tickers`(티커별 `{source, adj_close_available, first_date, last_date, rows, missing_days, gap_days, off_axis_dates, rows_before_axis, partial_bar_dropped, attempts}`), `base_axis {ticker, first_date, last_date, days}`, `failed_tickers`, `parent_sector`, `groups`, `holdings`, `holdings_failed`, `checks`, `warnings` |
 | `holdings/YYYY-MM-DD.csv` | 구성종목 상위 10개 스냅샷. 파일명은 실행일이며 같은 날짜 파일은 덮어씁니다 | `etf`, `rank`, `symbol`, `name`, `weight_pct` |
+| `stocks/prices_wide.csv`, `stocks/ath.json`, `stocks/summary.json` | 돌파 지도의 구성종목 일봉(같은 SPY 축)과 사상 최고 캐시. `breakout/fetch_stock_prices.py` 가 씁니다 | [breakout/README.md](breakout/README.md) 참고 |
 
 `prices_wide.csv`의 빈 칸은 그 날짜에 그 티커의 데이터가 없다는 뜻입니다. 직전 값으로 채우지 않으므로, 비율을 계산할 때 빈 칸은 건너뛰어야 합니다.
 
@@ -87,12 +108,14 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 
 ## 자동 갱신 (GitHub Actions → GitHub Pages → 텔레그램)
 
-`.github/workflows/terminal.yml` 이 사람 손 없이 보드를 갱신합니다. 흐름은 수집 → 계산 → 페이지 생성 → 커밋 → 알림이며, 모든 단계가 표준 라이브러리만 씁니다.
+`.github/workflows/terminal.yml` 이 사람 손 없이 두 화면을 갱신합니다. 흐름은 수집 → 계산 → 페이지 생성 → 커밋 → 알림이며, 모든 단계가 표준 라이브러리만 씁니다.
 
 | 시각 (KST) | 하는 일 |
 |---|---|
-| 화~금 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `fetch_prices.py` 로 가격·구성종목을 받고, `scripts/compute_terminal.py` → `scripts/build_terminal.py` 로 `docs/` 를 다시 만들어 커밋합니다. 직전 빌드와 비교해 변화가 있으면 텔레그램으로 조건 알림을 보냅니다. |
+| 화~금 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `fetch_prices.py` 로 ETF 가격·구성종목을 받고, `terminal/compute_terminal.py` → `terminal/build_terminal.py` 로 `docs/` 를 다시 만듭니다. 이어서 `breakout/fetch_stock_prices.py` 로 구성종목 약 240개의 일봉을 받고 `breakout/compute_breakout.py` → `breakout/build_breakout.py` 로 `docs/breakout/` 을 만듭니다(이 세 단계가 실패해도 매트릭스 쪽 빌드와 커밋은 그대로 진행되고, 돌파 지도는 직전 빌드로 남습니다). 모두 커밋한 뒤 직전 빌드와 비교해 변화가 있으면 텔레그램으로 매트릭스 조건 알림을 보냅니다. |
 | 토 07:05 | 금요일 종가로 위와 같은 일을 한 뒤, 주간 브리핑(`docs/data/brief.txt`)을 텔레그램으로 보냅니다. |
+
+돌파 지도의 알림 채널은 아직 정하지 않았습니다. 빌드는 매일 `docs/breakout/data/alerts.txt`(새 돌파·새 이탈·실패·블록 알림)와 `brief.txt`(주간 브리핑)를 써 두기만 하고, 저장소 Variables 에 `BREAKOUT_TELEGRAM` = `true` 를 추가하면 같은 봇으로 보내기 시작합니다.
 
 Actions 탭의 **Run workflow** 로 언제든 수동 실행할 수 있고, `digest` 를 켜면 브리핑도 함께 보냅니다.
 
@@ -108,11 +131,12 @@ GitHub 의 예약 실행은 보통 예약 시각보다 2~4시간 늦게 시작�
 
 | 파일 | 역할 |
 |---|---|
-| `scripts/compute_terminal.py` | `output/prices_wide.csv` 로 백분위·비율선·RRG(1단 섹터 ÷ SPY, 2단 산업·테마 ÷ 상위 섹터, 스타일 MAGS ÷ SPY)·신호를 계산해 `output/terminal-data.json` 을 씁니다. 규칙은 파일 머리의 설명에 있습니다. |
-| `scripts/build_terminal.py` | 계산값, 최신 두 구성종목 스냅샷(변동 %p), 상장 목록, `data/etf_meta.json` 을 `template/terminal.html` 에 끼워 `docs/index.html`(Pages 용)과 `docs/terminal.artifact.html`(Claude 아티팩트 발행용)을 만듭니다. 직전 빌드(`docs/data/terminal-data.json`)와 비교해 `docs/data/alerts.json`·`alerts.txt` 와 주간 브리핑 `docs/data/brief.txt` 를 씁니다. |
-| `scripts/notify_telegram.py` | `brief.txt`(`--mode digest`) 또는 `alerts.txt`(`--mode alerts`, 비어 있으면 보내지 않음)를 텔레그램 봇 API 로 보냅니다. |
-| `template/terminal.html` | 터미널 화면 템플릿. `__HOLD__`, `__DATA__`, `__PRICE_ASOF__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. 주소에 해시가 없으면 보드 위에 대문(cover)이 먼저 덮이고 LAUNCH TERMINAL 로 엽니다. `#board`·`#rrg`·`#brief`·`#help` 로 들어오면 대문을 건너뛰며(텔레그램 링크는 `#board`), 대문의 Skip 을 켜면 그 브라우저에서는 다시 보이지 않습니다. 보드에서 `0` 또는 `COVER` 를 입력하면 다시 엽니다. |
-| `data/etf_meta.json` | ETF 이름·순자산·보유 종목 수·출처 URL(2026-09-26 stockanalysis 기준, MAGS 는 2026-10-13). 순자산은 자동 갱신되지 않습니다. |
+| `terminal/compute_terminal.py` | `output/prices_wide.csv` 로 백분위·비율선·RRG(1단 섹터 ÷ SPY, 2단 산업·테마 ÷ 상위 섹터, 스타일 MAGS ÷ SPY)·신호를 계산해 `output/terminal-data.json` 을 씁니다. 규칙은 파일 머리의 설명에 있습니다. |
+| `terminal/build_terminal.py` | 계산값, 최신 두 구성종목 스냅샷(변동 %p), 상장 목록, `data/etf_meta.json` 을 `terminal/template.html` 에 끼워 `docs/index.html`(Pages 용)과 `docs/terminal.artifact.html`(Claude 아티팩트 발행용)을 만듭니다. 두 본문은 `5) 돌파 지도` 탭의 주소만 다릅니다(Pages 는 `breakout/`, 아티팩트는 돌파 지도 아티팩트를 새 탭으로). 직전 빌드(`docs/data/terminal-data.json`)와 비교해 `docs/data/alerts.json`·`alerts.txt` 와 주간 브리핑 `docs/data/brief.txt` 를 씁니다. |
+| `terminal/template.html` | 터미널 화면 템플릿. `__HOLD__`, `__DATA__`, `__PRICE_ASOF__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. 주소에 해시가 없으면 보드 위에 대문(cover)이 먼저 덮이고 LAUNCH TERMINAL 로 엽니다. `#board`·`#rrg`·`#brief`·`#help` 로 들어오면 대문을 건너뛰며(텔레그램 링크는 `#board`), 대문의 Skip 을 켜면 그 브라우저에서는 다시 보이지 않습니다. 보드에서 `0` 또는 `COVER` 를 입력하면 다시 엽니다. |
+| `breakout/` | 돌파 지도. 수집기 `fetch_stock_prices.py`, 상장 대조 `match_listing.py`, 계산 `compute_breakout.py`, 페이지 생성 `build_breakout.py`(`docs/breakout/index.html` 과 `docs/breakout/breakout.artifact.html`), 템플릿 `template.html`. 자세한 설명은 [breakout/README.md](breakout/README.md). |
+| `scripts/notify_telegram.py` | `brief.txt`(`--mode digest`) 또는 `alerts.txt`(`--mode alerts`, 비어 있으면 보내지 않음)를 텔레그램 봇 API 로 보냅니다. `--docs docs/breakout` 으로 돌파 지도의 본문을 보냅니다. |
+| `data/etf_meta.json` | ETF 이름·순자산·보유 종목 수·출처 URL(2026-09-26 stockanalysis 기준, MAGS 는 2026-10-13, 돌파 지도 전용 5개는 2026-08~09), 한글 이름 `ko`, 분류 `tag`·`cat`, 들어가는 화면 `screens`. 순자산은 자동 갱신되지 않습니다. |
 | `output/holdings/2026-09-26.csv` | 변동 %p 의 첫 비교 기준이 되는 스냅샷(시안 v2 의 구성종목 데이터에서 복원). |
 
 ### 알림 조건

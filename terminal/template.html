@@ -52,6 +52,7 @@ b{font-weight:700}
 .tabs [role="tab"] b{color:var(--amber)}
 .tabs [role="tab"]:hover{color:#fff}
 .tabs [role="tab"][aria-selected="true"]{color:#fff;border-bottom-color:var(--amber);background:var(--band)}
+.tabs a[role="tab"]{text-decoration:none;display:inline-block;line-height:normal} .tabs a[role="tab"] small{color:var(--muted);font-size:10px;margin-left:4px;letter-spacing:.06em}
 .tabinfo{margin-left:auto;color:var(--muted);font-size:11.5px;padding:6px 4px}
 
 /* 패널 배치 */
@@ -554,6 +555,7 @@ body.cover-open{overflow:hidden}
     <button type="button" role="tab" id="tab3" aria-selected="false" aria-controls="pane3"><b>3)</b> RRG 1단·2단</button>
     <button type="button" role="tab" id="tab4" aria-selected="false" aria-controls="pane4"><b>4)</b> 주간 브리핑</button>
     <button type="button" role="tab" id="tab2" aria-selected="false" aria-controls="pane2"><b>2)</b> 도움말</button>
+    <a role="tab" id="tab5" href="__BREAKOUT_URL__" target="__NAV_TARGET__" rel="noopener" title="돌파 지도(BKM)로 이동: 이 보드의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 28개 ETF 의 상위 10개 구성종목"><b>5)</b> 돌파 지도<small>BKM</small></a>
     <span class="tabinfo">관찰 대상 24 ETF (섹터 11 · 산업·테마 12 · 스타일 1) · SPY 대비 상대수익률 백분위 · 종가 __PRICE_ASOF__ · 구성종목 __HOLD_ASOF__</span>
   </div>
 
@@ -734,6 +736,7 @@ body.cover-open{overflow:hidden}
               <tr><td>1W · 1M · 3M · 6M · 12M</td><td>그 기간 열의 백분위가 높은 순으로 정렬합니다. 뒤에 ASC를 붙이면 낮은 순입니다(예: 3M ASC).</td></tr>
               <tr><td>97 COLOR · US · KR</td><td>색 규약을 바꾸거나 지정합니다.</td></tr>
               <tr><td>1 MATRIX · 2 HELP · 3 RRG · 4 BRIEF</td><td>매트릭스, 도움말, RRG 1단·2단, 주간 브리핑 화면을 오갑니다.</td></tr>
+              <tr><td>5 BKM · BREAKOUT · MAP</td><td>돌파 지도(BKM)로 이동합니다. 이 보드의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 28개 ETF 의 상위 10개 구성종목을 칸으로 놓고, 20일·55일·52주·사상 최고 고점 돌파와 저점 이탈을 USD·QQQ 대비·SPY 대비로 보여 줍니다.</td></tr>
               <tr><td>0 COVER</td><td>대문 화면을 다시 엽니다. 대문은 주소에 #rrg·#brief·#board 같은 해시가 없을 때만 처음에 보이고, 대문의 "Skip this door"를 켜면 이 브라우저에서는 건너뜁니다.</td></tr>
               <tr><td>RRG XLK · XLK RRG</td><td>3) 탭을 열고 2단 그래프를 그 섹터 대비로 바꿉니다. 하위 ETF를 적으면 그 상위 섹터의 2단을 열고 그 ETF를 강조하며, MAGS를 적으면 1단에서 MAGS 점을 강조합니다. 3) 탭에서는 1단·2단의 점과 2단 표의 행을 눌러도 탭을 벗어나지 않고 오른쪽 Holdings 패널에 그 ETF의 구성종목이 열립니다.</td></tr>
             </tbody>
@@ -1091,6 +1094,9 @@ function placeHold(n) {
   if (n === 3) { if (holdPanel.parentNode !== rrgRail) rrgRail.appendChild(holdPanel); }
   else if (holdPanel.parentNode !== holdHome) holdHome.insertBefore(holdPanel, chgPanel);
 }
+/* 5) 돌파 지도: 같은 저장소의 별도 화면(Pages 에서는 breakout/, 아티팩트에서는 돌파 지도 아티팩트) */
+const BREAKOUT_URL = '__BREAKOUT_URL__', NAV_TARGET = '__NAV_TARGET__';
+function goBreakout() { if (NAV_TARGET === '_blank') window.open(BREAKOUT_URL, '_blank', 'noopener'); else location.href = BREAKOUT_URL; }
 function showTab(n) {
   curTab = n;
   [1, 2, 3, 4].forEach(k => {
@@ -1310,6 +1316,7 @@ function runCmd(raw0) {
     '2': () => showTab(2), 'HELP': () => showTab(2), '98': () => showTab(2),
     '3': () => showTab(3), 'RRG': () => showTab(3), '41': () => showTab(3), '42': () => showTab(1),
     '4': () => showTab(4), 'BRIEF': () => showTab(4),
+    '5': () => goBreakout(), 'BKM': () => goBreakout(), 'BREAKOUT': () => goBreakout(), 'MAP': () => goBreakout(),
     '0': () => showCover(), 'COVER': () => showCover(), 'DOOR': () => showCover(),
     '11': () => setCat('all'), 'ALL': () => setCat('all'),
     '12': () => setCat('sec'), 'SEC': () => setCat('sec'), 'SECT': () => setCat('sec'),
@@ -1321,11 +1328,11 @@ function runCmd(raw0) {
     'US': () => setConv('US'), 'KR': () => setConv('KR'),
   };
   const labels = { '1': '매트릭스 화면', 'MATRIX': '매트릭스 화면', 'MAIN': '매트릭스 화면', '2': '도움말 화면', 'HELP': '도움말 화면', '98': '도움말 화면',
-    '3': 'RRG 1단·2단 화면', 'RRG': 'RRG 1단·2단 화면', '41': 'RRG 1단·2단 화면', '42': '매트릭스 화면', '4': '주간 브리핑 화면', 'BRIEF': '주간 브리핑 화면',
+    '3': 'RRG 1단·2단 화면', 'RRG': 'RRG 1단·2단 화면', '41': 'RRG 1단·2단 화면', '42': '매트릭스 화면', '4': '주간 브리핑 화면', 'BRIEF': '주간 브리핑 화면', '5': '돌파 지도(BKM)로 이동', 'BKM': '돌파 지도(BKM)로 이동', 'BREAKOUT': '돌파 지도(BKM)로 이동', 'MAP': '돌파 지도(BKM)로 이동',
     '11': '필터 → 전체 24', 'ALL': '필터 → 전체 24', '12': '필터 → 섹터 11', 'SEC': '필터 → 섹터 11', 'SECT': '필터 → 섹터 11',
     '13': '필터 → 산업·테마 12', 'IND': '필터 → 산업·테마 12', 'THM': '필터 → 산업·테마 12', '14': '필터 → 스타일 1', 'STY': '필터 → 스타일 1', 'STYLE': '필터 → 스타일 1',
     '21': '정렬 → 열 기준', 'COL': '정렬 → 열 기준', '22': '정렬 → 전환순', 'SHIFT': '정렬 → 전환순' };
-  if (table[c]) { if (!/^(97|COLOR|CONV|US|KR|2|3|4|HELP|RRG|BRIEF|98|41|42|0|COVER|DOOR)$/.test(c)) showTab(1); table[c](); if (labels[c]) msg(labels[c], 'ok'); return; }
+  if (table[c]) { if (!/^(97|COLOR|CONV|US|KR|2|3|4|5|HELP|RRG|BRIEF|BKM|BREAKOUT|MAP|98|41|42|0|COVER|DOOR)$/.test(c)) showTab(1); table[c](); if (labels[c]) msg(labels[c], 'ok'); return; }
   /* 명령이 아니면 종목 검색: 상위 10개 구성종목(티커·코드·한글 별칭·영문 이름) → ETF 한글 이름 */
   const raw = raw0.trim().replace(/\s+/g, ' ');
   const st = findStock(c);
