@@ -159,16 +159,16 @@ XBI,7,AMGN,Amgen Inc.,1.66
 XBI,8,IOVA,"Iovance Biotherapeutics, Inc.",1.65
 XBI,9,UTHR,United Therapeutics Corporation,1.65
 XBI,10,EXEL,"Exelixis, Inc.",1.64
-GNOM,1,MRNA,"Moderna, Inc.",12.33
-GNOM,2,TWST,Twist Bioscience Corporation,6.21
-GNOM,3,TXG,"10x Genomics, Inc.",5.98
-GNOM,4,ILMN,"Illumina, Inc.",5.82
-GNOM,5,NTRA,"Natera, Inc.",5.53
-GNOM,6,GH,"Guardant Health, Inc.",5.14
-GNOM,7,HKG:1548,Genscript Biotech Corporation,3.58
-GNOM,8,TECH,Bio-Techne Corporation,3.52
-GNOM,9,QGEN,Qiagen N.V.,3.47
-GNOM,10,VRTX,Vertex Pharmaceuticals Incorporated,3.33
+GNOM,1,MRNA,"Moderna, Inc.",12.32
+GNOM,2,TWST,Twist Bioscience Corporation,6.38
+GNOM,3,TXG,"10x Genomics, Inc.",6.22
+GNOM,4,ILMN,"Illumina, Inc.",6.04
+GNOM,5,NTRA,"Natera, Inc.",5.54
+GNOM,6,GH,"Guardant Health, Inc.",5.19
+GNOM,7,HKG:1548,Genscript Biotech Corporation,3.61
+GNOM,8,QGEN,Qiagen N.V.,3.49
+GNOM,9,TECH,Bio-Techne Corporation,3.46
+GNOM,10,VRTX,Vertex Pharmaceuticals Incorporated,3.34
 ARKG,1,TXG,"10x Genomics, Inc.",8.65
 ARKG,2,TWST,Twist Bioscience Corporation,8.14
 ARKG,3,TEM,"Tempus AI, Inc.",8.11

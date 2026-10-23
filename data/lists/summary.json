@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T06:23:22Z",
+  "generated_at": "2026-10-23T16:04:47Z",
   "binance_equity_catalog_error": null,
   "binance_spot_bstocks": {
     "count": 100,
@@ -21,7 +21,7 @@
       "unknown": 8
     },
     "exchange_info_source": "https://www.binance.com",
-    "exchange_info_server_time": "2026-10-23T06:00:54Z",
+    "exchange_info_server_time": "2026-10-23T11:12:26Z",
     "trading_but_not_in_exchange_info": [],
     "by_underlying_type": {
       "CN_EQUITY": 2,
@@ -38,7 +38,6 @@
       "unknown": 2
     },
     "uncategorized_coins": [
-      "xyz:JIO",
       "mkts:BVIV",
       "io:EWY"
     ],
