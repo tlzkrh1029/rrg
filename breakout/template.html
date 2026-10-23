@@ -201,7 +201,7 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .side .big .fl{fill:var(--up);opacity:.3} .side .big .fd{fill:var(--down);opacity:.3}
 .side .big text{font-size:9.5px;fill:var(--muted)}
 .side .big .ax{stroke:var(--hair)}
-/* 종목 상세의 이동평균: 50 SMA 주황 굵은 실선, 89 HMA 노랑 일점쇄선, 144 HMA 파랑 일점쇄선. 눈금은 가격·선반만으로 잡고 벗어나면 잘린다 */
+/* 종목 상세의 이동평균: 50 SMA 주황 굵은 실선, 89 HMA 노랑 일점쇄선, 144 HMA 파랑 일점쇄선. 눈금은 가격·Shelf 만으로 잡고 벗어나면 잘린다 */
 .side .ma50{fill:none;stroke:var(--amber);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
 .side .ma89{fill:none;stroke:#ffe95c;stroke-width:1.3;stroke-linejoin:round;stroke-dasharray:6 2.5 1.5 2.5}
 .side .ma144{fill:none;stroke:#4d9cff;stroke-width:1.3;stroke-linejoin:round;stroke-dasharray:6 2.5 1.5 2.5}
@@ -429,20 +429,20 @@ kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);borde
       <span class="lab">판정 정의</span>
       <dl>
         <dt>상장 점</dt><dd>티커 아래 작은 점은 세 거래소의 상장 여부입니다. 속 빈 주황은 바이낸스 bStocks(토큰화 현물), 속 찬 주황은 바이낸스 TradFi 선물(perp), 속 찬 하늘색은 하이퍼리퀴드 HIP-3 주식 선물입니다. 있는 것만 이 순서로 찍고, 없으면 아무것도 없습니다. 블록 머리글의 큰 점은 ETF 자체의 상장이며, b 글자가 든 주황 원이 bStocks입니다. 목록은 저장소 tlzkrh1029/tradfi-ticker-lists 의 output(<span id="lstAsof"></span> 수집, bStocks __LIST_B__종 · 선물 __LIST_F__계약 · HIP-3 __LIST_H__종)이고, 미국 종목은 티커로, 비미국 종목은 거래소:코드(KRX:005930, HKEX:0100)로 대조했으며, 미국에도 상장된 비미국 표기(TSX:ABX → B)는 미국 티커로도 찾았습니다.</dd>
-        <dt>선반</dt><dd>지평 N일(20일·55일) 동안의 최고 종가에서 최근 5일을 뺀 값입니다. 52주와 사상 최고는 창 이전의 고점 수준과 창 안의 종가를 함께 봅니다. 최근 5일을 빼는 이유는, 오르는 중인 종목이 어제의 고점을 오늘 조금 더 넘는 것을 돌파로 세지 않기 위해서입니다.</dd>
-        <dt>돌파</dt><dd>직전 5일의 종가가 모두 선반의 100.5% 이하였다가 오늘 종가가 그 위로 처음 올라선 날입니다. 그날이 경과 1일입니다.</dd>
-        <dt>켜짐</dt><dd>돌파 후 10일 이내이고, 종가가 아직 선반의 99% 위에 있는 칸입니다. 날이 갈수록 채움이 옅어집니다.</dd>
-        <dt>실패</dt><dd>돌파 후 5일 안에 종가가 선반의 99% 아래로 되돌아온 칸입니다. 되돌아온 뒤 5일 동안 빨간 점선 테두리로 표시하고, 봉우리에 빈 원을 남깁니다.</dd>
+        <dt>Shelf</dt><dd>지평 N일(20일·55일) 동안의 최고 종가에서 최근 5일을 뺀 값입니다. 52주와 사상 최고는 창 이전의 고점 수준과 창 안의 종가를 함께 봅니다. 최근 5일을 빼는 이유는, 오르는 중인 종목이 어제의 고점을 오늘 조금 더 넘는 것을 돌파로 세지 않기 위해서입니다.</dd>
+        <dt>돌파</dt><dd>직전 5일의 종가가 모두 Shelf 의 100.5% 이하였다가 오늘 종가가 그 위로 처음 올라선 날입니다. 그날이 경과 1일입니다.</dd>
+        <dt>켜짐</dt><dd>돌파 후 10일 이내이고, 종가가 아직 Shelf 의 99% 위에 있는 칸입니다. 날이 갈수록 채움이 옅어집니다.</dd>
+        <dt>실패</dt><dd>돌파 후 5일 안에 종가가 Shelf 의 99% 아래로 되돌아온 칸입니다. 되돌아온 뒤 5일 동안 빨간 점선 테두리로 표시하고, 봉우리에 빈 원을 남깁니다.</dd>
         <dt>이탈</dt><dd>돌파의 거울입니다. 바닥(최근 5일을 뺀 N일 최저 종가)의 99.5% 아래로 처음 내려선 날이 이탈 1일이고, 10일 이내에 아직 바닥의 101% 아래에 있으면 빨간색으로 켜집니다. 52주·사상 최고 지평에서는 55일 바닥을 씁니다.</dd>
         <dt>직전</dt><dd>돌파도 이탈도 아니지만 종가가 천장(지평 고점)의 1% 안에 붙어 있는 칸입니다. 내일 켜질 후보라서 파란 점만 찍습니다.</dd>
-        <dt>유지</dt><dd>돌파한 지 10일이 지났지만 아직 선반 위에 있는 칸입니다. 색은 빼고 선반을 실선으로만 남깁니다.</dd>
+        <dt>유지</dt><dd>돌파한 지 10일이 지났지만 아직 Shelf 위에 있는 칸입니다. 색은 빼고 Shelf 를 실선으로만 남깁니다.</dd>
         <dt>표의 진한 색</dt><dd>경과일 표가 진한 초록으로 채워진 칸은 선택한 지평뿐 아니라 52주 고점(또는 사상 최고)까지 넘은 칸입니다.</dd>
       </dl>
     </div>
   </div>
 
   <h2>켜진 칸 목록</h2>
-  <div class="tblwrap"><table class="t" id="litTbl"><thead><tr><th>경과</th><th>종목</th><th>상장</th><th>이름</th><th>ETF</th><th>넘은 지평</th><th class="r">선반 대비</th><th class="r">30일 변화</th></tr></thead><tbody></tbody></table></div>
+  <div class="tblwrap"><table class="t" id="litTbl"><thead><tr><th>경과</th><th>종목</th><th>상장</th><th>이름</th><th>ETF</th><th>넘은 지평</th><th class="r">Shelf 대비</th><th class="r">30일 변화</th></tr></thead><tbody></tbody></table></div>
   <h2>약세 신호 · 실패한 돌파와 하향 이탈</h2>
   <div class="tblwrap"><table class="t" id="failTbl"><thead><tr><th>구분</th><th>경과</th><th>종목</th><th>상장</th><th>이름</th><th>ETF</th><th class="r">기준선 대비</th><th class="r">30일 변화</th></tr></thead><tbody></tbody></table></div>
 
@@ -463,7 +463,7 @@ kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);borde
       </section>
       <section>
         <h3>4. 선과 표 읽기</h3>
-        <p>칸 아래의 세 줄은 그 종목의 변동률입니다. D 는 일간(전일 종가 대비), W 는 주간(5거래일 전 대비), M 은 30일(칸에 그린 기간, 30거래일 전 대비)이며, 초록은 상승, 빨강은 하락, 회색은 0 입니다. 탭의 자를 따르므로 vs. SPY 탭에서는 SPY 대비 비율의 변동률이 됩니다. 종목 상세의 차트에는 50일 단순이동평균(주황 굵은 실선), 89일 헐 이동평균(노랑 일점쇄선), 144일 헐 이동평균(파랑 일점쇄선)이 들어가고, 눈금은 가격과 선반만으로 잡기 때문에 멀리 떨어진 이동평균은 잘려 나가며 그 경우 차트 가장자리에 현재가 대비 거리를 적습니다. 차트 위의 USD · vs QQQ · vs SPY 는 위의 1·2·3 탭과 같은 구실을 합니다.</p>
+        <p>칸 아래의 세 줄은 그 종목의 변동률입니다. D 는 일간(전일 종가 대비), W 는 주간(5거래일 전 대비), M 은 30일(칸에 그린 기간, 30거래일 전 대비)이며, 초록은 상승, 빨강은 하락, 회색은 0 입니다. 탭의 자를 따르므로 vs. SPY 탭에서는 SPY 대비 비율의 변동률이 됩니다. 종목 상세의 차트에는 50일 단순이동평균(주황 굵은 실선), 89일 헐 이동평균(노랑 일점쇄선), 144일 헐 이동평균(파랑 일점쇄선)이 들어가고, 눈금은 가격과 Shelf 만으로 잡기 때문에 멀리 떨어진 이동평균은 잘려 나가며 그 경우 차트 가장자리에 현재가 대비 거리를 적습니다. 차트 위의 USD · vs QQQ · vs SPY 는 위의 1·2·3 탭과 같은 구실을 합니다.</p>
         <p>흰 선이 종가, 호박색 점선이 지평 기준의 고점(천장)입니다. 종가가 천장을 처음 넘은 날 칸이 켜지고, 점선은 실선(바닥)으로 바뀌며 선 위로 넘친 부분이 채워집니다. 이탈은 그 거울로, 바닥 아래로 흐른 부분이 빨간색으로 채워집니다. 오른쪽 위의 표는 경과일이고, 미돌파 칸에는 천장까지 남은 거리가 적힙니다. 1일이 가장 진하고 10일이 지나면 색이 꺼집니다.</p>
       </section>
       <section>
@@ -781,10 +781,10 @@ function horizonRows(k) {
   const c = series[k][state.mode].c, n = c.length;
   return HS.map(H => {
     const r = J(k, state.mode, H);
-    if (r.st === 'lit') return `<tr><td class="k">${HLAB[H]}</td><td class="v on">돌파 ${r.days}일째 · 선반 +${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'lit') return `<tr><td class="k">${HLAB[H]}</td><td class="v on">돌파 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
     if (r.st === 'down') return `<tr><td class="k">${HLAB[H]}</td><td class="v dn">이탈 ${r.days}일째 · 바닥 ${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'failed') return `<tr><td class="k">${HLAB[H]}</td><td class="v dn">실패 · 돌파 후 ${r.days}일, 선반 ${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'quiet') return `<tr><td class="k">${HLAB[H]}</td><td class="v">유지 ${r.days}일째 · 선반 +${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'failed') return `<tr><td class="k">${HLAB[H]}</td><td class="v dn">실패 · 돌파 후 ${r.days}일, Shelf ${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'quiet') return `<tr><td class="k">${HLAB[H]}</td><td class="v">유지 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
     if (r.st === 'near') return `<tr><td class="k">${HLAB[H]}</td><td class="v nr">직전 · 고점까지 ${(r.dist * 100).toFixed(1)}%</td></tr>`;
     return `<tr><td class="k">${HLAB[H]}</td><td class="v" style="color:var(--muted)">${r.dist == null ? '–' : r.dist <= 0.001 ? '고점 부근' : '고점까지 ' + (r.dist * 100).toFixed(1) + '%'}</td></tr>`;
   }).join('');
@@ -826,7 +826,7 @@ function bigChart(k) {
   if (r.lvl != null && r.lvl >= lo && r.lvl <= hi) {
     const yl = ys(r.lvl).toFixed(1), i0 = r.le, poly = c.slice(i0).map((v, i) => `${xs(i0 + i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
     if (r.st === 'lit' || r.st === 'down') out += `<clipPath id="bc"><rect x="0" y="${r.st === 'lit' ? 0 : yl}" width="${Wd}" height="${r.st === 'lit' ? yl : Hd}"/></clipPath><polygon class="${r.st === 'lit' ? 'fl' : 'fd'}" clip-path="url(#bc)" points="${poly} ${xs(n - 1).toFixed(1)},${yl} ${xs(i0).toFixed(1)},${yl}"/>`;
-    out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/><text x="${Wd - R + 3}" y="${(+yl + 3).toFixed(1)}">${r.st === 'down' ? '바닥' : '선반'} ${HLAB[state.H]}</text>`;
+    out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/><text x="${Wd - R + 3}" y="${(+yl + 3).toFixed(1)}">${r.st === 'down' ? '바닥' : 'Shelf'} ${HLAB[state.H]}</text>`;
   } else if (r.ceiling != null && r.ceiling >= lo && r.ceiling <= hi) {
     const yl = ys(r.ceiling).toFixed(1); out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/><text x="${Wd - R + 3}" y="${(+yl + 3).toFixed(1)}">천장 ${HLAB[state.H]}</text>`;
   }

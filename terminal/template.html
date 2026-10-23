@@ -1019,7 +1019,7 @@ function render() {
   updatePos();
 }
 
-/* ---- 종목 상세: 돌파 지도와 같은 규칙(선반·돌파·이탈), 같은 이동평균(50 SMA · 89 HMA · 144 HMA) ---- */
+/* ---- 종목 상세: 돌파 지도와 같은 규칙(Shelf·돌파·이탈), 같은 이동평균(50 SMA · 89 HMA · 144 HMA) ---- */
 const SK = { TOL: 0.99, MAXAGE: 10, FAILWIN: 5, MARGIN: 1.005, GAP: 5, W: 30, NEAR: 0.01 };
 const HZ = ['20', '55', '52w', 'ath'], HZLAB = { '20': '20일', '55': '55일', '52w': '52주', 'ath': '사상 최고' };
 const SMLAB = { usd: 'USD', qqq: 'QQQ 대비', spy: 'SPY 대비' }, SMLONG = { usd: 'USD (절대 가격)', qqq: 'QQQ 대비 비율', spy: 'SPY 대비 비율' };
@@ -1090,7 +1090,7 @@ function sChart(k, mode) {
   if (r.lvl != null && r.lvl >= lo && r.lvl <= hi) {
     const yl = ys(r.lvl).toFixed(1), i0 = r.le, poly = c.slice(i0).map((v, i) => `${xs(i0 + i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
     if (r.st === 'lit' || r.st === 'down') out += `<clipPath id="${cid}a"><rect x="0" y="${r.st === 'lit' ? 0 : yl}" width="${Wd}" height="${r.st === 'lit' ? yl : Hd}"/></clipPath><polygon class="${r.st === 'lit' ? 'fl' : 'fd'}" clip-path="url(#${cid}a)" points="${poly} ${xs(n - 1).toFixed(1)},${yl} ${xs(i0).toFixed(1)},${yl}"/>`;
-    out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/><text x="${Wd - R + 3}" y="${(+yl + 3).toFixed(1)}">${r.st === 'down' ? '바닥' : '선반'} 20일</text>`;
+    out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/><text x="${Wd - R + 3}" y="${(+yl + 3).toFixed(1)}">${r.st === 'down' ? '바닥' : 'Shelf'} 20일</text>`;
   } else if (r.ceiling != null && r.ceiling >= lo && r.ceiling <= hi) {
     const yl = ys(r.ceiling).toFixed(1); out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/><text x="${Wd - R + 3}" y="${(+yl + 3).toFixed(1)}">천장 20일</text>`;
   }
@@ -1116,10 +1116,10 @@ function sLegend(k, mode) {
 function sHorizonRows(k, mode) {
   return HZ.map(H => {
     const r = sJ(k, mode, H), lab = HZLAB[H];
-    if (r.st === 'lit') return `<tr><td class="k">${lab}</td><td class="v on">돌파 ${r.days}일째 · 선반 +${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'lit') return `<tr><td class="k">${lab}</td><td class="v on">돌파 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
     if (r.st === 'down') return `<tr><td class="k">${lab}</td><td class="v dn">이탈 ${r.days}일째 · 바닥 ${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'failed') return `<tr><td class="k">${lab}</td><td class="v dn">실패 · 돌파 후 ${r.days}일, 선반 ${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'quiet') return `<tr><td class="k">${lab}</td><td class="v">유지 ${r.days}일째 · 선반 +${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'failed') return `<tr><td class="k">${lab}</td><td class="v dn">실패 · 돌파 후 ${r.days}일, Shelf ${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'quiet') return `<tr><td class="k">${lab}</td><td class="v">유지 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
     if (r.st === 'near') return `<tr><td class="k">${lab}</td><td class="v nr">직전 · 고점까지 ${(r.dist * 100).toFixed(1)}%</td></tr>`;
     return `<tr><td class="k">${lab}</td><td class="v mu">${r.dist == null ? '–' : r.dist <= 0.001 ? '고점 부근' : '고점까지 ' + (r.dist * 100).toFixed(1) + '%'}</td></tr>`;
   }).join('');
