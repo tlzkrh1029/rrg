@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T16:33:11Z",
+  "generated_at": "2026-10-24T00:32:11Z",
   "binance_equity_catalog_error": null,
   "binance_spot_bstocks": {
     "count": 100,
@@ -21,7 +21,7 @@
       "unknown": 8
     },
     "exchange_info_source": "https://www.binance.com",
-    "exchange_info_server_time": "2026-10-23T11:12:26Z",
+    "exchange_info_server_time": "2026-10-24T00:25:22Z",
     "trading_but_not_in_exchange_info": [],
     "by_underlying_type": {
       "CN_EQUITY": 2,
