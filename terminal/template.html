@@ -335,6 +335,8 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .brief{padding-block:10px 4px;display:grid;gap:10px}
 .brief .pb{padding:10px 12px 12px}
 .brief pre{margin:0;font:12.5px/1.65 var(--mono);color:var(--ink);white-space:pre-wrap;word-break:keep-all;max-width:90ch}
+/* 본문의 '주도 종목' 묶음(머리줄과 ▲·▼ 두 줄): 빌드가 span 으로 감싼다. 텔레그램 본문은 그대로다 */
+.brief pre .drvhl{display:inline-block;background:var(--amber-soft);border-left:2px solid var(--amber);padding:2px 10px 2px 6px;margin-left:-8px}
 .brief .meta{font-size:11.5px;color:var(--muted);margin:0 0 8px;line-height:1.5}
 .brief .meta b{color:var(--ink-2)}
 /* 주도 종목(Drivers): 넓은 화면에서는 브리핑 본문 오른쪽, 좁으면 아래 */
@@ -400,6 +402,8 @@ table.lg{border-collapse:collapse;width:100%;font-size:12px}
 .lg td.tk{white-space:nowrap} .lg td.tk .t{color:#fff;font-weight:700}
 .lg td.tk button.t{text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:3px} .lg td.tk button.t:hover{color:var(--amber)}
 .lg tr.del td.tk .t{color:var(--ink-2);text-decoration:line-through;text-decoration-color:var(--muted)}
+.lg tbody tr.on td{background:var(--amber-soft)} .lg tbody tr.on:hover td{background:rgba(255,160,40,.24)}
+.lg td.ev b.dup{color:var(--ink-2);font-weight:400}
 .lg td.nm{max-width:36ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lg td.bd .chips{display:flex;flex-wrap:wrap;gap:3px}
 .lg .mu{color:var(--muted)}
@@ -432,6 +436,7 @@ table.lg{border-collapse:collapse;width:100%;font-size:12px}
 .ai .srcs{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:10.5px}
 .ai .meta{display:flex;justify-content:space-between;gap:8px;font-size:10.5px;color:var(--muted)}
 dl.ern{display:grid;grid-template-columns:max-content 1fr;gap:2px 10px;margin:0;font-size:11.5px}
+.nobr{white-space:nowrap}
 .ern dt{color:var(--muted)} .ern dd{margin:0;color:var(--ink)}
 .dday{display:inline-block;font-size:9.5px;padding:0 4px;border:1px solid var(--amber);color:var(--amber);margin-left:4px;line-height:1.35;vertical-align:1px}
 ul.hl{list-style:none;margin:0;padding:0;display:grid}
@@ -952,7 +957,7 @@ body.cover-open{overflow:hidden}
         <section class="wide">
           <h3>10. 상장 로그</h3>
           <p>5) 탭은 세 목록을 매일 아침 받을 때마다 직전 목록과 비교해, 새로 상장된 종목(신규)과 목록에서 사라진 종목(이탈)을 날짜순으로 쌓은 기록입니다. 날짜는 거래소마다 뜻이 다릅니다. 바이낸스 TradFi 선물은 계약마다 거래소가 밝힌 상장일이 있어서 그 날짜를 그대로 적습니다('상장일'). bStocks 와 하이퍼리퀴드는 목록에 날짜가 없어서, 목록에서 처음 보인 날을 적습니다('확인'). 직전 수집과 4일 넘게 떨어진 경우에는 그 사이 어느 날에 상장되었는지 알 수 없으므로 시작일을 함께 적습니다(예: '9/27 이후'). 기록은 2026년 9월 27일 목록에서 시작하며, 선물은 그날 이미 상장되어 있던 계약의 상장일도 모두 적었습니다.</p>
-          <p>'이 보드' 열은 그 종목이 이 보드 24개 ETF 의 상위 10개 구성종목에 들어 있는지와 그 ETF·순위를 보여 줍니다. 대조 규칙은 구성종목 표의 상장 점과 같습니다. 티커를 누르면 1) 매트릭스의 종목 검색으로 넘어가고, ETF 단추를 누르면 그 ETF 의 구성종목이 열립니다. 위쪽 세 칸은 거래소별 현재 상장 수, 이번 수집(직전 수집 이후)에서 생긴 신규·이탈 수, 최근 30일의 신규·이탈 수이며, 칸을 누르면 그 거래소만 보입니다. 기간은 마지막 목록 수집일을 기준으로 셉니다. 목록 수집이 실패한 날은 기록하지 않고, 한 거래소의 상장 수가 갑자기 크게 줄면 수집 오류로 보고 이탈을 바로 적지 않습니다.</p>
+          <p>'이 보드' 열은 그 종목이 이 보드 24개 ETF 의 상위 10개 구성종목에 들어 있는지와 그 ETF·순위를 보여 줍니다. 대조 규칙은 구성종목 표의 상장 점과 같습니다. 이 보드 종목의 신규 상장 행은 주황 바탕으로 표시합니다. 같은 거래소에 같은 종목이 이미 다른 심볼로 상장되어 있었다면(예: 하이퍼리퀴드에 xyz:NVDA 가 있는데 io:NVDA 가 더해진 경우) 새로 거래할 수 있게 된 것이 아니므로 '추가'로 적고, 강조하지 않으며 신규 수에도 넣지 않습니다. 반대로 다른 심볼이 남아 있는 채 한 심볼만 빠지면 '심볼 이탈'로 적습니다. 티커를 누르면 1) 매트릭스의 종목 검색으로 넘어가고, ETF 단추를 누르면 그 ETF 의 구성종목이 열립니다. 위쪽 세 칸은 거래소별 현재 상장 수, 이번 수집(직전 수집 이후)에서 생긴 신규·이탈 수, 최근 30일의 신규·이탈 수이며, 칸을 누르면 그 거래소만 보입니다. 기간은 마지막 목록 수집일을 기준으로 셉니다. 목록 수집이 실패한 날은 기록하지 않고, 한 거래소의 상장 수가 갑자기 크게 줄면 수집 오류로 보고 이탈을 바로 적지 않습니다.</p>
         </section>
       </div>
     </section>
@@ -1567,7 +1572,14 @@ function earnMarks(k, dates) {
 function earnDl(k) {
   const s = nS(k); if (!s) return '';
   const e = s.e && s.e[0], out = [];
-  if (e) out.push(`<dt>최근 실적</dt><dd>${cbMd(e[0])} ${TIMING[e[1]] || ''} 발표${e[2] != null ? ` · ${e[1] === 'amc' ? '다음 거래일' : '그날'} <span class="${cbSg(e[2])}">${cbPc(e[2])}%</span>` : (e[3] ? '' : ' · 반응 대기')}${s.u ? ` <a href="${safeUrl(s.u)}" target="_blank" rel="noopener">8-K ↗</a>` : ''}</dd>`);
+  if (e) {
+    /* 조각(발표 · 반응 · 8-K 링크)은 각각 한 덩어리로 두고, 칸이 좁으면 조각 사이에서만 줄을 바꾼다 */
+    const seg = [`${cbMd(e[0])}${TIMING[e[1]] ? ' ' + TIMING[e[1]] : ''}`];   /* 머리 칸이 '최근 실적'이라 '발표'는 뺀다 */
+    if (e[2] != null) seg.push(`${e[1] === 'amc' ? '다음 거래일' : '그날'} <span class="${cbSg(e[2])}">${cbPc(e[2])}%</span>`);
+    else if (!e[3]) seg.push('반응 대기');
+    if (s.u) seg.push(`<a href="${safeUrl(s.u)}" target="_blank" rel="noopener">8-K ↗</a>`);
+    out.push(`<dt>최근 실적</dt><dd>${seg.map(x => `<span class="nobr">${x}</span>`).join(' · ')}</dd>`);
+  }
   if (s.nx) out.push(`<dt>다음 발표</dt><dd>${cbMd(s.nx[0])}${TIMING[s.nx[1]] ? ' ' + TIMING[s.nx[1]] : ''} <span class="dday">${dday(s.nx[0])}</span></dd>`);
   else if (e) out.push('<dt>다음 발표</dt><dd><span style="color:var(--muted)">미확인</span></dd>');
   return out.join('');
@@ -2145,7 +2157,9 @@ document.addEventListener('keydown', ev => { if (!cover.hidden && ev.key === 'En
 
 /* ---- 5) 상장 로그 ----
    LISTLOG.ev 의 사건 배열: [날짜(KST), 거래소 b/p/h, 신규 1 · 이탈 0, 거래소 심볼, 티커, 이름, 종류, 시장, 상장일 여부(1 이면 거래소가 밝힌 상장일),
-   직전 수집 · 이번 수집(UTC), 이 보드의 구성종목 심볼(상장 점과 같은 대조), 이 보드의 ETF 본체]. 날짜 내림차순 ---- */
+   직전 수집 · 이번 수집(UTC), 이 보드의 구성종목 심볼(상장 점과 같은 대조), 이 보드의 ETF 본체, 같은 거래소의 같은 종목 다른 심볼].
+   마지막 칸이 있으면 신규는 '추가'(이미 다른 심볼로 상장되어 있던 종목, 예: 하이퍼리퀴드의 다른 dex), 이탈은 '심볼 이탈'(같은 종목은 다른 심볼로 계속 상장)이다.
+   이 보드 종목의 신규 행(추가는 빼고)은 주황 바탕으로 표시한다. 날짜 내림차순 ---- */
 const LGNAME = { b: '바이낸스 bStocks 현물', p: '바이낸스 TradFi 선물', h: '하이퍼리퀴드 HIP-3' };
 const LGSHORT = { b: 'bStocks', p: '바이낸스 perp', h: 'HL perp' };
 const LG = { v: 'all', p: 30, c: 'all', held: false };
@@ -2162,7 +2176,8 @@ function lgDate(e, base) {
   return `<td class="dt" title="${tip}">${cbMd(e[0])}<small>${wide ? cbMd(lgDay(e[9])) + ' 이후' : '확인'}</small></td>`;
 }
 function lgRow(e, base) {
-  const hits = lgHits(e), et = e[12];
+  const hits = lgHits(e), et = e[12], dup = e[13];
+  const on = e[2] && !dup && (hits || et);
   const tk = hits || et
     ? `<button type="button" class="t" ${hits ? `data-lgsym="${cbEsc(e[11])}" title="1) 매트릭스에서 이 종목을 상위 10개에 담은 ETF 를 찾습니다"` : `data-lgetf="${cbEsc(et)}" title="1) 매트릭스에서 ${cbEsc(et)} 의 구성종목을 엽니다"`}>${cbEsc(e[4])}</button>`
     : `<span class="t">${cbEsc(e[4])}</span>`;
@@ -2170,7 +2185,10 @@ function lgRow(e, base) {
     ? hits.slice().sort((a, b) => b.w - a.w).map(h => `<button type="button" class="dchip" data-lgsym="${cbEsc(e[11])}" data-lgin="${h.etf}" title="${h.etf} 의 구성종목을 열고 이 종목을 강조합니다">${h.etf} <b>${h.i + 1}위</b></button>`).join('')
     : et ? `<button type="button" class="dchip" data-lgetf="${cbEsc(et)}" title="${cbEsc(et)} 의 구성종목을 엽니다">ETF ${cbEsc(et)}</button>` : '<span class="mu">–</span>';
   const kind = { stock: '주식', etf: 'ETF' }[e[6]] || '<span class="mu">–</span>';
-  return `<tr class="${e[2] ? 'add' : 'del'}">${lgDate(e, base)}<td class="vn" title="${LGNAME[e[1]]}">${lgDot(e[1])}<span class="vlab"> ${LGSHORT[e[1]]}</span></td><td class="ev"><b class="${e[2] ? 'add' : 'del'}">${e[2] ? '신규' : '이탈'}</b></td>`
+  const ev = dup
+    ? `<b class="dup" title="${e[2] ? `같은 종목이 이 거래소에 이미 ${cbEsc(dup)} 로 상장되어 있었습니다. 다른 심볼로 추가된 것이라 신규로 세지 않습니다` : `같은 종목은 이 거래소에 ${cbEsc(dup)} 로 계속 상장되어 있습니다`}">${e[2] ? '추가' : '심볼 이탈'}</b>`
+    : `<b class="${e[2] ? 'add' : 'del'}">${e[2] ? '신규' : '이탈'}</b>`;
+  return `<tr class="${e[2] ? 'add' : 'del'}${on ? ' on' : ''}">${lgDate(e, base)}<td class="vn" title="${LGNAME[e[1]]}">${lgDot(e[1])}<span class="vlab"> ${LGSHORT[e[1]]}</span></td><td class="ev">${ev}</td>`
     + `<td class="tk">${tk}<small>${cbEsc(e[3])}</small><small class="nm2">${cbEsc(e[5])}</small></td><td class="c-nm nm" title="${cbEsc(e[5])}">${cbEsc(e[5]) || '<span class="mu">–</span>'}</td>`
     + `<td class="c-cls">${kind}</td><td class="c-mk">${cbEsc(e[7]) || '<span class="mu">–</span>'}</td><td class="bd"><div class="chips">${chips}</div></td></tr>`;
 }
@@ -2185,7 +2203,7 @@ function renderLog() {
   /* 칸: 현재 상장 수, 이번 수집(직전 수집 이후)에 생긴 신규·이탈, 최근 30일 신규·이탈 */
   const cards = ['b', 'p', 'h'].map(v => {
     const mine = ev.filter(e => e[1] === v), last = mine.filter(e => e[10] === LISTLOG.updated), recent = mine.filter(e => e[0] >= since(30));
-    const cnt = (list, add) => list.filter(e => !!e[2] === add).length;
+    const cnt = (list, add) => list.filter(e => !!e[2] === add && !e[13]).length;   /* 다른 심볼로 추가·이탈한 것은 세지 않는다 */
     return `<button type="button" class="lgv" data-lgv="${v}" aria-pressed="${LG.v === v}" title="누르면 ${LGNAME[v]} 기록만 봅니다. 다시 누르면 전체로 돌아갑니다"><span class="vn">${lgDot(v)} ${LGNAME[v]}</span>`
       + `<span class="n"><b>${(LISTLOG.counts || {})[v] ?? '–'}</b>종 상장 중</span>`
       + `<span class="st">이번 수집 신규 <b>${cnt(last, true)}</b> · 이탈 <b>${cnt(last, false)}</b></span>`
@@ -2193,13 +2211,13 @@ function renderLog() {
   }).join('');
   const cut = LG.p ? since(LG.p) : null;
   const rows = ev.filter(e => (LG.v === 'all' || e[1] === LG.v) && (!cut || e[0] >= cut) && (LG.c === 'all' || e[6] === LG.c) && (!LG.held || lgHits(e) || e[12]));
-  const nAdd = rows.filter(e => e[2]).length;
+  const nAdd = rows.filter(e => e[2] && !e[13]).length, nDup = rows.filter(e => e[13]).length;
   const head = '<thead><tr><th>날짜</th><th>거래소</th><th>구분</th><th>티커</th><th class="c-nm">이름</th><th class="c-cls">종류</th><th class="c-mk">시장</th><th>이 보드</th></tr></thead>';
   body.innerHTML = `<div class="lgsum">${cards}</div>`
-    + `<p class="lgmeta">목록 수집 <b>${kstIso(LISTLOG.updated)}</b>${LISTLOG.prev ? ` · 직전 수집 ${kstIso(LISTLOG.prev)}` : ''} · ${cut ? `${cbMd(cut)} 이후` : '전체 기간'} <b>${rows.length}</b>건 (신규 ${nAdd} · 이탈 ${rows.length - nAdd})</p>`
+    + `<p class="lgmeta">목록 수집 <b>${kstIso(LISTLOG.updated)}</b>${LISTLOG.prev ? ` · 직전 수집 ${kstIso(LISTLOG.prev)}` : ''} · ${cut ? `${cbMd(cut)} 이후` : '전체 기간'} <b>${rows.length}</b>건 (신규 ${nAdd} · 이탈 ${rows.length - nAdd - nDup}${nDup ? ` · 다른 심볼 추가·이탈 ${nDup}` : ''})</p>`
     + (rows.length ? `<div class="lgwrap"><table class="lg">${head}<tbody>${rows.slice(0, LGMAX).map(e => lgRow(e, base)).join('')}</tbody></table></div>` : '<p class="lgmeta">이 조건에 맞는 기록이 없습니다.</p>')
     + (rows.length > LGMAX ? `<p class="lgmeta">앞의 ${LGMAX}건만 보입니다. 기간이나 거래소를 좁혀 주세요.</p>` : '')
-    + `<p class="lgmeta">날짜: 바이낸스 TradFi 선물은 거래소가 밝힌 상장일이고, bStocks 와 하이퍼리퀴드는 목록에서 처음 보인 날(확인)입니다. 직전 수집과 4일 넘게 떨어진 경우에는 그 시작일을 함께 적습니다. '이 보드' 열은 24개 ETF 의 상위 10개 구성종목인지를 상장 점과 같은 규칙으로 대조한 것입니다. 자세한 설명은 6) 도움말의 10 에 있습니다.</p>`;
+    + `<p class="lgmeta">날짜: 바이낸스 TradFi 선물은 거래소가 밝힌 상장일이고, bStocks 와 하이퍼리퀴드는 목록에서 처음 보인 날(확인)입니다. 직전 수집과 4일 넘게 떨어진 경우에는 그 시작일을 함께 적습니다. '이 보드' 열은 24개 ETF 의 상위 10개 구성종목인지를 상장 점과 같은 규칙으로 대조한 것이고, 그런 종목의 신규 상장 행은 주황 바탕입니다. 같은 거래소에 이미 다른 심볼로 상장되어 있던 종목은 '추가'로 적고 강조하지 않습니다. 자세한 설명은 6) 도움말의 10 에 있습니다.</p>`;
 }
 function lgOpen(sym, etf) {
   const hits = HOLD_INDEX[sym]; if (!hits) return;

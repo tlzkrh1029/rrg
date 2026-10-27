@@ -95,7 +95,10 @@ def read_lists(lists_dir):
                 if r.get("status") not in ("TRADING", "PENDING_TRADING"):
                     continue
                 u = (r.get("underlying") or r.get("base_asset") or "").strip().upper()
-                info = {"u": u, "lk": norm_listing(r.get("listing")) or u, "n": clean_name(r.get("security_name")),
+                lk = norm_listing(r.get("listing")) or u
+                if ":" in u:   # 홍콩 계약은 기초 자산이 "HKEX:0700" 꼴이다. 표시 티커는 계약 이름(TENCENT)으로 둔다
+                    u = (r.get("base_asset") or u).strip().upper()
+                info = {"u": u, "lk": lk, "n": clean_name(r.get("security_name")),
                         "c": r.get("asset_class") or "unknown", "m": (r.get("market") or "").strip(), "od": (r.get("onboard_date") or "").strip()}
             else:
                 if r.get("delisted") == "True":
