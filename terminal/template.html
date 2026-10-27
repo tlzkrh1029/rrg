@@ -242,7 +242,7 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .sd .big svg{display:block;width:100%;height:auto;overflow:visible}
 .sd .big .l{fill:none;stroke:#fff;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
 .sd .big .s20{fill:none;stroke:var(--amber);stroke-width:1;stroke-dasharray:3 3} .sd .big .s52{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:1.5 3}
-.sd .big .fl{fill:var(--hot);opacity:.3} .sd .big .fd{fill:var(--cold);opacity:.3} .sd .big text{font-size:9.5px;fill:var(--muted)} .sd .big .ax{stroke:var(--line)}
+.sd .big .fl{fill:var(--hot);opacity:.3} .sd .big .fd{fill:var(--cold);opacity:.3} .sd .big text{font-size:9.5px;fill:var(--muted)} .sd .big text.lv{fill:var(--ink-2)} .sd .big .ax{stroke:var(--line)}
 .sd .ma50{fill:none;stroke:var(--amber);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
 .sd .ma89{fill:none;stroke:#ffe95c;stroke-width:1.3;stroke-linejoin:round;stroke-dasharray:6 2.5 1.5 2.5}
 .sd .ma144{fill:none;stroke:#4d9cff;stroke-width:1.3;stroke-linejoin:round;stroke-dasharray:6 2.5 1.5 2.5}
@@ -613,7 +613,7 @@ body.cover-open{overflow:hidden}
               <tr class="grp2">
                 <th class="c-etf" rowspan="2" scope="col">ETF</th>
                 <th colspan="5" scope="colgroup">SPY 대비 상대수익률 백분위 (0~100)</th>
-                <th colspan="2" scope="colgroup" title="흰 실선은 ETF 가격을 벤치마크 가격으로 나눈 비율, 주황 점선은 그 이동평균입니다. 끝점 색은 지금 이동평균 위인지 아래인지를 나타내고, 선 전체에 색이 들어가면 최근 3주 안에 돌파 또는 이탈이 있었다는 뜻입니다.">가격 비율 12주 · 점선 = 이동평균</th>
+                <th colspan="2" scope="colgroup" title="흰 실선은 ETF 가격을 벤치마크 가격으로 나눈 비율, 주황 점선은 그 이동평균입니다. 끝점 색은 지금 이동평균 위인지 아래인지를 나타내고, 선 전체에 색이 들어가면 최근 5주 안에 돌파 또는 이탈이 있었다는 뜻입니다.">가격 비율 12주 · 점선 = 이동평균</th>
                 <th rowspan="2" scope="col" style="text-align:left" title="섹터와 스타일(MAGS)은 SPY 대비, 산업·테마는 상위 섹터 ETF 대비 국면입니다. 괄호 안은 SPY 대비 국면입니다.">RRG 국면 · 벤치마크</th>
                 <th rowspan="2" scope="col" style="text-align:left">신호</th>
               </tr>
@@ -660,7 +660,7 @@ body.cover-open{overflow:hidden}
             <div class="shape"><div class="strip" id="lg2" aria-hidden="true"></div><div><b>전체 <span data-w="hot">초록</span>: 주도 지속</b><span>모든 기간에서 상위권입니다. 추세는 확인되었지만 진입 시점으로는 늦었을 수 있습니다.</span></div></div>
             <div class="shape"><div class="strip" id="lg3" aria-hidden="true"></div><div><b>오른쪽만 <span data-w="hot">초록</span>: 소진 경계</b><span>장기 성과는 좋지만 단기 열이 식고 있습니다. 순위 하락이 이어지면 이탈을 검토합니다.</span></div></div>
             <div class="klegend">
-              <div><span class="lab">RATIO</span>흰 실선은 ETF÷벤치마크 가격 비율, 주황 점선은 그 이동평균입니다. 끝점이 <span data-w="hot">초록</span>이면 지금 이동평균 위, <span data-w="cold">붉은색</span>이면 아래이고, 선 전체에 색이 들어가면 최근 3주 안에 돌파 또는 이탈이 있었다는 뜻입니다.</div>
+              <div><span class="lab">RATIO</span>흰 실선은 ETF÷벤치마크 가격 비율, 주황 점선은 그 이동평균입니다. 끝점이 <span data-w="hot">초록</span>이면 지금 이동평균 위, <span data-w="cold">붉은색</span>이면 아래이고, 선 전체에 색이 들어가면 최근 5주 안에 돌파 또는 이탈이 있었다는 뜻입니다.</div>
               <div><span class="lab">RRG</span><span class="sw" style="background:var(--lead)"></span>Leading <span class="sw" style="background:var(--weak);margin-left:8px"></span>Weakening <span class="sw" style="background:var(--lag);margin-left:8px"></span>Lagging <span class="sw" style="background:var(--impr);margin-left:8px"></span>Improving · 섹터와 MAGS는 SPY 대비, 산업·테마는 상위 섹터 대비 국면입니다. 그래프는 2) 탭, 뜻은 5) 도움말에 있습니다.</div>
               <div><span class="lab">SIGNAL</span>★ SPY 대비 비율 52주 신고가 · ↗ 비율선 50·200일선 상향 돌파(최근 5일) · ↘ 하향 이탈 · ↑↓ 백분위 ±30 급변(6개월 → 1개월) · ≈ 1주 반등 미확인</div>
               <div><span class="lab">LISTING</span><span class="dots" aria-hidden="true"><i class="b">b</i></span> 바이낸스 bStocks 현물 · <span class="dots" aria-hidden="true"><i class="p"></i></span> 바이낸스 perp · <span class="dots" aria-hidden="true"><i class="h"></i></span> 하이퍼리퀴드 perp. 티커 뒤에 상장된 상품만 점으로 찍히고, 없으면 아무것도 표시하지 않습니다. 구성종목 표에서는 티커 아래에 작은 점으로 찍히며, bStocks는 속이 빈 주황 원입니다.</div>
@@ -1076,8 +1076,16 @@ function sMA(k, mode) {
 }
 const sPct = x => (x >= 0 ? '+' : '') + (x * 100).toFixed(1);
 function sChanges(k, mode) { const c = stockSeries(k, mode).c, n = c.length; return { d: c[n - 1] / c[n - 2] - 1, w: c[n - 1] / c[n - 6] - 1, m: c[n - 1] / c[n - SK.W] - 1 }; }
+/* 차트 오른쪽 라벨: 값이 가까운 라벨은 10 단위 이상 벌리고, 아래로 넘치면 함께 올린다 */
+function chartLabels(labels, x, yMax) {
+  labels.sort((a, b) => a.y - b.y);
+  for (let i = 1; i < labels.length; i++) if (labels[i].y - labels[i - 1].y < 10) labels[i].y = labels[i - 1].y + 10;
+  const over = labels.length ? labels[labels.length - 1].y - yMax : 0;
+  if (over > 0) labels.forEach(l => { l.y -= over; });
+  return labels.map(l => `<text class="lv" x="${x}" y="${(l.y + 3).toFixed(1)}">${l.t}</text>`).join('');
+}
 function sChart(k, mode) {
-  const s = stockSeries(k, mode), c = s.c, n = c.length, Wd = 276, Hd = 110, L = 4, R = 44, T = 8, B = 14, H = '20';
+  const s = stockSeries(k, mode), c = s.c, n = c.length, Wd = 300, Hd = 120, L = 4, R = 62, T = 8, B = 14, H = '20';   // 오른쪽 라벨 칸 62: 'Shelf 20일'·'52주 고점'이 잘리지 않는 폭
   const r = sJ(k, mode, H);
   let lo = Math.min(...c), hi = Math.max(...c);
   const h52 = s.h52; if (h52 <= hi * 1.12) hi = Math.max(hi, h52);
@@ -1085,16 +1093,20 @@ function sChart(k, mode) {
   const xs = i => L + i * (Wd - L - R) / (n - 1), ys = v => Hd - B - (v - lo) / (hi - lo) * (Hd - T - B);
   const pts = c.map((v, i) => `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
   const cid = 'sd_' + k.replace(/[^A-Za-z0-9]/g, '_') + '_' + mode;
+  const labels = [];
   let out = `<svg viewBox="0 0 ${Wd} ${Hd}" aria-hidden="true"><line class="ax" x1="${L}" y1="${Hd - B}" x2="${Wd - R}" y2="${Hd - B}"/>`;
   [0, n - SK.W, n - 1].forEach(i => { const d = STOCKS.dates[i] || ''; out += `<text x="${xs(i).toFixed(1)}" y="${Hd - 3}" text-anchor="${i === n - 1 ? 'end' : i === 0 ? 'start' : 'middle'}">${i === n - SK.W ? '−30일 ' + d.slice(5) : d.slice(5)}</text>`; });
   if (r.lvl != null && r.lvl >= lo && r.lvl <= hi) {
     const yl = ys(r.lvl).toFixed(1), i0 = r.le, poly = c.slice(i0).map((v, i) => `${xs(i0 + i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
     if (r.st === 'lit' || r.st === 'down') out += `<clipPath id="${cid}a"><rect x="0" y="${r.st === 'lit' ? 0 : yl}" width="${Wd}" height="${r.st === 'lit' ? yl : Hd}"/></clipPath><polygon class="${r.st === 'lit' ? 'fl' : 'fd'}" clip-path="url(#${cid}a)" points="${poly} ${xs(n - 1).toFixed(1)},${yl} ${xs(i0).toFixed(1)},${yl}"/>`;
-    out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/><text x="${Wd - R + 3}" y="${(+yl + 3).toFixed(1)}">${r.st === 'down' ? '바닥' : 'Shelf'} 20일</text>`;
+    out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/>`;
+    labels.push({ y: +yl, t: (r.st === 'down' ? '바닥' : 'Shelf') + ' 20일' });
   } else if (r.ceiling != null && r.ceiling >= lo && r.ceiling <= hi) {
-    const yl = ys(r.ceiling).toFixed(1); out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/><text x="${Wd - R + 3}" y="${(+yl + 3).toFixed(1)}">천장 20일</text>`;
+    const yl = ys(r.ceiling).toFixed(1); out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/>`;
+    labels.push({ y: +yl, t: '천장 20일' });
   }
-  if (h52 >= lo && h52 <= hi) { const y5 = ys(h52).toFixed(1); out += `<line class="s52" x1="${L}" y1="${y5}" x2="${Wd - R}" y2="${y5}"/><text x="${Wd - R + 3}" y="${(+y5 + 3).toFixed(1)}">52주 고점</text>`; }
+  if (h52 >= lo && h52 <= hi) { const y5 = ys(h52).toFixed(1); out += `<line class="s52" x1="${L}" y1="${y5}" x2="${Wd - R}" y2="${y5}"/>`; labels.push({ y: +y5, t: '52주 고점' }); }
+  out += chartLabels(labels, Wd - R + 4, Hd - B - 4);
   const ma = sMA(k, mode), P = a => a.map((v, i) => v == null ? null : `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).filter(Boolean).join(' ');
   out += `<clipPath id="${cid}m"><rect x="${L}" y="${T - 2}" width="${Wd - L - R}" height="${Hd - T - B + 2}"/></clipPath><g clip-path="url(#${cid}m)"><polyline class="ma144" points="${P(ma.hma144)}"/><polyline class="ma89" points="${P(ma.hma89)}"/><polyline class="ma50" points="${P(ma.sma50)}"/></g>`;
   const last = c[n - 1];
