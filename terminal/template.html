@@ -122,7 +122,6 @@ tr.sel .etf .ko{color:#dfe6ff}
 
 /* 스파크라인: 흰 실선 = 비율, 주황 점선 = 이동평균, 끝점 색 = 이동평균 위/아래, 선 전체가 색을 띠면 최근 돌파·이탈 */
 .sp svg{display:block;margin:0 auto;overflow:visible}
-.hctx svg{display:inline-block;vertical-align:middle;margin-left:6px;overflow:visible}
 .sp-ma{fill:none;stroke:var(--amber);stroke-width:1;stroke-dasharray:2 2.2;opacity:.85}
 .sp-line{fill:none;stroke:#e8e8e8;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
 .sp-dot{stroke:#000;stroke-width:1.2}
@@ -233,29 +232,33 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .sd .sdh{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;line-height:1.3}
 .sd .sdh .tk{color:var(--amber);font-size:15px;font-weight:700} .sd .sdh .nm{color:#fff} .sd .sdh .ex{color:var(--muted);font-size:10px;letter-spacing:.08em}
 .sd .ven{font-size:11px;line-height:1.55} .sd .ven b{color:var(--amber);font-weight:700;display:inline-block;min-width:92px}
-.sd dl{display:grid;grid-template-columns:max-content 1fr;gap:2px 12px;margin:0} .sd dt{color:var(--muted)} .sd dd{margin:0;color:var(--ink)}
-.sd .on{color:var(--hot);font-weight:700} .sd .dn{color:var(--cold);font-weight:700} .sd .nr{color:var(--blue);font-weight:700} .sd .mu{color:var(--muted)}
-.sd .ttlrow{display:flex;align-items:baseline;gap:10px;font-size:10.5px;letter-spacing:.06em;color:var(--amber);text-transform:uppercase;font-weight:700}
-.sd .ttlrow .tog{margin-left:auto;display:flex;letter-spacing:0;text-transform:none;font-weight:400}
-.sd .ttlrow .tog button{color:var(--muted);font-size:11px;padding:0 6px;border-left:1px solid var(--line);white-space:nowrap}
-.sd .ttlrow .tog button:first-child{border-left:0} .sd .ttlrow .tog button:hover{color:#fff} .sd .ttlrow .tog button[aria-pressed="true"]{color:var(--amber);font-weight:700}
-.sd .big svg{display:block;width:100%;height:auto;overflow:visible}
-.sd .big .l{fill:none;stroke:#fff;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
-.sd .big .s20{fill:none;stroke:var(--amber);stroke-width:1;stroke-dasharray:3 3} .sd .big .s52{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:1.5 3}
-.sd .big .fl{fill:var(--hot);opacity:.3} .sd .big .fd{fill:var(--cold);opacity:.3} .sd .big text{font-size:9.5px;fill:var(--muted)} .sd .big text.lv{fill:var(--ink-2)} .sd .big .ax{stroke:var(--line)}
-.sd .ma50{fill:none;stroke:var(--amber);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
-.sd .ma89{fill:none;stroke:#ffe95c;stroke-width:1.3;stroke-linejoin:round;stroke-dasharray:6 2.5 1.5 2.5}
-.sd .ma144{fill:none;stroke:#4d9cff;stroke-width:1.3;stroke-linejoin:round;stroke-dasharray:6 2.5 1.5 2.5}
-.sd .big .edge{font-size:9px;font-weight:700} .sd .big .edge.y{fill:#ffe95c} .sd .big .edge.b{fill:#4d9cff} .sd .big .edge.o{fill:var(--amber)}
-.sd .lgd{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:10.5px} .sd .lgd span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-.sd .lgd svg{width:26px;height:10px;overflow:visible;display:block} .sd .lgd b{color:var(--ink);font-weight:400} .sd .lgd i{font-style:normal;color:var(--muted)}
-.sd table.hz{border-collapse:collapse;width:100%;font-size:11.5px} .sd .hz td{padding:2px 6px 2px 0;white-space:nowrap} .sd .hz td.k{color:var(--muted)} .sd .hz td.v{color:var(--ink);text-align:right}
+:is(.sd,.eb) dl{display:grid;grid-template-columns:max-content 1fr;gap:2px 12px;margin:0} :is(.sd,.eb) dt{color:var(--muted)} :is(.sd,.eb) dd{margin:0;color:var(--ink)}
+:is(.sd,.eb) .on{color:var(--hot);font-weight:700} :is(.sd,.eb) .dn{color:var(--cold);font-weight:700} :is(.sd,.eb) .nr{color:var(--blue);font-weight:700} :is(.sd,.eb) .mu{color:var(--muted)}
+:is(.sd,.eb) .ttlrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:10.5px;letter-spacing:.06em;color:var(--amber);text-transform:uppercase;font-weight:700}
+:is(.sd,.eb) .ttlrow .tog{margin-left:auto;display:flex;letter-spacing:0;text-transform:none;font-weight:400}
+:is(.sd,.eb) .ttlrow .tog button{color:var(--muted);font-size:11px;padding:0 6px;border-left:1px solid var(--line);white-space:nowrap}
+:is(.sd,.eb) .ttlrow .tog button:first-child{border-left:0} :is(.sd,.eb) .ttlrow .tog button:hover{color:#fff} :is(.sd,.eb) .ttlrow .tog button[aria-pressed="true"]{color:var(--amber);font-weight:700}
+:is(.sd,.eb) .big svg{display:block;width:100%;height:auto;overflow:visible}
+:is(.sd,.eb) .big .l{fill:none;stroke:#fff;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+:is(.sd,.eb) .big .s20{fill:none;stroke:var(--amber);stroke-width:1;stroke-dasharray:3 3} :is(.sd,.eb) .big .s52{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:1.5 3}
+:is(.sd,.eb) .big .fl{fill:var(--hot);opacity:.3} :is(.sd,.eb) .big .fd{fill:var(--cold);opacity:.3} :is(.sd,.eb) .big text{font-size:9.5px;fill:var(--muted)} :is(.sd,.eb) .big text.lv{fill:var(--ink-2)} :is(.sd,.eb) .big .ax{stroke:var(--line)}
+:is(.sd,.eb) .ma50{fill:none;stroke:var(--amber);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
+:is(.sd,.eb) .ma89{fill:none;stroke:#ffe95c;stroke-width:1.3;stroke-linejoin:round;stroke-dasharray:6 2.5 1.5 2.5}
+:is(.sd,.eb) .ma144{fill:none;stroke:#4d9cff;stroke-width:1.3;stroke-linejoin:round;stroke-dasharray:6 2.5 1.5 2.5}
+:is(.sd,.eb) .big .edge{font-size:9px;font-weight:700} :is(.sd,.eb) .big .edge.y{fill:#ffe95c} :is(.sd,.eb) .big .edge.b{fill:#4d9cff} :is(.sd,.eb) .big .edge.o{fill:var(--amber)}
+:is(.sd,.eb) .lgd{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:10.5px} :is(.sd,.eb) .lgd span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+:is(.sd,.eb) .lgd svg{width:26px;height:10px;overflow:visible;display:block} :is(.sd,.eb) .lgd b{color:var(--ink);font-weight:400} :is(.sd,.eb) .lgd i{font-style:normal;color:var(--muted)}
+:is(.sd,.eb) table.hz{border-collapse:collapse;width:100%;font-size:11.5px} :is(.sd,.eb) .hz td{padding:2px 6px 2px 0;white-space:nowrap} :is(.sd,.eb) .hz td.k{color:var(--muted)} :is(.sd,.eb) .hz td.v{color:var(--ink);text-align:right}
 .sd .wlab{color:var(--amber);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
 .sd .wb{display:grid;grid-template-columns:48px 1fr 96px;align-items:center;gap:8px}
 .sd .wb button{color:var(--ink);font-weight:700;text-align:left} .sd .wb button:hover{color:var(--amber)}
 .sd .wb .wt{height:8px;background:var(--amber-soft);overflow:hidden} .sd .wb .wt i{display:block;height:100%;background:var(--amber-dim)} .sd .wb.cur .wt i{background:var(--amber)} .sd .wb.cur button{color:var(--amber)}
 .sd .wb .wv{text-align:right;white-space:nowrap} .sd .wb .wv b{color:var(--ink)}
 .sd .links{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11px}
+/* ETF 차트 블록(Holdings 패널 맨 위): 자 토글은 아래 기여도 블록의 기준도 함께 바꾼다 */
+.eb{display:grid;gap:7px;font-size:11.5px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:8px}
+.eb .hz td.k small{color:var(--muted);font-size:9.5px;margin-left:4px}
+.eb .note{margin:0;font-size:10.5px;color:var(--muted)}
 /* 기여도 블록: Holdings 패널에서 구성종목 표 위에 놓인다. 계산은 terminal/compute_contrib.py */
 .cb{display:grid;gap:6px;font-size:11.5px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:8px}
 .cb .ttlrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:10.5px;letter-spacing:.06em;color:var(--amber);text-transform:uppercase;font-weight:700}
@@ -263,8 +266,6 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .cb .ttlrow .tog{margin-left:auto}
 .cb .tog button{color:var(--muted);font-size:11px;padding:0 6px;border-left:1px solid var(--line);white-space:nowrap}
 .cb .tog button:first-child{border-left:0} .cb .tog button:hover{color:#fff} .cb .tog button[aria-pressed="true"]{color:var(--amber);font-weight:700}
-.cb .basis{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;font-size:10.5px;color:var(--muted)}
-.cb .basis .tog button:first-child{padding-left:0}
 .cb .sum{font-size:12px;color:var(--ink)}
 .cb .on{color:var(--hot);font-weight:700} .cb .dn{color:var(--cold);font-weight:700} .cb .mu{color:var(--muted);font-weight:400}
 .cb .warn{border:1px solid var(--amber-dim);background:rgba(255,160,40,.06);padding:6px 8px;display:grid;gap:5px;font-size:11px;line-height:1.5}
@@ -699,13 +700,13 @@ body.cover-open{overflow:hidden}
           </table>
         </div>
         <p class="sortline" id="sortHint"></p>
-        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷(MAGS·DRAM은 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출)이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다. MAGS(동일가중 매그니피센트 7)는 스타일·집중도 행입니다. 일곱 종목이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 대비로 재고, 백분위는 23개 ETF 사이에 끼워 넣었을 때의 위치만 적으며 다른 행의 순위 계산과 섹터 집계에는 넣지 않습니다. 2) 탭의 1단 그래프에는 점선 꼬리를 단 점으로 함께 그립니다.</p>
+        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷(MAGS·DRAM은 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출)이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. Holdings 패널 맨 위의 ETF 차트는 최근 90거래일 종가와 그 비율(QQQ·SPY·상위 섹터 대비)이며, 52주 고점은 2년 가격 파일에서, 사상 최고는 USD·비율 모두 전체 이력(Yahoo range=max, 월 1회 갱신)에서 잡았습니다. 차트의 자를 바꾸면 기여도의 기준도 함께 바뀝니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다. MAGS(동일가중 매그니피센트 7)는 스타일·집중도 행입니다. 일곱 종목이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 대비로 재고, 백분위는 23개 ETF 사이에 끼워 넣었을 때의 위치만 적으며 다른 행의 순위 계산과 섹터 집계에는 넣지 않습니다. 2) 탭의 1단 그래프에는 점선 꼬리를 단 점으로 함께 그립니다.</p>
       </section>
 
       <aside class="rail">
         <section class="panel hold" id="holdPanel" aria-labelledby="holdTitle">
           <header class="ph">
-            <span class="pt" id="holdTitle">Holdings<small>구성종목 상위 10 · 행을 누르면 종목 상세</small></span>
+            <span class="pt" id="holdTitle">Holdings<small>차트 · 기여도 · 구성종목 상위 10</small></span>
             <div class="nav">
               <span class="pos" id="holdPos"></span>
               <button type="button" id="prevBtn" aria-label="이전 ETF">‹ 이전</button>
@@ -944,6 +945,7 @@ const SWAPS = __SWAPS__;
 /* 종목 상세용 가격: 돌파 지도 계산(breakout-data.json)에서 이 보드의 구성종목만 추린 것. 없으면 null 이고 행을 눌러도 펼쳐지지 않는다 */
 const STOCKS = __STOCKS__;
 const CONTRIB = __CONTRIB__;   /* 구성종목 기여도(terminal/compute_contrib.py). 계산이 없으면 null */
+const ETFX = __ETFX__;   /* Holdings 패널의 ETF 차트(fetch_etf_history.py): 90일 종가·창 앞 종가·52주 고점·사상 최고. 자료가 없으면 null */
 const LSTNAME = { b:'바이낸스 bStocks 현물', p:'바이낸스 perp', h:'하이퍼리퀴드 perp' };
 const lstLabel = s => s ? '상장: ' + [...s].map(k => LSTNAME[k]).join(' · ') + ` (${LIST_ASOF} 기준)` : '';
 const dots = s => s ? `<span class="dots" role="img" aria-label="${lstLabel(s)}" title="${lstLabel(s)}">${s.includes('b') ? '<i class="b">b</i>' : ''}${s.includes('p') ? '<i class="p"></i>' : ''}${s.includes('h') ? '<i class="h"></i>' : ''}</span>` : '';
@@ -1157,18 +1159,19 @@ function chartLabels(labels, x, yMax) {
   if (over > 0) labels.forEach(l => { l.y -= over; });
   return labels.map(l => `<text class="lv" x="${x}" y="${(l.y + 3).toFixed(1)}">${l.t}</text>`).join('');
 }
-function sChart(k, mode) {
-  const s = stockSeries(k, mode), c = s.c, n = c.length, Wd = 300, Hd = 120, L = 4, R = 62, T = 8, B = 14, H = '20';   // 오른쪽 라벨 칸 62: 'Shelf 20일'·'52주 고점'이 잘리지 않는 폭
-  const r = sJ(k, mode, H);
+/* 90일 차트: 종가선, 20일 Shelf(또는 바닥·천장), 52주 고점, 50 SMA · 89 HMA · 144 HMA. 종목 상세와 ETF 차트 블록이 함께 쓴다.
+   o = { c 90일 값, h52 창 이전 52주 고점, ma 이동평균, dates 날짜, r 20일 판정, cid clipPath 이름 } */
+function chartSVG(o) {
+  const c = o.c, n = c.length, Wd = 300, Hd = 120, L = 4, R = 62, T = 8, B = 14;   // 오른쪽 라벨 칸 62: 'Shelf 20일'·'52주 고점'이 잘리지 않는 폭
+  const r = o.r, cid = o.cid;
   let lo = Math.min(...c), hi = Math.max(...c);
-  const h52 = s.h52; if (h52 <= hi * 1.12) hi = Math.max(hi, h52);
+  const h52 = o.h52; if (h52 <= hi * 1.12) hi = Math.max(hi, h52);
   const pad = (hi - lo) * 0.06; lo -= pad; hi += pad;
   const xs = i => L + i * (Wd - L - R) / (n - 1), ys = v => Hd - B - (v - lo) / (hi - lo) * (Hd - T - B);
   const pts = c.map((v, i) => `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
-  const cid = 'sd_' + k.replace(/[^A-Za-z0-9]/g, '_') + '_' + mode;
   const labels = [];
   let out = `<svg viewBox="0 0 ${Wd} ${Hd}" aria-hidden="true"><line class="ax" x1="${L}" y1="${Hd - B}" x2="${Wd - R}" y2="${Hd - B}"/>`;
-  [0, n - SK.W, n - 1].forEach(i => { const d = STOCKS.dates[i] || ''; out += `<text x="${xs(i).toFixed(1)}" y="${Hd - 3}" text-anchor="${i === n - 1 ? 'end' : i === 0 ? 'start' : 'middle'}">${i === n - SK.W ? '−30일 ' + d.slice(5) : d.slice(5)}</text>`; });
+  [0, n - SK.W, n - 1].forEach(i => { const d = o.dates[i] || ''; out += `<text x="${xs(i).toFixed(1)}" y="${Hd - 3}" text-anchor="${i === n - 1 ? 'end' : i === 0 ? 'start' : 'middle'}">${i === n - SK.W ? '−30일 ' + d.slice(5) : d.slice(5)}</text>`; });
   if (r.lvl != null && r.lvl >= lo && r.lvl <= hi) {
     const yl = ys(r.lvl).toFixed(1), i0 = r.le, poly = c.slice(i0).map((v, i) => `${xs(i0 + i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
     if (r.st === 'lit' || r.st === 'down') out += `<clipPath id="${cid}a"><rect x="0" y="${r.st === 'lit' ? 0 : yl}" width="${Wd}" height="${r.st === 'lit' ? yl : Hd}"/></clipPath><polygon class="${r.st === 'lit' ? 'fl' : 'fd'}" clip-path="url(#${cid}a)" points="${poly} ${xs(n - 1).toFixed(1)},${yl} ${xs(i0).toFixed(1)},${yl}"/>`;
@@ -1180,7 +1183,7 @@ function sChart(k, mode) {
   }
   if (h52 >= lo && h52 <= hi) { const y5 = ys(h52).toFixed(1); out += `<line class="s52" x1="${L}" y1="${y5}" x2="${Wd - R}" y2="${y5}"/>`; labels.push({ y: +y5, t: '52주 고점' }); }
   out += chartLabels(labels, Wd - R + 4, Hd - B - 4);
-  const ma = sMA(k, mode), P = a => a.map((v, i) => v == null ? null : `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).filter(Boolean).join(' ');
+  const ma = o.ma, P = a => a.map((v, i) => v == null ? null : `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).filter(Boolean).join(' ');
   out += `<clipPath id="${cid}m"><rect x="${L}" y="${T - 2}" width="${Wd - L - R}" height="${Hd - T - B + 2}"/></clipPath><g clip-path="url(#${cid}m)"><polyline class="ma144" points="${P(ma.hma144)}"/><polyline class="ma89" points="${P(ma.hma89)}"/><polyline class="ma50" points="${P(ma.sma50)}"/></g>`;
   const last = c[n - 1];
   [['sma50', 'o', '50 SMA'], ['hma89', 'y', '89 HMA'], ['hma144', 'b', '144 HMA']].forEach(([key, cls, lab], j) => {
@@ -1192,15 +1195,21 @@ function sChart(k, mode) {
   out += `<polyline class="l" points="${pts}"/></svg>`;
   return out;
 }
-function sLegend(k, mode) {
-  const ma = sMA(k, mode), n = stockSeries(k, mode).c.length, fmt = v => mode === 'usd' ? (v >= 1000 ? v.toFixed(0) : v.toFixed(2)) : v.toFixed(4);
+function sChart(k, mode) {
+  const s = stockSeries(k, mode);
+  return chartSVG({ c: s.c, h52: s.h52, ma: sMA(k, mode), dates: STOCKS.dates, r: sJ(k, mode, '20'), cid: 'sd_' + k.replace(/[^A-Za-z0-9]/g, '_') + '_' + mode });
+}
+function maLegendHTML(ma, n, usd) {
+  const fmt = v => usd ? (v >= 1000 ? v.toFixed(0) : v.toFixed(2)) : v.toFixed(4);
   const sw = cls => `<svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" class="${cls}"/></svg>`;
   const item = (cls, lab, key) => { const v = ma[key][n - 1]; return `<span>${sw(cls)}<b>${lab}</b> ${v == null ? '<i>이력 부족</i>' : fmt(v)}</span>`; };
   return `<div class="lgd">${item('ma50', '50 SMA', 'sma50')}${item('ma89', '89 HMA', 'hma89')}${item('ma144', '144 HMA', 'hma144')}</div>`;
 }
-function sHorizonRows(k, mode) {
+function sLegend(k, mode) { return maLegendHTML(sMA(k, mode), stockSeries(k, mode).c.length, mode === 'usd'); }
+/* 지평 표: jf(H) 가 지평 H 의 판정을 돌려준다. athK 를 주면 '사상 최고' 이름 칸을 그것으로 바꾼다 */
+function hzRowsHTML(jf, athK) {
   return HZ.map(H => {
-    const r = sJ(k, mode, H), lab = HZLAB[H];
+    const r = jf(H), lab = H === 'ath' && athK ? athK : HZLAB[H];
     if (r.st === 'lit') return `<tr><td class="k">${lab}</td><td class="v on">돌파 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
     if (r.st === 'down') return `<tr><td class="k">${lab}</td><td class="v dn">이탈 ${r.days}일째 · 바닥 ${(r.over * 100).toFixed(1)}%</td></tr>`;
     if (r.st === 'failed') return `<tr><td class="k">${lab}</td><td class="v dn">실패 · 돌파 후 ${r.days}일, Shelf ${(r.over * 100).toFixed(1)}%</td></tr>`;
@@ -1209,6 +1218,7 @@ function sHorizonRows(k, mode) {
     return `<tr><td class="k">${lab}</td><td class="v mu">${r.dist == null ? '–' : r.dist <= 0.001 ? '고점 부근' : '고점까지 ' + (r.dist * 100).toFixed(1) + '%'}</td></tr>`;
   }).join('');
 }
+function sHorizonRows(k, mode) { return hzRowsHTML(H => sJ(k, mode, H)); }
 const VENUE = { b: '바이낸스 bStocks', p: '바이낸스 선물', h: '하이퍼리퀴드' };
 function sVenues(k) {
   const f = STOCKS.listing && STOCKS.listing[k];
@@ -1238,6 +1248,39 @@ function toggleStock(k) {
   if (sdState.k === k) sdState.k = null; else sdState.k = k;
   if (selT) renderHold(selT);
   if (sdState.k) { const tr = document.querySelector(`#hbody tr.sd`); if (tr && tr.scrollIntoView) tr.scrollIntoView({ block: 'nearest' }); }
+}
+
+/* ---- ETF 차트 블록(Holdings 패널 맨 위). 사상 최고는 USD·비율 모두 전체 이력(Yahoo range=max, 월 1회 갱신)에서 잡았다.
+   자 토글(USD · vs QQQ · vs SPY · vs 상위 섹터)은 아래 기여도 블록의 기준(CB.kind)과 같은 값이라 둘이 함께 바뀐다 ---- */
+const eCache = {};
+const eLab = (t, kind) => kind === 'usd' ? 'USD' : `${cbBench(t, kind)} 대비`;
+const eLong = (t, kind) => kind === 'usd' ? 'USD (절대 가격)' : `${cbBench(t, kind)} 대비 비율`;
+function eSeries(t, kind) {
+  const key = t + '|' + kind; if (key in eCache) return eCache[key];
+  const E = ETFX && ETFX.etfs, X = E && E[t], b = cbBench(t, kind), B = b ? (E && E[b]) : null, m = kind === 'parent' ? 'par' : kind;
+  if (!X || !X.lv || !X.lv[m] || (b && !B)) return (eCache[key] = null);
+  const c = B ? X.c.map((v, i) => v / B.c[i]) : X.c;
+  const n = X.cx.length, pre = B ? X.cx.map((v, i) => { const d = B.cx[B.cx.length - n + i]; return d ? v / d : null; }) : X.cx.slice();
+  const full = pre.concat(c), cut = a => a.slice(n);
+  const [h52, ath, from, athd] = X.lv[m];
+  return (eCache[key] = { c, h52, ath, from, athd, ma: { sma50: cut(sSMA(full, 50)), hma89: cut(sHMA(full, 89)), hma144: cut(sHMA(full, 144)) } });
+}
+function etfChartHTML(t) {
+  const kind = cbKind(t);
+  const tog = cbKinds(t).map(k => `<button type="button" data-cbm="${k}" aria-pressed="${k === kind}">${k === 'usd' ? 'USD' : 'vs ' + cbBench(t, k)}</button>`).join('');
+  const head = `<div class="ttlrow"><span>${t} · 90일 · ${eLong(t, kind)}</span><span class="tog" role="group" aria-label="차트와 기여도의 기준">${tog}</span></div>`;
+  const s = eSeries(t, kind);
+  if (!s) return `<section class="eb" aria-label="${t} 차트">${head}<p class="note">이번 빌드에는 ${t} 차트 자료가 없습니다. 위의 자 토글은 아래 기여도의 기준을 바꿉니다.</p></section>`;
+  const X = ETFX.etfs[t], c = s.c, n = c.length, lab = eLab(t, kind);
+  const ch = { d: c[n - 1] / c[n - 2] - 1, w: c[n - 1] / c[n - 6] - 1, m: c[n - 1] / c[n - SK.W] - 1 };
+  const dd = v => `<dd class="${v >= 0 ? 'on' : 'dn'}">${sPct(v)}%</dd>`;
+  const lv = v => kind === 'usd' ? v.toFixed(2) : v.toFixed(4);
+  const athK = `<span title="사상 최고 수준 ${lv(s.ath)} (${s.athd}) · ${s.from}부터의 이력에서 찾았습니다(월 1회 갱신)">사상 최고<small>${s.from.slice(0, 4)}~</small></span>`;
+  const stale = X.stale ? ` <span style="color:var(--yellow)">· 마지막 종가 ${X.stale}</span>` : '';
+  return `<section class="eb" aria-label="${t} 차트">${head}`
+    + `<dl><dt>${lab} 일간</dt>${dd(ch.d)}<dt>${lab} 주간</dt>${dd(ch.w)}<dt>${lab} 30일</dt>${dd(ch.m)}<dt>종가</dt><dd>${ETFX.asof} · ${t} ${X.c[n - 1].toFixed(2)}${stale}</dd></dl>`
+    + `<div class="big">${chartSVG({ c, h52: s.h52, ma: s.ma, dates: ETFX.dates, r: sJudge(c, '20', s.h52, s.ath), cid: 'eb_' + t + '_' + kind })}</div>${maLegendHTML(s.ma, n, kind === 'usd')}`
+    + `<table class="hz">${hzRowsHTML(H => sJudge(c, H, s.h52, s.ath), athK)}</table></section>`;
 }
 
 /* ---- 기여도: 구성종목이 ETF 수익률에 얼마나 보탰는지(기간 시작 비중 × 기간 수익률, USD). 계산은 terminal/compute_contrib.py ----
@@ -1347,7 +1390,6 @@ function contribHTML(t) {
   const vals = A.rows.map(x => Math.abs(x[4])).concat([Math.abs(A.rest[1])], Bp ? Bp.rows.map(x => Math.abs(x[4])).concat([Math.abs(Bp.rest[1])]) : []);
   const scale = Math.max(...vals, 1e-9);
   const ptog = ['1D', '1W', '1M'].map(q => `<button type="button" data-cbp="${q}" aria-pressed="${q === p}">${q}</button>`).join('');
-  const ktog = cbKinds(t).map(k => `<button type="button" data-cbm="${k}" aria-pressed="${k === kind}">${k === 'usd' ? 'USD' : 'vs ' + cbBench(t, k)}</button>`).join('');
   const span = `${cbMd(A0.from)} → ${cbMd(A0.to)} 종가`;
   const sum = Bp
     ? `${t} <b class="${cbSg(A0.R)}">${cbPc(A0.R, 2)}%</b> − ${bt} <b class="${cbSg(Bp.R)}">${cbPc(Bp.R, 2)}%</b> = <b class="${cbSg(A0.R - Bp.R)}">${cbPp(A0.R - Bp.R)}%p</b>`
@@ -1357,7 +1399,6 @@ function contribHTML(t) {
   const heat = `<div class="wlab">최근 8주 · 주간 기여 %p</div>${cbHeat(t, F, Bp ? bt : null, Bp ? B : null)}<p class="note">칸은 종목의 주간 기여(%p)이고, 아래 ${Bp ? '세 줄은' : '줄은'} 주간 수익률(%)입니다. 목록은 지금 구성 기준이며, * 표시 주는 진행 중입니다.</p>`;
   const note = `<p class="note">${Bp ? span + ' · ' : ''}비중은 기간 시작 시점으로 보정했습니다. 구성종목은 ${cbMd(F.snap)} 스냅샷(기준 종가 ${cbMd(F.asof)})${useStart ? `이고, 목록은 ${cbMd(A0.start.snap)} 구성입니다` : '입니다'}.</p>`;
   return `<section class="cb" aria-label="기여도"><div class="ttlrow"><span>${bt ? `기여도 · ${bt} 대비` : '기여도 · USD'}</span><span class="tog" role="group" aria-label="기간">${ptog}</span></div>`
-    + `<div class="basis"><span>기준</span><span class="tog" role="group" aria-label="기여도 기준">${ktog}</span></div>`
     + `<div class="sum">${sum}</div>${cbWarn(F, A0, A, info, useStart, p)}${sides.join('')}${met}${heat}${note}</section>`;
 }
 
@@ -1427,8 +1468,8 @@ function renderHold(t) {
     <div class="hctx">
       <div><div class="strip">${e.pct.map(p => p == null ? '<i style="color:var(--muted)">n/a</i>' : `<i style="${cellStyle(p)}">${p}</i>`).join('')}</div><div class="lbls">${CODES.map(c => `<span>${c}</span>`).join('')}</div></div>
       <div class="row"><span>RRG vs <b style="color:var(--amber)">${e.parent || 'SPY'}</b> ${e.rrg ? `<b class="ph-${e.rrg}">${e.rrg.toUpperCase()}</b>${e.next ? ` <span class="nx">→ ${e.next.toUpperCase()}</span>` : ''}${e.parent ? ` <span class="nx">· vs SPY <span class="ph-${e.rrgVsSpy}">${e.rrgVsSpy.toUpperCase()}</span></span>` : ''}` : '<span style="color:var(--muted)">N/A · 주봉 39주 필요</span>'}</span><span>전환 점수 <b style="color:#fff">${shiftScore(e).toFixed(0)}</b></span></div>
-      <div class="row"><span>vs SPY 12W ${spark(e.S)}</span><span>vs QQQ 12W ${spark(e.Q)}</span></div>
     </div>
+    ${etfChartHTML(e.t)}
     ${contribHTML(e.t)}
     <div class="h-wrap"><table class="h"><thead><tr><th>#</th><th>티커</th><th>종목명</th><th class="r">비중</th><th class="r"><abbr title="${h.prev} 스냅샷 대비 비중 변화(%p). NEW는 그때 상위 10개에 없던 종목">변동 %p</abbr></th></tr></thead><tbody>${rows}</tbody></table></div>
     <p class="hfn">${note ? note + ' ' : ''}${h.prevMissing

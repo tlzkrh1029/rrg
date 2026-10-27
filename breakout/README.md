@@ -9,6 +9,7 @@
 
 ```
 fetch_prices.py (루트)        ETF 가격 → output/prices_wide.csv (SPY 축), 구성종목 → output/holdings/<날짜>.csv
+fetch_etf_history.py (루트)   ETF 패널 차트 → output/etf-chart-data.json (사상 최고는 월 1회 받는 전체 이력 캐시 output/etf_ath.json)
 breakout/fetch_stock_prices.py   구성종목 일봉(2년) → output/stocks/prices_wide.csv, ath.json, summary.json
 breakout/compute_breakout.py     90일 창·기준 수준·판정 → output/breakout-data.json   (--lists 로 상장 점)
 breakout/build_breakout.py       템플릿에 끼움 → docs/breakout/index.html, breakout.artifact.html, data/{breakout-data,alerts}.json, alerts.txt, brief.txt
@@ -18,6 +19,7 @@ GitHub Actions(`.github/workflows/terminal.yml`)가 화~토 아침에 수집·�
 
 ```
 python3 fetch_prices.py
+python3 fetch_etf_history.py                      # ETF 차트 자료. 처음에는 31개 ETF 의 전체 이력을 받아 1분 남짓
 python3 breakout/fetch_stock_prices.py            # 약 240 종목, 처음에는 전체 이력도 받아 5~10분
 python3 breakout/compute_breakout.py --lists data/lists
 python3 breakout/build_breakout.py
@@ -33,7 +35,7 @@ python3 breakout/build_breakout.py
 | `build_breakout.py` | `template.html` 의 토큰을 채워 두 본문을 만듭니다. Pages 본문의 매트릭스 링크는 `../#board`, 아티팩트 본문은 매트릭스 아티팩트를 새 탭으로 엽니다. 직전 빌드(`docs/breakout/data/breakout-data.json`)와 비교해 알림을 만듭니다. |
 | `template.html` | 화면. `__DATA__`, `__LISTING__`, `__PRICE_ASOF__`, `__TERMINAL_URL__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. |
 
-`output/breakout-data.json` 의 `stocks[key]` 는 `n`(이름), `x`(거래소 접두어), `sym`(Yahoo 심볼), `src`, `c`, `h52`, `ath`, `athFrom`(이력 시작일), `rspy`, `rqqq`, `ipo`(90일 창을 다 채우지 못한 신규 상장 종목만)이고, `etfs[]` 는 메타와 `rows`(칸이 있는 종목), `rows_all`(표의 전체 행; 칸이 없는 행은 `swap`·`nosym`·`nodata` 표시), `c`(ETF 자체 종가 90일)입니다. 페이지에는 `judge`·`stats`·`listing` 을 뺀 나머지를 `DATA` 로, `listing` 을 `LISTING` 으로 넣습니다.
+`output/breakout-data.json` 의 `stocks[key]` 는 `n`(이름), `x`(거래소 접두어), `sym`(Yahoo 심볼), `src`, `c`, `h52`, `ath`, `athFrom`(이력 시작일), `rspy`, `rqqq`, `ipo`(90일 창을 다 채우지 못한 신규 상장 종목만)이고, `etfs[]` 는 메타와 `rows`(칸이 있는 종목), `rows_all`(표의 전체 행; 칸이 없는 행은 `swap`·`nosym`·`nodata` 표시)입니다. `etfx` 는 ETF 패널 차트 자료(`output/etf-chart-data.json` 가운데 이 지도의 ETF 와 SPY·QQQ)이며, 종가 기준일이 이 계산과 다르면 넣지 않습니다. 페이지에는 `judge`·`stats`·`listing` 을 뺀 나머지를 `DATA` 로, `listing` 을 `LISTING` 으로 넣습니다.
 
 ## 판정 규칙
 
@@ -69,6 +71,10 @@ python3 breakout/build_breakout.py
 ## 칸 아래 변동률과 종목 상세의 이동평균
 
 칸 아래 세 줄은 그 종목의 변동률입니다. `D` 일간(전일 종가 대비), `W` 주간(5거래일 전 대비), `M` 30일(칸에 그린 기간, 30거래일 전 대비)이며 탭의 자(USD · QQQ 대비 · SPY 대비)를 따릅니다. 종목 상세 패널에는 같은 세 값이 "일간 · 주간 · 30일" 행으로 있고, 90일 차트에는 50일 단순이동평균(주황 굵은 실선), 89일 헐 이동평균(노랑 일점쇄선), 144일 헐 이동평균(파랑 일점쇄선)이 들어갑니다. 눈금은 가격과 Shelf 만으로 잡으므로 멀리 떨어진 이동평균은 잘려 나가고, 그때는 차트 가장자리에 현재가 대비 거리를 적습니다. 헐 이동평균은 `HMA(n) = WMA(2·WMA(n/2) − WMA(n), √n)` 이며 페이지에서 `cx + c` 로 계산합니다. 차트 위의 `USD · vs QQQ · vs SPY` 토글은 위의 1·2·3 탭과 같은 동작으로 지도 전체의 자를 바꿉니다.
+
+## ETF 패널의 차트
+
+ETF 이름을 눌러 여는 ETF 패널에는 그 ETF 자체의 90일 차트가 이름 바로 아래에 있습니다. 일간·주간·30일 변동률, 90일 종가선과 50 SMA·89 HMA·144 HMA, 고른 지평의 Shelf 와 52주 고점 선, 네 지평의 돌파 상태를 종목 상세와 같은 규칙으로 보여 줍니다. 자는 지도 전체의 자를 따르고, 차트 위의 토글을 누르면 지도 전체의 자가 바뀝니다. 사상 최고는 종목 칸과 달리 USD·비율 모두 전체 이력(`fetch_etf_history.py` 가 월 1회 받는 캐시)에서 잡으며, 지평 표의 '사상 최고' 옆에 이력의 첫 해를 적습니다. 차트가 생기면서 이 패널의 12주 비율선 두 줄(vs SPY 12W · vs QQQ 12W)은 뺐습니다. 매트릭스의 Holdings 패널 맨 위에도 같은 차트가 있습니다(자는 매트릭스 쪽에서 상위 섹터 대비까지 고를 수 있습니다).
 
 ## 화면의 명령
 
