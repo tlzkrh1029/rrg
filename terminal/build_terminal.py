@@ -6,6 +6,7 @@
   output/holdings/<date>.csv       구성종목 스냅샷(최신 두 개를 써서 변동 %p 를 계산)
   data/etf_meta.json               ETF 이름·순자산·보유 종목 수·출처 URL
   --lists DIR                      tradfi-ticker-lists 의 output 폴더(상장 점). 없으면 점을 비운다.
+  data/lists/log.json              5) 상장 로그 탭의 누적 로그(terminal/listing_log.py 가 쌓음). 없으면 탭에 안내만 적는다.
   output/breakout-data.json        돌파 지도 계산 결과(종목 상세용 가격·이동평균 재료). 없으면 docs/breakout/data/ 의 직전 사본, 그것도 없으면 종목 상세 없이 만든다.
   output/contrib-data.json         구성종목 기여도(terminal/compute_contrib.py). 종가 기준일이 이번 계산과 다르거나 없으면 기여도 블록과 주도 종목 없이 만든다.
   output/etf-chart-data.json       Holdings 패널의 ETF 차트(fetch_etf_history.py). 종가 기준일이 이번 계산과 다르거나 없으면 차트 없이 만든다.
@@ -406,6 +407,40 @@ def load_news(path, asof):
     return n
 
 
+def hold_key(sym, ex):
+    """구성종목 행 → 목록 대조 키. 상장 점과 같은 규칙(미국은 티커, 그 밖은 "거래소:코드", 홍콩 코드는 네 자리)."""
+    key = f"{EXCH_MAP.get(ex, ex)}:{sym}" if ex else CODE_ALIAS.get(sym, sym.upper())
+    m = re.match(r"^HKEX:(\d+)$", key)
+    return f"HKEX:{m.group(1).zfill(4)}" if m else key
+
+
+def load_listing_log(path, hold, etfs):
+    """5) 상장 로그 탭의 자료. terminal/listing_log.py 가 쌓는 data/lists/log.json 을 페이지에 넣을 만큼 줄인다. 없으면 None.
+
+    사건마다 [날짜, 거래소, 신규 1·이탈 0, 거래소 심볼, 티커, 이름, 종류, 시장, 상장일 여부, 직전 수집, 이번 수집,
+    이 보드의 구성종목 심볼, 이 보드의 ETF 본체] 를 적는다. 구성종목 심볼은 상장 점과 같은 대조로 찾은 HOLD 행의 심볼(대문자)이고,
+    ETF 본체는 그 상품이 이 보드의 ETF 자체(예: 하이퍼리퀴드의 SMH)일 때의 티커다. 맞는 것이 없으면 None.
+    """
+    try:
+        L = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        print(f"listing log not found ({os.path.relpath(path, ROOT)}): built without the listing log")
+        return None
+    keymap = {}
+    for h in hold.values():
+        for sym, _name, _w, _ch, ex in h["rows"]:
+            if not SWAP_RE.search(sym):
+                keymap.setdefault(hold_key(sym, ex), sym.upper())
+    ev = []
+    for e in L.get("events", []):
+        lk = e.get("lk") or ""
+        m = re.match(r"^HKEX:(\d+)$", lk)
+        lk = f"HKEX:{m.group(1).zfill(4)}" if m else lk
+        ev.append([e["d"], e["v"], 1 if e["e"] == "add" else 0, e["s"], e.get("u", ""), (e.get("n") or "")[:80], e.get("c", ""), e.get("m", ""),
+                   e.get("x", 0), e.get("t0"), e.get("t1"), keymap.get(lk), lk if lk in etfs else None])
+    return {"updated": L.get("updated"), "prev": L.get("prev"), "counts": L.get("counts", {}), "ev": ev}
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--data", default=os.path.join(ROOT, "output", "terminal-data.json"))
@@ -415,6 +450,7 @@ def main():
     ap.add_argument("--holdings", default=os.path.join(ROOT, "output", "holdings"))
     ap.add_argument("--meta", default=os.path.join(ROOT, "data", "etf_meta.json"))
     ap.add_argument("--lists", default=None, help="tradfi-ticker-lists 의 output 폴더")
+    ap.add_argument("--listing-log", default=os.path.join(ROOT, "data", "lists", "log.json"), help="5) 상장 로그 탭의 누적 로그(terminal/listing_log.py)")
     ap.add_argument("--template", default=os.path.join(HERE, "template.html"))
     ap.add_argument("--docs", default=os.path.join(ROOT, "docs"))
     ap.add_argument("--breakout-artifact", default=BREAKOUT_ARTIFACT, help="아티팩트 본문의 3) 돌파 지도 탭이 열 주소")
@@ -467,6 +503,7 @@ def main():
     stocks_tok, stocks_src = load_stocks(args, hold)
     etfx = load_etf_chart(args.etf_chart, cur["asof"], set(cur["etfs"]) | {"SPY", "QQQ"})
     news = load_news(args.news, cur["asof"])
+    listlog = load_listing_log(args.listing_log, hold, set(cur["etfs"]))
     src = "·".join(cur.get("source") or ["yahoo"])
     src_ko = {"yahoo": "야후 파이낸스", "stooq": "Stooq"}.get(src, src)
     tokens = {
@@ -486,6 +523,8 @@ def main():
         "__ETFX__": json.dumps(etfx, ensure_ascii=False, separators=(",", ":")),
         # 헤드라인은 바깥 글이라 <script> 를 닫지 못하게 '<' 를 \u003c 로 적는다(JSON 문자열 밖에는 '<' 가 없다)
         "__NEWS__": json.dumps(news, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
+        # 상장 로그의 이름도 바깥 목록에서 온 글이라 같은 방식으로 적는다
+        "__LISTLOG__": json.dumps(listlog, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
         "__BRIEF__": html_escape(brief),
         "__BUILT_AT__": built_at_kst(),
     }
@@ -524,7 +563,8 @@ def main():
           + (f" · stock details {len(stocks_tok['stocks'])} (asof {stocks_tok['asof']}, {os.path.relpath(stocks_src, ROOT)})" if stocks_tok else " · stock details none")
           + (f" · contribution {len(contrib['funds'])} funds" if contrib else " · contribution none")
           + (f" · ETF charts {sum(1 for t in etfx['etfs'] if t not in ('SPY', 'QQQ'))}" if etfx else " · ETF charts none")
-          + (f" · news {sum(len(v.get('h', [])) for v in news['s'].values())} headlines, {sum(1 for v in news['s'].values() if v.get('e'))} with 8-K earnings" if news else " · news none"))
+          + (f" · news {sum(len(v.get('h', [])) for v in news['s'].values())} headlines, {sum(1 for v in news['s'].values() if v.get('e'))} with 8-K earnings" if news else " · news none")
+          + (f" · listing log {len(listlog['ev'])} events ({sum(1 for e in listlog['ev'] if e[11] or e[12])} on this board)" if listlog else " · listing log none"))
 
 
 if __name__ == "__main__":

@@ -55,9 +55,12 @@ jobs:
             if [ "$rc" = "0" ] || [ "$rc" = "2" ]; then
               echo "fresh lists (exit $rc)"
               cp /tmp/lists/fresh/binance_spot_bstocks.csv /tmp/lists/fresh/binance_futures_tradfi.csv /tmp/lists/fresh/hyperliquid_hip3_stocks.csv /tmp/lists/fresh/summary.json data/lists/
-            elif [ -f /tmp/lists/output/summary.json ]; then
-              echo "::warning::list fetch failed (exit $rc); using the lists committed in tradfi-ticker-lists"
+            elif [ -f /tmp/lists/output/summary.json ] && python -c "import json,sys; g=lambda p: json.load(open(p)).get('generated_at','') ; sys.exit(0 if g('/tmp/lists/output/summary.json') > g('data/lists/summary.json') else 1)"; then
+              echo "::warning::list fetch failed (exit $rc); using the newer lists committed in tradfi-ticker-lists"
               cp /tmp/lists/output/binance_spot_bstocks.csv /tmp/lists/output/binance_futures_tradfi.csv /tmp/lists/output/hyperliquid_hip3_stocks.csv /tmp/lists/output/summary.json data/lists/
+            else
+              # 커밋된 목록이 이 저장소의 사본보다 새롭지 않으면 사본을 그대로 둔다(상장 점과 상장 로그가 예전 목록으로 돌아가지 않게)
+              echo "::warning::list fetch failed (exit $rc); keeping data/lists (not older than the lists committed in tradfi-ticker-lists)"
             fi
           else
             echo "::warning::tradfi-ticker-lists could not be cloned (private repo without LISTS_TOKEN?); using data/lists kept in this repo"
@@ -65,6 +68,11 @@ jobs:
           echo "LISTS_DIR=$LISTS_DIR" >> "$GITHUB_ENV"
           python -c "import json;print('lists as of', json.load(open('data/lists/summary.json'))['generated_at'])"
           exit 0
+
+      # 상장 로그: 세 목록을 직전 상태와 비교해 신규·이탈을 data/lists/log.json 에 쌓는다(매트릭스의 5) 상장 로그 탭). 실패해도 다음 단계는 그대로 간다
+      - name: 상장 로그 갱신
+        run: |
+          python terminal/listing_log.py || echo "::warning::listing log update failed; data/lists/log.json keeps its previous state"
 
       - name: 가격·구성종목 수집
         run: |
