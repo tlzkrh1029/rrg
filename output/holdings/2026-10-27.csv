@@ -109,16 +109,16 @@ XLU,7,SRE,Sempra,4.11
 XLU,8,ETR,Entergy Corporation,3.74
 XLU,9,XEL,Xcel Energy Inc.,3.64
 XLU,10,EXC,Exelon Corporation,3.43
-XLB,1,LIN,Linde plc,13.07
-XLB,2,NEM,Newmont Corporation,6.39
-XLB,3,FCX,Freeport-McMoRan Inc.,5.22
-XLB,4,ECL,Ecolab Inc.,4.97
-XLB,5,SHW,The Sherwin-Williams Company,4.93
-XLB,6,VMC,Vulcan Materials Company,4.91
-XLB,7,APD,"Air Products and Chemicals, Inc.",4.88
-XLB,8,STLD,"Steel Dynamics, Inc.",4.71
-XLB,9,NUE,Nucor Corporation,4.7
-XLB,10,MLM,"Martin Marietta Materials, Inc.",4.69
+XLB,1,LIN,Linde plc,13.03
+XLB,2,NEM,Newmont Corporation,6.48
+XLB,3,FCX,Freeport-McMoRan Inc.,5.21
+XLB,4,ECL,Ecolab Inc.,4.98
+XLB,5,VMC,Vulcan Materials Company,4.91
+XLB,6,SHW,The Sherwin-Williams Company,4.9
+XLB,7,APD,"Air Products and Chemicals, Inc.",4.86
+XLB,8,NUE,Nucor Corporation,4.68
+XLB,9,MLM,"Martin Marietta Materials, Inc.",4.66
+XLB,10,STLD,"Steel Dynamics, Inc.",4.63
 XLRE,1,WELL,Welltower Inc.,11.62
 XLRE,2,PLD,"Prologis, Inc.",8.16
 XLRE,3,EQIX,"Equinix, Inc.",6.4
@@ -149,16 +149,16 @@ IGV,7,CRM,"Salesforce, Inc.",4.23
 IGV,8,FTNT,"Fortinet, Inc.",3.7
 IGV,9,ADBE,Adobe Inc.,3.49
 IGV,10,INTU,Intuit Inc.,3.13
-XBI,1,MRNA,"Moderna, Inc.",2.23
-XBI,2,NTRA,"Natera, Inc.",1.85
+XBI,1,MRNA,"Moderna, Inc.",2.21
+XBI,2,NTRA,"Natera, Inc.",1.84
 XBI,3,BIIB,Biogen Inc.,1.8
-XBI,4,HALO,"Halozyme Therapeutics, Inc.",1.77
-XBI,5,UTHR,United Therapeutics Corporation,1.75
-XBI,6,ABBV,AbbVie Inc.,1.72
-XBI,7,AMGN,Amgen Inc.,1.7
-XBI,8,TWST,Twist Bioscience Corporation,1.69
-XBI,9,EXEL,"Exelixis, Inc.",1.67
-XBI,10,IOVA,"Iovance Biotherapeutics, Inc.",1.62
+XBI,4,HALO,"Halozyme Therapeutics, Inc.",1.79
+XBI,5,UTHR,United Therapeutics Corporation,1.76
+XBI,6,TWST,Twist Bioscience Corporation,1.74
+XBI,7,ABBV,AbbVie Inc.,1.72
+XBI,8,AMGN,Amgen Inc.,1.71
+XBI,9,EXEL,"Exelixis, Inc.",1.68
+XBI,10,GILD,"Gilead Sciences, Inc.",1.64
 GNOM,1,MRNA,"Moderna, Inc.",10.57
 GNOM,2,TWST,Twist Bioscience Corporation,6.04
 GNOM,3,ILMN,"Illumina, Inc.",5.99
@@ -169,16 +169,16 @@ GNOM,7,QGEN,Qiagen N.V.,3.65
 GNOM,8,HKG:1548,Genscript Biotech Corporation,3.61
 GNOM,9,TECH,Bio-Techne Corporation,3.6
 GNOM,10,VRTX,Vertex Pharmaceuticals Incorporated,3.55
-ARKG,1,TXG,"10x Genomics, Inc.",8.75
-ARKG,2,TEM,"Tempus AI, Inc.",8.3
-ARKG,3,TWST,Twist Bioscience Corporation,8.06
-ARKG,4,CRSP,CRISPR Therapeutics AG,5.43
-ARKG,5,GH,"Guardant Health, Inc.",5.09
-ARKG,6,ILMN,"Illumina, Inc.",4.98
-ARKG,7,NTRA,"Natera, Inc.",4.98
-ARKG,8,ABSI,Absci Corporation,4.85
-ARKG,9,LLY,Eli Lilly and Company,4.15
-ARKG,10,CDNA,"CareDx, Inc.",3.87
+ARKG,1,TXG,"10x Genomics, Inc.",8.82
+ARKG,2,TWST,Twist Bioscience Corporation,8.27
+ARKG,3,TEM,"Tempus AI, Inc.",8.15
+ARKG,4,CRSP,CRISPR Therapeutics AG,5.32
+ARKG,5,GH,"Guardant Health, Inc.",5.16
+ARKG,6,ILMN,"Illumina, Inc.",4.95
+ARKG,7,NTRA,"Natera, Inc.",4.94
+ARKG,8,ABSI,Absci Corporation,4.9
+ARKG,9,LLY,Eli Lilly and Company,4.13
+ARKG,10,CDNA,"CareDx, Inc.",3.82
 KRE,1,UCB,"United Community Banks, Inc.",1.18
 KRE,2,TCBI,"Texas Capital Bancshares, Inc.",1.17
 KRE,3,GBCI,"Glacier Bancorp, Inc.",1.17
@@ -296,13 +296,13 @@ TAN,7,CWEN,"Clearway Energy, Inc.",4.27
 TAN,8,SEDG,"SolarEdge Technologies, Inc.",4.21
 TAN,9,HKG:3800,GCL Technology Holdings Limited,4.03
 TAN,10,RUN,Sunrun Inc.,3.92
-JETS,1,LUV,Southwest Airlines Co.,12.12
-JETS,2,DAL,"Delta Air Lines, Inc.",11.17
-JETS,3,AAL,American Airlines Group Inc.,10.87
-JETS,4,UAL,"United Airlines Holdings, Inc.",10.52
-JETS,5,,OTHER ASSETS AND LIABILITIES,5.19
-JETS,6,SKYW,"SkyWest, Inc.",3.73
-JETS,7,ULCC,"Frontier Group Holdings, Inc.",3.53
-JETS,8,ALGT,Allegiant Travel Company,3.5
-JETS,9,ALK,"Alaska Air Group, Inc.",3.29
-JETS,10,TSX:AC,Air Canada,2.86
+JETS,1,LUV,Southwest Airlines Co.,12.4
+JETS,2,DAL,"Delta Air Lines, Inc.",11.14
+JETS,3,AAL,American Airlines Group Inc.,10.76
+JETS,4,UAL,"United Airlines Holdings, Inc.",10.4
+JETS,5,SKYW,"SkyWest, Inc.",3.73
+JETS,6,ALGT,Allegiant Travel Company,3.47
+JETS,7,ULCC,"Frontier Group Holdings, Inc.",3.39
+JETS,8,ALK,"Alaska Air Group, Inc.",3.29
+JETS,9,TSX:AC,Air Canada,2.81
+JETS,10,TSX:BBD.B,Bombardier Inc.,2.25

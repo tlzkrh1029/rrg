@@ -1,4 +1,4 @@
-{"version":1,"updated":"2026-10-27T02:01:38Z","prev":"2026-10-24T00:32:11Z","counts":{"b":100,"p":216,"h":130},
+{"version":1,"updated":"2026-10-27T15:43:22Z","prev":"2026-10-27T02:01:38Z","counts":{"b":100,"p":216,"h":132},
 "state":{
 "b":{
 "AAOIBUSDT":{"u":"AAOI","lk":"AAOI","n":"Applied Optoelectronics","c":"stock","m":"US"},
@@ -326,6 +326,7 @@
 "io:GPRO":{"u":"GPRO","lk":"GPRO","n":"GoPro, Inc.","c":"stock","m":"US","dex":"io"},
 "io:IONQ":{"u":"IONQ","lk":"IONQ","n":"IonQ, Inc.","c":"stock","m":"US","dex":"io"},
 "io:NBIS":{"u":"NBIS","lk":"NBIS","n":"Nebius Group N.V.","c":"stock","m":"US","dex":"io"},
+"io:NVDA":{"u":"NVDA","lk":"NVDA","n":"","c":"unknown","m":"","dex":"io"},
 "io:SNDK":{"u":"SNDK","lk":"SNDK","n":"Sandisk Corporation","c":"stock","m":"US","dex":"io"},
 "io:TCNT":{"u":"TCNT","lk":"TCNT","n":"TENCENT","c":"unknown","m":"","dex":"io"},
 "io:XIAOMI":{"u":"XIAOMI","lk":"XIAOMI","n":"XIAOMI","c":"unknown","m":"","dex":"io"},
@@ -424,6 +425,7 @@
 "xyz:QCOM":{"u":"QCOM","lk":"QCOM","n":"QUALCOMM Incorporated","c":"stock","m":"US","dex":"xyz"},
 "xyz:QNT":{"u":"QNT","lk":"QNT","n":"Quantinuum Inc.","c":"stock","m":"US","dex":"xyz"},
 "xyz:RDDT":{"u":"RDDT","lk":"RDDT","n":"Reddit, Inc.","c":"stock","m":"US","dex":"xyz"},
+"xyz:RELIANCE":{"u":"RELIANCE","lk":"NSE:RELIANCE","n":"RELIANCE","c":"stock","m":"","dex":"xyz"},
 "xyz:RIVN":{"u":"RIVN","lk":"RIVN","n":"Rivian Automotive, Inc.","c":"stock","m":"US","dex":"xyz"},
 "xyz:RKLB":{"u":"RKLB","lk":"RKLB","n":"Rocket Lab Corporation","c":"stock","m":"US","dex":"xyz"},
 "xyz:SHAZ":{"u":"SHAZ","lk":"SHAZ","n":"SharonAI Holdings, Inc.","c":"stock","m":"US","dex":"xyz"},
@@ -454,6 +456,8 @@
 }
 },
 "events":[
+{"v":"h","e":"add","s":"xyz:RELIANCE","u":"RELIANCE","lk":"NSE:RELIANCE","n":"RELIANCE","c":"stock","m":"","d":"2026-10-28","x":0,"t0":"2026-10-27T02:01:38Z","t1":"2026-10-27T15:43:22Z","dex":"xyz"},
+{"v":"h","e":"add","s":"io:NVDA","u":"NVDA","lk":"NVDA","n":"","c":"unknown","m":"","d":"2026-10-28","x":0,"t0":"2026-10-27T02:01:38Z","t1":"2026-10-27T15:43:22Z","dex":"io"},
 {"v":"p","e":"add","s":"STMUSDT","u":"STM","lk":"STM","n":"STMicroelectronics N.V.","c":"stock","m":"US","d":"2026-10-26","x":1,"t0":"2026-10-24T00:32:11Z","t1":"2026-10-27T02:01:38Z"},
 {"v":"p","e":"add","s":"EQTUSDT","u":"EQT","lk":"EQT","n":"EQT Corporation","c":"stock","m":"US","d":"2026-10-26","x":1,"t0":"2026-10-24T00:32:11Z","t1":"2026-10-27T02:01:38Z"},
 {"v":"p","e":"add","s":"EIDOUSDT","u":"EIDO","lk":"EIDO","n":"iShares MSCI Indonesia ETF","c":"etf","m":"US","d":"2026-10-26","x":1,"t0":"2026-10-24T00:32:11Z","t1":"2026-10-27T02:01:38Z"},

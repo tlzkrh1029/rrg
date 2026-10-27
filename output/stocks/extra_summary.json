@@ -1,0 +1,747 @@
+{
+ "currency": {
+  "000660": {
+   "cur": "KRW",
+   "div": 1.0,
+   "symbol": "000660.KS"
+  },
+  "005930": {
+   "cur": "KRW",
+   "div": 1.0,
+   "symbol": "005930.KS"
+  },
+  "1548": {
+   "cur": "HKD",
+   "div": 1.0,
+   "symbol": "1548.HK"
+  },
+  "2344": {
+   "cur": "TWD",
+   "div": 1.0,
+   "symbol": "2344.TW"
+  },
+  "2408": {
+   "cur": "TWD",
+   "div": 1.0,
+   "symbol": "2408.TW"
+  },
+  "285A": {
+   "cur": "JPY",
+   "div": 1.0,
+   "symbol": "285A.T"
+  },
+  "3800": {
+   "cur": "HKD",
+   "div": 1.0,
+   "symbol": "3800.HK"
+  },
+  "688825": {
+   "cur": "CNY",
+   "div": 1.0,
+   "symbol": "688825.SS"
+  },
+  "8001": {
+   "cur": "JPY",
+   "div": 1.0,
+   "symbol": "8001.T"
+  },
+  "ABBN": {
+   "cur": "CHF",
+   "div": 1.0,
+   "symbol": "ABBN.SW"
+  },
+  "ABX": {
+   "cur": "CAD",
+   "div": 1.0,
+   "symbol": "ABX.TO"
+  },
+  "AC": {
+   "cur": "CAD",
+   "div": 1.0,
+   "symbol": "AC.TO"
+  },
+  "AEM": {
+   "cur": "CAD",
+   "div": 1.0,
+   "symbol": "AEM.TO"
+  },
+  "DML": {
+   "cur": "CAD",
+   "div": 1.0,
+   "symbol": "DML.TO"
+  },
+  "DORL": {
+   "cur": "ILS",
+   "div": 100.0,
+   "symbol": "DORL.TA"
+  },
+  "EDG": {
+   "cur": "EUR",
+   "div": 1.0,
+   "symbol": "EDG.F"
+  },
+  "ENLT": {
+   "cur": "ILS",
+   "div": 100.0,
+   "symbol": "ENLT.TA"
+  },
+  "EOAN": {
+   "cur": "EUR",
+   "div": 1.0,
+   "symbol": "EOAN.DE"
+  },
+  "FNV": {
+   "cur": "CAD",
+   "div": 1.0,
+   "symbol": "FNV.TO"
+  },
+  "K": {
+   "cur": "CAD",
+   "div": 1.0,
+   "symbol": "K.TO"
+  },
+  "KAP": {
+   "cur": "USD",
+   "div": 1.0,
+   "symbol": "KAP.L"
+  },
+  "NG": {
+   "cur": "GBP",
+   "div": 100.0,
+   "symbol": "NG.L"
+  },
+  "NST": {
+   "cur": "AUD",
+   "div": 1.0,
+   "symbol": "NST.AX"
+  },
+  "NXE": {
+   "cur": "CAD",
+   "div": 1.0,
+   "symbol": "NXE.TO"
+  },
+  "PAAS": {
+   "cur": "CAD",
+   "div": 1.0,
+   "symbol": "PAAS.TO"
+  },
+  "PDN": {
+   "cur": "AUD",
+   "div": 1.0,
+   "symbol": "PDN.AX"
+  },
+  "PRY": {
+   "cur": "EUR",
+   "div": 1.0,
+   "symbol": "PRY.MI"
+  },
+  "SSW": {
+   "cur": "ZAR",
+   "div": 100.0,
+   "symbol": "SSW.JO"
+  },
+  "SU": {
+   "cur": "EUR",
+   "div": 1.0,
+   "symbol": "SU.PA"
+  },
+  "U.UN": {
+   "cur": "CAD",
+   "div": 1.0,
+   "symbol": "U-UN.TO"
+  },
+  "WPM": {
+   "cur": "CAD",
+   "div": 1.0,
+   "symbol": "WPM.TO"
+  }
+ },
+ "currency_failed": {},
+ "extras": {
+  "ADP": {
+   "code": "ADP",
+   "etf": "XLI",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Automatic Data Processing, Inc.",
+   "seen": "2026-10-24",
+   "source": "yahoo",
+   "symbol": "ADP"
+  },
+  "AMAT": {
+   "code": "AMAT",
+   "etf": "XLK",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Applied Materials, Inc.",
+   "seen": "2026-10-09",
+   "source": "yahoo",
+   "symbol": "AMAT"
+  },
+  "AUB": {
+   "code": "AUB",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Atlantic Union Bankshares Corporation",
+   "seen": "2026-10-10",
+   "source": "yahoo",
+   "symbol": "AUB"
+  },
+  "BMRN": {
+   "code": "BMRN",
+   "etf": "GNOM",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "BioMarin Pharmaceutical Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "BMRN"
+  },
+  "BPOP": {
+   "code": "BPOP",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Popular, Inc.",
+   "seen": "2026-10-21",
+   "source": "yahoo",
+   "symbol": "BPOP"
+  },
+  "CBRE": {
+   "code": "CBRE",
+   "etf": "XLRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "CBRE Group, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "CBRE"
+  },
+  "CDNS": {
+   "code": "CDNS",
+   "etf": "IGV",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Cadence Design Systems, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "CDNS"
+  },
+  "CSL": {
+   "code": "CSL",
+   "etf": "XHB",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Carlisle Companies Incorporated",
+   "seen": "2026-10-16",
+   "source": "yahoo",
+   "symbol": "CSL"
+  },
+  "CVCO": {
+   "code": "CVCO",
+   "etf": "XHB",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Cavco Industries, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "CVCO"
+  },
+  "DASH": {
+   "code": "DASH",
+   "etf": "XLY",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "DoorDash, Inc.",
+   "seen": "2026-10-13",
+   "source": "yahoo",
+   "symbol": "DASH"
+  },
+  "DDOG": {
+   "code": "DDOG",
+   "etf": "IGV",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Datadog, Inc.",
+   "seen": "2026-10-13",
+   "source": "yahoo",
+   "symbol": "DDOG"
+  },
+  "FBP": {
+   "code": "FBP",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "First BanCorp.",
+   "seen": "2026-10-09",
+   "source": "yahoo",
+   "symbol": "FBP"
+  },
+  "FHB": {
+   "code": "FHB",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "First Hawaiian, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "FHB"
+  },
+  "FIBK": {
+   "code": "FIBK",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "First Interstate BancSystem, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "FIBK"
+  },
+  "FULT": {
+   "code": "FULT",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Fulton Financial Corporation",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "FULT"
+  },
+  "HWC": {
+   "code": "HWC",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Hancock Whitney Corporation",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "HWC"
+  },
+  "IOVA": {
+   "code": "IOVA",
+   "etf": "XBI",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Iovance Biotherapeutics, Inc.",
+   "seen": "2026-10-10",
+   "source": "yahoo",
+   "symbol": "IOVA"
+  },
+  "KLAC": {
+   "code": "KLAC",
+   "etf": "SMH",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "KLA Corporation",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "KLAC"
+  },
+  "LEU": {
+   "code": "LEU",
+   "etf": "URA",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Centrus Energy Corp.",
+   "seen": "2026-10-09",
+   "source": "yahoo",
+   "symbol": "LEU"
+  },
+  "LRCX": {
+   "code": "LRCX",
+   "etf": "XLK",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Lam Research Corporation",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "LRCX"
+  },
+  "MOD": {
+   "code": "MOD",
+   "etf": "XHB",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Modine Manufacturing Company",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "MOD"
+  },
+  "MP": {
+   "code": "MP",
+   "etf": "XME",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "MP Materials Corp.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "MP"
+  },
+  "MTH": {
+   "code": "MTH",
+   "etf": "XHB",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Meritage Homes Corporation",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "MTH"
+  },
+  "NIC": {
+   "code": "NIC",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Nicolet Bankshares, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "NIC"
+  },
+  "NVR": {
+   "code": "NVR",
+   "etf": "XHB",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "NVR, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "NVR"
+  },
+  "ONB": {
+   "code": "ONB",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Old National Bancorp",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "ONB"
+  },
+  "PH": {
+   "code": "PH",
+   "etf": "XLI",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Parker-Hannifin Corporation",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "PH"
+  },
+  "PNFP": {
+   "code": "PNFP",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Pinnacle Financial Partners, Inc.",
+   "seen": "2026-10-09",
+   "source": "yahoo",
+   "symbol": "PNFP"
+  },
+  "PSNL": {
+   "code": "PSNL",
+   "etf": "ARKG",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Personalis, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "PSNL"
+  },
+  "ROST": {
+   "code": "ROST",
+   "etf": "XLY",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Ross Stores, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "ROST"
+  },
+  "SCHW": {
+   "code": "SCHW",
+   "etf": "XLF",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "The Charles Schwab Corporation",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "SCHW"
+  },
+  "SKHY": {
+   "code": "SKHY",
+   "etf": "SMH",
+   "exch": "",
+   "first": "2026-07-10",
+   "last": "2026-10-26",
+   "name": "SK hynix Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "SKHY"
+  },
+  "SKY": {
+   "code": "SKY",
+   "etf": "XHB",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Champion Homes, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "SKY"
+  },
+  "SMR": {
+   "code": "SMR",
+   "etf": "URA",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "NuScale Power Corporation",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "SMR"
+  },
+  "SNPS": {
+   "code": "SNPS",
+   "etf": "IGV",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Synopsys, Inc.",
+   "seen": "2026-10-09",
+   "source": "yahoo",
+   "symbol": "SNPS"
+  },
+  "SPCX": {
+   "code": "SPCX",
+   "etf": "QQQ",
+   "exch": "",
+   "first": "2026-06-12",
+   "last": "2026-10-26",
+   "name": "Space Exploration Technologies Corp.",
+   "seen": "2026-10-09",
+   "source": "yahoo",
+   "symbol": "SPCX"
+  },
+  "SSB": {
+   "code": "SSB",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "SouthState Bank Corporation",
+   "seen": "2026-10-20",
+   "source": "yahoo",
+   "symbol": "SSB"
+  },
+  "TGTX": {
+   "code": "TGTX",
+   "etf": "XBI",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "TG Therapeutics, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "TGTX"
+  },
+  "TMUS": {
+   "code": "TMUS",
+   "etf": "XLC",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "T-Mobile US, Inc.",
+   "seen": "2026-10-09",
+   "source": "yahoo",
+   "symbol": "TMUS"
+  },
+  "U.UN": {
+   "code": "U.UN",
+   "etf": "URA",
+   "exch": "TSX",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Sprott Physical Uranium Trust Fund",
+   "seen": "2026-10-09",
+   "source": "yahoo",
+   "symbol": "U-UN.TO"
+  },
+  "UUUU": {
+   "code": "UUUU",
+   "etf": "URA",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Energy Fuels Inc.",
+   "seen": "2026-10-15",
+   "source": "yahoo",
+   "symbol": "UUUU"
+  },
+  "VST": {
+   "code": "VST",
+   "etf": "XLU",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "Vistra Corp.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "VST"
+  },
+  "WBD": {
+   "code": "WBD",
+   "etf": "XLC",
+   "exch": "",
+   "first": "2026-10-05",
+   "last": "2026-10-26",
+   "name": "Warner Bros. Discovery, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "WBD"
+  },
+  "WSFS": {
+   "code": "WSFS",
+   "etf": "KRE",
+   "exch": "",
+   "first": "2024-10-28",
+   "last": "2026-10-26",
+   "name": "WSFS Financial Corporation",
+   "seen": "2026-10-14",
+   "source": "yahoo",
+   "symbol": "WSFS"
+  },
+  "XE": {
+   "code": "XE",
+   "etf": "URA",
+   "exch": "",
+   "first": "2026-04-24",
+   "last": "2026-10-26",
+   "name": "X-Energy, Inc.",
+   "seen": "2026-09-26",
+   "source": "yahoo",
+   "symbol": "XE"
+  }
+ },
+ "failed": {
+  "CCO.NE": {
+   "attempts": {
+    "CCO-NE": "RuntimeError('yahoo: RuntimeError(\"https://query1.finance.yahoo.com: <HTTPError 404: \\'Not Found\\'>; https://query2.finance.yahoo.com: <HTTPError 404: \\'Not Found\\'>\"); stooq: ValueError(\\'unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no\\')')",
+    "CCO.NE": "RuntimeError(\"yahoo: only today's partial bar\")"
+   },
+   "error": "RuntimeError('all symbols failed: RuntimeError(\"yahoo: only today\\'s partial bar\")')",
+   "etf": "URA",
+   "seen": "2026-09-26"
+  },
+  "CDE.NE": {
+   "attempts": {
+    "CDE-NE": "RuntimeError('yahoo: RuntimeError(\"https://query1.finance.yahoo.com: <HTTPError 404: \\'Not Found\\'>; https://query2.finance.yahoo.com: <HTTPError 404: \\'Not Found\\'>\"); stooq: ValueError(\\'unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no\\')')",
+    "CDE.NE": "RuntimeError(\"yahoo: only today's partial bar\")"
+   },
+   "error": "RuntimeError('all symbols failed: RuntimeError(\"yahoo: only today\\'s partial bar\")')",
+   "etf": "XME",
+   "seen": "2026-09-26"
+  },
+  "EFR.NE": {
+   "attempts": {
+    "EFR-NE": "RuntimeError('yahoo: RuntimeError(\"https://query1.finance.yahoo.com: <HTTPError 404: \\'Not Found\\'>; https://query2.finance.yahoo.com: <HTTPError 404: \\'Not Found\\'>\"); stooq: ValueError(\\'unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no\\')')",
+    "EFR.NE": "RuntimeError(\"yahoo: only today's partial bar\")"
+   },
+   "error": "RuntimeError('all symbols failed: RuntimeError(\"yahoo: only today\\'s partial bar\")')",
+   "etf": "URA",
+   "seen": "2026-09-26"
+  }
+ },
+ "funds": [
+  "XLK",
+  "XLF",
+  "XLV",
+  "XLY",
+  "XLC",
+  "XLI",
+  "XLP",
+  "XLE",
+  "XLU",
+  "XLB",
+  "XLRE",
+  "SMH",
+  "IGV",
+  "XBI",
+  "GNOM",
+  "ARKG",
+  "KRE",
+  "XHB",
+  "XME",
+  "URA",
+  "ITA",
+  "PAVE",
+  "DRAM",
+  "MAGS",
+  "SPY",
+  "QQQ"
+ ],
+ "fx": [
+  "AUD",
+  "CAD",
+  "CHF",
+  "CNY",
+  "EUR",
+  "GBP",
+  "HKD",
+  "ILS",
+  "JPY",
+  "KRW",
+  "TWD",
+  "ZAR"
+ ],
+ "fx_failed": {},
+ "generated_at": "2026-10-27T15:46:21Z",
+ "lookback_days": 45,
+ "snapshots": [
+  "2026-09-26",
+  "2026-10-09",
+  "2026-10-10",
+  "2026-10-13",
+  "2026-10-14",
+  "2026-10-15",
+  "2026-10-16",
+  "2026-10-17",
+  "2026-10-20",
+  "2026-10-21",
+  "2026-10-22",
+  "2026-10-23",
+  "2026-10-24",
+  "2026-10-27"
+ ]
+}

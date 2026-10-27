@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T02:01:38Z",
+  "generated_at": "2026-10-27T15:43:22Z",
   "binance_equity_catalog_error": null,
   "binance_spot_bstocks": {
     "count": 100,
@@ -21,7 +21,7 @@
       "unknown": 8
     },
     "exchange_info_source": "https://www.binance.com",
-    "exchange_info_server_time": "2026-10-27T00:01:01Z",
+    "exchange_info_server_time": "2026-10-27T03:41:15Z",
     "trading_but_not_in_exchange_info": [],
     "by_underlying_type": {
       "CN_EQUITY": 2,
@@ -31,27 +31,30 @@
     }
   },
   "hyperliquid_hip3_stocks": {
-    "count": 130,
+    "count": 132,
     "by_asset_class": {
       "etf": 23,
-      "stock": 105,
-      "unknown": 2
+      "stock": 106,
+      "unknown": 3
     },
     "uncategorized_coins": [
       "mkts:BVIV",
-      "io:EWY"
+      "io:EWY",
+      "io:NVDA"
     ],
-    "uncategorized_kept": [],
+    "uncategorized_kept": [
+      "io:NVDA"
+    ],
     "manual_references": [
       "io:EWY"
     ],
     "dex_errors": {},
     "annotation_errors": [],
     "by_dex": {
-      "io": 8,
+      "io": 9,
       "mkts": 1,
       "para": 23,
-      "xyz": 98
+      "xyz": 99
     }
   },
   "review": {
@@ -74,26 +77,19 @@
         "SKHYNIXUSDT"
       ],
       "nasdaq_vs_binance_catalog": [],
-      "us_ticker_not_confirmed": [
-        "AGPUUSDT",
-        "EIDOUSDT",
-        "EQTUSDT",
-        "FWDIUSDT",
-        "GTLBUSDT",
-        "MDTUSDT",
-        "RUMUSDT",
-        "TBTUSDT",
-        "URNMUSDT"
-      ],
+      "us_ticker_not_confirmed": [],
       "trading_but_not_in_exchange_info": []
     },
     "hyperliquid_hip3_stocks": {
       "unknown": [
+        "io:NVDA",
         "io:TCNT",
         "io:XIAOMI"
       ],
       "nasdaq_vs_binance_catalog": [],
-      "uncategorized_kept": [],
+      "uncategorized_kept": [
+        "io:NVDA"
+      ],
       "dex_errors": {},
       "annotation_errors": []
     }

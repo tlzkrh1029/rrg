@@ -5,6 +5,10 @@
   XLU 유틸리티: +66  [86/95/27/23/24]
   IGV 소프트웨어: +64  [100/86/86/91/29]
 
+주도 종목 (1W · 가장 크게 움직인 ETF 기여 %p)
+  ▲ CRWD IGV +1.13 · TSLA XLY +1.12 · PANW IGV +1.06
+  ▼ META XLC −2.43 · GOOGL·GOOG XLC −1.74 · GE ITA −1.53
+
 1단 RRG (섹터 ÷ SPY)
   Leading: XLV XLE
   Improving: XLC XLP XLU XLB
@@ -45,28 +49,9 @@
   ↑ XHB: 백분위 41점 상승 (6개월 → 1개월)
   ↓ DRAM: 백분위 82점 하락 (6개월 → 1개월)
 
-직전 빌드(2026-10-23) 대비 변화 (1W 백분위 높은 순, [1W/1M/3M/6M/12M])
-  XHB 주택건설  [91/55/9/14/5]  Lagging vs XLY
-    · ↘ SPY 비율 50일선 하향 이탈
-    · ↑ 백분위 41점 상승 (6개월 → 1개월)
-  XLU 유틸리티  [86/95/27/23/24]  Improving vs SPY
-    · RRG Lagging → Improving (vs SPY)
-  ARKG 유전체학 (액티브)  [82/18/100/100/86]  Weakening vs XLV
-    · RRG Leading → Weakening (vs SPY)
-  GNOM 유전체학  [55/27/95/95/90]  Weakening vs XLV
-    · RRG Leading → Weakening (vs XLV)
-  XLP 필수소비재  [50/91/64/59/57]  Improving vs SPY
-    · ↘ SPY 비율 200일선 하향 이탈
-  XLB 소재  [45/73/50/41/62]  Improving vs SPY
-    · ↑ 백분위 32점 상승 (6개월 → 1개월)
-  DRAM 메모리반도체  [32/0/59/82/n/a]  N/A vs XLK
-    · ↓ 백분위 82점 하락 (6개월 → 1개월)
-  URA 우라늄  [9/5/5/0/0]  Lagging vs XLE
-    · RRG Improving → Lagging (vs SPY)
-  XME 금속·광업  [5/9/32/5/33]  Lagging vs XLB
-    · RRG Improving → Lagging (vs XLB)
-    · RRG Improving → Lagging (vs SPY)
+직전 빌드(없음) 대비 변화 (1W 백분위 높은 순, [1W/1M/3M/6M/12M])
+  없음
 
-구성종목 상위 10 변화: XLK(+1/−1), XLC(+1/−1), XLI(+1/−1), XLRE(+1/−1), XBI(+1/−1), KRE(+3/−3), PAVE(+2/−2)
+구성종목 상위 10 변화: XLK(+1/−1), XLC(+1/−1), XLI(+1/−1), XLRE(+1/−1), KRE(+3/−3), PAVE(+2/−2)
 
 https://tlzkrh1029.github.io/rrg/#board

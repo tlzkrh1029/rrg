@@ -9,7 +9,7 @@ AMCBUSDT,AMCB,USDT,AMC,AMC Entertainment Holdings,stock,AMC,"AMC Entertainment H
 AMDBUSDT,AMDB,USDT,AMD,Advanced Micro Devices,stock,AMD,"Advanced Micro Devices, Inc. - Common Stock",stock,TRADING,1
 AMZNBUSDT,AMZNB,USDT,AMZN,Amazon,stock,AMZN,"Amazon.com, Inc. - Common Stock",stock,TRADING,1
 ARMBUSDT,ARMB,USDT,ARM,ARM,stock,ARM,Arm Holdings plc - American Depositary Shares,stock,TRADING,1
-ASMLBUSDT,ASMLB,USDT,ASML,ASML,stock,ASML,ASML Holding N.V. - New York Registry Shares,stock,TRADING,1
+ASMLBUSDT,ASMLB,USDT,ASML,ASML,stock,ASML,ASML Holding N.V. - New York Registry Shares,stock,TRADING,1.001120398374345428
 ASTSBUSDT,ASTSB,USDT,ASTS,AST SpaceMobile,stock,ASTS,"AST SpaceMobile, Inc. - Class A Common Stock",stock,TRADING,1
 AVGOBUSDT,AVGOB,USDT,AVGO,Broadcom,stock,AVGO,Broadcom Inc. - Common Stock,stock,TRADING,1.001269208611258122
 AXTIBUSDT,AXTIB,USDT,AXTI,AXT,stock,AXTI,AXT Inc - Common Stock,stock,TRADING,1
@@ -63,7 +63,7 @@ MUUBUSDT,MUUB,USDT,MUU,Direxion MU Bull 2X ETF,etf,MUU,Direxion Daily MU Bull 2X
 MVLLBUSDT,MVLLB,USDT,MVLL,GraniteShares 2X Long MRVL ETF,etf,MVLL,GraniteShares 2x Long MRVL Daily ETF,etf,TRADING,1
 NBISBUSDT,NBISB,USDT,NBIS,Nebius,stock,NBIS,Nebius Group N.V. - Class A Ordinary Shares,stock,TRADING,1
 NFLXBUSDT,NFLXB,USDT,NFLX,Netflix,stock,NFLX,"Netflix, Inc. - Common Stock",stock,TRADING,1
-NOKBUSDT,NOKB,USDT,NOK,Nokia,stock,NOK,Nokia Corporation Sponsored American Depositary Shares,stock,TRADING,1.002349416320445721
+NOKBUSDT,NOKB,USDT,NOK,Nokia,stock,NOK,Nokia Corporation Sponsored American Depositary Shares,stock,TRADING,1.004115394700397672
 NVDABUSDT,NVDAB,USDT,NVDA,NVIDIA,stock,NVDA,NVIDIA Corporation - Common Stock,stock,TRADING,1.000778223752807865
 ORCLBUSDT,ORCLB,USDT,ORCL,Oracle,stock,ORCL,Oracle Corporation Common Stock,stock,TRADING,1.002571827467211643
 PDDBUSDT,PDDB,USDT,PDD,PDD Holdings,stock,PDD,PDD Holdings Inc. - American Depositary Shares,stock,TRADING,1
