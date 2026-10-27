@@ -1,1 +1,4 @@
 __pycache__/
+# 뉴스 원자료(헤드라인): 같은 실행 안에서 output/news-data.json 으로 계산해 쓰므로 저장소에는 두지 않는다
+output/news/headlines.json
+output/news/*.tmp

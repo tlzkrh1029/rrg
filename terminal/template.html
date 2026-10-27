@@ -349,6 +349,7 @@ table.dr{width:100%;border-collapse:collapse;font-size:11.5px}
 .dr td.rk{color:var(--muted);width:20px}
 .dr td.sy{color:#fff;font-weight:700;white-space:nowrap;width:136px}
 .dr td.sy small{display:block;color:var(--muted);font-weight:400;font-size:10px;white-space:normal;max-width:136px}
+.dr .tag{display:inline-block;font-size:9px;line-height:1.2;padding:0 3px;border:1px solid var(--amber);color:var(--amber);margin-left:5px;font-weight:400;vertical-align:1px}
 .dr td.r{width:64px}
 .dr .on{color:var(--hot);font-weight:700} .dr .dn{color:var(--cold);font-weight:700}
 .dr .chips{display:flex;flex-wrap:wrap;gap:4px}
@@ -377,12 +378,85 @@ table.cmds{border-collapse:collapse;font-size:11.5px;width:100%;max-width:1080px
 .cmds td:first-child{color:var(--amber);font-weight:700;white-space:nowrap;width:1%;padding-right:18px}
 .cmds td:last-child{line-height:1.6}
 
+/* 5) 상장 로그: 세 거래소 목록의 신규·이탈 기록(data/lists/log.json) */
+.lgp{padding-block:10px 4px;display:grid;gap:10px}
+.lgp .pb{padding:10px 12px 12px;display:grid;gap:10px}
+.lgsum{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px}
+.lgsum .lgv{display:grid;gap:3px;text-align:left;border:1px solid var(--line);background:var(--band);padding:6px 9px;color:var(--ink-2);font-size:11.5px}
+.lgsum .lgv:hover{border-color:var(--line-2);color:#fff}
+.lgsum .lgv[aria-pressed="true"]{border-color:var(--amber-dim);background:var(--amber-soft)}
+.lgsum .lgv .vn{display:flex;align-items:center;gap:6px;color:var(--ink)}
+.lgsum .lgv .n{font-size:11px;color:var(--muted)} .lgsum .lgv .n b{font-size:17px;color:#fff;font-weight:700;margin-right:3px}
+.lgsum .lgv .st{color:var(--muted);font-size:11px} .lgsum .lgv .st b{color:var(--amber);font-weight:700}
+.lgmeta{margin:0;font-size:11px;color:var(--muted);line-height:1.6;max-width:120ch} .lgmeta b{color:var(--ink-2)}
+.lgwrap{overflow-x:auto}
+table.lg{border-collapse:collapse;width:100%;font-size:12px}
+.lg th{text-align:left;color:var(--amber);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px 4px 0;border-bottom:1px solid var(--line-2);white-space:nowrap;font-weight:700}
+.lg td{padding:4px 10px 4px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+.lg tbody tr:hover td{background:var(--hover)}
+.lg td small{display:block;color:var(--muted);font-size:10px;line-height:1.35}
+.lg td.dt{white-space:nowrap;color:var(--ink)} .lg td.vn{white-space:nowrap}
+.lg td.ev{white-space:nowrap} .lg td.ev b{font-weight:700} .lg td.ev b.add{color:var(--amber)} .lg td.ev b.del{color:var(--muted)}
+.lg td.tk{white-space:nowrap} .lg td.tk .t{color:#fff;font-weight:700}
+.lg td.tk button.t{text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:3px} .lg td.tk button.t:hover{color:var(--amber)}
+.lg tr.del td.tk .t{color:var(--ink-2);text-decoration:line-through;text-decoration-color:var(--muted)}
+.lg td.nm{max-width:36ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lg td.bd .chips{display:flex;flex-wrap:wrap;gap:3px}
+.lg .mu{color:var(--muted)}
+.lg td.tk .nm2{display:none}
+/* 좁은 화면: 이름·종류·시장 열을 접고 이름은 티커 아래에, 거래소는 점만 남긴다(점의 뜻은 위의 세 칸에 있다) */
+@media (max-width:760px){.lg .c-nm,.lg .c-cls,.lg .c-mk,.lg td.vn .vlab{display:none} .lg th,.lg td{padding-right:7px} .lg td.tk .nm2{display:block;max-width:20ch;overflow:hidden;text-overflow:ellipsis}}
+
 /* 상태 표시줄 */
 .status{position:sticky;bottom:0;z-index:10;display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;background:var(--band);border-top:1px solid var(--line);padding:5px 8px calc(5px + env(safe-area-inset-bottom,0px));font-size:11px;color:var(--muted);margin-top:8px}
 .status b{color:var(--ink-2)}
 .status .clk{color:var(--amber);white-space:nowrap;margin-left:16px}
 .status .mk{margin-left:10px;letter-spacing:.06em}
 .status .mk.open{color:var(--green)} .status .mk.closed{color:var(--muted)}
+
+/* ---- 뉴스·실적: 1,860px 이상에서는 오른쪽 세 번째 칼럼, 그보다 좁으면 Holdings 패널 안(차트 아래와 종목 상세 안) ---- */
+.newscol{display:none}
+.panel.news{min-width:0}
+.news .nav{display:flex;gap:4px;align-items:center}
+.news .nav .pos{color:var(--muted);font-size:11px}
+.news .nav button{font-size:11.5px;padding:2px 8px;color:var(--ink);border:1px solid var(--line-2);white-space:nowrap}
+.news .nav button:hover{background:var(--band-2)}
+.nbody{padding:8px 10px 10px;display:grid;gap:8px;align-content:start;min-height:0}
+.nbody .wlab,.nw .wlab,.hnews .wlab{color:var(--amber);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.nbody .mu,.hnews .mu,.nw .mu{color:var(--muted)}
+.nbody .on,.hnews .on{color:var(--hot);font-weight:700} .nbody .dn,.hnews .dn{color:var(--cold);font-weight:700}
+.ai{border:1px solid var(--line-2);background:var(--band);padding:8px 9px;display:grid;gap:6px}
+.ai p{margin:0;font-size:12px;line-height:1.6;color:var(--ink)}
+.ai .cl{border-left:2px solid var(--amber);padding-left:8px;display:grid;gap:4px}
+.ai .cl .cll{font-size:10.5px;color:var(--amber);letter-spacing:.04em}
+.ai .srcs{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:10.5px}
+.ai .meta{display:flex;justify-content:space-between;gap:8px;font-size:10.5px;color:var(--muted)}
+dl.ern{display:grid;grid-template-columns:max-content 1fr;gap:2px 10px;margin:0;font-size:11.5px}
+.ern dt{color:var(--muted)} .ern dd{margin:0;color:var(--ink)}
+.dday{display:inline-block;font-size:9.5px;padding:0 4px;border:1px solid var(--amber);color:var(--amber);margin-left:4px;line-height:1.35;vertical-align:1px}
+ul.hl{list-style:none;margin:0;padding:0;display:grid}
+ul.hl li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:1px 8px;padding:6px 0;border-top:1px solid var(--line)}
+ul.hl li:first-child{border-top:0;padding-top:2px}
+ul.hl .tk{color:var(--amber);font-weight:700;font-size:11px;line-height:1.6;overflow:hidden;text-overflow:ellipsis}
+ul.hl a{color:var(--ink);font-size:12px;line-height:1.45;overflow-wrap:anywhere}
+ul.hl .src{grid-column:2;color:var(--muted);font-size:10.5px}
+ul.hl.one li{grid-template-columns:minmax(0,1fr)} ul.hl.one .src{grid-column:1}
+.nbody .more,.hnews .more{justify-self:start;font-size:11px;color:var(--link)}
+.nfoot{margin:0;font-size:10.5px;color:var(--muted);line-height:1.5;border-top:1px solid var(--line);padding-top:6px}
+.nlinks{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11px}
+.tvw{min-height:120px;border:1px solid var(--line)}
+.tvw .tradingview-widget-copyright{font-size:10px;padding:2px 4px;color:var(--muted)}
+.nw{display:grid;gap:6px}
+.hnews{display:grid;gap:8px}
+.hlrow{display:flex;align-items:baseline;justify-content:space-between;gap:10px;width:100%;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:7px 0;color:var(--amber);font-size:10.5px;letter-spacing:.06em;font-weight:700;text-transform:uppercase;text-align:left}
+.hlrow .mu{letter-spacing:0;text-transform:none;color:var(--muted);font-weight:400}
+.h td.sy small.e{white-space:nowrap} .h td.sy small.e.in,.h td.sy small.e.nx{color:var(--amber)}
+:is(.sd,.eb) .big .em{stroke:var(--amber);stroke-width:1;stroke-dasharray:1 2.5} :is(.sd,.eb) .big text.emt{fill:var(--amber);font-size:9px;font-weight:700}
+@media (min-width:1860px){
+  .term{max-width:2200px}
+  #pane1 .grid{grid-template-columns:minmax(0,1fr) 372px 372px}
+  .newscol{display:block;position:sticky;top:52px;max-height:calc(100vh - 92px);overflow-y:auto}   /* 위 명령줄(약 42px)과 아래 상태줄 밑에 가리지 않게 */
+}
 
 /* 1280px 미만: 구성종목 패널은 행을 누를 때 전체 화면으로 열린다 */
 @media (max-width:1279px){
@@ -545,7 +619,7 @@ body.cover-open{overflow:hidden}
           <span class="txt">LAUNCH TERMINAL</span>
           <span class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span>
         </button>
-        <p class="cv-note">Opens the board on this page. Deep links (#rrg, #brief, #board) skip this door; type COVER on the board to come back.</p>
+        <p class="cv-note">Opens the board on this page. Deep links (#rrg, #brief, #log, #board) skip this door; type COVER on the board to come back.</p>
         <label class="cv-skip"><input type="checkbox" id="coverSkip"> Skip this door next time on this browser</label>
       </header>
 
@@ -654,7 +728,8 @@ body.cover-open{overflow:hidden}
     <button type="button" role="tab" id="tab3" aria-selected="false" aria-controls="pane3"><b>2)</b> RRG 1단·2단</button>
     <a role="tab" id="tab5" href="__BREAKOUT_URL__" target="__NAV_TARGET__" rel="noopener" title="돌파 지도(BKM)로 이동: 이 보드의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 28개 ETF 의 상위 10개 구성종목"><b>3)</b> 돌파 지도<small>BKM</small></a>
     <button type="button" role="tab" id="tab4" aria-selected="false" aria-controls="pane4"><b>4)</b> 주간 브리핑</button>
-    <button type="button" role="tab" id="tab2" aria-selected="false" aria-controls="pane2"><b>5)</b> 도움말</button>
+    <button type="button" role="tab" id="tab6" aria-selected="false" aria-controls="pane6"><b>5)</b> 상장 로그</button>
+    <button type="button" role="tab" id="tab2" aria-selected="false" aria-controls="pane2"><b>6)</b> 도움말</button>
     <span class="tabinfo">관찰 대상 24 ETF (섹터 11 · 산업·테마 12 · 스타일 1) · SPY 대비 상대수익률 백분위 · 종가 __PRICE_ASOF__ · 구성종목 __HOLD_ASOF__</span>
   </div>
 
@@ -700,7 +775,7 @@ body.cover-open{overflow:hidden}
           </table>
         </div>
         <p class="sortline" id="sortHint"></p>
-        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷(MAGS·DRAM은 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출)이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. Holdings 패널 맨 위의 ETF 차트는 최근 90거래일 종가와 그 비율(QQQ·SPY·상위 섹터 대비)이며, 52주 고점은 2년 가격 파일에서, 사상 최고는 USD·비율 모두 전체 이력(Yahoo range=max, 월 1회 갱신)에서 잡았습니다. 차트의 자를 바꾸면 기여도의 기준도 함께 바뀝니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다. MAGS(동일가중 매그니피센트 7)는 스타일·집중도 행입니다. 일곱 종목이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 대비로 재고, 백분위는 23개 ETF 사이에 끼워 넣었을 때의 위치만 적으며 다른 행의 순위 계산과 섹터 집계에는 넣지 않습니다. 2) 탭의 1단 그래프에는 점선 꼬리를 단 점으로 함께 그립니다.</p>
+        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷(MAGS·DRAM은 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출)이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. Holdings 패널 맨 위의 ETF 차트는 최근 90거래일 종가와 그 비율(QQQ·SPY·상위 섹터 대비)이며, 52주 고점은 2년 가격 파일에서, 사상 최고는 USD·비율 모두 전체 이력(Yahoo range=max, 월 1회 갱신)에서 잡았습니다. 차트의 자를 바꾸면 기여도의 기준도 함께 바뀝니다. 뉴스는 화면 폭이 1,860px 이상이면 오른쪽 칼럼에, 그보다 좁으면 Holdings 패널 안에 있습니다. 헤드라인은 Finnhub의 최근 7일 기사이고, 실적은 SEC EDGAR 8-K Item 2.02의 접수 시각(장 시작 전·장중·장 마감 후)과 그 뒤 첫 종가까지의 반응, 다음 실적일은 Finnhub 일정입니다. '왜 움직였나' 요약은 기여도와 실적 일정으로 만든 문장입니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다. MAGS(동일가중 매그니피센트 7)는 스타일·집중도 행입니다. 일곱 종목이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 대비로 재고, 백분위는 23개 ETF 사이에 끼워 넣었을 때의 위치만 적으며 다른 행의 순위 계산과 섹터 집계에는 넣지 않습니다. 2) 탭의 1단 그래프에는 점선 꼬리를 단 점으로 함께 그립니다.</p>
       </section>
 
       <aside class="rail">
@@ -730,13 +805,18 @@ body.cover-open{overflow:hidden}
             <div class="shape"><div class="strip" id="lg3" aria-hidden="true"></div><div><b>오른쪽만 <span data-w="hot">초록</span>: 소진 경계</b><span>장기 성과는 좋지만 단기 열이 식고 있습니다. 순위 하락이 이어지면 이탈을 검토합니다.</span></div></div>
             <div class="klegend">
               <div><span class="lab">RATIO</span>흰 실선은 ETF÷벤치마크 가격 비율, 주황 점선은 그 이동평균입니다. 끝점이 <span data-w="hot">초록</span>이면 지금 이동평균 위, <span data-w="cold">붉은색</span>이면 아래이고, 선 전체에 색이 들어가면 최근 5주 안에 돌파 또는 이탈이 있었다는 뜻입니다.</div>
-              <div><span class="lab">RRG</span><span class="sw" style="background:var(--lead)"></span>Leading <span class="sw" style="background:var(--weak);margin-left:8px"></span>Weakening <span class="sw" style="background:var(--lag);margin-left:8px"></span>Lagging <span class="sw" style="background:var(--impr);margin-left:8px"></span>Improving · 섹터와 MAGS는 SPY 대비, 산업·테마는 상위 섹터 대비 국면입니다. 그래프는 2) 탭, 뜻은 5) 도움말에 있습니다.</div>
+              <div><span class="lab">RRG</span><span class="sw" style="background:var(--lead)"></span>Leading <span class="sw" style="background:var(--weak);margin-left:8px"></span>Weakening <span class="sw" style="background:var(--lag);margin-left:8px"></span>Lagging <span class="sw" style="background:var(--impr);margin-left:8px"></span>Improving · 섹터와 MAGS는 SPY 대비, 산업·테마는 상위 섹터 대비 국면입니다. 그래프는 2) 탭, 뜻은 6) 도움말에 있습니다.</div>
               <div><span class="lab">SIGNAL</span>★ SPY 대비 비율 52주 신고가 · ↗ 비율선 50·200일선 상향 돌파(최근 5일) · ↘ 하향 이탈 · ↑↓ 백분위 ±30 급변(6개월 → 1개월) · ≈ 1주 반등 미확인</div>
               <div><span class="lab">LISTING</span><span class="dots" aria-hidden="true"><i class="b">b</i></span> 바이낸스 bStocks 현물 · <span class="dots" aria-hidden="true"><i class="p"></i></span> 바이낸스 perp · <span class="dots" aria-hidden="true"><i class="h"></i></span> 하이퍼리퀴드 perp. 티커 뒤에 상장된 상품만 점으로 찍히고, 없으면 아무것도 표시하지 않습니다. 구성종목 표에서는 티커 아래에 작은 점으로 찍히며, bStocks는 속이 빈 주황 원입니다.</div>
               <div><span class="lab">COLOR</span>툴바의 97) 색 규약으로 초록=강세(US, 블룸버그 관례)와 붉음=강세(KR) 사이를 바꿀 수 있습니다. 설정은 이 브라우저에만 저장됩니다.</div>
             </div>
           </div>
         </section>
+      </aside>
+
+      <aside class="panel news newscol" id="newsPanel" aria-labelledby="newsTitle">
+        <header class="ph"><span class="pt" id="newsTitle">News<small id="newsSub"></small></span><div class="nav" id="newsNav"></div></header>
+        <div class="nbody" id="newsBody"></div>
       </aside>
     </div>
   </div>
@@ -775,6 +855,18 @@ body.cover-open{overflow:hidden}
       </div>
     </section>
     <aside class="rail" id="rrgRail" aria-label="선택한 ETF의 구성종목"></aside>
+  </div>
+
+  <div class="pane lgp" id="pane6" role="tabpanel" aria-labelledby="tab6" hidden>
+    <section class="panel" aria-labelledby="logTitle">
+      <header class="ph"><span class="pt" id="logTitle">Listing Log<small>코인 거래소의 주식·ETF 상장 기록</small></span><span class="pctl">
+        <span class="grp" role="group" aria-label="거래소"><button type="button" data-lgv="all">전체</button><button type="button" data-lgv="b">bStocks</button><button type="button" data-lgv="p">바이낸스 perp</button><button type="button" data-lgv="h">HL perp</button></span>
+        <span class="grp" role="group" aria-label="기간"><button type="button" data-lgp="7">7D</button><button type="button" data-lgp="30">30D</button><button type="button" data-lgp="90">90D</button><button type="button" data-lgp="0">전체</button></span>
+        <span class="grp" role="group" aria-label="종류"><button type="button" data-lgc="all">주식·ETF</button><button type="button" data-lgc="stock">주식</button><button type="button" data-lgc="etf">ETF</button></span>
+        <span class="grp" role="group" aria-label="이 보드의 구성종목"><button type="button" data-lgh="1" aria-pressed="false">구성종목만</button></span>
+      </span></header>
+      <div class="pb" id="logBody"></div>
+    </section>
   </div>
 
   <div class="pane help" id="pane2" role="tabpanel" aria-labelledby="tab2" hidden>
@@ -820,13 +912,19 @@ body.cover-open{overflow:hidden}
           <ol>
             <li>정렬을 <kbd class="k">22) 전환순</kbd>으로 바꾸어 맨 위 세 행을 봅니다. 최근에 순위가 가장 크게 오른 ETF입니다.</li>
             <li>그 행의 SPY 대비·QQQ 대비 비율선이 <span data-w="hot">초록</span> 색으로 강조되어 있는지, 신호 열에 상대 신고가나 이동평균선 돌파가 있는지 확인합니다.</li>
-            <li>행을 눌러 구성종목을 열고, 상승을 이끄는 종목이 한두 개에 몰려 있는지 고르게 퍼져 있는지 봅니다. 고르게 퍼진 상승이 섹터 전환에 가깝습니다. 구성종목 표의 종목 행을 누르면 그 아래에 종목 상세(일간·주간·30일 변동률, 90일 가격선과 50 SMA·89 HMA·144 HMA, 20일·55일·52주·사상 최고 돌파 상태, 이 종목을 담은 다른 ETF)가 펼쳐집니다. 돌파 지도의 종목 상세와 같은 내용이며, USD · vs QQQ · vs SPY 로 자를 바꿀 수 있습니다.</li>
+            <li>행을 눌러 구성종목을 열고, 상승을 이끄는 종목이 한두 개에 몰려 있는지 고르게 퍼져 있는지 봅니다. 고르게 퍼진 상승이 섹터 전환에 가깝습니다. 구성종목 표의 종목 행을 누르면 그 아래에 종목 상세(일간·주간·30일 변동률, 90일 가격선과 50 SMA·89 HMA·144 HMA, 20일·55일·52주·사상 최고 돌파 상태, 이 종목을 담은 다른 ETF)가 펼쳐집니다. 돌파 지도의 종목 상세와 같은 내용이며, USD · vs QQQ · vs SPY 로 자를 바꿀 수 있습니다. 같은 패널의 기여도에서 ETF 를 실제로 움직인 종목을 확인하고, 뉴스·실적에서 그 이유를 찾습니다(아래 7).</li>
             <li><kbd class="k">2) RRG</kbd> 탭의 1단 그래프에서 Improving → Leading으로 넘어가는 섹터를 찾고, 그 점을 눌러 2단을 엽니다. 2단에서 그 섹터보다 강한(Leading) 하위 ETF가 섹터를 끌고 가는 주체입니다. 2025년이라면 1단에서 XLK, 2단에서 SMH였을 것입니다.</li>
             <li>마지막으로 <kbd class="k">12M</kbd> 열로 정렬해 오른쪽만 <span data-w="hot">초록</span> 색인 행을 찾고, 보유 중인 섹터가 거기에 있으면 이탈 조건을 점검합니다.</li>
           </ol>
         </section>
         <section class="wide">
-          <h3>7. 명령줄 사용법</h3>
+          <h3>7. Holdings 패널: ETF 차트 · 기여도 · 뉴스와 실적</h3>
+          <p><b style="color:var(--amber)">ETF 차트.</b> 패널 맨 위에는 고른 ETF 의 90일 차트가 항상 펼쳐져 있습니다. 일간·주간·30일 변동률, 50 SMA · 89 HMA · 144 HMA, 20일 Shelf 와 천장, 52주 고점, 그리고 20일·55일·52주·사상 최고 네 지평의 돌파 상태를 종목 상세와 같은 규칙으로 보여 줍니다. 사상 최고는 ETF 의 전체 이력에서 찾으며, 이력은 한 달에 한 번 다시 받습니다. 제목줄의 USD · vs QQQ · vs SPY 단추(산업·테마 ETF 는 상위 섹터 대비 단추도 있음)는 차트와 아래 기여도의 기준을 함께 바꿉니다.</p>
+          <p><b style="color:var(--amber)">기여도.</b> 구성종목이 ETF 수익률에 얼마나 보탰는지를 기간 시작 비중 × 기간 수익률(USD)로 계산합니다. 1D · 1W · 1M 가운데 기간을 고르고, 기준이 USD 가 아니면 비교 대상(SPY, QQQ, 상위 섹터)의 기여도를 옆에 함께 놓아 차이가 어느 종목에서 났는지 보여 줍니다. 상위 10개 밖의 몫은 '나머지'로 적고, 표의 비중 합이 98% 이상인 ETF 는 남는 차이를 '미설명분'(현금·보수·시차·스왑)으로 적습니다. 해외 종목은 환율을 반영해 USD 로 환산하고, 1D 에서는 장 마감 시각이 다른 종목에 '시차' 표시를 붙입니다. 그 아래 표는 상승 종목 수, 합계와 같은 방향으로 움직인 기여 가운데 상위 1개·3개 종목이 차지한 몫, 나머지 평균, 최대 상승일과 하락일을 비교하고, 히트맵은 최근 8주의 주간 기여를 보여 줍니다. 4) 주간 브리핑 탭의 Drivers 패널은 보드 전체에서 ETF 를 가장 많이 움직인 종목을 모읍니다.</p>
+          <p><b style="color:var(--amber)">뉴스와 실적.</b> 창 폭이 1,860px 이상이면 매트릭스 오른쪽에 뉴스 칼럼이 생기고, 그보다 좁으면 같은 내용이 Holdings 패널 안(차트 아래와 종목 상세 안)에 들어갑니다. ETF 를 고르면 상위 10개 종목의 최근 7일 헤드라인(Finnhub), 최근 실적과 다가오는 실적 일정, 기여도와 실적 일정으로 만든 '왜 움직였나' 요약 문장이 나옵니다. 종목 행을 펼치면 그 종목의 헤드라인과 TradingView 뉴스 링크(Key facts · Top news · Latest)가 나오고, Pages 에서는 TradingView 뉴스 위젯도 함께 나옵니다. 실적은 SEC EDGAR 의 8-K 공시(Item 2.02)로 확인해 구성종목 표의 배지, 차트의 점선, 종목 상세의 '최근 실적' 줄로 표시합니다. 아티팩트에서는 Claude 예약 작업이 웹 검색으로 찾은 이유 문장이 요약 상자에 더해질 수 있습니다.</p>
+        </section>
+        <section class="wide">
+          <h3>8. 명령줄 사용법</h3>
           <p>화면 맨 위 명령줄에 아래 명령을 입력하고 Enter 또는 &lt;GO&gt;를 누릅니다. 표 위에서 아무 글자나 입력하면 명령줄로 초점이 이동합니다. 명령줄 밖에서는 ←/→ 키로 이전·다음 ETF를 넘기고, Esc로 구성종목 화면을 닫습니다.</p>
           <table class="cmds">
             <thead><tr><th>입력</th><th>동작</th></tr></thead>
@@ -838,18 +936,23 @@ body.cover-open{overflow:hidden}
               <tr><td>21 COL · 22 SHIFT</td><td>열 기준 정렬과 전환순 정렬 사이를 바꿉니다.</td></tr>
               <tr><td>1W · 1M · 3M · 6M · 12M</td><td>그 기간 열의 백분위가 높은 순으로 정렬합니다. 뒤에 ASC를 붙이면 낮은 순입니다(예: 3M ASC).</td></tr>
               <tr><td>97 COLOR · US · KR</td><td>색 규약을 바꾸거나 지정합니다.</td></tr>
-              <tr><td>1 MATRIX · 2 RRG · 4 BRIEF · 5 HELP</td><td>매트릭스, RRG 1단·2단, 주간 브리핑, 도움말 화면을 오갑니다. 3 은 돌파 지도로 이동합니다.</td></tr>
+              <tr><td>1 MATRIX · 2 RRG · 4 BRIEF · 5 LOG · 6 HELP</td><td>매트릭스, RRG 1단·2단, 주간 브리핑, 상장 로그, 도움말 화면을 오갑니다. 3 은 돌파 지도로 이동하고, 98 도 도움말을 엽니다.</td></tr>
               <tr><td>3 BKM · BREAKOUT · MAP</td><td>돌파 지도(BKM)로 이동합니다. 이 보드의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 28개 ETF 의 상위 10개 구성종목을 칸으로 놓고, 20일·55일·52주·사상 최고 고점 돌파와 저점 이탈을 USD·QQQ 대비·SPY 대비로 보여 줍니다.</td></tr>
-              <tr><td>0 COVER</td><td>대문 화면을 다시 엽니다. 대문은 주소에 #rrg·#brief·#board 같은 해시가 없을 때만 처음에 보이고, 대문의 "Skip this door"를 켜면 이 브라우저에서는 건너뜁니다.</td></tr>
+              <tr><td>0 COVER</td><td>대문 화면을 다시 엽니다. 대문은 주소에 #rrg·#brief·#log·#board 같은 해시가 없을 때만 처음에 보이고, 대문의 "Skip this door"를 켜면 이 브라우저에서는 건너뜁니다.</td></tr>
               <tr><td>RRG XLK · XLK RRG</td><td>2) 탭을 열고 2단 그래프를 그 섹터 대비로 바꿉니다. 하위 ETF를 적으면 그 상위 섹터의 2단을 열고 그 ETF를 강조하며, MAGS를 적으면 1단에서 MAGS 점을 강조합니다. 2) 탭에서는 1단·2단의 점과 2단 표의 행을 눌러도 탭을 벗어나지 않고 오른쪽 Holdings 패널에 그 ETF의 구성종목이 열립니다.</td></tr>
             </tbody>
           </table>
         </section>
         <section class="wide">
-          <h3>8. 거래소 상장 점</h3>
+          <h3>9. 거래소 상장 점</h3>
           <p>티커 뒤의 점은 그 ETF나 종목을 코인 거래소에서 거래할 수 있는지를 나타냅니다. <span class="dots" aria-hidden="true"><i class="b">b</i></span> 는 바이낸스 bStocks 현물(토큰화 주식), <span class="dots" aria-hidden="true"><i class="p"></i></span> 는 바이낸스 TradFi perp, <span class="dots" aria-hidden="true"><i class="h"></i></span> 는 하이퍼리퀴드 TradFi perp입니다. 세 가지가 모두 있으면 점 세 개, 일부만 있으면 있는 것만, 하나도 없으면 아무것도 찍지 않습니다. 점 위에 커서를 올리면 상품 이름이 나옵니다.</p>
           <p>구성종목 표에서는 칸이 좁아서 티커 아래에 지름 6px짜리 점으로 같은 규칙을 적용하며, bStocks는 글자 대신 속이 빈 주황 원으로 표시합니다. 스왑으로 노출을 얻는 Roundhill 펀드(MAGS, DRAM)는 운용사의 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출로 보여 주므로, 점은 그 기초 종목(마이크론, 삼성전자, SK하이닉스, CXMT 등)의 상장 여부이고 담보로 보유한 국채·MMF는 표에서 뺍니다. 이 파일을 받지 못한 날에는 stockanalysis.com의 표로 대체되어 스왑 계약과 국채 행이 따로 보이며, 그때는 스왑 행에 기초 종목의 상장 여부를 그대로 찍고 국채 행에는 점을 찍지 않습니다.</p>
-          <p>점의 근거는 __LIST_TS__에 수집한 세 목록입니다. 바이낸스 bStocks __LIST_B__종(태그 bStocks가 붙은 현물 자산), 바이낸스 TradFi 무기한 선물 __LIST_F__계약(TRADIFI_PERPETUAL·거래 중), 하이퍼리퀴드 HIP-3 주식 선물 __LIST_H__종(xyz·para·io·mkts dex, 상장폐지 제외)입니다. 대조는 미국 티커로 하고, 삼성전자(005930)와 SK하이닉스(000660)는 KRX 코드로, SK하이닉스의 나스닥 상장분은 SKHY로 맞춥니다. 세 거래소 모두 매주 종목을 추가하므로, 목록을 다시 수집하면 이 점들도 함께 갱신합니다.</p>
+          <p>점의 근거는 __LIST_TS__에 수집한 세 목록입니다. 바이낸스 bStocks __LIST_B__종(태그 bStocks가 붙은 현물 자산), 바이낸스 TradFi 무기한 선물 __LIST_F__계약(TRADIFI_PERPETUAL·거래 중), 하이퍼리퀴드 HIP-3 주식 선물 __LIST_H__종(xyz·para·io·mkts dex, 상장폐지 제외)입니다. 대조는 미국 티커로 하고, 삼성전자(005930)와 SK하이닉스(000660)는 KRX 코드로, SK하이닉스의 나스닥 상장분은 SKHY로 맞춥니다. 세 거래소 모두 매주 종목을 추가하므로, 목록을 다시 수집하면 이 점들도 함께 갱신합니다. 추가와 이탈의 기록은 5) 상장 로그 탭에 쌓입니다(아래 10).</p>
+        </section>
+        <section class="wide">
+          <h3>10. 상장 로그</h3>
+          <p>5) 탭은 세 목록을 매일 아침 받을 때마다 직전 목록과 비교해, 새로 상장된 종목(신규)과 목록에서 사라진 종목(이탈)을 날짜순으로 쌓은 기록입니다. 날짜는 거래소마다 뜻이 다릅니다. 바이낸스 TradFi 선물은 계약마다 거래소가 밝힌 상장일이 있어서 그 날짜를 그대로 적습니다('상장일'). bStocks 와 하이퍼리퀴드는 목록에 날짜가 없어서, 목록에서 처음 보인 날을 적습니다('확인'). 직전 수집과 4일 넘게 떨어진 경우에는 그 사이 어느 날에 상장되었는지 알 수 없으므로 시작일을 함께 적습니다(예: '9/27 이후'). 기록은 2026년 9월 27일 목록에서 시작하며, 선물은 그날 이미 상장되어 있던 계약의 상장일도 모두 적었습니다.</p>
+          <p>'이 보드' 열은 그 종목이 이 보드 24개 ETF 의 상위 10개 구성종목에 들어 있는지와 그 ETF·순위를 보여 줍니다. 대조 규칙은 구성종목 표의 상장 점과 같습니다. 티커를 누르면 1) 매트릭스의 종목 검색으로 넘어가고, ETF 단추를 누르면 그 ETF 의 구성종목이 열립니다. 위쪽 세 칸은 거래소별 현재 상장 수, 이번 수집(직전 수집 이후)에서 생긴 신규·이탈 수, 최근 30일의 신규·이탈 수이며, 칸을 누르면 그 거래소만 보입니다. 기간은 마지막 목록 수집일을 기준으로 셉니다. 목록 수집이 실패한 날은 기록하지 않고, 한 거래소의 상장 수가 갑자기 크게 줄면 수집 오류로 보고 이탈을 바로 적지 않습니다.</p>
         </section>
       </div>
     </section>
@@ -861,6 +964,7 @@ body.cover-open{overflow:hidden}
   </footer>
 </div>
 
+<script id="claudeNotes" type="application/json">null</script>
 <script>
 const HOLD = __HOLD__;
 
@@ -933,7 +1037,7 @@ ETFS.forEach(e => {
 });
 
 /* ---- 거래소 상장(수집 __LIST_TS__): b = 바이낸스 bStocks 현물, p = 바이낸스 TradFi perp, h = 하이퍼리퀴드 HIP-3 perp. 표에 없는 티커는 세 목록 어디에도 없다는 뜻.
-   출처: github.com/tlzkrh1029/tradfi-ticker-lists (bStocks 80종, 바이낸스 TradFi 선물 188계약, 하이퍼리퀴드 HIP-3 주식 121종)를 24개 ETF와 상위 10개 구성종목에 대조한 결과 ---- */
+   출처: github.com/tlzkrh1029/tradfi-ticker-lists 의 세 목록을 24개 ETF와 상위 10개 구성종목에 대조한 결과(종 수는 도움말 9) ---- */
 const LIST_ASOF = '__LIST_ASOF__';
 /* 직전 빌드 대비 변화 (build_terminal.py 가 채움): {asof, prev_asof, alerts:[{etf,type,text}]} */
 const ALERTS = __ALERTS__;
@@ -946,6 +1050,10 @@ const SWAPS = __SWAPS__;
 const STOCKS = __STOCKS__;
 const CONTRIB = __CONTRIB__;   /* 구성종목 기여도(terminal/compute_contrib.py). 계산이 없으면 null */
 const ETFX = __ETFX__;   /* Holdings 패널의 ETF 차트(fetch_etf_history.py): 90일 종가·창 앞 종가·52주 고점·사상 최고. 자료가 없으면 null */
+/* 5) 상장 로그(terminal/listing_log.py 가 쌓는 data/lists/log.json 을 build_terminal.py 가 줄인 것). 없으면 null */
+const LISTLOG = __LISTLOG__;
+const NEWS = __NEWS__;   /* 뉴스·실적(terminal/fetch_news.py → compute_news.py): 종목별 8-K 실적·다음 실적일·헤드라인, ETF 별 데이터 요약. 없으면 null */
+const TV_WIDGET = __TV_WIDGET__;   /* TradingView 뉴스 위젯: Pages 본문만 true. 끄려면 terminal/build_terminal.py 의 TV_WIDGET_PAGES */
 const LSTNAME = { b:'바이낸스 bStocks 현물', p:'바이낸스 perp', h:'하이퍼리퀴드 perp' };
 const lstLabel = s => s ? '상장: ' + [...s].map(k => LSTNAME[k]).join(' · ') + ` (${LIST_ASOF} 기준)` : '';
 const dots = s => s ? `<span class="dots" role="img" aria-label="${lstLabel(s)}" title="${lstLabel(s)}">${s.includes('b') ? '<i class="b">b</i>' : ''}${s.includes('p') ? '<i class="p"></i>' : ''}${s.includes('h') ? '<i class="h"></i>' : ''}</span>` : '';
@@ -1192,12 +1300,13 @@ function chartSVG(o) {
     if (v > hi) out += `<text class="edge ${cls}" x="${Wd - R - 2}" y="${T + 8 + j * 9}" text-anchor="end">▲ ${lab} ${d}%</text>`;
     else if (v < lo) out += `<text class="edge ${cls}" x="${Wd - R - 2}" y="${Hd - B - 3 - j * 9}" text-anchor="end">▼ ${lab} ${d}%</text>`;
   });
+  (o.earn || []).forEach(e => { const x = xs(e.i).toFixed(1); out += `<line class="em" x1="${x}" y1="${T}" x2="${x}" y2="${Hd - B}"/><text class="emt" x="${(+x + 3).toFixed(1)}" y="${T + 7}">${e.t}</text>`; });
   out += `<polyline class="l" points="${pts}"/></svg>`;
   return out;
 }
 function sChart(k, mode) {
   const s = stockSeries(k, mode);
-  return chartSVG({ c: s.c, h52: s.h52, ma: sMA(k, mode), dates: STOCKS.dates, r: sJ(k, mode, '20'), cid: 'sd_' + k.replace(/[^A-Za-z0-9]/g, '_') + '_' + mode });
+  return chartSVG({ c: s.c, h52: s.h52, ma: sMA(k, mode), dates: STOCKS.dates, r: sJ(k, mode, '20'), earn: earnMarks(k, STOCKS.dates), cid: 'sd_' + k.replace(/[^A-Za-z0-9]/g, '_') + '_' + mode });
 }
 function maLegendHTML(ma, n, usd) {
   const fmt = v => usd ? (v >= 1000 ? v.toFixed(0) : v.toFixed(2)) : v.toFixed(4);
@@ -1236,16 +1345,18 @@ function stockDetailHTML(k, etf) {
   return `<tr class="sd"><td colspan="5"><div class="sdb">
     <div class="sdh"><span class="tk">${k}</span><span class="nm">${st.n}</span><span class="ex">${ex} EQUITY</span></div>
     <div class="ven">${sVenues(k)}</div>
-    <dl><dt>${SMLAB[mode]} 일간</dt><dd class="${ch.d >= 0 ? 'on' : 'dn'}">${sPct(ch.d)}%</dd><dt>${SMLAB[mode]} 주간</dt><dd class="${ch.w >= 0 ? 'on' : 'dn'}">${sPct(ch.w)}%</dd><dt>${SMLAB[mode]} 30일</dt><dd class="${ch.m >= 0 ? 'on' : 'dn'}">${sPct(ch.m)}%</dd><dt>종가</dt><dd>${STOCKS.asof}${st.sym ? ' · ' + st.sym : ''}${stale}</dd>${st.ipo ? `<dt>상장</dt><dd>${st.ipo} · 그 앞은 첫 종가로 채움</dd>` : ''}</dl>
+    <dl><dt>${SMLAB[mode]} 일간</dt><dd class="${ch.d >= 0 ? 'on' : 'dn'}">${sPct(ch.d)}%</dd><dt>${SMLAB[mode]} 주간</dt><dd class="${ch.w >= 0 ? 'on' : 'dn'}">${sPct(ch.w)}%</dd><dt>${SMLAB[mode]} 30일</dt><dd class="${ch.m >= 0 ? 'on' : 'dn'}">${sPct(ch.m)}%</dd><dt>종가</dt><dd>${STOCKS.asof}${st.sym ? ' · ' + st.sym : ''}${stale}</dd>${st.ipo ? `<dt>상장</dt><dd>${st.ipo} · 그 앞은 첫 종가로 채움</dd>` : ''}${earnDl(k)}</dl>
     <div class="ttlrow"><span>90일 · ${SMLONG[mode]}</span><span class="tog" role="group" aria-label="차트의 자"><button type="button" data-sdmode="usd" aria-pressed="${mode === 'usd'}">USD</button><button type="button" data-sdmode="qqq" aria-pressed="${mode === 'qqq'}">vs QQQ</button><button type="button" data-sdmode="spy" aria-pressed="${mode === 'spy'}">vs SPY</button></span></div>
     <div class="big">${sChart(k, mode)}</div>${sLegend(k, mode)}
     <table class="hz">${sHorizonRows(k, mode)}</table>
+    ${newsWide() ? '' : `<div class="nw"><div class="wlab">뉴스 · ${cbEsc(k)}</div>${newsStockHTML(k, false)}</div>`}
     <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${wb || '<span class="mu">없음</span>'}
     <div class="links"><a href="${BREAKOUT_URL}${BREAKOUT_URL.indexOf('#') < 0 ? '#' + encodeURIComponent(k) : ''}" target="${NAV_TARGET}" rel="noopener">돌파 지도에서 보기 ↗</a>${st.sym && /^[A-Z.\-]+$/.test(st.sym) ? `<a href="https://stockanalysis.com/stocks/${st.sym.toLowerCase().replace('.', '-')}/" target="_blank" rel="noopener">stockanalysis.com ↗</a>` : ''}</div>
   </div></td></tr>`;
 }
 function toggleStock(k) {
   if (sdState.k === k) sdState.k = null; else sdState.k = k;
+  newsBackK = null;
   if (selT) renderHold(selT);
   if (sdState.k) { const tr = document.querySelector(`#hbody tr.sd`); if (tr && tr.scrollIntoView) tr.scrollIntoView({ block: 'nearest' }); }
 }
@@ -1308,9 +1419,11 @@ function cbStartInfo(F, A0) {
   const overlap = A0.rows.filter(x => startNames.includes(x[0])).length;
   return (F.eqw || overlap < 8) ? { S, overlap, newIn: A0.rows.filter(x => !startNames.includes(x[0])) } : null;
 }
-function cbRow(x, scale, p) {
+function cbRow(x, scale, p, per) {
   const [s, , , r, c, tz, cur, rl, rf, nofx] = x;
   const sub = [];
+  const ev = per ? earnIn(s, per.from, per.to) : null;
+  if (ev) sub.push(`<span class="tag in" title="${TIMING[ev[1]] || ''} 발표 · 반응일 ${ev[3]}">실적 ${cbMd(ev[0])}</span>`);
   if (p === '1D' && tz) sub.push('<span class="tag">시차</span>');
   if (cur) sub.push(`${cur} · 현지 ${cbPc(rl)}% · 환율 ${nofx ? '없음' : cbPc(rf) + '%'}`);
   return `<div class="cr"><span class="tk" title="${cbEsc(s)}">${cbEsc(s)}</span>${cbBar(c, scale)}<span class="v ${cbSg(c)}">${cbPp(c)}</span><span class="r">${cbPc(r)}%</span>${sub.length ? `<span class="sub">${sub.join('')}</span>` : ''}</div>`;
@@ -1320,10 +1433,10 @@ function cbRest(A, scale, F) {
   if (cbFull(A)) return `<div class="cr rest"><span class="tk">미설명분</span>${cbBar(c, scale)}<span class="v ${cbSg(c)}">${cbPp(c)}</span><span class="r" style="font-size:9.5px">${cbCause(F)}</span></div>`;
   return `<div class="cr rest"><span class="tk">나머지<small>${Math.round(w * 100)}%</small></span>${cbBar(c, scale)}<span class="v ${cbSg(c)}">${cbPp(c)}</span><span class="r">${r == null ? '' : cbPc(r) + '%'}</span></div>`;
 }
-function cbSide(t, F, A, scale, p) {
+function cbSide(t, F, A, scale, p, per) {
   const all = HOLD[t] && +HOLD[t].n > 0 && +HOLD[t].n <= A.rows.length;
   const head = cbFull(A) ? `${t} · ${A.rows.length}종목${all ? ' 전부' : ''} + 미설명분` : `${t} · 상위 ${A.rows.length} + 나머지`;
-  const rows = A.rows.slice().sort((a, b) => b[4] - a[4]).map(x => cbRow(x, scale, p)).join('');
+  const rows = A.rows.slice().sort((a, b) => b[4] - a[4]).map(x => cbRow(x, scale, p, per)).join('');
   return `<div class="side"><div class="sh"><span>${head}</span><span>기여 %p · 수익률</span></div>${rows}${cbRest(A, scale, F)}</div>`;
 }
 /* 상위 1개·3개: 합계와 같은 방향으로 움직인 종목 기여의 합 가운데 가장 큰 1개, 3개가 차지하는 몫 */
@@ -1394,7 +1507,8 @@ function contribHTML(t) {
   const sum = Bp
     ? `${t} <b class="${cbSg(A0.R)}">${cbPc(A0.R, 2)}%</b> − ${bt} <b class="${cbSg(Bp.R)}">${cbPc(Bp.R, 2)}%</b> = <b class="${cbSg(A0.R - Bp.R)}">${cbPp(A0.R - Bp.R)}%p</b>`
     : `${t} <b class="${cbSg(A0.R)}">${cbPc(A0.R, 2)}%</b> <span class="mu">· ${span}</span>`;
-  const sides = [cbSide(t, F, A, scale, p)].concat(Bp ? [cbSide(bt, B, Bp, scale, p)] : []);
+  const per = { from: A0.from, to: A0.to };
+  const sides = [cbSide(t, F, A, scale, p, per)].concat(Bp ? [cbSide(bt, B, Bp, scale, p, per)] : []);
   const met = cbMetrics(Bp ? [{ n: t, A }, { n: bt, A: Bp }] : [{ n: t, A }]);
   const heat = `<div class="wlab">최근 8주 · 주간 기여 %p</div>${cbHeat(t, F, Bp ? bt : null, Bp ? B : null)}<p class="note">칸은 종목의 주간 기여(%p)이고, 아래 ${Bp ? '세 줄은' : '줄은'} 주간 수익률(%)입니다. 목록은 지금 구성 기준이며, * 표시 주는 진행 중입니다.</p>`;
   const note = `<p class="note">${Bp ? span + ' · ' : ''}비중은 기간 시작 시점으로 보정했습니다. 구성종목은 ${cbMd(F.snap)} 스냅샷(기준 종가 ${cbMd(F.asof)})${useStart ? `이고, 목록은 ${cbMd(A0.start.snap)} 구성입니다` : '입니다'}.</p>`;
@@ -1416,13 +1530,144 @@ function renderDrivers() {
   const th = `<thead><tr><th>#</th><th>종목</th><th class="r">${DR.period === '1W' ? '주간' : '1개월'}</th><th>ETF별 기여 %p</th></tr></thead>`;
   const rows = (list, sign) => list.map((b, i) => {
     const es = b.e.filter(([, c]) => sign > 0 ? c > 0 : c < 0).slice(0, 4);
-    return `<tr><td class="rk">${i + 1}</td><td class="sy">${cbEsc(b.s)}<small>${cbEsc(cbName(b.n))}</small></td><td class="r ${cbSg(b.r)}">${cbPc(b.r)}%</td><td><div class="chips">${es.map(([E, c]) => `<button type="button" class="dchip" data-drgo="${E}" title="${E} 행을 선택하고 기여도를 ${DR.period}로 엽니다">${E} <b class="${cbSg(c)}">${cbPp(c)}</b></button>`).join('')}</div></td></tr>`;
+    const ev = per ? earnIn(String(b.s).split('·')[0], per.from, per.to) : null;
+    const etag = ev ? `<span class="tag in" title="${TIMING[ev[1]] || ''} 발표 · 반응일 ${ev[3]}">실적 ${cbMd(ev[0])}</span>` : '';
+    return `<tr><td class="rk">${i + 1}</td><td class="sy">${cbEsc(b.s)}${etag}<small>${cbEsc(cbName(b.n))}</small></td><td class="r ${cbSg(b.r)}">${cbPc(b.r)}%</td><td><div class="chips">${es.map(([E, c]) => `<button type="button" class="dchip" data-drgo="${E}" title="${E} 행을 선택하고 기여도를 ${DR.period}로 엽니다">${E} <b class="${cbSg(c)}">${cbPp(c)}</b></button>`).join('')}</div></td></tr>`;
   }).join('');
   const n = ETFS.length;
   body.innerHTML = `<p class="meta">관찰 대상 ${n}개 ETF의 상위 10 종목 기여를 종목별로 모았습니다. ${DR.basis === 'usd' ? '기여는 기간 시작 비중 × 수익률(USD)입니다.' : '기여는 기간 시작 비중 × (종목 수익률 − SPY 수익률)입니다.'} 한 종목이 여러 ETF에 들어 있으면 ETF별 기여를 나란히 적고, 순위는 그 가운데 가장 큰 기여로 정합니다. 같은 회사의 여러 주식(GOOGL·GOOG 등)은 하나로 합칩니다.</p>`
     + `<div class="wlab">▲ 끌어올린 종목</div><table class="dr">${th}<tbody>${rows(D.up, 1)}</tbody></table>`
     + `<div class="wlab">▼ 끌어내린 종목</div><table class="dr">${th}<tbody>${rows(D.dn, -1)}</tbody></table>`
     + `<p class="meta">ETF 이름을 누르면 매트릭스에서 그 ETF가 선택되고, Holdings 패널의 기여도가 같은 기간과 기준으로 열립니다.</p>`;
+}
+
+/* ---- 뉴스·실적 (terminal/fetch_news.py → compute_news.py) ----
+   실적은 SEC EDGAR 8-K Item 2.02(접수 시각으로 장 시작 전·장중·장 마감 후를 가름), 다음 실적일과 헤드라인은 Finnhub.
+   1,860px 이상이고 1) 매트릭스 탭이면 오른쪽 뉴스 칼럼(ETF 모드 · 종목 모드)에, 그보다 좁으면 Holdings 패널 안에 둔다.
+   'Claude 요약'은 아티팩트 예약 작업이 claudeNotes 자리에 넣은 문장이며, 종가 기준일이 같을 때만 보인다(Pages 에는 없다) ---- */
+const CLAUDE = (() => { try { const el = document.getElementById('claudeNotes'); const v = el ? JSON.parse(el.textContent) : null; return v && v.asof === PRICE_ASOF && v.etfs ? v : null; } catch (e) { return null; } })();
+const TIMING = { bmo: '장 시작 전', dmh: '장중', amc: '장 마감 후' };
+const newsWide = () => curTab === 1 && !!(window.matchMedia && window.matchMedia('(min-width:1860px)').matches);
+const nS = k => (NEWS && NEWS.s && NEWS.s[String(k || '').toUpperCase()]) || null;
+const nyToday = () => { try { return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(new Date()); } catch (e) { return new Date().toISOString().slice(0, 10); } };
+const dayDiff = (a, b) => Math.round((Date.parse(b + 'T00:00:00Z') - Date.parse(a + 'T00:00:00Z')) / 864e5);
+const dday = d => { const n = dayDiff(nyToday(), d); return n <= 0 ? '오늘' : 'D-' + n; };
+const pad2 = n => String(n).padStart(2, '0');
+const kst = ts => { const d = new Date(ts * 1000 + 9 * 3600e3); return `${d.getUTCMonth() + 1}/${d.getUTCDate()} ${pad2(d.getUTCHours())}:${pad2(d.getUTCMinutes())} KST`; };
+const kstIso = iso => { const t = Date.parse(iso || ''); return isNaN(t) ? '' : kst(t / 1000); };
+const safeUrl = u => /^https?:\/\//i.test(u || '') ? cbEsc(u) : '#';
+const tvBase = tv => `https://www.tradingview.com/symbols/${encodeURIComponent(String(tv).replace(':', '-'))}/news/`;
+/* 기간 (from, to] 안에 주가가 반응한 실적 발표 */
+function earnIn(sym, from, to) { const s = nS(sym); return s && s.e ? (s.e.find(e => e[3] && from < e[3] && e[3] <= to) || null) : null; }
+/* 차트의 실적 표시선: 90일 창 안의 발표일(주말이면 반응일) */
+function earnMarks(k, dates) {
+  const s = nS(k); if (!s || !s.e || !dates) return [];
+  return s.e.map(e => dates.indexOf(dates.includes(e[0]) ? e[0] : e[3])).filter(i => i >= 0).map(i => ({ i, t: '실적' }));
+}
+function earnDl(k) {
+  const s = nS(k); if (!s) return '';
+  const e = s.e && s.e[0], out = [];
+  if (e) out.push(`<dt>최근 실적</dt><dd>${cbMd(e[0])} ${TIMING[e[1]] || ''} 발표${e[2] != null ? ` · ${e[1] === 'amc' ? '다음 거래일' : '그날'} <span class="${cbSg(e[2])}">${cbPc(e[2])}%</span>` : (e[3] ? '' : ' · 반응 대기')}${s.u ? ` <a href="${safeUrl(s.u)}" target="_blank" rel="noopener">8-K ↗</a>` : ''}</dd>`);
+  if (s.nx) out.push(`<dt>다음 발표</dt><dd>${cbMd(s.nx[0])}${TIMING[s.nx[1]] ? ' ' + TIMING[s.nx[1]] : ''} <span class="dday">${dday(s.nx[0])}</span></dd>`);
+  else if (e) out.push('<dt>다음 발표</dt><dd><span style="color:var(--muted)">미확인</span></dd>');
+  return out.join('');
+}
+/* 구성종목 표의 티커 아래: 14일 안 예정이면 '예정', 아니면 100일 안의 최근 발표(기여도 기간 안이면 호박색) */
+function earnBadge(sym, t) {
+  const s = nS(sym); if (!s) return '';
+  const today = nyToday();
+  if (s.nx && dayDiff(today, s.nx[0]) <= 14) return `<small class="e nx" title="다음 실적 발표 ${s.nx[0]}${TIMING[s.nx[1]] ? ' ' + TIMING[s.nx[1]] : ''}">예정 ${cbMd(s.nx[0])}</small>`;
+  const e = s.e && s.e[0]; if (!e || dayDiff(e[0], today) > 100) return '';
+  const F = CONTRIB && CONTRIB.funds && CONTRIB.funds[t], P = F && (F.P[CB.period] || F.P['1M']);
+  const inP = P && e[3] && P.from < e[3] && e[3] <= P.to;
+  return `<small class="e${inP ? ' in' : ''}" title="최근 실적 발표 ${e[0]} ${TIMING[e[1]] || ''}${inP ? ' · 지금 기여도 기간 안' : ''}">실적 ${cbMd(e[0])}</small>`;
+}
+function hlHTML(items, noTk) {
+  return `<ul class="hl${noTk ? ' one' : ''}">${items.map(x => `<li>${noTk ? '' : `<span class="tk" title="${cbEsc(x[4])}">${cbEsc(x[4])}</span>`}<a href="${safeUrl(x[3])}" target="_blank" rel="noopener nofollow">${cbEsc(x[1])}</a><span class="src">${kst(x[0])}${x[2] ? ' · ' + cbEsc(x[2]) : ''}</span></li>`).join('')}</ul>`;
+}
+function etfHeadlines(t) {
+  const all = [];
+  ((HOLD[t] || {}).rows || []).forEach(r => { const s = nS(r[0]); (s && s.h || []).forEach(x => all.push([x[0], x[1], x[2], x[3], String(r[0]).toUpperCase()])); });
+  return all.sort((a, b) => b[0] - a[0]);
+}
+function summaryBox(t) {
+  const E = NEWS && NEWS.etf && NEWS.etf[t], sum = (E && E.sum) || [];
+  const C = CLAUDE && CLAUDE.etfs[t];
+  if (!sum.length && !C) return '';
+  const cl = C ? `<div class="cl"><div class="cll">Claude · 웹 검색으로 찾은 이유</div>${(C.text || []).map(p => `<p>${cbEsc(p)}</p>`).join('')}${(C.src || []).length ? `<div class="srcs">${C.src.slice(0, 4).map((x, i) => `<a href="${safeUrl(x.u)}" target="_blank" rel="noopener">${cbEsc(x.t || '근거 ' + (i + 1))} ↗</a>`).join('')}</div>` : ''}</div>` : '';
+  return `<section class="ai" aria-label="왜 움직였나"><div class="wlab">왜 움직였나 · 데이터 요약${C ? ' + Claude' : ''}</div>${sum.length ? `<p>${sum.map(cbEsc).join(' ')}</p>` : ''}${cl}<div class="meta"><span>기여도(1개월 · ${cbEsc(PARENT[t] || 'SPY')} 대비, 지금 구성)와 실적 일정으로 만든 문장${C && CLAUDE.at ? ` · Claude ${cbEsc(CLAUDE.at)}` : ''}</span></div></section>`;
+}
+function etfEarnHTML(t) {
+  const E = NEWS && NEWS.etf && NEWS.etf[t]; if (!E) return '';
+  const nx = (E.nx || []).slice(0, 4).map(x => `<b>${cbEsc(x[0])}</b> ${cbMd(x[1])}<span class="dday">${dday(x[1])}</span>`).join(' · ');
+  const more = (E.nx || []).length > 4 ? ` <span class="mu">외 ${(E.nx || []).length - 4}</span>` : '';
+  const re = (E.re || []).map(x => `${cbEsc(x[0])} ${cbMd(x[1])}`).join(' · ');
+  const last = E.last || [];
+  return `<dl class="ern"><dt>다음 발표</dt><dd>${nx ? nx + more : '<span class="mu">35일 안 일정 없음</span>'}</dd><dt>최근 1개월</dt><dd>${re || `상위 10 종목 발표 없음${last.length ? ` <span class="mu">· 마지막 ${last.slice(0, 3).map(x => cbEsc(x[0])).join('·')} ${cbMd(last[0][1])}</span>` : ''}`}</dd></dl>`;
+}
+function newsFoot(stock) {
+  const m = (NEWS && NEWS.meta) || {};
+  return `<p class="nfoot">헤드라인: Finnhub${m.news_at ? ` (${kstIso(m.news_at)} 수집)` : ''} · 실적: SEC EDGAR 8-K Item 2.02 · 일정: Finnhub${stock && TV_WIDGET ? ' · 위젯: TradingView' : ''}${CLAUDE ? ' · 이유: Claude' : ''}</p>`;
+}
+function newsEtfHTML(t) {
+  const all = etfHeadlines(t), shown = all.slice(0, 8);
+  return summaryBox(t)
+    + `<div class="wlab">실적 · 상위 10 종목</div>${etfEarnHTML(t) || '<p class="mu" style="margin:0">실적 자료가 없습니다.</p>'}`
+    + `<div class="wlab">헤드라인 · 상위 10 종목 · 최근 7일</div>${all.length ? hlHTML(shown) : '<p class="mu" style="margin:0">헤드라인 자료가 없습니다.</p>'}`
+    + (all.length > shown.length ? `<button type="button" class="more" data-newsmore="1">더 보기 · ${all.length - shown.length}건</button><div hidden>${hlHTML(all.slice(shown.length))}</div>` : '')
+    + newsFoot(false);
+}
+function newsStockHTML(k, wide) {
+  const s = nS(k) || {}, tv = s.tv;
+  const us = !tv || /^(NASDAQ|NYSE|AMEX|CBOE|IEX):/.test(tv) || !/:/.test(tv);
+  const links = tv ? `<div class="nlinks"><a href="${tvBase(tv)}?section=key_facts" target="_blank" rel="noopener">Key facts ↗</a><a href="${tvBase(tv)}?section=top_news" target="_blank" rel="noopener">Top news ↗</a><a href="${tvBase(tv)}?section=latest" target="_blank" rel="noopener">Latest ↗</a></div>` : '';
+  const widget = TV_WIDGET && tv ? `<div class="tvw" data-tv="${cbEsc(tv)}"></div>` : '';
+  const ern = wide ? earnDl(k) : '';
+  const hl = (s.h || []).length ? hlHTML(s.h.map(x => x.concat([k])), true)
+    : `<p class="mu" style="margin:0">${us ? '최근 7일 헤드라인이 없습니다.' : '미국 밖 상장 종목이라 헤드라인과 8-K 실적이 없습니다. TradingView 링크로 확인하세요.'}</p>`;
+  return (ern ? `<dl class="ern">${ern}</dl>` : '') + widget + links + `<div class="wlab">헤드라인 · ${cbEsc(k)} · 최근 7일</div>${hl}` + (wide ? newsFoot(true) : '');
+}
+/* 좁은 화면: Holdings 패널 안, ETF 차트 아래에 요약과 접힌 헤드라인 줄 */
+let hnewsOpen = false;
+function hnewsHTML(t) {
+  if (!NEWS) return '';
+  const all = etfHeadlines(t);
+  const body = hnewsOpen ? `<div class="hnews"><div class="wlab">실적 · 상위 10 종목</div>${etfEarnHTML(t)}${all.length ? hlHTML(all.slice(0, 10)) : '<p class="mu" style="margin:0">헤드라인 자료가 없습니다.</p>'}${all.length > 10 ? `<button type="button" class="more" data-newsmore="1">더 보기 · ${all.length - 10}건</button><div hidden>${hlHTML(all.slice(10))}</div>` : ''}${newsFoot(false)}</div>` : '';
+  return summaryBox(t) + `<button type="button" class="hlrow" data-hnews="1" aria-expanded="${hnewsOpen}"><span>뉴스 · 상위 10 종목 · 최근 7일</span><span class="mu">헤드라인 ${all.length}건 · ${hnewsOpen ? '접기 ▴' : '펼치기 ▸'}</span></button>${body}`;
+}
+/* TradingView 뉴스 위젯(Pages 만): 종목을 열 때 그 자리에 불러온다 */
+function mountTV(root) {
+  if (!TV_WIDGET || !root) return;
+  root.querySelectorAll('.tvw[data-tv]:not([data-on])').forEach(el => {
+    el.setAttribute('data-on', '1');
+    const box = document.createElement('div'); box.className = 'tradingview-widget-container';
+    box.innerHTML = '<div class="tradingview-widget-container__widget"></div><div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>';
+    const sc = document.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
+    sc.src = 'https://s3.tradingview.com/external-embedding/embed-widget-timeline.js';
+    sc.text = JSON.stringify({ feedMode: 'symbol', symbol: el.dataset.tv, isTransparent: true, displayMode: 'regular', width: '100%', height: 440, colorTheme: 'dark', locale: 'en' });
+    box.appendChild(sc); el.appendChild(box);
+  });
+}
+/* 넓은 화면의 뉴스 칼럼: 종목 상세가 열려 있으면 그 종목(종목 모드), 아니면 ETF 상위 10(ETF 모드) */
+let newsBackK = null;   /* '← 전체'를 누른 종목: 그 종목이 열려 있어도 칼럼은 ETF 모드로 둔다 */
+function renderNews() {
+  const panel = document.getElementById('newsPanel'); if (!panel) return;
+  if (!newsWide() || !selT) { panel.dataset.k = ''; return; }
+  const t = selT, rows = (HOLD[t] || {}).rows || [];
+  const k = sdState.k && sdState.k !== newsBackK && rows.some(r => String(r[0]).toUpperCase() === sdState.k) ? sdState.k : null;
+  const key = k ? `S:${t}:${k}` : `E:${t}`;
+  if (panel.dataset.k === key) return;   /* 같은 내용이면 다시 그리지 않는다(위젯을 다시 불러오지 않게) */
+  panel.dataset.k = key;
+  const sub = document.getElementById('newsSub'), nav = document.getElementById('newsNav'), body = document.getElementById('newsBody');
+  if (!NEWS) { sub.textContent = t; nav.innerHTML = ''; body.innerHTML = '<p class="mu" style="margin:0">이번 빌드에는 뉴스·실적 자료가 없습니다.</p>'; return; }
+  if (!k) {
+    sub.textContent = `${t} · 구성종목 상위 10`; nav.innerHTML = '<span class="pos">ETF 모드</span>'; body.innerHTML = newsEtfHTML(t);
+  } else {
+    const i = rows.findIndex(r => String(r[0]).toUpperCase() === k);
+    sub.textContent = `${k} · ${t} 구성 ${i + 1}위`; nav.innerHTML = `<button type="button" data-newsback="1">← ${t} 전체</button>`;
+    body.innerHTML = newsStockHTML(k, true); mountTV(body);
+  }
+  body.scrollTop = 0;
 }
 
 /* ---- 구성종목 패널 ---- */
@@ -1452,7 +1697,7 @@ function renderHold(t) {
       : (r[3] === 0 ? '<span style="color:var(--muted)">0.00</span>' : `<span style="color:var(--${r[3] > 0 ? 'hot' : 'cold'})">${r[3] > 0 ? '+' : ''}${r[3].toFixed(2)}</span>`);
     const sk = isSwap ? null : stockOf(r[0]), open = sk && sdState.k === sk;
     const cls = [hit ? 'hit' : '', sk ? 'rowk' : '', open ? 'open' : ''].filter(Boolean).join(' ');
-    return `<tr${cls ? ` class="${cls}"` : ''}${sk ? ` data-k="${sk}"` : ''}><td class="rk">${i + 1}</td><td class="sy">${sym}${mdots(l)}</td><td class="nm">${r[1]}</td><td class="w r"><span class="bar" style="width:${(w / maxW * 100).toFixed(1)}%"></span><span class="v">${r[2]}</span></td><td class="ch r" title="${h.prev} 대비 비중 변화 (%p)">${ch}</td></tr>${open ? stockDetailHTML(sk, e.t) : ''}`;
+    return `<tr${cls ? ` class="${cls}"` : ''}${sk ? ` data-k="${sk}"` : ''}><td class="rk">${i + 1}</td><td class="sy">${sym}${mdots(l)}${isSwap ? '' : earnBadge(r[0], e.t)}</td><td class="nm">${r[1]}</td><td class="w r"><span class="bar" style="width:${(w / maxW * 100).toFixed(1)}%"></span><span class="v">${r[2]}</span></td><td class="ch r" title="${h.prev} 대비 비중 변화 (%p)">${ch}</td></tr>${open ? stockDetailHTML(sk, e.t) : ''}`;
   }).join('');
   const note = rawStyle ? (e.noteRaw || e.note) : e.note;
   const topLabel = h.rows.length < 10 ? `표시 ${h.rows.length}종목 합계` : '상위 10개 비중';
@@ -1470,6 +1715,7 @@ function renderHold(t) {
       <div class="row"><span>RRG vs <b style="color:var(--amber)">${e.parent || 'SPY'}</b> ${e.rrg ? `<b class="ph-${e.rrg}">${e.rrg.toUpperCase()}</b>${e.next ? ` <span class="nx">→ ${e.next.toUpperCase()}</span>` : ''}${e.parent ? ` <span class="nx">· vs SPY <span class="ph-${e.rrgVsSpy}">${e.rrgVsSpy.toUpperCase()}</span></span>` : ''}` : '<span style="color:var(--muted)">N/A · 주봉 39주 필요</span>'}</span><span>전환 점수 <b style="color:#fff">${shiftScore(e).toFixed(0)}</b></span></div>
     </div>
     ${etfChartHTML(e.t)}
+    ${newsWide() ? '' : hnewsHTML(e.t)}
     ${contribHTML(e.t)}
     <div class="h-wrap"><table class="h"><thead><tr><th>#</th><th>티커</th><th>종목명</th><th class="r">비중</th><th class="r"><abbr title="${h.prev} 스냅샷 대비 비중 변화(%p). NEW는 그때 상위 10개에 없던 종목">변동 %p</abbr></th></tr></thead><tbody>${rows}</tbody></table></div>
     <p class="hfn">${note ? note + ' ' : ''}${h.prevMissing
@@ -1477,6 +1723,8 @@ function renderHold(t) {
         ? `${h.prev} 스냅샷과는 구성종목 출처가 달라(스왑·국채 행을 따로 적은 표 ↔ 스왑 노출을 합산한 표) 변동 %p와 진입·이탈을 비교하지 않았습니다. 다음 스냅샷부터 표시됩니다.`
         : `${h.prev} 스냅샷에는 이 ETF가 없어 변동 %p와 진입·이탈을 계산하지 않았습니다. 다음 스냅샷부터 표시됩니다.`)
       : `${h.entered.length || h.left.length ? `상위 10개 진입: <b style="color:var(--ink-2)">${h.entered.join(', ') || '없음'}</b> · 이탈: <b style="color:var(--ink-2)">${h.left.join(', ') || '없음'}</b> (${h.prev} → ${h.asof}). ` : `${h.prev} 이후 상위 10개 구성에 변화가 없습니다. `}변동 %p는 두 스냅샷의 비중 차이입니다.`}</p>`;
+  mountTV(document.getElementById('hbody'));
+  renderNews();
 }
 function select(t, opts = {}) {
   if (!ETFS.some(x => x.t === t)) return;
@@ -1540,13 +1788,15 @@ const BREAKOUT_URL = '__BREAKOUT_URL__', NAV_TARGET = '__NAV_TARGET__';
 function goBreakout() { if (NAV_TARGET === '_blank') window.open(BREAKOUT_URL, '_blank', 'noopener'); else location.href = BREAKOUT_URL; }
 function showTab(n) {
   curTab = n;
-  [1, 2, 3, 4].forEach(k => {
+  [1, 2, 3, 4, 6].forEach(k => {
     document.getElementById('pane' + k).hidden = k !== n;
     document.getElementById('tab' + k).setAttribute('aria-selected', k === n);
   });
   if (overlayOpen()) closeOverlay();
   placeHold(n);
   if (n === 3) renderRRG();
+  if (n === 6) renderLog();
+  if (selT) renderHold(selT);
 }
 
 /* ---- RRG 그래프: 1단(섹터 ÷ SPY)과 2단(하위 ETF ÷ 섹터) ---- */
@@ -1691,6 +1941,8 @@ document.getElementById('rows').addEventListener('click', ev => {
 document.getElementById('hbody').addEventListener('click', ev => {
   if (ev.target.closest('a')) return;
   const tog = ev.target.closest('[data-sdmode]'); if (tog) { sdState.mode = tog.dataset.sdmode; if (selT) renderHold(selT); return; }
+  if (ev.target.closest('[data-hnews]')) { hnewsOpen = !hnewsOpen; if (selT) renderHold(selT); return; }
+  const more = ev.target.closest('[data-newsmore]'); if (more) { const nx = more.nextElementSibling; if (nx) nx.hidden = false; more.remove(); return; }
   const cbb = ev.target.closest('[data-cbp],[data-cbm],[data-cbc]');
   if (cbb) {
     if (cbb.dataset.cbp) CB.period = cbb.dataset.cbp;
@@ -1711,6 +1963,7 @@ document.getElementById('tab1').addEventListener('click', () => showTab(1));
 document.getElementById('tab2').addEventListener('click', () => showTab(2));
 document.getElementById('tab3').addEventListener('click', () => showTab(3));
 document.getElementById('tab4').addEventListener('click', () => showTab(4));
+document.getElementById('tab6').addEventListener('click', () => showTab(6));
 document.querySelectorAll('[data-drb]').forEach(b => b.addEventListener('click', () => { DR.basis = b.dataset.drb; renderDrivers(); }));
 document.querySelectorAll('[data-drp]').forEach(b => b.addEventListener('click', () => { DR.period = b.dataset.drp; renderDrivers(); }));
 document.getElementById('drvBody').addEventListener('click', ev => {
@@ -1720,6 +1973,13 @@ document.getElementById('drvBody').addEventListener('click', ev => {
   select(g.dataset.drgo, { open: true, scroll: true });
 });
 renderDrivers();
+document.getElementById('newsBody').addEventListener('click', ev => {
+  const more = ev.target.closest('[data-newsmore]'); if (more) { const nx = more.nextElementSibling; if (nx) nx.hidden = false; more.remove(); }
+});
+document.getElementById('newsNav').addEventListener('click', ev => {
+  if (ev.target.closest('[data-newsback]')) { newsBackK = sdState.k; renderNews(); }
+});
+if (window.matchMedia) { const mq = window.matchMedia('(min-width:1860px)'); const onMq = () => { if (selT) renderHold(selT); }; if (mq.addEventListener) mq.addEventListener('change', onMq); else if (mq.addListener) mq.addListener(onMq); }
 
 /* ---- 변화 패널: 직전 빌드 대비 RRG 국면 변화, 새 신호, 전환순 상위 3 진입 ---- */
 function renderChanges() {
@@ -1781,7 +2041,8 @@ function runCmd(raw0) {
     '2': () => showTab(3), 'RRG': () => showTab(3), '41': () => showTab(3), '42': () => showTab(1),
     '3': () => goBreakout(), 'BKM': () => goBreakout(), 'BREAKOUT': () => goBreakout(), 'MAP': () => goBreakout(),
     '4': () => showTab(4), 'BRIEF': () => showTab(4),
-    '5': () => showTab(2), 'HELP': () => showTab(2), '98': () => showTab(2),
+    '5': () => showTab(6), 'LOG': () => showTab(6), 'LISTING': () => showTab(6),
+    '6': () => showTab(2), 'HELP': () => showTab(2), '98': () => showTab(2),
     '0': () => showCover(), 'COVER': () => showCover(), 'DOOR': () => showCover(),
     '11': () => setCat('all'), 'ALL': () => setCat('all'),
     '12': () => setCat('sec'), 'SEC': () => setCat('sec'), 'SECT': () => setCat('sec'),
@@ -1792,12 +2053,12 @@ function runCmd(raw0) {
     '97': () => setConv(conv === 'US' ? 'KR' : 'US'), 'COLOR': () => setConv(conv === 'US' ? 'KR' : 'US'), 'CONV': () => setConv(conv === 'US' ? 'KR' : 'US'),
     'US': () => setConv('US'), 'KR': () => setConv('KR'),
   };
-  const labels = { '1': '매트릭스 화면', 'MATRIX': '매트릭스 화면', 'MAIN': '매트릭스 화면', '5': '도움말 화면', 'HELP': '도움말 화면', '98': '도움말 화면',
+  const labels = { '1': '매트릭스 화면', 'MATRIX': '매트릭스 화면', 'MAIN': '매트릭스 화면', '5': '상장 로그 화면', 'LOG': '상장 로그 화면', 'LISTING': '상장 로그 화면', '6': '도움말 화면', 'HELP': '도움말 화면', '98': '도움말 화면',
     '2': 'RRG 1단·2단 화면', 'RRG': 'RRG 1단·2단 화면', '41': 'RRG 1단·2단 화면', '42': '매트릭스 화면', '4': '주간 브리핑 화면', 'BRIEF': '주간 브리핑 화면', '3': '돌파 지도(BKM)로 이동', 'BKM': '돌파 지도(BKM)로 이동', 'BREAKOUT': '돌파 지도(BKM)로 이동', 'MAP': '돌파 지도(BKM)로 이동',
     '11': '필터 → 전체 24', 'ALL': '필터 → 전체 24', '12': '필터 → 섹터 11', 'SEC': '필터 → 섹터 11', 'SECT': '필터 → 섹터 11',
     '13': '필터 → 산업·테마 12', 'IND': '필터 → 산업·테마 12', 'THM': '필터 → 산업·테마 12', '14': '필터 → 스타일 1', 'STY': '필터 → 스타일 1', 'STYLE': '필터 → 스타일 1',
     '21': '정렬 → 열 기준', 'COL': '정렬 → 열 기준', '22': '정렬 → 전환순', 'SHIFT': '정렬 → 전환순' };
-  if (table[c]) { if (!/^(97|COLOR|CONV|US|KR|2|3|4|5|HELP|RRG|BRIEF|BKM|BREAKOUT|MAP|98|41|42|0|COVER|DOOR)$/.test(c)) showTab(1); table[c](); if (labels[c]) msg(labels[c], 'ok'); return; }
+  if (table[c]) { if (!/^(97|COLOR|CONV|US|KR|2|3|4|5|6|LOG|LISTING|HELP|RRG|BRIEF|BKM|BREAKOUT|MAP|98|41|42|0|COVER|DOOR)$/.test(c)) showTab(1); table[c](); if (labels[c]) msg(labels[c], 'ok'); return; }
   /* 명령이 아니면 종목 검색: 상위 10개 구성종목(티커·코드·한글 별칭·영문 이름) → ETF 한글 이름 */
   const raw = raw0.trim().replace(/\s+/g, ' ');
   const st = findStock(c);
@@ -1816,7 +2077,7 @@ function runCmd(raw0) {
     select(current[0].t, { open: true, scroll: true });
     msg(`ETF 검색 · "${raw}" → ${koHits.map(x => x.t).join(', ')}`, 'ok'); return;
   }
-  msg(`알 수 없는 명령 또는 종목: ${c} · 5) 도움말의 명령줄 표를 참고하세요`, 'err');
+  msg(`알 수 없는 명령 또는 종목: ${c} · 6) 도움말의 명령줄 표를 참고하세요`, 'err');
 }
 cmd.addEventListener('keydown', ev => { if (ev.key === 'Enter') { runCmd(cmd.value); cmd.value = ''; } });
 document.getElementById('goBtn').addEventListener('click', () => { runCmd(cmd.value); cmd.value = ''; cmd.focus(); });
@@ -1882,12 +2143,88 @@ document.getElementById('coverLaunch').addEventListener('click', () => { hideCov
 document.getElementById('coverSkip').addEventListener('change', ev => { try { if (ev.target.checked) localStorage.setItem('srm-cover', 'skip'); else localStorage.removeItem('srm-cover'); } catch (e) {} });
 document.addEventListener('keydown', ev => { if (!cover.hidden && ev.key === 'Enter' && ev.target === document.body) { ev.preventDefault(); hideCover(); } });
 
+/* ---- 5) 상장 로그 ----
+   LISTLOG.ev 의 사건 배열: [날짜(KST), 거래소 b/p/h, 신규 1 · 이탈 0, 거래소 심볼, 티커, 이름, 종류, 시장, 상장일 여부(1 이면 거래소가 밝힌 상장일),
+   직전 수집 · 이번 수집(UTC), 이 보드의 구성종목 심볼(상장 점과 같은 대조), 이 보드의 ETF 본체]. 날짜 내림차순 ---- */
+const LGNAME = { b: '바이낸스 bStocks 현물', p: '바이낸스 TradFi 선물', h: '하이퍼리퀴드 HIP-3' };
+const LGSHORT = { b: 'bStocks', p: '바이낸스 perp', h: 'HL perp' };
+const LG = { v: 'all', p: 30, c: 'all', held: false };
+const LGMAX = 400;
+const lgDay = iso => { const t = Date.parse(iso || ''); return isNaN(t) ? '' : new Date(t + 9 * 3600e3).toISOString().slice(0, 10); };
+const lgAdd = (d, n) => { const t = new Date(d + 'T00:00:00Z'); t.setUTCDate(t.getUTCDate() + n); return t.toISOString().slice(0, 10); };
+const lgDot = v => `<span class="dots" aria-hidden="true"><i class="${v}">${v === 'b' ? 'b' : ''}</i></span>`;
+const lgHits = e => (e[11] && HOLD_INDEX[e[11]]) || null;
+function lgDate(e, base) {
+  if (e[8]) return `<td class="dt" title="거래소가 밝힌 상장일 ${e[0]}${e[10] ? ` · 목록 확인 ${kstIso(e[10])}` : ''}">${cbMd(e[0])}<small>${e[0] > base ? '예정' : '상장일'}</small></td>`;
+  const what = e[2] ? '목록에 처음 보였습니다' : '목록에서 사라졌습니다';
+  const tip = e[9] ? `${kstIso(e[9])} ~ ${kstIso(e[10])} 사이에 ${what}` : `${kstIso(e[10])} 수집에서 ${what}`;
+  const wide = e[9] && (Date.parse(e[10]) - Date.parse(e[9])) / 864e5 > 4;
+  return `<td class="dt" title="${tip}">${cbMd(e[0])}<small>${wide ? cbMd(lgDay(e[9])) + ' 이후' : '확인'}</small></td>`;
+}
+function lgRow(e, base) {
+  const hits = lgHits(e), et = e[12];
+  const tk = hits || et
+    ? `<button type="button" class="t" ${hits ? `data-lgsym="${cbEsc(e[11])}" title="1) 매트릭스에서 이 종목을 상위 10개에 담은 ETF 를 찾습니다"` : `data-lgetf="${cbEsc(et)}" title="1) 매트릭스에서 ${cbEsc(et)} 의 구성종목을 엽니다"`}>${cbEsc(e[4])}</button>`
+    : `<span class="t">${cbEsc(e[4])}</span>`;
+  const chips = hits
+    ? hits.slice().sort((a, b) => b.w - a.w).map(h => `<button type="button" class="dchip" data-lgsym="${cbEsc(e[11])}" data-lgin="${h.etf}" title="${h.etf} 의 구성종목을 열고 이 종목을 강조합니다">${h.etf} <b>${h.i + 1}위</b></button>`).join('')
+    : et ? `<button type="button" class="dchip" data-lgetf="${cbEsc(et)}" title="${cbEsc(et)} 의 구성종목을 엽니다">ETF ${cbEsc(et)}</button>` : '<span class="mu">–</span>';
+  const kind = { stock: '주식', etf: 'ETF' }[e[6]] || '<span class="mu">–</span>';
+  return `<tr class="${e[2] ? 'add' : 'del'}">${lgDate(e, base)}<td class="vn" title="${LGNAME[e[1]]}">${lgDot(e[1])}<span class="vlab"> ${LGSHORT[e[1]]}</span></td><td class="ev"><b class="${e[2] ? 'add' : 'del'}">${e[2] ? '신규' : '이탈'}</b></td>`
+    + `<td class="tk">${tk}<small>${cbEsc(e[3])}</small><small class="nm2">${cbEsc(e[5])}</small></td><td class="c-nm nm" title="${cbEsc(e[5])}">${cbEsc(e[5]) || '<span class="mu">–</span>'}</td>`
+    + `<td class="c-cls">${kind}</td><td class="c-mk">${cbEsc(e[7]) || '<span class="mu">–</span>'}</td><td class="bd"><div class="chips">${chips}</div></td></tr>`;
+}
+function renderLog() {
+  const body = document.getElementById('logBody'); if (!body) return;
+  document.querySelectorAll('.lgp .ph [data-lgv]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lgv === LG.v));
+  document.querySelectorAll('[data-lgp]').forEach(b => b.setAttribute('aria-pressed', +b.dataset.lgp === LG.p));
+  document.querySelectorAll('[data-lgc]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lgc === LG.c));
+  document.querySelectorAll('[data-lgh]').forEach(b => b.setAttribute('aria-pressed', LG.held));
+  if (!LISTLOG || !LISTLOG.ev) { body.innerHTML = '<p class="lgmeta">이번 빌드에는 상장 로그가 없습니다. 상장 목록을 받은 다음 빌드부터 기록이 쌓입니다.</p>'; return; }
+  const base = lgDay(LISTLOG.updated), ev = LISTLOG.ev, since = n => lgAdd(base, -(n - 1));
+  /* 칸: 현재 상장 수, 이번 수집(직전 수집 이후)에 생긴 신규·이탈, 최근 30일 신규·이탈 */
+  const cards = ['b', 'p', 'h'].map(v => {
+    const mine = ev.filter(e => e[1] === v), last = mine.filter(e => e[10] === LISTLOG.updated), recent = mine.filter(e => e[0] >= since(30));
+    const cnt = (list, add) => list.filter(e => !!e[2] === add).length;
+    return `<button type="button" class="lgv" data-lgv="${v}" aria-pressed="${LG.v === v}" title="누르면 ${LGNAME[v]} 기록만 봅니다. 다시 누르면 전체로 돌아갑니다"><span class="vn">${lgDot(v)} ${LGNAME[v]}</span>`
+      + `<span class="n"><b>${(LISTLOG.counts || {})[v] ?? '–'}</b>종 상장 중</span>`
+      + `<span class="st">이번 수집 신규 <b>${cnt(last, true)}</b> · 이탈 <b>${cnt(last, false)}</b></span>`
+      + `<span class="st">최근 30일 신규 <b>${cnt(recent, true)}</b>${cnt(recent, false) ? ` · 이탈 <b>${cnt(recent, false)}</b>` : ''}</span></button>`;
+  }).join('');
+  const cut = LG.p ? since(LG.p) : null;
+  const rows = ev.filter(e => (LG.v === 'all' || e[1] === LG.v) && (!cut || e[0] >= cut) && (LG.c === 'all' || e[6] === LG.c) && (!LG.held || lgHits(e) || e[12]));
+  const nAdd = rows.filter(e => e[2]).length;
+  const head = '<thead><tr><th>날짜</th><th>거래소</th><th>구분</th><th>티커</th><th class="c-nm">이름</th><th class="c-cls">종류</th><th class="c-mk">시장</th><th>이 보드</th></tr></thead>';
+  body.innerHTML = `<div class="lgsum">${cards}</div>`
+    + `<p class="lgmeta">목록 수집 <b>${kstIso(LISTLOG.updated)}</b>${LISTLOG.prev ? ` · 직전 수집 ${kstIso(LISTLOG.prev)}` : ''} · ${cut ? `${cbMd(cut)} 이후` : '전체 기간'} <b>${rows.length}</b>건 (신규 ${nAdd} · 이탈 ${rows.length - nAdd})</p>`
+    + (rows.length ? `<div class="lgwrap"><table class="lg">${head}<tbody>${rows.slice(0, LGMAX).map(e => lgRow(e, base)).join('')}</tbody></table></div>` : '<p class="lgmeta">이 조건에 맞는 기록이 없습니다.</p>')
+    + (rows.length > LGMAX ? `<p class="lgmeta">앞의 ${LGMAX}건만 보입니다. 기간이나 거래소를 좁혀 주세요.</p>` : '')
+    + `<p class="lgmeta">날짜: 바이낸스 TradFi 선물은 거래소가 밝힌 상장일이고, bStocks 와 하이퍼리퀴드는 목록에서 처음 보인 날(확인)입니다. 직전 수집과 4일 넘게 떨어진 경우에는 그 시작일을 함께 적습니다. '이 보드' 열은 24개 ETF 의 상위 10개 구성종목인지를 상장 점과 같은 규칙으로 대조한 것입니다. 자세한 설명은 6) 도움말의 10 에 있습니다.</p>`;
+}
+function lgOpen(sym, etf) {
+  const hits = HOLD_INDEX[sym]; if (!hits) return;
+  showTab(1);
+  setSearch({ label: sym, sym, name: hits[0].name, hits });
+  const t = etf && current.some(e => e.t === etf) ? etf : (current[0] && current[0].t);
+  if (t) select(t, { open: true, scroll: true });
+  msg(`상장 로그 → 종목 검색 · ${sym} ${hits[0].name} → 상위 10개에 담은 ETF ${current.length}개`, 'ok');
+}
+document.getElementById('pane6').addEventListener('click', ev => {
+  const v = ev.target.closest('[data-lgv]'); if (v) { LG.v = v.classList.contains('lgv') && LG.v === v.dataset.lgv ? 'all' : v.dataset.lgv; renderLog(); return; }
+  const p = ev.target.closest('[data-lgp]'); if (p) { LG.p = +p.dataset.lgp; renderLog(); return; }
+  const c = ev.target.closest('[data-lgc]'); if (c) { LG.c = c.dataset.lgc; renderLog(); return; }
+  if (ev.target.closest('[data-lgh]')) { LG.held = !LG.held; renderLog(); return; }
+  const s = ev.target.closest('[data-lgsym]'); if (s) { lgOpen(s.dataset.lgsym, s.dataset.lgin); return; }
+  const e = ev.target.closest('[data-lgetf]'); if (e) runCmd(e.dataset.lgetf);
+});
+
 /* ---- 시작 ---- */
 applyConv();
 if (current.length) select(current[0].t);
 if (location.hash === '#help') showTab(2);
 else if (location.hash === '#rrg') showTab(3);
 else if (location.hash === '#brief') showTab(4);
+else if (location.hash === '#log') showTab(6);
 (function () {
   let skip = false;
   try { skip = localStorage.getItem('srm-cover') === 'skip'; } catch (e) {}
