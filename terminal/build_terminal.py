@@ -9,6 +9,7 @@
   output/breakout-data.json        돌파 지도 계산 결과(종목 상세용 가격·이동평균 재료). 없으면 docs/breakout/data/ 의 직전 사본, 그것도 없으면 종목 상세 없이 만든다.
   output/contrib-data.json         구성종목 기여도(terminal/compute_contrib.py). 종가 기준일이 이번 계산과 다르거나 없으면 기여도 블록과 주도 종목 없이 만든다.
   output/etf-chart-data.json       Holdings 패널의 ETF 차트(fetch_etf_history.py). 종가 기준일이 이번 계산과 다르거나 없으면 차트 없이 만든다.
+  output/news-data.json            뉴스·실적(terminal/compute_news.py). 종가 기준일이 이번 계산과 다르거나 없으면 뉴스 칼럼과 실적 표시 없이 만든다.
   terminal/template.html           토큰이 든 HTML 템플릿
 
 출력 (docs/)
@@ -33,6 +34,9 @@ PAGE_URL = "https://tlzkrh1029.github.io/rrg/#board"   # #board 는 대문을 �
 # 5) 돌파 지도 탭이 가리키는 곳. Pages 본문은 같은 사이트의 breakout/ 를, 아티팩트 본문은 돌파 지도 아티팩트를 새 탭으로 연다.
 BREAKOUT_PAGE = "breakout/"
 BREAKOUT_ARTIFACT = "https://claude.ai/artifact/AMAB2TMoSxwXPuLPWjtjGB"
+# TradingView 뉴스 위젯(종목을 열면 불러옴)을 Pages 본문에 넣을지. 아티팩트는 외부 스크립트를 쓸 수 없어 늘 끈다.
+# 위젯을 빼기로 하면 이 값만 False 로 바꾸면 된다(헤드라인 목록과 TradingView 링크는 그대로 남는다).
+TV_WIDGET_PAGES = True
 
 KO = {"XLK": "기술", "XLF": "금융", "XLV": "헬스케어", "XLY": "경기소비재", "XLC": "커뮤니케이션", "XLI": "산업재",
       "XLP": "필수소비재", "XLE": "에너지", "XLU": "유틸리티", "XLB": "소재", "XLRE": "부동산",
@@ -389,11 +393,25 @@ def load_etf_chart(path, asof, tickers):
     return {"asof": c["asof"], "dates": c["dates"], "etfs": {t: e for t, e in c.get("etfs", {}).items() if t in tickers}}
 
 
+def load_news(path, asof):
+    """뉴스·실적. 종가 기준일이 이번 계산과 같을 때만 쓴다."""
+    try:
+        n = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        print(f"news data not found ({os.path.relpath(path, ROOT)}): built without news and earnings")
+        return None
+    if (n.get("meta") or {}).get("asof") != asof:
+        print(f"news data is for {(n.get('meta') or {}).get('asof')}, not {asof}: built without news and earnings")
+        return None
+    return n
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--data", default=os.path.join(ROOT, "output", "terminal-data.json"))
     ap.add_argument("--contrib", default=os.path.join(ROOT, "output", "contrib-data.json"))
     ap.add_argument("--etf-chart", default=os.path.join(ROOT, "output", "etf-chart-data.json"))
+    ap.add_argument("--news", default=os.path.join(ROOT, "output", "news-data.json"))
     ap.add_argument("--holdings", default=os.path.join(ROOT, "output", "holdings"))
     ap.add_argument("--meta", default=os.path.join(ROOT, "data", "etf_meta.json"))
     ap.add_argument("--lists", default=None, help="tradfi-ticker-lists 의 output 폴더")
@@ -448,6 +466,7 @@ def main():
     data_slim = {t: {k: v for k, v in e.items() if k in ("pct", "rel", "S", "Q", "rrgPath", "rrgSpy", "sig", "weeks", "stale")} for t, e in cur["etfs"].items()}
     stocks_tok, stocks_src = load_stocks(args, hold)
     etfx = load_etf_chart(args.etf_chart, cur["asof"], set(cur["etfs"]) | {"SPY", "QQQ"})
+    news = load_news(args.news, cur["asof"])
     src = "·".join(cur.get("source") or ["yahoo"])
     src_ko = {"yahoo": "야후 파이낸스", "stooq": "Stooq"}.get(src, src)
     tokens = {
@@ -465,6 +484,8 @@ def main():
         "__STOCKS__": json.dumps(stocks_tok, ensure_ascii=False, separators=(",", ":")),
         "__CONTRIB__": json.dumps(contrib, ensure_ascii=False, separators=(",", ":")),
         "__ETFX__": json.dumps(etfx, ensure_ascii=False, separators=(",", ":")),
+        # 헤드라인은 바깥 글이라 <script> 를 닫지 못하게 '<' 를 \u003c 로 적는다(JSON 문자열 밖에는 '<' 가 없다)
+        "__NEWS__": json.dumps(news, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
         "__BRIEF__": html_escape(brief),
         "__BUILT_AT__": built_at_kst(),
     }
@@ -483,8 +504,8 @@ def main():
         return page
 
     # 두 본문은 5) 돌파 지도 탭의 주소만 다르다
-    page_site = fill({"__BREAKOUT_URL__": BREAKOUT_PAGE, "__NAV_TARGET__": "_self"})
-    page_artifact = fill({"__BREAKOUT_URL__": args.breakout_artifact, "__NAV_TARGET__": "_blank"})
+    page_site = fill({"__BREAKOUT_URL__": BREAKOUT_PAGE, "__NAV_TARGET__": "_self", "__TV_WIDGET__": "true" if TV_WIDGET_PAGES else "false"})
+    page_artifact = fill({"__BREAKOUT_URL__": args.breakout_artifact, "__NAV_TARGET__": "_blank", "__TV_WIDGET__": "false"})
     with open(os.path.join(args.docs, "terminal.artifact.html"), "w", encoding="utf-8") as f:
         f.write(page_artifact)
     with open(os.path.join(args.docs, "index.html"), "w", encoding="utf-8") as f:
@@ -502,7 +523,8 @@ def main():
     print(f"built docs/ for {cur['asof']} · holdings {hold_asof} (prev {hold_prev}) · lists {list_asof} ({counts['b']}/{counts['f']}/{counts['h']}) · alerts {len(alerts)}"
           + (f" · stock details {len(stocks_tok['stocks'])} (asof {stocks_tok['asof']}, {os.path.relpath(stocks_src, ROOT)})" if stocks_tok else " · stock details none")
           + (f" · contribution {len(contrib['funds'])} funds" if contrib else " · contribution none")
-          + (f" · ETF charts {sum(1 for t in etfx['etfs'] if t not in ('SPY', 'QQQ'))}" if etfx else " · ETF charts none"))
+          + (f" · ETF charts {sum(1 for t in etfx['etfs'] if t not in ('SPY', 'QQQ'))}" if etfx else " · ETF charts none")
+          + (f" · news {sum(len(v.get('h', [])) for v in news['s'].values())} headlines, {sum(1 for v in news['s'].values() if v.get('e'))} with 8-K earnings" if news else " · news none"))
 
 
 if __name__ == "__main__":

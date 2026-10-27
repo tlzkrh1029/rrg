@@ -112,6 +112,19 @@ jobs:
           if [ "$rc" != "0" ]; then echo "::warning::contribution extras incomplete (exit $rc); see output/stocks/extra_summary.json"; fi
           exit 0
 
+      # 뉴스·실적: SEC EDGAR 8-K(Item 2.02) 실적 발표 시각, Finnhub 최근 7일 헤드라인과 다가오는 실적일. 약 4분 걸린다(Finnhub 분당 60건 한도).
+      # 비밀 값(SEC_USER_AGENT, FINNHUB_TOKEN)이 없거나 실패해도 다음 단계는 그대로 간다(실적은 이전 파일을 쓰고, 헤드라인은 그날 없이 만든다).
+      - name: 뉴스·실적 수집
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          FINNHUB_TOKEN: ${{ secrets.FINNHUB_TOKEN }}
+        run: |
+          set +e
+          python terminal/fetch_news.py
+          rc=$?
+          if [ "$rc" != "0" ]; then echo "::warning::news fetch incomplete (exit $rc); see the meta of output/news/*.json"; fi
+          exit 0
+
       - name: 계산 (돌파 지도)
         if: env.BREAKOUT_OK == 'true'
         run: |
@@ -125,6 +138,7 @@ jobs:
         run: |
           python terminal/compute_terminal.py
           python terminal/compute_contrib.py || echo "::warning::contribution computation failed; the Holdings panel is built without the contribution block"
+          python terminal/compute_news.py || echo "::warning::news computation failed; the page is built without news and earnings"
           python terminal/build_terminal.py --lists "$LISTS_DIR"
 
       - name: 페이지 생성 (돌파 지도)
