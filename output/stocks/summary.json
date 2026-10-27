@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-27T15:44:57Z",
+ "generated_at": "2026-10-27T16:28:01Z",
  "holdings_snapshot": "2026-10-27",
  "axis_first": "2024-10-28",
  "axis_last": "2026-10-26",
@@ -3287,7 +3287,7 @@
    "days": 65,
    "filled_days": 6,
    "adj_close_available": true,
-   "dropped_partial": "2026-10-27",
+   "dropped_partial": null,
    "filled_from_quote": null,
    "ath_old": null,
    "ath_old_date": null,
