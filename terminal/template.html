@@ -256,6 +256,56 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .sd .wb .wt{height:8px;background:var(--amber-soft);overflow:hidden} .sd .wb .wt i{display:block;height:100%;background:var(--amber-dim)} .sd .wb.cur .wt i{background:var(--amber)} .sd .wb.cur button{color:var(--amber)}
 .sd .wb .wv{text-align:right;white-space:nowrap} .sd .wb .wv b{color:var(--ink)}
 .sd .links{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11px}
+/* 기여도 블록: Holdings 패널에서 구성종목 표 위에 놓인다. 계산은 terminal/compute_contrib.py */
+.cb{display:grid;gap:6px;font-size:11.5px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:8px}
+.cb .ttlrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:10.5px;letter-spacing:.06em;color:var(--amber);text-transform:uppercase;font-weight:700}
+.cb .tog{display:flex;letter-spacing:0;text-transform:none;font-weight:400}
+.cb .ttlrow .tog{margin-left:auto}
+.cb .tog button{color:var(--muted);font-size:11px;padding:0 6px;border-left:1px solid var(--line);white-space:nowrap}
+.cb .tog button:first-child{border-left:0} .cb .tog button:hover{color:#fff} .cb .tog button[aria-pressed="true"]{color:var(--amber);font-weight:700}
+.cb .basis{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;font-size:10.5px;color:var(--muted)}
+.cb .basis .tog button:first-child{padding-left:0}
+.cb .sum{font-size:12px;color:var(--ink)}
+.cb .on{color:var(--hot);font-weight:700} .cb .dn{color:var(--cold);font-weight:700} .cb .mu{color:var(--muted);font-weight:400}
+.cb .warn{border:1px solid var(--amber-dim);background:rgba(255,160,40,.06);padding:6px 8px;display:grid;gap:5px;font-size:11px;line-height:1.5}
+.cb .warn b{color:var(--amber)}
+.cb .segrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cb .seg{display:inline-flex;border:1px solid var(--line-2)}
+.cb .seg button{font-size:10.5px;padding:1px 7px;color:var(--muted);border-left:1px solid var(--line-2)}
+.cb .seg button:first-child{border-left:0}
+.cb .seg button[aria-pressed="true"]{color:var(--amber);font-weight:700;background:var(--band-2)}
+.cb .side{display:grid;gap:1px}
+.cb .sh{display:flex;justify-content:space-between;gap:8px;font-size:10px;color:var(--muted);letter-spacing:.04em;border-bottom:1px solid var(--line);padding-bottom:2px;margin:4px 0 2px}
+.cb .cr{display:grid;grid-template-columns:66px minmax(0,1fr) 44px 52px;align-items:center;gap:6px;font-size:11px;line-height:1.45}
+.cb .cr .tk{color:#fff;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cb .cr .tk small{color:var(--muted);font-weight:400;font-size:9.5px;margin-left:4px}
+.cb .cr .bar{position:relative;height:9px}
+.cb .cr .bar b{position:absolute;left:50%;top:-3px;bottom:-3px;border-left:1px solid var(--line-2)}
+.cb .cr .bar i{position:absolute;top:0;bottom:0;background:var(--hot)}
+.cb .cr .bar i.n{background:var(--cold)}
+.cb .cr .v{text-align:right} .cb .cr .r{text-align:right;color:var(--muted);white-space:nowrap}
+.cb .cr.rest .tk{color:var(--ink-2);font-weight:400}
+.cb .cr.rest .bar i{opacity:.55}
+.cb .cr .sub{grid-column:1/-1;font-size:9.5px;color:var(--muted);margin:-3px 0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cb .tag{display:inline-block;font-size:9px;line-height:1.2;padding:0 3px;border:1px solid var(--line-2);color:var(--muted);margin-right:4px;font-weight:400;vertical-align:1px}
+.cb .tag.in{border-color:var(--amber);color:var(--amber)}
+.cb table.mt{border-collapse:collapse;width:100%;font-size:10.5px;margin-top:2px}
+.cb .mt th{color:var(--muted);font-weight:400;text-align:right;padding:1px 0 1px 6px;border-bottom:1px solid var(--line)}
+.cb .mt th:first-child{text-align:left;padding-left:0}
+.cb .mt td{padding:1px 0 1px 6px;text-align:right;color:var(--ink-2);white-space:nowrap;vertical-align:top}
+.cb .mt td.k{text-align:left;color:var(--muted);padding-left:0}
+.cb .mt td small{display:block;color:var(--muted);font-size:9.5px}
+.cb .wlab{color:var(--amber);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:4px}
+.cb .hm{display:grid;gap:1px;font-size:10px}
+.cb .hm .hr{display:grid;grid-template-columns:52px repeat(var(--hw,8),minmax(0,1fr));gap:1px}
+.cb .hm .hr span{display:flex;align-items:center;justify-content:center;height:18px;background:var(--neutral);color:#fff;min-width:0;overflow:hidden}
+.cb .hm .hr span.lab{justify-content:flex-start;background:none;color:#fff;font-weight:700;white-space:nowrap}
+.cb .hm .hd span{background:none;color:var(--muted);height:16px}
+.cb .hm .hr.rest span.lab{color:var(--ink-2);font-weight:400}
+.cb .hm .hr.tot span{background:none;color:var(--ink-2)}
+.cb .hm .hr.tot span.lab{color:var(--amber)}
+.cb .hm .gap{height:3px}
+.cb .note{margin:0;font-size:10.5px;color:var(--muted);line-height:1.5}
 
 .kbody{padding:8px 10px 10px;display:grid;gap:9px}
 .shape{display:flex;gap:10px;align-items:center}
@@ -286,6 +336,24 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .brief pre{margin:0;font:12.5px/1.65 var(--mono);color:var(--ink);white-space:pre-wrap;word-break:keep-all;max-width:90ch}
 .brief .meta{font-size:11.5px;color:var(--muted);margin:0 0 8px;line-height:1.5}
 .brief .meta b{color:var(--ink-2)}
+/* 주도 종목(Drivers): 넓은 화면에서는 브리핑 본문 오른쪽, 좁으면 아래 */
+@media (min-width:1100px){.brief{grid-template-columns:minmax(0,1fr) minmax(0,620px);align-items:start}}
+.drv .pb{display:grid;gap:6px}
+.drv .meta{margin:0}
+.drv .wlab{color:var(--amber);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:6px}
+table.dr{width:100%;border-collapse:collapse;font-size:11.5px}
+.dr th{color:var(--muted);font-weight:400;text-align:left;font-size:10.5px;padding:3px 8px 3px 0;border-bottom:1px solid var(--line-2)}
+.dr th.r,.dr td.r{text-align:right}
+.dr td{padding:5px 8px 5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.dr td.rk{color:var(--muted);width:20px}
+.dr td.sy{color:#fff;font-weight:700;white-space:nowrap;width:136px}
+.dr td.sy small{display:block;color:var(--muted);font-weight:400;font-size:10px;white-space:normal;max-width:136px}
+.dr td.r{width:64px}
+.dr .on{color:var(--hot);font-weight:700} .dr .dn{color:var(--cold);font-weight:700}
+.dr .chips{display:flex;flex-wrap:wrap;gap:4px}
+.dchip{display:inline-flex;gap:5px;align-items:baseline;border:1px solid var(--line-2);padding:0 6px;font-size:11px;color:var(--ink-2);white-space:nowrap}
+.dchip:hover{border-color:var(--amber);color:#fff}
+.dchip b{font-weight:700}
 /* 도움말 화면 */
 .help{padding-block:10px 4px;display:grid;gap:10px}
 .help .panel .pb{padding:10px 12px 12px}
@@ -680,6 +748,10 @@ body.cover-open{overflow:hidden}
         <pre id="briefText">__BRIEF__</pre>
       </div>
     </section>
+    <section class="panel drv" aria-labelledby="drvTitle">
+      <header class="ph"><span class="pt" id="drvTitle">Drivers<small id="drvSub">주도 종목</small></span><span class="pctl"><span class="grp" role="group" aria-label="기여 기준"><button type="button" data-drb="usd">USD</button><button type="button" data-drb="spy">SPY 대비</button></span><span class="grp" role="group" aria-label="기간"><button type="button" data-drp="1W">1W</button><button type="button" data-drp="1M">1M</button></span></span></header>
+      <div class="pb" id="drvBody"></div>
+    </section>
   </div>
 
   <div class="pane rrg" id="pane3" role="tabpanel" aria-labelledby="tab3" hidden>
@@ -871,6 +943,7 @@ const LST = __LST__;
 const SWAPS = __SWAPS__;
 /* 종목 상세용 가격: 돌파 지도 계산(breakout-data.json)에서 이 보드의 구성종목만 추린 것. 없으면 null 이고 행을 눌러도 펼쳐지지 않는다 */
 const STOCKS = __STOCKS__;
+const CONTRIB = __CONTRIB__;   /* 구성종목 기여도(terminal/compute_contrib.py). 계산이 없으면 null */
 const LSTNAME = { b:'바이낸스 bStocks 현물', p:'바이낸스 perp', h:'하이퍼리퀴드 perp' };
 const lstLabel = s => s ? '상장: ' + [...s].map(k => LSTNAME[k]).join(' · ') + ` (${LIST_ASOF} 기준)` : '';
 const dots = s => s ? `<span class="dots" role="img" aria-label="${lstLabel(s)}" title="${lstLabel(s)}">${s.includes('b') ? '<i class="b">b</i>' : ''}${s.includes('p') ? '<i class="p"></i>' : ''}${s.includes('h') ? '<i class="h"></i>' : ''}</span>` : '';
@@ -1167,6 +1240,150 @@ function toggleStock(k) {
   if (sdState.k) { const tr = document.querySelector(`#hbody tr.sd`); if (tr && tr.scrollIntoView) tr.scrollIntoView({ block: 'nearest' }); }
 }
 
+/* ---- 기여도: 구성종목이 ETF 수익률에 얼마나 보탰는지(기간 시작 비중 × 기간 수익률, USD). 계산은 terminal/compute_contrib.py ----
+   행 배열: [표시 심볼, 가격 키, 기간 시작 비중, 수익률, 기여, 해외 거래소(1/0), 통화, 현지 수익률, 환율 수익률, 환율 없음(1/0)]
+   나머지: [비중, 기여, 평균 수익률(비중이 2% 미만이면 null)]. 표의 비중 합이 98% 이상이면 '미설명분'(현금·보수·시차·스왑)으로 적는다 */
+const CB_KEY = 'rrg-cb1';
+const CB = (() => { const d = { period: '1M', kind: null, comp: 'cur' }; try { return Object.assign(d, JSON.parse(localStorage.getItem(CB_KEY) || '{}')); } catch (e) { return d; } })();
+function cbSave() { try { localStorage.setItem(CB_KEY, JSON.stringify(CB)); } catch (e) {} }
+const cbPc = (x, d = 1) => { if (x == null) return '–'; const s = (x * 100).toFixed(d); return /^-?0\.0+$/.test(s) ? s.replace('-', '') : (x >= 0 ? '+' : '') + s; };
+const cbPp = (x, d = 2) => { if (x == null) return '–'; const s = (x * 100).toFixed(d); return /^-?0\.0+$/.test(s) ? (0).toFixed(d) : (x >= 0 ? '+' : '') + s; };
+const cbSg = x => x >= 0 ? 'on' : 'dn';
+const cbMd = d => { const p = String(d || '').split('-'); return p.length === 3 ? `${+p[1]}/${+p[2]}` : (d || ''); };
+const cbEsc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const CURKO = { KRW: '원화', JPY: '엔화', TWD: '대만달러', CNY: '위안화', HKD: '홍콩달러', GBP: '파운드', EUR: '유로', CAD: '캐나다달러', AUD: '호주달러', ZAR: '랜드', CHF: '스위스프랑' };
+function cbKinds(t) { const e = ETFS.find(x => x.t === t); return ['usd', 'qqq', 'spy'].concat(e && e.parent ? ['parent'] : []); }
+function cbKind(t) { const e = ETFS.find(x => x.t === t); return cbKinds(t).includes(CB.kind) ? CB.kind : (e && e.parent ? 'parent' : 'spy'); }
+function cbBench(t, kind) { if (kind === 'usd') return null; if (kind === 'parent') { const e = ETFS.find(x => x.t === t); return e ? e.parent : null; } return kind.toUpperCase(); }
+function cbBar(v, scale) { const w = Math.min(50, Math.abs(v) / (scale || 1) * 50).toFixed(1); return `<span class="bar"><b></b><i class="${v < 0 ? 'n' : ''}" style="${v < 0 ? 'right' : 'left'}:50%;width:${w}%"></i></span>`; }
+const cbFull = A => Math.abs(A.rest[0]) < 0.02;
+const cbCause = F => (F.tz ? '시차' : '현금') + '·' + (F.src === 'roundhill' ? '스왑' : '보수');
+/* 기간 시작 구성 단추: 균등가중 ETF 이거나 지금 상위 10 과 겹치는 종목이 8개 미만일 때만 보인다 */
+function cbStartInfo(F, A0) {
+  const S = A0.start; if (!S) return null;
+  const startNames = S.rows.map(x => x[0]).concat(S.missing || []);
+  const overlap = A0.rows.filter(x => startNames.includes(x[0])).length;
+  return (F.eqw || overlap < 8) ? { S, overlap, newIn: A0.rows.filter(x => !startNames.includes(x[0])) } : null;
+}
+function cbRow(x, scale, p) {
+  const [s, , , r, c, tz, cur, rl, rf, nofx] = x;
+  const sub = [];
+  if (p === '1D' && tz) sub.push('<span class="tag">시차</span>');
+  if (cur) sub.push(`${cur} · 현지 ${cbPc(rl)}% · 환율 ${nofx ? '없음' : cbPc(rf) + '%'}`);
+  return `<div class="cr"><span class="tk" title="${cbEsc(s)}">${cbEsc(s)}</span>${cbBar(c, scale)}<span class="v ${cbSg(c)}">${cbPp(c)}</span><span class="r">${cbPc(r)}%</span>${sub.length ? `<span class="sub">${sub.join('')}</span>` : ''}</div>`;
+}
+function cbRest(A, scale, F) {
+  const [w, c, r] = A.rest;
+  if (cbFull(A)) return `<div class="cr rest"><span class="tk">미설명분</span>${cbBar(c, scale)}<span class="v ${cbSg(c)}">${cbPp(c)}</span><span class="r" style="font-size:9.5px">${cbCause(F)}</span></div>`;
+  return `<div class="cr rest"><span class="tk">나머지<small>${Math.round(w * 100)}%</small></span>${cbBar(c, scale)}<span class="v ${cbSg(c)}">${cbPp(c)}</span><span class="r">${r == null ? '' : cbPc(r) + '%'}</span></div>`;
+}
+function cbSide(t, F, A, scale, p) {
+  const all = HOLD[t] && +HOLD[t].n > 0 && +HOLD[t].n <= A.rows.length;
+  const head = cbFull(A) ? `${t} · ${A.rows.length}종목${all ? ' 전부' : ''} + 미설명분` : `${t} · 상위 ${A.rows.length} + 나머지`;
+  const rows = A.rows.slice().sort((a, b) => b[4] - a[4]).map(x => cbRow(x, scale, p)).join('');
+  return `<div class="side"><div class="sh"><span>${head}</span><span>기여 %p · 수익률</span></div>${rows}${cbRest(A, scale, F)}</div>`;
+}
+/* 상위 1개·3개: 합계와 같은 방향으로 움직인 종목 기여의 합 가운데 가장 큰 1개, 3개가 차지하는 몫 */
+function cbConc(A) {
+  const T = A.R; if (Math.abs(T) < 0.005) return '<span class="mu">합계가 작아 생략</span>';
+  const s = A.rows.map(x => x[4]).filter(v => Math.sign(v) === Math.sign(T)).sort((a, b) => Math.abs(b) - Math.abs(a));
+  const tot = s.reduce((a, b) => a + b, 0); if (!tot) return '–';
+  return `${(s[0] / tot * 100).toFixed(0)}% · ${(s.slice(0, 3).reduce((a, b) => a + b, 0) / tot * 100).toFixed(0)}%`;
+}
+function cbMetrics(sides) {
+  const col = A => {
+    const days = A.days || [];
+    const up = days.reduce((m, d) => d[1] > m[1] ? d : m, days[0]), dn = days.reduce((m, d) => d[1] < m[1] ? d : m, days[0]);
+    const cell = (d, s, c) => `${cbMd(d[0])} ${cbPc(d[1])}%<small>${cbEsc(s)} ${cbPp(c)}%p</small>`;
+    return { up: `${A.rows.filter(x => x[3] > 0).length} / ${A.rows.length}`, conc: cbConc(A),
+      rest: (cbFull(A) || A.rest[2] == null) ? '<span class="mu">해당 없음</span>' : `${cbPc(A.rest[2])}%<small>비중 ${Math.round(A.rest[0] * 100)}%</small>`,
+      upd: days.length > 1 ? cell(up, up[2], up[3]) : '–', dnd: days.length > 1 ? cell(dn, dn[4], dn[5]) : '–' };
+  };
+  const cs = sides.map(s => ({ n: s.n, ...col(s.A) }));
+  const row = (k, key, tip) => `<tr><td class="k"${tip ? ` title="${tip}"` : ''}>${k}</td>${cs.map(c => `<td>${c[key]}</td>`).join('')}</tr>`;
+  return `<table class="mt"><thead><tr><th>지표</th>${cs.map(c => `<th>${c.n}</th>`).join('')}</tr></thead><tbody>${row('상승 종목', 'up')}${row('상위 1개·3개', 'conc', '합계와 같은 방향으로 움직인 종목 기여의 합 가운데 가장 큰 1개, 3개가 차지하는 몫')}${row('나머지 평균', 'rest')}${row('최대 상승일', 'upd')}${row('최대 하락일', 'dnd')}</tbody></table>`;
+}
+function cbHeat(t, F, bt, B) {
+  const H = F.heat; if (!H || !H.weeks || !H.weeks.length) return '';
+  const cell = v => v == null ? '<span class="mu">–</span>' : `<span style="background:${v >= 0 ? 'rgba(47,208,70,' : 'rgba(255,59,59,'}${(0.1 + Math.min(1, Math.abs(v) / 0.012) * 0.5).toFixed(2)})">${cbPc(v)}</span>`;
+  const tot = (lab, arr) => `<div class="hr tot"><span class="lab">${lab}</span>${arr.map(v => v == null ? '<span>–</span>' : `<span class="${cbSg(v)}">${cbPc(v)}</span>`).join('')}</div>`;
+  const nW = H.weeks.length;
+  let out = `<div class="hm" style="--hw:${nW}"><div class="hr hd"><span class="lab">주</span>${H.weeks.map((w, i) => `<span>${w}${i === nW - 1 && H.partial ? '*' : ''}</span>`).join('')}</div>`;
+  Object.keys(H.rows).forEach(s => { out += `<div class="hr"><span class="lab" title="${cbEsc(s)}">${cbEsc(s)}</span>${H.rows[s].map(cell).join('')}</div>`; });
+  out += `<div class="hr rest"><span class="lab">${F.cov >= 0.98 ? '미설명분' : '나머지'}</span>${H.rest.map(cell).join('')}</div><div class="gap"></div>`;
+  out += tot(t, H.R);
+  if (B && B.heat && B.heat.R && B.heat.R.length === H.R.length) { out += tot(bt, B.heat.R); out += tot('차이', H.R.map((v, i) => v == null || B.heat.R[i] == null ? null : v - B.heat.R[i])); }
+  return out + '</div>';
+}
+function cbWarn(F, A0, A, info, useStart, p) {
+  const out = [];
+  const cov = 1 - A0.rest[0];
+  if (!cbFull(A0) && cov < 0.5) out.push(`<div><b>상위 10 비중 ${Math.round(cov * 100)}%</b> · 나머지 ${Math.round(A0.rest[0] * 100)}%가 ${cbPp(A0.rest[1])}%p로 결과를 좌우했습니다.</div>`);
+  if (info) {
+    const { S, overlap, newIn } = info;
+    if (F.eqw && newIn.length) {
+      const avg = newIn.reduce((s, x) => s + x[3], 0) / newIn.length;
+      out.push(`<div><b>균등가중 ETF</b> · 지금 상위 10 가운데 ${newIn.map(x => cbEsc(x[0])).join('·')}는 기간 중 평균 ${cbPc(avg)}% 올라 순위에 들어온 종목입니다. ${cbMd(S.snap)} 구성의 상위 10과 겹치는 종목은 ${overlap}개입니다.</div>`);
+    } else if (newIn.length) {
+      out.push(`<div><b>구성 변화</b> · ${cbMd(S.snap)} 구성의 상위 10과 겹치는 종목은 ${overlap}개입니다.</div>`);
+    }
+    out.push(`<div class="segrow"><span class="mu">목록 기준</span><span class="seg" role="group" aria-label="목록 기준"><button type="button" data-cbc="cur" aria-pressed="${!useStart}">지금 구성</button><button type="button" data-cbc="start" aria-pressed="${useStart}">기간 시작 구성 (${cbMd(S.snap)})</button></span></div>`);
+    if (useStart && S.missing && S.missing.length) out.push(`<div class="mu">가격을 받지 못한 ${S.missing.map(cbEsc).join('·')}는 나머지에 포함했습니다.</div>`);
+  }
+  if (p === '1D' && A.rows.some(x => x[5])) out.push(`<div><b>장 마감 시각 차이</b> · 해외 종목은 미국 장이 열리기 전에 마감해서, 하루 기여에는 그날 미국 장의 움직임이 들어가지 않습니다. 그 차이는 ${cbFull(A) ? '미설명분' : '나머지'}에 남습니다.</div>`);
+  const fx = {}; A.rows.forEach(x => { if (x[6] && x[8] != null && !(x[6] in fx)) fx[x[6]] = x[8]; });
+  const fxs = Object.entries(fx);
+  if (fxs.length) out.push(`<div><b>환율</b> · 해외 종목 수익률은 USD로 환산했습니다. 이 기간 USD 대비 ${fxs.map(([c, v]) => `${CURKO[c] || c} ${cbPc(v)}%`).join(', ')}입니다.</div>`);
+  if (F.src === 'roundhill') out.push('<div><b>스왑 포함</b> · 비중은 직접 보유와 총수익스왑 노출을 합친 순노출입니다.</div>');
+  return out.length ? `<div class="warn">${out.join('')}</div>` : '';
+}
+function contribHTML(t) {
+  if (!CONTRIB || !CONTRIB.funds || !CONTRIB.funds[t]) return '';
+  const F = CONTRIB.funds[t], p = F.P[CB.period] ? CB.period : '1M', A0 = F.P[p];
+  if (!A0) return '';
+  const kind = cbKind(t), bt = cbBench(t, kind), B = bt ? CONTRIB.funds[bt] : null, Bp = B ? B.P[p] : null;
+  const info = cbStartInfo(F, A0), useStart = CB.comp === 'start' && !!info;
+  const A = useStart ? { R: A0.R, rows: A0.start.rows, rest: A0.start.rest, days: A0.days } : A0;
+  const vals = A.rows.map(x => Math.abs(x[4])).concat([Math.abs(A.rest[1])], Bp ? Bp.rows.map(x => Math.abs(x[4])).concat([Math.abs(Bp.rest[1])]) : []);
+  const scale = Math.max(...vals, 1e-9);
+  const ptog = ['1D', '1W', '1M'].map(q => `<button type="button" data-cbp="${q}" aria-pressed="${q === p}">${q}</button>`).join('');
+  const ktog = cbKinds(t).map(k => `<button type="button" data-cbm="${k}" aria-pressed="${k === kind}">${k === 'usd' ? 'USD' : 'vs ' + cbBench(t, k)}</button>`).join('');
+  const span = `${cbMd(A0.from)} → ${cbMd(A0.to)} 종가`;
+  const sum = Bp
+    ? `${t} <b class="${cbSg(A0.R)}">${cbPc(A0.R, 2)}%</b> − ${bt} <b class="${cbSg(Bp.R)}">${cbPc(Bp.R, 2)}%</b> = <b class="${cbSg(A0.R - Bp.R)}">${cbPp(A0.R - Bp.R)}%p</b>`
+    : `${t} <b class="${cbSg(A0.R)}">${cbPc(A0.R, 2)}%</b> <span class="mu">· ${span}</span>`;
+  const sides = [cbSide(t, F, A, scale, p)].concat(Bp ? [cbSide(bt, B, Bp, scale, p)] : []);
+  const met = cbMetrics(Bp ? [{ n: t, A }, { n: bt, A: Bp }] : [{ n: t, A }]);
+  const heat = `<div class="wlab">최근 8주 · 주간 기여 %p</div>${cbHeat(t, F, Bp ? bt : null, Bp ? B : null)}<p class="note">칸은 종목의 주간 기여(%p)이고, 아래 ${Bp ? '세 줄은' : '줄은'} 주간 수익률(%)입니다. 목록은 지금 구성 기준이며, * 표시 주는 진행 중입니다.</p>`;
+  const note = `<p class="note">${Bp ? span + ' · ' : ''}비중은 기간 시작 시점으로 보정했습니다. 구성종목은 ${cbMd(F.snap)} 스냅샷(기준 종가 ${cbMd(F.asof)})${useStart ? `이고, 목록은 ${cbMd(A0.start.snap)} 구성입니다` : '입니다'}.</p>`;
+  return `<section class="cb" aria-label="기여도"><div class="ttlrow"><span>${bt ? `기여도 · ${bt} 대비` : '기여도 · USD'}</span><span class="tog" role="group" aria-label="기간">${ptog}</span></div>`
+    + `<div class="basis"><span>기준</span><span class="tog" role="group" aria-label="기여도 기준">${ktog}</span></div>`
+    + `<div class="sum">${sum}</div>${cbWarn(F, A0, A, info, useStart, p)}${sides.join('')}${met}${heat}${note}</section>`;
+}
+
+/* ---- 주간 브리핑 탭: 주도 종목(보드 전체에서 ETF 를 가장 많이 움직인 종목) ---- */
+const DR = { basis: 'usd', period: '1W' };
+function cbName(n) { return String(n || '').replace(/,?\s+(Inc\.?|Corporation|Corp\.?|Co\.?,? Ltd\.?|Ltd\.?|plc|PLC|Holdings,? Inc\.?|N\.V\.|S\.A\.)$/i, ''); }
+function renderDrivers() {
+  const body = document.getElementById('drvBody'); if (!body) return;
+  document.querySelectorAll('[data-drb]').forEach(b => b.setAttribute('aria-pressed', b.dataset.drb === DR.basis));
+  document.querySelectorAll('[data-drp]').forEach(b => b.setAttribute('aria-pressed', b.dataset.drp === DR.period));
+  const D = CONTRIB && CONTRIB.drivers && CONTRIB.drivers[DR.period] && CONTRIB.drivers[DR.period][DR.basis];
+  if (!D) { body.innerHTML = '<p class="meta">이번 빌드에는 기여도 계산 결과가 없어 주도 종목을 표시하지 않습니다.</p>'; return; }
+  const any = CONTRIB.funds.SPY || Object.values(CONTRIB.funds)[0], per = any && any.P[DR.period];
+  document.getElementById('drvSub').textContent = `주도 종목 · ${DR.period}${per ? ` · ${cbMd(per.from)} → ${cbMd(per.to)} 종가` : ''}`;
+  const th = `<thead><tr><th>#</th><th>종목</th><th class="r">${DR.period === '1W' ? '주간' : '1개월'}</th><th>ETF별 기여 %p</th></tr></thead>`;
+  const rows = (list, sign) => list.map((b, i) => {
+    const es = b.e.filter(([, c]) => sign > 0 ? c > 0 : c < 0).slice(0, 4);
+    return `<tr><td class="rk">${i + 1}</td><td class="sy">${cbEsc(b.s)}<small>${cbEsc(cbName(b.n))}</small></td><td class="r ${cbSg(b.r)}">${cbPc(b.r)}%</td><td><div class="chips">${es.map(([E, c]) => `<button type="button" class="dchip" data-drgo="${E}" title="${E} 행을 선택하고 기여도를 ${DR.period}로 엽니다">${E} <b class="${cbSg(c)}">${cbPp(c)}</b></button>`).join('')}</div></td></tr>`;
+  }).join('');
+  const n = ETFS.length;
+  body.innerHTML = `<p class="meta">관찰 대상 ${n}개 ETF의 상위 10 종목 기여를 종목별로 모았습니다. ${DR.basis === 'usd' ? '기여는 기간 시작 비중 × 수익률(USD)입니다.' : '기여는 기간 시작 비중 × (종목 수익률 − SPY 수익률)입니다.'} 한 종목이 여러 ETF에 들어 있으면 ETF별 기여를 나란히 적고, 순위는 그 가운데 가장 큰 기여로 정합니다. 같은 회사의 여러 주식(GOOGL·GOOG 등)은 하나로 합칩니다.</p>`
+    + `<div class="wlab">▲ 끌어올린 종목</div><table class="dr">${th}<tbody>${rows(D.up, 1)}</tbody></table>`
+    + `<div class="wlab">▼ 끌어내린 종목</div><table class="dr">${th}<tbody>${rows(D.dn, -1)}</tbody></table>`
+    + `<p class="meta">ETF 이름을 누르면 매트릭스에서 그 ETF가 선택되고, Holdings 패널의 기여도가 같은 기간과 기준으로 열립니다.</p>`;
+}
+
 /* ---- 구성종목 패널 ---- */
 const overlayMode = () => !!(window.matchMedia && window.matchMedia('(max-width:1279px)').matches);
 const holdPanel = document.getElementById('holdPanel');
@@ -1212,6 +1429,7 @@ function renderHold(t) {
       <div class="row"><span>RRG vs <b style="color:var(--amber)">${e.parent || 'SPY'}</b> ${e.rrg ? `<b class="ph-${e.rrg}">${e.rrg.toUpperCase()}</b>${e.next ? ` <span class="nx">→ ${e.next.toUpperCase()}</span>` : ''}${e.parent ? ` <span class="nx">· vs SPY <span class="ph-${e.rrgVsSpy}">${e.rrgVsSpy.toUpperCase()}</span></span>` : ''}` : '<span style="color:var(--muted)">N/A · 주봉 39주 필요</span>'}</span><span>전환 점수 <b style="color:#fff">${shiftScore(e).toFixed(0)}</b></span></div>
       <div class="row"><span>vs SPY 12W ${spark(e.S)}</span><span>vs QQQ 12W ${spark(e.Q)}</span></div>
     </div>
+    ${contribHTML(e.t)}
     <div class="h-wrap"><table class="h"><thead><tr><th>#</th><th>티커</th><th>종목명</th><th class="r">비중</th><th class="r"><abbr title="${h.prev} 스냅샷 대비 비중 변화(%p). NEW는 그때 상위 10개에 없던 종목">변동 %p</abbr></th></tr></thead><tbody>${rows}</tbody></table></div>
     <p class="hfn">${note ? note + ' ' : ''}${h.prevMissing
       ? (h.sourceChanged
@@ -1432,6 +1650,13 @@ document.getElementById('rows').addEventListener('click', ev => {
 document.getElementById('hbody').addEventListener('click', ev => {
   if (ev.target.closest('a')) return;
   const tog = ev.target.closest('[data-sdmode]'); if (tog) { sdState.mode = tog.dataset.sdmode; if (selT) renderHold(selT); return; }
+  const cbb = ev.target.closest('[data-cbp],[data-cbm],[data-cbc]');
+  if (cbb) {
+    if (cbb.dataset.cbp) CB.period = cbb.dataset.cbp;
+    if (cbb.dataset.cbm) CB.kind = cbb.dataset.cbm;
+    if (cbb.dataset.cbc) CB.comp = cbb.dataset.cbc;
+    cbSave(); if (selT) renderHold(selT); return;
+  }
   const go = ev.target.closest('[data-goetf]'); if (go) { select(go.dataset.goetf, { open: true, scroll: true }); msg(`${go.dataset.goetf} 선택 · ${sdState.k} 상세 유지`, 'ok'); return; }
   if (ev.target.closest('tr.sd')) return;
   const tr = ev.target.closest('tr.rowk'); if (tr && tr.dataset.k) toggleStock(tr.dataset.k);
@@ -1445,6 +1670,15 @@ document.getElementById('tab1').addEventListener('click', () => showTab(1));
 document.getElementById('tab2').addEventListener('click', () => showTab(2));
 document.getElementById('tab3').addEventListener('click', () => showTab(3));
 document.getElementById('tab4').addEventListener('click', () => showTab(4));
+document.querySelectorAll('[data-drb]').forEach(b => b.addEventListener('click', () => { DR.basis = b.dataset.drb; renderDrivers(); }));
+document.querySelectorAll('[data-drp]').forEach(b => b.addEventListener('click', () => { DR.period = b.dataset.drp; renderDrivers(); }));
+document.getElementById('drvBody').addEventListener('click', ev => {
+  const g = ev.target.closest('[data-drgo]'); if (!g) return;
+  CB.period = DR.period; CB.kind = DR.basis === 'spy' ? 'spy' : 'usd'; CB.comp = 'cur'; cbSave();
+  showTab(1); if (state.search || state.cat !== 'all') setCat('all');
+  select(g.dataset.drgo, { open: true, scroll: true });
+});
+renderDrivers();
 
 /* ---- 변화 패널: 직전 빌드 대비 RRG 국면 변화, 새 신호, 전환순 상위 3 진입 ---- */
 function renderChanges() {

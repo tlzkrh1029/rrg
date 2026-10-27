@@ -91,6 +91,16 @@ jobs:
           fi
           if [ "$rc" = "2" ]; then echo "::warning::some constituent prices failed; see output/stocks/summary.json"; fi
 
+      # 기여도 보조 자료: 최근 스냅샷에서 상위 10 밖으로 밀려난 종목(기간 시작 구성용)과 해외 종목 환율을 받는다.
+      # 실패해도 다음 단계는 그대로 간다(그날 기여도는 받은 가격만으로 계산하고, 빠진 종목은 나머지에 들어간다).
+      - name: 기여도 보조 가격·환율 수집
+        run: |
+          set +e
+          python terminal/fetch_contrib_extras.py
+          rc=$?
+          if [ "$rc" != "0" ]; then echo "::warning::contribution extras incomplete (exit $rc); see output/stocks/extra_summary.json"; fi
+          exit 0
+
       - name: 계산 (돌파 지도)
         if: env.BREAKOUT_OK == 'true'
         run: |
@@ -103,6 +113,7 @@ jobs:
       - name: 계산·페이지 생성 (터미널)
         run: |
           python terminal/compute_terminal.py
+          python terminal/compute_contrib.py || echo "::warning::contribution computation failed; the Holdings panel is built without the contribution block"
           python terminal/build_terminal.py --lists "$LISTS_DIR"
 
       - name: 페이지 생성 (돌파 지도)

@@ -11,7 +11,7 @@
 
 ```
 fetch_prices.py          ETF 가격·구성종목 수집기 (두 화면이 함께 씀)
-terminal/                섹터 전환 매트릭스: compute_terminal.py → build_terminal.py, template.html
+terminal/                섹터 전환 매트릭스: compute_terminal.py · fetch_contrib_extras.py → compute_contrib.py → build_terminal.py, template.html
 breakout/                돌파 지도: fetch_stock_prices.py → compute_breakout.py → build_breakout.py, match_listing.py, template.html
 scripts/notify_telegram.py   텔레그램 전송 (--docs 로 두 화면 모두 보냄)
 data/etf_meta.json       ETF 메타. screens 로 어느 화면에 들어가는지 표시 (terminal / breakout)
@@ -112,7 +112,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 
 | 시각 (KST) | 하는 일 |
 |---|---|
-| 화~금 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `fetch_prices.py` 로 ETF 가격·구성종목을 받고, `breakout/fetch_stock_prices.py` 로 구성종목 약 240개의 일봉을 받아 `breakout/compute_breakout.py` 로 계산한 뒤(실패해도 다음 단계는 계속), `terminal/compute_terminal.py` → `terminal/build_terminal.py` 로 `docs/` 를 다시 만듭니다(종목 상세에 그 계산을 끼움). 이어서 `breakout/compute_breakout.py` → `breakout/build_breakout.py` 로 `docs/breakout/` 을 만듭니다(이 세 단계가 실패해도 매트릭스 쪽 빌드와 커밋은 그대로 진행되고, 돌파 지도는 직전 빌드로 남습니다). 모두 커밋한 뒤 직전 빌드와 비교해 변화가 있으면 텔레그램으로 매트릭스 조건 알림을 보냅니다. |
+| 화~금 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `fetch_prices.py` 로 ETF 가격·구성종목을 받고, `breakout/fetch_stock_prices.py` 로 구성종목 약 240개의 일봉을 받아 `breakout/compute_breakout.py` 로 계산한 뒤(실패해도 다음 단계는 계속), `terminal/fetch_contrib_extras.py` 로 기여도용 보조 가격과 환율을 받고(실패해도 계속), `terminal/compute_terminal.py` → `terminal/compute_contrib.py` → `terminal/build_terminal.py` 로 `docs/` 를 다시 만듭니다(종목 상세에 돌파 지도의 계산을, Holdings 패널과 주간 브리핑에 기여도를 끼움). 이어서 `breakout/compute_breakout.py` → `breakout/build_breakout.py` 로 `docs/breakout/` 을 만듭니다(이 세 단계가 실패해도 매트릭스 쪽 빌드와 커밋은 그대로 진행되고, 돌파 지도는 직전 빌드로 남습니다). 모두 커밋한 뒤 직전 빌드와 비교해 변화가 있으면 텔레그램으로 매트릭스 조건 알림을 보냅니다. |
 | 토 07:05 | 금요일 종가로 위와 같은 일을 한 뒤, 주간 브리핑(`docs/data/brief.txt`)을 텔레그램으로 보냅니다. |
 
 돌파 지도의 알림 채널은 아직 정하지 않았습니다. 빌드는 매일 `docs/breakout/data/alerts.txt`(새 돌파·새 이탈·실패·블록 알림)와 `brief.txt`(주간 브리핑)를 써 두기만 하고, 저장소 Variables 에 `BREAKOUT_TELEGRAM` = `true` 를 추가하면 같은 봇으로 보내기 시작합니다.
@@ -132,6 +132,8 @@ GitHub 의 예약 실행은 보통 예약 시각보다 2~4시간 늦게 시작�
 | 파일 | 역할 |
 |---|---|
 | `terminal/compute_terminal.py` | `output/prices_wide.csv` 로 백분위·비율선·RRG(1단 섹터 ÷ SPY, 2단 산업·테마 ÷ 상위 섹터, 스타일 MAGS ÷ SPY)·신호를 계산해 `output/terminal-data.json` 을 씁니다. 규칙은 파일 머리의 설명에 있습니다. |
+| `terminal/fetch_contrib_extras.py` | 기여도용 보조 자료를 `output/stocks/` 에 받습니다. 최근 45일 스냅샷에서 터미널 ETF 와 SPY·QQQ 의 상위 10에 들었지만 돌파 지도 수집에 없는 종목의 일봉(`extra_prices_wide.csv`), 해외 종목 통화별 1달러당 환율(`fx_wide.csv`, Yahoo `KRW=X` 등), 종목별 통화와 실패 목록(`extra_summary.json`). 실패해도 다음 단계는 그대로 갑니다. |
+| `terminal/compute_contrib.py` | 구성종목 기여도를 계산해 `output/contrib-data.json` 을 씁니다. 규칙은 아래 "기여도" 절과 파일 머리의 설명에 있습니다. 실패하면 그날 페이지는 기여도 블록과 주도 종목 없이 만들어집니다. |
 | `terminal/build_terminal.py` | 계산값, 최신 두 구성종목 스냅샷(변동 %p), 상장 목록, `data/etf_meta.json` 을 `terminal/template.html` 에 끼워 `docs/index.html`(Pages 용)과 `docs/terminal.artifact.html`(Claude 아티팩트 발행용)을 만듭니다. 두 본문은 `5) 돌파 지도` 탭의 주소만 다릅니다(Pages 는 `breakout/`, 아티팩트는 돌파 지도 아티팩트를 새 탭으로). 직전 빌드(`docs/data/terminal-data.json`)와 비교해 `docs/data/alerts.json`·`alerts.txt` 와 주간 브리핑 `docs/data/brief.txt` 를 씁니다. 구성종목 표의 종목 행을 누르면 펼쳐지는 종목 상세(일간·주간·30일 변동률, 90일 가격선과 50 SMA·89 HMA·144 HMA, 네 지평의 돌파 상태, 그 종목을 담은 다른 ETF)는 `output/breakout-data.json`(없으면 `docs/breakout/data/` 의 직전 사본)에서 이 보드의 구성종목만 추려 끼워 넣습니다. |
 | `terminal/template.html` | 터미널 화면 템플릿. `__HOLD__`, `__DATA__`, `__PRICE_ASOF__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. 주소에 해시가 없으면 보드 위에 대문(cover)이 먼저 덮이고 LAUNCH TERMINAL 로 엽니다. `#board`·`#rrg`·`#brief`·`#help` 로 들어오면 대문을 건너뛰며(텔레그램 링크는 `#board`), 대문의 Skip 을 켜면 그 브라우저에서는 다시 보이지 않습니다. 보드에서 `0` 또는 `COVER` 를 입력하면 다시 엽니다. |
 | `breakout/` | 돌파 지도. 수집기 `fetch_stock_prices.py`, 상장 대조 `match_listing.py`, 계산 `compute_breakout.py`, 페이지 생성 `build_breakout.py`(`docs/breakout/index.html` 과 `docs/breakout/breakout.artifact.html`), 템플릿 `template.html`. 자세한 설명은 [breakout/README.md](breakout/README.md). |
@@ -142,6 +144,18 @@ GitHub 의 예약 실행은 보통 예약 시각보다 2~4시간 늦게 시작�
 ### 알림 조건
 
 직전 빌드와 비교해 다음이 생기면 `alerts.txt` 에 적고 텔레그램으로 보냅니다. RRG 국면 변화(벤치마크 대비, 산업·테마는 SPY 대비도), 새로 켜진 신호(52주 상대 신고가, 비율선 50·200일선 돌파·이탈, 백분위 ±30 급변, 1주 반등 미확인), 전환순 상위 3 진입. 같은 종가로 다시 빌드하면 변화로 치지 않습니다. 본문은 ETF 단위로 묶어 1W 백분위가 높은 순으로 적고, 머리글마다 `[1W/1M/3M/6M/12M 백분위]`와 벤치마크 대비 RRG 국면을 붙입니다. 페이지의 Changes 패널도 같은 순서·같은 수치를 보여 줍니다.
+
+### 기여도 (Holdings 패널 · 주간 브리핑)
+
+Holdings 패널의 구성종목 표 위에 "이 ETF 를 어느 종목이 움직였나"를 보여 주는 기여도 블록이 있습니다.
+
+- **계산**: 기여 = 기간 시작 비중 × 기간 수익률(USD). 기간은 1D·1W·1M(1·5·21 거래일)입니다. 기간 시작 비중은 스냅샷 비중을 가격 변화로 기간 시작 시점까지 옮긴 값입니다. 스냅샷이 가리키는 종가는 ETF 마다 다르므로(SPDR 은 하루 전, iShares·VanEck 등은 이틀 전, Roundhill 은 당일) 연속한 스냅샷의 비중 변화와 가격 변화가 가장 잘 맞는 날을 매번 골라 씁니다.
+- **기준**: USD, vs QQQ, vs SPY, 산업·테마 ETF 는 vs 상위 섹터까지 고릅니다. 상대 기준에서는 ETF 쪽과 벤치마크 쪽의 기여 목록을 나란히 놓고, 두 수익률의 차이를 머리에 적습니다. 기본은 산업·테마가 상위 섹터, 나머지가 SPY 입니다.
+- **나머지와 미설명분**: 나머지 = ETF 수익률 − 표에 있는 종목 기여의 합입니다. 표의 비중 합이 98% 이상이면(MAGS·DRAM) 다른 종목이 남지 않으므로 '미설명분'으로 적고 원인(현금·보수·시차·스왑)을 붙입니다.
+- **경고**: 상위 10 비중이 50% 미만이면 나머지가 결과를 좌우했다고 적습니다. 균등가중 ETF(XHB·KRE·XBI·XME)는 지금 상위 10에 기간 중 오른 종목이 많이 들어오므로, 기간 시작에 가장 가까운 스냅샷의 상위 10으로 다시 계산한 '기간 시작 구성'으로 바꿔 볼 수 있습니다.
+- **해외 종목**: 현지 종가를 같은 날 환율로 나눠 USD 로 바꾸고, 행 아래에 현지 수익률과 환율 수익률을 적습니다. 해외 종목은 미국 장보다 먼저 마감하므로 1D 에서는 행에 '시차'를 붙입니다.
+- **지표와 히트맵**: 상승 종목 수, 상위 1개·3개 집중도(합계와 같은 방향 기여의 합 가운데 몫), 나머지 평균, 최대 상승일·하락일, 최근 8주 주간 기여 히트맵을 함께 둡니다.
+- **주도 종목**: 주간 브리핑 탭 오른쪽에 터미널 ETF 의 상위 10 종목 기여를 종목별로 모은 순위(USD·SPY 대비, 1W·1M)를 둡니다. 순위는 한 ETF 에 준 가장 큰 기여로 매기고, 같은 회사의 여러 주식(GOOGL·GOOG)은 합칩니다. 텔레그램 주간 브리핑에도 '주도 종목' 두 줄(1W, USD)이 들어갑니다.
 
 ### 한계
 
