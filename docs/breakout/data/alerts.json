@@ -1,179 +1,180 @@
 {
- "asof": "2026-10-23",
- "prev_asof": "2026-10-22",
+ "asof": "2026-10-26",
+ "prev_asof": "2026-10-23",
  "alerts": [
   {
    "type": "up",
    "H": "ath",
-   "key": "ALLE",
-   "name": "Allegion plc",
+   "key": "GILD",
+   "name": "Gilead Sciences, Inc.",
    "etfs": [
-    "XHB"
+    "XLV"
    ],
-   "over": 0.00706,
+   "over": 0.00839,
    "spy": "none",
    "qqq": "none"
   },
   {
    "type": "up",
    "H": "ath",
-   "key": "MUR",
-   "name": "Murphy Oil Corporation",
+   "key": "8001",
+   "name": "ITOCHU Corporation",
+   "etfs": [
+    "URA"
+   ],
+   "over": 0.01019,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
+   "key": "RRC",
+   "name": "Range Resources Corporation",
    "etfs": [
     "XOP"
    ],
-   "over": 0.01692,
+   "over": 0.12969,
    "spy": "none",
    "qqq": "none"
   },
   {
    "type": "up",
    "H": "55",
-   "key": "TCBI",
-   "name": "Texas Capital Bancshares, Inc.",
+   "key": "LMT",
+   "name": "Lockheed Martin Corporation",
    "etfs": [
-    "KRE"
+    "XLI",
+    "ITA"
    ],
-   "over": 0.01098,
+   "over": 0.05002,
    "spy": "lit",
    "qqq": "lit"
   },
   {
    "type": "up",
    "H": "20",
-   "key": "SLB",
-   "name": "SLB N.V.",
+   "key": "RTX",
+   "name": "RTX Corporation",
    "etfs": [
-    "XLE"
+    "XLI",
+    "ITA"
    ],
-   "over": 0.02949,
+   "over": 0.01836,
+   "spy": "lit",
+   "qqq": "failed"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "LUV",
+   "name": "Southwest Airlines Co.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": 0.00895,
    "spy": "lit",
    "qqq": "lit"
   },
   {
    "type": "down",
    "H": "55",
-   "key": "C",
-   "name": "Citigroup Inc.",
+   "key": "BKNG",
+   "name": "Booking Holdings Inc.",
    "etfs": [
-    "XLF"
+    "XLY"
    ],
-   "over": -0.01349
+   "over": -0.01751
   },
   {
    "type": "down",
    "H": "55",
-   "key": "TMUS",
-   "name": "T-Mobile US, Inc.",
+   "key": "CEG",
+   "name": "Constellation Energy Corporation",
    "etfs": [
-    "XLC"
+    "XLU"
    ],
-   "over": -0.01373
+   "over": -0.00606
   },
   {
    "type": "down",
    "H": "55",
-   "key": "UBER",
-   "name": "Uber Technologies, Inc.",
+   "key": "NXT",
+   "name": "Nextpower Inc.",
    "etfs": [
-    "XLI"
+    "TAN"
    ],
-   "over": -0.01738
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "CBRE",
-   "name": "CBRE Group, Inc.",
-   "etfs": [
-    "XLRE"
-   ],
-   "over": -0.0334
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "FNV",
-   "name": "Franco-Nevada Corporation",
-   "etfs": [
-    "GDX"
-   ],
-   "over": -0.00579
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "K",
-   "name": "Kinross Gold Corporation",
-   "etfs": [
-    "GDX"
-   ],
-   "over": -0.01169
+   "over": -0.01861
   },
   {
    "type": "down",
    "H": "20",
-   "key": "NEM",
-   "name": "Newmont Corporation",
-   "etfs": [
-    "XLB",
-    "XME",
-    "GDX"
-   ],
-   "over": -0.02411
-  },
-  {
-   "type": "failed",
-   "H": "ath",
-   "key": "AMGN",
-   "name": "Amgen Inc.",
-   "etfs": [
-    "XLV",
-    "XBI"
-   ],
-   "over": -0.01094
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "AMGN",
-   "name": "Amgen Inc.",
-   "etfs": [
-    "XLV",
-    "XBI"
-   ],
-   "over": -0.01094
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "PG",
-   "name": "The Procter & Gamble Company",
+   "key": "TGT",
+   "name": "Target Corporation",
    "etfs": [
     "XLP"
    ],
-   "over": -0.02247
+   "over": -0.01584
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "MDLZ",
+   "name": "Mondelez International, Inc.",
+   "etfs": [
+    "XLP"
+   ],
+   "over": -0.02251
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "CDNA",
+   "name": "CareDx, Inc.",
+   "etfs": [
+    "ARKG"
+   ],
+   "over": -0.01074
   },
   {
    "type": "failed",
    "H": "55",
-   "key": "AMGN",
-   "name": "Amgen Inc.",
+   "key": "MDLZ",
+   "name": "Mondelez International, Inc.",
    "etfs": [
-    "XLV",
-    "XBI"
+    "XLP"
    ],
-   "over": -0.01094
+   "over": -0.01813
   },
   {
    "type": "failed",
    "H": "55",
-   "key": "MAS",
-   "name": "Masco Corporation",
+   "key": "CDNA",
+   "name": "CareDx, Inc.",
    "etfs": [
-    "XHB"
+    "ARKG"
    ],
-   "over": -0.01505
+   "over": -0.01074
+  },
+  {
+   "type": "failed",
+   "H": "20",
+   "key": "VRTX",
+   "name": "Vertex Pharmaceuticals Incorporated",
+   "etfs": [
+    "GNOM"
+   ],
+   "over": -0.01929
+  },
+  {
+   "type": "failed",
+   "H": "20",
+   "key": "CDNA",
+   "name": "CareDx, Inc.",
+   "etfs": [
+    "ARKG"
+   ],
+   "over": -0.01074
   }
  ]
 }

@@ -1,14 +1,15 @@
-돌파 지도 2026-10-23 (USD 기준, 직전 종가)
-켜진 칸 20일 73/279 (26%) · 55일 47 · 52주 33 · 사상 최고 25 · 이탈 63 · 실패 3
+돌파 지도 2026-10-26 (USD 기준, 직전 종가)
+켜진 칸 20일 69/278 (25%) · 55일 44 · 52주 29 · 사상 최고 23 · 이탈 53 · 실패 4
 
 새 돌파 (1일째)
-  사상 최고: ALLE(XHB), MUR(XOP)
-  55일: TCBI(KRE)*
-  20일: SLB(XLE)*
+  사상 최고: GILD(XLV), 8001(URA)
+  52주: RRC(XOP)
+  55일: LMT(XLI·ITA)*
+  20일: RTX(XLI·ITA)*, LUV(JETS)*
   * SPY 대비로도 켜진 칸
 새 이탈 (1일째)
-  55일 바닥: C(XLF), TMUS(XLC), UBER(XLI), CBRE(XLRE), FNV(GDX), K(GDX)
-  20일 바닥: NEM(XLB·XME·GDX)
-오늘 실패한 돌파: AMGN(XLV·XBI, 사상 최고), AMGN(XLV·XBI, 52주), PG(XLP, 52주), AMGN(XLV·XBI, 55일), MAS(XHB, 55일)
+  55일 바닥: BKNG(XLY), CEG(XLU), NXT(TAN)
+  20일 바닥: TGT(XLP)
+오늘 실패한 돌파: MDLZ(XLP, 52주), CDNA(ARKG, 52주), MDLZ(XLP, 55일), CDNA(ARKG, 55일), VRTX(GNOM, 20일), CDNA(ARKG, 20일)
 
 https://tlzkrh1029.github.io/rrg/breakout/
