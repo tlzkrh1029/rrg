@@ -7,6 +7,7 @@
   data/etf_meta.json               ETF 이름·순자산·보유 종목 수·출처 URL
   --lists DIR                      tradfi-ticker-lists 의 output 폴더(상장 점). 없으면 점을 비운다.
   output/breakout-data.json        돌파 지도 계산 결과(종목 상세용 가격·이동평균 재료). 없으면 docs/breakout/data/ 의 직전 사본, 그것도 없으면 종목 상세 없이 만든다.
+  output/contrib-data.json         구성종목 기여도(terminal/compute_contrib.py). 종가 기준일이 이번 계산과 다르거나 없으면 기여도 블록과 주도 종목 없이 만든다.
   terminal/template.html           토큰이 든 HTML 템플릿
 
 출력 (docs/)
@@ -251,7 +252,24 @@ def alerts_text(cur, alerts):
     return "\n".join(lines)
 
 
-def make_brief(cur, hold, alerts, prev_asof):
+def drivers_lines(contrib):
+    """주간 브리핑의 '주도 종목' 두 줄. 종목마다 가장 크게 움직인 ETF 하나와 그 기여(%p)를 적는다."""
+    d = (((contrib or {}).get("drivers") or {}).get("1W") or {}).get("usd")
+    if not d:
+        return []
+    fmt = lambda v: f"{v * 100:+.2f}".replace("-", "−")
+
+    def part(items, sign):
+        out = []
+        for b in items[:3]:
+            es = [e for e in b["e"] if (e[1] > 0 if sign > 0 else e[1] < 0)]
+            if es:
+                out.append(f"{b['s']} {es[0][0]} {fmt(es[0][1])}")
+        return " · ".join(out) or "없음"
+    return ["주도 종목 (1W · 가장 크게 움직인 ETF 기여 %p)", "  ▲ " + part(d["up"], 1), "  ▼ " + part(d["dn"], -1), ""]
+
+
+def make_brief(cur, hold, alerts, prev_asof, contrib=None):
     E = cur["etfs"]
     ph = phases(cur)
     lines = [f"📊 섹터 전환 터미널 · {cur['asof']} 종가 기준", ""]
@@ -261,6 +279,7 @@ def make_brief(cur, hold, alerts, prev_asof):
     for t, s in ranked[:3]:
         lines.append(f"  {t} {KO[t]}: {s:+.0f}  [{strip(E[t]['pct'])}]")
     lines.append("")
+    lines += drivers_lines(contrib)
     by = {}
     for t in SECTORS:
         by.setdefault(ph[t]["bench"], []).append(t)
@@ -343,9 +362,23 @@ def load_stocks(args, hold):
     return out, best_path
 
 
+def load_contrib(path, asof):
+    """기여도 계산 결과. 종가 기준일이 이번 계산과 같을 때만 쓴다(계산이 실패해 전날 파일이 남은 경우를 거른다)."""
+    try:
+        c = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        print(f"contribution data not found ({os.path.relpath(path, ROOT)}): built without the contribution block")
+        return None
+    if c.get("asof") != asof:
+        print(f"contribution data is for {c.get('asof')}, not {asof}: built without the contribution block")
+        return None
+    return {k: v for k, v in c.items() if k not in ("generated_at", "warnings")}
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--data", default=os.path.join(ROOT, "output", "terminal-data.json"))
+    ap.add_argument("--contrib", default=os.path.join(ROOT, "output", "contrib-data.json"))
     ap.add_argument("--holdings", default=os.path.join(ROOT, "output", "holdings"))
     ap.add_argument("--meta", default=os.path.join(ROOT, "data", "etf_meta.json"))
     ap.add_argument("--lists", default=None, help="tradfi-ticker-lists 의 output 폴더")
@@ -394,7 +427,8 @@ def main():
     list_ts_txt = (list_ts or "").replace("T", " ").replace("Z", " UTC") or "수집 자료 없음"
 
     alerts = make_alerts(prev_for_alerts, cur)
-    brief = make_brief(cur, hold, alerts, prev_for_alerts.get("asof") if prev_for_alerts else None)
+    contrib = load_contrib(args.contrib, cur["asof"])
+    brief = make_brief(cur, hold, alerts, prev_for_alerts.get("asof") if prev_for_alerts else None, contrib)
 
     data_slim = {t: {k: v for k, v in e.items() if k in ("pct", "rel", "S", "Q", "rrgPath", "rrgSpy", "sig", "weeks", "stale")} for t, e in cur["etfs"].items()}
     stocks_tok, stocks_src = load_stocks(args, hold)
@@ -413,6 +447,7 @@ def main():
         "__SWAPS__": json.dumps(swaps, ensure_ascii=False, separators=(",", ":")),
         "__ALERTS__": json.dumps({"asof": cur["asof"], "prev_asof": prev_for_alerts.get("asof") if prev_for_alerts else None, "same_asof": same_asof, "alerts": alerts}, ensure_ascii=False, separators=(",", ":")),
         "__STOCKS__": json.dumps(stocks_tok, ensure_ascii=False, separators=(",", ":")),
+        "__CONTRIB__": json.dumps(contrib, ensure_ascii=False, separators=(",", ":")),
         "__BRIEF__": html_escape(brief),
         "__BUILT_AT__": built_at_kst(),
     }
@@ -448,7 +483,8 @@ def main():
             f.write(alerts_text(cur, alerts))
     open(os.path.join(args.docs, ".nojekyll"), "a").close()
     print(f"built docs/ for {cur['asof']} · holdings {hold_asof} (prev {hold_prev}) · lists {list_asof} ({counts['b']}/{counts['f']}/{counts['h']}) · alerts {len(alerts)}"
-          + (f" · stock details {len(stocks_tok['stocks'])} (asof {stocks_tok['asof']}, {os.path.relpath(stocks_src, ROOT)})" if stocks_tok else " · stock details none"))
+          + (f" · stock details {len(stocks_tok['stocks'])} (asof {stocks_tok['asof']}, {os.path.relpath(stocks_src, ROOT)})" if stocks_tok else " · stock details none")
+          + (f" · contribution {len(contrib['funds'])} funds" if contrib else " · contribution none"))
 
 
 if __name__ == "__main__":
