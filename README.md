@@ -11,12 +11,13 @@
 
 ```
 fetch_prices.py          ETF 가격·구성종목 수집기 (두 화면이 함께 씀)
+fetch_etf_history.py     ETF 차트 자료와 전체 이력 사상 최고 캐시 (두 화면의 ETF 차트가 함께 씀)
 terminal/                섹터 전환 매트릭스: compute_terminal.py · fetch_contrib_extras.py → compute_contrib.py → build_terminal.py, template.html
 breakout/                돌파 지도: fetch_stock_prices.py → compute_breakout.py → build_breakout.py, match_listing.py, template.html
 scripts/notify_telegram.py   텔레그램 전송 (--docs 로 두 화면 모두 보냄)
 data/etf_meta.json       ETF 메타. screens 로 어느 화면에 들어가는지 표시 (terminal / breakout)
 data/lists/              tradfi-ticker-lists 의 상장 목록 사본
-output/                  수집·계산 결과 (prices_wide.csv, holdings/, stocks/, terminal-data.json, breakout-data.json)
+output/                  수집·계산 결과 (prices_wide.csv, holdings/, stocks/, etf_ath.json, etf-chart-data.json, terminal-data.json, breakout-data.json)
 docs/                    GitHub Pages 본문. docs/index.html 이 매트릭스, docs/breakout/index.html 이 돌파 지도
 .github/workflows/terminal.yml   매일 아침의 수집 → 계산 → 생성 → 커밋 → 알림
 ```
@@ -55,7 +56,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 | | ITA, PAVE | XLI |
 | | URA | XLE |
 | 스타일·집중도 | MAGS | SPY. 1단 보드에 섹터와 같은 축으로 그리되, 섹터 11개를 대상으로 하는 집계(사분면 개수, 섹터 간 순위)에는 넣지 않음 |
-| 돌파 지도 전용 | GDX, GRID, XOP, TAN, JETS | RRG 에는 넣지 않음. 가격은 돌파 지도 구성종목 패널의 비율선에, 구성종목은 블록에 씀 |
+| 돌파 지도 전용 | GDX, GRID, XOP, TAN, JETS | RRG 에는 넣지 않음. 가격은 돌파 지도 ETF 패널의 차트에, 구성종목은 블록에 씀 |
 
 ### 출력 파일
 
@@ -68,6 +69,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 | `prices_summary.json` | 실행 결과 요약 | `generated_at`(UTC), `source_order`, `tickers`(티커별 `{source, adj_close_available, first_date, last_date, rows, missing_days, gap_days, off_axis_dates, rows_before_axis, partial_bar_dropped, attempts}`), `base_axis {ticker, first_date, last_date, days}`, `failed_tickers`, `parent_sector`, `groups`, `holdings`, `holdings_failed`, `checks`, `warnings` |
 | `holdings/YYYY-MM-DD.csv` | 구성종목 상위 10개 스냅샷. 파일명은 실행일이며 같은 날짜 파일은 덮어씁니다 | `etf`, `rank`, `symbol`, `name`, `weight_pct` |
 | `stocks/prices_wide.csv`, `stocks/ath.json`, `stocks/summary.json` | 돌파 지도의 구성종목 일봉(같은 SPY 축)과 사상 최고 캐시. `breakout/fetch_stock_prices.py` 가 씁니다 | [breakout/README.md](breakout/README.md) 참고 |
+| `etf_ath.json`, `etf-chart-data.json` | ETF 차트의 전체 이력 사상 최고 캐시와 90일 차트 자료. `fetch_etf_history.py` 가 씁니다 | 아래 "ETF 차트" 절 참고 |
 
 `prices_wide.csv`의 빈 칸은 그 날짜에 그 티커의 데이터가 없다는 뜻입니다. 직전 값으로 채우지 않으므로, 비율을 계산할 때 빈 칸은 건너뛰어야 합니다.
 
@@ -112,7 +114,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 
 | 시각 (KST) | 하는 일 |
 |---|---|
-| 화~금 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `fetch_prices.py` 로 ETF 가격·구성종목을 받고, `breakout/fetch_stock_prices.py` 로 구성종목 약 240개의 일봉을 받아 `breakout/compute_breakout.py` 로 계산한 뒤(실패해도 다음 단계는 계속), `terminal/fetch_contrib_extras.py` 로 기여도용 보조 가격과 환율을 받고(실패해도 계속), `terminal/compute_terminal.py` → `terminal/compute_contrib.py` → `terminal/build_terminal.py` 로 `docs/` 를 다시 만듭니다(종목 상세에 돌파 지도의 계산을, Holdings 패널과 주간 브리핑에 기여도를 끼움). 이어서 `breakout/compute_breakout.py` → `breakout/build_breakout.py` 로 `docs/breakout/` 을 만듭니다(이 세 단계가 실패해도 매트릭스 쪽 빌드와 커밋은 그대로 진행되고, 돌파 지도는 직전 빌드로 남습니다). 모두 커밋한 뒤 직전 빌드와 비교해 변화가 있으면 텔레그램으로 매트릭스 조건 알림을 보냅니다. |
+| 화~금 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `fetch_prices.py` 로 ETF 가격·구성종목을 받고, `fetch_etf_history.py` 로 두 화면의 ETF 차트 자료를 만들고(전체 이력은 월 1회 받음, 실패해도 계속), `breakout/fetch_stock_prices.py` 로 구성종목 약 240개의 일봉을 받아 `breakout/compute_breakout.py` 로 계산한 뒤(실패해도 다음 단계는 계속), `terminal/fetch_contrib_extras.py` 로 기여도용 보조 가격과 환율을 받고(실패해도 계속), `terminal/compute_terminal.py` → `terminal/compute_contrib.py` → `terminal/build_terminal.py` 로 `docs/` 를 다시 만듭니다(종목 상세에 돌파 지도의 계산을, Holdings 패널에 ETF 차트와 기여도를, 주간 브리핑에 주도 종목을 끼움). 이어서 `breakout/compute_breakout.py` → `breakout/build_breakout.py` 로 `docs/breakout/` 을 만듭니다(이 세 단계가 실패해도 매트릭스 쪽 빌드와 커밋은 그대로 진행되고, 돌파 지도는 직전 빌드로 남습니다). 모두 커밋한 뒤 직전 빌드와 비교해 변화가 있으면 텔레그램으로 매트릭스 조건 알림을 보냅니다. |
 | 토 07:05 | 금요일 종가로 위와 같은 일을 한 뒤, 주간 브리핑(`docs/data/brief.txt`)을 텔레그램으로 보냅니다. |
 
 돌파 지도의 알림 채널은 아직 정하지 않았습니다. 빌드는 매일 `docs/breakout/data/alerts.txt`(새 돌파·새 이탈·실패·블록 알림)와 `brief.txt`(주간 브리핑)를 써 두기만 하고, 저장소 Variables 에 `BREAKOUT_TELEGRAM` = `true` 를 추가하면 같은 봇으로 보내기 시작합니다.
@@ -131,6 +133,7 @@ GitHub 의 예약 실행은 보통 예약 시각보다 2~4시간 늦게 시작�
 
 | 파일 | 역할 |
 |---|---|
+| `fetch_etf_history.py` | 두 화면의 ETF 차트 자료를 만듭니다. ETF 마다 Yahoo 전체 이력(range=max)을 월 1회 받아 90일 창 이전의 최고 조정 종가와 SPY·QQQ·상위 섹터 대비 최고 비율을 `output/etf_ath.json` 에 캐시하고, 매일 `output/prices_wide.csv` 에서 90일 종가·이동평균용 창 앞 종가·52주 고점·사상 최고를 계산해 `output/etf-chart-data.json` 을 씁니다. 받지 못한 ETF 는 이전 캐시나 2년 가격 파일로 대신하고 종료 코드 2 를 냅니다. |
 | `terminal/compute_terminal.py` | `output/prices_wide.csv` 로 백분위·비율선·RRG(1단 섹터 ÷ SPY, 2단 산업·테마 ÷ 상위 섹터, 스타일 MAGS ÷ SPY)·신호를 계산해 `output/terminal-data.json` 을 씁니다. 규칙은 파일 머리의 설명에 있습니다. |
 | `terminal/fetch_contrib_extras.py` | 기여도용 보조 자료를 `output/stocks/` 에 받습니다. 최근 45일 스냅샷에서 터미널 ETF 와 SPY·QQQ 의 상위 10에 들었지만 돌파 지도 수집에 없는 종목의 일봉(`extra_prices_wide.csv`), 해외 종목 통화별 1달러당 환율(`fx_wide.csv`, Yahoo `KRW=X` 등), 종목별 통화와 실패 목록(`extra_summary.json`). 실패해도 다음 단계는 그대로 갑니다. |
 | `terminal/compute_contrib.py` | 구성종목 기여도를 계산해 `output/contrib-data.json` 을 씁니다. 규칙은 아래 "기여도" 절과 파일 머리의 설명에 있습니다. 실패하면 그날 페이지는 기여도 블록과 주도 종목 없이 만들어집니다. |
@@ -145,12 +148,21 @@ GitHub 의 예약 실행은 보통 예약 시각보다 2~4시간 늦게 시작�
 
 직전 빌드와 비교해 다음이 생기면 `alerts.txt` 에 적고 텔레그램으로 보냅니다. RRG 국면 변화(벤치마크 대비, 산업·테마는 SPY 대비도), 새로 켜진 신호(52주 상대 신고가, 비율선 50·200일선 돌파·이탈, 백분위 ±30 급변, 1주 반등 미확인), 전환순 상위 3 진입. 같은 종가로 다시 빌드하면 변화로 치지 않습니다. 본문은 ETF 단위로 묶어 1W 백분위가 높은 순으로 적고, 머리글마다 `[1W/1M/3M/6M/12M 백분위]`와 벤치마크 대비 RRG 국면을 붙입니다. 페이지의 Changes 패널도 같은 순서·같은 수치를 보여 줍니다.
 
+### ETF 차트 (Holdings 패널 · 돌파 지도 ETF 패널)
+
+Holdings 패널 맨 위에 그 ETF 자체의 90일 차트가 늘 열려 있습니다. 돌파 지도에서 ETF 이름을 눌러 여는 ETF 패널에도 같은 차트가 있습니다.
+
+- **내용**: 일간·주간·30일 변동률, 90일 종가선과 50 SMA·89 HMA·144 HMA, 20일 Shelf(돌파 지도에서는 고른 지평)와 52주 고점 선, 네 지평(20일·55일·52주·사상 최고)의 돌파 상태. 판정 규칙은 돌파 지도의 종목 칸과 같습니다.
+- **자**: 매트릭스에서는 USD · vs QQQ · vs SPY 에 산업·테마 ETF 는 vs 상위 섹터까지 고릅니다. 이 토글은 아래 기여도 블록의 기준과 같은 값이라 둘이 함께 바뀝니다. 돌파 지도에서는 지도 전체의 자(USD · QQQ 대비 · SPY 대비)를 따릅니다.
+- **사상 최고**: USD·비율 모두 전체 이력에서 잡습니다. `fetch_etf_history.py` 가 월 1회 받아 둔 "90일 창 이전 최고"(`output/etf_ath.json`)와 2년 가격 파일 안의 창 이전 최고, 52주 고점 가운데 큰 값입니다. 캐시를 받은 뒤 생긴 배당·분할 재조정은 경계 직전 거래일의 값 비로 옮겨 반영합니다. 지평 표의 '사상 최고' 옆에 이력의 첫 해를 적고, 캐시를 쓰지 못한 날은 2년 파일의 첫 해가 적힙니다. 돌파 지도 종목 칸의 비율 사상 최고는 지금처럼 2년 창 안에서 잡습니다.
+- 차트가 생기면서 Holdings 패널과 돌파 지도 ETF 패널의 12주 비율선 두 줄(vs SPY 12W · vs QQQ 12W)은 뺐습니다. 매트릭스 표의 12주 비율선 열은 그대로입니다.
+
 ### 기여도 (Holdings 패널 · 주간 브리핑)
 
 Holdings 패널의 구성종목 표 위에 "이 ETF 를 어느 종목이 움직였나"를 보여 주는 기여도 블록이 있습니다.
 
 - **계산**: 기여 = 기간 시작 비중 × 기간 수익률(USD). 기간은 1D·1W·1M(1·5·21 거래일)입니다. 기간 시작 비중은 스냅샷 비중을 가격 변화로 기간 시작 시점까지 옮긴 값입니다. 스냅샷이 가리키는 종가는 ETF 마다 다르므로(SPDR 은 하루 전, iShares·VanEck 등은 이틀 전, Roundhill 은 당일) 연속한 스냅샷의 비중 변화와 가격 변화가 가장 잘 맞는 날을 매번 골라 씁니다.
-- **기준**: USD, vs QQQ, vs SPY, 산업·테마 ETF 는 vs 상위 섹터까지 고릅니다. 상대 기준에서는 ETF 쪽과 벤치마크 쪽의 기여 목록을 나란히 놓고, 두 수익률의 차이를 머리에 적습니다. 기본은 산업·테마가 상위 섹터, 나머지가 SPY 입니다.
+- **기준**: USD, vs QQQ, vs SPY, 산업·테마 ETF 는 vs 상위 섹터까지 고릅니다. 고르는 토글은 위의 ETF 차트 블록에 있습니다. 상대 기준에서는 ETF 쪽과 벤치마크 쪽의 기여 목록을 나란히 놓고, 두 수익률의 차이를 머리에 적습니다. 기본은 산업·테마가 상위 섹터, 나머지가 SPY 입니다.
 - **나머지와 미설명분**: 나머지 = ETF 수익률 − 표에 있는 종목 기여의 합입니다. 표의 비중 합이 98% 이상이면(MAGS·DRAM) 다른 종목이 남지 않으므로 '미설명분'으로 적고 원인(현금·보수·시차·스왑)을 붙입니다.
 - **경고**: 상위 10 비중이 50% 미만이면 나머지가 결과를 좌우했다고 적습니다. 균등가중 ETF(XHB·KRE·XBI·XME)는 지금 상위 10에 기간 중 오른 종목이 많이 들어오므로, 기간 시작에 가장 가까운 스냅샷의 상위 10으로 다시 계산한 '기간 시작 구성'으로 바꿔 볼 수 있습니다.
 - **해외 종목**: 현지 종가를 같은 날 환율로 나눠 USD 로 바꾸고, 행 아래에 현지 수익률과 환율 수익률을 적습니다. 해외 종목은 미국 장보다 먼저 마감하므로 1D 에서는 행에 '시차'를 붙입니다.

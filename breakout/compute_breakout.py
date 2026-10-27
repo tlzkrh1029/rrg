@@ -15,8 +15,10 @@
                        h52 창 이전 52주 고점, ath 창 이전 사상 최고, rspy/rqqq [52주 고점, 최고] (비율),
                        cx 창 앞 PRE_MA(160)거래일 종가(종목 상세의 50 SMA·89 HMA·144 HMA 계산용; 상장이 짧으면 그만큼만),
                        ipo 상장일(90일 창을 다 못 채운 종목만; 앞을 첫 종가로 채웠다)
-  etfs[]               t ko cat tag name aum n top10 asof url rows[[key, w]] rows_all[[sym, name, w, key|null, note]] c(ETF 종가 90일|null)
+  etfs[]               t ko cat tag name aum n top10 asof url rows[[key, w]] rows_all[[sym, name, w, key|null, note]]
   listing              match_listing 결과
+  etfx                 ETF 패널 차트(fetch_etf_history.py 의 output/etf-chart-data.json 가운데 이 지도의 ETF 와 SPY·QQQ).
+                       종가 기준일이 이 계산과 다르거나 파일이 없으면 넣지 않는다(패널은 차트 없이 그린다)
   judge[mode][H][key]  [state, days, over|dist] 파이썬 판정(알림·브리핑용). 페이지의 JS 판정과 같은 규칙이다
   stats                breadth 와 블록별 켜진 칸 수 (알림용 요약)
 
@@ -141,6 +143,29 @@ def read_wide(path):
     return axis, data
 
 
+def load_etf_chart(path, dates, etfs):
+    """ETF 패널 차트 자료. 90일 창의 날짜가 이 계산과 같을 때만 쓰고, 이 지도의 ETF 와 비율의 분모(SPY·QQQ)만 남긴다.
+    지도의 자는 USD·QQQ 대비·SPY 대비 셋이라 상위 섹터 대비(par)는 뺀다."""
+    try:
+        c = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        print(f"ETF chart data not found ({os.path.relpath(path, ROOT)}): the ETF panel is built without the chart")
+        return None
+    if c.get("dates") != dates:
+        print(f"ETF chart data covers {c.get('first')} ~ {c.get('asof')}, not {dates[0]} ~ {dates[-1]}: the ETF panel is built without the chart")
+        return None
+    keep = {}
+    for t in ["SPY", "QQQ"] + etfs:
+        e = c.get("etfs", {}).get(t)
+        if not e:
+            continue
+        e = {k: v for k, v in e.items() if k != "par"}
+        if "lv" in e:
+            e["lv"] = {m: v for m, v in e["lv"].items() if m in MODES}
+        keep[t] = e
+    return {"asof": c["asof"], "etfs": keep}
+
+
 def level_pre(vals, pre):
     """창 이전 구간(vals: 오래된 순)의 최고값. pre 가 비었으면 None."""
     return max(pre) if pre else None
@@ -155,6 +180,7 @@ def main():
     ap.add_argument("--holdings", default=os.path.join(ROOT, "output", "holdings"))
     ap.add_argument("--meta", default=os.path.join(ROOT, "data", "etf_meta.json"))
     ap.add_argument("--lists", default=None, help="tradfi-ticker-lists 의 output 폴더")
+    ap.add_argument("--etf-chart", default=os.path.join(ROOT, "output", "etf-chart-data.json"), help="ETF 패널 차트 자료(fetch_etf_history.py)")
     ap.add_argument("--out", default=os.path.join(ROOT, "output", "breakout-data.json"))
     args = ap.parse_args()
 
@@ -250,15 +276,11 @@ def main():
                 rows_all.append([sym, name, f"{wv:.2f}%", key, ""])
             else:
                 rows_all.append([sym, name, f"{wv:.2f}%", None, "nodata"])
-        ec = [etfp[t].get(d) for d in dates] if t in etfp else None
-        if ec and any(v is None for v in ec):
-            ec = None
         asof_long = dt.date.fromisoformat(hold_date).strftime("%b %-d, %Y")
         out_etfs.append({"t": t, "ko": m.get("ko", t), "cat": m.get("cat", "ind"), "tag": m.get("tag", "산업"),
                          "name": m["name"], "aum": m["aum"], "n": m["n"],
                          "top10": f"{sum(float(w) for _k, _s, _n, w in rows_of[t] if w not in ('', None)):.2f}%",
-                         "asof": asof_long, "url": m["url"], "rows": rows, "rows_all": rows_all,
-                         "c": [round(v, 4) for v in ec] if ec else None})
+                         "asof": asof_long, "url": m["url"], "rows": rows, "rows_all": rows_all})
 
     # 판정(알림·브리핑용) 과 요약
     spy, qqq = spy_full[i0:], qqq_full[i0:]
@@ -304,6 +326,9 @@ def main():
         "spyx": [round(v, 2) for v in spy_full[max(0, i0 - PRE_MA):i0]], "qqqx": [round(v, 2) for v in qqq_full[max(0, i0 - PRE_MA):i0]],
         "stocks": stocks, "etfs": out_etfs, "listing": listing, "judge": jd, "stats": stats,
     }
+    etfx = load_etf_chart(args.etf_chart, dates, [e["t"] for e in out_etfs])
+    if etfx:
+        out["etfx"] = etfx
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, separators=(",", ":"))

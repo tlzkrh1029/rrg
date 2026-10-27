@@ -262,12 +262,8 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .side .chips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px;font-size:11px}
 .side .chips span{padding:0 6px;line-height:1.7;font-weight:600}
 .side .chips .on{background:var(--amber);color:#000} .side .chips .ex{background:var(--down);color:#000} .side .chips .no{background:var(--hair-2);color:var(--muted)}
-.side .sp{display:grid;grid-template-columns:76px 1fr;align-items:center;gap:8px;margin:4px 0;font-size:11.5px;color:var(--ink-2)}
-.side .sp svg{display:block;width:100%;height:28px;overflow:visible}
-.side .sp .ma{fill:none;stroke:var(--amber);stroke-width:1;stroke-dasharray:2 2.5;opacity:.85}
-.side .sp .ln{fill:none;stroke:#fff;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
-.side .sp .dt{stroke:#000;stroke-width:1.2} .side .sp .dt.u{fill:var(--up)} .side .sp .dt.d{fill:var(--down)}
-.side .sp .rg{fill:none;stroke-width:1.1;opacity:.7} .side .sp .rg.u{stroke:var(--up)} .side .sp .rg.d{stroke:var(--down)}
+.side .etfchart{display:grid;gap:7px;border-top:1px solid var(--hair);padding-top:8px;margin-top:6px}
+.side .etfchart td.k small{color:var(--muted);font-size:10px;margin-left:4px}
 .side table.ht{border-collapse:collapse;width:100%;font-size:11.5px;margin-top:6px;table-layout:fixed}
 .side .ht th{text-align:left;color:var(--amber);font-weight:600;font-size:10.5px;padding:4px 4px 4px 0;border-bottom:1px solid var(--hair);letter-spacing:.04em;white-space:nowrap}
 .side .ht th.r,.side .ht td.r{text-align:right}
@@ -429,7 +425,7 @@ kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);borde
   </div>
 
   <div class="notes">
-    <p><span class="lab">데이터</span>칸의 종목과 비중은 stockanalysis.com 의 ETF 구성종목 표(__HOLD_ASOF__ 스냅샷, DRAM·MAGS 는 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 값)이고, 가격은 __PRICE_SOURCE__ 조정 종가입니다. 칸의 선은 SPY 거래일 축의 마지막 __PRICE_DAYS__거래일(__PRICE_FIRST__ ~ __PRICE_ASOF__)이며, 판정은 그중 마지막 30일에 대해 내립니다. 52주 고점은 그 앞 2년 종가에서, 사상 최고는 전체 이력(Yahoo range=max, 월 1회 갱신하는 캐시)에서 잡았습니다. QQQ·SPY 대비 탭은 같은 날의 종가 비율에 같은 판정을 적용하되, 비율의 사상 최고는 2년 창 안의 최고 비율입니다. 미국 밖 상장 종목(KRX, TWSE, TSE, TSX, LON 등)은 현지 거래소 종가를 현지 통화 그대로 쓰고 미국 휴장일이 아닌 현지 휴일에는 직전 종가를 두었으며, 칸에는 거래소 접두어를 빼고 종목코드만 적었습니다. 같은 종목이 여러 ETF 에 들어 있으면(NVDA 는 XLK 와 SMH) 두 블록에 모두 나타나며 같은 가격을 씁니다. 가격을 받지 못했거나 상장한 지 45거래일이 안 된 종목은 칸 없이 구성종목 패널의 표에만 남고, 90일 창을 다 채우지 못한 신규 상장 종목은 상장 전 구간을 첫 종가로 채우고 패널에 상장일을 적습니다. 매일 아침(화~토, 한국 시간) GitHub Actions 가 직전 종가로 다시 만들며, 빌드 시각은 <b>__BUILT_AT__</b> 입니다. 저장소 <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">tlzkrh1029/rrg</a> 의 breakout/ 폴더가 이 화면의 코드이고, 판정 규칙은 아래와 같습니다.</p>
+    <p><span class="lab">데이터</span>칸의 종목과 비중은 stockanalysis.com 의 ETF 구성종목 표(__HOLD_ASOF__ 스냅샷, DRAM·MAGS 는 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 값)이고, 가격은 __PRICE_SOURCE__ 조정 종가입니다. 칸의 선은 SPY 거래일 축의 마지막 __PRICE_DAYS__거래일(__PRICE_FIRST__ ~ __PRICE_ASOF__)이며, 판정은 그중 마지막 30일에 대해 내립니다. 52주 고점은 그 앞 2년 종가에서, 사상 최고는 전체 이력(Yahoo range=max, 월 1회 갱신하는 캐시)에서 잡았습니다. QQQ·SPY 대비 탭은 같은 날의 종가 비율에 같은 판정을 적용하되, 비율의 사상 최고는 2년 창 안의 최고 비율입니다. ETF 이름을 눌러 여는 ETF 패널의 차트는 ETF 자체의 종가에 같은 판정을 적용한 것이고, 그 사상 최고는 USD·비율 모두 전체 이력(월 1회 갱신)에서 잡았습니다. 미국 밖 상장 종목(KRX, TWSE, TSE, TSX, LON 등)은 현지 거래소 종가를 현지 통화 그대로 쓰고 미국 휴장일이 아닌 현지 휴일에는 직전 종가를 두었으며, 칸에는 거래소 접두어를 빼고 종목코드만 적었습니다. 같은 종목이 여러 ETF 에 들어 있으면(NVDA 는 XLK 와 SMH) 두 블록에 모두 나타나며 같은 가격을 씁니다. 가격을 받지 못했거나 상장한 지 45거래일이 안 된 종목은 칸 없이 구성종목 패널의 표에만 남고, 90일 창을 다 채우지 못한 신규 상장 종목은 상장 전 구간을 첫 종가로 채우고 패널에 상장일을 적습니다. 매일 아침(화~토, 한국 시간) GitHub Actions 가 직전 종가로 다시 만들며, 빌드 시각은 <b>__BUILT_AT__</b> 입니다. 저장소 <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">tlzkrh1029/rrg</a> 의 breakout/ 폴더가 이 화면의 코드이고, 판정 규칙은 아래와 같습니다.</p>
     <div class="defs">
       <span class="lab">판정 정의</span>
       <dl>
@@ -797,18 +793,19 @@ function renderTables() {
 }
 
 /* ---- 상세: 툴팁과 오른쪽 패널 ---- */
-function horizonRows(k) {
-  const c = series[k][state.mode].c, n = c.length;
+/* 지평 표: jf(H) 가 지평 H 의 판정을 돌려준다. athK 를 주면 '사상 최고' 이름 칸을 그것으로 바꾼다 */
+function hzRows(jf, athK) {
   return HS.map(H => {
-    const r = J(k, state.mode, H);
-    if (r.st === 'lit') return `<tr><td class="k">${HLAB[H]}</td><td class="v on">돌파 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'down') return `<tr><td class="k">${HLAB[H]}</td><td class="v dn">이탈 ${r.days}일째 · 바닥 ${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'failed') return `<tr><td class="k">${HLAB[H]}</td><td class="v dn">실패 · 돌파 후 ${r.days}일, Shelf ${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'quiet') return `<tr><td class="k">${HLAB[H]}</td><td class="v">유지 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'near') return `<tr><td class="k">${HLAB[H]}</td><td class="v nr">직전 · 고점까지 ${(r.dist * 100).toFixed(1)}%</td></tr>`;
-    return `<tr><td class="k">${HLAB[H]}</td><td class="v" style="color:var(--muted)">${r.dist == null ? '–' : r.dist <= 0.001 ? '고점 부근' : '고점까지 ' + (r.dist * 100).toFixed(1) + '%'}</td></tr>`;
+    const r = jf(H), lab = H === 'ath' && athK ? athK : HLAB[H];
+    if (r.st === 'lit') return `<tr><td class="k">${lab}</td><td class="v on">돌파 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'down') return `<tr><td class="k">${lab}</td><td class="v dn">이탈 ${r.days}일째 · 바닥 ${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'failed') return `<tr><td class="k">${lab}</td><td class="v dn">실패 · 돌파 후 ${r.days}일, Shelf ${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'quiet') return `<tr><td class="k">${lab}</td><td class="v">유지 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
+    if (r.st === 'near') return `<tr><td class="k">${lab}</td><td class="v nr">직전 · 고점까지 ${(r.dist * 100).toFixed(1)}%</td></tr>`;
+    return `<tr><td class="k">${lab}</td><td class="v" style="color:var(--muted)">${r.dist == null ? '–' : r.dist <= 0.001 ? '고점 부근' : '고점까지 ' + (r.dist * 100).toFixed(1) + '%'}</td></tr>`;
   }).join('');
 }
+function horizonRows(k) { return hzRows(H => J(k, state.mode, H)); }
 function weightBars(k, etf) {
   const mem = etfsOf[k].map(t => ({ t, ...weightOf[k + '|' + t] })).sort((a, b) => b.w - a.w), scale = Math.max(25, ...mem.map(m => m.w));
   return mem.map(m => `<div class="wb${m.t === etf ? ' cur' : ''}"><span class="wl" data-goetf="${m.t}" title="${m.t} 블록 보기">${m.t}</span><span class="wt"><i style="width:${(m.w / scale * 100).toFixed(1)}%"></i></span><span class="wv"><b>${m.w.toFixed(2)}%</b> · ${m.rank}위</span></div>`).join('');
@@ -840,9 +837,9 @@ function chartLabels(labels, x, yMax) {
   if (over > 0) labels.forEach(l => { l.y -= over; });
   return labels.map(l => `<text class="lv" x="${x}" y="${(l.y + 3).toFixed(1)}">${l.t}</text>`).join('');
 }
-function bigChart(k) {
-  const s = series[k][state.mode], c = s.c, n = c.length, Wd = 300, Hd = 120, L = 4, R = 62, T = 8, B = 14;   // 오른쪽 라벨 칸 62: 라벨이 잘리지 않는 폭
-  const r = J(k, state.mode, state.H);
+/* 90일 차트: s = {c, h52} 시계열, ma 이동평균, r 지금 지평의 판정, cid clipPath 이름. 종목 상세와 ETF 패널이 함께 쓴다 */
+function chartSVG(s, ma, r, cid) {
+  const c = s.c, n = c.length, Wd = 300, Hd = 120, L = 4, R = 62, T = 8, B = 14;   // 오른쪽 라벨 칸 62: 라벨이 잘리지 않는 폭
   let lo = Math.min(...c), hi = Math.max(...c);
   const h52 = s.h52; if (h52 <= hi * 1.12) hi = Math.max(hi, h52);
   const pad = (hi - lo) * 0.06; lo -= pad; hi += pad;
@@ -854,7 +851,7 @@ function bigChart(k) {
   [0, n - W, n - 1].forEach(i => { const d = DATA.dates[i] || ''; out += `<text x="${xs(i).toFixed(1)}" y="${Hd - 3}" text-anchor="${i === n - 1 ? 'end' : i === 0 ? 'start' : 'middle'}">${i === n - W ? '−30일 ' + d.slice(5) : d.slice(5)}</text>`; });
   if (r.lvl != null && r.lvl >= lo && r.lvl <= hi) {
     const yl = ys(r.lvl).toFixed(1), i0 = r.le, poly = c.slice(i0).map((v, i) => `${xs(i0 + i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
-    if (r.st === 'lit' || r.st === 'down') out += `<clipPath id="bc"><rect x="0" y="${r.st === 'lit' ? 0 : yl}" width="${Wd}" height="${r.st === 'lit' ? yl : Hd}"/></clipPath><polygon class="${r.st === 'lit' ? 'fl' : 'fd'}" clip-path="url(#bc)" points="${poly} ${xs(n - 1).toFixed(1)},${yl} ${xs(i0).toFixed(1)},${yl}"/>`;
+    if (r.st === 'lit' || r.st === 'down') out += `<clipPath id="${cid}"><rect x="0" y="${r.st === 'lit' ? 0 : yl}" width="${Wd}" height="${r.st === 'lit' ? yl : Hd}"/></clipPath><polygon class="${r.st === 'lit' ? 'fl' : 'fd'}" clip-path="url(#${cid})" points="${poly} ${xs(n - 1).toFixed(1)},${yl} ${xs(i0).toFixed(1)},${yl}"/>`;
     out += `<line class="s20" x1="${L}" y1="${yl}" x2="${Wd - R}" y2="${yl}"/>`;
     labels.push({ y: +yl, t: `${r.st === 'down' ? '바닥' : 'Shelf'} ${HLAB[state.H]}` });
   } else if (r.ceiling != null && r.ceiling >= lo && r.ceiling <= hi) {
@@ -864,8 +861,8 @@ function bigChart(k) {
   if (h52 >= lo && h52 <= hi && state.H !== '52w' && state.H !== 'ath') { const y5 = ys(h52).toFixed(1); out += `<line class="s52" x1="${L}" y1="${y5}" x2="${Wd - R}" y2="${y5}"/>`; labels.push({ y: +y5, t: '52주 고점' }); }
   out += chartLabels(labels, Wd - R + 4, Hd - B - 4);
   /* 이동평균: 눈금을 바꾸지 않고, 그림 영역 밖은 잘라 낸다. 마지막 값이 눈금 밖이면 가장자리에 현재가 대비 거리를 적는다 */
-  const ma = maOf(k, state.mode), P = a => a.map((v, i) => v == null ? null : `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).filter(Boolean).join(' ');
-  out += `<clipPath id="bcm"><rect x="${L}" y="${T - 2}" width="${Wd - L - R}" height="${Hd - T - B + 2}"/></clipPath><g clip-path="url(#bcm)"><polyline class="ma144" points="${P(ma.hma144)}"/><polyline class="ma89" points="${P(ma.hma89)}"/><polyline class="ma50" points="${P(ma.sma50)}"/></g>`;
+  const P = a => a.map((v, i) => v == null ? null : `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).filter(Boolean).join(' ');
+  out += `<clipPath id="${cid}m"><rect x="${L}" y="${T - 2}" width="${Wd - L - R}" height="${Hd - T - B + 2}"/></clipPath><g clip-path="url(#${cid}m)"><polyline class="ma144" points="${P(ma.hma144)}"/><polyline class="ma89" points="${P(ma.hma89)}"/><polyline class="ma50" points="${P(ma.sma50)}"/></g>`;
   const last = c[n - 1];
   [['sma50', 'o', '50 SMA'], ['hma89', 'y', '89 HMA'], ['hma144', 'b', '144 HMA']].forEach(([key, cls, lab], j) => {
     const v = ma[key][n - 1]; if (v == null) return;
@@ -876,34 +873,42 @@ function bigChart(k) {
   out += `<polyline class="l" points="${pts}"/>`;
   return out + '</svg>';
 }
-function maLegend(k) {
-  const ma = maOf(k, state.mode), n = series[k][state.mode].c.length, fmt = v => state.mode === 'usd' ? (v >= 1000 ? v.toFixed(0) : v.toFixed(2)) : v.toFixed(4);
+function bigChart(k) { return chartSVG(series[k][state.mode], maOf(k, state.mode), J(k, state.mode, state.H), 'bc'); }
+function legendHTML(ma, n) {
+  const fmt = v => state.mode === 'usd' ? (v >= 1000 ? v.toFixed(0) : v.toFixed(2)) : v.toFixed(4);
   const sw = cls => `<svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" class="${cls}"/></svg>`;
   const item = (cls, lab, key) => { const v = ma[key][n - 1]; return `<span>${sw(cls)}<b>${lab}</b> ${v == null ? '<i>이력 부족</i>' : fmt(v)}</span>`; };
   return `<div class="lgd">${item('ma50', '50 SMA', 'sma50')}${item('ma89', '89 HMA', 'hma89')}${item('ma144', '144 HMA', 'hma144')}</div>`;
 }
-/* ---- ETF 시계열: ETF 자체 종가(e.c)가 있으면 그것을, 없으면 구성 상위 종목의 비중 가중 평균(각 종목을 첫날=1로 정규화) ---- */
-const etfCache = {};
-function etfSeries(t, mode) {
-  const key = t + '|' + mode; if (etfCache[key]) return etfCache[key];
-  const e = DATA.etfs.find(x => x.t === t), n = DATA.spy.length, out = new Array(n).fill(0);
-  if (e.c && e.c.length === n) { for (let i = 0; i < n; i++) out[i] = e.c[i] / e.c[0]; }
-  else {
-    let wsum = 0;
-    e.rows.forEach(([k, w]) => { const wv = parseFloat(w) || 1, c = DATA.stocks[k].c; wsum += wv; for (let i = 0; i < n; i++) out[i] += wv * c[i] / c[0]; });
-    for (let i = 0; i < n; i++) out[i] /= wsum || 1;
-  }
-  if (mode !== 'usd') { const b = mode === 'spy' ? DATA.spy : DATA.qqq; for (let i = 0; i < n; i++) out[i] = out[i] / (b[i] / b[0]); }
-  return (etfCache[key] = out);
+function maLegend(k) { return legendHTML(maOf(k, state.mode), series[k][state.mode].c.length); }
+/* ---- ETF 차트(ETF 패널): fetch_etf_history.py 가 만든 ETF 자체의 90일 종가(c)·창 앞 종가(cx)·52주 고점·사상 최고.
+   사상 최고는 USD·비율 모두 전체 이력(Yahoo range=max, 월 1회 갱신)에서 잡았다(종목 칸의 비율 사상 최고는 2년 창 안). 자는 지도 전체의 자를 따른다 ---- */
+const ETFX = DATA.etfx || null;
+const eCache = {};
+function etfChartSeries(t, mode) {
+  const key = t + '|' + mode; if (key in eCache) return eCache[key];
+  const E = ETFX && ETFX.etfs, X = E && E[t], B = mode === 'usd' ? null : (E && E[mode.toUpperCase()]);
+  if (!X || !X.lv || !X.lv[mode] || (mode !== 'usd' && !B)) return (eCache[key] = null);
+  const c = B ? X.c.map((v, i) => v / B.c[i]) : X.c;
+  const n = X.cx.length, pre = B ? X.cx.map((v, i) => { const d = B.cx[B.cx.length - n + i]; return d ? v / d : null; }) : X.cx.slice();
+  const full = pre.concat(c), cut = a => a.slice(n);
+  const [h52, ath, from, athd] = X.lv[mode];
+  return (eCache[key] = { c, h52, ath, from, athd, ma: { sma50: cut(sma(full, 50)), hma89: cut(hma(full, 89)), hma144: cut(hma(full, 144)) } });
 }
-function miniSpark(vals) {   // 매트릭스의 비율선과 같은 문법: 흰 선, 호박 점선 이동평균, 끝점 색은 이동평균 위(초록)·아래(빨강)
-  const w = 200, h = 28, n = vals.length, mn = Math.min(...vals), mx = Math.max(...vals), rng = (mx - mn) || 1;
-  const xs = i => 2 + i * (w - 4) / (n - 1), ys = v => h - 3 - (v - mn) / rng * (h - 6);
-  const ma = vals.map((_, i) => { const a = vals.slice(Math.max(0, i - 19), i + 1); return a.reduce((s, x) => s + x, 0) / a.length; });
-  const d = vals.map((v, i) => v - ma[i]), last = d[n - 1], above = last >= 0, fresh = d.slice(n - 6, n - 1).some(x => (x >= 0) !== above);
-  const P = a => a.map((v, i) => `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
-  const ex = xs(n - 1).toFixed(1), ey = ys(vals[n - 1]).toFixed(1), c = above ? 'u' : 'd';
-  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><polyline class="ma" points="${P(ma)}" vector-effect="non-scaling-stroke"/><polyline class="ln" points="${P(vals)}" vector-effect="non-scaling-stroke"/>${fresh ? `<circle class="rg ${c}" cx="${ex}" cy="${ey}" r="5"/>` : ''}<circle class="dt ${c}" cx="${ex}" cy="${ey}" r="2.6"/></svg>`;
+function etfChartHTML(t) {
+  const m = state.mode, s = etfChartSeries(t, m);
+  const tog = ['usd', 'qqq', 'spy'].map(x => `<button type="button" data-tog="${x}" aria-pressed="${m === x}">${x === 'usd' ? 'USD' : 'vs ' + x.toUpperCase()}</button>`).join('');
+  const head = `<div class="ttlrow"><span>${t} · 90일 · ${MLAB[m]}</span><span class="tog" role="group" aria-label="차트와 지도의 자">${tog}</span></div>`;
+  if (!s) return `<div class="etfchart">${head}<div class="st" style="margin-top:0">이번 빌드에는 ${t} 차트 자료가 없습니다.</div></div>`;
+  const X = ETFX.etfs[t], c = s.c, n = c.length, ch = { d: c[n - 1] / c[n - 2] - 1, w: c[n - 1] / c[n - 6] - 1, m: c[n - 1] / c[n - W] - 1 };
+  const dd = v => `<dd class="${v >= 0 ? 'on' : 'dn'}">${pct1(v)}%</dd>`;
+  const lv = v => m === 'usd' ? v.toFixed(2) : v.toFixed(4);
+  const athK = `<span title="사상 최고 수준 ${lv(s.ath)} (${s.athd}) · ${s.from}부터의 이력에서 찾았습니다(월 1회 갱신)">사상 최고<small>${s.from.slice(0, 4)}~</small></span>`;
+  const stale = X.stale ? ` <span style="color:var(--muted)">· 마지막 종가 ${X.stale}</span>` : '';
+  return `<div class="etfchart">${head}`
+    + `<dl><dt>${MSHORT[m]} 일간</dt>${dd(ch.d)}<dt>${MSHORT[m]} 주간</dt>${dd(ch.w)}<dt>${MSHORT[m]} 30일</dt>${dd(ch.m)}<dt>종가</dt><dd>${ETFX.asof} · ${t} ${X.c[n - 1].toFixed(2)}${stale}</dd></dl>`
+    + `<div class="big">${chartSVG(s, s.ma, judge(c, state.H, s.h52, s.ath), 'ec')}</div>${legendHTML(s.ma, n)}`
+    + `<table>${hzRows(H => judge(c, H, s.h52, s.ath), athK)}</table></div>`;
 }
 function stateTag(k, etf) {
   const r = J(k, state.mode, state.H);
@@ -921,7 +926,6 @@ function etfPanelHTML(t) {
   const labels = HS.map(H => `<span>${HLAB[H]}</span>`).join('');
   const alarm = s.ratio >= 0.5, downOn = s.dratio >= 0.5, exh = s.fratio >= 0.3;
   const chips = `<span class="${alarm ? 'on' : 'no'}">알림 ${alarm ? '켜짐' : '꺼짐'}</span><span class="${downOn ? 'ex' : 'no'}">이탈 ${downOn ? '주의' : '없음'}</span><span class="${exh ? 'ex' : 'no'}">실패 ${exh ? '몰림' : '없음'}</span>`;
-  const spy = etfSeries(t, 'spy').slice(-60), qqq = etfSeries(t, 'qqq').slice(-60);
   let lb = 0, lp = 0, lh = 0, ln = 0;
   e.rows_all.forEach(([sym, , , k]) => { const f = k ? lstOf(k) : (LISTING.swaps[sym] || null); if (!f) return; ln++; if (f.b.length) lb++; if (f.p.length) lp++; if (f.h.length) lh++; });
   const lstLine = `<div class="lst"><span style="color:var(--muted)">상장 (상위 ${e.rows_all.length})</span>${dotsHTML({ b: ['x'], p: [], h: [] }, 'sm')} ${lb} · ${dotsHTML({ b: [], p: ['x'], h: [] }, 'sm')} ${lp} · ${dotsHTML({ b: [], p: [], h: ['x'] }, 'sm')} ${lh} 행 · 확인 ${LST_ASOF.slice(0, 10)}</div>`;
@@ -938,15 +942,14 @@ function etfPanelHTML(t) {
     <div class="tk">${e.t}${dotsHTML(LISTING.etfs[e.t], 'lg')}<small>US EQUITY</small></div>
     <div class="nm">${e.name}</div>
     <div class="ko">${e.ko} · ${e.tag} ETF</div>
+    ${etfChartHTML(t)}
     <dl class="kv"><dt>순자산</dt><dd>${e.aum}</dd><dt>보유 종목</dt><dd>${e.n}개</dd><dt>상위 10개 비중</dt><dd>${e.top10}</dd><dt>기준일</dt><dd>${e.asof}</dd><dt>출처</dt><dd><a href="${e.url}" target="_blank" rel="noopener">stockanalysis.com</a></dd></dl>
     ${lstLine}
     <div class="wlab">돌파 폭 · 지평별 켜진 칸 (${MLAB[state.mode]})</div>
     <div class="hs">${strip}</div><div class="hl">${labels}</div>
     <div class="chips">${chips}</div>
-    <div class="sp"><span>vs SPY 12W</span>${miniSpark(spy)}</div>
-    <div class="sp"><span>vs QQQ 12W</span>${miniSpark(qqq)}</div>
     <table class="ht"><colgroup><col style="width:20px"><col style="width:84px"><col><col style="width:66px"><col style="width:46px"></colgroup><thead><tr><th>#</th><th>티커</th><th>종목명</th><th class="r">비중</th><th class="r">상태</th></tr></thead><tbody>${rows}</tbody></table>
-    <div class="st">${e.c ? 'vs SPY·vs QQQ 는 ETF 종가를 지수로 나눈 12주 비율선(호박 점선은 20일 이동평균)입니다.' : '이 ETF 의 종가가 아직 없어 비율선은 상위 구성종목의 비중 가중 평균으로 그렸습니다.'} 종가 ${PRICE_ASOF} · 구성종목 ${e.asof}.</div>`;
+    <div class="st">차트의 자(USD·vs QQQ·vs SPY)는 지도 전체의 자와 함께 바뀝니다.</div>`;
 }
 function renderSide() {
   const side = document.getElementById('side');
@@ -955,6 +958,7 @@ function renderSide() {
     document.getElementById('prevB').addEventListener('click', () => stepBlock(-1));
     document.getElementById('nextB').addEventListener('click', () => stepBlock(1));
     side.querySelectorAll('tr.rowk').forEach(tr => tr.addEventListener('click', () => pick(tr.dataset.k, state.selBlock, true)));
+    side.querySelectorAll('[data-tog]').forEach(b => b.addEventListener('click', () => setMode(b.dataset.tog)));   /* 위의 1·2·3 탭과 같은 동작 */
     return;
   }
   if (!state.picked || !series[state.picked.k]) {

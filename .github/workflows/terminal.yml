@@ -75,6 +75,17 @@ jobs:
           if [ "$rc" = "1" ]; then echo "::error::price fetch failed"; exit 1; fi
           if [ "$rc" = "2" ]; then echo "::warning::some holdings pages failed; see output/prices_summary.json"; fi
 
+      # ETF 차트: 매트릭스의 Holdings 패널과 돌파 지도의 ETF 패널이 함께 쓰는 90일 종가와 52주·사상 최고 수준(output/etf-chart-data.json).
+      # 사상 최고는 ETF 마다 전체 이력(Yahoo range=max)을 월 1회 받아 둔 캐시(output/etf_ath.json)로 잡는다. 실패해도 다음 단계는 그대로 간다
+      # (받지 못한 ETF 는 이전 캐시나 2년 가격 파일로 그리고, 파일 자체가 없으면 두 화면 모두 차트 없이 만든다).
+      - name: ETF 차트 자료 (사상 최고 캐시)
+        run: |
+          set +e
+          python fetch_etf_history.py
+          rc=$?
+          if [ "$rc" != "0" ]; then echo "::warning::ETF chart data incomplete (exit $rc); see output/etf_ath.json and this step's log"; fi
+          exit 0
+
       # 돌파 지도: 28 ETF 의 상위 10개 구성종목(약 240 종목) 일봉을 Yahoo 에서 받는다. 처음 보는 종목은 전체 이력도 한 번 받는다(사상 최고 캐시).
       # 터미널보다 먼저 받고 계산하는 이유: 터미널의 종목 상세가 같은 날의 종목 가격(output/breakout-data.json)을 끼워 넣기 때문이다.
       - name: 구성종목 가격 수집 (돌파 지도)
