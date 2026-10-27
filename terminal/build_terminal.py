@@ -36,8 +36,9 @@ PAGE_URL = "https://tlzkrh1029.github.io/rrg/#board"   # #board 는 대문을 �
 BREAKOUT_PAGE = "breakout/"
 BREAKOUT_ARTIFACT = "https://claude.ai/artifact/AMAB2TMoSxwXPuLPWjtjGB"
 # TradingView 뉴스 위젯(종목을 열면 불러옴)을 Pages 본문에 넣을지. 아티팩트는 외부 스크립트를 쓸 수 없어 늘 끈다.
-# 위젯을 빼기로 하면 이 값만 False 로 바꾸면 된다(헤드라인 목록과 TradingView 링크는 그대로 남는다).
-TV_WIDGET_PAGES = True
+# 2026-10-28 Pages 에서 확인해 보니 위젯이 2024년 기사 같은 오래된 기사를 띄우고 기사 열기도 될 때와 안 될 때가 있어서 껐다.
+# 다시 켜려면 이 값만 True 로 바꾸면 된다(헤드라인 목록과 TradingView 링크는 어느 쪽이든 그대로 남는다).
+TV_WIDGET_PAGES = False
 
 KO = {"XLK": "기술", "XLF": "금융", "XLV": "헬스케어", "XLY": "경기소비재", "XLC": "커뮤니케이션", "XLI": "산업재",
       "XLP": "필수소비재", "XLE": "에너지", "XLU": "유틸리티", "XLB": "소재", "XLRE": "부동산",

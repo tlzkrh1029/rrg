@@ -259,7 +259,7 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .eb{display:grid;gap:7px;font-size:11.5px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:8px}
 .eb .hz td.k small{color:var(--muted);font-size:9.5px;margin-left:4px}
 .eb .note{margin:0;font-size:10.5px;color:var(--muted)}
-/* 기여도 블록: Holdings 패널에서 구성종목 표 위에 놓인다. 계산은 terminal/compute_contrib.py */
+/* 기여도 블록: Holdings 패널에서 구성종목 표 아래에 놓인다. 계산은 terminal/compute_contrib.py */
 .cb{display:grid;gap:6px;font-size:11.5px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:8px}
 .cb .ttlrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:10.5px;letter-spacing:.06em;color:var(--amber);text-transform:uppercase;font-weight:700}
 .cb .tog{display:flex;letter-spacing:0;text-transform:none;font-weight:400}
@@ -921,7 +921,7 @@ body.cover-open{overflow:hidden}
           <h3>7. Holdings 패널: ETF 차트 · 기여도 · 뉴스와 실적</h3>
           <p><b style="color:var(--amber)">ETF 차트.</b> 패널 맨 위에는 고른 ETF 의 90일 차트가 항상 펼쳐져 있습니다. 일간·주간·30일 변동률, 50 SMA · 89 HMA · 144 HMA, 20일 Shelf 와 천장, 52주 고점, 그리고 20일·55일·52주·사상 최고 네 지평의 돌파 상태를 종목 상세와 같은 규칙으로 보여 줍니다. 사상 최고는 ETF 의 전체 이력에서 찾으며, 이력은 한 달에 한 번 다시 받습니다. 제목줄의 USD · vs QQQ · vs SPY 단추(산업·테마 ETF 는 상위 섹터 대비 단추도 있음)는 차트와 아래 기여도의 기준을 함께 바꿉니다.</p>
           <p><b style="color:var(--amber)">기여도.</b> 구성종목이 ETF 수익률에 얼마나 보탰는지를 기간 시작 비중 × 기간 수익률(USD)로 계산합니다. 1D · 1W · 1M 가운데 기간을 고르고, 기준이 USD 가 아니면 비교 대상(SPY, QQQ, 상위 섹터)의 기여도를 옆에 함께 놓아 차이가 어느 종목에서 났는지 보여 줍니다. 상위 10개 밖의 몫은 '나머지'로 적고, 표의 비중 합이 98% 이상인 ETF 는 남는 차이를 '미설명분'(현금·보수·시차·스왑)으로 적습니다. 해외 종목은 환율을 반영해 USD 로 환산하고, 1D 에서는 장 마감 시각이 다른 종목에 '시차' 표시를 붙입니다. 그 아래 표는 상승 종목 수, 합계와 같은 방향으로 움직인 기여 가운데 상위 1개·3개 종목이 차지한 몫, 나머지 평균, 최대 상승일과 하락일을 비교하고, 히트맵은 최근 8주의 주간 기여를 보여 줍니다. 4) 주간 브리핑 탭의 Drivers 패널은 보드 전체에서 ETF 를 가장 많이 움직인 종목을 모읍니다.</p>
-          <p><b style="color:var(--amber)">뉴스와 실적.</b> 창 폭이 1,860px 이상이면 매트릭스 오른쪽에 뉴스 칼럼이 생기고, 그보다 좁으면 같은 내용이 Holdings 패널 안(차트 아래와 종목 상세 안)에 들어갑니다. ETF 를 고르면 상위 10개 종목의 최근 7일 헤드라인(Finnhub), 최근 실적과 다가오는 실적 일정, 기여도와 실적 일정으로 만든 '왜 움직였나' 요약 문장이 나옵니다. 종목 행을 펼치면 그 종목의 헤드라인과 TradingView 뉴스 링크(Key facts · Top news · Latest)가 나오고, Pages 에서는 TradingView 뉴스 위젯도 함께 나옵니다. 실적은 SEC EDGAR 의 8-K 공시(Item 2.02)로 확인해 구성종목 표의 배지, 차트의 점선, 종목 상세의 '최근 실적' 줄로 표시합니다. 아티팩트에서는 Claude 예약 작업이 웹 검색으로 찾은 이유 문장이 요약 상자에 더해질 수 있습니다.</p>
+          <p><b style="color:var(--amber)">뉴스와 실적.</b> 창 폭이 1,860px 이상이면 매트릭스 오른쪽에 뉴스 칼럼이 생기고, 그보다 좁으면 같은 내용이 Holdings 패널 안(차트 아래와 종목 상세 안)에 들어갑니다. ETF 를 고르면 상위 10개 종목의 최근 7일 헤드라인(Finnhub), 최근 실적과 다가오는 실적 일정, 기여도와 실적 일정으로 만든 '왜 움직였나' 요약 문장이 나옵니다. 종목 행을 펼치면 그 종목의 헤드라인과 TradingView 뉴스 링크(Key facts · Top news · Latest)가 나옵니다. 실적은 SEC EDGAR 의 8-K 공시(Item 2.02)로 확인해 구성종목 표의 배지, 차트의 점선, 종목 상세의 '최근 실적' 줄로 표시합니다. 아티팩트에서는 Claude 예약 작업이 웹 검색으로 찾은 이유 문장이 요약 상자에 더해질 수 있습니다.</p>
         </section>
         <section class="wide">
           <h3>8. 명령줄 사용법</h3>
@@ -1053,7 +1053,7 @@ const ETFX = __ETFX__;   /* Holdings 패널의 ETF 차트(fetch_etf_history.py):
 /* 5) 상장 로그(terminal/listing_log.py 가 쌓는 data/lists/log.json 을 build_terminal.py 가 줄인 것). 없으면 null */
 const LISTLOG = __LISTLOG__;
 const NEWS = __NEWS__;   /* 뉴스·실적(terminal/fetch_news.py → compute_news.py): 종목별 8-K 실적·다음 실적일·헤드라인, ETF 별 데이터 요약. 없으면 null */
-const TV_WIDGET = __TV_WIDGET__;   /* TradingView 뉴스 위젯: Pages 본문만 true. 끄려면 terminal/build_terminal.py 의 TV_WIDGET_PAGES */
+const TV_WIDGET = __TV_WIDGET__;   /* TradingView 뉴스 위젯: terminal/build_terminal.py 의 TV_WIDGET_PAGES 가 켜져 있을 때 Pages 본문만 true(지금은 꺼 둠) */
 const LSTNAME = { b:'바이낸스 bStocks 현물', p:'바이낸스 perp', h:'하이퍼리퀴드 perp' };
 const lstLabel = s => s ? '상장: ' + [...s].map(k => LSTNAME[k]).join(' · ') + ` (${LIST_ASOF} 기준)` : '';
 const dots = s => s ? `<span class="dots" role="img" aria-label="${lstLabel(s)}" title="${lstLabel(s)}">${s.includes('b') ? '<i class="b">b</i>' : ''}${s.includes('p') ? '<i class="p"></i>' : ''}${s.includes('h') ? '<i class="h"></i>' : ''}</span>` : '';
@@ -1716,13 +1716,13 @@ function renderHold(t) {
     </div>
     ${etfChartHTML(e.t)}
     ${newsWide() ? '' : hnewsHTML(e.t)}
-    ${contribHTML(e.t)}
     <div class="h-wrap"><table class="h"><thead><tr><th>#</th><th>티커</th><th>종목명</th><th class="r">비중</th><th class="r"><abbr title="${h.prev} 스냅샷 대비 비중 변화(%p). NEW는 그때 상위 10개에 없던 종목">변동 %p</abbr></th></tr></thead><tbody>${rows}</tbody></table></div>
     <p class="hfn">${note ? note + ' ' : ''}${h.prevMissing
       ? (h.sourceChanged
         ? `${h.prev} 스냅샷과는 구성종목 출처가 달라(스왑·국채 행을 따로 적은 표 ↔ 스왑 노출을 합산한 표) 변동 %p와 진입·이탈을 비교하지 않았습니다. 다음 스냅샷부터 표시됩니다.`
         : `${h.prev} 스냅샷에는 이 ETF가 없어 변동 %p와 진입·이탈을 계산하지 않았습니다. 다음 스냅샷부터 표시됩니다.`)
-      : `${h.entered.length || h.left.length ? `상위 10개 진입: <b style="color:var(--ink-2)">${h.entered.join(', ') || '없음'}</b> · 이탈: <b style="color:var(--ink-2)">${h.left.join(', ') || '없음'}</b> (${h.prev} → ${h.asof}). ` : `${h.prev} 이후 상위 10개 구성에 변화가 없습니다. `}변동 %p는 두 스냅샷의 비중 차이입니다.`}</p>`;
+      : `${h.entered.length || h.left.length ? `상위 10개 진입: <b style="color:var(--ink-2)">${h.entered.join(', ') || '없음'}</b> · 이탈: <b style="color:var(--ink-2)">${h.left.join(', ') || '없음'}</b> (${h.prev} → ${h.asof}). ` : `${h.prev} 이후 상위 10개 구성에 변화가 없습니다. `}변동 %p는 두 스냅샷의 비중 차이입니다.`}</p>
+    ${contribHTML(e.t)}`;
   mountTV(document.getElementById('hbody'));
   renderNews();
 }
