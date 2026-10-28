@@ -11,6 +11,8 @@
   output/contrib-data.json         구성종목 기여도(terminal/compute_contrib.py). 종가 기준일이 이번 계산과 다르거나 없으면 기여도 블록과 주도 종목 없이 만든다.
   output/etf-chart-data.json       Holdings 패널의 ETF 차트(fetch_etf_history.py). 종가 기준일이 이번 계산과 다르거나 없으면 차트 없이 만든다.
   output/news-data.json            뉴스·실적(terminal/compute_news.py). 종가 기준일이 이번 계산과 다르거나 없으면 뉴스 칼럼과 실적 표시 없이 만든다.
+  output/claude-notes.json         Claude 가 웹 검색으로 쓴 ETF 이유 문장과 종목 4주 요약(terminal/claude_notes.py). 이번 종가 기준일의 이유 문장과
+                                   8일 안에 쓴 종목 요약만 페이지의 claudeNotes 자리에 넣고, 둘 다 없으면 null 로 둔다(아티팩트 예약 작업이 채울 수 있게).
   terminal/template.html           토큰이 든 HTML 템플릿
 
 출력 (docs/)
@@ -276,6 +278,22 @@ def drivers_lines(contrib):
     return ["주도 종목 (1W · 가장 크게 움직인 ETF 기여 %p)", "  ▲ " + part(d["up"], 1), "  ▼ " + part(d["dn"], -1), ""]
 
 
+def brief_html(brief):
+    """주간 브리핑 탭의 본문(<pre>). 텔레그램과 같은 글이고, '주도 종목' 묶음(머리줄과 들여 쓴 ▲·▼ 줄)만 강조용 span 으로 감싼다."""
+    lines, out, i = brief.split("\n"), [], 0
+    while i < len(lines):
+        if lines[i].startswith("주도 종목"):
+            j = i + 1
+            while j < len(lines) and lines[j].startswith("  "):
+                j += 1
+            out.append('<span class="drvhl">' + "\n".join(html_escape(x) for x in lines[i:j]) + "</span>")
+            i = j
+        else:
+            out.append(html_escape(lines[i]))
+            i += 1
+    return "\n".join(out)
+
+
 def make_brief(cur, hold, alerts, prev_asof, contrib=None):
     E = cur["etfs"]
     ph = phases(cur)
@@ -408,11 +426,66 @@ def load_news(path, asof):
     return n
 
 
+def load_claude(path, asof, keep_days=8):
+    """Claude 문장. ETF 이유 문장은 종가 기준일이 같을 때만, 종목 요약은 종가 기준일과 keep_days 일 안에 쓴 것만 남긴다. 없으면 None."""
+    try:
+        n = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    out = {"asof": asof, "at": None, "etfs": {}}
+    if n.get("asof") == asof and n.get("etfs"):
+        out.update({"at": n.get("at"), "etfs": n["etfs"]})
+    d0 = dt.date.fromisoformat(asof)
+    st = {}
+    for k, v in (n.get("stocks") or {}).items():
+        try:
+            age = (d0 - dt.date.fromisoformat(v.get("asof") or "")).days
+        except ValueError:
+            continue
+        if 0 <= age <= keep_days and v.get("text"):
+            st[k] = {x: v[x] for x in ("text", "src", "asof", "at") if x in v}
+    if st:
+        out["stocks"] = st
+    return out if (out["etfs"] or st) else None
+
+
 def hold_key(sym, ex):
     """구성종목 행 → 목록 대조 키. 상장 점과 같은 규칙(미국은 티커, 그 밖은 "거래소:코드", 홍콩 코드는 네 자리)."""
     key = f"{EXCH_MAP.get(ex, ex)}:{sym}" if ex else CODE_ALIAS.get(sym, sym.upper())
     m = re.match(r"^HKEX:(\d+)$", key)
     return f"HKEX:{m.group(1).zfill(4)}" if m else key
+
+
+def same_stock_marks(L):
+    """같은 거래소에 같은 종목(대조 키 lk)이 다른 심볼로 이미 있던 때의 사건을 찾는다. {id(사건): 다른 심볼 문자열}.
+
+    신규는 그 시점에 같은 lk 의 다른 심볼이 상장 중이었으면 '추가'(하이퍼리퀴드의 다른 dex, 바이낸스의 같은 종목 두 번째 계약),
+    이탈은 그 뒤에도 같은 lk 의 다른 심볼이 남아 있으면 '심볼 이탈'이다. 로그의 사건을 거래소별로 시간순으로 다시 걸으며 판단한다.
+    시각은 선물은 상장일(d), 나머지는 수집 시각(t1)을 쓰고, 같은 시각이면 신규를 먼저·심볼 이름순으로 본다.
+    사건이 하나도 없는 심볼(처음 반영할 때 이미 있던 것)과 첫 사건이 이탈인 심볼은 처음부터 상장 중이었던 것으로 본다.
+    """
+    out = {}
+    events, state = L.get("events", []), L.get("state", {})
+    for v in ("b", "p", "h"):
+        mine = sorted((e for e in events if e.get("v") == v),
+                      key=lambda e: (e["d"] if v == "p" else (e.get("t1") or ""), 0 if e["e"] == "add" else 1, e["s"]))
+        lk = {sym: info.get("lk") for sym, info in (state.get(v) or {}).items()}
+        first = {}
+        for e in mine:
+            lk.setdefault(e["s"], e.get("lk"))
+            first.setdefault(e["s"], e["e"])
+        present = {sym for sym in lk if first.get(sym, "del") == "del"}
+        for e in mine:
+            sym, key = e["s"], e.get("lk")
+            if e["e"] == "add":
+                others = sorted(o for o in present if o != sym and lk.get(o) == key)
+                present.add(sym)
+            else:
+                present.discard(sym)
+                others = sorted(o for o in present if lk.get(o) == key)
+            if key and others:
+                out[id(e)] = ", ".join(others)
+    return out
 
 
 def load_listing_log(path, hold, etfs):
@@ -432,13 +505,25 @@ def load_listing_log(path, hold, etfs):
         for sym, _name, _w, _ch, ex in h["rows"]:
             if not SWAP_RE.search(sym):
                 keymap.setdefault(hold_key(sym, ex), sym.upper())
+    marks = same_stock_marks(L)
+    # 이름·종류·시장이 비어 있는 심볼(참조 상장이 없는 하이퍼리퀴드 dex 등)은 같은 거래소의 같은 종목 다른 심볼에서 빌려 온다
+    known = {}
+    for v, st in (L.get("state") or {}).items():
+        for info in st.values():
+            if info.get("n"):
+                known.setdefault((v, info.get("lk")), info)
     ev = []
     for e in L.get("events", []):
         lk = e.get("lk") or ""
         m = re.match(r"^HKEX:(\d+)$", lk)
         lk = f"HKEX:{m.group(1).zfill(4)}" if m else lk
-        ev.append([e["d"], e["v"], 1 if e["e"] == "add" else 0, e["s"], e.get("u", ""), (e.get("n") or "")[:80], e.get("c", ""), e.get("m", ""),
-                   e.get("x", 0), e.get("t0"), e.get("t1"), keymap.get(lk), lk if lk in etfs else None])
+        k = known.get((e["v"], e.get("lk"))) if not e.get("n") else None
+        u = e.get("u", "")
+        if ":" in u and e["v"] == "p":   # 홍콩 계약은 기초 자산이 "HKEX:0700" 꼴이라 계약 이름(TENCENT)을 티커로 보인다
+            u = re.sub(r"(USDT|USDC|USD1|USD)$", "", e["s"]) or u
+        n, c, mk = (k["n"], k.get("c", ""), k.get("m", "")) if k else (e.get("n") or "", e.get("c", ""), e.get("m", ""))
+        ev.append([e["d"], e["v"], 1 if e["e"] == "add" else 0, e["s"], u, n[:80], c, mk,
+                   e.get("x", 0), e.get("t0"), e.get("t1"), keymap.get(lk), lk if lk in etfs else None, marks.get(id(e))])
     return {"updated": L.get("updated"), "prev": L.get("prev"), "counts": L.get("counts", {}), "ev": ev}
 
 
@@ -448,6 +533,7 @@ def main():
     ap.add_argument("--contrib", default=os.path.join(ROOT, "output", "contrib-data.json"))
     ap.add_argument("--etf-chart", default=os.path.join(ROOT, "output", "etf-chart-data.json"))
     ap.add_argument("--news", default=os.path.join(ROOT, "output", "news-data.json"))
+    ap.add_argument("--claude", default=os.path.join(ROOT, "output", "claude-notes.json"))
     ap.add_argument("--holdings", default=os.path.join(ROOT, "output", "holdings"))
     ap.add_argument("--meta", default=os.path.join(ROOT, "data", "etf_meta.json"))
     ap.add_argument("--lists", default=None, help="tradfi-ticker-lists 의 output 폴더")
@@ -504,6 +590,7 @@ def main():
     stocks_tok, stocks_src = load_stocks(args, hold)
     etfx = load_etf_chart(args.etf_chart, cur["asof"], set(cur["etfs"]) | {"SPY", "QQQ"})
     news = load_news(args.news, cur["asof"])
+    claude = load_claude(args.claude, cur["asof"])
     listlog = load_listing_log(args.listing_log, hold, set(cur["etfs"]))
     src = "·".join(cur.get("source") or ["yahoo"])
     src_ko = {"yahoo": "야후 파이낸스", "stooq": "Stooq"}.get(src, src)
@@ -526,7 +613,9 @@ def main():
         "__NEWS__": json.dumps(news, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
         # 상장 로그의 이름도 바깥 목록에서 온 글이라 같은 방식으로 적는다
         "__LISTLOG__": json.dumps(listlog, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
-        "__BRIEF__": html_escape(brief),
+        # Claude 문장도 웹에서 온 글이라 같은 방식으로 적는다. 없으면 null(아티팩트 예약 작업이 찾는 자리 표시)
+        "__CLAUDE__": json.dumps(claude, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
+        "__BRIEF__": brief_html(brief),
         "__BUILT_AT__": built_at_kst(),
     }
     tmpl = open(args.template, encoding="utf-8").read()
@@ -565,7 +654,8 @@ def main():
           + (f" · contribution {len(contrib['funds'])} funds" if contrib else " · contribution none")
           + (f" · ETF charts {sum(1 for t in etfx['etfs'] if t not in ('SPY', 'QQQ'))}" if etfx else " · ETF charts none")
           + (f" · news {sum(len(v.get('h', [])) for v in news['s'].values())} headlines, {sum(1 for v in news['s'].values() if v.get('e'))} with 8-K earnings" if news else " · news none")
-          + (f" · listing log {len(listlog['ev'])} events ({sum(1 for e in listlog['ev'] if e[11] or e[12])} on this board)" if listlog else " · listing log none"))
+          + (f" · listing log {len(listlog['ev'])} events ({sum(1 for e in listlog['ev'] if e[11] or e[12])} on this board, {sum(1 for e in listlog['ev'] if e[13])} same-stock)" if listlog else " · listing log none")
+          + (f" · Claude notes {len(claude['etfs'])} ETFs, {len(claude.get('stocks', {}))} stocks" if claude else " · Claude notes none"))
 
 
 if __name__ == "__main__":
