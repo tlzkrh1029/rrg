@@ -449,6 +449,26 @@ ul.hl.one li{grid-template-columns:minmax(0,1fr)} ul.hl.one .src{grid-column:1}
 .nbody .more,.hnews .more{justify-self:start;font-size:11px;color:var(--link)}
 .nfoot{margin:0;font-size:10.5px;color:var(--muted);line-height:1.5;border-top:1px solid var(--line);padding-top:6px}
 .nlinks{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11px}
+/* 종목 모드: 최근 4주 주별 블록(그 주의 공시 칩, 기사 묶음 위 2개, 나머지), 그 앞 90일 공시와 내부자 신고 */
+.wk{display:grid;gap:4px;border-top:1px solid var(--line-2);padding-top:7px}
+.wk.f{border-top:0;padding-top:0}
+.wkh{display:flex;align-items:baseline;gap:6px;font-size:11px;color:var(--muted)}
+.wkh b{color:#fff;font-size:11.5px}
+.wkh .cur{font-size:9.5px;color:var(--amber);border:1px solid var(--amber-dim);padding:0 4px;line-height:1.35}
+.wkh .r{margin-left:auto;white-space:nowrap}
+.wkh .on{color:var(--hot);font-weight:700} .wkh .dn{color:var(--cold);font-weight:700}
+ul.hl.cl li{padding:5px 0}
+ul.hl .src b{color:var(--amber);font-weight:400}
+.wk .more{justify-self:start;font-size:10.5px;color:var(--link)}
+.wk .note2,.older .note2{margin:0;font-size:10.5px;color:var(--muted);line-height:1.5}
+.fchips{display:flex;flex-wrap:wrap;gap:3px 6px;font-size:10.5px}
+a.fchip{display:inline-flex;gap:4px;align-items:baseline;border:1px solid var(--line-2);padding:0 5px;color:var(--ink-2);max-width:100%;text-decoration:none}
+a.fchip:hover{border-color:var(--amber);color:#fff;text-decoration:none}
+a.fchip b{color:var(--amber);font-weight:700;font-size:10px}
+a.fchip.k10 b{color:var(--ink-2)}
+a.fchip .on{color:var(--hot);font-weight:700} a.fchip .dn{color:var(--cold);font-weight:700}
+.older{display:grid;gap:4px;font-size:11px;color:var(--ink-2);border-top:1px solid var(--line-2);padding-top:7px}
+.older .lab2{color:var(--muted);font-size:10.5px}
 .tvw{min-height:120px;border:1px solid var(--line)}
 .tvw .tradingview-widget-copyright{font-size:10px;padding:2px 4px;color:var(--muted)}
 .nw{display:grid;gap:6px}
@@ -780,7 +800,7 @@ body.cover-open{overflow:hidden}
           </table>
         </div>
         <p class="sortline" id="sortHint"></p>
-        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷(MAGS·DRAM은 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출)이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. Holdings 패널 맨 위의 ETF 차트는 최근 90거래일 종가와 그 비율(QQQ·SPY·상위 섹터 대비)이며, 52주 고점은 2년 가격 파일에서, 사상 최고는 USD·비율 모두 전체 이력(Yahoo range=max, 월 1회 갱신)에서 잡았습니다. 차트의 자를 바꾸면 기여도의 기준도 함께 바뀝니다. 뉴스는 화면 폭이 1,860px 이상이면 오른쪽 칼럼에, 그보다 좁으면 Holdings 패널 안에 있습니다. 헤드라인은 Finnhub의 최근 7일 기사이고, 실적은 SEC EDGAR 8-K Item 2.02의 접수 시각(장 시작 전·장중·장 마감 후)과 그 뒤 첫 종가까지의 반응, 다음 실적일은 Finnhub 일정입니다. '왜 움직였나' 요약은 기여도와 실적 일정으로 만든 문장입니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다. MAGS(동일가중 매그니피센트 7)는 스타일·집중도 행입니다. 일곱 종목이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 대비로 재고, 백분위는 23개 ETF 사이에 끼워 넣었을 때의 위치만 적으며 다른 행의 순위 계산과 섹터 집계에는 넣지 않습니다. 2) 탭의 1단 그래프에는 점선 꼬리를 단 점으로 함께 그립니다.</p>
+        <p class="dataline"><b>DATA</b> · 셀 값은 SPY 대비 상대수익률(ETF 수익률 − SPY 수익률)을 관찰 대상 23개 ETF 안에서 백분위 순위(0~100)로 바꾼 값입니다. 100은 그 기간에 가장 강했다는 뜻이고 0은 가장 약했다는 뜻이며, 칸에 커서를 올리면 상대수익률 자체가 나옵니다. 기간은 1주 5거래일, 1개월 21, 3개월 63, 6개월 126, 12개월 252거래일입니다. 가격은 __PRICE_SOURCE__ 조정 종가(__PRICE_FIRST__ ~ __PRICE_ASOF__, SPY 기준 __PRICE_DAYS__거래일, <a href="https://github.com/tlzkrh1029/rrg" target="_blank" rel="noopener">rrg</a> 저장소)이고, 비율선·RRG는 주봉으로 계산했습니다. 구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷(MAGS·DRAM은 Roundhill 일일 보유 파일에서 스왑 노출을 기초 종목에 합산한 순노출)이며 변동 %p는 __HOLD_PREV__ 스냅샷과의 차이입니다. 거래소 상장 점은 바이낸스 bStocks __LIST_B__종·바이낸스 TradFi 선물 __LIST_F__계약·하이퍼리퀴드 HIP-3 주식 __LIST_H__종 목록(__LIST_TS__ 수집, <a href="https://github.com/tlzkrh1029/tradfi-ticker-lists" target="_blank" rel="noopener">tradfi-ticker-lists</a>)을 대조한 값입니다. Holdings 패널 맨 위의 ETF 차트는 최근 90거래일 종가와 그 비율(QQQ·SPY·상위 섹터 대비)이며, 52주 고점은 2년 가격 파일에서, 사상 최고는 USD·비율 모두 전체 이력(Yahoo range=max, 월 1회 갱신)에서 잡았습니다. 차트의 자를 바꾸면 기여도의 기준도 함께 바뀝니다. 뉴스는 화면 폭이 1,860px 이상이면 오른쪽 칼럼에, 그보다 좁으면 Holdings 패널 안에 있습니다. 종목을 고르면 Finnhub 의 최근 4주 헤드라인을 주별로 묶어(비슷한 제목은 한 줄로, 제목에 회사 이름이 든 기사 먼저) 보여 주고 SEC EDGAR 제출 목록의 최근 90일 공시(8-K·10-Q·10-K)를 그 주에 붙입니다. ETF 만 고른 화면의 헤드라인은 상위 10 종목의 최근 7일 기사입니다. 실적은 SEC EDGAR 8-K Item 2.02의 접수 시각(장 시작 전·장중·장 마감 후)과 그 뒤 첫 종가까지의 반응, 다음 실적일은 Finnhub 일정입니다. '왜 움직였나' 요약은 기여도와 실적 일정으로 만든 문장입니다. DRAM은 2026년 4월에 상장되어 12개월 열과 RRG 국면(주봉 39주 필요)이 비어 있습니다. MAGS(동일가중 매그니피센트 7)는 스타일·집중도 행입니다. 일곱 종목이 기술·커뮤니케이션·경기소비재 세 섹터에 걸쳐 있어 상위 섹터를 하나 고를 수 없으므로 SPY 대비로 재고, 백분위는 23개 ETF 사이에 끼워 넣었을 때의 위치만 적으며 다른 행의 순위 계산과 섹터 집계에는 넣지 않습니다. 2) 탭의 1단 그래프에는 점선 꼬리를 단 점으로 함께 그립니다.</p>
       </section>
 
       <aside class="rail">
@@ -926,7 +946,7 @@ body.cover-open{overflow:hidden}
           <h3>7. Holdings 패널: ETF 차트 · 기여도 · 뉴스와 실적</h3>
           <p><b style="color:var(--amber)">ETF 차트.</b> 패널 맨 위에는 고른 ETF 의 90일 차트가 항상 펼쳐져 있습니다. 일간·주간·30일 변동률, 50 SMA · 89 HMA · 144 HMA, 20일 Shelf 와 천장, 52주 고점, 그리고 20일·55일·52주·사상 최고 네 지평의 돌파 상태를 종목 상세와 같은 규칙으로 보여 줍니다. 사상 최고는 ETF 의 전체 이력에서 찾으며, 이력은 한 달에 한 번 다시 받습니다. 제목줄의 USD · vs QQQ · vs SPY 단추(산업·테마 ETF 는 상위 섹터 대비 단추도 있음)는 차트와 아래 기여도의 기준을 함께 바꿉니다.</p>
           <p><b style="color:var(--amber)">기여도.</b> 구성종목이 ETF 수익률에 얼마나 보탰는지를 기간 시작 비중 × 기간 수익률(USD)로 계산합니다. 1D · 1W · 1M 가운데 기간을 고르고, 기준이 USD 가 아니면 비교 대상(SPY, QQQ, 상위 섹터)의 기여도를 옆에 함께 놓아 차이가 어느 종목에서 났는지 보여 줍니다. 상위 10개 밖의 몫은 '나머지'로 적고, 표의 비중 합이 98% 이상인 ETF 는 남는 차이를 '미설명분'(현금·보수·시차·스왑)으로 적습니다. 해외 종목은 환율을 반영해 USD 로 환산하고, 1D 에서는 장 마감 시각이 다른 종목에 '시차' 표시를 붙입니다. 그 아래 표는 상승 종목 수, 합계와 같은 방향으로 움직인 기여 가운데 상위 1개·3개 종목이 차지한 몫, 나머지 평균, 최대 상승일과 하락일을 비교하고, 히트맵은 최근 8주의 주간 기여를 보여 줍니다. 4) 주간 브리핑 탭의 Drivers 패널은 보드 전체에서 ETF 를 가장 많이 움직인 종목을 모읍니다.</p>
-          <p><b style="color:var(--amber)">뉴스와 실적.</b> 창 폭이 1,860px 이상이면 매트릭스 오른쪽에 뉴스 칼럼이 생기고, 그보다 좁으면 같은 내용이 Holdings 패널 안(차트 아래와 종목 상세 안)에 들어갑니다. ETF 를 고르면 상위 10개 종목의 최근 7일 헤드라인(Finnhub), 최근 실적과 다가오는 실적 일정, 기여도와 실적 일정으로 만든 '왜 움직였나' 요약 문장이 나옵니다. 종목 행을 펼치면 그 종목의 헤드라인과 TradingView 뉴스 링크(Key facts · Top news · Latest)가 나옵니다. 실적은 SEC EDGAR 의 8-K 공시(Item 2.02)로 확인해 구성종목 표의 배지, 차트의 점선, 종목 상세의 '최근 실적' 줄로 표시합니다. 아티팩트에서는 Claude 예약 작업이 웹 검색으로 찾은 이유 문장이 요약 상자에 더해질 수 있습니다.</p>
+          <p><b style="color:var(--amber)">뉴스와 실적.</b> 창 폭이 1,860px 이상이면 매트릭스 오른쪽에 뉴스 칼럼이 생기고, 그보다 좁으면 같은 내용이 Holdings 패널 안(차트 아래와 종목 상세 안)에 들어갑니다. ETF 를 고르면 상위 10개 종목의 최근 7일 헤드라인(Finnhub), 최근 실적과 다가오는 실적 일정, 기여도와 실적 일정으로 만든 '왜 움직였나' 요약 문장이 나옵니다. 종목 행을 펼치면 그 종목의 최근 4주가 주별로 나옵니다. 주마다 그 주의 SEC 공시(8-K 는 항목 번호와 이름, 배당·자사주 매입처럼 본문 첫 문장에서 알아본 이름)를 칩으로 붙이고, 같은 이야기를 실은 기사는 한 줄로 묶어 '비슷한 기사 +n'으로 적은 뒤 위 두 줄만 보여 줍니다. 나머지는 '나머지 n건'을 누르면 나옵니다. 4주보다 앞선 90일 안의 공시와 내부자 신고(Form 4·144) 건수는 맨 아래에 있고, TradingView 뉴스 링크(Key facts · Top news · Latest)도 함께 나옵니다. 실적은 SEC EDGAR 의 8-K 공시(Item 2.02)로 확인해 구성종목 표의 배지, 차트의 점선, 종목 상세의 '최근 실적' 줄로 표시합니다. 아티팩트에서는 Claude 예약 작업이 웹 검색으로 찾은 이유 문장이 요약 상자에 더해질 수 있습니다.</p>
         </section>
         <section class="wide">
           <h3>8. 명령줄 사용법</h3>
@@ -1619,7 +1639,7 @@ function etfEarnHTML(t) {
 }
 function newsFoot(stock) {
   const m = (NEWS && NEWS.meta) || {};
-  return `<p class="nfoot">헤드라인: Finnhub${m.news_at ? ` (${kstIso(m.news_at)} 수집)` : ''} · 실적: SEC EDGAR 8-K Item 2.02 · 일정: Finnhub${stock && TV_WIDGET ? ' · 위젯: TradingView' : ''}${CLAUDE ? ' · 이유: Claude' : ''}</p>`;
+  return `<p class="nfoot">헤드라인: Finnhub${stock ? ` ${m.weeks || 4}주(날짜는 뉴욕 기준, 비슷한 제목은 한 줄로 묶음)` : ' 최근 7일'}${m.news_at ? ` · ${kstIso(m.news_at)} 수집` : ''}${stock ? ` · 공시: SEC EDGAR 최근 ${m.fil_days || 90}일` : ''} · 실적: SEC EDGAR 8-K Item 2.02 · 일정: Finnhub${stock && TV_WIDGET ? ' · 위젯: TradingView' : ''}${CLAUDE ? ' · 이유: Claude' : ''}</p>`;
 }
 function newsEtfHTML(t) {
   const all = etfHeadlines(t), shown = all.slice(0, 8);
@@ -1629,15 +1649,71 @@ function newsEtfHTML(t) {
     + (all.length > shown.length ? `<button type="button" class="more" data-newsmore="1">더 보기 · ${all.length - shown.length}건</button><div hidden>${hlHTML(all.slice(shown.length))}</div>` : '')
     + newsFoot(false);
 }
+/* ---- 종목 모드: 최근 4주 주별 블록과 90일 공시 (terminal/compute_news.py 의 s.w · s.f · s.ins) ---- */
+const FH_NEWS = 'https://finnhub.io/api/news?id=';
+const nUrl = u => String(u || '').startsWith('fh:') ? FH_NEWS + String(u).slice(3) : u;
+const nyDate = ts => { try { return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(new Date(ts * 1000)); } catch (e) { return new Date(ts * 1000).toISOString().slice(0, 10); } };
+const isoAdd = (iso, n) => { const d = new Date(iso + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+/* 그 주의 종가 변화: 그 주 마지막 종가 / 그 앞 주 마지막 종가 (종목 상세와 같은 USD 종가) */
+function weekPx(k, start) {
+  const st = STOCKS && STOCKS.stocks && STOCKS.stocks[k], D = STOCKS && STOCKS.dates;
+  if (!st || !st.c || !D) return null;
+  const end = isoAdd(start, 6);
+  let a = -1, b = -1;
+  for (let i = 0; i < D.length; i++) { if (D[i] < start) a = i; if (D[i] <= end) b = i; }
+  return a >= 0 && b > a && st.c[a] && st.c[b] ? st.c[b] / st.c[a] - 1 : null;
+}
+/* 공시 칩: f = [접수일, 서식, 표시 이름, 주소, 8-K 첫 문장, 뉴욕 접수일]. 2.02 는 그 실적의 주가 반응을 붙인다 */
+function filingChip(f, s) {
+  let extra = '';
+  if (/^2\.02/.test(f[2])) {
+    const e = (s.e || []).find(x => x[0] === f[5]);
+    if (e && e[2] != null) extra = ` · ${e[1] === 'amc' ? '다음 거래일' : '그날'} <span class="${cbSg(e[2])}">${cbPc(e[2])}%</span>`;
+  }
+  return `<a class="fchip${/^8-K/.test(f[1]) ? '' : ' k10'}" href="${safeUrl(f[3])}" target="_blank" rel="noopener"${f[4] ? ` title="${cbEsc(f[4])}"` : ''}><b>${cbEsc(f[1])}</b>${cbMd(f[0])} ${cbEsc(f[2])}${extra} ↗</a>`;
+}
+function insiderLine(s) {
+  const n = s.ins || {}, parts = [['4', 'Form 4'], ['144', 'Form 144'], ['3', 'Form 3'], ['5', 'Form 5']].filter(([c]) => n[c]).map(([c, l]) => `${l} ${n[c]}건`);
+  if (!parts.length) return '';
+  const days = (NEWS && NEWS.meta && NEWS.meta.fil_days) || 90;
+  const cik = s.cik ? `<a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=${encodeURIComponent(s.cik)}&amp;type=4&amp;owner=include&amp;count=40" target="_blank" rel="noopener">목록 ↗</a>` : '';
+  return `<p class="note2">내부자 신고(${days}일) · ${parts.map(x => `<span class="nobr">${x}</span>`).join(' · ')}${cik ? ' · ' + cik : ''}</p>`;
+}
+function weekBlocksHTML(k, s) {
+  const W = s.w || [], F = s.f || [];
+  const days = (NEWS && NEWS.meta && NEWS.meta.fil_days) || 90;
+  const tv = s.tv ? ` <a href="${tvBase(s.tv)}?section=latest" target="_blank" rel="noopener">TradingView ↗</a>` : '';
+  const li = x => `<li><a href="${safeUrl(nUrl(x[3]))}" target="_blank" rel="noopener nofollow">${cbEsc(x[1])}</a><span class="src">${cbMd(nyDate(x[0]))} · ${cbEsc(x[2])}${x[4] ? ` · <b>비슷한 기사 +${x[4]}</b>` : ''}${x[5] ? ` · 마지막 ${cbMd(nyDate(x[5]))}` : ''}</span></li>`;
+  const size = cl => cl.reduce((a, x) => a + 1 + (x[4] || 0), 0);
+  if (!W.length) {   /* 헤드라인 없이 공시만 있을 때 */
+    return `<div class="wlab">공시 · 최근 ${days}일 · SEC EDGAR</div>` + (F.length ? `<div class="fchips">${F.map(f => filingChip(f, s)).join('')}</div>` : '') + insiderLine(s);
+  }
+  const blocks = W.map((w, i) => {
+    const [start, n, cl, part] = w, end = isoAdd(start, 7), px = weekPx(k, start);
+    const fs = F.filter(f => f[0] >= start && f[0] < end);
+    const head = `<div class="wkh"><b>${cbMd(start)} 주</b>${i === 0 ? '<span class="cur">이번 주</span>' : ''}<span class="r">기사 ${n}건${part ? ' 이상' : ''}${px != null ? ` · 주가 <span class="${cbSg(px)}">${cbPc(px)}%</span>` : ''}</span></div>`;
+    const chips = fs.length ? `<div class="fchips">${fs.map(f => filingChip(f, s)).join('')}</div>` : '';
+    const top = cl.slice(0, 2), hid = cl.slice(2);
+    const rest = Math.max(0, n - size(top)), left = Math.max(0, rest - size(hid));
+    const body = top.length ? `<ul class="hl one cl">${top.map(li).join('')}</ul>` : `<p class="note2">${n ? '제목에 회사 이름이 든 기사가 없습니다.' : '기사 없음'}</p>`;
+    const more = rest > 0 ? `<button type="button" class="more" data-newsmore="1">나머지 ${rest}건 ▸</button><div hidden>${hid.length ? `<ul class="hl one cl">${hid.map(li).join('')}</ul>` : ''}${left ? `<p class="note2">그 밖의 ${left}건은 싣지 않았습니다(순위가 낮거나 제목에 회사 이름이 없는 기사).${tv}</p>` : ''}</div>` : '';
+    return `<section class="wk${i === 0 ? ' f' : ''}">${head}${chips}${body}${more}${part && i === W.length - 1 ? '<p class="note2">기사가 많아 이 주의 앞부분은 일부만 받았습니다.</p>' : ''}</section>`;
+  }).join('');
+  const from = W[W.length - 1][0], old = F.filter(f => f[0] < from), ins = insiderLine(s);
+  const older = old.length || ins ? `<div class="older"><span class="lab2">그 전 · ${days}일 안의 공시</span>${old.length ? `<div class="fchips">${old.map(f => filingChip(f, s)).join('')}</div>` : ''}${ins}</div>` : '';
+  return `<div class="wlab">최근 ${W.length}주 · 주별 · 기사와 공시</div>` + blocks + older;
+}
 function newsStockHTML(k, wide) {
   const s = nS(k) || {}, tv = s.tv;
   const us = !tv || /^(NASDAQ|NYSE|AMEX|CBOE|IEX):/.test(tv) || !/:/.test(tv);
   const links = tv ? `<div class="nlinks"><a href="${tvBase(tv)}?section=key_facts" target="_blank" rel="noopener">Key facts ↗</a><a href="${tvBase(tv)}?section=top_news" target="_blank" rel="noopener">Top news ↗</a><a href="${tvBase(tv)}?section=latest" target="_blank" rel="noopener">Latest ↗</a></div>` : '';
   const widget = TV_WIDGET && tv ? `<div class="tvw" data-tv="${cbEsc(tv)}"></div>` : '';
   const ern = wide ? earnDl(k) : '';
-  const hl = (s.h || []).length ? hlHTML(s.h.map(x => x.concat([k])), true)
-    : `<p class="mu" style="margin:0">${us ? '최근 7일 헤드라인이 없습니다.' : '미국 밖 상장 종목이라 헤드라인과 8-K 실적이 없습니다. TradingView 링크로 확인하세요.'}</p>`;
-  return (ern ? `<dl class="ern">${ern}</dl>` : '') + widget + links + `<div class="wlab">헤드라인 · ${cbEsc(k)} · 최근 7일</div>${hl}` + (wide ? newsFoot(true) : '');
+  let body;
+  if ((s.w || []).length || (s.f || []).length) body = weekBlocksHTML(k, s);
+  else if ((s.h || []).length) body = `<div class="wlab">헤드라인 · ${cbEsc(k)} · 최근 7일</div>${hlHTML(s.h.map(x => x.concat([k])), true)}`;
+  else body = `<div class="wlab">헤드라인 · ${cbEsc(k)}</div><p class="mu" style="margin:0">${us ? '최근 4주 헤드라인과 공시가 없습니다.' : '미국 밖 상장 종목이라 헤드라인과 SEC 공시가 없습니다. TradingView 링크로 확인하세요.'}</p>`;
+  return (ern ? `<dl class="ern">${ern}</dl>` : '') + widget + links + body + (wide ? newsFoot(true) : '');
 }
 /* 좁은 화면: Holdings 패널 안, ETF 차트 아래에 요약과 접힌 헤드라인 줄 */
 let hnewsOpen = false;

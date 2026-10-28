@@ -3,6 +3,7 @@
 
 입력
   output/news/earnings.json, calendar.json, headlines.json   fetch_news.py 결과(없으면 그 부분 없이 만든다)
+  output/news/filings.json, filing_text.json               최근 90일 공시 목록과 8-K 첫 문장(없으면 공시 없이 만든다)
   output/prices_wide.csv                                    SPY 거래일 축
   output/stocks/prices_wide.csv, extra_prices_wide.csv      종목 종가(실적 반응 계산용)
   output/contrib-data.json                                  기여도(데이터 요약 문장용; 종가 기준일이 다르면 문장 없이 만든다)
@@ -16,7 +17,17 @@
              반응은 발표 직전 종가에서 발표 뒤 첫 종가까지의 변화다(장 마감 후 발표면 다음 거래일, 장 시작 전·장중이면 그날).
          u   가장 최근 8-K 주소
          nx  다음 실적일 [날짜, bmo|amc|dmh|''] (Finnhub, 오늘 이후)
-         h   헤드라인 최대 NEWS_KEEP 개 [unix 초, 제목, 출처, 주소] (Finnhub, 최근 7일)
+         h   헤드라인 최대 NEWS_KEEP 개 [unix 초, 제목, 출처, 주소] (Finnhub, 최근 7일. ETF 모드와 좁은 화면의 목록)
+         w   최근 WEEKS 주(뉴욕 월요일 시작, 이번 주부터)의 주별 묶음 [[월요일, 기사 수, 묶음들, 일부만 받음 0|1], …]
+             묶음 = [unix 초, 제목, 출처, 주소, 같은 이야기로 묶인 다른 기사 수, 묶음의 마지막 기사 unix 초(다른 주로 이어질 때만, 아니면 0)]
+             회사 이름·티커·흔한 낱말을 뺀 제목 낱말이 SIM_STRONG 개 이상 겹치거나, SIM_MIN 개 이상이면서 짧은 쪽의
+             SIM_RATIO 이상 겹치고, SIM_DAYS 일 안에 나온 기사는 한 묶음이다(앞 기사 어느 하나와 겹치면 된다).
+             묶음은 첫 기사가 나온 주에 둔다. 주마다 제목에 회사 이름이나 티커가 있는 묶음을 먼저, 그 안에서는 점수(묶인 기사 수,
+             제목의 실적·배당·목표가 같은 낱말, 출처 등급) 순으로 WEEK_KEEP 개까지 남긴다. Finnhub 주소는 'fh:<id>' 로 줄여 적는다.
+         f   최근 90일 공시 [[접수일, 서식, 표시 이름, 주소, 8-K 첫 문장, 뉴욕 접수일], …] (최근 것부터)
+             표시 이름은 '8.01 배당'·'5.02 임원 변동·보상'·'연간 보고서 · 회계연도 8/30 마감' 처럼 만든다. 8-K 는 첫 항목 번호와
+             그 한국어 이름이고, 첫 문장에 배당·자사주 매입 같은 낱말이 있으면 그 이름으로 바꾼다.
+         ins 같은 기간의 내부자 신고 건수 {"4": n, "144": n, "3": n, "5": n}, cik (내부자 신고 목록 링크용)
   etf[ETF] sum  데이터 요약 문장 (기여도 1개월·1주와 실적으로 만든다. 기준은 산업·테마가 상위 섹터, 나머지는 SPY)
            nx   상위 10 종목의 다가오는 실적 [[표시 심볼, 날짜, 시점]] (가까운 순)
            re   최근 30일 실적 발표 [[표시 심볼, 날짜]]; 없으면 last 에 가장 최근 발표
@@ -27,6 +38,7 @@ import argparse
 import csv
 import datetime as dt
 import json
+import math
 import os
 import re
 import sys
@@ -38,8 +50,21 @@ sys.path.insert(0, os.path.join(ROOT, "breakout"))
 from compute_terminal import PARENT  # noqa: E402
 from fetch_stock_prices import parse_symbol  # noqa: E402
 
+try:
+    from zoneinfo import ZoneInfo
+    NY = ZoneInfo("America/New_York")
+except Exception:  # noqa: BLE001  (tzdata 가 없는 환경: 동부 표준시로 근사)
+    NY = dt.timezone(dt.timedelta(hours=-5))
+
 EARN_KEEP = 4
 NEWS_KEEP = 6
+WEEKS = 4                  # 주별 묶음 수(이번 주 포함)
+WEEK_KEEP = 4              # 주마다 남기는 묶음 수(화면은 위 2개, 나머지는 펼치면)
+SIM_MIN, SIM_RATIO, SIM_STRONG, SIM_DAYS = 2, 0.3, 3, 4
+TITLE_MAX = 120
+FILING_TEXT_MAX = 170
+FH_URL = "https://finnhub.io/api/news?id="
+SEC_ARCHIVE = "https://www.sec.gov/Archives/edgar/data/{cik}/{acc}/{doc}"
 NEWS_STALE_DAYS = 3        # 이보다 오래된 헤드라인 파일은 쓰지 않는다
 CAL_STALE_DAYS = 7
 SOON_DAYS = 14             # 요약 문장에 넣는 '곧 발표' 범위
@@ -209,6 +234,180 @@ def summary(t, funds, bench, earn, nxt, today):
         out.append(f"{'·'.join(items)}{more}{josa(items[-1] if not more else '목', ('이', '가'))} {SOON_DAYS}일 안에 실적을 발표합니다.")
     return out
 
+# ---------- 헤드라인: 주별 묶음 ----------
+STOP = set("""a an the and or but of to in on for at by with from as is are was were be been being it its this that these those
+after before over under into out up down about amid than then so if not no new more most less very just still also why how what
+when where who which will would could should can may might must says said say report reports reported stock stocks share shares
+inc corp co ltd company companies plc llc today week weekly month year years day days now here buy sell hold investor investors
+market markets wall street price prices nyse nasdaq your you our we they their his her he she them there get got here's what's
+usd target targets percent pct analyst analysts rating ratings update news""".split())
+SUFFIX = re.compile(r"\b(incorporated|inc|corporation|corp|company|co|limited|ltd|plc|llc|l\.?p|n\.?v|s\.?a|ag|se|holdings?|group|"
+                    r"class [abc]|common stock|ordinary shares|ads|adr|gdr|the)\b\.?", re.I)
+GENERIC = {"american", "united", "general", "first", "national", "international", "global", "new", "southern", "northern",
+           "western", "eastern", "royal", "bank", "energy", "health", "advanced", "applied", "texas", "pacific", "atlantic",
+           "digital", "philip", "eli", "public", "service", "capital", "financial", "street", "state"}
+ALIASES = {"GOOGL": ["Google"], "GOOG": ["Google"], "META": ["Facebook"], "PG": ["P&G"], "KO": ["Coke"], "TSM": ["TSMC"],
+           "XOM": ["ExxonMobil"], "LLY": ["Lilly"], "CL": ["Colgate"], "PEP": ["Pepsi"], "BRK.B": ["Berkshire"]}
+KW = re.compile(r"\b(earnings|results|revenue|sales|guidance|outlook|forecast|profit|loss|dividend|buyback|repurchase|upgrade|"
+                r"downgrade|price target|target|initiat\w*|coverage|rating|acquir\w*|acquisition|merger|deal|contract|agreement|"
+                r"lawsuit|sues|probe|investigation|sec|fda|approval|recall|ceo|cfo|resign\w*|appoint\w*|layoffs?|job cuts|"
+                r"strike|tariffs?|beats?|miss(es)?|record|plunge\w*|soar\w*|surge\w*|tumble\w*|slump\w*|ipo|split)\b", re.I)
+TIER = [(re.compile(r"globenewswire|business ?wire|pr ?newswire|accesswire|press release", re.I), 2.0),
+        (re.compile(r"reuters|bloomberg|cnbc|wsj|wall street journal|financial times|barron|marketwatch|associated press|\bap\b|"
+                    r"the information|axios|nikkei", re.I), 1.5),
+        (re.compile(r"yahoo|seeking ?alpha|benzinga|motley|fool|zacks|investorplace|tipranks|nasdaq|thestreet|investopedia|"
+                    r"24/7|247wallst|forbes|fortune|business insider|insider", re.I), 0.5)]
+
+
+def tier_of(src):
+    return next((v for rx, v in TIER if rx.search(src or "")), 0.0)
+
+
+def short_names(name, ticker):
+    """제목에서 회사를 알아볼 이름들. 'Costco Wholesale Corporation' → ['Costco Wholesale', 'Costco']."""
+    words = [w for w in SUFFIX.sub(" ", re.sub(r"[,()]", " ", name or "")).split() if w]
+    out = []
+    if words:
+        if len(words) >= 3 and words[1] == "&":
+            out.append(" ".join(words[:3]))
+        else:
+            out.append(" ".join([w for w in words if w != "&"][:2]))
+        if len(words[0]) >= 4 and words[0].lower() not in GENERIC:
+            out.append(words[0])
+    out += ALIASES.get(ticker, [])
+    return [x for i, x in enumerate(out) if x and x not in out[:i]]
+
+
+def named_rx(name, ticker):
+    """제목에 회사 이름이나 티커가 있는지 보는 정규식. 두 글자 이하 티커는 (KO)·$KO·NYSE:KO 처럼 적힌 것만 센다."""
+    parts = [r"(?<![A-Za-z])" + re.escape(n) + r"(?![A-Za-z])" for n in short_names(name, ticker)]
+    t = re.escape(ticker.replace(".", "-")) + "|" + re.escape(ticker)
+    parts.append(r"(?:\((?:" + t + r")\)|\$(?:" + t + r")\b|(?:NYSE|NASDAQ|AMEX):\s?(?:" + t + r")\b)")
+    rx_ci = re.compile("|".join(parts[:-1]), re.I) if len(parts) > 1 else None
+    rx_tk = re.compile(parts[-1] + (r"|(?<![A-Za-z$])(?:" + t + r")(?![A-Za-z])" if len(ticker) >= 3 else ""))
+    return lambda title: bool((rx_ci and rx_ci.search(title)) or rx_tk.search(title))
+
+
+def tokens(title, drop):
+    t = (title or "").lower().replace("’", "'")
+    out = set()
+    for w in re.findall(r"\$?\d[\d,.]*%?|[a-z][a-z'&-]*", t):
+        w = w.rstrip(".,'").replace("'s", "")
+        if not w or w in STOP or w in drop or (not w[0].isdigit() and w[0] != "$" and len(w) < 3):
+            continue
+        if w[0].isalpha() and len(w) > 4 and w.endswith("s") and not w.endswith("ss"):
+            w = w[:-1]   # dividends → dividend, sales → sale (가벼운 복수형 맞추기)
+        out.add(w)
+    return out
+
+
+def ny_day(ts):
+    return dt.datetime.fromtimestamp(ts, NY).date()
+
+
+def week_blocks(items, name, ticker, start, cut=None):
+    """[[unix 초, 제목, 출처, 주소], …] → s.w (모듈 설명 참고). start: 창의 첫 월요일(뉴욕), cut: 창 앞이 빈 종목의 가장 오래된 unix 초."""
+    is_named = named_rx(name, ticker)
+    drop = {w.lower() for n in short_names(name, ticker) + [name or ""] for w in re.findall(r"[A-Za-z][A-Za-z'&-]*", n)}
+    drop |= {ticker.lower(), ticker.lower().replace(".", "-")}
+    arts = []
+    for x in items:
+        d = ny_day(x[0])
+        if d < start:
+            continue
+        arts.append({"ts": x[0], "t": x[1], "src": x[2], "u": x[3], "day": d, "tok": tokens(x[1], drop), "named": is_named(x[1])})
+    arts.sort(key=lambda a: a["ts"])
+    clusters = []
+    for a in arts:
+        home = None
+        for c in clusters:
+            if a["ts"] - c["last"] > SIM_DAYS * 86400:
+                continue
+            for b in c["m"]:
+                common = len(a["tok"] & b["tok"])
+                small = min(len(a["tok"]), len(b["tok"])) or 1
+                if common >= SIM_STRONG or (common >= SIM_MIN and common / small >= SIM_RATIO):
+                    home = c
+                    break
+            if home:
+                break
+        if home:
+            home["m"].append(a)
+            home["last"] = a["ts"]
+        else:
+            clusters.append({"m": [a], "last": a["ts"]})
+    weeks = [start + dt.timedelta(days=7 * i) for i in range(WEEKS)][::-1]   # 이번 주부터
+    picked = {w: [] for w in weeks}
+    for c in clusters:
+        m = c["m"]
+        rep = max(m, key=lambda a: (tier_of(a["src"]), a["named"], -a["ts"]))
+        size = len(m)
+        score = (3 * math.log2(1 + size) + (2 if KW.search(rep["t"]) else 0) + max(tier_of(a["src"]) for a in m)
+                 + (1.5 if any(a["named"] for a in m) else -4))
+        wk = m[0]["day"] - dt.timedelta(days=m[0]["day"].weekday())
+        if wk not in picked:
+            continue
+        last_wk = m[-1]["day"] - dt.timedelta(days=m[-1]["day"].weekday())
+        u = rep["u"][len(FH_URL):] if rep["u"].startswith(FH_URL) else rep["u"]
+        named = any(a["named"] for a in m)
+        picked[wk].append((named, score, rep["ts"], [rep["ts"], rep["t"][:TITLE_MAX], rep["src"], ("fh:" + u) if rep["u"].startswith(FH_URL) else u,
+                                              size - 1, m[-1]["ts"] if last_wk != wk else 0]))
+    out = []
+    for w in weeks:
+        n = sum(1 for a in arts if w <= a["day"] < w + dt.timedelta(days=7))
+        top = [x[3] for x in sorted(picked[w], key=lambda x: (not x[0], -x[1], -x[2]))[:WEEK_KEEP]]
+        part = 1 if cut and ny_day(cut) > w else 0
+        out.append([w.isoformat(), n, top, part])
+    return out if any(b[1] for b in out) else []
+
+
+# ---------- 공시 ----------
+ITEM_KO = {"1.01": "중요 계약", "1.02": "계약 해지", "1.03": "파산", "1.05": "사이버 보안 사고", "2.01": "인수·매각 완료",
+           "2.02": "실적", "2.03": "채무 발생", "2.04": "채무 조기 상환 사유", "2.05": "구조조정 비용", "2.06": "자산 손상",
+           "3.01": "상장 유지 기준·이전", "3.02": "미등록 증권 발행", "3.03": "주주 권리 변경", "4.01": "회계법인 교체",
+           "4.02": "재무제표 신뢰 철회", "5.01": "지배권 변경", "5.02": "임원 변동·보상", "5.03": "정관 변경",
+           "5.05": "윤리 강령", "5.07": "주주총회 결과", "5.08": "주주 추천 이사", "7.01": "공정 공시", "8.01": "기타 중요 사항"}
+FORM_KO = {"10-K": "연간 보고서", "10-K/A": "연간 보고서 정정", "10-Q": "분기 보고서", "10-Q/A": "분기 보고서 정정",
+           "6-K": "해외 발행사 수시 보고", "20-F": "해외 발행사 연간 보고서", "40-F": "캐나다 발행사 연간 보고서"}
+LABEL_RULES = [(re.compile(p, re.I), ko) for p, ko in [
+    (r"\bdividends?\b", "배당"), (r"\b(repurchase|buyback|buy-back)", "자사주 매입"), (r"\b(annual|special) meeting\b", "주주총회"),
+    (r"\b(merger|acquisition|acquire[sd]?|to be acquired)\b", "인수·합병"),
+    (r"\b(senior notes|notes due|debentures|indenture|offering of)\b", "채권 발행"),
+    (r"\b(credit agreement|credit facility|term loan|revolving credit)\b", "신용 계약"),
+    (r"\b(bonus(es)?|compensation|incentive|equity awards?|severance)\b", "임원 보상"),
+    (r"\b(resign\w*|retire\w*|step(ping)? down|depart\w*)\b", "임원 사임·퇴임"),
+    (r"\b(appoint\w*|elected|will join|hired)\b", "임원 선임"),
+    (r"\b(lawsuit|litigation|complaint|settlement)\b", "소송")]]
+
+
+def filing_rows(rec, cache):
+    """filings.json 의 한 종목 → s.f (모듈 설명 참고)."""
+    out = []
+    for f in rec.get("f", []):
+        fdate, form, items, acc, doc, at, rdate = (list(f) + [""] * 7)[:7]
+        its = [x.strip() for x in (items or "").split(",") if x.strip() and x.strip() != "9.01"]
+        url = SEC_ARCHIVE.format(cik=rec.get("cik"), acc=acc.replace("-", ""), doc=doc) if doc else \
+            f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={rec.get('cik')}&type={form}"
+        sent = ""
+        if form in ("8-K", "8-K/A"):
+            item = its[0] if its else ""
+            sent = ((cache.get(acc) or ["", ""])[1] or "")
+            kw = next((ko for rx, ko in LABEL_RULES if rx.search(sent)), None) if item != "2.02" else None
+            disp = f"{item} {kw or ITEM_KO.get(item, '기타')}" if item else (kw or "수시 보고")
+            if form == "8-K/A":
+                disp += " · 정정"
+        else:
+            disp = FORM_KO.get(form, form)
+            if form.startswith(("10-K", "20-F", "40-F")) and rdate:
+                disp += f" · 회계연도 {md(rdate)} 마감"
+            elif form.startswith("10-Q") and rdate:
+                disp += f" · {md(rdate)} 분기 말"
+        if len(sent) > FILING_TEXT_MAX:
+            sent = sent[:FILING_TEXT_MAX].rsplit(" ", 1)[0] + "…"
+        out.append([fdate, form, disp, url, sent, (at or fdate)[:10]])
+    return out
+
+
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -233,9 +432,16 @@ def main():
     E = load(os.path.join(args.news, "earnings.json"))
     C = load(os.path.join(args.news, "calendar.json"))
     H = load(os.path.join(args.news, "headlines.json"))
+    FL = load(os.path.join(args.news, "filings.json"))
+    TX = (load(os.path.join(args.news, "filing_text.json")).get("acc") or {})
     cal_ok = age_days((C.get("meta") or {}).get("generated_at"), now) <= CAL_STALE_DAYS
     news_ok = age_days((H.get("meta") or {}).get("generated_at"), now) <= NEWS_STALE_DAYS
     today = now.date().isoformat()
+    ny_today = now.astimezone(NY).date()
+    start = ny_today - dt.timedelta(days=ny_today.weekday() + 7 * (WEEKS - 1))   # 주별 묶음의 첫 월요일(뉴욕)
+    week_ago = int(now.timestamp()) - 7 * 86400
+    cuts = (H.get("meta") or {}).get("cut") or {}
+    fil = FL.get("stocks") or {}
 
     stocks = {}
     for key, rec in (E.get("stocks") or {}).items():
@@ -254,7 +460,20 @@ def main():
             s["nx"] = nx
         h = (H.get("stocks") or {}).get(key) if news_ok else None
         if h:
-            s["h"] = h[:NEWS_KEEP]
+            recent = [x for x in h if x[0] >= week_ago]
+            if recent:
+                s["h"] = recent[:NEWS_KEEP]
+            w = week_blocks(h, rec.get("name") or key, key, start, cuts.get(key))
+            if w:
+                s["w"] = w
+        fr = fil.get(key)
+        if fr:
+            f = filing_rows(fr, TX)
+            if f:
+                s["f"] = f
+            if fr.get("ins"):
+                s["ins"] = fr["ins"]
+                s["cik"] = fr.get("cik")
         stocks[key] = s
 
     # ETF 별 상위 10 (스냅샷 순서)
@@ -292,21 +511,25 @@ def main():
         out["sum"] = summary(t, funds, bench, earn, nxt, today)
         etf[t] = out
 
-    em, hm, cm = E.get("meta") or {}, H.get("meta") or {}, C.get("meta") or {}
+    em, hm, cm, fm = E.get("meta") or {}, H.get("meta") or {}, C.get("meta") or {}, FL.get("meta") or {}
     data = {"meta": {"asof": axis[-1], "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
                      "news_at": hm.get("generated_at") if news_ok else None, "sec_at": em.get("sec_generated_at"),
-                     "cal_at": cm.get("generated_at") if cal_ok else None,
+                     "cal_at": cm.get("generated_at") if cal_ok else None, "fil_at": fm.get("generated_at"),
+                     "from": start.isoformat(), "weeks": WEEKS, "fil_days": fm.get("days"),
                      "src": {"sec": em.get("status", "missing"), "news": hm.get("status", "missing") if news_ok else "missing",
-                             "calendar": cm.get("status", "missing") if cal_ok else "missing"}},
+                             "calendar": cm.get("status", "missing") if cal_ok else "missing",
+                             "filings": fm.get("status", "missing")}},
             "s": stocks, "etf": etf}
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
     n_e = sum(1 for s in stocks.values() if s.get("e"))
     n_h = sum(len(s.get("h", [])) for s in stocks.values())
+    n_w = sum(1 for s in stocks.values() if s.get("w"))
+    n_f = sum(len(s.get("f", [])) for s in stocks.values())
     n_sum = sum(1 for v in etf.values() if v["sum"])
-    print(f"news-data: {len(stocks)} names ({n_e} with 8-K earnings, {n_h} headlines), {len(etf)} ETFs ({n_sum} summaries) -> "
-          f"{os.path.relpath(args.out, ROOT)} ({os.path.getsize(args.out) // 1024} KB)")
+    print(f"news-data: {len(stocks)} names ({n_e} with 8-K earnings, {n_h} headlines in 7 days, {n_w} with {WEEKS}-week blocks, "
+          f"{n_f} filings), {len(etf)} ETFs ({n_sum} summaries) -> {os.path.relpath(args.out, ROOT)} ({os.path.getsize(args.out) // 1024} KB)")
     return 0
 
 
