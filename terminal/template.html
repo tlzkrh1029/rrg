@@ -435,6 +435,8 @@ table.lg{border-collapse:collapse;width:100%;font-size:12px}
 .ai .cl .cll{font-size:10.5px;color:var(--amber);letter-spacing:.04em}
 .ai .srcs{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:10.5px}
 .ai .meta{display:flex;justify-content:space-between;gap:8px;font-size:10.5px;color:var(--muted)}
+.ai.art{border-color:var(--amber-dim)}
+.ai .cl .when{color:var(--muted);letter-spacing:0}
 dl.ern{display:grid;grid-template-columns:max-content 1fr;gap:2px 10px;margin:0;font-size:11.5px}
 .nobr{white-space:nowrap}
 .ern dt{color:var(--muted)} .ern dd{margin:0;color:var(--ink)}
@@ -946,7 +948,7 @@ body.cover-open{overflow:hidden}
           <h3>7. Holdings 패널: ETF 차트 · 기여도 · 뉴스와 실적</h3>
           <p><b style="color:var(--amber)">ETF 차트.</b> 패널 맨 위에는 고른 ETF 의 90일 차트가 항상 펼쳐져 있습니다. 일간·주간·30일 변동률, 50 SMA · 89 HMA · 144 HMA, 20일 Shelf 와 천장, 52주 고점, 그리고 20일·55일·52주·사상 최고 네 지평의 돌파 상태를 종목 상세와 같은 규칙으로 보여 줍니다. 사상 최고는 ETF 의 전체 이력에서 찾으며, 이력은 한 달에 한 번 다시 받습니다. 제목줄의 USD · vs QQQ · vs SPY 단추(산업·테마 ETF 는 상위 섹터 대비 단추도 있음)는 차트와 아래 기여도의 기준을 함께 바꿉니다.</p>
           <p><b style="color:var(--amber)">기여도.</b> 구성종목이 ETF 수익률에 얼마나 보탰는지를 기간 시작 비중 × 기간 수익률(USD)로 계산합니다. 1D · 1W · 1M 가운데 기간을 고르고, 기준이 USD 가 아니면 비교 대상(SPY, QQQ, 상위 섹터)의 기여도를 옆에 함께 놓아 차이가 어느 종목에서 났는지 보여 줍니다. 상위 10개 밖의 몫은 '나머지'로 적고, 표의 비중 합이 98% 이상인 ETF 는 남는 차이를 '미설명분'(현금·보수·시차·스왑)으로 적습니다. 해외 종목은 환율을 반영해 USD 로 환산하고, 1D 에서는 장 마감 시각이 다른 종목에 '시차' 표시를 붙입니다. 그 아래 표는 상승 종목 수, 합계와 같은 방향으로 움직인 기여 가운데 상위 1개·3개 종목이 차지한 몫, 나머지 평균, 최대 상승일과 하락일을 비교하고, 히트맵은 최근 8주의 주간 기여를 보여 줍니다. 4) 주간 브리핑 탭의 Drivers 패널은 보드 전체에서 ETF 를 가장 많이 움직인 종목을 모읍니다.</p>
-          <p><b style="color:var(--amber)">뉴스와 실적.</b> 창 폭이 1,860px 이상이면 매트릭스 오른쪽에 뉴스 칼럼이 생기고, 그보다 좁으면 같은 내용이 Holdings 패널 안(차트 아래와 종목 상세 안)에 들어갑니다. ETF 를 고르면 상위 10개 종목의 최근 7일 헤드라인(Finnhub), 최근 실적과 다가오는 실적 일정, 기여도와 실적 일정으로 만든 '왜 움직였나' 요약 문장이 나옵니다. 종목 행을 펼치면 그 종목의 최근 4주가 주별로 나옵니다. 주마다 그 주의 SEC 공시(8-K 는 항목 번호와 이름, 배당·자사주 매입처럼 본문 첫 문장에서 알아본 이름)를 칩으로 붙이고, 같은 이야기를 실은 기사는 한 줄로 묶어 '비슷한 기사 +n'으로 적은 뒤 위 두 줄만 보여 줍니다. 나머지는 '나머지 n건'을 누르면 나옵니다. 4주보다 앞선 90일 안의 공시와 내부자 신고(Form 4·144) 건수는 맨 아래에 있고, TradingView 뉴스 링크(Key facts · Top news · Latest)도 함께 나옵니다. 실적은 SEC EDGAR 의 8-K 공시(Item 2.02)로 확인해 구성종목 표의 배지, 차트의 점선, 종목 상세의 '최근 실적' 줄로 표시합니다. 아티팩트에서는 Claude 예약 작업이 웹 검색으로 찾은 이유 문장이 요약 상자에 더해질 수 있습니다.</p>
+          <p><b style="color:var(--amber)">뉴스와 실적.</b> 창 폭이 1,860px 이상이면 매트릭스 오른쪽에 뉴스 칼럼이 생기고, 그보다 좁으면 같은 내용이 Holdings 패널 안(차트 아래와 종목 상세 안)에 들어갑니다. ETF 를 고르면 상위 10개 종목의 최근 7일 헤드라인(Finnhub), 최근 실적과 다가오는 실적 일정, 기여도와 실적 일정으로 만든 '왜 움직였나' 요약 문장이 나옵니다. 종목 행을 펼치면 그 종목의 최근 4주가 주별로 나옵니다. 주마다 그 주의 SEC 공시(8-K 는 항목 번호와 이름, 배당·자사주 매입처럼 본문 첫 문장에서 알아본 이름)를 칩으로 붙이고, 같은 이야기를 실은 기사는 한 줄로 묶어 '비슷한 기사 +n'으로 적은 뒤 위 두 줄만 보여 줍니다. 나머지는 '나머지 n건'을 누르면 나옵니다. 4주보다 앞선 90일 안의 공시와 내부자 신고(Form 4·144) 건수는 맨 아래에 있고, TradingView 뉴스 링크(Key facts · Top news · Latest)도 함께 나옵니다. 실적은 SEC EDGAR 의 8-K 공시(Item 2.02)로 확인해 구성종목 표의 배지, 차트의 점선, 종목 상세의 '최근 실적' 줄로 표시합니다. 빌드 때 Claude 가 웹 검색으로 찾은 이유 문장(최근 1개월 동안 기준보다 가장 많이 앞선 3개와 뒤진 3개 ETF)이 요약 상자에 더해지고, 주도 종목(기여도 1개월·1주)을 펼치면 Claude 가 쓴 최근 4주 요약이 맨 위에 나옵니다. 종목 요약은 하루 몇 종목씩 돌아가며 주 1회 새로 쓰고, 문장마다 근거 기사 링크가 붙습니다.</p>
         </section>
         <section class="wide">
           <h3>8. 명령줄 사용법</h3>
@@ -989,7 +991,7 @@ body.cover-open{overflow:hidden}
   </footer>
 </div>
 
-<script id="claudeNotes" type="application/json">null</script>
+<script id="claudeNotes" type="application/json">__CLAUDE__</script>
 <script>
 const HOLD = __HOLD__;
 
@@ -1569,19 +1571,30 @@ function renderDrivers() {
 /* ---- 뉴스·실적 (terminal/fetch_news.py → compute_news.py) ----
    실적은 SEC EDGAR 8-K Item 2.02(접수 시각으로 장 시작 전·장중·장 마감 후를 가름), 다음 실적일과 헤드라인은 Finnhub.
    1,860px 이상이고 1) 매트릭스 탭이면 오른쪽 뉴스 칼럼(ETF 모드 · 종목 모드)에, 그보다 좁으면 Holdings 패널 안에 둔다.
-   'Claude 요약'은 아티팩트 예약 작업이 claudeNotes 자리에 넣은 문장이며, 종가 기준일이 같을 때만 보인다(Pages 에는 없다) ---- */
-const CLAUDE = (() => { try { const el = document.getElementById('claudeNotes'); const v = el ? JSON.parse(el.textContent) : null; return v && v.asof === PRICE_ASOF && v.etfs ? v : null; } catch (e) { return null; } })();
+   Claude 문장은 빌드의 Claude 단계(terminal/claude_notes.py)가 claudeNotes 자리에 넣는다(Pages 와 아티팩트에 똑같이).
+   ETF 이유 문장은 종가 기준일이 같을 때만, 종목의 최근 4주 요약은 종가 기준일과 8일 안에 쓴 것만 보인다.
+   빌드에 그날 이유 문장이 없으면 아티팩트 예약 작업이 같은 자리에 넣을 수 있다 ---- */
+const CLAUDE_ALL = (() => { try { const el = document.getElementById('claudeNotes'); const v = el ? JSON.parse(el.textContent) : null; return v && typeof v === 'object' ? v : null; } catch (e) { return null; } })();
+const CLAUDE = CLAUDE_ALL && CLAUDE_ALL.asof === PRICE_ASOF && CLAUDE_ALL.etfs && Object.keys(CLAUDE_ALL.etfs).length ? CLAUDE_ALL : null;
 const TIMING = { bmo: '장 시작 전', dmh: '장중', amc: '장 마감 후' };
 const newsWide = () => curTab === 1 && !!(window.matchMedia && window.matchMedia('(min-width:1860px)').matches);
 const nS = k => (NEWS && NEWS.s && NEWS.s[String(k || '').toUpperCase()]) || null;
 const nyToday = () => { try { return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(new Date()); } catch (e) { return new Date().toISOString().slice(0, 10); } };
 const dayDiff = (a, b) => Math.round((Date.parse(b + 'T00:00:00Z') - Date.parse(a + 'T00:00:00Z')) / 864e5);
 const dday = d => { const n = dayDiff(nyToday(), d); return n <= 0 ? '오늘' : 'D-' + n; };
+/* 종목의 Claude 요약: 종가 기준일보다 앞서 8일 안에 쓴 것만 */
+function claudeSt(k) {
+  const S = CLAUDE_ALL && CLAUDE_ALL.stocks, x = S && S[String(k || '').toUpperCase()];
+  if (!x || !x.asof || !(x.text || []).length) return null;
+  const d = dayDiff(x.asof, PRICE_ASOF);
+  return d >= 0 && d <= 8 ? x : null;
+}
 const pad2 = n => String(n).padStart(2, '0');
 const kst = ts => { const d = new Date(ts * 1000 + 9 * 3600e3); return `${d.getUTCMonth() + 1}/${d.getUTCDate()} ${pad2(d.getUTCHours())}:${pad2(d.getUTCMinutes())} KST`; };
 const kstIso = iso => { const t = Date.parse(iso || ''); return isNaN(t) ? '' : kst(t / 1000); };
 const safeUrl = u => /^https?:\/\//i.test(u || '') ? cbEsc(u) : '#';
 const tvBase = tv => `https://www.tradingview.com/symbols/${encodeURIComponent(String(tv).replace(':', '-'))}/news/`;
+const clSrcs = src => (src || []).length ? `<div class="srcs">${src.slice(0, 4).map((x, i) => `<a href="${safeUrl(x.u)}" target="_blank" rel="noopener">${cbEsc(x.t || '근거 ' + (i + 1))} ↗</a>`).join('')}</div>` : '';
 /* 기간 (from, to] 안에 주가가 반응한 실적 발표 */
 function earnIn(sym, from, to) { const s = nS(sym); return s && s.e ? (s.e.find(e => e[3] && from < e[3] && e[3] <= to) || null) : null; }
 /* 차트의 실적 표시선: 90일 창 안의 발표일(주말이면 반응일) */
@@ -1626,7 +1639,7 @@ function summaryBox(t) {
   const E = NEWS && NEWS.etf && NEWS.etf[t], sum = (E && E.sum) || [];
   const C = CLAUDE && CLAUDE.etfs[t];
   if (!sum.length && !C) return '';
-  const cl = C ? `<div class="cl"><div class="cll">Claude · 웹 검색으로 찾은 이유</div>${(C.text || []).map(p => `<p>${cbEsc(p)}</p>`).join('')}${(C.src || []).length ? `<div class="srcs">${C.src.slice(0, 4).map((x, i) => `<a href="${safeUrl(x.u)}" target="_blank" rel="noopener">${cbEsc(x.t || '근거 ' + (i + 1))} ↗</a>`).join('')}</div>` : ''}</div>` : '';
+  const cl = C ? `<div class="cl"><div class="cll">Claude · 웹 검색으로 찾은 이유</div>${(C.text || []).map(p => `<p>${cbEsc(p)}</p>`).join('')}${clSrcs(C.src)}</div>` : '';
   return `<section class="ai" aria-label="왜 움직였나"><div class="wlab">왜 움직였나 · 데이터 요약${C ? ' + Claude' : ''}</div>${sum.length ? `<p>${sum.map(cbEsc).join(' ')}</p>` : ''}${cl}<div class="meta"><span>기여도(1개월 · ${cbEsc(PARENT[t] || 'SPY')} 대비, 지금 구성)와 실적 일정으로 만든 문장${C && CLAUDE.at ? ` · Claude ${cbEsc(CLAUDE.at)}` : ''}</span></div></section>`;
 }
 function etfEarnHTML(t) {
@@ -1637,9 +1650,15 @@ function etfEarnHTML(t) {
   const last = E.last || [];
   return `<dl class="ern"><dt>다음 발표</dt><dd>${nx ? nx + more : '<span class="mu">35일 안 일정 없음</span>'}</dd><dt>최근 1개월</dt><dd>${re || `상위 10 종목 발표 없음${last.length ? ` <span class="mu">· 마지막 ${last.slice(0, 3).map(x => cbEsc(x[0])).join('·')} ${cbMd(last[0][1])}</span>` : ''}`}</dd></dl>`;
 }
-function newsFoot(stock) {
+function newsFoot(stock, k) {
   const m = (NEWS && NEWS.meta) || {};
-  return `<p class="nfoot">헤드라인: Finnhub${stock ? ` ${m.weeks || 4}주(날짜는 뉴욕 기준, 비슷한 제목은 한 줄로 묶음)` : ' 최근 7일'}${m.news_at ? ` · ${kstIso(m.news_at)} 수집` : ''}${stock ? ` · 공시: SEC EDGAR 최근 ${m.fil_days || 90}일` : ''} · 실적: SEC EDGAR 8-K Item 2.02 · 일정: Finnhub${stock && TV_WIDGET ? ' · 위젯: TradingView' : ''}${CLAUDE ? ' · 이유: Claude' : ''}</p>`;
+  const cl = stock ? (claudeSt(k) ? ' · 요약: Claude(웹 검색)' : '') : (CLAUDE ? ' · 이유: Claude(웹 검색)' : '');
+  return `<p class="nfoot">헤드라인: Finnhub${stock ? ` ${m.weeks || 4}주(날짜는 뉴욕 기준, 비슷한 제목은 한 줄로 묶음)` : ' 최근 7일'}${m.news_at ? ` · ${kstIso(m.news_at)} 수집` : ''}${stock ? ` · 공시: SEC EDGAR 최근 ${m.fil_days || 90}일` : ''} · 실적: SEC EDGAR 8-K Item 2.02 · 일정: Finnhub${stock && TV_WIDGET ? ' · 위젯: TradingView' : ''}${cl}</p>`;
+}
+/* 종목 모드 맨 위: Claude 가 웹 검색으로 쓴 최근 4주 요약(주도 종목만, 종목마다 주 1회 새로 씀) */
+function claudeStockBox(k) {
+  const C = claudeSt(k); if (!C) return '';
+  return `<section class="ai art" aria-label="Claude 요약"><div class="wlab">최근 4주 · Claude 요약</div><div class="cl"><div class="cll">Claude · 웹 검색으로 찾은 내용${C.at ? ` <span class="when">· ${cbEsc(C.at)}</span>` : ''}</div>${C.text.map(p => `<p>${cbEsc(p)}</p>`).join('')}${clSrcs(C.src)}</div><div class="meta"><span>주도 종목(기여도 1개월·1주)만 · 하루 몇 종목씩 돌아가며 주 1회 새로 씁니다</span></div></section>`;
 }
 function newsEtfHTML(t) {
   const all = etfHeadlines(t), shown = all.slice(0, 8);
@@ -1713,7 +1732,7 @@ function newsStockHTML(k, wide) {
   if ((s.w || []).length || (s.f || []).length) body = weekBlocksHTML(k, s);
   else if ((s.h || []).length) body = `<div class="wlab">헤드라인 · ${cbEsc(k)} · 최근 7일</div>${hlHTML(s.h.map(x => x.concat([k])), true)}`;
   else body = `<div class="wlab">헤드라인 · ${cbEsc(k)}</div><p class="mu" style="margin:0">${us ? '최근 4주 헤드라인과 공시가 없습니다.' : '미국 밖 상장 종목이라 헤드라인과 SEC 공시가 없습니다. TradingView 링크로 확인하세요.'}</p>`;
-  return (ern ? `<dl class="ern">${ern}</dl>` : '') + widget + links + body + (wide ? newsFoot(true) : '');
+  return (ern ? `<dl class="ern">${ern}</dl>` : '') + claudeStockBox(k) + widget + links + body + (wide ? newsFoot(true, k) : '');
 }
 /* 좁은 화면: Holdings 패널 안, ETF 차트 아래에 요약과 접힌 헤드라인 줄 */
 let hnewsOpen = false;

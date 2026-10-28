@@ -4,6 +4,7 @@ name: terminal
 # 토 07:05 KST (금 22:05 UTC): 금요일 종가로 같은 일을 하고, 이어서 주간 브리핑을 텔레그램으로 전송
 # 두 화면을 한 번에 만든다: 돌파 지도의 수집·계산(breakout/) → 터미널(terminal/ → docs/, 종목 상세에 그 계산을 끼움) → 돌파 지도 페이지(docs/breakout/).
 # 돌파 지도 단계는 실패해도 터미널 빌드와 커밋을 막지 않는다(그날은 docs/breakout 이 직전 빌드로 남고, 터미널의 종목 상세는 직전 종목 가격을 쓴다).
+# 터미널 계산과 페이지 생성 사이에서 Claude(구독 토큰 CLAUDE_SETUP_TOKEN)가 웹 검색으로 이유 문장과 종목 요약을 쓴다. 이 단계도 실패해도 빌드를 막지 않는다.
 on:
   schedule:
     - cron: "10 23 * * 1-4"
@@ -28,7 +29,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v5
 
@@ -143,12 +144,58 @@ jobs:
           exit 0
 
       # 터미널은 어떤 경우에도 만든다. 종목 상세는 output/breakout-data.json 이 있으면 그것을, 없으면 docs/breakout/data/ 의 직전 사본을 쓴다.
-      - name: 계산·페이지 생성 (터미널)
+      - name: 계산 (터미널)
         run: |
           python terminal/compute_terminal.py
           python terminal/compute_contrib.py || echo "::warning::contribution computation failed; the Holdings panel is built without the contribution block"
           python terminal/compute_news.py || echo "::warning::news computation failed; the page is built without news and earnings"
-          python terminal/build_terminal.py --lists "$LISTS_DIR"
+
+      # Claude 요약: Claude Code 가 웹 검색으로 (1) 최근 1개월 동안 기준보다 가장 많이 앞선 3개·뒤진 3개 ETF 의 이유 문장과
+      # (2) 주도 종목(기여도 1개월·1주)의 최근 4주 요약을 쓴다. 종목은 실행마다 6개까지 돌아가며 맡아 대개 주 1회 새로 쓴다.
+      # 인증은 구독 토큰(claude setup-token 으로 만든 값을 CLAUDE_SETUP_TOKEN 에 넣음)이고, 쓰는 양은 그 구독의 사용 한도에서 빠진다.
+      # Claude 에게는 웹 검색·웹 페이지 읽기 두 도구만 준다(--tools). 저장소 파일을 읽거나 고치거나 명령을 실행할 수 없고,
+      # 결과는 구조화된 출력(JSON)으로만 받는다. 다음 단계가 그 출력을 검사해 output/claude-notes.json 에 넣고, build_terminal.py 가 페이지에 싣는다.
+      # 토큰이 없거나, 저장소 변수 CLAUDE_NOTES 가 off 이거나, 실패·시간 초과가 나도 빌드는 그대로 간다(그날은 이전 문장만 남는다).
+      # 모델은 저장소 변수 CLAUDE_MODEL(기본 sonnet), 한 번에 맡길 종목 수는 CLAUDE_STOCKS(기본 6)로 바꿀 수 있다.
+      - name: Claude 요약 준비
+        id: cprep
+        continue-on-error: true
+        env:
+          HAS_TOKEN: ${{ secrets.CLAUDE_SETUP_TOKEN != '' }}
+          CLAUDE_NOTES: ${{ vars.CLAUDE_NOTES }}
+          CLAUDE_STOCKS: ${{ vars.CLAUDE_STOCKS }}
+        run: python terminal/claude_notes.py prep
+
+      - name: Claude 요약 (웹 검색)
+        id: claude
+        if: steps.cprep.outputs.run == 'true'
+        continue-on-error: true
+        timeout-minutes: 25
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_SETUP_TOKEN }}
+          github_token: ${{ github.token }}
+          prompt: ${{ steps.cprep.outputs.prompt }}
+          classify_inline_comments: "false"
+          claude_args: >-
+            --model ${{ vars.CLAUDE_MODEL || 'sonnet' }}
+            --max-turns 80
+            --tools WebSearch,WebFetch
+            --allowedTools WebSearch,WebFetch
+            --strict-mcp-config
+            --setting-sources user
+            --json-schema '{"type":"object","properties":{"etfs":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"text":{"type":"array","items":{"type":"string"}},"src":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"u":{"type":"string"}},"required":["t","u"]}}},"required":["t","text","src"]}},"stocks":{"type":"array","items":{"type":"object","properties":{"k":{"type":"string"},"text":{"type":"array","items":{"type":"string"}},"src":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"u":{"type":"string"}},"required":["t","u"]}}},"required":["k","text","src"]}},"skip":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"why":{"type":"string"}},"required":["id","why"]}}},"required":["etfs","stocks"]}'
+
+      - name: Claude 요약 반영
+        if: steps.cprep.outputs.run == 'true'
+        continue-on-error: true
+        env:
+          CLAUDE_OUT: ${{ steps.claude.outputs.structured_output }}
+          CLAUDE_CONCLUSION: ${{ steps.claude.outcome }}
+        run: python terminal/claude_notes.py merge
+
+      - name: 페이지 생성 (터미널)
+        run: python terminal/build_terminal.py --lists "$LISTS_DIR"
 
       - name: 페이지 생성 (돌파 지도)
         if: env.BREAKOUT_OK == 'true'

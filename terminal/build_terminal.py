@@ -11,6 +11,8 @@
   output/contrib-data.json         구성종목 기여도(terminal/compute_contrib.py). 종가 기준일이 이번 계산과 다르거나 없으면 기여도 블록과 주도 종목 없이 만든다.
   output/etf-chart-data.json       Holdings 패널의 ETF 차트(fetch_etf_history.py). 종가 기준일이 이번 계산과 다르거나 없으면 차트 없이 만든다.
   output/news-data.json            뉴스·실적(terminal/compute_news.py). 종가 기준일이 이번 계산과 다르거나 없으면 뉴스 칼럼과 실적 표시 없이 만든다.
+  output/claude-notes.json         Claude 가 웹 검색으로 쓴 ETF 이유 문장과 종목 4주 요약(terminal/claude_notes.py). 이번 종가 기준일의 이유 문장과
+                                   8일 안에 쓴 종목 요약만 페이지의 claudeNotes 자리에 넣고, 둘 다 없으면 null 로 둔다(아티팩트 예약 작업이 채울 수 있게).
   terminal/template.html           토큰이 든 HTML 템플릿
 
 출력 (docs/)
@@ -424,6 +426,29 @@ def load_news(path, asof):
     return n
 
 
+def load_claude(path, asof, keep_days=8):
+    """Claude 문장. ETF 이유 문장은 종가 기준일이 같을 때만, 종목 요약은 종가 기준일과 keep_days 일 안에 쓴 것만 남긴다. 없으면 None."""
+    try:
+        n = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    out = {"asof": asof, "at": None, "etfs": {}}
+    if n.get("asof") == asof and n.get("etfs"):
+        out.update({"at": n.get("at"), "etfs": n["etfs"]})
+    d0 = dt.date.fromisoformat(asof)
+    st = {}
+    for k, v in (n.get("stocks") or {}).items():
+        try:
+            age = (d0 - dt.date.fromisoformat(v.get("asof") or "")).days
+        except ValueError:
+            continue
+        if 0 <= age <= keep_days and v.get("text"):
+            st[k] = {x: v[x] for x in ("text", "src", "asof", "at") if x in v}
+    if st:
+        out["stocks"] = st
+    return out if (out["etfs"] or st) else None
+
+
 def hold_key(sym, ex):
     """구성종목 행 → 목록 대조 키. 상장 점과 같은 규칙(미국은 티커, 그 밖은 "거래소:코드", 홍콩 코드는 네 자리)."""
     key = f"{EXCH_MAP.get(ex, ex)}:{sym}" if ex else CODE_ALIAS.get(sym, sym.upper())
@@ -508,6 +533,7 @@ def main():
     ap.add_argument("--contrib", default=os.path.join(ROOT, "output", "contrib-data.json"))
     ap.add_argument("--etf-chart", default=os.path.join(ROOT, "output", "etf-chart-data.json"))
     ap.add_argument("--news", default=os.path.join(ROOT, "output", "news-data.json"))
+    ap.add_argument("--claude", default=os.path.join(ROOT, "output", "claude-notes.json"))
     ap.add_argument("--holdings", default=os.path.join(ROOT, "output", "holdings"))
     ap.add_argument("--meta", default=os.path.join(ROOT, "data", "etf_meta.json"))
     ap.add_argument("--lists", default=None, help="tradfi-ticker-lists 의 output 폴더")
@@ -564,6 +590,7 @@ def main():
     stocks_tok, stocks_src = load_stocks(args, hold)
     etfx = load_etf_chart(args.etf_chart, cur["asof"], set(cur["etfs"]) | {"SPY", "QQQ"})
     news = load_news(args.news, cur["asof"])
+    claude = load_claude(args.claude, cur["asof"])
     listlog = load_listing_log(args.listing_log, hold, set(cur["etfs"]))
     src = "·".join(cur.get("source") or ["yahoo"])
     src_ko = {"yahoo": "야후 파이낸스", "stooq": "Stooq"}.get(src, src)
@@ -586,6 +613,8 @@ def main():
         "__NEWS__": json.dumps(news, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
         # 상장 로그의 이름도 바깥 목록에서 온 글이라 같은 방식으로 적는다
         "__LISTLOG__": json.dumps(listlog, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
+        # Claude 문장도 웹에서 온 글이라 같은 방식으로 적는다. 없으면 null(아티팩트 예약 작업이 찾는 자리 표시)
+        "__CLAUDE__": json.dumps(claude, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
         "__BRIEF__": brief_html(brief),
         "__BUILT_AT__": built_at_kst(),
     }
@@ -625,7 +654,8 @@ def main():
           + (f" · contribution {len(contrib['funds'])} funds" if contrib else " · contribution none")
           + (f" · ETF charts {sum(1 for t in etfx['etfs'] if t not in ('SPY', 'QQQ'))}" if etfx else " · ETF charts none")
           + (f" · news {sum(len(v.get('h', [])) for v in news['s'].values())} headlines, {sum(1 for v in news['s'].values() if v.get('e'))} with 8-K earnings" if news else " · news none")
-          + (f" · listing log {len(listlog['ev'])} events ({sum(1 for e in listlog['ev'] if e[11] or e[12])} on this board, {sum(1 for e in listlog['ev'] if e[13])} same-stock)" if listlog else " · listing log none"))
+          + (f" · listing log {len(listlog['ev'])} events ({sum(1 for e in listlog['ev'] if e[11] or e[12])} on this board, {sum(1 for e in listlog['ev'] if e[13])} same-stock)" if listlog else " · listing log none")
+          + (f" · Claude notes {len(claude['etfs'])} ETFs, {len(claude.get('stocks', {}))} stocks" if claude else " · Claude notes none"))
 
 
 if __name__ == "__main__":
