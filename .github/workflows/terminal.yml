@@ -4,7 +4,7 @@ name: terminal
 # 토 07:05 KST (금 22:05 UTC): 금요일 종가로 같은 일을 하고, 이어서 주간 브리핑을 텔레그램으로 전송
 # 두 화면을 한 번에 만든다: 돌파 지도의 수집·계산(breakout/) → 터미널(terminal/ → docs/, 종목 상세에 그 계산을 끼움) → 돌파 지도 페이지(docs/breakout/).
 # 돌파 지도 단계는 실패해도 터미널 빌드와 커밋을 막지 않는다(그날은 docs/breakout 이 직전 빌드로 남고, 터미널의 종목 상세는 직전 종목 가격을 쓴다).
-# 터미널 계산과 페이지 생성 사이에서 Claude(구독 토큰 CLAUDE_SETUP_TOKEN)가 웹 검색으로 이유 문장과 종목 요약을 쓴다. 이 단계도 실패해도 빌드를 막지 않는다.
+# 터미널 계산과 페이지 생성 사이에서 Claude(구독 토큰 CLAUDE_SETUP_TOKEN)가 웹 검색으로 이유 문장·종목 요약과 킥의 원인을 쓴다. 이 단계들도 실패해도 빌드를 막지 않는다.
 on:
   schedule:
     - cron: "10 23 * * 1-4"
@@ -29,7 +29,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 115
     steps:
       - uses: actions/checkout@v5
 
@@ -144,11 +144,18 @@ jobs:
           exit 0
 
       # 터미널은 어떤 경우에도 만든다. 종목 상세는 output/breakout-data.json 이 있으면 그것을, 없으면 docs/breakout/data/ 의 직전 사본을 쓴다.
+      # 킥(compute_kicks.py): 주마다 그 주를 결정한 하루를 종가로 정하고, 실적 공시·투자의견 제목으로 찾을 수 있는 원인은 규칙으로 붙인다.
+      # 나머지 원인은 아래 'Claude 킥' 단계가 찾는다. 실패하면 페이지는 킥 없이 만든다.
       - name: 계산 (터미널)
+        env:
+          HAS_TOKEN: ${{ secrets.CLAUDE_SETUP_TOKEN != '' }}
+          CLAUDE_NOTES: ${{ vars.CLAUDE_NOTES }}
+          CLAUDE_KICKS: ${{ vars.CLAUDE_KICKS }}
         run: |
           python terminal/compute_terminal.py
           python terminal/compute_contrib.py || echo "::warning::contribution computation failed; the Holdings panel is built without the contribution block"
           python terminal/compute_news.py || echo "::warning::news computation failed; the page is built without news and earnings"
+          python terminal/compute_kicks.py || echo "::warning::kick computation failed; the page is built without kicks"
 
       # Claude 요약: Claude Code 가 웹 검색으로 (1) 최근 1개월 동안 기준보다 가장 많이 앞선 3개·뒤진 3개 ETF 의 이유 문장과
       # (2) 주도 종목(기여도 1개월·1주)의 최근 4주 요약을 쓴다. 종목은 실행마다 6개까지 돌아가며 맡아 대개 주 1회 새로 쓴다.
@@ -157,13 +164,16 @@ jobs:
       # 결과는 구조화된 출력(JSON)으로만 받는다. 다음 단계가 그 출력을 검사해 output/claude-notes.json 에 넣고, build_terminal.py 가 페이지에 싣는다.
       # 토큰이 없거나, 저장소 변수 CLAUDE_NOTES 가 off 이거나, 실패·시간 초과가 나도 빌드는 그대로 간다(그날은 이전 문장만 남는다).
       # 모델은 저장소 변수 CLAUDE_MODEL(기본 sonnet), 한 번에 맡길 종목 수는 CLAUDE_STOCKS(기본 6)로 바꿀 수 있다.
-      - name: Claude 요약 준비
+      # 킥의 원인은 따로 'Claude 킥' 단계가 맡는다(한쪽이 실패해도 다른 쪽은 반영된다). 한 번에 맡길 수는 저장소 변수 CLAUDE_KICKS
+      # (없으면 평일 24, 주간 브리핑을 보내는 토요일 40, 최대 40, 0·off 면 끔)이고, 모델은 CLAUDE_KICKS_MODEL(없으면 CLAUDE_MODEL)이다.
+      - name: Claude 요약·킥 준비
         id: cprep
         continue-on-error: true
         env:
           HAS_TOKEN: ${{ secrets.CLAUDE_SETUP_TOKEN != '' }}
           CLAUDE_NOTES: ${{ vars.CLAUDE_NOTES }}
           CLAUDE_STOCKS: ${{ vars.CLAUDE_STOCKS }}
+          CLAUDE_KICKS: ${{ vars.CLAUDE_KICKS }}
         run: python terminal/claude_notes.py prep
 
       - name: Claude 요약 (웹 검색)
@@ -184,14 +194,38 @@ jobs:
             --allowedTools WebSearch,WebFetch
             --strict-mcp-config
             --setting-sources user
-            --json-schema '{"type":"object","properties":{"etfs":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"text":{"type":"array","items":{"type":"string"}},"src":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"u":{"type":"string"}},"required":["t","u"]}}},"required":["t","text","src"]}},"stocks":{"type":"array","items":{"type":"object","properties":{"k":{"type":"string"},"text":{"type":"array","items":{"type":"string"}},"src":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"u":{"type":"string"}},"required":["t","u"]}}},"required":["k","text","src"]}},"skip":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"why":{"type":"string"}},"required":["id","why"]}}},"required":["etfs","stocks"]}'
+            --json-schema '{"type":"object","properties":{"etfs":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"text":{"type":"array","items":{"type":"string"}},"kick":{"type":"string"},"src":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"u":{"type":"string"}},"required":["t","u"]}}},"required":["t","text","src"]}},"stocks":{"type":"array","items":{"type":"object","properties":{"k":{"type":"string"},"text":{"type":"array","items":{"type":"string"}},"src":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"u":{"type":"string"}},"required":["t","u"]}}},"required":["k","text","src"]}},"skip":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"why":{"type":"string"}},"required":["id","why"]}}},"required":["etfs","stocks"]}'
 
-      - name: Claude 요약 반영
-        if: steps.cprep.outputs.run == 'true'
+      # 킥: 그 주를 결정한 하루에 종목·ETF 가 왜 그렇게 움직였는지 한 구절과 근거 한 줄을 찾는다. 같은 도구 제한과 구조화된 출력을 쓴다.
+      # 찾지 못한 날은 skip 으로 받아 '이유 미확인'으로 남기고 다시 맡기지 않는다.
+      - name: Claude 킥 (웹 검색)
+        id: kclaude
+        if: steps.cprep.outputs.run_kicks == 'true'
+        continue-on-error: true
+        timeout-minutes: 40
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_SETUP_TOKEN }}
+          github_token: ${{ github.token }}
+          prompt: ${{ steps.cprep.outputs.prompt_kicks }}
+          classify_inline_comments: "false"
+          claude_args: >-
+            --model ${{ vars.CLAUDE_KICKS_MODEL || vars.CLAUDE_MODEL || 'sonnet' }}
+            --max-turns 120
+            --tools WebSearch,WebFetch
+            --allowedTools WebSearch,WebFetch
+            --strict-mcp-config
+            --setting-sources user
+            --json-schema '{"type":"object","properties":{"kicks":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"kick":{"type":"string"},"ev":{"type":"string"},"src":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"u":{"type":"string"}},"required":["t","u"]}}},"required":["id","kick","ev","src"]}},"skip":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"why":{"type":"string"}},"required":["id","why"]}}},"required":["kicks"]}'
+
+      - name: Claude 요약·킥 반영
+        if: steps.cprep.outputs.run == 'true' || steps.cprep.outputs.run_kicks == 'true'
         continue-on-error: true
         env:
           CLAUDE_OUT: ${{ steps.claude.outputs.structured_output }}
           CLAUDE_CONCLUSION: ${{ steps.claude.outcome }}
+          KICKS_OUT: ${{ steps.kclaude.outputs.structured_output }}
+          KICKS_CONCLUSION: ${{ steps.kclaude.outcome }}
         run: python terminal/claude_notes.py merge
 
       - name: 페이지 생성 (터미널)

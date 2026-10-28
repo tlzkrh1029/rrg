@@ -12,7 +12,7 @@
 ```
 fetch_prices.py          ETF 가격·구성종목 수집기 (두 화면이 함께 씀)
 fetch_etf_history.py     ETF 차트 자료와 전체 이력 사상 최고 캐시 (두 화면의 ETF 차트가 함께 씀)
-terminal/                섹터 전환 매트릭스: listing_log.py · compute_terminal.py · fetch_contrib_extras.py → compute_contrib.py · fetch_news.py → compute_news.py → build_terminal.py, template.html
+terminal/                섹터 전환 매트릭스: listing_log.py · compute_terminal.py · fetch_contrib_extras.py → compute_contrib.py · fetch_news.py → compute_news.py → compute_kicks.py → claude_notes.py → build_terminal.py, template.html
 breakout/                돌파 지도: fetch_stock_prices.py → compute_breakout.py → build_breakout.py, match_listing.py, template.html
 scripts/notify_telegram.py   텔레그램 전송 (--docs 로 두 화면 모두 보냄)
 data/etf_meta.json       ETF 메타. screens 로 어느 화면에 들어가는지 표시 (terminal / breakout)
@@ -71,6 +71,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 | `stocks/prices_wide.csv`, `stocks/ath.json`, `stocks/summary.json` | 돌파 지도의 구성종목 일봉(같은 SPY 축)과 사상 최고 캐시. `breakout/fetch_stock_prices.py` 가 씁니다 | [breakout/README.md](breakout/README.md) 참고 |
 | `news/earnings.json`, `news/calendar.json`, `news/filings.json`, `news/filing_text.json`, `news-data.json` | 뉴스·실적·공시. `terminal/fetch_news.py` 가 SEC 8-K 실적, 최근 90일 공시 목록과 8-K 첫 문장(캐시), Finnhub 실적 일정을 받고(`news/headlines.json` 은 같은 실행 안에서만 쓰고 저장소에 두지 않음), `terminal/compute_news.py` 가 페이지용으로 계산합니다 | 아래 "뉴스·실적" 절 참고 |
 | `etf_ath.json`, `etf-chart-data.json` | ETF 차트의 전체 이력 사상 최고 캐시와 90일 차트 자료. `fetch_etf_history.py` 가 씁니다 | 아래 "ETF 차트" 절 참고 |
+| `kicks.json`, `kick-notes.json` | 킥. `terminal/compute_kicks.py` 가 빌드마다 그 주를 결정한 하루와 규칙 원인을 계산하고(`kicks.json`), 빌드의 Claude 단계가 찾은 원인을 `terminal/claude_notes.py` 가 쌓습니다(`kick-notes.json`, 70일 동안 남김) | 아래 "킥" 절 참고 |
 
 `prices_wide.csv`의 빈 칸은 그 날짜에 그 티커의 데이터가 없다는 뜻입니다. 직전 값으로 채우지 않으므로, 비율을 계산할 때 빈 칸은 건너뛰어야 합니다.
 
@@ -116,7 +117,7 @@ python3 fetch_prices.py --days 400       # 기준 축에 남길 거래일 수 �
 
 | 시각 (KST) | 하는 일 |
 |---|---|
-| 화~금 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `terminal/listing_log.py` 로 직전 목록과 비교한 신규·이탈을 `data/lists/log.json` 에 쌓고(실패해도 계속), `fetch_prices.py` 로 ETF 가격·구성종목을 받고, `fetch_etf_history.py` 로 두 화면의 ETF 차트 자료를 만들고(전체 이력은 월 1회 받음, 실패해도 계속), `breakout/fetch_stock_prices.py` 로 구성종목 약 240개의 일봉을 받아 `breakout/compute_breakout.py` 로 계산한 뒤(실패해도 다음 단계는 계속), `terminal/fetch_contrib_extras.py` 로 기여도용 보조 가격과 환율을 받고(실패해도 계속), `terminal/fetch_news.py` 로 SEC 실적과 Finnhub 헤드라인·실적 일정을 받은 뒤(약 4분, 실패해도 계속), `terminal/compute_terminal.py` → `terminal/compute_contrib.py` → `terminal/compute_news.py` 로 계산하고, Claude 가 웹 검색으로 이유 문장과 주도 종목 요약을 쓴 뒤(`terminal/claude_notes.py`, 약 5~15분, 실패해도 계속), `terminal/build_terminal.py` 로 `docs/` 를 다시 만듭니다(종목 상세에 돌파 지도의 계산을, Holdings 패널에 ETF 차트·기여도·실적을, 뉴스 칼럼에 헤드라인과 요약을, 주간 브리핑에 주도 종목을 끼움). 이어서 `breakout/compute_breakout.py` → `breakout/build_breakout.py` 로 `docs/breakout/` 을 만듭니다(이 세 단계가 실패해도 매트릭스 쪽 빌드와 커밋은 그대로 진행되고, 돌파 지도는 직전 빌드로 남습니다). 모두 커밋한 뒤 직전 빌드와 비교해 변화가 있으면 텔레그램으로 매트릭스 조건 알림을 보냅니다. |
+| 화~금 08:10 | `tradfi-ticker-lists` 를 받아 상장 목록을 갱신하고(받지 못하면 `data/lists/` 의 사본을 씀), `terminal/listing_log.py` 로 직전 목록과 비교한 신규·이탈을 `data/lists/log.json` 에 쌓고(실패해도 계속), `fetch_prices.py` 로 ETF 가격·구성종목을 받고, `fetch_etf_history.py` 로 두 화면의 ETF 차트 자료를 만들고(전체 이력은 월 1회 받음, 실패해도 계속), `breakout/fetch_stock_prices.py` 로 구성종목 약 240개의 일봉을 받아 `breakout/compute_breakout.py` 로 계산한 뒤(실패해도 다음 단계는 계속), `terminal/fetch_contrib_extras.py` 로 기여도용 보조 가격과 환율을 받고(실패해도 계속), `terminal/fetch_news.py` 로 SEC 실적과 Finnhub 헤드라인·실적 일정을 받은 뒤(약 4분, 실패해도 계속), `terminal/compute_terminal.py` → `terminal/compute_contrib.py` → `terminal/compute_news.py` → `terminal/compute_kicks.py` 로 계산하고, Claude 가 웹 검색으로 이유 문장과 주도 종목 요약을 쓰고 킥의 원인을 찾은 뒤(`terminal/claude_notes.py`, 두 단계 합쳐 약 10~30분, 실패해도 계속), `terminal/build_terminal.py` 로 `docs/` 를 다시 만듭니다(종목 상세에 돌파 지도의 계산을, Holdings 패널에 ETF 차트·기여도·실적과 이번 주 킥을, 뉴스 칼럼에 주별 기사·공시·킥과 요약을, 주간 브리핑에 주도 종목과 그 킥을 끼움). 이어서 `breakout/compute_breakout.py` → `breakout/build_breakout.py` 로 `docs/breakout/` 을 만듭니다(이 세 단계가 실패해도 매트릭스 쪽 빌드와 커밋은 그대로 진행되고, 돌파 지도는 직전 빌드로 남습니다). 모두 커밋한 뒤 직전 빌드와 비교해 변화가 있으면 텔레그램으로 매트릭스 조건 알림을 보냅니다. |
 | 토 07:05 | 금요일 종가로 위와 같은 일을 한 뒤, 주간 브리핑(`docs/data/brief.txt`)을 텔레그램으로 보냅니다. |
 
 돌파 지도의 알림 채널은 아직 정하지 않았습니다. 빌드는 매일 `docs/breakout/data/alerts.txt`(새 돌파·새 이탈·실패·블록 알림)와 `brief.txt`(주간 브리핑)를 써 두기만 하고, 저장소 Variables 에 `BREAKOUT_TELEGRAM` = `true` 를 추가하면 같은 봇으로 보내기 시작합니다.
@@ -130,7 +131,7 @@ GitHub 의 예약 실행은 보통 예약 시각보다 2~4시간 늦게 시작�
 1. **GitHub Pages**: 저장소 Settings → Pages → Build and deployment 에서 Source 를 `Deploy from a branch`, Branch 를 `main` / `/docs` 로 두고 저장합니다. 이후 `https://tlzkrh1029.github.io/rrg/` 가 최신 보드입니다.
 2. **상장 목록(선택)**: `tradfi-ticker-lists` 는 비공개 저장소라 Actions 가 그냥은 받지 못합니다. 이 저장소의 `data/lists/` 에 사본(2026-09-27)을 두었으므로 그대로 두어도 동작하지만, 상장 점을 매주 새로 받으려면 둘 중 하나를 합니다. (a) `tradfi-ticker-lists` 를 공개로 전환, (b) GitHub Settings → Developer settings → Personal access tokens → Fine-grained 에서 `tradfi-ticker-lists` 의 Contents 읽기 권한만 가진 토큰을 만들어 이 저장소 Secrets 에 `LISTS_TOKEN` 으로 추가. 새 목록을 받으면 `data/lists/` 도 함께 갱신·커밋됩니다. 5) 상장 로그 탭의 기록도 새 목록을 받은 날에만 쌓입니다.
 3. **뉴스·실적**: 저장소 Settings → Secrets and variables → Actions 에 `SEC_USER_AGENT`(SEC EDGAR 가 요구하는 이름과 연락처, 예: `이름 주소@도메인`)와 `FINNHUB_TOKEN`(finnhub.io 무료 등급 API 키)을 둡니다. 없으면 그 출처만 건너뛰고 나머지는 정상 동작합니다. 두 값은 로그와 파일 어디에도 남기지 않습니다.
-4. **Claude 요약(선택)**: 컴퓨터에서 `claude setup-token` 을 한 번 실행해 Claude 구독 토큰을 만들고, 저장소 Secrets 에 `CLAUDE_SETUP_TOKEN` 으로 넣습니다. 빌드의 Claude 단계가 이 토큰으로 `anthropics/claude-code-action` 을 돌리며, 쓰는 양은 그 구독의 사용 한도에서 빠집니다(API 요금은 들지 않습니다). 토큰이 없으면 이 단계만 건너뜁니다. 저장소 Variables 로 동작을 바꿀 수 있습니다. `CLAUDE_NOTES` = `off` 이면 끄고, `CLAUDE_MODEL`(기본 `sonnet`, `opus`·`fable` 같은 별칭이나 전체 모델 이름)로 모델을, `CLAUDE_STOCKS`(기본 6)로 한 번에 맡길 종목 수를 정합니다.
+4. **Claude 요약(선택)**: 컴퓨터에서 `claude setup-token` 을 한 번 실행해 Claude 구독 토큰을 만들고, 저장소 Secrets 에 `CLAUDE_SETUP_TOKEN` 으로 넣습니다. 빌드의 Claude 단계가 이 토큰으로 `anthropics/claude-code-action` 을 돌리며, 쓰는 양은 그 구독의 사용 한도에서 빠집니다(API 요금은 들지 않습니다). 토큰이 없으면 이 단계만 건너뜁니다. 저장소 Variables 로 동작을 바꿀 수 있습니다. `CLAUDE_NOTES` = `off` 이면 끄고, `CLAUDE_MODEL`(기본 `sonnet`, `opus`·`fable` 같은 별칭이나 전체 모델 이름)로 모델을, `CLAUDE_STOCKS`(기본 6)로 한 번에 맡길 종목 수를 정합니다. 킥의 원인을 찾는 단계는 `CLAUDE_KICKS` 로 한 번에 맡길 수(없으면 평일 24, 토요일 40, 최대 40, `0`·`off` 면 그 단계만 끔)를, `CLAUDE_KICKS_MODEL`(없으면 `CLAUDE_MODEL`)로 모델을 정합니다. 킥 단계가 쓰는 양은 요약 단계와 비슷하거나 조금 많으므로, 구독의 사용 한도가 빠듯하면 `CLAUDE_KICKS` 를 줄이거나 `CLAUDE_KICKS_MODEL` 을 `haiku` 로 둡니다.
 5. **텔레그램**: @BotFather 에게 `/newbot` 을 보내 봇을 만들고 토큰을 받습니다. 그 봇에게 아무 메시지나 보낸 뒤 `https://api.telegram.org/bot<토큰>/getUpdates` 를 열어 `"chat":{"id":…}` 의 숫자를 확인합니다. 저장소 Settings → Secrets and variables → Actions 에 `TELEGRAM_BOT_TOKEN` 과 `TELEGRAM_CHAT_ID` 를 추가합니다. 두 값이 없으면 알림 단계는 건너뛰고 나머지는 정상 동작합니다.
 
 ### 파일
@@ -143,7 +144,8 @@ GitHub 의 예약 실행은 보통 예약 시각보다 2~4시간 늦게 시작�
 | `terminal/compute_contrib.py` | 구성종목 기여도를 계산해 `output/contrib-data.json` 을 씁니다. 규칙은 아래 "기여도" 절과 파일 머리의 설명에 있습니다. 실패하면 그날 페이지는 기여도 블록과 주도 종목 없이 만들어집니다. |
 | `terminal/fetch_news.py` | 터미널 ETF 상위 10 종목의 뉴스·실적을 `output/news/` 에 받습니다. SEC EDGAR 의 8-K 가운데 Item 2.02(실적) 접수 시각(`earnings.json`), 같은 제출 목록의 최근 90일 공시와 내부자 신고 건수(`filings.json`), 8-K 본문의 첫 문장(`filing_text.json`, 접수 번호마다 한 번만 받음), Finnhub 의 이번 주를 포함한 최근 4주 헤드라인(`headlines.json`, 저장소에 두지 않음)과 35일 안 실적 일정(`calendar.json`), NASDAQ Trader 상장 목록으로 정한 TradingView 심볼. SEC 는 초당 10건, Finnhub 는 분당 60건 한도보다 느리게 보냅니다. 받지 못한 부분은 이전 파일을 그대로 둡니다. |
 | `terminal/compute_news.py` | 뉴스·실적을 페이지용으로 계산해 `output/news-data.json` 을 씁니다. 실적 발표마다 장 시작 전·장중·장 마감 후를 가르고 발표 직전 종가에서 발표 뒤 첫 종가까지의 반응을 적으며, ETF 마다 기여도와 실적 일정으로 '왜 움직였나' 요약 문장을 만듭니다. |
-| `terminal/claude_notes.py` | 빌드의 Claude 단계 앞뒤를 맡습니다. `prep` 은 그날 맡길 일(1개월 기준 대비 가장 앞선 3개·뒤진 3개 ETF 의 이유 문장, 이유 문장이 없거나 6일 넘게 지난 주도 종목 최대 6개의 최근 4주 요약)을 정하고 프롬프트를 만듭니다. `merge` 는 Claude 의 구조화된 출력을 검사해(요청한 항목만, 문장 420자·근거는 https 주소만, 비밀 값처럼 보이는 글이 있으면 전부 버림) `output/claude-notes.json` 에 합칩니다. 규칙은 아래 "Claude 요약" 절에 있습니다. |
+| `terminal/compute_kicks.py` | 킥을 계산해 `output/kicks.json` 을 씁니다. 터미널 ETF 마다 최근 4주의 주별로 ETF 와 상위 10 종목의 '그 주를 결정한 하루'를 종가로 정하고, 주도 종목(기여도 1W·1M)도 가장 크게 기여한 ETF 와 견주어 같은 일을 합니다. 그날이 실적 반응일이거나 Finnhub 제목에 같은 방향의 목표가·투자의견 변경이 있으면 규칙으로 원인을 붙이고, 나머지를 Claude 에 맡길 순서(`ask`)를 적습니다. 규칙은 아래 "킥" 절과 파일 머리의 설명에 있습니다. 실패하면 그날 페이지는 킥 없이 만들어집니다. |
+| `terminal/claude_notes.py` | 빌드의 Claude 단계 앞뒤를 맡습니다. `prep` 은 그날 맡길 일(1개월 기준 대비 가장 앞선 3개·뒤진 3개 ETF 의 이유 문장과 한 구절, 이유 문장이 없거나 6일 넘게 지난 주도 종목 최대 6개의 최근 4주 요약, 원인이 아직 없는 킥)을 정하고 프롬프트를 두 개(요약 · 킥) 만듭니다. `merge` 는 두 Claude 단계의 구조화된 출력을 검사해(요청한 항목만, 문장 420자·킥 24자·근거 줄 160자, 근거는 https 주소만, 비밀 값처럼 보이는 글이 있으면 그 출력을 전부 버림) `output/claude-notes.json` 과 `output/kick-notes.json` 에 합칩니다. 규칙은 아래 "Claude 요약"·"킥" 절에 있습니다. |
 | `terminal/listing_log.py` | 상장 목록을 직전 상태와 비교해 신규·이탈을 `data/lists/log.json` 에 쌓습니다. 규칙은 아래 "상장 로그" 절에 있습니다. |
 | `terminal/build_terminal.py` | 계산값, 최신 두 구성종목 스냅샷(변동 %p), 상장 목록, `data/etf_meta.json` 을 `terminal/template.html` 에 끼워 `docs/index.html`(Pages 용)과 `docs/terminal.artifact.html`(Claude 아티팩트 발행용)을 만듭니다. 두 본문은 `5) 돌파 지도` 탭의 주소만 다릅니다(Pages 는 `breakout/`, 아티팩트는 돌파 지도 아티팩트를 새 탭으로). 직전 빌드(`docs/data/terminal-data.json`)와 비교해 `docs/data/alerts.json`·`alerts.txt` 와 주간 브리핑 `docs/data/brief.txt` 를 씁니다. 구성종목 표의 종목 행을 누르면 펼쳐지는 종목 상세(일간·주간·30일 변동률, 90일 가격선과 50 SMA·89 HMA·144 HMA, 네 지평의 돌파 상태, 그 종목을 담은 다른 ETF)는 `output/breakout-data.json`(없으면 `docs/breakout/data/` 의 직전 사본)에서 이 보드의 구성종목만 추려 끼워 넣습니다. |
 | `terminal/template.html` | 터미널 화면 템플릿. `__HOLD__`, `__DATA__`, `__PRICE_ASOF__` 같은 토큰을 빌드가 채웁니다. 화면을 고칠 때는 이 파일을 고칩니다. 주소에 해시가 없으면 보드 위에 대문(cover)이 먼저 덮이고 LAUNCH TERMINAL 로 엽니다. `#board`·`#rrg`·`#brief`·`#help` 로 들어오면 대문을 건너뛰며(텔레그램 링크는 `#board`), 대문의 Skip 을 켜면 그 브라우저에서는 다시 보이지 않습니다. 보드에서 `0` 또는 `COVER` 를 입력하면 다시 엽니다. |
@@ -168,11 +170,12 @@ Holdings 패널 맨 위에 그 ETF 자체의 90일 차트가 늘 열려 있습�
 
 ### 뉴스·실적 (뉴스 칼럼 · Holdings 패널)
 
-- **자리**: 화면 폭이 1,860px 이상이고 1) 매트릭스 탭이면 매트릭스 · Holdings · News 세 칼럼이 됩니다. News 칼럼은 ETF 를 고르면 'ETF 모드'(왜 움직였나 요약, 상위 10 종목의 실적 일정, 최근 7일 헤드라인)이고, 구성종목 행을 눌러 종목 상세를 열면 '종목 모드'(최근 실적과 다음 실적일, TradingView 링크 세 개, 그 종목의 최근 4주 주별 기사와 공시)로 바뀝니다. '← 전체'를 누르면 ETF 모드로 돌아갑니다. 그보다 좁으면 같은 내용이 Holdings 패널 안에 들어갑니다(ETF 차트 아래에 요약과 접힌 헤드라인 줄, 종목 상세 안에 그 종목의 뉴스).
+- **자리**: 화면 폭이 1,860px 이상이고 1) 매트릭스 탭이면 매트릭스 · Holdings · News 세 칼럼이 됩니다. News 칼럼은 ETF 를 고르면 'ETF 모드'(왜 움직였나 요약, 다음 실적 일정, 상위 10 종목의 최근 4주 주별 블록)이고, 구성종목 행을 눌러 종목 상세를 열면 '종목 모드'(최근 실적과 다음 실적일, TradingView 링크 세 개, 그 종목의 최근 4주 주별 킥·기사·공시)로 바뀝니다. '← 전체'를 누르면 ETF 모드로 돌아갑니다. 그보다 좁으면 같은 내용이 Holdings 패널 안에 들어갑니다(ETF 차트 아래에 요약과 접힌 뉴스 줄, 종목 상세 안에 그 종목의 뉴스). 좁은 화면에서 뉴스 줄을 펼치면 이번 주와 지난주가 펼쳐지고, 그 전 두 주는 버튼으로 엽니다.
+- **ETF 모드의 최근 4주**: 주마다 머리에 ETF 와 기준(산업·테마는 상위 섹터, 나머지는 SPY)의 그 주 수익률, 그 아래에 ETF 의 킥이 있습니다. 이어서 상위 10 종목을 그 주에 ETF 에 준 영향(지금 비중 × 그 주 수익률)이 큰 순서로 칩에 놓고 수익률로 칠합니다. 칩을 누르면 그 종목의 그 주 기사 묶음이 칩 아래에 펼쳐지고, 칩 밑줄은 그 종목의 킥(주황 = 원인을 찾은 자기 킥, 회색 = 이유 미확인·여러 날에 나뉨)을 뜻합니다. 그 아래에 영향이 큰 세 종목까지의 종목 킥, 그 주에 열 종목이 낸 SEC 공시 칩(앞에 티커), 기사 줄 셋(그 주에 실적을 낸 종목을 먼저, 그다음 영향순으로 세 종목에서 한 줄씩), 종목별로 모은 나머지 기사가 있습니다. 4주보다 앞선 90일 안의 실적 공시는 맨 아래 '그 전' 줄에 있습니다.
 - **실적**: SEC EDGAR 8-K 가운데 Item 2.02(Results of Operations and Financial Condition)가 든 것을 실적 발표로 봅니다. 접수 시각(뉴욕)이 09:30 전이면 장 시작 전, 16:00 이후면 장 마감 후이며, 반응은 발표 직전 종가에서 발표 뒤 첫 종가까지의 변화입니다. 구성종목 표의 티커 아래에 최근 발표일(기여도 기간 안이면 호박색) 또는 14일 안의 예정일을, 종목 상세의 차트에 발표일 표시선을, 기여도 행과 주도 종목 표에 기간 안의 발표를 적습니다. 6-K 를 내는 외국 발행사(TSM·ASML 등)와 미국 밖 상장 종목은 8-K 실적이 없습니다.
 - **종목 모드의 최근 4주**: 이번 주부터 4주(뉴욕 월요일 시작)를 주마다 한 덩어리로 보여 줍니다. 덩어리 머리에는 그 주의 기사 수와 종가 변화, 그 주에 접수한 SEC 공시 칩(8-K 는 항목 번호와 한국어 이름, 10-Q·10-K 는 보고서 종류)이 있고, 그 아래에 기사 묶음 두 줄이 있습니다. 회사 이름·티커·흔한 낱말을 뺀 제목 낱말이 셋 이상, 또는 둘 이상이면서 짧은 쪽의 30% 이상 겹치고 4일 안에 나온 기사는 한 묶음으로 보고 '비슷한 기사 +n'으로 적습니다. 순서는 제목에 회사 이름이나 티커가 든 묶음이 먼저이고, 그 안에서는 묶인 기사 수, 제목의 실적·배당·목표가 같은 낱말, 출처(보도자료 · 주요 매체) 순입니다. 주마다 네 묶음까지 남기고 두 줄만 보이며, 나머지는 '나머지 n건'을 누르면 나옵니다. 4주보다 앞선 90일 안의 공시와 내부자 신고(Form 4·144·3·5) 건수는 맨 아래 '그 전' 줄에 있습니다.
 - **8-K 이름**: 8-K 는 본문을 한 번 열어 첫 항목의 첫 문장을 가져옵니다(실적 2.02 만 든 것은 열지 않음). 그 문장에 dividend 가 있으면 '배당', repurchase 가 있으면 '자사주 매입'처럼 이름을 바꾸고, 없으면 항목 이름(8.01 기타 중요 사항 등)을 씁니다. 칩에 커서를 올리면 그 문장이 보입니다. 하루에 새로 여는 본문은 250건까지이고 나머지는 다음 실행에서 엽니다.
-- **Finnhub 4주**: 종목마다 한 번에 4주를 받고, 응답이 50건 이상인데 가장 오래된 기사가 창 시작보다 이틀 넘게 늦으면(응답 건수 상한에 걸린 것으로 보고) 그 앞 구간을 한 번 더 받습니다. 그래도 비면 그 주 머리에 '기사 n건 이상'으로 적습니다. ETF 모드의 헤드라인 목록은 지금처럼 상위 10 종목의 최근 7일 기사입니다.
+- **Finnhub 4주**: 종목마다 한 번에 4주를 받고, 응답이 50건 이상인데 가장 오래된 기사가 창 시작보다 이틀 넘게 늦으면(응답 건수 상한에 걸린 것으로 보고) 그 앞 구간을 한 번 더 받습니다. 그래도 비면 그 주 머리에 '기사 n건 이상'으로 적습니다. 주별 자료가 없는 옛 빌드의 ETF 모드는 상위 10 종목의 최근 7일 헤드라인 목록으로 보입니다.
 - **요약**: '왜 움직였나'는 기여도(1개월, 산업·테마는 상위 섹터 대비, 나머지는 SPY 대비, 지금 구성)와 실적 일정으로 만든 문장이며 Pages 와 아티팩트에 똑같이 들어갑니다. 빌드의 Claude 단계가 웹 검색으로 찾은 이유 한두 문장이 그 아래에 더해지고, 주도 종목의 종목 모드 맨 위에는 Claude 가 쓴 최근 4주 요약이 나옵니다(아래 "Claude 요약" 절).
 - **TradingView**: 종목 모드의 Key facts · Top news · Latest 링크는 TradingView 종목 뉴스 페이지의 세 구역으로 바로 갑니다. TradingView 뉴스 위젯은 2026-10-28 에 Pages 에서 확인해 보니 2024년 기사 같은 오래된 기사를 띄우고 기사 열기도 일정하지 않아서 꺼 두었습니다. 다시 켜려면 `terminal/build_terminal.py` 의 `TV_WIDGET_PAGES` 를 `True` 로 바꿉니다(켜도 Pages 에서만 나오고, 아티팩트는 외부 스크립트를 쓸 수 없어 링크만 둡니다).
 
@@ -185,6 +188,20 @@ Holdings 패널 맨 위에 그 ETF 자체의 90일 차트가 늘 열려 있습�
 - **Claude 가 할 수 있는 일**: 웹 검색과 웹 페이지 읽기 두 도구만 받습니다(`--tools WebSearch,WebFetch`). 저장소 파일을 읽거나 고치거나 명령을 실행할 수 없고, 결과는 정해진 형식의 JSON(구조화된 출력)으로만 돌려줍니다. 프롬프트에는 기여도·데이터 요약·주간 수익률·실적·공시·기사 제목이 들어가며, 웹 페이지와 기사 제목은 지시가 아닌 자료로 다루라고 적어 둡니다. 뚜렷한 이유를 찾지 못한 항목은 비워 두고 사유만 남깁니다.
 - **검사**: `terminal/claude_notes.py merge` 가 요청한 ETF·종목만 받고, 문장마다 420자 안·주소 없음, 근거는 https 주소만 남기며, 근거가 하나도 없는 항목은 버립니다. 출력 어디에든 비밀 값처럼 보이는 문자열이 있으면 그날 출력을 통째로 버립니다. 실행 기록은 `output/claude-notes.json` 의 `runs` 에 최근 20번까지 남습니다.
 - **실패할 때**: 토큰이 없거나, 사용 한도에 걸렸거나, 25분 안에 끝나지 않으면 이 단계만 실패로 남고 빌드는 그대로 갑니다. 그날은 이전 문장만 남는데, ETF 이유 문장은 종가 기준일이 달라 보이지 않습니다. 빌드에 그날 이유 문장이 없으면 아티팩트 예약 작업이 같은 자리에 넣을 수 있습니다.
+- **매트릭스의 한 구절**: ETF 이유 문장과 함께 그 달 움직임을 결정한 원인을 2~12자 안팎의 한 구절로 받아(예: '호르무즈 긴장'), 매트릭스의 ETF 이름 아래에 적습니다. 마우스를 올리면 이유 문장의 첫 문장이 보입니다.
+
+### 킥 (뉴스 칼럼 · Holdings 표 · 매트릭스 · 주도 종목 · 텔레그램)
+
+킥은 한 주를 결정한 하루와 그날의 원인 한 구절입니다. 화면이 '무엇이 얼마나 움직였나'를 보여 준다면, 킥은 '그 움직임을 결정한 한 방이 무엇이었나'를 한 줄로 답합니다.
+
+- **결정한 하루(종가로 계산)**: 그 주 수익률을 비교 대상과 견줍니다. 종목은 그 ETF, ETF 는 기준(산업·테마는 상위 섹터 ETF, 나머지는 SPY)입니다. 차이가 1%p 안이면 'ETF 와 같이'로 두고 ETF 의 킥을 따릅니다. 다만 하루 차이가 1%p 를 넘은 실적 반응일이 있으면 그 실적이 킥입니다. 차이가 1%p 를 넘으면 같은 방향으로 가장 크게 벌어진 날(1%p 이상)을 고르고, 그런 날이 없으면 '여러 날에 나뉨'입니다. 실적일을 먼저 고르지 않는 이유는, 실적일보다 다른 날이 훨씬 크게 움직인 주(VLO 의 10/22 실적일 −2.4%, 10/27 −9.2%)에 작은 날이 킥이 되기 때문입니다.
+- **상한**: ETF 한 주에 붙이는 종목 킥은 영향(지금 비중 × |주간 차이|)이 큰 세 종목까지입니다. 그 밖의 종목은 블록 아래 문장에 이름만 적고(영향이 작아 킥은 세 종목까지만 붙였다는 설명) 원인을 찾지 않습니다. 종목 모드에서 그런 날은 '원인 찾지 않음'으로 보입니다.
+- **해외 거래소 종목**: 장 시간이 미국 ETF 와 달라 하루 차이를 비교하지 않고, 그 종목이 같은 방향으로 가장 크게 움직인 날(1%p 이상)을 씁니다.
+- **주도 종목**: 기여도 1W·1M 의 주도 종목은 그 종목이 가장 크게 기여한 ETF 와 견줍니다. 종목이 ETF 와 같은 쪽으로 움직였지만 덜 움직였으면(MU 처럼 DRAM 보다 덜 오름) 'ETF 와 같이'이고, 결정한 하루도 종목이 그 기간에 움직인 방향으로 그날 1% 넘게 움직인 날 가운데서만 고릅니다.
+- **원인(규칙)**: 그날이 실적 반응일이면 '실적 발표'(8-K Item 2.02 링크)로, 그날(앞 거래일 16:00 ~ 그날 16:00, 뉴욕) Finnhub 제목에 같은 방향의 목표가·투자의견 변경이 있으면 'Argus 목표가 상향'처럼 적습니다.
+- **원인(Claude)**: 나머지는 빌드의 'Claude 킥' 단계가 웹 검색으로 찾습니다. 프롬프트에는 그날의 움직임(종목·ETF·기준), 실적·공시, 그날 앞뒤의 Finnhub 제목이 들어가고, Claude 는 원인 한 구절(kick), 근거 한 줄(ev), 근거 기사 한두 개(src)를 돌려줍니다. 원인이 분명하지 않으면 skip 으로 돌려주고, 그 날은 '이유 미확인'으로 남겨 다시 맡기지 않습니다. 맡기는 순서는 이번 주 ETF → 주도 종목 → 이번 주 종목 → 지난 주들의 ETF → 지난 주들의 종목 → 실적 규칙만 있는 날(더 구체적인 원인을 찾기 위해)이고, 실행마다 평일 24개, 주간 브리핑을 보내는 토요일 40개까지입니다. 아직 맡기지 못한 날은 '원인 찾는 중'으로 보입니다. Claude 가 찾은 원인은 규칙 원인보다 앞섭니다.
+- **검사**: `terminal/claude_notes.py merge` 가 요청한 id 만 받고, 킥은 24자·근거 줄은 160자 안에서 주소 없이, 근거는 https 주소만 두 개까지 남깁니다. 비밀 값처럼 보이는 글이 있으면 그 출력을 통째로 버립니다. 결과는 `output/kick-notes.json` 에 쌓이고, 날짜가 70일 넘게 지난 원인은 지웁니다. 실행 기록은 같은 파일의 `runs` 에 남습니다.
+- **보이는 곳**: ETF 모드의 주별 블록(ETF 의 킥과 영향이 큰 세 종목의 킥), 종목 모드의 주마다(지금 고른 ETF 와 견준 킥, ETF 와 같이 움직인 주에는 ETF 의 킥), Holdings 표의 종목명 아래(이번 주 자기 킥, 원인을 찾은 종목만), 매트릭스의 ETF 이름 아래(최근 1개월, 위 '매트릭스의 한 구절'), 4) 주간 브리핑 탭의 Drivers 패널(종목마다 킥과 근거 줄), 텔레그램 주간 브리핑의 주도 종목 여섯 줄(예: `▲ PANW IGV +1.49 · Evercore 보안 설문 (10/23 +7.2%)`).
 
 ### 기여도 (Holdings 패널 · 주간 브리핑)
 
@@ -196,7 +213,7 @@ Holdings 패널의 구성종목 표 아래에 "이 ETF 를 어느 종목이 움�
 - **경고**: 상위 10 비중이 50% 미만이면 나머지가 결과를 좌우했다고 적습니다. 균등가중 ETF(XHB·KRE·XBI·XME)는 지금 상위 10에 기간 중 오른 종목이 많이 들어오므로, 기간 시작에 가장 가까운 스냅샷의 상위 10으로 다시 계산한 '기간 시작 구성'으로 바꿔 볼 수 있습니다.
 - **해외 종목**: 현지 종가를 같은 날 환율로 나눠 USD 로 바꾸고, 행 아래에 현지 수익률과 환율 수익률을 적습니다. 해외 종목은 미국 장보다 먼저 마감하므로 1D 에서는 행에 '시차'를 붙입니다.
 - **지표와 히트맵**: 상승 종목 수, 상위 1개·3개 집중도(합계와 같은 방향 기여의 합 가운데 몫), 나머지 평균, 최대 상승일·하락일, 최근 8주 주간 기여 히트맵을 함께 둡니다.
-- **주도 종목**: 주간 브리핑 탭 오른쪽에 터미널 ETF 의 상위 10 종목 기여를 종목별로 모은 순위(USD·SPY 대비, 1W·1M)를 둡니다. 순위는 한 ETF 에 준 가장 큰 기여로 매기고, 같은 회사의 여러 주식(GOOGL·GOOG)은 합칩니다. 텔레그램 주간 브리핑에도 '주도 종목' 두 줄(1W, USD)이 들어갑니다.
+- **주도 종목**: 주간 브리핑 탭 오른쪽에 터미널 ETF 의 상위 10 종목 기여를 종목별로 모은 순위(USD·SPY 대비, 1W·1M)를 둡니다. 순위는 한 ETF 에 준 가장 큰 기여로 매기고, 같은 회사의 여러 주식(GOOGL·GOOG)은 합칩니다. 종목마다 아래 줄에 그 기간의 킥이 붙습니다(위 "킥" 절). 텔레그램 주간 브리핑에도 '주도 종목'(1W, USD, 끌어올린·끌어내린 세 종목씩 한 줄에 하나, 킥 포함)이 들어갑니다.
 
 ### 상장 로그 (5) 탭)
 
