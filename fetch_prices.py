@@ -32,6 +32,7 @@ import http.client
 import io
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -344,6 +345,52 @@ def fetch_holdings(ticker):
     return out
 
 
+PREFIX_RE = re.compile(r"^([A-Za-z ]+?):\s*(\S.*)$")
+NAME_STOP = {"company", "corporation", "corp", "inc", "holdings", "holding", "group", "limited", "class", "shares",
+             "the", "and", "plc"}
+
+
+def _name_words(name):
+    return {w for w in re.findall(r"[a-z0-9]+", (name or "").lower()) if len(w) >= 4 and w not in NAME_STOP}
+
+
+def previous_prefixed(hdir, today, back=7):
+    """Prefixed symbols ('LON:KAP') in the last `back` holdings snapshots older than `today`.
+
+    Returns (newest snapshot date or None, {etf: {CODE: row}}); for each code the newest row wins.
+    """
+    files = sorted(f for f in os.listdir(hdir) if re.fullmatch(r"\d{4}-\d{2}-\d{2}\.csv", f) and f[:10] < today)
+    out = {}
+    for name in reversed(files[-back:]):
+        with open(os.path.join(hdir, name), newline="", encoding="utf-8-sig") as f:
+            for r in csv.DictReader(f):
+                m = PREFIX_RE.match((r.get("symbol") or "").strip())
+                if m:
+                    out.setdefault(r.get("etf", ""), {}).setdefault(m.group(2).strip().upper(), r)
+    return (files[-1][:10] if files else None), out
+
+
+def keep_exchange_prefix(rows, prefixed):
+    """Keep a foreign listing's exchange prefix when the holdings page drops it.
+
+    stockanalysis.com listed URA's Kazatomprom as 'KAP' instead of 'LON:KAP' on 2026-10-17 and again
+    on 2026-10-28, which sent the price and SEC lookups to a US ticker that does not exist. A row
+    without a prefix takes the prefixed symbol that the same ETF had for the same code in a recent
+    snapshot (`prefixed` = previous_prefixed()[1][etf]) when the two names share a word.
+    Changes `rows` in place and returns 'ETF OLD -> NEW' notes.
+    """
+    notes = []
+    for r in rows:
+        sym = (r.get("symbol") or "").strip()
+        if not sym or PREFIX_RE.match(sym):
+            continue
+        p = (prefixed or {}).get(sym.upper())
+        if p and _name_words(p.get("name")) & _name_words(r.get("name")):
+            notes.append(f"{r['etf']} {sym} -> {p['symbol'].strip()}")
+            r["symbol"] = p["symbol"].strip()
+    return notes
+
+
 class RoundhillFile:
     """Roundhill's daily holdings CSV, fetched once and shared by the funds that use it."""
 
@@ -590,6 +637,8 @@ def main():
         hfile = os.path.join(hdir, dt.date.today().isoformat() + ".csv")
         rows = []
         sources = {}
+        prev_date, prev = previous_prefixed(hdir, os.path.basename(hfile)[:10])
+        summary["holdings_prefix_kept"] = []
         for t in TICKERS:
             got = None
             if t in ROUNDHILL_FUNDS:
@@ -606,6 +655,10 @@ def main():
                     summary["holdings_failed"][t] = str(e)
                     print(f"holdings {t:<5} FAILED  {e}")
             if got:
+                kept = keep_exchange_prefix(got, prev.get(t))
+                if kept:
+                    summary["holdings_prefix_kept"].extend(kept)
+                    print(f"holdings {t:<5} kept the exchange prefix seen up to {prev_date}: " + ", ".join(kept))
                 rows.extend(got)
                 print(f"holdings {t:<5} {len(got):>2} rows  top: {got[0]['symbol']} {got[0]['weight_pct']}%  ({sources[t]})")
             time.sleep(1)  # one page per second is polite
