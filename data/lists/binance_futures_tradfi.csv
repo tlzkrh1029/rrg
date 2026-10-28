@@ -27,7 +27,7 @@ BBXUSDT,BBX,USDT,EQUITY,TradFi,US,BB,constituents,stock,BB,BlackBerry Limited Co
 BEUSDT,BE,USDT,EQUITY,TradFi,US,BE,constituents,stock,BE,Bloom Energy Corporation Class A Common Stock,stock,TRADING,2026-05-26
 BITOUSDT,BITO,USDT,EQUITY,TradFi,US,BITO,constituents,etf,BITO,ProShares Bitcoin ETF,etf,TRADING,2026-07-27
 BMNRUSDT,BMNR,USDT,EQUITY,TradFi,US,BMNR,constituents,stock,BMNR,"BitMine Immersion Technologies, Inc. Common Stock",stock,TRADING,2026-06-11
-BNCUSDT,BNC,USDT,EQUITY,TradFi,US,BNC,constituents,stock,BNC,BNB Standard Corporation - Common Stock,stock,TRADING,2026-07-09
+BNCUSDT,BNC,USDT,EQUITY,TradFi,US,BNC,baseAsset,stock,BNC,BNB Standard Corporation - Common Stock,stock,TRADING,2026-07-09
 BOTUSDT,BOT,USDT,EQUITY,TradFi,US,BOT,constituents,stock,BOT,"RoboStrategy, Inc. - Common Stock",stock,TRADING,2026-07-09
 BRKBUSDT,BRKB,USDT,EQUITY,TradFi,US,BRK.B,constituents,stock,BRK.B,Berkshire Hathaway Inc. New Common Stock,stock,TRADING,2026-05-18
 BSPUSDT,BSP,USDT,EQUITY,TradFi,US,BSP,constituents,stock,BSP,Bending Spoons S.p.A. - Ordinary Shares,stock,TRADING,2026-07-02
@@ -56,7 +56,7 @@ DJTUSDT,DJT,USDT,EQUITY,TradFi,US,DJT,constituents,stock,DJT,Trump Media & Techn
 DKNGUSDT,DKNG,USDT,EQUITY,TradFi,US,DKNG,constituents,stock,DKNG,DraftKings Inc. - Class A Common Stock,stock,TRADING,2026-06-10
 DRAMUSDT,DRAM,USDT,EQUITY,TradFi,US,DRAM,constituents,etf,DRAM,Roundhill Memory ETF,etf,TRADING,2026-05-18
 EBAYUSDT,EBAY,USDT,EQUITY,TradFi,US,EBAY,constituents,stock,EBAY,eBay Inc. - Common Stock,stock,TRADING,2026-06-09
-EIDOUSDT,EIDO,USDT,EQUITY,TradFi,US,EIDO,constituents,etf,EIDO,iShares MSCI Indonesia ETF,etf,TRADING,2026-10-26
+EIDOUSDT,EIDO,USDT,EQUITY,TradFi,US,EIDO,baseAsset,etf,EIDO,iShares MSCI Indonesia ETF,etf,TRADING,2026-10-26
 EQTUSDT,EQT,USDT,EQUITY,TradFi,US,EQT,constituents,stock,EQT,EQT Corporation Common Stock,stock,TRADING,2026-10-26
 EWJUSDT,EWJ,USDT,EQUITY,TradFi,US,EWJ,constituents,etf,EWJ,iShares MSCI Japan Index Fund,etf,TRADING,2026-03-19
 EWTUSDT,EWT,USDT,EQUITY,TradFi,US,EWT,constituents,etf,EWT,iShares MSCI Taiwan ETF,etf,TRADING,2026-06-01
@@ -189,7 +189,7 @@ WMTUSDT,WMT,USDT,EQUITY,TradFi,US,WMT,constituents,stock,WMT,Walmart Inc. - Comm
 XBIUSDT,XBI,USDT,EQUITY,TradFi,US,XBI,constituents,etf,XBI,State Street SPDR S&P Biotech ETF,etf,TRADING,2026-07-09
 XLEUSDT,XLE,USDT,EQUITY,TradFi,US,XLE,constituents,etf,XLE,State Street Energy Select Sector SPDR ETF,etf,TRADING,2026-06-10
 XOMUSDT,XOM,USDT,EQUITY,TradFi,US,XOM,constituents,stock,XOM,ExxonMobil Holdings Corporation Common Stock,stock,TRADING,2026-09-28
-ZCSHUSDT,ZCSH,USDT,EQUITY,TradFi,US,ZCSH,constituents,etf,ZCSH,The Zcash ETF Shares,,TRADING,2026-10-12
+ZCSHUSDT,ZCSH,USDT,EQUITY,TradFi,US,ZCSH,baseAsset,etf,ZCSH,The Zcash ETF Shares,,TRADING,2026-10-12
 ZMUSDT,ZM,USDT,EQUITY,TradFi,US,ZM,constituents,stock,ZM,"Zoom Communications, Inc. - Class A Common Stock",stock,TRADING,2026-06-10
 ZSUSDT,ZS,USDT,EQUITY,TradFi,US,ZS,constituents,stock,ZS,"Zscaler, Inc. - Common Stock",stock,TRADING,2026-09-02
 BYDUSDT,BYD,USDT,HK_EQUITY,TradFi,HK,HKEX:1211,constituents,stock,HKEX:1211,BYD Company Limited (H shares),,TRADING,2026-09-07

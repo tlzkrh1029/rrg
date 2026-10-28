@@ -1,5 +1,191 @@
 {
- "asof": "2026-10-26",
+ "asof": "2026-10-27",
  "prev_asof": "2026-10-26",
- "alerts": []
+ "alerts": [
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "RS",
+   "name": "Reliance, Inc.",
+   "etfs": [
+    "XME"
+   ],
+   "over": 0.01114,
+   "spy": "lit",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "EMR",
+   "name": "Emerson Electric Co.",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": 0.01493,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "TXN",
+   "name": "Texas Instruments Incorporated",
+   "etfs": [
+    "SMH"
+   ],
+   "over": 0.0393,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "ADI",
+   "name": "Analog Devices, Inc.",
+   "etfs": [
+    "SMH"
+   ],
+   "over": 0.01141,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "CSX",
+   "name": "CSX Corporation",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": 0.01262,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "NST",
+   "name": "Northern Star Resources Limited",
+   "etfs": [
+    "GDX"
+   ],
+   "over": 0.00956,
+   "spy": "none",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "HASI",
+   "name": "HA Sustainable Infrastructure Capital, Inc.",
+   "etfs": [
+    "TAN"
+   ],
+   "over": 0.00677,
+   "spy": "lit",
+   "qqq": "near"
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "BA",
+   "name": "The Boeing Company",
+   "etfs": [
+    "XLI",
+    "ITA"
+   ],
+   "over": -0.08791
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "HUBB",
+   "name": "Hubbell Incorporated",
+   "etfs": [
+    "GRID"
+   ],
+   "over": -0.00969
+  },
+  {
+   "type": "failed",
+   "H": "ath",
+   "key": "HLT",
+   "name": "Hilton Worldwide Holdings Inc.",
+   "etfs": [
+    "XLY"
+   ],
+   "over": -0.01546
+  },
+  {
+   "type": "failed",
+   "H": "ath",
+   "key": "FAST",
+   "name": "Fastenal Company",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": -0.01585
+  },
+  {
+   "type": "failed",
+   "H": "ath",
+   "key": "MUR",
+   "name": "Murphy Oil Corporation",
+   "etfs": [
+    "XOP"
+   ],
+   "over": -0.01037
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "HLT",
+   "name": "Hilton Worldwide Holdings Inc.",
+   "etfs": [
+    "XLY"
+   ],
+   "over": -0.01546
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "FAST",
+   "name": "Fastenal Company",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": -0.01585
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "FAST",
+   "name": "Fastenal Company",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": -0.01585
+  },
+  {
+   "type": "failed",
+   "H": "20",
+   "key": "CMCSA",
+   "name": "Comcast Corporation",
+   "etfs": [
+    "XLC"
+   ],
+   "over": -0.01643
+  },
+  {
+   "type": "failed",
+   "H": "20",
+   "key": "VTR",
+   "name": "Ventas, Inc.",
+   "etfs": [
+    "XLRE"
+   ],
+   "over": -0.03675
+  }
+ ]
 }
