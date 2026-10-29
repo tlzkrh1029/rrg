@@ -145,7 +145,7 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .outline path{fill:none;stroke:var(--up);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .outline path.d{stroke:var(--down)}
 .bf{display:flex;justify-content:space-between;gap:8px;margin-top:6px;font-size:11px;color:var(--muted);padding:0 6px}
-/* 칸 아래 변동률: D 일간(전일 대비) · W 주간(5거래일) · M 30일(칸에 그린 기간). 탭의 자(USD·QQQ 대비·SPY 대비)를 따른다 */
+/* 칸 아래 변동률: D 일간(전일 대비) · W 주간(직전 주 마지막 종가 대비) · M 월간(직전 달 마지막 종가 대비). 탭의 자(USD·QQQ 대비·SPY 대비)를 따른다 */
 .cw{display:flex;flex-direction:column;width:var(--cw);min-width:0}
 .chg{display:grid;gap:1px;padding:3px 2px 0;font-size:9.5px;line-height:1.2;font-variant-numeric:tabular-nums;white-space:nowrap}
 .chg span{display:flex;gap:4px} .chg i{font-style:normal;color:var(--muted);width:7px;flex:none} .chg em{font-style:normal}
@@ -205,6 +205,14 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .side .big .fl{fill:var(--up);opacity:.3} .side .big .fd{fill:var(--down);opacity:.3}
 .side .big text{font-size:9.5px;fill:var(--muted)}
 .side .big text.lv{fill:var(--ink-2)}
+:root{--xa:#b48cff;--xp:#5fe3c0}
+.side .big .xah,.side .big .xpm{fill:none;stroke-width:1.4;stroke-dasharray:2 2;stroke-linecap:round}
+.side .big .xah{stroke:var(--xa)} .side .big .xpm{stroke:var(--xp)} .side .big .xad{fill:var(--xa)} .side .big .xpd{fill:var(--xp)}
+.side .big text.lv.xa{fill:var(--xa);font-weight:700} .side .big text.lv.xp{fill:var(--xp);font-weight:700}
+.side dl dt.xa{color:var(--xa)} .side dl dt.xp{color:var(--xp)}
+.tip .xa{color:var(--xa)} .tip .xp{color:var(--xp)}
+.side .ht td.sy small.xh{display:block;font-size:9.5px;font-weight:700;white-space:nowrap;margin-top:1px} .side .ht td.sy small.xh.xa{color:var(--xa)} .side .ht td.sy small.xh.xp{color:var(--xp)}
+.side dl dd small.bs{color:var(--muted);font-size:10px;margin-left:6px;font-weight:400}
 .side .big .ax{stroke:var(--hair)}
 /* 종목 상세의 이동평균: 50 SMA 주황 굵은 실선, 89 HMA 노랑 일점쇄선, 144 HMA 파랑 일점쇄선. 눈금은 가격·Shelf 만으로 잡고 벗어나면 잘린다 */
 .side .ma50{fill:none;stroke:var(--amber);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
@@ -441,9 +449,9 @@ kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);borde
   </div>
 
   <h2>켜진 칸 목록</h2>
-  <div class="tblwrap"><table class="t" id="litTbl"><thead><tr><th>경과</th><th>종목</th><th>상장</th><th>이름</th><th>ETF</th><th>넘은 지평</th><th class="r">Shelf 대비</th><th class="r">30일 변화</th></tr></thead><tbody></tbody></table></div>
+  <div class="tblwrap"><table class="t" id="litTbl"><thead><tr><th>경과</th><th>종목</th><th>상장</th><th>이름</th><th>ETF</th><th>넘은 지평</th><th class="r">Shelf 대비</th><th class="r" title="직전 달 마지막 거래일 종가 대비">월간 변화</th></tr></thead><tbody></tbody></table></div>
   <h2>약세 신호 · 실패한 돌파와 하향 이탈</h2>
-  <div class="tblwrap"><table class="t" id="failTbl"><thead><tr><th>구분</th><th>경과</th><th>종목</th><th>상장</th><th>이름</th><th>ETF</th><th class="r">기준선 대비</th><th class="r">30일 변화</th></tr></thead><tbody></tbody></table></div>
+  <div class="tblwrap"><table class="t" id="failTbl"><thead><tr><th>구분</th><th>경과</th><th>종목</th><th>상장</th><th>이름</th><th>ETF</th><th class="r">기준선 대비</th><th class="r" title="직전 달 마지막 거래일 종가 대비">월간 변화</th></tr></thead><tbody></tbody></table></div>
 
   <details class="guide" open id="guide">
     <summary>처음 보는 분을 위한 읽는 법</summary>
@@ -462,8 +470,12 @@ kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);borde
       </section>
       <section>
         <h3>4. 선과 표 읽기</h3>
-        <p>칸 아래의 세 줄은 그 종목의 변동률입니다. D 는 일간(전일 종가 대비), W 는 주간(5거래일 전 대비), M 은 30일(칸에 그린 기간, 30거래일 전 대비)이며, 초록은 상승, 빨강은 하락, 회색은 0 입니다. 탭의 자를 따르므로 vs. SPY 탭에서는 SPY 대비 비율의 변동률이 됩니다. 종목 상세의 차트에는 50일 단순이동평균(주황 굵은 실선), 89일 헐 이동평균(노랑 일점쇄선), 144일 헐 이동평균(파랑 일점쇄선)이 들어가고, 눈금은 가격과 Shelf 만으로 잡기 때문에 멀리 떨어진 이동평균은 잘려 나가며 그 경우 차트 가장자리에 현재가 대비 거리를 적습니다. 차트 위의 USD · vs QQQ · vs SPY 는 위의 1·2·3 탭과 같은 구실을 합니다.</p>
+        <p>칸 아래의 세 줄은 그 종목의 변동률입니다. D 는 일간(전일 종가 대비), W 는 주간(직전 주 마지막 거래일 종가 대비), M 은 월간(직전 달 마지막 거래일 종가 대비)이며, 초록은 상승, 빨강은 하락, 회색은 0 입니다. 탭의 자를 따르므로 vs. SPY 탭에서는 SPY 대비 비율의 변동률이 됩니다. 종목 상세의 차트에는 50일 단순이동평균(주황 굵은 실선), 89일 헐 이동평균(노랑 일점쇄선), 144일 헐 이동평균(파랑 일점쇄선)이 들어가고, 눈금은 가격과 Shelf 만으로 잡기 때문에 멀리 떨어진 이동평균은 잘려 나가며 그 경우 차트 가장자리에 현재가 대비 거리를 적습니다. 차트 위의 USD · vs QQQ · vs SPY 는 위의 1·2·3 탭과 같은 구실을 합니다.</p>
         <p>흰 선이 종가, 호박색 점선이 지평 기준의 고점(천장)입니다. 종가가 천장을 처음 넘은 날 칸이 켜지고, 점선은 실선(바닥)으로 바뀌며 선 위로 넘친 부분이 채워집니다. 이탈은 그 거울로, 바닥 아래로 흐른 부분이 빨간색으로 채워집니다. 오른쪽 위의 표는 경과일이고, 미돌파 칸에는 천장까지 남은 거리가 적힙니다. 1일이 가장 진하고 10일이 지나면 색이 꺼집니다.</p>
+      </section>
+      <section>
+        <h3>장후·장전</h3>
+        <p>미국 상장 종목과 ETF 는 정규장 밖의 거래 가격도 보여 줍니다. <span style="color:var(--xa)">보라</span>는 장후(16:00~20:00 ET), <span style="color:var(--xp)">민트</span>는 장전(다음 거래일 04:00~09:30 ET)이고, 숫자는 모두 마지막 정규장 종가 대비입니다. 종목 상세와 ETF 패널의 차트 끝에는 마지막 종가에서 이어지는 점선과 점이 붙고, 변동률 줄 아래에 장후·장전 줄이 가격과 거래 시각(뉴욕 시각)과 함께 나옵니다. vs. QQQ·vs. SPY 탭에서는 그 지수의 같은 시각 가격으로 나눈 비율의 변화이고, 옆에 USD 변화를 함께 적습니다. ETF 패널의 구성종목 표에서는 가장 최근 값(장전이 있으면 장전)이 1% 넘게 움직인 종목의 티커 아래에 그 값을 적고, 칸에 마우스를 올리면 장후·장전 변화가 함께 나옵니다. 매일 아침 빌드(한국 시각 오전 8시 무렵)는 장후 거래가 이어지는 도중의 값을 받고, 저녁 실행(한국 시각 오후 9시 반 무렵, 미국 장전 시간)이 장후의 마지막 가격과 장전 가격으로 다시 만듭니다. 칸의 판정과 D·W·M 은 정규장 종가만으로 계산합니다.</p>
       </section>
       <section>
         <h3>상장 점</h3>
@@ -495,6 +507,9 @@ kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);borde
 <script>
 const DATA = __DATA__;
 const LISTING = __LISTING__;
+/* 장후·장전 가격(terminal/fetch_xh.py → output/xh.json). 마지막 정규장 날짜가 종가 기준일과 같을 때만 들어오고, 없으면 null.
+   { date, next, close_ts, ah_at·pm_at 받은 시각(UTC), s: {종목·ETF: [종가, 장후 가격, 장후 시각, 장전 가격, 장전 시각]} }. 시각은 뉴욕 시각 'HH:MM' */
+const XH = __XH__;
 const LST_ASOF = LISTING.asof ? LISTING.asof.replace('T',' ').replace(/:\d\dZ$/,' UTC') : '목록 없음';
 const PRICE_ASOF = DATA.asof, TERMINAL_URL = '__TERMINAL_URL__', NAV_TARGET = '__NAV_TARGET__';
 function goTerminal(hash) { const u = TERMINAL_URL + (hash || ''); if (NAV_TARGET === '_blank') window.open(u, '_blank', 'noopener'); else location.href = u; }
@@ -541,8 +556,51 @@ function maOf(k, mode) {
 const MSHORT = { usd: 'USD', qqq: 'QQQ 대비', spy: 'SPY 대비' };
 const pct1 = x => (x >= 0 ? '+' : '') + (x * 100).toFixed(1);
 const pcls = x => Math.abs(x) < 0.0005 ? 'z' : x > 0 ? 'up' : 'dn';
-function changes(k, mode) { const c = series[k][mode].c, n = c.length; return { d: c[n - 1] / c[n - 2] - 1, w: c[n - 1] / c[n - 6] - 1, m: c[n - 1] / c[n - W] - 1 }; }
-const chgHTML = (k, mode) => { const ch = changes(k, mode); return `<div class="chg"><span><i>D</i><em class="${pcls(ch.d)}">${pct1(ch.d)}%</em></span><span><i>W</i><em class="${pcls(ch.w)}">${pct1(ch.w)}%</em></span><span><i>M</i><em class="${pcls(ch.m)}">${pct1(ch.m)}%</em></span></div>`; };
+function calIdx(dates, n, kind) {
+  const off = dates.length - n, last = dates[dates.length - 1]; if (!last) return -1;
+  let cut;
+  if (kind === 'w') { const d = new Date(last + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() - (d.getUTCDay() + 6) % 7); cut = d.toISOString().slice(0, 10); }
+  else cut = last.slice(0, 8) + '01';
+  for (let i = n - 1; i >= 0; i--) if (dates[i + off] < cut) return i;
+  return -1;
+}
+function calChanges(c, dates) {
+  const n = c.length, off = dates.length - n, wi = calIdx(dates, n, 'w'), mi = calIdx(dates, n, 'm');
+  return { d: c[n - 1] / c[n - 2] - 1, w: wi >= 0 ? c[n - 1] / c[wi] - 1 : null, m: mi >= 0 ? c[n - 1] / c[mi] - 1 : null, wd: wi >= 0 ? dates[wi + off] : null, md: mi >= 0 ? dates[mi + off] : null };
+}
+function changes(k, mode) { return calChanges(series[k][mode].c, DATA.dates); }
+const md2 = d => { const p = String(d || '').split('-'); return p.length === 3 ? `${+p[1]}/${+p[2]}` : ''; };
+const bsTxt = d => d ? `<small class="bs">${md2(d)} 종가부터</small>` : '';
+/* 장후·장전(시간외): 보라 = 장후, 민트 = 장전. 표의 배지는 1% 넘을 때만 붙인다(터미널과 같은 기준) */
+const XH_BADGE = 0.01;
+function xhRaw(sym) { if (!XH || !sym) return null; const v = XH.s[String(sym).toUpperCase()]; if (!v || !v[0]) return null; return { c: v[0], ah: v[1], ahT: v[2], pm: v[3], pmT: v[4] }; }
+/* 차트의 자로 잰 변화. 기준(bench)이 있으면 두 종목의 시간외 변화의 비율 */
+function xhChg(sym, bench) {
+  const a = xhRaw(sym); if (!a) return null;
+  const b = bench ? xhRaw(bench) : null; if (bench && !b) return null;
+  const r = (x, bx) => x == null ? null : (b ? (bx == null ? null : (x / a.c) / (bx / b.c) - 1) : x / a.c - 1);
+  const o = { ah: r(a.ah, b && b.ah), pm: r(a.pm, b && b.pm), raw: a };
+  return o.ah == null && o.pm == null ? null : o;
+}
+/* 가장 최근의 시간외 값: 장전이 있으면 장전, 없으면 장후 */
+const xhLast = x => x.pm != null ? { k: 'xp', lab: '장전', v: x.pm, at: x.raw.pmT } : { k: 'xa', lab: '장후', v: x.ah, at: x.raw.ahT };
+function bkXh(k) {
+  const x = xhChg(k, null); if (!x) return '';
+  const L = xhLast(x); if (Math.abs(L.v) < XH_BADGE) return '';
+  return `<small class="xh ${L.k}" title="${L.lab} ${L.at} ET · ${md2(XH.date)} 종가 대비">${L.lab} ${pct1(L.v)}%</small>`;
+}
+/* 툴팁 한 줄: 장후·장전 변화(USD) */
+function xhTip(k) {
+  const x = xhChg(k, null); if (!x) return '';
+  return [x.ah != null ? `<span class="xa">장후</span> <span class="${x.ah >= 0 ? 'on' : 'dn'}">${pct1(x.ah)}%</span>` : '', x.pm != null ? `<span class="xp">장전</span> <span class="${x.pm >= 0 ? 'on' : 'dn'}">${pct1(x.pm)}%</span>` : ''].filter(Boolean).join(' · ');
+}
+function xhDl(sym, bench, lab) {
+  const x = xhChg(sym, bench); if (!x) return '';
+  const a = x.raw, row = (k, nm, v, p, at) => `<dt class="${k}">${lab} ${nm}</dt><dd class="${v >= 0 ? 'on' : 'dn'}">${pct1(v)}%<small class="bs">${bench ? `USD ${pct1(p / a.c - 1)}% · ` : ''}${p.toFixed(2)} · ${at} ET</small></dd>`;
+  return (x.ah != null ? row('xa', '장후', x.ah, a.ah, a.ahT) : '') + (x.pm != null ? row('xp', '장전', x.pm, a.pm, a.pmT) : '');
+}
+const chgEm = v => v == null ? '<em class="z">–</em>' : `<em class="${pcls(v)}">${pct1(v)}%</em>`;
+const chgHTML = (k, mode) => { const ch = changes(k, mode); return `<div class="chg"><span><i>D</i>${chgEm(ch.d)}</span><span title="${md2(ch.wd)} 종가부터"><i>W</i>${chgEm(ch.w)}</span><span title="${md2(ch.md)} 종가부터"><i>M</i>${chgEm(ch.m)}</span></div>`; };
 
 /* ---- 판정: 상방(돌파)과 하방(이탈)을 같은 규칙으로 ---- */
 function shelfAt(c, t, H, h52, ath) {
@@ -770,19 +828,19 @@ function renderSummary(list) {
 }
 function renderTables() {
   const rowsLit = [], rowsWeak = [], seen = new Set();
-  const pct = v => (v >= 0 ? '+' : '') + (v * 100).toFixed(1) + '%';
+  const pct = v => v == null ? '–' : (v >= 0 ? '+' : '') + (v * 100).toFixed(1) + '%';
   DATA.etfs.forEach(e => e.rows.forEach(([k]) => {
     if (seen.has(k)) return; seen.add(k);
-    const r = J(k, state.mode, state.H), c = series[k][state.mode].c, n = c.length, ret30 = c[n - 1] / c[n - W] - 1;
-    if (r.st === 'lit') rowsLit.push({ k, r, top: topHorizon(k, state.mode), ret30 });
-    else if (r.st === 'failed' || r.st === 'down') rowsWeak.push({ k, r, ret30 });
+    const r = J(k, state.mode, state.H), mtd = changes(k, state.mode).m;
+    if (r.st === 'lit') rowsLit.push({ k, r, top: topHorizon(k, state.mode), mtd });
+    else if (r.st === 'failed' || r.st === 'down') rowsWeak.push({ k, r, mtd });
   }));
   rowsLit.sort((a, b) => a.r.days - b.r.days || b.r.over - a.r.over);
   rowsWeak.sort((a, b) => a.r.days - b.r.days);
   const etfTags = k => `<span class="etfs">${etfsOf[k].map(t => `<span>${t}</span>`).join('')}</span>`;
-  document.querySelector('#litTbl tbody').innerHTML = rowsLit.length ? rowsLit.map(x => `<tr><td class="m on">${x.r.days}일째</td><td class="m">${x.k}</td><td class="ld-cell">${dotsHTML(lstOf(x.k), 'sm') || '<span style="color:var(--muted)">—</span>'}</td><td class="nm">${DATA.stocks[x.k].n}</td><td>${etfTags(x.k)}</td><td>${HLAB[x.top]}</td><td class="m r">${pct(x.r.over)}</td><td class="m r">${pct(x.ret30)}</td></tr>`).join('')
+  document.querySelector('#litTbl tbody').innerHTML = rowsLit.length ? rowsLit.map(x => `<tr><td class="m on">${x.r.days}일째</td><td class="m">${x.k}</td><td class="ld-cell">${dotsHTML(lstOf(x.k), 'sm') || '<span style="color:var(--muted)">—</span>'}</td><td class="nm">${DATA.stocks[x.k].n}</td><td>${etfTags(x.k)}</td><td>${HLAB[x.top]}</td><td class="m r">${pct(x.r.over)}</td><td class="m r">${pct(x.mtd)}</td></tr>`).join('')
     : `<tr><td colspan="8" class="empty">이 기준·지평에서 켜진 칸이 없습니다.</td></tr>`;
-  document.querySelector('#failTbl tbody').innerHTML = rowsWeak.length ? rowsWeak.map(x => `<tr><td class="dn">${x.r.st === 'down' ? '이탈' : '실패'}</td><td class="m dn">${x.r.days}일</td><td class="m">${x.k}</td><td class="ld-cell">${dotsHTML(lstOf(x.k), 'sm') || '<span style="color:var(--muted)">—</span>'}</td><td class="nm">${DATA.stocks[x.k].n}</td><td>${etfTags(x.k)}</td><td class="m r">${pct(x.r.over)}</td><td class="m r">${pct(x.ret30)}</td></tr>`).join('')
+  document.querySelector('#failTbl tbody').innerHTML = rowsWeak.length ? rowsWeak.map(x => `<tr><td class="dn">${x.r.st === 'down' ? '이탈' : '실패'}</td><td class="m dn">${x.r.days}일</td><td class="m">${x.k}</td><td class="ld-cell">${dotsHTML(lstOf(x.k), 'sm') || '<span style="color:var(--muted)">—</span>'}</td><td class="nm">${DATA.stocks[x.k].n}</td><td>${etfTags(x.k)}</td><td class="m r">${pct(x.r.over)}</td><td class="m r">${pct(x.mtd)}</td></tr>`).join('')
     : `<tr><td colspan="8" class="empty">이 기준·지평에서 약세 신호가 없습니다.</td></tr>`;
 }
 
@@ -793,9 +851,10 @@ function weightBars(k, etf) {
 }
 const tip = document.getElementById('tip');
 function tipHTML(k, etf) {
-  const st = DATA.stocks[k], c = series[k][state.mode].c, n = c.length, ret30 = c[n - 1] / c[n - W] - 1;
+  const st = DATA.stocks[k], ch = changes(k, state.mode), xt = xhTip(k);
+  const pc = v => v == null ? '–' : `<span class="${v >= 0 ? 'on' : 'dn'}">${pct1(v)}%</span>`;
   return `<div class="h"><span class="tk">${k}</span>${dotsHTML(lstOf(k), 'sm')}<span class="nm">${st.n}</span></div>
-    <div class="in">${st.x ? st.x + ' 상장 · ' : ''}${MSHORT[state.mode]} 일간 <span class="${changes(k, state.mode).d >= 0 ? 'on' : 'dn'}">${pct1(changes(k, state.mode).d)}%</span> · 주간 <span class="${changes(k, state.mode).w >= 0 ? 'on' : 'dn'}">${pct1(changes(k, state.mode).w)}%</span> · 30일 <span class="${ret30 >= 0 ? 'on' : 'dn'}">${pct1(ret30)}%</span></div>
+    <div class="in">${st.x ? st.x + ' 상장 · ' : ''}${MSHORT[state.mode]} 일간 ${pc(ch.d)} · 주간 ${pc(ch.w)} · 월간 ${pc(ch.m)}</div>${xt ? `<div class="in">${xt} <span style="color:var(--muted)">(USD, ${md2(XH.date)} 종가 대비)</span></div>` : ''}
     <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${weightBars(k, etf)}
     <div class="st">종가 ${PRICE_ASOF}${st.sym ? ' · ' + st.sym : ''}${st.ipo ? ' · 상장 ' + st.ipo : ''}</div>`;
 }
@@ -814,15 +873,17 @@ function chartLabels(labels, x, yMax) {
   for (let i = 1; i < labels.length; i++) if (labels[i].y - labels[i - 1].y < 10) labels[i].y = labels[i - 1].y + 10;
   const over = labels.length ? labels[labels.length - 1].y - yMax : 0;
   if (over > 0) labels.forEach(l => { l.y -= over; });
-  return labels.map(l => `<text class="lv" x="${x}" y="${(l.y + 3).toFixed(1)}">${l.t}</text>`).join('');
+  return labels.map(l => `<text class="lv${l.cls ? ' ' + l.cls : ''}" x="${x}" y="${(l.y + 3).toFixed(1)}">${l.t}</text>`).join('');
 }
 /* 90일 차트: s = {c, h52} 시계열, ma 이동평균, r 지금 지평의 판정, cid clipPath 이름. 종목 상세와 ETF 패널이 함께 쓴다 */
-function chartSVG(s, ma, r, cid) {
+function chartSVG(s, ma, r, cid, xh) {
   const c = s.c, n = c.length, Wd = 300, Hd = 120, L = 4, R = 62, T = 8, B = 14;   // 오른쪽 라벨 칸 62: 라벨이 잘리지 않는 폭
-  let lo = Math.min(...c), hi = Math.max(...c);
+  const last0 = c[n - 1], vA = xh && xh.ah != null ? last0 * (1 + xh.ah) : null, vP = xh && xh.pm != null ? last0 * (1 + xh.pm) : null, xv = [vA, vP].filter(v => v != null);
+  let lo = Math.min(...c, ...xv), hi = Math.max(...c, ...xv);
   const h52 = s.h52; if (h52 <= hi * 1.12) hi = Math.max(hi, h52);
   const pad = (hi - lo) * 0.06; lo -= pad; hi += pad;
-  const xs = i => L + i * (Wd - L - R) / (n - 1), ys = v => Hd - B - (v - lo) / (hi - lo) * (Hd - T - B);
+  const G = vP != null ? 26 : vA != null ? 15 : 0;
+  const xs = i => L + i * (Wd - L - R - G) / (n - 1), ys = v => Hd - B - (v - lo) / (hi - lo) * (Hd - T - B);
   const pts = c.map((v, i) => `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).join(' ');
   const labels = [];
   let out = `<svg viewBox="0 0 ${Wd} ${Hd}" aria-hidden="true">`;
@@ -838,6 +899,12 @@ function chartSVG(s, ma, r, cid) {
     labels.push({ y: +yl, t: `천장 ${HLAB[state.H]}` });
   }
   if (h52 >= lo && h52 <= hi && state.H !== '52w' && state.H !== 'ath') { const y5 = ys(h52).toFixed(1); out += `<line class="s52" x1="${L}" y1="${y5}" x2="${Wd - R}" y2="${y5}"/>`; labels.push({ y: +y5, t: '52주 고점' }); }
+  let xseg = '';
+  if (xv.length) {
+    const x0 = xs(n - 1), y0 = ys(last0); let px = x0, py = y0;
+    if (vA != null) { const x = x0 + 12, y = ys(vA); xseg += `<line class="xah" x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/><circle class="xad" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.7"/>`; labels.push({ y, t: '장후 ' + pct1(xh.ah) + '%', cls: 'xa' }); px = x; py = y; }
+    if (vP != null) { const x = x0 + 23, y = ys(vP); xseg += `<line class="xpm" x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/><circle class="xpd" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.7"/>`; labels.push({ y, t: '장전 ' + pct1(xh.pm) + '%', cls: 'xp' }); }
+  }
   out += chartLabels(labels, Wd - R + 4, Hd - B - 4);
   /* 이동평균: 눈금을 바꾸지 않고, 그림 영역 밖은 잘라 낸다. 마지막 값이 눈금 밖이면 가장자리에 현재가 대비 거리를 적는다 */
   const P = a => a.map((v, i) => v == null ? null : `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).filter(Boolean).join(' ');
@@ -849,10 +916,10 @@ function chartSVG(s, ma, r, cid) {
     if (v > hi) out += `<text class="edge ${cls}" x="${Wd - R - 2}" y="${T + 8 + j * 9}" text-anchor="end">▲ ${lab} ${d}%</text>`;
     else if (v < lo) out += `<text class="edge ${cls}" x="${Wd - R - 2}" y="${Hd - B - 3 - j * 9}" text-anchor="end">▼ ${lab} ${d}%</text>`;
   });
-  out += `<polyline class="l" points="${pts}"/>`;
+  out += `<polyline class="l" points="${pts}"/>${xseg}`;
   return out + '</svg>';
 }
-function bigChart(k) { return chartSVG(series[k][state.mode], maOf(k, state.mode), J(k, state.mode, state.H), 'bc'); }
+function bigChart(k) { return chartSVG(series[k][state.mode], maOf(k, state.mode), J(k, state.mode, state.H), 'bc', xhChg(k, state.mode === 'usd' ? null : state.mode.toUpperCase())); }
 function legendHTML(ma, n) {
   const fmt = v => state.mode === 'usd' ? (v >= 1000 ? v.toFixed(0) : v.toFixed(2)) : v.toFixed(4);
   const sw = cls => `<svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" class="${cls}"/></svg>`;
@@ -879,12 +946,12 @@ function etfChartHTML(t) {
   const tog = ['usd', 'qqq', 'spy'].map(x => `<button type="button" data-tog="${x}" aria-pressed="${m === x}">${x === 'usd' ? 'USD' : 'vs ' + x.toUpperCase()}</button>`).join('');
   const head = `<div class="ttlrow"><span>${t} · 90일 · ${MLAB[m]}</span><span class="tog" role="group" aria-label="차트와 지도의 자">${tog}</span></div>`;
   if (!s) return `<div class="etfchart">${head}<div class="st" style="margin-top:0">이번 빌드에는 ${t} 차트 자료가 없습니다.</div></div>`;
-  const X = ETFX.etfs[t], c = s.c, n = c.length, ch = { d: c[n - 1] / c[n - 2] - 1, w: c[n - 1] / c[n - 6] - 1, m: c[n - 1] / c[n - W] - 1 };
-  const dd = v => `<dd class="${v >= 0 ? 'on' : 'dn'}">${pct1(v)}%</dd>`;
+  const X = ETFX.etfs[t], c = s.c, n = c.length, ch = calChanges(c, ETFX.dates || DATA.dates);
+  const dd = (v, d) => `<dd class="${v >= 0 ? 'on' : 'dn'}">${pct1(v)}%${bsTxt(d)}</dd>`;
   const stale = X.stale ? ` <span style="color:var(--muted)">· 마지막 종가 ${X.stale}</span>` : '';
   return `<div class="etfchart">${head}`
-    + `<dl><dt>${MSHORT[m]} 일간</dt>${dd(ch.d)}<dt>${MSHORT[m]} 주간</dt>${dd(ch.w)}<dt>${MSHORT[m]} 30일</dt>${dd(ch.m)}<dt>종가</dt><dd>${ETFX.asof} · ${t} ${X.c[n - 1].toFixed(2)}${stale}</dd></dl>`
-    + `<div class="big">${chartSVG(s, s.ma, judge(c, state.H, s.h52, s.ath), 'ec')}</div>${legendHTML(s.ma, n)}</div>`;
+    + `<dl><dt>${MSHORT[m]} 일간</dt>${dd(ch.d)}<dt>${MSHORT[m]} 주간</dt>${dd(ch.w, ch.wd)}<dt>${MSHORT[m]} 월간</dt>${dd(ch.m, ch.md)}${xhDl(t, m === 'usd' ? null : m.toUpperCase(), MSHORT[m])}<dt>종가</dt><dd>${ETFX.asof} · ${t} ${X.c[n - 1].toFixed(2)}${stale}</dd></dl>`
+    + `<div class="big">${chartSVG(s, s.ma, judge(c, state.H, s.h52, s.ath), 'ec', xhChg(t, m === 'usd' ? null : m.toUpperCase()))}</div>${legendHTML(s.ma, n)}</div>`;
 }
 function stateTag(k, etf) {
   const r = J(k, state.mode, state.H);
@@ -911,7 +978,7 @@ function etfPanelHTML(t) {
     const isSwap = k == null, cur = state.picked && k && state.picked.k === k && state.picked.etf === t;
     const lf = isSwap ? (LISTING.swaps[sym] || null) : lstOf(k);
     const NOTE = { swap: 'SWAP/T-BILL', nosym: '심볼 없음', nodata: '가격 없음' };
-    const sy = (isSwap ? `<span class="sw">${NOTE[note] || '칸 없음'}</span><small>${sym || name}</small>` : k) + dotsHTML(lf, 'sm');
+    const sy = (isSwap ? `<span class="sw">${NOTE[note] || '칸 없음'}</span><small>${sym || name}</small>` : k) + dotsHTML(lf, 'sm') + (isSwap ? '' : bkXh(k));
     return `<tr class="${k ? 'rowk' : ''}${cur ? ' cur' : ''}" ${k ? `data-k="${k}"` : ''}><td class="rk">${i + 1}</td><td class="sy">${sy}</td><td class="nm">${name}</td><td class="w r"><span class="bar" style="width:${(wv / maxW * 100).toFixed(1)}%"></span><span>${w}</span></td><td class="stt r">${k ? stateTag(k, t) : '<span class="mu">—</span>'}</td></tr>`;
   }).join('');
   return `<div class="sh">Holdings<small>구성종목 상위 10</small><span class="nav"><span style="color:var(--muted);margin-right:4px;font-weight:400;letter-spacing:0">${idx + 1}/${blockOrder.length}</span><button type="button" id="prevB" title="이전 ETF">‹ 이전</button><button type="button" id="nextB" title="다음 ETF">다음 ›</button></span></div>
@@ -943,14 +1010,14 @@ function renderSide() {
   }
   if (!state.picked) { side.innerHTML = ''; return; }
   const { k, etf } = state.picked, st = DATA.stocks[k], idx = order.findIndex(o => o.k === k && o.etf === etf);
-  const c = series[k][state.mode].c, n = c.length, ret30 = c[n - 1] / c[n - W] - 1, ch = changes(k, state.mode);
+  const ch = changes(k, state.mode);
   const blocks = etfsOf[k].map(t => { const e = DATA.etfs.find(x => x.t === t), s = blockStats(e); return `<div class="blk"><span>${t}</span><span class="mt"><i style="width:${(s.ratio * 100).toFixed(0)}%"></i><i class="d" style="width:${(s.dratio * 100).toFixed(0)}%"></i></span><span class="c">${s.lit}/${s.n}${s.down ? ` ▼${s.down}` : ''}</span></div>`; }).join('');
   const e = DATA.etfs.find(x => x.t === etf);
   side.innerHTML = `<div class="sh">Stock<small>종목 상세</small><span class="nav"><span style="color:var(--muted);margin-right:4px;font-weight:400;letter-spacing:0">${idx + 1}/${order.length}</span><button type="button" id="prevC" title="이전 칸">‹</button><button type="button" id="nextC" title="다음 칸">›</button></span></div>
     <div class="tk">${k}${dotsHTML(lstOf(k), 'lg')}<small>${st.x ? st.x : (/^\d{6}$/.test(k) ? 'KRX' : 'US')} EQUITY</small></div>
     <div class="nm">${st.n}</div>
     <div class="ko">${e ? e.ko + ' · ' + e.tag + ' ETF ' + etf : ''}</div>
-    <dl><dt>${MSHORT[state.mode]} 일간</dt><dd class="${ch.d >= 0 ? 'on' : 'dn'}">${pct1(ch.d)}%</dd><dt>${MSHORT[state.mode]} 주간</dt><dd class="${ch.w >= 0 ? 'on' : 'dn'}">${pct1(ch.w)}%</dd><dt>${MSHORT[state.mode]} 30일</dt><dd class="${ret30 >= 0 ? 'on' : 'dn'}">${pct1(ret30)}%</dd><dt>종가</dt><dd>${PRICE_ASOF}${st.sym ? ' · ' + st.sym : ''}${st.src ? ' (' + st.src + ')' : ''}</dd>${st.ipo ? `<dt>상장</dt><dd>${st.ipo} · 그 앞은 첫 종가로 채움</dd>` : ''}<dt>구성종목</dt><dd>${e ? e.asof : ''} · <a href="${e ? e.url : '#'}" target="_blank" rel="noopener">stockanalysis.com</a></dd></dl>
+    <dl><dt>${MSHORT[state.mode]} 일간</dt><dd class="${ch.d >= 0 ? 'on' : 'dn'}">${pct1(ch.d)}%</dd><dt>${MSHORT[state.mode]} 주간</dt><dd class="${ch.w >= 0 ? 'on' : 'dn'}">${pct1(ch.w)}%${bsTxt(ch.wd)}</dd><dt>${MSHORT[state.mode]} 월간</dt><dd class="${ch.m >= 0 ? 'on' : 'dn'}">${pct1(ch.m)}%${bsTxt(ch.md)}</dd>${xhDl(k, state.mode === 'usd' ? null : state.mode.toUpperCase(), MSHORT[state.mode])}<dt>종가</dt><dd>${PRICE_ASOF}${st.sym ? ' · ' + st.sym : ''}${st.src ? ' (' + st.src + ')' : ''}</dd>${st.ipo ? `<dt>상장</dt><dd>${st.ipo} · 그 앞은 첫 종가로 채움</dd>` : ''}<dt>구성종목</dt><dd>${e ? e.asof : ''} · <a href="${e ? e.url : '#'}" target="_blank" rel="noopener">stockanalysis.com</a></dd></dl>
     <div class="ttlrow"><span>90일 · ${MLAB[state.mode]}</span><span class="tog" role="group" aria-label="차트와 지도의 자"><button type="button" data-tog="usd" aria-pressed="${state.mode === 'usd'}">USD</button><button type="button" data-tog="qqq" aria-pressed="${state.mode === 'qqq'}">vs QQQ</button><button type="button" data-tog="spy" aria-pressed="${state.mode === 'spy'}">vs SPY</button></span></div>
     <div class="big">${bigChart(k)}</div>${maLegend(k)}
     <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${weightBars(k, etf)}

@@ -152,6 +152,23 @@ def names_and(items):
     return "·".join(items)
 
 
+SHARE_FOLD = {"GOOG": "GOOGL", "FOX": "FOXA", "NWS": "NWSA", "BRK.A": "BRK.B"}   # 같은 회사의 두 번째 주식 → 첫 번째 주식
+
+
+def fold_rows(rows):
+    """기여도 행에서 같은 회사의 두 번째 주식을 첫 번째 주식 행에 합친다(비중·기여는 더하고 수익률은 합친 기여 ÷ 합친 비중)."""
+    have = {str(x[0]).upper() for x in rows}
+    out = [list(x) for x in rows if SHARE_FOLD.get(str(x[0]).upper()) not in have]
+    for x in rows:
+        p = SHARE_FOLD.get(str(x[0]).upper())
+        if p in have:
+            o = next(y for y in out if str(y[0]).upper() == p)
+            o[2] = (o[2] or 0) + (x[2] or 0)
+            o[4] = (o[4] or 0) + (x[4] or 0)
+            o[3] = o[4] / o[2] if o[2] else o[3]
+    return out
+
+
 def top_by(rows, sign, k):
     xs = [x for x in rows if (x[4] > 0 if sign > 0 else x[4] < 0) and abs(x[4]) >= 0.0005]
     return sorted(xs, key=lambda x: -abs(x[4]))[:k]
@@ -161,10 +178,15 @@ def summary(t, funds, bench, earn, nxt, today):
     """데이터 요약 문장. 기여도가 없으면 빈 목록.
     earn: 표시 심볼 → 실적 목록(e), nxt: 표시 심볼 → 다음 실적일(nx), today: 'YYYY-MM-DD'."""
     F = funds.get(t)
-    if not F or "1M" not in F.get("P", {}):
+    roll = "21D" if "21D" in (F or {}).get("P", {}) else "1M"   # 최근 1개월: 21거래일 이동 창(없는 옛 계산이면 1M)
+    if not F or roll not in F.get("P", {}):
         return []
-    A = F["P"]["1M"]
-    B = funds.get(bench, {}).get("P", {}).get("1M") if bench else None
+    A = dict(F["P"][roll])
+    B = funds.get(bench, {}).get("P", {}).get(roll) if bench else None
+    A["rows"] = fold_rows(A["rows"])
+    if B:
+        B = dict(B)
+        B["rows"] = fold_rows(B["rows"])
     out = []
     # 1) 수익률과 기준과의 차이
     if B:
@@ -205,14 +227,17 @@ def summary(t, funds, bench, earn, nxt, today):
     rest_w, rest_c = A["rest"][0], A["rest"][1]
     if rest_w >= 0.02 and abs(rest_c) >= 0.003 and abs(rest_c) > max([abs(x[4]) for x in A["rows"]] or [0]):
         out.append(f"상위 10 밖 종목(비중 {round(rest_w * 100)}%)이 합계 {pc(rest_c)}%p로 가장 크게 움직였습니다.")
-    # 4) 최근 1주를 이끈 종목
+    # 4) 이번 주(직전 주 마지막 종가부터)를 이끈 종목
     W = F["P"].get("1W")
+    if W:
+        W = dict(W)
+        W["rows"] = fold_rows(W["rows"])
     if W and abs(W["R"]) >= 0.001:
         ws = 1 if W["R"] >= 0 else -1
         lead = top_by(W["rows"], ws, 2)
         if lead:
             names = [f"{x[0]}({pc(x[4])}%p)" for x in lead]
-            out.append(f"최근 1주 {'상승' if ws > 0 else '하락'}({pc(W['R'])}%)은 {names_and(names)}{josa(names[-1], ('이', '가'))} 이끌었습니다.")
+            out.append(f"이번 주({md(W['from'])} 종가부터) {'상승' if ws > 0 else '하락'}({pc(W['R'])}%)은 {names_and(names)}{josa(names[-1], ('이', '가'))} 이끌었습니다.")
     # 5) 기간 중 실적 발표와 그 반응(반응이 큰 순서로 셋까지)
     rec = []
     for x in A["rows"]:
@@ -497,6 +522,7 @@ def main():
     nxt = {k: v["nx"] for k, v in stocks.items() if v.get("nx")}
     etf = {}
     for t, keys in top.items():
+        keys = [k for k in keys if SHARE_FOLD.get(k) not in keys]   # 같은 회사의 두 번째 주식은 첫 번째 주식에 합쳐 보인다
         nxs = sorted([[k, stocks[k]["nx"][0], stocks[k]["nx"][1]] for k in keys if k in stocks and stocks[k].get("nx")], key=lambda x: x[1])
         cut = (now.date() - dt.timedelta(days=RECENT_DAYS)).isoformat()
         rec = [[k, e[0]] for k in keys if k in stocks for e in stocks[k].get("e", []) if e[0] >= cut]
