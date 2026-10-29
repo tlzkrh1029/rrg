@@ -23,8 +23,8 @@ Claude 에게는 웹 검색·웹 페이지 읽기 두 도구만 주고, 결과�
          비밀 값처럼 보이는 문자열이 하나라도 있으면 그 출력 전체를 버린다. 출력이 비었으면(단계 실패·시간 초과) 이전 파일을 그대로 둔다.
          킥 단계가 skip 에 적은 요청 id 는 '찾지 못함'으로 남기고 시도 횟수를 센다. KICK_TRIES 번 찾지 못하면 다시 맡기지 않는다
          (화면에는 '이유 미확인', 그 전에는 '원인 찾는 중').
-         각 단계의 실행 기록(claude-code-action 의 execution_file, 환경 변수 NOTES_EXEC·KICKS_EXEC)에서 웹 검색·페이지 읽기 횟수를 세어
-         runs 에 남긴다. 킥 단계가 맡은 항목 수의 절반보다 적게 찾아봤으면 그 실행의 skip 은 '찾지 못함'으로 남기지 않는다.
+         각 단계의 실행 기록(claude-code-action 의 execution_file, 환경 변수 NOTES_EXEC·KICKS_EXEC)에서 웹 검색·페이지 읽기 횟수,
+         턴 수, 실제로 쓴 모델, API 로 환산한 비용(구독에서는 청구되지 않는다. 모델 사이의 사용량을 견주는 값)을 세어 runs 에 남긴다. 킥 단계가 맡은 항목 수의 절반보다 적게 찾아봤으면 그 실행의 skip 은 '찾지 못함'으로 남기지 않는다.
 
 output/claude-notes.json (build_terminal.py 가 페이지의 <script id="claudeNotes"> 자리에 넣는다)
   asof    ETF 이유 문장의 종가 기준일(이 날짜로 만든 빌드에서만 보인다)
@@ -32,13 +32,13 @@ output/claude-notes.json (build_terminal.py 가 페이지의 <script id="claudeN
   etfs    {ETF: {"text": [문장], "src": [{"t": 매체 이름이나 짧은 설명, "u": https 주소}]}}
   stocks  {종목 키: {"text": [...], "src": [...], "asof": 쓴 날의 종가 기준일, "at": 쓴 시각}}
           STOCK_KEEP_DAYS 일 동안 남기고, 페이지는 종가 기준일과 8일 안에 쓴 요약만 보여 준다.
-  runs    최근 실행 기록(최대 RUN_LOG 개) [시각, 요청 ETF, 반영 ETF, 요청 종목, 반영 종목, 결과, 웹 검색 수, 페이지 읽기 수, 턴 수]
+  runs    최근 실행 기록(최대 RUN_LOG 개) [시각, 요청 ETF, 반영 ETF, 요청 종목, 반영 종목, 결과, 웹 검색 수, 페이지 읽기 수, 턴 수, 모델, 환산 비용 USD]
 
 output/kick-notes.json (build_terminal.py 가 output/kicks.json 의 규칙 원인과 합쳐 페이지의 kicks 자리에 넣는다)
   n       {id: {"k": 킥 한 구절, "ev": 근거 한 줄, "src": [{"t", "u"}], "by": "claude", "at": 쓴 시각}}
           또는 {"none": 1, "tries": 찾지 못한 횟수, "at": …, "why": …}  (tries 가 없는 옛 기록은 1 로 본다)
           id 는 'S:<종목>:<날>' · 'E:<ETF>:<날>'. 날이 KICK_KEEP_DAYS 일보다 오래되면 지운다.
-  runs    최근 실행 기록 [시각, 요청 수, 찾음, 찾지 못함, 결과, 웹 검색 수, 페이지 읽기 수, 턴 수]
+  runs    최근 실행 기록 [시각, 요청 수, 찾음, 찾지 못함, 결과, 웹 검색 수, 페이지 읽기 수, 턴 수, 모델, 환산 비용 USD]
 """
 
 import argparse
@@ -659,25 +659,26 @@ def merge_notes(args, req, at):
     st = exec_stats(exec_path("NOTES_EXEC"))
     runs = notes.get("runs") or []
     runs.append([at, len(req.get("etfs") or []), len(got_e), len(req.get("stocks") or {}), len({tuple(v["text"]) for v in got_s.values()}), result]
-                + ([st["search"], st["fetch"], st["turns"]] if st else []))
+                + run_tail(st))
     notes["runs"] = runs[-RUN_LOG:]
     os.makedirs(os.path.dirname(args.notes), exist_ok=True)
     with open(args.notes, "w", encoding="utf-8") as f:
         json.dump(notes, f, ensure_ascii=False, indent=1)
     print(f"Claude notes merged for {asof}: ETFs {'·'.join(got_e) or '-'} ({len(got_e)}/{len(req.get('etfs') or [])}), "
           f"stocks {'·'.join(got_s) or '-'} · kept {len(notes['stocks'])} stock notes · {result}"
-          + (f" · {st['search']} searches, {st['fetch']} page reads, {st['turns']} turns" if st else " · no execution log"))
+          + (f" · {st['search']} searches, {st['fetch']} page reads, {st['turns']} turns · {st['model'] or 'model ?'} · ${st['cost'] if st['cost'] is not None else '?'} API-equivalent" if st else " · no execution log"))
 
 
 def exec_stats(path):
-    """claude-code-action 의 실행 기록(SDK 메시지 JSON 배열)에서 웹 검색·페이지 읽기 횟수와 턴 수를 센다. 기록이 없으면 None."""
+    """claude-code-action 의 실행 기록(SDK 메시지 JSON 배열)에서 웹 검색·페이지 읽기 횟수, 턴 수, 모델, 환산 비용을 읽는다.
+    모델은 시작 메시지(system/init)에, 턴 수와 비용(total_cost_usd)은 결과 메시지에 있다. 기록이 없으면 None."""
     if not path or not os.path.exists(path):
         return None
     try:
         msgs = json.load(open(path, encoding="utf-8"))
     except (OSError, ValueError):
         return None
-    st = {"search": 0, "fetch": 0, "turns": None}
+    st = {"search": 0, "fetch": 0, "turns": None, "model": None, "cost": None}
     for m in msgs if isinstance(msgs, list) else []:
         if not isinstance(m, dict):
             continue
@@ -688,9 +689,18 @@ def exec_stats(path):
                     st["search"] += 1
                 elif "fetch" in name:
                     st["fetch"] += 1
+        elif m.get("type") == "system" and m.get("subtype") == "init":
+            st["model"] = str(m.get("model") or "")[:60] or None
         elif m.get("type") == "result":
             st["turns"] = m.get("num_turns")
+            c = m.get("total_cost_usd")
+            st["cost"] = round(c, 3) if isinstance(c, (int, float)) else None
     return st
+
+
+def run_tail(st):
+    """runs 한 줄의 꼬리: 웹 검색 수, 페이지 읽기 수, 턴 수, 모델, 환산 비용."""
+    return [st["search"], st["fetch"], st["turns"], st["model"], st["cost"]] if st else []
 
 
 def exec_path(var):
@@ -744,14 +754,14 @@ def merge_kicks(args, req, at):
     cut = (dt.date.fromisoformat(asof) - dt.timedelta(days=KICK_KEEP_DAYS)).isoformat()
     kn["n"] = {i: v for i, v in n.items() if i.rsplit(":", 1)[-1] >= cut}
     runs = kn.get("runs") or []
-    runs.append([at, len(want), len(found), len(none), result] + ([st["search"], st["fetch"], st["turns"]] if st else []))
+    runs.append([at, len(want), len(found), len(none), result] + run_tail(st))
     kn["runs"] = runs[-RUN_LOG:]
     os.makedirs(os.path.dirname(args.kick_notes), exist_ok=True)
     with open(args.kick_notes, "w", encoding="utf-8") as f:
         json.dump(kn, f, ensure_ascii=False, indent=1)
     print(f"Claude kicks merged for {asof}: found {len(found)}, not found {len(none)}, unanswered {len(want) - len(found) - len(none)} "
           f"of {len(want)} · kept {len(kn['n'])} kick notes · {result}"
-          + (f" · {st['search']} searches, {st['fetch']} page reads, {st['turns']} turns" if st else " · no execution log"))
+          + (f" · {st['search']} searches, {st['fetch']} page reads, {st['turns']} turns · {st['model'] or 'model ?'} · ${st['cost'] if st['cost'] is not None else '?'} API-equivalent" if st else " · no execution log"))
 
 
 def merge(args):
