@@ -1,0 +1,162 @@
+{
+ "n": {
+  "S:MRNA:2026-10-22": {
+   "k": "흑색종 백신 자료 유출",
+   "ev": "Merck와 공동 개발한 개인맞춤 흑색종 백신 3상 자료가 ESMO 발표 전에 유출됨",
+   "src": [
+    {
+     "t": "Moderna shares fall after leak of partia",
+     "u": "https://political.org/2026/10/22/moderna-shares-fall-after-leak-of-partial-cancer-vaccine-data-ahead-of-full-phase-3-results/"
+    },
+    {
+     "t": "Boston Globe",
+     "u": "https://www.bostonglobe.com/2026/10/22/business/moderna-merck-cancer-vaccine-key-endpoints-melanoma-trial/"
+    }
+   ],
+   "by": "claude",
+   "at": "10/29 10:21 KST"
+  },
+  "S:PANW:2026-10-23": {
+   "k": "보안 수요 서베이",
+   "ev": "Evercore ISI 채널 파트너 조사에서 연말 보안 예산과 수요가 강하게 나타났다고 알려짐",
+   "src": [
+    {
+     "t": "Palo Alto and Crowdstrike Jumped 6%, and",
+     "u": "https://www.tikr.com/blog/palo-alto-and-crowdstrike-jumped-6-and-okta-up-5-as-evercore-survey-flags-stronger-cyber-demand"
+    }
+   ],
+   "by": "claude",
+   "at": "10/29 10:21 KST"
+  },
+  "S:TEM:2026-10-23": {
+   "k": "BMS 데이터 라이선스",
+   "ev": "Bristol Myers Squibb가 2031년까지 종양 데이터 라이선스 계약을 맺음, 고정 지급액 1억 3,750만 달러",
+   "src": [
+    {
+     "t": "Tempus 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001717115/000119312526429533/d135568d8k.htm"
+    },
+    {
+     "t": "Tempus Expands Strategic Collaboration w",
+     "u": "https://www.tempus.com/news/pr/tempus-expands-strategic-collaboration-with-bristol-myers-squibb/"
+    }
+   ],
+   "by": "claude",
+   "at": "10/29 10:21 KST"
+  },
+  "S:VLO:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "정유주 급락 기사 제목은 있으나 본문을 확인하지 못해 원인 불명"
+  },
+  "S:TWST:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "검색에서 그날 원인을 확인하지 못함"
+  },
+  "S:ABSI:2026-10-28": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "검색에서 그날 원인을 확인하지 못함"
+  },
+  "S:000660:2026-10-28": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "10/28 보도를 찾지 못함"
+  },
+  "S:NVDA:2026-10-28": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "원인이 불분명함"
+  },
+  "E:ARKG:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:DRAM:2026-10-28": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:GNOM:2026-10-28": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:URA:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:XBI:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:XME:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:XLC:2026-10-26": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:SMH:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:XLP:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:IGV:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:XLE:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "정유주 급락은 보이나 계기 미확인"
+  },
+  "E:XLRE:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:XLK:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:XHB:2026-10-26": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:XLU:2026-10-28": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  },
+  "E:PAVE:2026-10-27": {
+   "none": 1,
+   "at": "10/29 10:21 KST",
+   "why": "그날 원인 자료 없음"
+  }
+ },
+ "runs": [
+  [
+   "10/29 10:21 KST",
+   24,
+   3,
+   21,
+   "ok"
+  ]
+ ]
+}

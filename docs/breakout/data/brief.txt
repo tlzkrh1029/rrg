@@ -1,27 +1,27 @@
-돌파 지도 주간 브리핑 · 종가 2026-10-27 · 구성종목 2026-10-28
+돌파 지도 주간 브리핑 · 종가 2026-10-28 · 구성종목 2026-10-29
 
 켜진 칸 (지평별)
-  USD: 20일 67/277 (24%) · 55일 47 · 52주 27 · 사상 최고 21 · 이탈 43 · 실패 6
-  QQQ 대비: 20일 69/277 (25%) · 55일 55 · 52주 10 · 사상 최고 8 · 이탈 24 · 실패 7
-  SPY 대비: 20일 72/277 (26%) · 55일 47 · 52주 11 · 사상 최고 8 · 이탈 37 · 실패 6
+  USD: 20일 52/278 (19%) · 55일 40 · 52주 21 · 사상 최고 16 · 이탈 30 · 실패 5
+  QQQ 대비: 20일 53/278 (19%) · 55일 49 · 52주 11 · 사상 최고 9 · 이탈 22 · 실패 3
+  SPY 대비: 20일 55/278 (20%) · 55일 40 · 52주 6 · 사상 최고 6 · 이탈 31 · 실패 5
 
 켜진 비율이 높은 블록 (USD 20일)
   KRE 지역은행 9/10 · SPY 대비 9/10
-  XHB 주택건설 8/10 · SPY 대비 8/10
-  XLV 헬스케어 6/10 ×1 · SPY 대비 6/10
-  XBI 바이오 5/10 · SPY 대비 6/10
-  PAVE 미국 인프라 4/10 · SPY 대비 4/10
-  XLI 산업재 3/10 ▼4 · SPY 대비 3/10
-이탈이 몰린 블록 (USD 20일): GDX ▼7/10 · XLK ▼4/10 · XLC ▼4/10 · XLI ▼4/10
+  XHB 주택건설 7/10 · SPY 대비 7/10
+  ITA 항공우주·방산 3/10 ▼2 · SPY 대비 4/10
+  XLV 헬스케어 2/10 · SPY 대비 3/10
+  XLY 경기소비재 2/10 ▼1 ×1 · SPY 대비 2/10
+  XLI 산업재 2/10 ▼4 · SPY 대비 3/10
+이탈이 몰린 블록 (USD 20일): XLC ▼5/10 · GDX ▼5/10 · XLI ▼4/10 · GRID ▼4/10
 
 켜진 칸 (USD, 가장 높은 지평; * 는 SPY 대비로도 켜짐)
-  사상 최고 17: EMR(PAVE) 1일, RS(XME) 1일*, GILD(XLV·XBI) 2일, 8001(URA) 2일, ALLE(XHB) 3일, AAPL(XLK) 4일, BRK.B(XLF) 4일, LLY(XLV·ARKG) 4일*, SN(XHB) 6일*, WSM(XHB) 6일, EOG(XLE·XOP) 8일, MO(XLP) 8일, TMO(XLV) 9일, KO(XLP) 9일, HALO(XBI) 10일*, CVX(XLE) 10일, COP(XLE·XOP) 10일
-  52주 6: RRC(XOP) 2일, UCB(KRE) 4일, MUR(XOP) 7일, OVV(XOP) 8일, BIIB(XBI) 10일*, PFE(XLV) 10일
-  55일 20: TXN(SMH) 1일*, CSX(PAVE) 1일*, ADI(SMH) 1일*, NST(GDX) 1일, LMT(XLI·ITA) 2일*, TCBI(KRE) 3일*, UTHR(XBI) 4일*, DUK(XLU) 4일*, ECL(XLB) 4일*, SO(XLU) 4일*, DIS(XLC) 5일, NOW(IGV) 6일*, UNH(XLV) 6일, CLF(XME) 7일*, CL(XLP) 8일, QGEN(GNOM) 9일*, WMT(XLP) 9일, HLT(XLY) 9일*, MAR(XLY) 9일, COST(XLP) 10일
-  20일 34: HASI(TAN) 1일*, LUV(JETS) 2일*, RTX(XLI·ITA) 2일*, SLB(XLE) 3일*, VLY(KRE) 4일*, URI(PAVE) 4일*, EBC(KRE) 4일*, COLB(KRE) 4일*, DHI(XHB) 4일*, UBSI(KRE) 4일*, TOL(XHB) 4일*, LEN(XHB) 4일*, GBCI(KRE) 5일*, OZK(KRE) 5일*, CWEN(TAN) 5일*, ETR(XLU) 5일, SSD(XHB) 6일*, EWBC(KRE) 6일*, SPG(XLRE) 6일, MLM(XLB) 6일*, PEP(XLP) 7일*, AXP(XLF) 7일*, EOAN(GRID) 8일*, PSA(XLRE) 8일, LOW(XLY) 8일*, MAS(XHB) 9일*, VMC(XLB) 9일*, HD(XLY·XHB) 9일, MNST(XLP) 9일*, CRM(IGV) 9일, UNP(XLI·PAVE) 10일*, AMGN(XLV·XBI) 10일*, LIN(XLB) 10일, MDLZ(XLP) 10일
+  사상 최고 14: TMO(XLV) 1일, URI(PAVE) 1일, EMR(PAVE) 2일, RS(XME) 2일*, GILD(XLV) 3일, ALLE(XHB) 4일, LLY(XLV·ARKG) 5일*, AAPL(XLK) 5일, BRK.B(XLF) 5일, SN(XHB) 7일*, WSM(XHB) 7일, EOG(XLE·XOP) 9일, PR(XOP) 9일, KO(XLP) 10일
+  52주 5: ABSI(ARKG) 1일, RRC(XOP) 3일, UCB(KRE) 5일, MUR(XOP) 8일, OVV(XOP) 9일
+  55일 18: HONA(ITA) 1일*, TXN(SMH) 2일*, ADI(SMH) 2일*, NST(GDX) 2일, CSX(PAVE) 2일*, LMT(XLI·ITA) 3일*, AR(XOP) 4일*, TCBI(KRE) 4일*, UTHR(XBI) 5일*, ECL(XLB) 5일*, DUK(XLU) 5일, SO(XLU) 5일, NOW(IGV) 7일*, CLF(XME) 8일*, QGEN(GNOM) 10일*, HLT(XLY) 10일*, MAR(XLY) 10일, WMT(XLP) 10일
+  20일 30: SYRE(XBI) 2일*, HASI(TAN) 2일*, LUV(JETS) 3일*, RTX(XLI·ITA) 3일*, SLB(XLE) 4일*, VLY(KRE) 5일*, EBC(KRE) 5일*, COLB(KRE) 5일*, UBSI(KRE) 5일*, TOL(XHB) 5일*, LEN(XHB) 5일*, DHI(XHB) 5일*, OZK(KRE) 6일*, GBCI(KRE) 6일*, CWEN(TAN) 6일*, ETR(XLU) 6일, SSD(XHB) 7일*, EWBC(KRE) 7일*, SPG(XLRE) 7일, MLM(XLB) 7일*, AXP(XLF) 8일*, 8001(URA) 8일, PEP(XLP) 8일*, EOAN(GRID) 9일*, PSA(XLRE) 9일, LOW(XLY) 9일*, MAS(XHB) 10일*, VMC(XLB) 10일*, HD(XLY) 10일, CRM(IGV) 10일
 
-약세 신호 49: AMD(XLK·SMH) 20일 이탈 8일, AVGO(XLK·SMH) 20일 이탈 8일, MU(XLK·SMH·DRAM) 20일 이탈 10일, INTC(XLK) 20일 이탈 10일, BAC(XLF) 55일 이탈 10일, C(XLF) 55일 이탈 3일, AMGN(XLV·XBI) 실패, ABT(XLV) 실패, TSLA(XLY) 실패, BKNG(XLY) 55일 이탈 2일, GOOGL(XLC) 55일 이탈 4일, GOOG(XLC) 55일 이탈 4일, CMCSA(XLC) 실패, APP(XLC) 55일 이탈 3일, NFLX(XLC) 55일 이탈 5일, GE(XLI·ITA) 55일 이탈 6일, BA(XLI·ITA) 55일 이탈 1일, ETN(XLI·GRID) 55일 이탈 6일, UBER(XLI) 55일 이탈 3일, MDLZ(XLP) 실패, NEM(XLB·XME·GDX) 20일 이탈 3일, FCX(XLB·XME) 55일 이탈 4일, PLD(XLRE) 55일 이탈 8일, EQIX(XLRE) 55일 이탈 8일, VTR(XLRE) 실패, VRTX(GNOM) 실패, CDNA(ARKG) 실패, MAS(XHB) 실패, MTRN(XME) 20일 이탈 8일, AA(XME) 55일 이탈 4일, CCJ(URA) 55일 이탈 10일, SSW(URA) 55일 이탈 4일, FAST(PAVE) 실패, 688825(DRAM) 55일 이탈 10일, STX(DRAM) 55일 이탈 10일, 2408(DRAM) 20일 이탈 10일, AEM(GDX) 20일 이탈 4일, ABX(GDX) 55일 이탈 4일, WPM(GDX) 20일 이탈 4일, FNV(GDX) 20일 이탈 4일, AU(GDX) 55일 이탈 4일, PAAS(GDX) 55일 이탈 4일, PWR(GRID) 55일 이탈 6일, ABBN(GRID) 55일 이탈 7일, SU(GRID) 55일 이탈 7일, PRY(GRID) 55일 이탈 10일, HUBB(GRID) 55일 이탈 1일, NVT(GRID) 55일 이탈 8일, ULCC(JETS) 55일 이탈 10일
+약세 신호 40: AMGN(XLV·XBI) 실패, TSLA(XLY) 실패, BKNG(XLY) 55일 이탈 3일, GOOGL(XLC) 55일 이탈 5일, GOOG(XLC) 55일 이탈 5일, DIS(XLC) 실패, TTWO(XLC) 55일 이탈 1일, CMCSA(XLC) 실패, APP(XLC) 55일 이탈 4일, TMUS(XLC) 55일 이탈 4일, GE(XLI·ITA) 55일 이탈 7일, ETN(XLI·GRID) 55일 이탈 7일, UBER(XLI) 55일 이탈 4일, BA(XLI·ITA) 55일 이탈 2일, MDLZ(XLP) 실패, TGT(XLP) 20일 이탈 3일, FCX(XLB·XME) 55일 이탈 5일, PLD(XLRE) 55일 이탈 9일, EQIX(XLRE) 55일 이탈 9일, VTR(XLRE) 실패, VRTX(GNOM) 실패, CDNA(ARKG) 실패, MAS(XHB) 실패, MTRN(XME) 20일 이탈 9일, AA(XME) 55일 이탈 5일, 8001(URA) 실패, SSW(URA) 55일 이탈 5일, FAST(PAVE) 실패, ABX(GDX) 55일 이탈 5일, WPM(GDX) 20일 이탈 5일, FNV(GDX) 20일 이탈 5일, AU(GDX) 55일 이탈 5일, PAAS(GDX) 55일 이탈 5일, PWR(GRID) 55일 이탈 7일, ABBN(GRID) 55일 이탈 8일, SU(GRID) 55일 이탈 8일, HUBB(GRID) 55일 이탈 2일, NVT(GRID) 55일 이탈 9일, ENPH(TAN) 55일 이탈 1일, SEDG(TAN) 55일 이탈 1일
 
-켜진 종목 77 중 크립토 거래소 상장 13 (목록 2026-10-28)
+켜진 종목 67 중 크립토 거래소 상장 9 (목록 2026-10-29)
 
 https://tlzkrh1029.github.io/rrg/breakout/

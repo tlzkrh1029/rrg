@@ -8,6 +8,7 @@ AMATBUSDT,AMATB,USDT,AMAT,Applied Materials,stock,AMAT,"Applied Materials, Inc. 
 AMCBUSDT,AMCB,USDT,AMC,AMC Entertainment Holdings,stock,AMC,"AMC Entertainment Holdings, Inc. Class A Common Stock",stock,TRADING,1
 AMDBUSDT,AMDB,USDT,AMD,Advanced Micro Devices,stock,AMD,"Advanced Micro Devices, Inc. - Common Stock",stock,TRADING,1
 AMZNBUSDT,AMZNB,USDT,AMZN,Amazon,stock,AMZN,"Amazon.com, Inc. - Common Stock",stock,TRADING,1
+APPBUSDT,APPB,USDT,APP,Applovin Corp,stock,APP,Applovin Corporation - Class A Common Stock,stock,TRADING,1
 ARMBUSDT,ARMB,USDT,ARM,ARM,stock,ARM,Arm Holdings plc - American Depositary Shares,stock,TRADING,1
 ASMLBUSDT,ASMLB,USDT,ASML,ASML,stock,ASML,ASML Holding N.V. - New York Registry Shares,stock,TRADING,1.001120398374345428
 ASTSBUSDT,ASTSB,USDT,ASTS,AST SpaceMobile,stock,ASTS,"AST SpaceMobile, Inc. - Class A Common Stock",stock,TRADING,1
@@ -20,6 +21,7 @@ BMNRBUSDT,BMNRB,USDT,BMNR,BitMine Immersion Technologies,stock,BMNR,"BitMine Imm
 BNCBUSDT,BNCB,USDT,BNC,BNB Standard Corporation,stock,BNC,BNB Standard Corporation - Common Stock,stock,TRADING,1
 BOTBUSDT,BOTB,USDT,BOT,RoboStrategy Inc,stock,BOT,"RoboStrategy, Inc. - Common Stock",stock,TRADING,1
 BRKBBUSDT,BRKBB,USDT,BRK.B,Berkshire Hathaway,stock,BRK.B,Berkshire Hathaway Inc. New Common Stock,stock,TRADING,1
+BSPBUSDT,BSPB,USDT,BSP,Bending Spoons (bStocks）,stock,BSP,Bending Spoons S.p.A. - Ordinary Shares,stock,TRADING,1
 CBRSBUSDT,CBRSB,USDT,CBRS,Cerebras,stock,CBRS,Cerebras Systems Inc. - Class A Common Stock,stock,TRADING,1
 COHRBUSDT,COHRB,USDT,COHR,Coherent,stock,COHR,Coherent Corp. Common Stock,stock,TRADING,1
 COINBUSDT,COINB,USDT,COIN,Coinbase,stock,COIN,"Coinbase Global, Inc. - Class A Common Stock",stock,TRADING,1
@@ -35,6 +37,7 @@ DRAMBUSDT,DRAMB,USDT,DRAM,Roundhill Memory ETF,etf,DRAM,Roundhill Memory ETF,etf
 EWYBUSDT,EWYB,USDT,EWY,iShares MSCI South Korea ETF,etf,EWY,iShares MSCI South Korea ETF,etf,TRADING,1
 FLNCBUSDT,FLNCB,USDT,FLNC,Fluence Energy,stock,FLNC,"Fluence Energy, Inc. - Class A Common Stock",stock,TRADING,1
 FWDIBUSDT,FWDIB,USDT,FWDI,Forward Industries,stock,FWDI,"Forward Industries, Inc. - Common Stock",stock,TRADING,1
+GEVBUSDT,GEVB,USDT,GEV,GE Vernova Inc (bStocks）,stock,GEV,GE Vernova Inc. Common Stock,stock,TRADING,1
 GLWBUSDT,GLWB,USDT,GLW,Corning,stock,GLW,Corning Incorporated Common Stock,stock,TRADING,1.00129026931256489
 GMEBUSDT,GMEB,USDT,GME,GameStop,stock,GME,GameStop Corporation Common Stock,stock,TRADING,1
 GOOGLBUSDT,GOOGLB,USDT,GOOGL,Alphabet,stock,GOOGL,Alphabet Inc. - Class A Common Stock,stock,TRADING,1.000478058978107511
@@ -77,7 +80,9 @@ RDDTBUSDT,RDDTB,USDT,RDDT,Reddit,stock,RDDT,"Reddit, Inc. Class A Common Stock",
 RKLBBUSDT,RKLBB,USDT,RKLB,Rocket Lab,stock,RKLB,Rocket Lab Corporation - Common Stock,stock,TRADING,1
 SECZBUSDT,SECZB,USDT,SECZ,Securitize,stock,SECZ,Securitize Corp. Common Stock,stock,TRADING,1
 SHAZBUSDT,SHAZB,USDT,SHAZ,SharonAI,stock,SHAZ,"SharonAI Holdings, Inc. - Class A Common Stock",stock,TRADING,1
+SKDDBUSDT,SKDDB,USDT,SKDD,GraniteShares 2x Short SK Hynix Daily ETF,etf,SKDD,GraniteShares 2x Short SK Hynix Daily ETF,etf,TRADING,1
 SKHYBUSDT,SKHYB,USDT,SKHY,SK Hynix,stock,SKHY,SK hynix Inc. - American Depositary Shares,stock,TRADING,1
+SKUUBUSDT,SKUUB,USDT,SKUU,GraniteShares 2x Long SK Hynix Daily ETF,etf,SKUU,GraniteShares 2x Long SK Hynix Daily ETF,etf,TRADING,1
 SMCIBUSDT,SMCIB,USDT,SMCI,Super Micro Computer,stock,SMCI,"Super Micro Computer, Inc. - Common Stock",stock,TRADING,1
 SMHBUSDT,SMHB,USDT,SMH,VanEck Semiconductor ETF,etf,SMH,VanEck Semiconductor ETF,etf,TRADING,1
 SNDKBUSDT,SNDKB,USDT,SNDK,SanDisk,stock,SNDK,Sandisk Corporation - Common Stock When-Issued,stock,TRADING,1

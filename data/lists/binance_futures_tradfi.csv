@@ -6,11 +6,11 @@ AAPLUSDT,AAPL,USDT,EQUITY,TradFi,US,AAPL,constituents,stock,AAPL,Apple Inc. - Co
 ABBVUSDT,ABBV,USDT,EQUITY,TradFi,US,ABBV,constituents,stock,ABBV,AbbVie Inc. Common Stock,stock,TRADING,2026-10-26
 ACNUSDT,ACN,USDT,EQUITY,TradFi,US,ACN,constituents,stock,ACN,Accenture plc Class A Ordinary Shares (Ireland),stock,TRADING,2026-09-29
 ADBEUSDT,ADBE,USDT,EQUITY,TradFi,US,ADBE,constituents,stock,ADBE,Adobe Inc. - Common Stock,stock,TRADING,2026-06-11
-AGPUUSDT,AGPU,USDT,EQUITY,TradFi,US,AGPU,constituents,stock,AGPU,Axe Compute Inc. - Common Stock,stock,TRADING,2026-09-18
+AGPUUSDT,AGPU,USDT,EQUITY,TradFi,US,AGPU,baseAsset,stock,AGPU,Axe Compute Inc. - Common Stock,stock,TRADING,2026-09-18
 AKAMUSDT,AKAM,USDT,EQUITY,TradFi,US,AKAM,constituents,stock,AKAM,"Akamai Technologies, Inc. - Common Stock",stock,TRADING,2026-10-06
 ALABUSDT,ALAB,USDT,EQUITY,TradFi,US,ALAB,constituents,stock,ALAB,"Astera Labs, Inc. - Common Stock",stock,TRADING,2026-06-22
 AMATUSDT,AMAT,USDT,EQUITY,TradFi,US,AMAT,constituents,stock,AMAT,"Applied Materials, Inc. - Common Stock",stock,TRADING,2026-06-08
-AMCUSDT,AMC,USDT,EQUITY,TradFi,US,AMC,constituents,stock,AMC,"AMC Entertainment Holdings, Inc. Class A Common Stock",stock,TRADING,2026-09-18
+AMCUSDT,AMC,USDT,EQUITY,TradFi,US,AMC,baseAsset,stock,AMC,"AMC Entertainment Holdings, Inc. Class A Common Stock",stock,TRADING,2026-09-18
 AMDUSDT,AMD,USDT,EQUITY,TradFi,US,AMD,constituents,stock,AMD,"Advanced Micro Devices, Inc. - Common Stock",stock,TRADING,2026-05-06
 AMZNUSDT,AMZN,USDT,EQUITY,TradFi,US,AMZN,constituents,stock,AMZN,"Amazon.com, Inc. - Common Stock",stock,TRADING,2026-02-09
 ANETUSDT,ANET,USDT,EQUITY,TradFi,US,ANET,constituents,stock,ANET,"Arista Networks, Inc. Common Stock",stock,TRADING,2026-09-18
@@ -27,7 +27,7 @@ BBXUSDT,BBX,USDT,EQUITY,TradFi,US,BB,constituents,stock,BB,BlackBerry Limited Co
 BEUSDT,BE,USDT,EQUITY,TradFi,US,BE,constituents,stock,BE,Bloom Energy Corporation Class A Common Stock,stock,TRADING,2026-05-26
 BITOUSDT,BITO,USDT,EQUITY,TradFi,US,BITO,constituents,etf,BITO,ProShares Bitcoin ETF,etf,TRADING,2026-07-27
 BMNRUSDT,BMNR,USDT,EQUITY,TradFi,US,BMNR,constituents,stock,BMNR,"BitMine Immersion Technologies, Inc. Common Stock",stock,TRADING,2026-06-11
-BNCUSDT,BNC,USDT,EQUITY,TradFi,US,BNC,baseAsset,stock,BNC,BNB Standard Corporation - Common Stock,stock,TRADING,2026-07-09
+BNCUSDT,BNC,USDT,EQUITY,TradFi,US,BNC,constituents,stock,BNC,BNB Standard Corporation - Common Stock,stock,TRADING,2026-07-09
 BOTUSDT,BOT,USDT,EQUITY,TradFi,US,BOT,constituents,stock,BOT,"RoboStrategy, Inc. - Common Stock",stock,TRADING,2026-07-09
 BRKBUSDT,BRKB,USDT,EQUITY,TradFi,US,BRK.B,constituents,stock,BRK.B,Berkshire Hathaway Inc. New Common Stock,stock,TRADING,2026-05-18
 BSPUSDT,BSP,USDT,EQUITY,TradFi,US,BSP,constituents,stock,BSP,Bending Spoons S.p.A. - Ordinary Shares,stock,TRADING,2026-07-02
@@ -160,7 +160,7 @@ SQQQUSDT,SQQQ,USDT,EQUITY,TradFi,US,SQQQ,constituents,etf,SQQQ,ProShares UltraPr
 STMUSDT,STM,USDT,EQUITY,TradFi,US,STM,constituents,stock,STM,STMicroelectronics N.V. Common Stock,stock,TRADING,2026-10-26
 STRCUSDT,STRC,USDT,EQUITY,TradFi,US,STRC,constituents,stock,STRC,Strategy Inc - Variable Rate Series A Perpetual Stretch Preferred Stock,stock,TRADING,2026-07-02
 STXXUSDT,STXX,USDT,EQUITY,TradFi,US,STX,constituents,stock,STX,Seagate Technology Holdings PLC - Ordinary Shares (Ireland),stock,TRADING,2026-06-11
-TBTUSDT,TBT,USDT,EQUITY,TradFi,US,TBT,constituents,etf,TBT,ProShares UltraShort Lehman 20  Year Treasury,etf,TRADING,2026-07-27
+TBTUSDT,TBT,USDT,EQUITY,TradFi,US,TBT,baseAsset,etf,TBT,ProShares UltraShort Lehman 20  Year Treasury,etf,TRADING,2026-07-27
 TEAMUSDT,TEAM,USDT,EQUITY,TradFi,US,TEAM,constituents,stock,TEAM,Atlassian Corporation  - Class A Common Stock,stock,TRADING,2026-09-02
 TEMUSDT,TEM,USDT,EQUITY,TradFi,US,TEM,constituents,stock,TEM,"Tempus AI, Inc. - Class A Common Stock",stock,TRADING,2026-08-28
 TERUSDT,TER,USDT,EQUITY,TradFi,US,TER,constituents,stock,TER,"Teradyne, Inc. - Common Stock",stock,TRADING,2026-07-02

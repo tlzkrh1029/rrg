@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-28T02:10:51Z",
+  "generated_at": "2026-10-29T01:08:15Z",
   "binance_equity_catalog_error": null,
   "binance_spot_bstocks": {
-    "count": 100,
+    "count": 105,
     "by_asset_class": {
-      "etf": 17,
-      "stock": 83
+      "etf": 19,
+      "stock": 86
     },
     "exchange_info_source": "https://data-api.binance.vision/api/v3/exchangeInfo",
-    "bstocks_assets": 100,
+    "bstocks_assets": 105,
     "assets_without_spot_pair": [],
     "only_in_TRD_GRP_261": [],
     "missing_from_TRD_GRP_261": []
@@ -21,7 +21,7 @@
       "unknown": 8
     },
     "exchange_info_source": "https://www.binance.com",
-    "exchange_info_server_time": "2026-10-27T03:41:15Z",
+    "exchange_info_server_time": "2026-10-28T23:01:01Z",
     "trading_but_not_in_exchange_info": [],
     "by_underlying_type": {
       "CN_EQUITY": 2,
@@ -31,10 +31,10 @@
     }
   },
   "hyperliquid_hip3_stocks": {
-    "count": 132,
+    "count": 133,
     "by_asset_class": {
       "etf": 23,
-      "stock": 106,
+      "stock": 107,
       "unknown": 3
     },
     "uncategorized_coins": [
@@ -54,7 +54,7 @@
       "io": 9,
       "mkts": 1,
       "para": 23,
-      "xyz": 99
+      "xyz": 100
     }
   },
   "review": {
@@ -78,8 +78,10 @@
       ],
       "nasdaq_vs_binance_catalog": [],
       "us_ticker_not_confirmed": [
-        "BNCUSDT",
+        "AGPUUSDT",
+        "AMCUSDT",
         "EIDOUSDT",
+        "TBTUSDT",
         "ZCSHUSDT"
       ],
       "trading_but_not_in_exchange_info": []

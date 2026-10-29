@@ -1,0 +1,184 @@
+{
+ "asof": "2026-10-28",
+ "at": "10/29 10:21 KST",
+ "etfs": {
+  "XLE": {
+   "text": [
+    "10/16에 WTI가 9/21 이후 처음으로 100달러 위에서 마감했고 브렌트유도 109달러까지 올랐는데, 중동 공급 불확실성과 러시아의 디젤 공급 여력이 부담으로 거론되었습니다.",
+    "같은 날 S&P 500 에너지 지수가 1.8% 올랐고 EOG, 다이아몬드백, COP가 3%대 상승으로 앞장섰습니다."
+   ],
+   "src": [
+    {
+     "t": "로이터 (BOE Report 전재)",
+     "u": "https://boereport.com/2026/10/16/us-energy-stocks-gain-as-oil-tops-100-on-supply-fears/amp/"
+    }
+   ],
+   "kick": "중동 공급 불안"
+  },
+  "URA": {
+   "text": [
+    "우라늄 현물·장기 가격이 19년 만의 고점을 기록했는데도 원자력 관련주는 한 달 가까이 동반 매도에 시달렸습니다.",
+    "Cameco는 9/30 미국과 한국의 1,200억 달러 규모 원전 협력 틀이 발표된 뒤에도 약세를 이어갔고, 이는 실적 반영이 늦는 데 따른 밸류에이션 압축으로 설명됩니다."
+   ],
+   "src": [
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/cameco-sinks-11-in-a-month-while-uranium-hits-a-19-year-high-defined-by-delivery"
+    },
+    {
+     "t": "24/7 Wall St.",
+     "u": "https://247wallst.com/investing/2026/10/03/uranium-prices-just-broke-a-19-year-record-but-nuclear-stocks-are-collapsing-anyway/"
+    }
+   ],
+   "kick": "원자력주 동반 매도"
+  },
+  "DRAM": {
+   "text": [
+    "삼성전자와 SK하이닉스는 10/6부터 7거래일 연속 하락해 각각 23.9%, 31.5% 내렸고, 같은 기간 코스피도 21% 하락했습니다.",
+    "10/15에는 AI 투자 부담과 미국 물가 우려로 코스피가 7.57% 급락했으며, 애널리스트들은 실적 전망이 아닌 매수 여력 부족과 투자심리 악화가 낙폭을 키웠다고 평가했습니다."
+   ],
+   "src": [
+    {
+     "t": "코리아타임스",
+     "u": "https://www.koreatimes.co.kr/economy/20261016/samsung-sk-hynix-sell-off-excessive-as-memory-outlook-stays-strong-analysts"
+    },
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/sk-hynix-jumps-5-sandisk-up-6-micron-up-3-as-memory-stocks-bounce-back-from-selloff"
+    }
+   ],
+   "kick": "한국 메모리주 급락"
+  },
+  "XLC": {
+   "text": [
+    "XLC 비중이 큰 META가 10/21 3분기 실적 발표 뒤 10/22에 약 7% 하락했습니다.",
+    "META는 매출 646억 달러로 가이던스 상단을 넘겼지만, 설비투자가 349억 달러로 영업현금흐름을 웃돌았고 약 99억 달러의 소송 합의 비용이 반영되었으며 연간 설비투자 전망은 1,350억~1,450억 달러로 제시되었습니다."
+   ],
+   "src": [
+    {
+     "t": "Let's Data Science",
+     "u": "https://letsdatascience.com/news/meta-narrows-2026-capital-spending-range-to-135-billion-145-46f12e07"
+    },
+    {
+     "t": "interactive investor",
+     "u": "https://www.ii.co.uk/analysis-commentary/ii-view-meta-enjoys-strong-q3-hit-costly-litigation-ii540660"
+    }
+   ],
+   "kick": "META 실적 후 하락"
+  }
+ },
+ "stocks": {
+  "META": {
+   "text": [
+    "META는 10/21 장 마감 후 3분기 실적을 발표했고, 매출은 646억 달러로 가이던스 상단을 넘었지만 다음 거래일에 7.0% 하락해 10/19 주의 −9.4%와 이어졌습니다.",
+    "설비투자 349억 달러가 영업현금흐름 328억 달러를 웃돌아 잉여현금흐름이 마이너스였고, 약 99억 달러의 소송 합의 비용이 일반관리비에 반영되었습니다.",
+    "연간 설비투자 전망은 1,350억~1,450억 달러로 좁혀졌고 4분기 매출 전망은 730억~760억 달러로 제시되었습니다."
+   ],
+   "src": [
+    {
+     "t": "Let's Data Science",
+     "u": "https://letsdatascience.com/news/meta-narrows-2026-capital-spending-range-to-135-billion-145-46f12e07"
+    },
+    {
+     "t": "interactive investor",
+     "u": "https://www.ii.co.uk/analysis-commentary/ii-view-meta-enjoys-strong-q3-hit-costly-litigation-ii540660"
+    }
+   ],
+   "asof": "2026-10-28",
+   "at": "10/29 10:21 KST"
+  },
+  "XOM": {
+   "text": [
+    "XOM은 10/16에 WTI가 100달러를 넘고 브렌트유가 109달러까지 오르는 가운데 1.9% 올랐고, 이는 10/12 주 +5.9%와 이어지는 흐름입니다.",
+    "당시 원유 강세는 중동 공급 불확실성과 러시아의 디젤 공급 여력에 대한 평가에서 비롯되었습니다."
+   ],
+   "src": [
+    {
+     "t": "로이터 (BOE Report 전재)",
+     "u": "https://boereport.com/2026/10/16/us-energy-stocks-gain-as-oil-tops-100-on-supply-fears/amp/"
+    }
+   ],
+   "asof": "2026-10-28",
+   "at": "10/29 10:21 KST"
+  },
+  "000660": {
+   "text": [
+    "SK하이닉스는 10/6부터 7거래일 연속 하락해 31.5% 내렸고, 10/15에는 AI 투자 부담과 미국 물가 우려로 코스피가 7.57% 급락했으며, 이 흐름이 10/12 주 −24.3%에 반영되었습니다.",
+    "10/16에 하락세가 멈췄고 10/19에는 약 5% 반등했는데, 애널리스트들은 이번 매도가 실적 악화가 아니라 매수 여력 부족과 투자심리 악화에 따른 과도한 조정이라고 평가했습니다."
+   ],
+   "src": [
+    {
+     "t": "코리아타임스",
+     "u": "https://www.koreatimes.co.kr/economy/20261016/samsung-sk-hynix-sell-off-excessive-as-memory-outlook-stays-strong-analysts"
+    },
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/sk-hynix-jumps-5-sandisk-up-6-micron-up-3-as-memory-stocks-bounce-back-from-selloff"
+    }
+   ],
+   "asof": "2026-10-28",
+   "at": "10/29 10:21 KST"
+  },
+  "TSLA": {
+   "text": [
+    "TSLA는 10/21 장 마감 후 3분기 실적을 발표했고, 매출은 280억 달러로 전년과 비슷했으며 시장 예상을 소폭 밑돌았지만 조정 EPS는 0.48달러로 예상 0.45달러를 웃돌았습니다.",
+    "순이익은 43% 감소한 7억 8,700만 달러였고 인도량은 486,532대였으며, 주가는 다음 거래일에 3.1% 내렸습니다."
+   ],
+   "src": [
+    {
+     "t": "Electrek",
+     "u": "https://electrek.co/2026/10/21/tesla-tsla-q3-2026-financial-results/"
+    },
+    {
+     "t": "InvestingLive",
+     "u": "https://investinglive.com/stocks/tesla-q3-earnings-beat-as-margins-and-cash-flow-surprise-revenue-narrowly-misses/"
+    }
+   ],
+   "asof": "2026-10-28",
+   "at": "10/29 10:21 KST"
+  },
+  "005930": {
+   "text": [
+    "삼성전자는 10/6부터 7거래일 연속 하락해 23.9% 내렸고, 10/15에는 AI 투자 부담과 미국 물가 우려로 코스피가 7.57% 급락했으며, 이 흐름이 10/12 주 −17.7%에 반영되었습니다.",
+    "10/16에 코스피가 2.05% 오르며 하락세가 멈췄고, 애널리스트들은 이번 하락을 실적 전망이 아닌 매수 여력 부족에 따른 과도한 조정으로 평가했습니다."
+   ],
+   "src": [
+    {
+     "t": "코리아타임스",
+     "u": "https://www.koreatimes.co.kr/economy/20261016/samsung-sk-hynix-sell-off-excessive-as-memory-outlook-stays-strong-analysts"
+    }
+   ],
+   "asof": "2026-10-28",
+   "at": "10/29 10:21 KST"
+  },
+  "CVX": {
+   "text": [
+    "CVX는 10/6 허니스 미드스트림(Hess Midstream) 지분과 DJ 분지 원유 미드스트림 자산을 넘기고 현금 2억 달러와 바켄 지역의 개선된 계약 조건을 받기로 했다고 발표했습니다.",
+    "이 거래로 바켄 단위 미드스트림 비용이 약 50% 줄어들 것으로 회사는 밝혔고, 완료 시 세후 30억~40억 달러의 일회성 손실이 예상됩니다.",
+    "10/16에는 WTI가 100달러를 넘는 가운데 2.2% 올라 10/12 주 +6.1%와 이어졌습니다."
+   ],
+   "src": [
+    {
+     "t": "Hellenic Shipping News (회사 보도자료 전재)",
+     "u": "https://www.hellenicshippingnews.com/chevron-to-divest-its-ownership-interests-in-hess-midstream-and-dj-basin-crude-midstream-assets/"
+    },
+    {
+     "t": "로이터 (BOE Report 전재)",
+     "u": "https://boereport.com/2026/10/16/us-energy-stocks-gain-as-oil-tops-100-on-supply-fears/amp/"
+    }
+   ],
+   "asof": "2026-10-28",
+   "at": "10/29 10:21 KST"
+  }
+ },
+ "runs": [
+  [
+   "10/29 10:21 KST",
+   6,
+   4,
+   6,
+   6,
+   "ok"
+  ]
+ ]
+}
