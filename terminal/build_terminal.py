@@ -13,6 +13,8 @@
   output/news-data.json            뉴스·실적(terminal/compute_news.py). 종가 기준일이 이번 계산과 다르거나 없으면 뉴스 칼럼과 실적 표시 없이 만든다.
   output/claude-notes.json         Claude 가 웹 검색으로 쓴 ETF 이유 문장과 종목 4주 요약(terminal/claude_notes.py). 이번 종가 기준일의 이유 문장과
                                    8일 안에 쓴 종목 요약만 페이지의 claudeNotes 자리에 넣고, 둘 다 없으면 null 로 둔다(아티팩트 예약 작업이 채울 수 있게).
+  output/kicks.json                킥(terminal/compute_kicks.py): 주마다 그 주를 결정한 하루와 규칙으로 찾은 원인. 종가 기준일이 다르면 킥 없이 만든다.
+  output/kick-notes.json           Claude 가 웹 검색으로 찾은 킥의 원인(terminal/claude_notes.py). 규칙 원인보다 앞서고, '찾지 못함'은 규칙 원인이 없을 때만 쓴다.
   terminal/template.html           토큰이 든 HTML 템플릿
 
 출력 (docs/)
@@ -261,8 +263,32 @@ def alerts_text(cur, alerts):
     return "\n".join(lines)
 
 
-def drivers_lines(contrib):
-    """주간 브리핑의 '주도 종목' 두 줄. 종목마다 가장 크게 움직인 ETF 하나와 그 기여(%p)를 적는다."""
+def josa_wa(word):
+    """과/와. 영문 티커는 L·M·N·R 로 끝나면(엘·엠·엔·알) 받침이 있는 것으로 읽는다(DRAM과, XLP와)."""
+    last = word.strip()[-1:] if word.strip() else ""
+    if "가" <= last <= "힣":
+        return "과" if (ord(last) - 0xAC00) % 28 else "와"
+    return "과" if last.upper() in "LMNR" else "와"
+
+
+def kick_tail(sym, kicks):
+    """주도 종목 한 줄 끝에 붙일 킥: '원인 (10/21 +5.8%)' · 'DRAM 과 같이' · '여러 날에 나뉨' · 원인을 못 찾았으면 '이유 미확인 (10/27 +10.1%)'.
+    기준은 그 종목이 가장 크게 기여한 ETF 다(terminal/compute_kicks.py)."""
+    v = (((kicks or {}).get("drivers") or {}).get("1W") or {}).get(sym)
+    if not v:
+        return ""
+    if v[3] == "with":
+        return f" · {v[0]} {josa_wa(v[0])} 같이"
+    if v[3] == "spread" or len(v) < 6:
+        return " · 여러 날에 나뉨"
+    key = sym.split("·")[0].strip().upper()
+    n = ((kicks.get("n") or {}).get(f"S:{key}:{v[4]}") or {})
+    when = f"{int(v[4][5:7])}/{int(v[4][8:])} {v[5] * 100:+.1f}%".replace("-", "−")
+    return f" · {n['k']} ({when})" if n.get("k") else f" · 이유 미확인 ({when})"
+
+
+def drivers_lines(contrib, kicks=None):
+    """주간 브리핑의 '주도 종목'. 끌어올린·끌어내린 세 종목씩 한 줄에 하나: 가장 크게 움직인 ETF 와 그 기여(%p), 그리고 킥."""
     d = (((contrib or {}).get("drivers") or {}).get("1W") or {}).get("usd")
     if not d:
         return []
@@ -273,9 +299,10 @@ def drivers_lines(contrib):
         for b in items[:3]:
             es = [e for e in b["e"] if (e[1] > 0 if sign > 0 else e[1] < 0)]
             if es:
-                out.append(f"{b['s']} {es[0][0]} {fmt(es[0][1])}")
-        return " · ".join(out) or "없음"
-    return ["주도 종목 (1W · 가장 크게 움직인 ETF 기여 %p)", "  ▲ " + part(d["up"], 1), "  ▼ " + part(d["dn"], -1), ""]
+                out.append(f"  {'▲' if sign > 0 else '▼'} {b['s']} {es[0][0]} {fmt(es[0][1])}{kick_tail(b['s'], kicks)}")
+        return out or [f"  {'▲' if sign > 0 else '▼'} 없음"]
+    head = "주도 종목 (1W · 가장 크게 움직인 ETF 기여 %p" + (" · 킥" if kicks else "") + ")"
+    return [head] + part(d["up"], 1) + part(d["dn"], -1) + [""]
 
 
 def brief_html(brief):
@@ -294,7 +321,7 @@ def brief_html(brief):
     return "\n".join(out)
 
 
-def make_brief(cur, hold, alerts, prev_asof, contrib=None):
+def make_brief(cur, hold, alerts, prev_asof, contrib=None, kicks=None):
     E = cur["etfs"]
     ph = phases(cur)
     lines = [f"📊 섹터 전환 터미널 · {cur['asof']} 종가 기준", ""]
@@ -304,7 +331,7 @@ def make_brief(cur, hold, alerts, prev_asof, contrib=None):
     for t, s in ranked[:3]:
         lines.append(f"  {t} {KO[t]}: {s:+.0f}  [{strip(E[t]['pct'])}]")
     lines.append("")
-    lines += drivers_lines(contrib)
+    lines += drivers_lines(contrib, kicks)
     by = {}
     for t in SECTORS:
         by.setdefault(ph[t]["bench"], []).append(t)
@@ -449,6 +476,48 @@ def load_claude(path, asof, keep_days=8):
     return out if (out["etfs"] or st) else None
 
 
+def load_kicks(path, notes_path, asof):
+    """킥. 종가 기준일이 같을 때만 쓴다. 규칙 원인(kicks.json 의 n)에 Claude 원인(kick-notes.json)을 덮고,
+    페이지에 나올 수 있는 id(ETF 의 그날, 상위 10 종목의 그날, 주도 종목의 그날)의 원인만 남긴다.
+    Claude 가 '찾지 못함'으로 둔 id 는 규칙 원인이 없을 때만 none 으로 남긴다."""
+    k = load_json(path)
+    if not k or k.get("asof") != asof:
+        print(f"kicks data is for {(k or {}).get('asof')}, not {asof}: built without kicks")
+        return None
+    cn = (load_json(notes_path) or {}).get("n") or {}
+    used = set()
+    for t, e in (k.get("etf") or {}).items():
+        for w in e.get("w") or []:
+            if w.get("d"):
+                used.add(f"E:{t}:{w['d']}")
+            for sym, v in (w.get("s") or {}).items():
+                if len(v) > 2:
+                    used.add(f"S:{sym}:{v[2]}")
+    for per in (k.get("drivers") or {}).values():
+        for sym, v in per.items():
+            if len(v) > 4:
+                used.add(f"S:{sym.split('·')[0].strip().upper()}:{v[4]}")
+    notes = {}
+    for i in used:
+        r, c = (k.get("n") or {}).get(i), cn.get(i)
+        if c and c.get("k"):
+            notes[i] = {x: c[x] for x in ("k", "ev", "src") if x in c}
+        elif r:
+            notes[i] = {x: r[x] for x in ("k", "ev", "src", "earn") if x in r}
+        elif c and c.get("none"):
+            notes[i] = {"none": 1}
+    out = {x: k[x] for x in ("asof", "weeks", "cap", "claude", "etf", "drivers") if x in k}
+    out["n"] = notes
+    return out
+
+
+def load_json(path):
+    try:
+        return json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+
+
 def hold_key(sym, ex):
     """구성종목 행 → 목록 대조 키. 상장 점과 같은 규칙(미국은 티커, 그 밖은 "거래소:코드", 홍콩 코드는 네 자리)."""
     key = f"{EXCH_MAP.get(ex, ex)}:{sym}" if ex else CODE_ALIAS.get(sym, sym.upper())
@@ -534,6 +603,8 @@ def main():
     ap.add_argument("--etf-chart", default=os.path.join(ROOT, "output", "etf-chart-data.json"))
     ap.add_argument("--news", default=os.path.join(ROOT, "output", "news-data.json"))
     ap.add_argument("--claude", default=os.path.join(ROOT, "output", "claude-notes.json"))
+    ap.add_argument("--kicks", default=os.path.join(ROOT, "output", "kicks.json"))
+    ap.add_argument("--kick-notes", default=os.path.join(ROOT, "output", "kick-notes.json"))
     ap.add_argument("--holdings", default=os.path.join(ROOT, "output", "holdings"))
     ap.add_argument("--meta", default=os.path.join(ROOT, "data", "etf_meta.json"))
     ap.add_argument("--lists", default=None, help="tradfi-ticker-lists 의 output 폴더")
@@ -584,7 +655,8 @@ def main():
 
     alerts = make_alerts(prev_for_alerts, cur)
     contrib = load_contrib(args.contrib, cur["asof"])
-    brief = make_brief(cur, hold, alerts, prev_for_alerts.get("asof") if prev_for_alerts else None, contrib)
+    kicks = load_kicks(args.kicks, args.kick_notes, cur["asof"])
+    brief = make_brief(cur, hold, alerts, prev_for_alerts.get("asof") if prev_for_alerts else None, contrib, kicks)
 
     data_slim = {t: {k: v for k, v in e.items() if k in ("pct", "rel", "S", "Q", "rrgPath", "rrgSpy", "sig", "weeks", "stale")} for t, e in cur["etfs"].items()}
     stocks_tok, stocks_src = load_stocks(args, hold)
@@ -615,6 +687,8 @@ def main():
         "__LISTLOG__": json.dumps(listlog, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
         # Claude 문장도 웹에서 온 글이라 같은 방식으로 적는다. 없으면 null(아티팩트 예약 작업이 찾는 자리 표시)
         "__CLAUDE__": json.dumps(claude, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
+        # 킥의 원인도 웹에서 온 글이라 같은 방식으로 적는다. 없으면 null
+        "__KICKS__": json.dumps(kicks, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
         "__BRIEF__": brief_html(brief),
         "__BUILT_AT__": built_at_kst(),
     }
@@ -655,7 +729,8 @@ def main():
           + (f" · ETF charts {sum(1 for t in etfx['etfs'] if t not in ('SPY', 'QQQ'))}" if etfx else " · ETF charts none")
           + (f" · news {sum(len(v.get('h', [])) for v in news['s'].values())} headlines, {sum(1 for v in news['s'].values() if v.get('e'))} with 8-K earnings" if news else " · news none")
           + (f" · listing log {len(listlog['ev'])} events ({sum(1 for e in listlog['ev'] if e[11] or e[12])} on this board, {sum(1 for e in listlog['ev'] if e[13])} same-stock)" if listlog else " · listing log none")
-          + (f" · Claude notes {len(claude['etfs'])} ETFs, {len(claude.get('stocks', {}))} stocks" if claude else " · Claude notes none"))
+          + (f" · Claude notes {len(claude['etfs'])} ETFs, {len(claude.get('stocks', {}))} stocks" if claude else " · Claude notes none")
+          + (f" · kicks {len(kicks['etf'])} ETFs, {sum(1 for v in kicks['n'].values() if v.get('k'))} causes" if kicks else " · kicks none"))
 
 
 if __name__ == "__main__":

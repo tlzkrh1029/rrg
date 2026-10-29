@@ -478,6 +478,60 @@ a.fchip .on{color:var(--hot);font-weight:700} a.fchip .dn{color:var(--cold);font
 .hlrow{display:flex;align-items:baseline;justify-content:space-between;gap:10px;width:100%;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:7px 0;color:var(--amber);font-size:10.5px;letter-spacing:.06em;font-weight:700;text-transform:uppercase;text-align:left}
 .hlrow .mu{letter-spacing:0;text-transform:none;color:var(--muted);font-weight:400}
 .h td.sy small.e{white-space:nowrap} .h td.sy small.e.in,.h td.sy small.e.nx{color:var(--amber)}
+/* ETF 모드 주별 블록: 영향순 종목 칩(누르면 그 종목의 그 주 기사가 칩 아래에 펼쳐짐), 기사 줄, 종목별 나머지 */
+.tks{display:flex;flex-wrap:wrap;gap:3px;align-items:center}
+.tks .tl{color:var(--muted);font-size:9.5px;margin-right:1px}
+.tkb{display:inline-flex;gap:3px;align-items:baseline;font-size:10.5px;line-height:1.35;padding:1px 4px;border:1px solid var(--line-2);background:var(--neutral);color:#fff;font-weight:700;cursor:pointer}
+.tkb b{font-weight:400;color:var(--ink)}
+.tkb.p1{background:rgba(47,208,70,.16);background:color-mix(in srgb,var(--hot) 16%,transparent)} .tkb.p2{background:rgba(47,208,70,.32);background:color-mix(in srgb,var(--hot) 32%,transparent)} .tkb.p3{background:rgba(47,208,70,.55);background:color-mix(in srgb,var(--hot) 55%,transparent)}
+.tkb.n1{background:rgba(255,59,59,.16);background:color-mix(in srgb,var(--cold) 16%,transparent)} .tkb.n2{background:rgba(255,59,59,.32);background:color-mix(in srgb,var(--cold) 32%,transparent)} .tkb.n3{background:rgba(255,59,59,.55);background:color-mix(in srgb,var(--cold) 55%,transparent)}
+.tkb.kc1{box-shadow:inset 0 -2px 0 var(--amber)}
+.tkb.kc0{box-shadow:inset 0 -2px 0 var(--muted)}
+.tkb.sel{border-color:var(--amber)}
+.tkx{border:1px solid var(--amber-dim);background:var(--band);padding:4px 7px 2px;display:grid;gap:1px}
+.tkxh{display:flex;gap:6px;align-items:baseline;font-size:10.5px;color:var(--muted)}
+.tkxh b{color:#fff}
+.tkxh .x{margin-left:auto;color:var(--link)}
+.tkx ul.hl.one li{grid-template-columns:minmax(0,1fr)}
+.tkx .note2{margin:0 0 3px;font-size:10.5px;color:var(--muted)}
+ul.hl.tr .tk small{display:block;font-size:10px;line-height:1.3}
+.wkmore{justify-self:start;font-size:10.5px;color:var(--link)}
+.wkold{border-top:1px solid var(--line-2);padding-top:7px;width:100%;text-align:left}
+.wkall,.wkrest{display:grid;gap:8px}
+.wkall[hidden],.wkrest[hidden]{display:none}
+.wkby{display:grid;gap:1px}
+.fchips .more{font-size:10.5px;color:var(--link)}
+.fchips>.fmore{display:contents} .fchips>.fmore[hidden]{display:none}
+.wkh b,.wkh .cur{white-space:nowrap}
+.fchip .fk{color:#fff;font-weight:700}
+/* 킥: 그 주를 결정한 하루와 그 원인(terminal/compute_kicks.py · Claude) */
+.kc-x{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 8px;align-items:baseline;border-left:2px solid var(--amber);padding:1px 0 2px 7px}
+.kc-x.w{border-left-color:var(--line-2)}
+.kc-x .kc-l{color:var(--muted);font-size:10px;letter-spacing:.04em;white-space:nowrap}
+.kc-t{color:var(--amber);font-weight:700;font-size:12px;line-height:1.45}
+.kc-t.no{color:var(--muted);font-weight:400;font-size:11.5px}
+.kc-ev{grid-column:1/-1;margin:0;font-size:10.5px;line-height:1.55;color:var(--ink-2)}
+.kc-ev .d{color:var(--muted)}
+.kc-ev .on{color:var(--hot);font-weight:700} .kc-ev .dn{color:var(--cold);font-weight:700} .kc-ev .mu{color:var(--muted)}
+.kc-ev a{white-space:nowrap}
+.kc-lh{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:baseline;font-size:10.5px;color:var(--amber);font-weight:700;letter-spacing:.04em;margin-top:2px}
+.kc-lh span{color:var(--muted);font-weight:400;letter-spacing:0;font-size:10px}
+ul.kc-ls{list-style:none;margin:0;padding:0;display:grid}
+ul.kc-ls li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:1px 8px;padding:5px 0;border-top:1px solid var(--line)}
+ul.kc-ls li:first-child{border-top:0;padding-top:1px}
+ul.kc-ls .tk{color:#fff;font-weight:700;font-size:11px;line-height:1.55}
+ul.kc-ls .tk small{display:block;font-size:10px;line-height:1.2}
+ul.kc-ls .tk .on{color:var(--hot)} ul.kc-ls .tk .dn{color:var(--cold)}
+ul.kc-ls .kc-ev{margin-top:1px}
+.kc-rest{margin:0;font-size:10.5px;line-height:1.55;color:var(--muted)}
+.mkick{display:block;color:var(--amber);font-size:10px;line-height:1.3;font-weight:400;letter-spacing:0;margin-top:1px;white-space:normal;text-align:left}
+.hkick{display:block;color:var(--amber);font-size:10px;line-height:1.3;margin-top:1px}
+.hknote{margin:2px 0 0;font-size:10px;color:var(--muted);line-height:1.5}
+.hknote b{color:var(--amber);font-weight:400}
+table.dr tr.hk td{border-bottom:0;padding-bottom:1px}
+table.dr tr.kr td{padding-top:0;padding-bottom:7px}
+table.dr tr.kr .kc-t{font-size:11.5px}
+table.dr tr.kr .kc-ev{margin-top:1px}
 :is(.sd,.eb) .big .em{stroke:var(--amber);stroke-width:1;stroke-dasharray:1 2.5} :is(.sd,.eb) .big text.emt{fill:var(--amber);font-size:9px;font-weight:700}
 @media (min-width:1860px){
   .term{max-width:2200px}
@@ -948,7 +1002,8 @@ body.cover-open{overflow:hidden}
           <h3>7. Holdings 패널: ETF 차트 · 기여도 · 뉴스와 실적</h3>
           <p><b style="color:var(--amber)">ETF 차트.</b> 패널 맨 위에는 고른 ETF 의 90일 차트가 항상 펼쳐져 있습니다. 일간·주간·30일 변동률, 50 SMA · 89 HMA · 144 HMA, 20일 Shelf 와 천장, 52주 고점, 그리고 20일·55일·52주·사상 최고 네 지평의 돌파 상태를 종목 상세와 같은 규칙으로 보여 줍니다. 사상 최고는 ETF 의 전체 이력에서 찾으며, 이력은 한 달에 한 번 다시 받습니다. 제목줄의 USD · vs QQQ · vs SPY 단추(산업·테마 ETF 는 상위 섹터 대비 단추도 있음)는 차트와 아래 기여도의 기준을 함께 바꿉니다.</p>
           <p><b style="color:var(--amber)">기여도.</b> 구성종목이 ETF 수익률에 얼마나 보탰는지를 기간 시작 비중 × 기간 수익률(USD)로 계산합니다. 1D · 1W · 1M 가운데 기간을 고르고, 기준이 USD 가 아니면 비교 대상(SPY, QQQ, 상위 섹터)의 기여도를 옆에 함께 놓아 차이가 어느 종목에서 났는지 보여 줍니다. 상위 10개 밖의 몫은 '나머지'로 적고, 표의 비중 합이 98% 이상인 ETF 는 남는 차이를 '미설명분'(현금·보수·시차·스왑)으로 적습니다. 해외 종목은 환율을 반영해 USD 로 환산하고, 1D 에서는 장 마감 시각이 다른 종목에 '시차' 표시를 붙입니다. 그 아래 표는 상승 종목 수, 합계와 같은 방향으로 움직인 기여 가운데 상위 1개·3개 종목이 차지한 몫, 나머지 평균, 최대 상승일과 하락일을 비교하고, 히트맵은 최근 8주의 주간 기여를 보여 줍니다. 4) 주간 브리핑 탭의 Drivers 패널은 보드 전체에서 ETF 를 가장 많이 움직인 종목을 모읍니다.</p>
-          <p><b style="color:var(--amber)">뉴스와 실적.</b> 창 폭이 1,860px 이상이면 매트릭스 오른쪽에 뉴스 칼럼이 생기고, 그보다 좁으면 같은 내용이 Holdings 패널 안(차트 아래와 종목 상세 안)에 들어갑니다. ETF 를 고르면 상위 10개 종목의 최근 7일 헤드라인(Finnhub), 최근 실적과 다가오는 실적 일정, 기여도와 실적 일정으로 만든 '왜 움직였나' 요약 문장이 나옵니다. 종목 행을 펼치면 그 종목의 최근 4주가 주별로 나옵니다. 주마다 그 주의 SEC 공시(8-K 는 항목 번호와 이름, 배당·자사주 매입처럼 본문 첫 문장에서 알아본 이름)를 칩으로 붙이고, 같은 이야기를 실은 기사는 한 줄로 묶어 '비슷한 기사 +n'으로 적은 뒤 위 두 줄만 보여 줍니다. 나머지는 '나머지 n건'을 누르면 나옵니다. 4주보다 앞선 90일 안의 공시와 내부자 신고(Form 4·144) 건수는 맨 아래에 있고, TradingView 뉴스 링크(Key facts · Top news · Latest)도 함께 나옵니다. 실적은 SEC EDGAR 의 8-K 공시(Item 2.02)로 확인해 구성종목 표의 배지, 차트의 점선, 종목 상세의 '최근 실적' 줄로 표시합니다. 빌드 때 Claude 가 웹 검색으로 찾은 이유 문장(최근 1개월 동안 기준보다 가장 많이 앞선 3개와 뒤진 3개 ETF)이 요약 상자에 더해지고, 주도 종목(기여도 1개월·1주)을 펼치면 Claude 가 쓴 최근 4주 요약이 맨 위에 나옵니다. 종목 요약은 하루 몇 종목씩 돌아가며 주 1회 새로 쓰고, 문장마다 근거 기사 링크가 붙습니다.</p>
+          <p><b style="color:var(--amber)">뉴스와 실적.</b> 창 폭이 1,860px 이상이면 매트릭스 오른쪽에 뉴스 칼럼이 생기고, 그보다 좁으면 같은 내용이 Holdings 패널 안(차트 아래와 종목 상세 안)에 들어갑니다. ETF 를 고르면 기여도와 실적 일정으로 만든 '왜 움직였나' 요약 문장과 다가오는 실적 일정 아래에 상위 10개 종목의 최근 4주가 주별로 나옵니다. 주마다 열 종목을 그 주에 ETF 에 준 영향(지금 비중 × 그 주 수익률)이 큰 순서로 칩에 놓고 수익률로 칠하며, 칩을 누르면 그 종목의 그 주 기사가 칩 아래에 펼쳐집니다. 그 아래에는 그 주에 열 종목이 낸 SEC 공시 칩과, 실적을 낸 종목을 먼저 두고 영향순으로 세 종목에서 한 줄씩 고른 기사 줄이 있고, 나머지 기사는 종목별로 모아 '나머지 n건'에 둡니다. 종목 행을 펼치면 그 종목의 최근 4주가 주별로 나옵니다. 주마다 그 주의 SEC 공시(8-K 는 항목 번호와 이름, 배당·자사주 매입처럼 본문 첫 문장에서 알아본 이름)를 칩으로 붙이고, 같은 이야기를 실은 기사는 한 줄로 묶어 '비슷한 기사 +n'으로 적은 뒤 위 두 줄만 보여 줍니다. 나머지는 '나머지 n건'을 누르면 나옵니다. 4주보다 앞선 90일 안의 공시와 내부자 신고(Form 4·144) 건수는 맨 아래에 있고, TradingView 뉴스 링크(Key facts · Top news · Latest)도 함께 나옵니다. 실적은 SEC EDGAR 의 8-K 공시(Item 2.02)로 확인해 구성종목 표의 배지, 차트의 점선, 종목 상세의 '최근 실적' 줄로 표시합니다. 빌드 때 Claude 가 웹 검색으로 찾은 이유 문장(최근 1개월 동안 기준보다 가장 많이 앞선 3개와 뒤진 3개 ETF)이 요약 상자에 더해지고, 주도 종목(기여도 1개월·1주)을 펼치면 Claude 가 쓴 최근 4주 요약이 맨 위에 나옵니다. 종목 요약은 하루 몇 종목씩 돌아가며 주 1회 새로 쓰고, 문장마다 근거 기사 링크가 붙습니다.</p>
+          <p><b style="color:var(--amber)">킥.</b> 킥은 한 주를 결정한 하루와 그날의 원인 한 구절입니다. 그 주 수익률을 비교 대상(종목은 그 ETF, ETF 는 산업·테마면 상위 섹터 ETF, 나머지는 SPY)과 견주어 차이가 1%p 안이면 'ETF 와 같이'로 두고 ETF 의 킥을 따릅니다. 다만 하루 차이가 1%p 를 넘은 실적일이 있으면 그 실적이 킥입니다. 차이가 1%p 를 넘으면 같은 방향으로 가장 크게 벌어진 날(1%p 이상)을 그 주를 결정한 하루로 고르고, 그런 날이 없으면 '여러 날에 나뉨'으로 둡니다. 원인은 그날의 실적 공시(8-K Item 2.02)와 Finnhub 기사 제목에 나온 목표가·투자의견 변경으로 먼저 찾고, 나머지는 빌드의 Claude 단계가 웹 검색으로 찾아 근거 기사 링크와 함께 적습니다. 원인을 찾지 못한 날은 '이유 미확인', 아직 찾지 않은 날은 '원인 찾는 중'으로 보입니다. ETF 한 주에 붙이는 종목 킥은 영향(비중 × 주간 차이)이 큰 세 종목까지이고, 해외 거래소 종목은 장 시간이 달라 하루 차이 대신 그 종목이 같은 방향으로 가장 크게 움직인 날을 씁니다. 킥은 ETF 모드의 주별 블록, 종목 모드의 주마다, Holdings 표의 종목명 아래(이번 주), 매트릭스의 ETF 이름 아래(최근 1개월, Claude 이유 문장이 있는 ETF), 4) 주간 브리핑 탭의 Drivers 패널과 텔레그램 주간 브리핑에 나옵니다. Drivers 패널의 비교 대상은 그 종목이 가장 크게 기여한 ETF 입니다.</p>
         </section>
         <section class="wide">
           <h3>8. 명령줄 사용법</h3>
@@ -992,6 +1047,7 @@ body.cover-open{overflow:hidden}
 </div>
 
 <script id="claudeNotes" type="application/json">__CLAUDE__</script>
+<script id="kicks" type="application/json">__KICKS__</script>
 <script>
 const HOLD = __HOLD__;
 
@@ -1202,7 +1258,7 @@ function render() {
       ? `<span class="ko"><span class="hitw">${state.search.sym} ${e.hit.w.toFixed(2)}%</span> · ${e.hit.i + 1}위 · ${e.ko}${staleTag}</span>`
       : `<span class="ko">${e.ko}${staleTag}</span>`;
     return `<tr data-t="${e.t}"${e.t === selT ? ' class="sel"' : ''}>
-      <td class="c-etf"><button type="button" class="etf" data-t="${e.t}" aria-label="${e.t} ${e.ko} 구성종목 보기"><span class="l1"><span class="tk">${e.t}</span><span class="ex">US</span>${dots(e.lst)}<span class="cat">${CATCODE(e)}</span></span>${ko}</button></td>
+      <td class="c-etf"><button type="button" class="etf" data-t="${e.t}" aria-label="${e.t} ${e.ko} 구성종목 보기"><span class="l1"><span class="tk">${e.t}</span><span class="ex">US</span>${dots(e.lst)}<span class="cat">${CATCODE(e)}</span></span>${ko}${mkickHTML(e.t)}</button></td>
       ${cells}
       <td class="sp" title="QQQ 대비 가격 비율 (주봉 12주)${chT(chQ)}">${spark(e.Q)}</td>
       <td class="sp" title="SPY 대비 가격 비율 (주봉 12주)${chT(chS)}">${spark(e.S)}</td>
@@ -1376,7 +1432,7 @@ function stockDetailHTML(k, etf) {
     <div class="ttlrow"><span>90일 · ${SMLONG[mode]}</span><span class="tog" role="group" aria-label="차트의 자"><button type="button" data-sdmode="usd" aria-pressed="${mode === 'usd'}">USD</button><button type="button" data-sdmode="qqq" aria-pressed="${mode === 'qqq'}">vs QQQ</button><button type="button" data-sdmode="spy" aria-pressed="${mode === 'spy'}">vs SPY</button></span></div>
     <div class="big">${sChart(k, mode)}</div>${sLegend(k, mode)}
     <table class="hz">${sHorizonRows(k, mode)}</table>
-    ${newsWide() ? '' : `<div class="nw"><div class="wlab">뉴스 · ${cbEsc(k)}</div>${newsStockHTML(k, false)}</div>`}
+    ${newsWide() ? '' : `<div class="nw"><div class="wlab">뉴스 · ${cbEsc(k)}</div>${newsStockHTML(k, false, etf)}</div>`}
     <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${wb || '<span class="mu">없음</span>'}
     <div class="links"><a href="${BREAKOUT_URL}${BREAKOUT_URL.indexOf('#') < 0 ? '#' + encodeURIComponent(k) : ''}" target="${NAV_TARGET}" rel="noopener">돌파 지도에서 보기 ↗</a>${st.sym && /^[A-Z.\-]+$/.test(st.sym) ? `<a href="https://stockanalysis.com/stocks/${st.sym.toLowerCase().replace('.', '-')}/" target="_blank" rel="noopener">stockanalysis.com ↗</a>` : ''}</div>
   </div></td></tr>`;
@@ -1559,10 +1615,12 @@ function renderDrivers() {
     const es = b.e.filter(([, c]) => sign > 0 ? c > 0 : c < 0).slice(0, 4);
     const ev = per ? earnIn(String(b.s).split('·')[0], per.from, per.to) : null;
     const etag = ev ? `<span class="tag in" title="${TIMING[ev[1]] || ''} 발표 · 반응일 ${ev[3]}">실적 ${cbMd(ev[0])}</span>` : '';
-    return `<tr><td class="rk">${i + 1}</td><td class="sy">${cbEsc(b.s)}${etag}<small>${cbEsc(cbName(b.n))}</small></td><td class="r ${cbSg(b.r)}">${cbPc(b.r)}%</td><td><div class="chips">${es.map(([E, c]) => `<button type="button" class="dchip" data-drgo="${E}" title="${E} 행을 선택하고 기여도를 ${DR.period}로 엽니다">${E} <b class="${cbSg(c)}">${cbPp(c)}</b></button>`).join('')}</div></td></tr>`;
+    const kr = drvKickHTML(b);
+    return `<tr${kr ? ' class="hk"' : ''}><td class="rk">${i + 1}</td><td class="sy">${cbEsc(b.s)}${etag}<small>${cbEsc(cbName(b.n))}</small></td><td class="r ${cbSg(b.r)}">${cbPc(b.r)}%</td><td><div class="chips">${es.map(([E, c]) => `<button type="button" class="dchip" data-drgo="${E}" title="${E} 행을 선택하고 기여도를 ${DR.period}로 엽니다">${E} <b class="${cbSg(c)}">${cbPp(c)}</b></button>`).join('')}</div></td></tr>`
+      + (kr ? `<tr class="kr"><td></td><td colspan="3">${kr}</td></tr>` : '');
   }).join('');
   const n = ETFS.length;
-  body.innerHTML = `<p class="meta">관찰 대상 ${n}개 ETF의 상위 10 종목 기여를 종목별로 모았습니다. ${DR.basis === 'usd' ? '기여는 기간 시작 비중 × 수익률(USD)입니다.' : '기여는 기간 시작 비중 × (종목 수익률 − SPY 수익률)입니다.'} 한 종목이 여러 ETF에 들어 있으면 ETF별 기여를 나란히 적고, 순위는 그 가운데 가장 큰 기여로 정합니다. 같은 회사의 여러 주식(GOOGL·GOOG 등)은 하나로 합칩니다.</p>`
+  body.innerHTML = `<p class="meta">관찰 대상 ${n}개 ETF의 상위 10 종목 기여를 종목별로 모았습니다. ${DR.basis === 'usd' ? '기여는 기간 시작 비중 × 수익률(USD)입니다.' : '기여는 기간 시작 비중 × (종목 수익률 − SPY 수익률)입니다.'} 한 종목이 여러 ETF에 들어 있으면 ETF별 기여를 나란히 적고, 순위는 그 가운데 가장 큰 기여로 정합니다. 같은 회사의 여러 주식(GOOGL·GOOG 등)은 하나로 합칩니다.${KICKS && KICKS.drivers && KICKS.drivers[DR.period] ? ` 종목 아래 줄은 그 기간을 결정한 하루와 그 원인(킥)입니다. 비교 기준은 그 종목이 가장 크게 기여한 ETF 입니다.` : ''}</p>`
     + `<div class="wlab">▲ 끌어올린 종목</div><table class="dr">${th}<tbody>${rows(D.up, 1)}</tbody></table>`
     + `<div class="wlab">▼ 끌어내린 종목</div><table class="dr">${th}<tbody>${rows(D.dn, -1)}</tbody></table>`
     + `<p class="meta">ETF 이름을 누르면 매트릭스에서 그 ETF가 선택되고, Holdings 패널의 기여도가 같은 기간과 기준으로 열립니다.</p>`;
@@ -1576,6 +1634,101 @@ function renderDrivers() {
    빌드에 그날 이유 문장이 없으면 아티팩트 예약 작업이 같은 자리에 넣을 수 있다 ---- */
 const CLAUDE_ALL = (() => { try { const el = document.getElementById('claudeNotes'); const v = el ? JSON.parse(el.textContent) : null; return v && typeof v === 'object' ? v : null; } catch (e) { return null; } })();
 const CLAUDE = CLAUDE_ALL && CLAUDE_ALL.asof === PRICE_ASOF && CLAUDE_ALL.etfs && Object.keys(CLAUDE_ALL.etfs).length ? CLAUDE_ALL : null;
+/* 킥(terminal/compute_kicks.py → build_terminal.py 가 kicks 자리에 넣는다): 주마다 '그 주를 결정한 하루'와 그날의 원인 한 구절.
+   그 하루는 종가로 정한다(종목은 그 ETF 와, ETF 는 기준 ETF 와 차이가 가장 크게 벌어진 날). 원인은 실적 공시·투자의견 제목으로 찾은
+   규칙 원인과 빌드의 Claude 단계(웹 검색)가 찾은 원인이다. 종가 기준일이 같을 때만 쓴다.
+   etf[ETF] = {b: 기준, w: [이번 주부터 {r, rb, d, dr, db, k, s: {종목: [r] | [r, 'spread'] | [r, 종류, 날, 그날 r, 그날 ETF r]}, top, over}]}
+   drivers[1W|1M][표시 심볼] = [ETF, r, ETF r, 종류(, 날, 그날 r, 그날 ETF r)] · n[id] = {k, ev, src, earn} | {none: 1} */
+const KICKS = (() => { try { const el = document.getElementById('kicks'); const v = el ? JSON.parse(el.textContent) : null; return v && typeof v === 'object' && v.asof === PRICE_ASOF && v.etf && v.weeks ? v : null; } catch (e) { return null; } })();
+/* Claude 에 맡기는 날: ETF 의 그날, 주마다 영향이 큰 세 종목의 그날, 주도 종목의 그날. 그 밖의 종목의 그날은 원인을 찾지 않는다 */
+const KICK_ASKED = (() => {
+  const a = new Set(); if (!KICKS) return a;
+  Object.entries(KICKS.etf).forEach(([t, e]) => (e.w || []).forEach(w => {
+    if (w.d) a.add(`E:${t}:${w.d}`);
+    (w.top || []).forEach(k => { const v = (w.s || {})[k]; if (v && v[2]) a.add(`S:${k}:${v[2]}`); });
+  }));
+  Object.values(KICKS.drivers || {}).forEach(D => Object.entries(D).forEach(([sym, v]) => { if (v[4]) a.add(`S:${String(sym).split('·')[0].toUpperCase()}:${v[4]}`); }));
+  return a;
+})();
+const KOR_N = ['', '한', '두', '세', '네', '다섯', '여섯', '일곱', '여덟', '아홉', '열'];
+const kPc = (x, d = 1) => x == null ? '–' : (x >= 0 ? '+' : '−') + Math.abs(x * 100).toFixed(d) + '%';
+const kPv = (x, d = 1) => x == null ? '<span class="mu">–</span>' : `<span class="${cbSg(x)}">${kPc(x, d)}</span>`;
+/* 받침: 티커는 글자 이름으로 읽는다(L·M·N·R 은 받침이 있다: DRAM 과, XLP 와). 숫자는 0·1·3·6·7·8 이 받침이다 */
+function hasBatchim(w) {
+  const c = String(w || '').trim().slice(-1); if (!c) return false;
+  const n = c.charCodeAt(0);
+  if (n >= 0xAC00 && n <= 0xD7A3) return (n - 0xAC00) % 28 !== 0;
+  return /[0-9]/.test(c) ? '013678'.includes(c) : 'LMNR'.includes(c.toUpperCase());
+}
+const josaWa = w => hasBatchim(w) ? '과' : '와';
+const josaEun = w => hasBatchim(w) ? '은' : '는';
+const kNote = id => (KICKS && KICKS.n && KICKS.n[id]) || null;
+/* 킥 한 구절: 찾은 원인 · 이유 미확인(찾았지만 없었거나 Claude 단계가 꺼짐) · 원인 찾는 중(다음 빌드들이 찾음) · 원인 찾지 않음(영향이 작은 날) */
+function kickTitleHTML(id) {
+  const n = kNote(id);
+  if (n && n.k) return `<b class="kc-t">${cbEsc(n.k)}</b>`;
+  if (!KICK_ASKED.has(id)) return '<b class="kc-t no">원인 찾지 않음</b>';
+  return `<b class="kc-t no">${!n && KICKS.claude ? '원인 찾는 중' : '이유 미확인'}</b>`;
+}
+/* 근거 줄: 날 · 그날 움직임 · 근거 한 줄과 출처 링크 */
+function kickEvHTML(id, head, moves) {
+  const n = kNote(id);
+  const mv = moves.filter(m => m[1] != null).map(([k, v]) => `${cbEsc(k)} ${kPv(v)}`).join(', ');
+  const text = n && n.k ? (n.ev || '') : !KICK_ASKED.has(id) ? '영향이 작아 원인은 찾지 않음(ETF 마다 세 종목까지)' : n && n.none ? '그날 원인을 찾지 못함' : '';
+  const src = n && n.k ? (n.src || []).slice(0, 2).map(x => ` <a href="${safeUrl(x.u)}" target="_blank" rel="noopener">${cbEsc(x.t || '근거')} ↗</a>`).join('') : '';
+  return `<p class="kc-ev"><span class="d">${head}</span>${mv ? ' · ' + mv : ''}${text ? ' · ' + cbEsc(text) : ''}${src}</p>`;
+}
+/* 실적 반응일이면 '10/22 실적'(장 시작 전·장중 발표) 또는 '10/27 실적 다음 거래일'(장 마감 후 발표) */
+function kDayHead(k, d, kind) {
+  if (kind !== 'earn') return cbMd(d);
+  const s = nS(k), e = s && (s.e || []).find(x => x[3] === d);
+  return `${cbMd(d)} 실적${e && e[0] !== d ? ' 다음 거래일' : ''}`;
+}
+/* ETF 의 그 주 킥(기준 ETF 와 견줌). 종목 모드에서 'ETF 와 같이'인 주에는 이것을 대신 보여 준다(w: 회색 테두리) */
+function etfKickHTML(t, i, label, w) {
+  const E = KICKS && KICKS.etf[t], W = E && E.w[i]; if (!W || !W.k) return '';
+  const b = E.b, lab = `<span class="kc-l">${cbEsc(label)}</span>`;
+  if (W.k === 'day' && W.d) { const id = `E:${t}:${W.d}`; return `<div class="kc-x${w ? ' w' : ''}">${lab}${kickTitleHTML(id)}${kickEvHTML(id, cbMd(W.d), [[t, W.dr], [b, W.db]])}</div>`; }
+  const same = W.k === 'with';
+  return `<div class="kc-x w">${lab}<b class="kc-t no">${same ? `${b} ${josaWa(b)} 같이` : '여러 날에 나뉨'}</b><p class="kc-ev"><span class="d">그 주</span> · ${t} ${kPv(W.r)}, ${b} ${kPv(W.rb)} · ${same ? `${b} ${josaWa(b)} 1%p 안에서 움직임` : '하루에 1%p 넘게 벌어진 날이 없음'}</p></div>`;
+}
+/* 종목 모드의 그 주 킥(지금 고른 ETF 와 견줌) */
+function stockKickHTML(k, t, i) {
+  const E = KICKS && KICKS.etf[t], W = E && E.w[i], v = W && W.s && W.s[k]; if (!v) return '';
+  if (v.length === 1) return etfKickHTML(t, i, `${t} ${josaWa(t)} 같이`, true);
+  const lab = `<span class="kc-l">${cbEsc(k)} 킥</span>`;
+  if (v[1] === 'spread') return `<div class="kc-x w">${lab}<b class="kc-t no">여러 날에 나뉨</b><p class="kc-ev"><span class="d">그 주</span> · ${cbEsc(k)} ${kPv(v[0])}, ${t} ${kPv(W.r)} · ${t} ${josaWa(t)} 1%p 넘게 달랐지만 하루에 1%p 넘게 벌어진 날이 없음</p></div>`;
+  const id = `S:${k}:${v[2]}`;
+  return `<div class="kc-x">${lab}${kickTitleHTML(id)}${kickEvHTML(id, kDayHead(k, v[2], v[1]), v[4] == null ? [[k, v[3]]] : [[k, v[3]], [t, v[4]]])}</div>`;
+}
+/* 주도 종목 탭의 킥 줄: 그 종목이 가장 크게 기여한 ETF 와 견준 그 기간의 결정한 하루. 기간 수익률은 기여도와 같은 USD 값을 쓴다 */
+function drvKickHTML(b) {
+  const v = KICKS && KICKS.drivers && KICKS.drivers[DR.period] && KICKS.drivers[DR.period][b.s]; if (!v) return '';
+  const key = String(b.s).split('·')[0].toUpperCase(), E = v[0], per = DR.period === '1W' ? '1주' : '1개월';
+  if (v[3] === 'with' || v[3] === 'spread') {
+    const r = b.r != null ? b.r : v[1], R = v[2];
+    const why = v[3] === 'spread' ? '하루에 1%p 넘게 벌어진 날이 없음'
+      : (Math.abs(r - R) < 0.01 ? `${E} ${josaWa(E)} 1%p 안에서 움직임` : `${E} ${josaWa(E)} 같은 쪽으로 움직였지만 덜 ${r >= 0 ? '오름' : '내림'}`) + `. ${E} 의 킥은 ETF 모드에서 봅니다`;
+    return `<b class="kc-t no">${v[3] === 'spread' ? '여러 날에 나뉨' : `${E} ${josaWa(E)} 같이`}</b><p class="kc-ev"><span class="d">${per}</span> · ${cbEsc(key)} ${kPv(r)}, ${E} ${kPv(R)} · ${why}</p>`;
+  }
+  const id = `S:${key}:${v[4]}`;
+  return kickTitleHTML(id) + kickEvHTML(id, kDayHead(key, v[4], v[3]), v[6] == null ? [[key, v[5]]] : [[key, v[5]], [E, v[6]]]);
+}
+/* 매트릭스의 ETF 이름 아래: Claude 이유 문장과 함께 받은 한 구절(최근 1개월의 킥) */
+function mkickHTML(t) {
+  const C = CLAUDE && CLAUDE.etfs[t]; if (!C || !C.kick) return '';
+  return `<span class="mkick" title="${cbEsc('1개월 킥 · ' + ((C.text || [])[0] || ''))}">${cbEsc(C.kick)}</span>`;
+}
+/* Holdings 표의 종목명 아래: 이번 주 자기 킥(ETF 와 1%p 넘게 다르게 움직였고 원인을 찾은 종목만) */
+function hkickHTML(t, k) {
+  const W = KICKS && KICKS.etf[t] && KICKS.etf[t].w[0], v = W && W.s && W.s[k]; if (!v || v.length < 3) return '';
+  const n = kNote(`S:${k}:${v[2]}`); if (!n || !n.k) return '';
+  return `<span class="hkick" title="${cbEsc(`이번 주 킥 · ${cbMd(v[2])} ${k} ${kPc(v[3])}${v[4] != null ? `, ${t} ${kPc(v[4])}` : ''}${n.ev ? ' · ' + n.ev : ''}`)}">${cbEsc(n.k)}</span>`;
+}
+function hknoteHTML(t) {
+  const rows = (HOLD[t] || {}).rows || [];
+  return rows.some(r => hkickHTML(t, String(r[0]).toUpperCase())) ? `<p class="hknote">종목명 아래 <b>주황 글씨</b>: 이번 주 킥 (${cbEsc(t)} ${josaWa(t)} 1%p 넘게 다르게 움직이고 원인을 찾은 종목만)</p>` : '';
+}
 const TIMING = { bmo: '장 시작 전', dmh: '장중', amc: '장 마감 후' };
 const newsWide = () => curTab === 1 && !!(window.matchMedia && window.matchMedia('(min-width:1860px)').matches);
 const nS = k => (NEWS && NEWS.s && NEWS.s[String(k || '').toUpperCase()]) || null;
@@ -1660,14 +1813,6 @@ function claudeStockBox(k) {
   const C = claudeSt(k); if (!C) return '';
   return `<section class="ai art" aria-label="Claude 요약"><div class="wlab">최근 4주 · Claude 요약</div><div class="cl"><div class="cll">Claude · 웹 검색으로 찾은 내용${C.at ? ` <span class="when">· ${cbEsc(C.at)}</span>` : ''}</div>${C.text.map(p => `<p>${cbEsc(p)}</p>`).join('')}${clSrcs(C.src)}</div><div class="meta"><span>주도 종목(기여도 1개월·1주)만 · 하루 몇 종목씩 돌아가며 주 1회 새로 씁니다</span></div></section>`;
 }
-function newsEtfHTML(t) {
-  const all = etfHeadlines(t), shown = all.slice(0, 8);
-  return summaryBox(t)
-    + `<div class="wlab">실적 · 상위 10 종목</div>${etfEarnHTML(t) || '<p class="mu" style="margin:0">실적 자료가 없습니다.</p>'}`
-    + `<div class="wlab">헤드라인 · 상위 10 종목 · 최근 7일</div>${all.length ? hlHTML(shown) : '<p class="mu" style="margin:0">헤드라인 자료가 없습니다.</p>'}`
-    + (all.length > shown.length ? `<button type="button" class="more" data-newsmore="1">더 보기 · ${all.length - shown.length}건</button><div hidden>${hlHTML(all.slice(shown.length))}</div>` : '')
-    + newsFoot(false);
-}
 /* ---- 종목 모드: 최근 4주 주별 블록과 90일 공시 (terminal/compute_news.py 의 s.w · s.f · s.ins) ---- */
 const FH_NEWS = 'https://finnhub.io/api/news?id=';
 const nUrl = u => String(u || '').startsWith('fh:') ? FH_NEWS + String(u).slice(3) : u;
@@ -1683,13 +1828,13 @@ function weekPx(k, start) {
   return a >= 0 && b > a && st.c[a] && st.c[b] ? st.c[b] / st.c[a] - 1 : null;
 }
 /* 공시 칩: f = [접수일, 서식, 표시 이름, 주소, 8-K 첫 문장, 뉴욕 접수일]. 2.02 는 그 실적의 주가 반응을 붙인다 */
-function filingChip(f, s) {
+function filingChip(f, s, tk) {
   let extra = '';
   if (/^2\.02/.test(f[2])) {
     const e = (s.e || []).find(x => x[0] === f[5]);
     if (e && e[2] != null) extra = ` · ${e[1] === 'amc' ? '다음 거래일' : '그날'} <span class="${cbSg(e[2])}">${cbPc(e[2])}%</span>`;
   }
-  return `<a class="fchip${/^8-K/.test(f[1]) ? '' : ' k10'}" href="${safeUrl(f[3])}" target="_blank" rel="noopener"${f[4] ? ` title="${cbEsc(f[4])}"` : ''}><b>${cbEsc(f[1])}</b>${cbMd(f[0])} ${cbEsc(f[2])}${extra} ↗</a>`;
+  return `<a class="fchip${/^8-K/.test(f[1]) ? '' : ' k10'}" href="${safeUrl(f[3])}" target="_blank" rel="noopener"${f[4] ? ` title="${cbEsc(f[4])}"` : ''}>${tk ? `<span class="fk">${cbEsc(tk)}</span>` : ''}<b>${cbEsc(f[1])}</b>${cbMd(f[0])} ${cbEsc(f[2])}${extra} ↗</a>`;
 }
 function insiderLine(s) {
   const n = s.ins || {}, parts = [['4', 'Form 4'], ['144', 'Form 144'], ['3', 'Form 3'], ['5', 'Form 5']].filter(([c]) => n[c]).map(([c, l]) => `${l} ${n[c]}건`);
@@ -1698,11 +1843,14 @@ function insiderLine(s) {
   const cik = s.cik ? `<a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=${encodeURIComponent(s.cik)}&amp;type=4&amp;owner=include&amp;count=40" target="_blank" rel="noopener">목록 ↗</a>` : '';
   return `<p class="note2">내부자 신고(${days}일) · ${parts.map(x => `<span class="nobr">${x}</span>`).join(' · ')}${cik ? ' · ' + cik : ''}</p>`;
 }
-function weekBlocksHTML(k, s) {
-  const W = s.w || [], F = s.f || [];
+/* 종목 모드의 주별 블록. 헤드라인이 없어도(미국 밖 상장 종목 등) 그 ETF 의 킥이 있으면 주마다 킥만 보여 준다 */
+const stockHasKicks = (k, t) => !!(KICKS && t && KICKS.etf[t] && KICKS.etf[t].w.some(w => w.s && w.s[k]));
+function weekBlocksHTML(k, s, t) {
+  const noNews = !(s.w || []).length, F = s.f || [];
+  const W = noNews ? (stockHasKicks(k, t) ? KICKS.weeks.map(m => [m, 0, [], 0]) : []) : s.w;
   const days = (NEWS && NEWS.meta && NEWS.meta.fil_days) || 90;
   const tv = s.tv ? ` <a href="${tvBase(s.tv)}?section=latest" target="_blank" rel="noopener">TradingView ↗</a>` : '';
-  const li = x => `<li><a href="${safeUrl(nUrl(x[3]))}" target="_blank" rel="noopener nofollow">${cbEsc(x[1])}</a><span class="src">${cbMd(nyDate(x[0]))} · ${cbEsc(x[2])}${x[4] ? ` · <b>비슷한 기사 +${x[4]}</b>` : ''}${x[5] ? ` · 마지막 ${cbMd(nyDate(x[5]))}` : ''}</span></li>`;
+  const li = x => clusterLi(x);
   const size = cl => cl.reduce((a, x) => a + 1 + (x[4] || 0), 0);
   if (!W.length) {   /* 헤드라인 없이 공시만 있을 때 */
     return `<div class="wlab">공시 · 최근 ${days}일 · SEC EDGAR</div>` + (F.length ? `<div class="fchips">${F.map(f => filingChip(f, s)).join('')}</div>` : '') + insiderLine(s);
@@ -1710,34 +1858,162 @@ function weekBlocksHTML(k, s) {
   const blocks = W.map((w, i) => {
     const [start, n, cl, part] = w, end = isoAdd(start, 7), px = weekPx(k, start);
     const fs = F.filter(f => f[0] >= start && f[0] < end);
-    const head = `<div class="wkh"><b>${cbMd(start)} 주</b>${i === 0 ? '<span class="cur">이번 주</span>' : ''}<span class="r">기사 ${n}건${part ? ' 이상' : ''}${px != null ? ` · 주가 <span class="${cbSg(px)}">${cbPc(px)}%</span>` : ''}</span></div>`;
+    /* 킥: 지금 고른 ETF 와 견준 그 주(ETF 와 같이 움직인 주에는 ETF 의 킥) */
+    const ki = KICKS && t && KICKS.etf[t] ? KICKS.weeks.indexOf(start) : -1, KW = ki >= 0 ? KICKS.etf[t].w[ki] : null;
+    const hr = [noNews ? '' : `기사 ${n}건${part ? ' 이상' : ''}`, px != null ? `주가 ${kPv(px)}` : '', KW && KW.r != null ? `${cbEsc(t)} ${kPv(KW.r)}` : ''].filter(Boolean).join(' · ');
+    const head = `<div class="wkh"><b>${cbMd(start)} 주</b>${i === 0 ? '<span class="cur">이번 주</span>' : ''}<span class="r">${hr}</span></div>`
+      + (ki >= 0 ? stockKickHTML(k, t, ki) : '');
     const chips = fs.length ? `<div class="fchips">${fs.map(f => filingChip(f, s)).join('')}</div>` : '';
     const top = cl.slice(0, 2), hid = cl.slice(2);
     const rest = Math.max(0, n - size(top)), left = Math.max(0, rest - size(hid));
-    const body = top.length ? `<ul class="hl one cl">${top.map(li).join('')}</ul>` : `<p class="note2">${n ? '제목에 회사 이름이 든 기사가 없습니다.' : '기사 없음'}</p>`;
+    const body = noNews ? '' : top.length ? `<ul class="hl one cl">${top.map(li).join('')}</ul>` : `<p class="note2">${n ? '제목에 회사 이름이 든 기사가 없습니다.' : '기사 없음'}</p>`;
     const more = rest > 0 ? `<button type="button" class="more" data-newsmore="1">나머지 ${rest}건 ▸</button><div hidden>${hid.length ? `<ul class="hl one cl">${hid.map(li).join('')}</ul>` : ''}${left ? `<p class="note2">그 밖의 ${left}건은 싣지 않았습니다(순위가 낮거나 제목에 회사 이름이 없는 기사).${tv}</p>` : ''}</div>` : '';
     return `<section class="wk${i === 0 ? ' f' : ''}">${head}${chips}${body}${more}${part && i === W.length - 1 ? '<p class="note2">기사가 많아 이 주의 앞부분은 일부만 받았습니다.</p>' : ''}</section>`;
   }).join('');
   const from = W[W.length - 1][0], old = F.filter(f => f[0] < from), ins = insiderLine(s);
   const older = old.length || ins ? `<div class="older"><span class="lab2">그 전 · ${days}일 안의 공시</span>${old.length ? `<div class="fchips">${old.map(f => filingChip(f, s)).join('')}</div>` : ''}${ins}</div>` : '';
-  return `<div class="wlab">최근 ${W.length}주 · 주별 · 기사와 공시</div>` + blocks + older;
+  return `<div class="wlab">최근 ${W.length}주 · 주별 · ${noNews ? `${cbEsc(t)} ${josaWa(t)} 견준 킥` : '기사와 공시'}</div>` + blocks + older;
 }
-function newsStockHTML(k, wide) {
+function newsStockHTML(k, wide, t) {
   const s = nS(k) || {}, tv = s.tv;
   const us = !tv || /^(NASDAQ|NYSE|AMEX|CBOE|IEX):/.test(tv) || !/:/.test(tv);
   const links = tv ? `<div class="nlinks"><a href="${tvBase(tv)}?section=key_facts" target="_blank" rel="noopener">Key facts ↗</a><a href="${tvBase(tv)}?section=top_news" target="_blank" rel="noopener">Top news ↗</a><a href="${tvBase(tv)}?section=latest" target="_blank" rel="noopener">Latest ↗</a></div>` : '';
   const widget = TV_WIDGET && tv ? `<div class="tvw" data-tv="${cbEsc(tv)}"></div>` : '';
   const ern = wide ? earnDl(k) : '';
   let body;
-  if ((s.w || []).length || (s.f || []).length) body = weekBlocksHTML(k, s);
+  if ((s.w || []).length || (s.f || []).length || stockHasKicks(k, t)) body = weekBlocksHTML(k, s, t)
+    + ((s.w || []).length ? '' : `<p class="mu" style="margin:0">${us ? '최근 4주 헤드라인이 없습니다.' : '미국 밖 상장 종목이라 헤드라인과 SEC 공시가 없습니다. TradingView 링크로 확인하세요.'}</p>`);
   else if ((s.h || []).length) body = `<div class="wlab">헤드라인 · ${cbEsc(k)} · 최근 7일</div>${hlHTML(s.h.map(x => x.concat([k])), true)}`;
   else body = `<div class="wlab">헤드라인 · ${cbEsc(k)}</div><p class="mu" style="margin:0">${us ? '최근 4주 헤드라인과 공시가 없습니다.' : '미국 밖 상장 종목이라 헤드라인과 SEC 공시가 없습니다. TradingView 링크로 확인하세요.'}</p>`;
   return (ern ? `<dl class="ern">${ern}</dl>` : '') + claudeStockBox(k) + widget + links + body + (wide ? newsFoot(true, k) : '');
 }
-/* 좁은 화면: Holdings 패널 안, ETF 차트 아래에 요약과 접힌 헤드라인 줄 */
+/* ---- ETF 모드: 최근 4주를 주별로. 주마다 ETF 의 킥 · 영향순 종목 칩(누르면 그 종목의 그 주 기사) · 영향이 큰 세 종목의 킥 ·
+   그 주의 공시 칩 · 기사 줄 셋(실적을 낸 종목 먼저, 그다음 영향순) · 종목별 나머지 ---- */
+const etfStocks = t => ((HOLD[t] || {}).rows || []).filter(r => !/TRS|^B\.0/.test(r[0])).map(r => ({ k: String(r[0]).toUpperCase(), w: parseFloat(r[2]) || 0 }));
+const nWeek = (k, start) => { const s = nS(k); return (s && s.w || []).find(w => w[0] === start) || null; };
+const HEAT = v => v == null ? '' : (v >= 0 ? 'p' : 'n') + (Math.abs(v) < 0.02 ? '1' : Math.abs(v) < 0.05 ? '2' : '3');
+function newsWeeks() {
+  if (KICKS) return KICKS.weeks;
+  for (const k in (NEWS && NEWS.s) || {}) { const w = NEWS.s[k].w; if (w && w.length) return w.map(x => x[0]); }
+  return [];
+}
+const etfHasWeeks = t => etfStocks(t).some(x => { const s = nS(x.k); return s && ((s.w || []).length || (s.f || []).length); });
+/* 기사 묶음 한 줄: [unix 초, 제목, 출처, 주소, 비슷한 기사 수, 마지막 기사 unix 초]. k 를 주면 앞에 티커와 그 주 수익률 */
+function clusterLi(x, k, r) {
+  return `<li>${k ? `<span class="tk">${cbEsc(k)}${r != null ? `<small class="${cbSg(r)}">${kPc(r)}</small>` : ''}</span>` : ''}<a href="${safeUrl(nUrl(x[3]))}" target="_blank" rel="noopener nofollow">${cbEsc(x[1])}</a><span class="src">${cbMd(nyDate(x[0]))} · ${cbEsc(x[2])}${x[4] ? ` · <b>비슷한 기사 +${x[4]}</b>` : ''}${x[5] ? ` · 마지막 ${cbMd(nyDate(x[5]))}` : ''}</span></li>`;
+}
+function etfWeekHTML(t, i, start, stocks) {
+  const E = KICKS && KICKS.etf[t], W = E && E.w[i], end = isoAdd(start, 7);
+  const ret = k => { const v = W && W.s && W.s[k]; return v ? v[0] : weekPx(k, start); };
+  /* 영향(지금 비중 × 그 주 수익률)이 큰 순서. 같으면 비중이 큰 종목 먼저 */
+  const order = stocks.map(x => ({ k: x.k, w: x.w, r: ret(x.k) })).sort((a, b) => Math.abs(b.w * (b.r || 0)) - Math.abs(a.w * (a.r || 0)) || b.w - a.w);
+  const top = (W && W.top) || [];
+  const mark = k => { const v = W && W.s && W.s[k]; if (!v || v.length < 2) return ''; if (v[1] === 'spread') return ' kc0'; if (!top.includes(k)) return ''; const n = kNote(`S:${k}:${v[2]}`); return n && n.k ? ' kc1' : ' kc0'; };
+  const head = `<div class="wkh"><b>${cbMd(start)} 주</b>${i === 0 ? '<span class="cur">이번 주</span>' : ''}${W && W.r != null ? `<span class="r">${cbEsc(t)} ${kPv(W.r)}${W.rb != null ? ` · ${cbEsc(E.b)} ${kPv(W.rb)}` : ''}</span>` : ''}</div>`;
+  const chips = `<div class="tks"><span class="tl">영향순</span>${order.map(x => `<button type="button" class="tkb ${HEAT(x.r)}${mark(x.k)}" data-tkb="${cbEsc(x.k)}" aria-pressed="false" title="${cbEsc(x.k)} · 비중 ${x.w.toFixed(2)}%${x.r != null ? ` · 영향 ${cbPp(x.w / 100 * x.r)}%p` : ''} · 누르면 이 주 기사">${cbEsc(x.k)}<b>${x.r != null ? kPc(x.r).slice(0, -1) : '–'}</b></button>`).join('')}</div>`;
+  let kicks = '';
+  if (W && W.s) {
+    const lis = top.filter(k => (W.s[k] || []).length > 2).map(k => {
+      const v = W.s[k], id = `S:${k}:${v[2]}`;
+      return `<li><span class="tk">${cbEsc(k)}<small class="${cbSg(v[0])}">${kPc(v[0])}</small></span><div>${kickTitleHTML(id)}${kickEvHTML(id, kDayHead(k, v[2], v[1]), v[4] == null ? [[k, v[3]]] : [[k, v[3]], [t, v[4]]])}</div></li>`;
+    }).join('');
+    const spread = order.filter(x => (W.s[x.k] || [])[1] === 'spread').map(x => x.k), over = W.over || [];
+    const nWith = order.filter(x => (W.s[x.k] || []).length === 1).length, others = lis || spread.length || over.length;
+    const rest = [];
+    if (spread.length) rest.push(`${spread.join('·')} ${josaEun(spread[spread.length - 1])} ${t} ${josaWa(t)} 1%p 넘게 달랐지만 하루에 몰린 날이 없습니다(여러 날에 나뉨).`);
+    if (over.length) rest.push(`${over.join('·')} 도 하루에 1%p 넘게 벌어진 날이 있었지만, 영향이 작아 킥은 세 종목까지만 붙였습니다.`);
+    if (nWith) rest.push(`${others ? '나머지 ' : ''}${KOR_N[nWith] || nWith} 종목${others ? '은' : '은 모두'} ${t} ${josaWa(t)} 같이 움직였${W.k === 'day' ? `으므로, 그 종목들의 킥은 위 ${t} 킥입니다` : '습니다'}.`);
+    kicks = (lis ? `<div class="kc-lh">킥 <span>영향이 큰 세 종목까지 · 칩 밑줄: 주황 = 자기 킥, 회색 = 이유 미확인·여러 날에 나뉨</span></div><ul class="kc-ls">${lis}</ul>` : '') + (rest.length ? `<p class="kc-rest">${rest.join(' ')}</p>` : '');
+  }
+  /* 공시 칩: 그 주에 열 종목이 낸 공시(앞에 티커), 날짜순. 여덟 개가 넘으면 나머지는 접는다 */
+  const fl = [];
+  order.forEach(x => { const s = nS(x.k); (s && s.f || []).forEach(f => { if (f[0] >= start && f[0] < end) fl.push([f[0], filingChip(f, s, x.k)]); }); });
+  fl.sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
+  const fch = fl.length ? `<div class="fchips">${fl.slice(0, 8).map(x => x[1]).join('')}${fl.length > 8 ? `<button type="button" class="more" data-newsmore="1">공시 ${fl.length - 8}건 더 ▸</button><span class="fmore" hidden>${fl.slice(8).map(x => x[1]).join('')}</span>` : ''}</div>` : '';
+  /* 기사 줄: 그 주에 실적을 낸 종목 먼저, 그다음 영향순으로 세 종목에서 한 줄씩(그 종목의 첫 묶음) */
+  const earnK = new Set(order.filter(x => { const s = nS(x.k); return s && (s.e || []).some(e => e[0] >= start && e[0] < end); }).map(x => x.k));
+  const hasCl = order.filter(x => { const nw = nWeek(x.k, start); return nw && (nw[2] || []).length; });
+  const lines = hasCl.filter(x => earnK.has(x.k)).concat(hasCl.filter(x => !earnK.has(x.k))).slice(0, 3);
+  const N = order.reduce((a, x) => { const nw = nWeek(x.k, start); return a + (nw ? nw[1] : 0); }, 0);
+  const body = lines.length ? `<ul class="hl cl tr">${lines.map(x => clusterLi(nWeek(x.k, start)[2][0], x.k, x.r)).join('')}</ul>` : `<p class="note2">${N ? '제목에 회사 이름이 든 기사가 없습니다.' : '이 주에 받은 기사가 없습니다.'}</p>`;
+  const shownK = new Set(lines.map(x => x.k)), shown = lines.reduce((a, x) => a + 1 + (nWeek(x.k, start)[2][0][4] || 0), 0);
+  let listed = 0;
+  const groups = order.map(x => {
+    const nw = nWeek(x.k, start); if (!nw) return '';
+    const cl = (nw[2] || []).slice(shownK.has(x.k) ? 1 : 0); if (!cl.length) return '';
+    listed += cl.reduce((a, c) => a + 1 + (c[4] || 0), 0);
+    return `<div class="wkby"><div class="tkxh"><b>${cbEsc(x.k)}</b> ${kPv(x.r)} · 이 주 기사 ${nw[1]}건${nw[3] ? ' 이상' : ''}</div><ul class="hl one cl">${cl.map(c => clusterLi(c)).join('')}</ul></div>`;
+  }).join('');
+  const restN = Math.max(0, N - shown), left = Math.max(0, restN - listed);
+  const more = restN > 0 ? `<button type="button" class="wkmore" data-newsmore="1">기사 ${N}건 가운데 나머지 ${restN}건 · 종목별 ▸</button><div class="wkall" hidden>${groups}${left ? `<p class="note2">그 밖의 ${left}건은 싣지 않았습니다(종목마다 순위가 높은 묶음만 받고, 제목에 회사 이름이 없는 기사는 뺍니다).</p>` : ''}</div>` : '';
+  return `<section class="wk${i === 0 ? ' f' : ''}" data-wk="${start}" data-t="${cbEsc(t)}">${head}${etfKickHTML(t, i, `${t} 킥`)}${chips}${kicks}${fch}${body}${more}</section>`;
+}
+/* 칩을 누르면 그 종목의 그 주 기사 묶음을 칩 아래에 펼친다. 같은 칩이나 '닫기'를 누르면 접는다 */
+function tkxHTML(k, start, t) {
+  const nw = nWeek(k, start), i = KICKS ? KICKS.weeks.indexOf(start) : -1;
+  const v = i >= 0 && KICKS.etf[t] && KICKS.etf[t].w[i] && (KICKS.etf[t].w[i].s || {})[k];
+  const r = v ? v[0] : weekPx(k, start), cl = (nw && nw[2]) || [];
+  return `<div class="tkx"><div class="tkxh"><b>${cbEsc(k)}</b> ${kPv(r)} · 이 주 기사 ${nw ? nw[1] : 0}건${nw && nw[3] ? ' 이상' : ''}<button type="button" class="x" data-tkx="1">닫기 ✕</button></div>${cl.length ? `<ul class="hl cl one">${cl.map(c => clusterLi(c)).join('')}</ul>` : `<p class="note2">${nw && nw[1] ? '제목에 회사 이름이 든 기사가 없습니다.' : '이 주에 받은 기사가 없습니다.'}</p>`}</div>`;
+}
+function onWeekChip(ev) {
+  const x = ev.target.closest('[data-tkx]'), b = ev.target.closest('[data-tkb]'); if (!x && !b) return false;
+  const sec = (x || b).closest('section.wk'); if (!sec) return true;
+  const was = !!b && b.classList.contains('sel');
+  sec.querySelectorAll('.tkx').forEach(e => e.remove());
+  sec.querySelectorAll('.tkb.sel').forEach(e => { e.classList.remove('sel'); e.setAttribute('aria-pressed', 'false'); });
+  if (b && !was) { b.classList.add('sel'); b.setAttribute('aria-pressed', 'true'); sec.querySelector('.tks').insertAdjacentHTML('afterend', tkxHTML(b.dataset.tkb, sec.dataset.wk, sec.dataset.t)); }
+  return true;
+}
+function etfNextHTML(t) {
+  const E = NEWS && NEWS.etf && NEWS.etf[t]; if (!E) return '';
+  const nx = (E.nx || []).slice(0, 4).map(x => `<b>${cbEsc(x[0])}</b> ${cbMd(x[1])}<span class="dday">${dday(x[1])}</span>`).join(' · ');
+  const more = (E.nx || []).length > 4 ? ` <span class="mu">외 ${(E.nx || []).length - 4}</span>` : '';
+  return `<dl class="ern"><dt>다음 발표</dt><dd>${nx ? nx + more : '<span class="mu">35일 안 일정 없음</span>'}</dd></dl>`;
+}
+/* 4주보다 앞선 90일 안의 실적 공시(8-K Item 2.02), 최근 것부터 */
+function etfOlderHTML(t, from) {
+  const days = (NEWS && NEWS.meta && NEWS.meta.fil_days) || 90, fl = [];
+  etfStocks(t).forEach(x => { const s = nS(x.k); (s && s.f || []).forEach(f => { if (f[0] < from && /^2\.02/.test(f[2])) fl.push([f[0], filingChip(f, s, x.k)]); }); });
+  fl.sort((a, b) => a[0] < b[0] ? 1 : a[0] > b[0] ? -1 : 0);
+  return fl.length ? `<div class="older"><span class="lab2">그 전 · ${days}일 안의 실적 공시</span><div class="fchips">${fl.map(x => x[1]).join('')}</div></div>` : '';
+}
+function etfNewsFoot(t) {
+  const m = (NEWS && NEWS.meta) || {}, out = [];
+  if (KICKS) out.push('킥: 그 주를 결정한 하루는 종가로 정하고, 원인은 SEC 공시·Finnhub 제목·Claude(웹 검색)로 찾습니다');
+  out.push(`칩: 그 주 수익률, ${cbEsc(t)} 에 준 영향(지금 비중 × 수익률)이 큰 순서`, '기사 줄: 실적을 낸 종목 먼저, 그다음 영향순');
+  out.push(`헤드라인: Finnhub ${m.weeks || 4}주(날짜는 뉴욕 기준, 비슷한 제목은 한 줄로 묶음)${m.news_at ? ` · ${kstIso(m.news_at)} 수집` : ''}`);
+  out.push(`공시: SEC EDGAR 최근 ${m.fil_days || 90}일 · 실적: 8-K Item 2.02 · 일정: Finnhub${CLAUDE ? ' · 이유: Claude(웹 검색)' : ''}`);
+  return `<p class="nfoot">${out.join(' · ')}</p>`;
+}
+/* phone: 좁은 화면(Holdings 안)에서는 이번 주와 지난주만 펴 두고, 그 전 주들은 버튼으로 연다 */
+function etfWeeksHTML(t, phone) {
+  const weeks = newsWeeks(), stocks = etfStocks(t);
+  const blocks = weeks.map((start, i) => etfWeekHTML(t, i, start, stocks));
+  const lab = phone ? '' : `<div class="wlab">최근 ${weeks.length}주 · 주별 · ${KICKS ? `${cbEsc(t)} 의 킥과 상위 10 종목` : '상위 10 종목의 기사와 공시'}</div>`;
+  const body = phone && blocks.length > 2
+    ? blocks.slice(0, 2).join('') + `<button type="button" class="wkmore wkold" data-newsmore="1">그 전 ${KOR_N[blocks.length - 2] || blocks.length - 2} 주 · ${weeks.slice(2).map(w => cbMd(w) + ' 주').join(' · ')} ▸</button><div class="wkrest" hidden>${blocks.slice(2).join('')}</div>`
+    : blocks.join('');
+  return lab + body + (weeks.length ? etfOlderHTML(t, weeks[weeks.length - 1]) : '') + etfNewsFoot(t);
+}
+function newsEtfHTML(t) {
+  if (etfHasWeeks(t)) return summaryBox(t) + etfNextHTML(t) + etfWeeksHTML(t, false);
+  /* 주별 자료가 없는 옛 빌드: 최근 7일 헤드라인 */
+  const all = etfHeadlines(t), shown = all.slice(0, 8);
+  return summaryBox(t)
+    + `<div class="wlab">실적 · 상위 10 종목</div>${etfEarnHTML(t) || '<p class="mu" style="margin:0">실적 자료가 없습니다.</p>'}`
+    + `<div class="wlab">헤드라인 · 상위 10 종목 · 최근 7일</div>${all.length ? hlHTML(shown) : '<p class="mu" style="margin:0">헤드라인 자료가 없습니다.</p>'}`
+    + (all.length > shown.length ? `<button type="button" class="more" data-newsmore="1">더 보기 · ${all.length - shown.length}건</button><div hidden>${hlHTML(all.slice(shown.length))}</div>` : '')
+    + newsFoot(false);
+}
+/* 좁은 화면: Holdings 패널 안, ETF 차트 아래에 요약과 접힌 뉴스 줄(펼치면 이번 주와 지난주, 그 전 주는 버튼) */
 let hnewsOpen = false;
 function hnewsHTML(t) {
   if (!NEWS) return '';
+  if (etfHasWeeks(t)) {
+    const weeks = newsWeeks(), N = etfStocks(t).reduce((a, x) => a + weeks.reduce((b, w) => { const nw = nWeek(x.k, w); return b + (nw ? nw[1] : 0); }, 0), 0);
+    const body = hnewsOpen ? `<div class="hnews">${etfNextHTML(t)}${etfWeeksHTML(t, true)}</div>` : '';
+    return summaryBox(t) + `<button type="button" class="hlrow" data-hnews="1" aria-expanded="${hnewsOpen}"><span>뉴스 · 최근 ${weeks.length}주 · ${KICKS ? `${cbEsc(t)} 의 킥과 상위 10 종목` : '상위 10 종목'}</span><span class="mu">${hnewsOpen ? '접기 ▴' : `기사 ${N}건 · 펼치기 ▸`}</span></button>${body}`;
+  }
   const all = etfHeadlines(t);
   const body = hnewsOpen ? `<div class="hnews"><div class="wlab">실적 · 상위 10 종목</div>${etfEarnHTML(t)}${all.length ? hlHTML(all.slice(0, 10)) : '<p class="mu" style="margin:0">헤드라인 자료가 없습니다.</p>'}${all.length > 10 ? `<button type="button" class="more" data-newsmore="1">더 보기 · ${all.length - 10}건</button><div hidden>${hlHTML(all.slice(10))}</div>` : ''}${newsFoot(false)}</div>` : '';
   return summaryBox(t) + `<button type="button" class="hlrow" data-hnews="1" aria-expanded="${hnewsOpen}"><span>뉴스 · 상위 10 종목 · 최근 7일</span><span class="mu">헤드라인 ${all.length}건 · ${hnewsOpen ? '접기 ▴' : '펼치기 ▸'}</span></button>${body}`;
@@ -1772,7 +2048,7 @@ function renderNews() {
   } else {
     const i = rows.findIndex(r => String(r[0]).toUpperCase() === k);
     sub.textContent = `${k} · ${t} 구성 ${i + 1}위`; nav.innerHTML = `<button type="button" data-newsback="1">← ${t} 전체</button>`;
-    body.innerHTML = newsStockHTML(k, true); mountTV(body);
+    body.innerHTML = newsStockHTML(k, true, t); mountTV(body);
   }
   body.scrollTop = 0;
 }
@@ -1804,7 +2080,7 @@ function renderHold(t) {
       : (r[3] === 0 ? '<span style="color:var(--muted)">0.00</span>' : `<span style="color:var(--${r[3] > 0 ? 'hot' : 'cold'})">${r[3] > 0 ? '+' : ''}${r[3].toFixed(2)}</span>`);
     const sk = isSwap ? null : stockOf(r[0]), open = sk && sdState.k === sk;
     const cls = [hit ? 'hit' : '', sk ? 'rowk' : '', open ? 'open' : ''].filter(Boolean).join(' ');
-    return `<tr${cls ? ` class="${cls}"` : ''}${sk ? ` data-k="${sk}"` : ''}><td class="rk">${i + 1}</td><td class="sy">${sym}${mdots(l)}${isSwap ? '' : earnBadge(r[0], e.t)}</td><td class="nm">${r[1]}</td><td class="w r"><span class="bar" style="width:${(w / maxW * 100).toFixed(1)}%"></span><span class="v">${r[2]}</span></td><td class="ch r" title="${h.prev} 대비 비중 변화 (%p)">${ch}</td></tr>${open ? stockDetailHTML(sk, e.t) : ''}`;
+    return `<tr${cls ? ` class="${cls}"` : ''}${sk ? ` data-k="${sk}"` : ''}><td class="rk">${i + 1}</td><td class="sy">${sym}${mdots(l)}${isSwap ? '' : earnBadge(r[0], e.t)}</td><td class="nm">${r[1]}${isSwap ? '' : hkickHTML(e.t, String(r[0]).toUpperCase())}</td><td class="w r"><span class="bar" style="width:${(w / maxW * 100).toFixed(1)}%"></span><span class="v">${r[2]}</span></td><td class="ch r" title="${h.prev} 대비 비중 변화 (%p)">${ch}</td></tr>${open ? stockDetailHTML(sk, e.t) : ''}`;
   }).join('');
   const note = rawStyle ? (e.noteRaw || e.note) : e.note;
   const topLabel = h.rows.length < 10 ? `표시 ${h.rows.length}종목 합계` : '상위 10개 비중';
@@ -1823,7 +2099,7 @@ function renderHold(t) {
     </div>
     ${etfChartHTML(e.t)}
     ${newsWide() ? '' : hnewsHTML(e.t)}
-    <div class="h-wrap"><table class="h"><thead><tr><th>#</th><th>티커</th><th>종목명</th><th class="r">비중</th><th class="r"><abbr title="${h.prev} 스냅샷 대비 비중 변화(%p). NEW는 그때 상위 10개에 없던 종목">변동 %p</abbr></th></tr></thead><tbody>${rows}</tbody></table></div>
+    <div class="h-wrap"><table class="h"><thead><tr><th>#</th><th>티커</th><th>종목명</th><th class="r">비중</th><th class="r"><abbr title="${h.prev} 스냅샷 대비 비중 변화(%p). NEW는 그때 상위 10개에 없던 종목">변동 %p</abbr></th></tr></thead><tbody>${rows}</tbody></table></div>${hknoteHTML(e.t)}
     <p class="hfn">${note ? note + ' ' : ''}${h.prevMissing
       ? (h.sourceChanged
         ? `${h.prev} 스냅샷과는 구성종목 출처가 달라(스왑·국채 행을 따로 적은 표 ↔ 스왑 노출을 합산한 표) 변동 %p와 진입·이탈을 비교하지 않았습니다. 다음 스냅샷부터 표시됩니다.`
@@ -2049,6 +2325,7 @@ document.getElementById('hbody').addEventListener('click', ev => {
   if (ev.target.closest('a')) return;
   const tog = ev.target.closest('[data-sdmode]'); if (tog) { sdState.mode = tog.dataset.sdmode; if (selT) renderHold(selT); return; }
   if (ev.target.closest('[data-hnews]')) { hnewsOpen = !hnewsOpen; if (selT) renderHold(selT); return; }
+  if (onWeekChip(ev)) return;
   const more = ev.target.closest('[data-newsmore]'); if (more) { const nx = more.nextElementSibling; if (nx) nx.hidden = false; more.remove(); return; }
   const cbb = ev.target.closest('[data-cbp],[data-cbm],[data-cbc]');
   if (cbb) {
@@ -2081,6 +2358,7 @@ document.getElementById('drvBody').addEventListener('click', ev => {
 });
 renderDrivers();
 document.getElementById('newsBody').addEventListener('click', ev => {
+  if (onWeekChip(ev)) return;
   const more = ev.target.closest('[data-newsmore]'); if (more) { const nx = more.nextElementSibling; if (nx) nx.hidden = false; more.remove(); }
 });
 document.getElementById('newsNav').addEventListener('click', ev => {
