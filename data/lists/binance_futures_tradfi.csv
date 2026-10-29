@@ -10,7 +10,7 @@ AGPUUSDT,AGPU,USDT,EQUITY,TradFi,US,AGPU,baseAsset,stock,AGPU,Axe Compute Inc. -
 AKAMUSDT,AKAM,USDT,EQUITY,TradFi,US,AKAM,constituents,stock,AKAM,"Akamai Technologies, Inc. - Common Stock",stock,TRADING,2026-10-06
 ALABUSDT,ALAB,USDT,EQUITY,TradFi,US,ALAB,constituents,stock,ALAB,"Astera Labs, Inc. - Common Stock",stock,TRADING,2026-06-22
 AMATUSDT,AMAT,USDT,EQUITY,TradFi,US,AMAT,constituents,stock,AMAT,"Applied Materials, Inc. - Common Stock",stock,TRADING,2026-06-08
-AMCUSDT,AMC,USDT,EQUITY,TradFi,US,AMC,baseAsset,stock,AMC,"AMC Entertainment Holdings, Inc. Class A Common Stock",stock,TRADING,2026-09-18
+AMCUSDT,AMC,USDT,EQUITY,TradFi,US,AMC,constituents,stock,AMC,"AMC Entertainment Holdings, Inc. Class A Common Stock",stock,TRADING,2026-09-18
 AMDUSDT,AMD,USDT,EQUITY,TradFi,US,AMD,constituents,stock,AMD,"Advanced Micro Devices, Inc. - Common Stock",stock,TRADING,2026-05-06
 AMZNUSDT,AMZN,USDT,EQUITY,TradFi,US,AMZN,constituents,stock,AMZN,"Amazon.com, Inc. - Common Stock",stock,TRADING,2026-02-09
 ANETUSDT,ANET,USDT,EQUITY,TradFi,US,ANET,constituents,stock,ANET,"Arista Networks, Inc. Common Stock",stock,TRADING,2026-09-18
@@ -189,7 +189,7 @@ WMTUSDT,WMT,USDT,EQUITY,TradFi,US,WMT,constituents,stock,WMT,Walmart Inc. - Comm
 XBIUSDT,XBI,USDT,EQUITY,TradFi,US,XBI,constituents,etf,XBI,State Street SPDR S&P Biotech ETF,etf,TRADING,2026-07-09
 XLEUSDT,XLE,USDT,EQUITY,TradFi,US,XLE,constituents,etf,XLE,State Street Energy Select Sector SPDR ETF,etf,TRADING,2026-06-10
 XOMUSDT,XOM,USDT,EQUITY,TradFi,US,XOM,constituents,stock,XOM,ExxonMobil Holdings Corporation Common Stock,stock,TRADING,2026-09-28
-ZCSHUSDT,ZCSH,USDT,EQUITY,TradFi,US,ZCSH,baseAsset,etf,ZCSH,The Zcash ETF Shares,,TRADING,2026-10-12
+ZCSHUSDT,ZCSH,USDT,EQUITY,TradFi,US,ZCSH,constituents,etf,ZCSH,The Zcash ETF Shares,,TRADING,2026-10-12
 ZMUSDT,ZM,USDT,EQUITY,TradFi,US,ZM,constituents,stock,ZM,"Zoom Communications, Inc. - Class A Common Stock",stock,TRADING,2026-06-10
 ZSUSDT,ZS,USDT,EQUITY,TradFi,US,ZS,constituents,stock,ZS,"Zscaler, Inc. - Common Stock",stock,TRADING,2026-09-02
 BYDUSDT,BYD,USDT,HK_EQUITY,TradFi,HK,HKEX:1211,constituents,stock,HKEX:1211,BYD Company Limited (H shares),,TRADING,2026-09-07

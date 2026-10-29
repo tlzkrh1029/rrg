@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T01:08:15Z",
+  "generated_at": "2026-10-29T02:23:52Z",
   "binance_equity_catalog_error": null,
   "binance_spot_bstocks": {
     "count": 105,
@@ -79,10 +79,8 @@
       "nasdaq_vs_binance_catalog": [],
       "us_ticker_not_confirmed": [
         "AGPUUSDT",
-        "AMCUSDT",
         "EIDOUSDT",
-        "TBTUSDT",
-        "ZCSHUSDT"
+        "TBTUSDT"
       ],
       "trading_but_not_in_exchange_info": []
     },
