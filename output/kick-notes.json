@@ -50,19 +50,48 @@
    "why": "정유주 급락 기사 제목은 있으나 본문을 확인하지 못해 원인 불명"
   },
   "S:TWST:2026-10-27": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "검색에서 그날 원인을 확인하지 못함"
+   "k": "유전체주 반등·항체 서비스",
+   "ev": "Twist와 10x Genomics 등 유전체주가 함께 올랐고 Twist는 항체 스크리닝 서비스를 출시함",
+   "src": [
+    {
+     "t": "Why is Twist Bioscience stock surging to",
+     "u": "https://www.investing.com/news/stock-market-news/why-is-twist-bioscience-stock-surging-today-93CH-4979709"
+    },
+    {
+     "t": "Twist Bioscience Soars 12%, 10x Genomics",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/twist-bioscience-soars-12-10x-183451735.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "S:ABSI:2026-10-28": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "검색에서 그날 원인을 확인하지 못함"
+   "k": "AI 신약 개발주 반등",
+   "ev": "회사 재료 없이 Absci 12%, Schrödinger 11%, Recursion 9% 등 AI 신약 개발주가 함께 오름",
+   "src": [
+    {
+     "t": "Absci Soars 12%, Schrödinger Up 11%, Rec",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/absci-soars-12-schr-dinger-161111758.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "S:000660:2026-10-28": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "10/28 보도를 찾지 못함"
+   "k": "사상 최대 분기 실적",
+   "ev": "3분기 영업이익 83조원으로 시장 예상을 웃돌고 약 100조원 규모 주주환원 계획을 발표함",
+   "src": [
+    {
+     "t": "SK Hynix shares jump 11% after record qu",
+     "u": "https://www.cnbc.com/2026/10/28/sk-hynix-third-quarter-profit.html"
+    },
+    {
+     "t": "Kospi surges past 6,000 as SK hynix reco",
+     "u": "https://www.koreajoongangdaily.com/business/kospi-surges-past-6000-as-sk-hynix-record-earnings-reignite-ai-rally/12943596"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "S:NVDA:2026-10-28": {
    "none": 1,
@@ -70,49 +99,120 @@
    "why": "원인이 불분명함"
   },
   "E:ARKG:2026-10-27": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "그날 원인 자료 없음"
+   "k": "유전체·AI 바이오 반등",
+   "ev": "개별 재료 없이 Twist, 10x Genomics 등 유전체주가 8~12% 오른 위험선호 반등이 나옴",
+   "src": [
+    {
+     "t": "Twist Bioscience Soars 12%, 10x Genomics",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/twist-bioscience-soars-12-10x-183451735.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "E:DRAM:2026-10-28": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "그날 원인 자료 없음"
+   "k": "SK hynix 사상 최대 실적",
+   "ev": "SK hynix가 3분기 영업이익 83조원과 약 100조원 주주환원안을 내 한국 메모리주가 급등함",
+   "src": [
+    {
+     "t": "SK Hynix shares jump 11% after record qu",
+     "u": "https://www.cnbc.com/2026/10/28/sk-hynix-third-quarter-profit.html"
+    },
+    {
+     "t": "KOSPI Reclaims 6,000 as Samsung Jumps 9%",
+     "u": "https://en.sedaily.com/news/2026/10/28/kospi-reclaims-6000-as-samsung-jumps-9-percent-sk-hynix-11"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "E:GNOM:2026-10-28": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "그날 원인 자료 없음"
+   "k": "AI 신약 개발주 반등",
+   "ev": "Absci 12%, Schrödinger 11%, Recursion 9% 등 AI 신약 개발·유전체주가 함께 오름",
+   "src": [
+    {
+     "t": "Absci Soars 12%, Schrödinger Up 11%, Rec",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/absci-soars-12-schr-dinger-161111758.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "E:URA:2026-10-27": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "그날 원인 자료 없음"
+   "k": "원자력주 동반 강세",
+   "ev": "NuScale 7%, Oklo 6% 등 원자력 관련주가 오르고 유가 하락으로 에너지 업종은 약세였음",
+   "src": [
+    {
+     "t": "Energy Fuels Jumps 9%; NuScale Power Cli",
+     "u": "https://247wallst.com/investing/2026/10/27/energy-fuels-jumps-9-on-126m-australian-financing-for-rare-earth-project-nuscale-power-climbs-7-oklo-gains-6/"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "E:XBI:2026-10-27": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "그날 원인 자료 없음"
+   "k": "유전체·바이오 반등",
+   "ev": "Twist 등 유전체·생명과학 도구주가 개별 재료 없이 크게 오른 위험선호 반등이 있었음",
+   "src": [
+    {
+     "t": "Twist Bioscience Soars 12%, 10x Genomics",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/twist-bioscience-soars-12-10x-183451735.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "E:XME:2026-10-27": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "그날 원인 자료 없음"
+   "k": "Nucor 3분기 호실적",
+   "ev": "Nucor가 3년여 만에 최고인 주당 5.80달러를 내 5.2% 오르고 철강 동종사도 동반 상승함",
+   "src": [
+    {
+     "t": "Nucor Reports Results for the Third Quar",
+     "u": "https://www.prnewswire.com/news-releases/nucor-reports-results-for-the-third-quarter-of-2026-302919790.html"
+    },
+    {
+     "t": "What Just Happened To Nucor Stock?",
+     "u": "https://www.trefis.com/stock/nue/articles/621074/what-just-happened-to-nucor-stock/2026-10-28"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "E:XLC:2026-10-26": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "그날 원인 자료 없음"
+   "k": "Verizon 매출 부진",
+   "ev": "Verizon이 3분기 매출 부진과 SpaceX의 무선 시장 진입 우려로 3.5% 내림",
+   "src": [
+    {
+     "t": "Verizon Sinks 4% on Revenue Miss Despite",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/verizon-sinks-4-revenue-miss-161147424.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "E:SMH:2026-10-27": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "그날 원인 자료 없음"
+   "k": "AI 낙관론 속 반도체 반등",
+   "ev": "Anthropic IPO 신고서와 Nvidia의 Meta 투자 소식으로 반도체 60종목 중 57종목이 오름",
+   "src": [
+    {
+     "t": "Stock market today: tech gains for secon",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-october-27-dow-sp-500-nasdaq-tech-sector-160557664.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "E:XLP:2026-10-27": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "그날 원인 자료 없음"
+   "k": "반도체 반등 속 방어주 약세",
+   "ev": "Coca-Cola가 실적을 넘기고도 북미 수요 둔화로 내렸고 기술주 반등에 필수소비재가 뒤처짐",
+   "src": [
+    {
+     "t": "Stock market today: tech gains for secon",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-october-27-dow-sp-500-nasdaq-tech-sector-160557664.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "E:IGV:2026-10-27": {
    "none": 1,
@@ -120,9 +220,20 @@
    "why": "그날 원인 자료 없음"
   },
   "E:XLE:2026-10-27": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "정유주 급락은 보이나 계기 미확인"
+   "k": "정유주 급락·유가 하락",
+   "ev": "에너지 장관의 러시아 디젤 추가 반입 발언에 정유 3사가 7~9% 내렸고 중동 긴장 완화로 유가도 내림",
+   "src": [
+    {
+     "t": "Refiner Stocks Just Had Their Worst Day ",
+     "u": "https://247wallst.com/investing/2026/10/28/refiner-stocks-just-had-their-worst-day-since-the-tariff-shock/"
+    },
+    {
+     "t": "Marathon Petroleum Sinks 7%, Valero Down",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/marathon-petroleum-sinks-7-valero-151340323.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "E:XLRE:2026-10-27": {
    "none": 1,
@@ -130,9 +241,16 @@
    "why": "그날 원인 자료 없음"
   },
   "E:XLK:2026-10-27": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "그날 원인 자료 없음"
+   "k": "AI 낙관론 속 반도체 반등",
+   "ev": "Anthropic IPO 신고서와 Nvidia의 Meta 투자 소식으로 반도체가 오르며 기술주가 이틀째 오름",
+   "src": [
+    {
+     "t": "Stock market today: tech gains for secon",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-october-27-dow-sp-500-nasdaq-tech-sector-160557664.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
   },
   "E:XHB:2026-10-26": {
    "none": 1,
@@ -244,8 +362,9 @@
   },
   "S:GE:2026-10-27": {
    "none": 1,
-   "at": "10/29 11:34 KST",
-   "why": "원인 불분명"
+   "tries": 2,
+   "at": "10/30 08:20 KST",
+   "why": "GE 10/27 검색 3회(주가 급등 원인, 항공우주 반등, Cramer 기사 확인). 그날 GE 개별 원인을 밝힌 기사를 찾지 못함"
   },
   "S:META:2026-10-27": {
    "none": 1,
@@ -296,6 +415,108 @@
    "none": 1,
    "at": "10/29 11:34 KST",
    "why": "실적 반응 세부 확인 안 됨"
+  },
+  "E:ITA:2026-10-29": {
+   "k": "Howmet 실적·전망 상향",
+   "ev": "Howmet이 3분기 이익 예상을 넘기고 연간 전망 상향과 자사주 매입을 내 항공우주주가 오름",
+   "src": [
+    {
+     "t": "Howmet Aerospace Stock Rises as Earnings",
+     "u": "https://benzinga.com/markets/earnings/26/10/62707947/howmet-aerospace-stock-rises-as-earnings-beat-guidance-hike-buyback-boost-sentiment"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
+  },
+  "E:PAVE:2026-10-29": {
+   "k": "산업재 내 CAT 급락 제외",
+   "ev": "산업재 지수는 Caterpillar가 9% 내렸지만 PAVE 상위 종목은 Deere, Fastenal 등이 올라 격차가 벌어짐",
+   "src": [
+    {
+     "t": "Caterpillar Shares Slump as AI Trade Fac",
+     "u": "https://www.bloomberg.com/news/articles/2026-10-29/caterpillar-tops-estimates-as-ai-power-demand-fuels-growth"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
+  },
+  "E:XLI:2026-10-29": {
+   "k": "항공우주·방산 실적 강세",
+   "ev": "Caterpillar가 9.3% 급락했지만 Howmet 등 항공우주주가 실적으로 올라 산업재가 시장보다 나음",
+   "src": [
+    {
+     "t": "Howmet Aerospace Stock Rises as Earnings",
+     "u": "https://benzinga.com/markets/earnings/26/10/62707947/howmet-aerospace-stock-rises-as-earnings-beat-guidance-hike-buyback-boost-sentiment"
+    },
+    {
+     "t": "Caterpillar Shares Slump as AI Trade Fac",
+     "u": "https://www.bloomberg.com/news/articles/2026-10-29/caterpillar-tops-estimates-as-ai-power-demand-fuels-growth"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
+  },
+  "E:MAGS:2026-10-29": {
+   "k": "Alphabet·Amazon AI 투자 부담",
+   "ev": "Alphabet이 잉여현금흐름 적자로 12% 급락하고 Amazon도 설비투자 부담으로 4% 내림",
+   "src": [
+    {
+     "t": "Alphabet sinks 10% as it holds 2026 cape",
+     "u": "https://www.cnbc.com/2026/10/28/alphabet-googl-earnings-q3-2026.html"
+    },
+    {
+     "t": "Stock market today: Alphabet sinks 12% a",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-29-dow-sp-500-nasdaq-alphabet-microsoft-earnings-130305714.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
+  },
+  "E:XLV:2026-10-29": {
+   "k": "Lilly 3분기 실적 호조",
+   "ev": "Lilly가 매출 39% 증가와 연간 매출 전망 상향을 내 6% 안팎 오르고 헬스케어로 자금이 이동함",
+   "src": [
+    {
+     "t": "Eli Lilly (LLY) earnings Q3 2026",
+     "u": "https://www.cnbc.com/2026/10/29/eli-lilly-lly-earnings-q3-2026.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
+  },
+  "E:KRE:2026-10-28": {
+   "k": "Fed 동결과 금리 인상 우려",
+   "ev": "Fed가 10대2로 동결하며 2명이 인상을 주장해 12월 인상 확률이 85%로 올랐고 지역은행이 1% 넘게 내림",
+   "src": [
+    {
+     "t": "Markets News, Oct. 28, 2026: Stocks Clos",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/markets-news-oct-28-2026-111035502.html"
+    },
+    {
+     "t": "Fed keeps interest rates unchanged, but ",
+     "u": "https://www.cnn.com/2026/10/28/business/live-news/federal-reserve-interest-rate-october"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
+  },
+  "E:XLB:2026-10-29": {
+   "k": "Vulcan 실적·가격 인상 전망",
+   "ev": "Vulcan Materials가 3분기 실적 후 2027년 골재 가격 중고단위 인상을 제시해 급등함",
+   "src": [
+    {
+     "t": "Vulcan Materials (NYSE:VMC) Announces Ea",
+     "u": "https://www.marketbeat.com/instant-alerts/earnings-vulcan-materials-nyse-vmc-announces-earnings-results-beats-expectations-by-002-eps-2026-10-29/"
+    }
+   ],
+   "by": "claude",
+   "at": "10/30 08:20 KST"
+  },
+  "E:XLY:2026-10-29": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/30 08:20 KST",
+   "why": "XLY 10/29 검색 시도. Amazon 하락은 확인했으나 Home Depot, Lowe's 등 상승 원인을 밝힌 기사를 찾지 못함"
   }
  },
  "runs": [
@@ -312,6 +533,18 @@
    4,
    20,
    "ok"
+  ],
+  [
+   "10/30 08:20 KST",
+   24,
+   21,
+   2,
+   "ok",
+   32,
+   2,
+   36,
+   "claude-sonnet-5-5",
+   0.825
   ]
  ]
 }

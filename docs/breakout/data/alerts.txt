@@ -1,0 +1,14 @@
+돌파 지도 2026-10-29 (USD 기준, 직전 종가)
+켜진 칸 20일 59/279 (21%) · 55일 47 · 52주 28 · 사상 최고 22 · 이탈 28 · 실패 3
+
+새 돌파 (1일째)
+  사상 최고: ABBV(XLV·XBI)*, PM(XLP), NTRA(XBI·GNOM·ARKG)*, SN(XHB)*, FAST(PAVE)
+  52주: W(XHB)
+  55일: ETR(XLU)*, EXC(XLU)*, NUE(XLB·XME·PAVE)*, APD(XLB)*, CLF(XME)*
+  20일: JPM(XLF), WFC(XLF), CMC(XME)*, TDG(ITA)*, ULCC(JETS)*
+  * SPY 대비로도 켜진 칸
+새 이탈 (1일째)
+  55일 바닥: AMZN(XLY), NOW(IGV), FTNT(IGV)
+오늘 실패한 돌파: HONA(ITA, 55일), HONA(ITA, 20일)
+
+https://tlzkrh1029.github.io/rrg/breakout/

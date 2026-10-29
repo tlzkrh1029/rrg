@@ -1,70 +1,62 @@
 {
- "asof": "2026-10-28",
- "at": "10/29 10:21 KST",
+ "asof": "2026-10-29",
+ "at": "10/30 08:20 KST",
  "etfs": {
   "XLE": {
    "text": [
-    "10/16에 WTI가 9/21 이후 처음으로 100달러 위에서 마감했고 브렌트유도 109달러까지 올랐는데, 중동 공급 불확실성과 러시아의 디젤 공급 여력이 부담으로 거론되었습니다.",
-    "같은 날 S&P 500 에너지 지수가 1.8% 올랐고 EOG, 다이아몬드백, COP가 3%대 상승으로 앞장섰습니다."
+    "10/16에 중동 공급 불확실성과 러시아산 디젤 공급 가능량에 대한 평가가 겹치면서 WTI가 9/21 이후 처음으로 100달러 위에서 마감했고 브렌트도 9/14 이후 최고치로 올랐습니다.",
+    "이날 S&P 500 에너지 지수가 1.8% 올랐고 XOM(+1.9%)과 CVX(+2.2%), COP를 비롯한 생산업체가 함께 올랐습니다."
    ],
    "src": [
     {
-     "t": "로이터 (BOE Report 전재)",
+     "t": "BOE Report(로이터 기사 전재)",
      "u": "https://boereport.com/2026/10/16/us-energy-stocks-gain-as-oil-tops-100-on-supply-fears/amp/"
     }
    ],
-   "kick": "중동 공급 불안"
+   "kick": "유가 100달러 재돌파"
+  },
+  "XLP": {
+   "text": [
+    "10월에 AI·기술주에서 빠진 자금이 필수소비재로 옮겨 갔고, BofA 고객은 10월 중순까지의 주간에 개별주를 사상 최대 규모로 팔면서도 필수소비재는 순매수했습니다.",
+    "10/22에는 PG가 회계연도 1분기에 순매출 4% 증가(232억 8천만 달러)를 발표하고 연간 전망을 유지하자 주가가 5.58% 올랐고, 같은 날 XLP도 3.31% 올랐습니다."
+   ],
+   "src": [
+    {
+     "t": "24/7 Wall St.",
+     "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
+    }
+   ],
+   "kick": "AI주 이탈 순환매"
   },
   "URA": {
    "text": [
-    "우라늄 현물·장기 가격이 19년 만의 고점을 기록했는데도 원자력 관련주는 한 달 가까이 동반 매도에 시달렸습니다.",
-    "Cameco는 9/30 미국과 한국의 1,200억 달러 규모 원전 협력 틀이 발표된 뒤에도 약세를 이어갔고, 이는 실적 반영이 늦는 데 따른 밸류에이션 압축으로 설명됩니다."
+    "우라늄 장기 가격이 10/3 무렵 파운드당 96달러로 19년 만의 최고치를 기록했지만 거래량이 적은 가운데 형성된 가격이었고, 장기계약 체결량은 8/31까지 전년보다 약 15% 줄었습니다.",
+    "TD Cowen은 전력회사들이 가격에 부담을 느껴 계약을 미룬다고 평가했고, Goldman Sachs는 원전 수요 유입이 매우 약하다고 밝혀 OKLO·NuScale·CCJ 같은 원전 관련주의 매도가 이어졌습니다."
    ],
    "src": [
-    {
-     "t": "TIKR",
-     "u": "https://www.tikr.com/blog/cameco-sinks-11-in-a-month-while-uranium-hits-a-19-year-high-defined-by-delivery"
-    },
     {
      "t": "24/7 Wall St.",
      "u": "https://247wallst.com/investing/2026/10/03/uranium-prices-just-broke-a-19-year-record-but-nuclear-stocks-are-collapsing-anyway/"
-    }
-   ],
-   "kick": "원자력주 동반 매도"
-  },
-  "DRAM": {
-   "text": [
-    "삼성전자와 SK하이닉스는 10/6부터 7거래일 연속 하락해 각각 23.9%, 31.5% 내렸고, 같은 기간 코스피도 21% 하락했습니다.",
-    "10/15에는 AI 투자 부담과 미국 물가 우려로 코스피가 7.57% 급락했으며, 애널리스트들은 실적 전망이 아닌 매수 여력 부족과 투자심리 악화가 낙폭을 키웠다고 평가했습니다."
-   ],
-   "src": [
-    {
-     "t": "코리아타임스",
-     "u": "https://www.koreatimes.co.kr/economy/20261016/samsung-sk-hynix-sell-off-excessive-as-memory-outlook-stays-strong-analysts"
     },
     {
      "t": "TIKR",
-     "u": "https://www.tikr.com/blog/sk-hynix-jumps-5-sandisk-up-6-micron-up-3-as-memory-stocks-bounce-back-from-selloff"
+     "u": "https://www.tikr.com/blog/cameco-sinks-11-in-a-month-while-uranium-hits-a-19-year-high-defined-by-delivery"
     }
    ],
-   "kick": "한국 메모리주 급락"
+   "kick": "장기계약 부진"
   },
-  "XLC": {
+  "DRAM": {
    "text": [
-    "XLC 비중이 큰 META가 10/21 3분기 실적 발표 뒤 10/22에 약 7% 하락했습니다.",
-    "META는 매출 646억 달러로 가이던스 상단을 넘겼지만, 설비투자가 349억 달러로 영업현금흐름을 웃돌았고 약 99억 달러의 소송 합의 비용이 반영되었으며 연간 설비투자 전망은 1,350억~1,450억 달러로 제시되었습니다."
+    "10/12 장 개시 전 거래에서 MU가 2.15%, SK하이닉스가 1.98% 내렸는데, 중국 CXMT가 차세대 4F² DRAM 셀 구조에서 핵심 진전을 이뤘다고 발표한 것이 계기로 보도됐습니다.",
+    "CXMT는 이 기술을 쓴 DDR5 서버 메모리를 2026년 말까지 내놓겠다고 밝혔고, 범용·서버 DRAM 공급이 늘어 기존 업체의 가격 결정력이 약해질 수 있다는 우려가 메모리주 전반에 퍼졌습니다."
    ],
    "src": [
     {
-     "t": "Let's Data Science",
-     "u": "https://letsdatascience.com/news/meta-narrows-2026-capital-spending-range-to-135-billion-145-46f12e07"
-    },
-    {
-     "t": "interactive investor",
-     "u": "https://www.ii.co.uk/analysis-commentary/ii-view-meta-enjoys-strong-q3-hit-costly-litigation-ii540660"
+     "t": "Mitrade",
+     "u": "https://www.mitrade.com/au/insights/news/live-news/article-8-2155585-20261012"
     }
    ],
-   "kick": "META 실적 후 하락"
+   "kick": "CXMT 차세대 DRAM"
   }
  },
  "stocks": {
@@ -169,6 +161,108 @@
    ],
    "asof": "2026-10-28",
    "at": "10/29 10:21 KST"
+  },
+  "GOOGL": {
+   "text": [
+    "GOOGL은 10/19 주에 −6.0%를 기록한 뒤 10/28 장 마감 후 3분기 실적을 발표했습니다. 매출은 1,276억 달러로 25% 늘어 예상과 비슷했고 Google Cloud 매출은 약 307억 달러로 두 배 넘게 늘었지만, 검색 매출은 12% 증가에 그쳐 시장이 기대한 15%에 못 미쳤습니다.",
+    "설비투자는 514억 달러로 1년 전의 두 배를 넘었고 잉여현금흐름은 −91억 달러였으며, 회사는 2026년 설비투자 전망 약 2,000억 달러를 유지하고 2027년에는 3,000억 달러를 예상한다고 밝혔습니다.",
+    "주당순이익은 지분 투자 평가손실 때문에 2.12달러로 줄었고, 이런 배경 속에 주가는 실적 발표 직후 시간외에서 11% 넘게 내린 뒤 10/29에 약 13% 하락해 상장 이후 가장 큰 일간 낙폭을 기록했습니다."
+   ],
+   "src": [
+    {
+     "t": "Fortune",
+     "u": "https://fortune.com/2026/10/28/alphabet-google-stock-drops-cloud-revenue-doubles-free-cash-flow-negative/"
+    },
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-29-dow-sp-500-nasdaq-alphabet-microsoft-earnings-130305714.html"
+    }
+   ],
+   "asof": "2026-10-29",
+   "at": "10/30 08:20 KST"
+  },
+  "GOOG": {
+   "text": [
+    "GOOGL은 10/19 주에 −6.0%를 기록한 뒤 10/28 장 마감 후 3분기 실적을 발표했습니다. 매출은 1,276억 달러로 25% 늘어 예상과 비슷했고 Google Cloud 매출은 약 307억 달러로 두 배 넘게 늘었지만, 검색 매출은 12% 증가에 그쳐 시장이 기대한 15%에 못 미쳤습니다.",
+    "설비투자는 514억 달러로 1년 전의 두 배를 넘었고 잉여현금흐름은 −91억 달러였으며, 회사는 2026년 설비투자 전망 약 2,000억 달러를 유지하고 2027년에는 3,000억 달러를 예상한다고 밝혔습니다.",
+    "주당순이익은 지분 투자 평가손실 때문에 2.12달러로 줄었고, 이런 배경 속에 주가는 실적 발표 직후 시간외에서 11% 넘게 내린 뒤 10/29에 약 13% 하락해 상장 이후 가장 큰 일간 낙폭을 기록했습니다."
+   ],
+   "src": [
+    {
+     "t": "Fortune",
+     "u": "https://fortune.com/2026/10/28/alphabet-google-stock-drops-cloud-revenue-doubles-free-cash-flow-negative/"
+    },
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-29-dow-sp-500-nasdaq-alphabet-microsoft-earnings-130305714.html"
+    }
+   ],
+   "asof": "2026-10-29",
+   "at": "10/30 08:20 KST"
+  },
+  "MU": {
+   "text": [
+    "MU는 10/12 장 개시 전에 2% 넘게 내렸는데, 중국 CXMT가 차세대 4F² DRAM 구조에서 진전을 이뤘다고 알려지면서 메모리 업체의 점유율과 가격 결정력이 약해질 수 있다는 우려가 번진 영향으로 보도됐습니다.",
+    "이 사건은 10/12 주의 −14.6% 하락과 시기가 겹칩니다. 이후 10/15에는 장중 858달러까지 밀렸다가 931.24달러로 1.87% 오른 채 마감해 낙폭을 되돌렸고, 10/26 주에는 +6.5%로 반등했습니다."
+   ],
+   "src": [
+    {
+     "t": "Mitrade",
+     "u": "https://www.mitrade.com/au/insights/news/live-news/article-8-2155585-20261012"
+    },
+    {
+     "t": "HeyGoTrade",
+     "u": "https://www.heygotrade.com/en/news/micron-mu-stock-news-october-16-2026/"
+    }
+   ],
+   "asof": "2026-10-29",
+   "at": "10/30 08:20 KST"
+  },
+  "LLY": {
+   "text": [
+    "LLY는 10/29 장 시작 전에 3분기 실적을 발표했습니다. 매출은 39% 늘어난 244억 달러였고 Mounjaro가 107억 달러, 미국 Zepbound가 53억 달러였으며, 약 9억 달러의 일회성 효과가 포함됐습니다.",
+    "회사는 2026년 매출 전망을 기존 850억~870억 달러에서 910억~920억 달러로 올렸습니다. 같은 분기에 retatrutide가 제2형 당뇨병 3상에서 Ozempic 2mg을 이겼다는 결과도 공개했고, 인수 관련 연구개발비 비용 때문에 주당순이익 전망은 35.00~36.00달러로 제시했습니다. 이날 주가는 6.6% 올랐습니다."
+   ],
+   "src": [
+    {
+     "t": "Eli Lilly 8-K(SEC)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000059478/000005947826000104/q326lillysalesandearningsp.htm"
+    }
+   ],
+   "asof": "2026-10-29",
+   "at": "10/30 08:20 KST"
+  },
+  "GE": {
+   "text": [
+    "GE는 10/20 장 시작 전에 3분기 실적을 발표했습니다. 총수주가 190억 달러로 49% 늘었고 조정 주당순이익은 2.25달러로 36% 늘었으며, 회사는 2026년 전망을 전반적으로 올렸습니다.",
+    "상업엔진·서비스 부문 매출 성장률 전망은 20% 안팎에서 20% 초반대로, 이 부문 영업이익 전망은 102.5억~103.5억 달러에서 105억~106억 달러로 올랐고, 2027년에도 상업 서비스가 한 자릿수 후반이 아닌 두 자릿수 초반으로 성장할 것으로 내다봤습니다. 그럼에도 발표 당일 주가는 3.7% 내렸고 10/19 주에는 −9.0%를 기록했습니다."
+   ],
+   "src": [
+    {
+     "t": "GE Aerospace 보도자료",
+     "u": "https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-third-quarter-2026-results"
+    }
+   ],
+   "asof": "2026-10-29",
+   "at": "10/30 08:20 KST"
+  },
+  "WMT": {
+   "text": [
+    "WMT는 10/15에 Deutsche Bank가 투자의견을 Hold에서 Buy로 올리고 목표가를 113달러에서 136달러로 상향한 날 3% 가까이 올랐습니다. 근거로는 9월 소비자물가가 예상보다 높게 나온 가운데 인플레이션이 시장점유율 확대에 유리하다는 점과 광고·마켓플레이스·Walmart+ 같은 고마진 사업이 제시됐습니다.",
+    "10/22에는 WMT가 2.82% 올랐고 같은 날 PG가 실적 발표 뒤 5.58% 올랐습니다. 24/7 Wall St.는 이 상승에 회사 고유의 신규 계약이나 가이던스 변경은 없었고 AI·기술주에서 필수소비재로의 자금 이동이 배경이라고 설명했습니다. 10/23 기준 WMT는 10월에 약 16.6% 올라 1999년 이후 최고의 월간 성과를 향해 가고 있었습니다."
+   ],
+   "src": [
+    {
+     "t": "24/7 Wall St.",
+     "u": "https://247wallst.com/investing/2026/10/15/walmart-climbs-3-on-deutsche-bank-upgrade-costco-and-target-tick-up/"
+    },
+    {
+     "t": "24/7 Wall St.",
+     "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
+    }
+   ],
+   "asof": "2026-10-29",
+   "at": "10/30 08:20 KST"
   }
  },
  "runs": [
@@ -187,6 +281,19 @@
    6,
    0,
    "ok"
+  ],
+  [
+   "10/30 08:20 KST",
+   6,
+   4,
+   6,
+   5,
+   "ok",
+   29,
+   13,
+   44,
+   "claude-sonnet-5-5",
+   0.809
   ]
  ]
 }
