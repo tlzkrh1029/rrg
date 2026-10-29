@@ -221,7 +221,7 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .side .ttlrow .tog button[aria-pressed="true"]{color:var(--amber);font-weight:600}
 .side .ttlrow .tog button:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
 .side table{border-collapse:collapse;width:100%;font-size:11.5px;margin-bottom:8px}
-.side td{padding:2px 6px 2px 0;white-space:nowrap} .side td.k{color:var(--muted)} .side td.v{color:var(--ink);text-align:right}
+.side td{padding:2px 6px 2px 0;white-space:nowrap}
 .side .on{color:var(--up);font-weight:600} .side .dn{color:var(--down);font-weight:600} .side .nr{color:var(--near);font-weight:600}
 .side .wlab{color:var(--amber);font-size:11px;letter-spacing:.06em;margin:4px 0 4px;text-transform:uppercase}
 .side .wb{display:grid;grid-template-columns:44px 1fr 96px;align-items:center;gap:8px;margin-bottom:4px}
@@ -243,7 +243,6 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .ld.sm{gap:3px;margin-left:0} .ld.sm i{width:5px;height:5px} .ld.sm i.b{border-width:1.2px}
 .cell.dim{opacity:.3}
 .cell .ldot{stroke:none} .cell .ldot.b{fill:none;stroke:var(--amber);stroke-width:1.1;vector-effect:non-scaling-stroke} .cell .ldot.p{fill:var(--amber)} .cell .ldot.h{fill:var(--near)}
-.side .ven{font-size:11px;color:var(--ink-2);margin:-4px 0 8px;line-height:1.55} .side .ven b{color:var(--amber);font-weight:600;display:inline-block;min-width:96px}
 .side .lst{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;font-size:11.5px;color:var(--ink-2);margin:-2px 0 8px;white-space:nowrap}
 .side .lst .ld{margin-left:0}
 .side .ht td.sy .ld{display:flex;margin:2px 0 0}
@@ -263,7 +262,6 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .side .chips span{padding:0 6px;line-height:1.7;font-weight:600}
 .side .chips .on{background:var(--amber);color:#000} .side .chips .ex{background:var(--down);color:#000} .side .chips .no{background:var(--hair-2);color:var(--muted)}
 .side .etfchart{display:grid;gap:7px;border-top:1px solid var(--hair);padding-top:8px;margin-top:6px}
-.side .etfchart td.k small{color:var(--muted);font-size:10px;margin-left:4px}
 .side table.ht{border-collapse:collapse;width:100%;font-size:11.5px;margin-top:6px;table-layout:fixed}
 .side .ht th{text-align:left;color:var(--amber);font-weight:600;font-size:10.5px;padding:4px 4px 4px 0;border-bottom:1px solid var(--hair);letter-spacing:.04em;white-space:nowrap}
 .side .ht th.r,.side .ht td.r{text-align:right}
@@ -288,6 +286,7 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .tip[hidden]{display:none}
 .tip .h{display:flex;align-items:baseline;gap:8px;margin-bottom:2px;min-width:0}
 .tip .h .tk{font-weight:600;font-size:14px;flex:none;color:var(--amber)}
+.tip .h .ld{align-self:center}
 .tip .h .nm{color:var(--ink-2);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .tip .in{color:var(--muted);font-size:11.5px;margin-bottom:6px}
 .tip .wlab{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);margin:4px 0 2px}
@@ -296,8 +295,6 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .tip .wb .wt{height:9px;background:var(--amber-bg);overflow:hidden} .tip .wb .wt i{display:block;height:100%;background:var(--amber-dim)}
 .tip .wb.cur .wt i{background:var(--amber)} .tip .wb.cur .wl{color:var(--amber)}
 .tip .wb .wv{font-variant-numeric:tabular-nums;color:var(--ink-2);white-space:nowrap;text-align:right} .tip .wb .wv b{font-weight:600;color:var(--ink)}
-.tip table{border-collapse:collapse;font-size:12px;margin-top:6px}
-.tip td{padding:1px 8px 1px 0;white-space:nowrap} .tip td.k{color:var(--muted)} .tip td.v{font-variant-numeric:tabular-nums}
 .tip .on{color:var(--up);font-weight:600} .tip .dn{color:var(--down);font-weight:600} .tip .nr{color:var(--near);font-weight:600}
 .tip .st{margin-top:6px;font-size:11.5px;color:var(--muted)}
 
@@ -453,7 +450,7 @@ kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);borde
     <div class="guide-grid">
       <section>
         <h3>1. 칸과 블록</h3>
-        <p>칸 하나가 종목 하나이고, 블록 하나가 ETF 하나입니다. 블록의 칸은 그 ETF의 구성 비중 상위 10개이며, 순서는 비중 순입니다. 가격이 없는 행(심볼이 없는 신탁, 상장 45거래일 미만)은 칸 없이 패널의 표에만 있습니다. 칸을 누르면 종목 상세가, ETF 이름을 누르면 그 행이 파랗게 선택되며 매트릭스와 같은 구성종목 패널(순자산·보유 종목·지평별 켜진 칸·vs SPY·vs QQQ 비율선·구성종목 표)이 오른쪽에 열립니다. 패널의 종목 행을 누르면 그 칸으로 이동합니다. 섹터 전환 매트릭스의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 다섯을 더한 28개가 블록이라서, 매트릭스의 행과 이어 볼 수 있습니다. 맨 위 사이트 줄의 1) 매트릭스를 누르거나 명령줄에 SRM 을 치면 매트릭스로 돌아갑니다. 32) 행(장부) 배치로 바꾸면 매트릭스처럼 ETF 한 줄에 10칸이 놓입니다.</p>
+        <p>칸 하나가 종목 하나이고, 블록 하나가 ETF 하나입니다. 블록의 칸은 그 ETF의 구성 비중 상위 10개이며, 순서는 비중 순입니다. 가격이 없는 행(심볼이 없는 신탁, 상장 45거래일 미만)은 칸 없이 패널의 표에만 있습니다. 칸을 누르면 종목 상세가, ETF 이름을 누르면 그 행이 파랗게 선택되며 매트릭스와 같은 구성종목 패널(90일 차트·순자산·보유 종목·지평별 켜진 칸·구성종목 표)이 오른쪽에 열립니다. 패널의 종목 행을 누르면 그 칸으로 이동합니다. 섹터 전환 매트릭스의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 다섯을 더한 28개가 블록이라서, 매트릭스의 행과 이어 볼 수 있습니다. 맨 위 사이트 줄의 1) 매트릭스를 누르거나 명령줄에 SRM 을 치면 매트릭스로 돌아갑니다. 32) 행(장부) 배치로 바꾸면 매트릭스처럼 ETF 한 줄에 10칸이 놓입니다.</p>
       </section>
       <section>
         <h3>2. 다섯 색에 하나씩 역할</h3>
@@ -470,7 +467,7 @@ kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);borde
       </section>
       <section>
         <h3>상장 점</h3>
-        <p>칸의 티커 아래, ETF 이름 뒤, 구성종목 표, 켜진 칸 목록에 같은 점이 찍힙니다. 돌파한 칸에 점이 있으면 그 종목을 크립토 거래소에서 바로 잡을 수 있다는 뜻이고, 점이 없으면 증권 계좌로만 접근할 수 있습니다. 72) 상장만을 누르면 점이 없는 칸이 흐려집니다. 종목 상세 패널에는 거래소의 원본 심볼(예: NVDAUSDT, xyz:NVDA)과 확인일이 적힙니다.</p>
+        <p>칸의 티커 아래, ETF 이름 뒤, 구성종목 표, 켜진 칸 목록에 같은 점이 찍힙니다. 돌파한 칸에 점이 있으면 그 종목을 크립토 거래소에서 바로 잡을 수 있다는 뜻이고, 점이 없으면 증권 계좌로만 접근할 수 있습니다. 72) 상장만을 누르면 점이 없는 칸이 흐려집니다. 점에 마우스를 올리면 거래소의 원본 심볼(예: NVDAUSDT, xyz:NVDA)이 보이고, 목록을 확인한 날짜는 맨 위의 Listing 표시와 ETF 패널의 상장 줄에 적힙니다.</p>
       </section>
       <section>
         <h3>5. 구획 방식</h3>
@@ -510,10 +507,6 @@ function dotsHTML(f, size) {   // f = {b:[],p:[],h:[]} → <span class="ld"><i c
   if (f.p && f.p.length) parts.push(`<i class="p" title="${VEN.p} ${f.p.join(', ')}"></i>`);
   if (f.h && f.h.length) parts.push(`<i class="h" title="${VEN.h} ${f.h.join(', ')}"></i>`);
   return parts.length ? `<span class="ld ${size || ''}" aria-label="상장: ${['b','p','h'].filter(x => f[x] && f[x].length).map(x => VEN[x]).join(', ')}">${parts.join('')}</span>` : '';
-}
-function venueText(f, sep) {
-  if (!f) return '세 곳 미상장';
-  return ['b','p','h'].filter(x => f[x] && f[x].length).map(x => `<b>${VEN[x]}</b> ${f[x].join(', ')}`).join(sep || ' · ');
 }
 const PRESET = {};
 const HS = ['20','55','52w','ath'];
@@ -794,19 +787,6 @@ function renderTables() {
 }
 
 /* ---- 상세: 툴팁과 오른쪽 패널 ---- */
-/* 지평 표: jf(H) 가 지평 H 의 판정을 돌려준다. athK 를 주면 '사상 최고' 이름 칸을 그것으로 바꾼다 */
-function hzRows(jf, athK) {
-  return HS.map(H => {
-    const r = jf(H), lab = H === 'ath' && athK ? athK : HLAB[H];
-    if (r.st === 'lit') return `<tr><td class="k">${lab}</td><td class="v on">돌파 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'down') return `<tr><td class="k">${lab}</td><td class="v dn">이탈 ${r.days}일째 · 바닥 ${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'failed') return `<tr><td class="k">${lab}</td><td class="v dn">실패 · 돌파 후 ${r.days}일, Shelf ${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'quiet') return `<tr><td class="k">${lab}</td><td class="v">유지 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'near') return `<tr><td class="k">${lab}</td><td class="v nr">직전 · 고점까지 ${(r.dist * 100).toFixed(1)}%</td></tr>`;
-    return `<tr><td class="k">${lab}</td><td class="v" style="color:var(--muted)">${r.dist == null ? '–' : r.dist <= 0.001 ? '고점 부근' : '고점까지 ' + (r.dist * 100).toFixed(1) + '%'}</td></tr>`;
-  }).join('');
-}
-function horizonRows(k) { return hzRows(H => J(k, state.mode, H)); }
 function weightBars(k, etf) {
   const mem = etfsOf[k].map(t => ({ t, ...weightOf[k + '|' + t] })).sort((a, b) => b.w - a.w), scale = Math.max(25, ...mem.map(m => m.w));
   return mem.map(m => `<div class="wb${m.t === etf ? ' cur' : ''}"><span class="wl" data-goetf="${m.t}" title="${m.t} 블록 보기">${m.t}</span><span class="wt"><i style="width:${(m.w / scale * 100).toFixed(1)}%"></i></span><span class="wv"><b>${m.w.toFixed(2)}%</b> · ${m.rank}위</span></div>`).join('');
@@ -814,11 +794,9 @@ function weightBars(k, etf) {
 const tip = document.getElementById('tip');
 function tipHTML(k, etf) {
   const st = DATA.stocks[k], c = series[k][state.mode].c, n = c.length, ret30 = c[n - 1] / c[n - W] - 1;
-  return `<div class="h"><span class="tk">${k}</span><span class="nm">${st.n}</span></div>
+  return `<div class="h"><span class="tk">${k}</span>${dotsHTML(lstOf(k), 'sm')}<span class="nm">${st.n}</span></div>
     <div class="in">${st.x ? st.x + ' 상장 · ' : ''}${MSHORT[state.mode]} 일간 <span class="${changes(k, state.mode).d >= 0 ? 'on' : 'dn'}">${pct1(changes(k, state.mode).d)}%</span> · 주간 <span class="${changes(k, state.mode).w >= 0 ? 'on' : 'dn'}">${pct1(changes(k, state.mode).w)}%</span> · 30일 <span class="${ret30 >= 0 ? 'on' : 'dn'}">${pct1(ret30)}%</span></div>
-    <div class="in">${dotsHTML(lstOf(k), 'sm')} ${venueText(lstOf(k))}</div>
     <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${weightBars(k, etf)}
-    <table>${horizonRows(k)}</table>
     <div class="st">종가 ${PRICE_ASOF}${st.sym ? ' · ' + st.sym : ''}${st.ipo ? ' · 상장 ' + st.ipo : ''}</div>`;
 }
 function showTip(btn) {
@@ -903,13 +881,10 @@ function etfChartHTML(t) {
   if (!s) return `<div class="etfchart">${head}<div class="st" style="margin-top:0">이번 빌드에는 ${t} 차트 자료가 없습니다.</div></div>`;
   const X = ETFX.etfs[t], c = s.c, n = c.length, ch = { d: c[n - 1] / c[n - 2] - 1, w: c[n - 1] / c[n - 6] - 1, m: c[n - 1] / c[n - W] - 1 };
   const dd = v => `<dd class="${v >= 0 ? 'on' : 'dn'}">${pct1(v)}%</dd>`;
-  const lv = v => m === 'usd' ? v.toFixed(2) : v.toFixed(4);
-  const athK = `<span title="사상 최고 수준 ${lv(s.ath)} (${s.athd}) · ${s.from}부터의 이력에서 찾았습니다(월 1회 갱신)">사상 최고<small>${s.from.slice(0, 4)}~</small></span>`;
   const stale = X.stale ? ` <span style="color:var(--muted)">· 마지막 종가 ${X.stale}</span>` : '';
   return `<div class="etfchart">${head}`
     + `<dl><dt>${MSHORT[m]} 일간</dt>${dd(ch.d)}<dt>${MSHORT[m]} 주간</dt>${dd(ch.w)}<dt>${MSHORT[m]} 30일</dt>${dd(ch.m)}<dt>종가</dt><dd>${ETFX.asof} · ${t} ${X.c[n - 1].toFixed(2)}${stale}</dd></dl>`
-    + `<div class="big">${chartSVG(s, s.ma, judge(c, state.H, s.h52, s.ath), 'ec')}</div>${legendHTML(s.ma, n)}`
-    + `<table>${hzRows(H => judge(c, H, s.h52, s.ath), athK)}</table></div>`;
+    + `<div class="big">${chartSVG(s, s.ma, judge(c, state.H, s.h52, s.ath), 'ec')}</div>${legendHTML(s.ma, n)}</div>`;
 }
 function stateTag(k, etf) {
   const r = J(k, state.mode, state.H);
@@ -975,11 +950,9 @@ function renderSide() {
     <div class="tk">${k}${dotsHTML(lstOf(k), 'lg')}<small>${st.x ? st.x : (/^\d{6}$/.test(k) ? 'KRX' : 'US')} EQUITY</small></div>
     <div class="nm">${st.n}</div>
     <div class="ko">${e ? e.ko + ' · ' + e.tag + ' ETF ' + etf : ''}</div>
-    <div class="ven">${venueText(lstOf(k), '<br>')}${lstOf(k) ? `<br><span style="color:var(--muted)">확인 ${LST_ASOF}</span>` : ''}</div>
     <dl><dt>${MSHORT[state.mode]} 일간</dt><dd class="${ch.d >= 0 ? 'on' : 'dn'}">${pct1(ch.d)}%</dd><dt>${MSHORT[state.mode]} 주간</dt><dd class="${ch.w >= 0 ? 'on' : 'dn'}">${pct1(ch.w)}%</dd><dt>${MSHORT[state.mode]} 30일</dt><dd class="${ret30 >= 0 ? 'on' : 'dn'}">${pct1(ret30)}%</dd><dt>종가</dt><dd>${PRICE_ASOF}${st.sym ? ' · ' + st.sym : ''}${st.src ? ' (' + st.src + ')' : ''}</dd>${st.ipo ? `<dt>상장</dt><dd>${st.ipo} · 그 앞은 첫 종가로 채움</dd>` : ''}<dt>구성종목</dt><dd>${e ? e.asof : ''} · <a href="${e ? e.url : '#'}" target="_blank" rel="noopener">stockanalysis.com</a></dd></dl>
     <div class="ttlrow"><span>90일 · ${MLAB[state.mode]}</span><span class="tog" role="group" aria-label="차트와 지도의 자"><button type="button" data-tog="usd" aria-pressed="${state.mode === 'usd'}">USD</button><button type="button" data-tog="qqq" aria-pressed="${state.mode === 'qqq'}">vs QQQ</button><button type="button" data-tog="spy" aria-pressed="${state.mode === 'spy'}">vs SPY</button></span></div>
     <div class="big">${bigChart(k)}</div>${maLegend(k)}
-    <table>${horizonRows(k)}</table>
     <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${weightBars(k, etf)}
     <div class="wlab" style="margin-top:8px">블록 상태</div>${blocks}
     <div class="st">사상 최고 수준 ${st.ath} (이력 ${st.athFrom || '2년 창'}부터) · 52주 고점 수준 ${st.h52} · 창 ${DATA.first} ~ ${DATA.asof}.</div>`;
