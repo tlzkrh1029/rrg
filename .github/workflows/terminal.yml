@@ -196,8 +196,16 @@ jobs:
             --setting-sources user
             --json-schema '{"type":"object","properties":{"etfs":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"text":{"type":"array","items":{"type":"string"}},"kick":{"type":"string"},"src":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"u":{"type":"string"}},"required":["t","u"]}}},"required":["t","text","src"]}},"stocks":{"type":"array","items":{"type":"object","properties":{"k":{"type":"string"},"text":{"type":"array","items":{"type":"string"}},"src":{"type":"array","items":{"type":"object","properties":{"t":{"type":"string"},"u":{"type":"string"}},"required":["t","u"]}}},"required":["k","text","src"]}},"skip":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"why":{"type":"string"}},"required":["id","why"]}}},"required":["etfs","stocks"]}'
 
+      # 두 Claude 단계는 실행 기록을 같은 파일($RUNNER_TEMP/claude-execution-output.json)에 쓰므로, 요약 단계의 기록을 옮겨 둔다.
+      # 반영 단계가 이 기록에서 웹 검색 횟수를 센다.
+      - name: Claude 요약 실행 기록 보관
+        if: steps.cprep.outputs.run == 'true'
+        run: |
+          if [ -f "$RUNNER_TEMP/claude-execution-output.json" ]; then mv "$RUNNER_TEMP/claude-execution-output.json" "$RUNNER_TEMP/claude-exec-notes.json"; fi
+
       # 킥: 그 주를 결정한 하루에 종목·ETF 가 왜 그렇게 움직였는지 한 구절과 근거 한 줄을 찾는다. 같은 도구 제한과 구조화된 출력을 쓴다.
-      # 찾지 못한 날은 skip 으로 받아 '이유 미확인'으로 남기고 다시 맡기지 않는다.
+      # 항목마다 웹 검색을 하게 하고, 찾지 못한 날은 skip 으로 받는다. 두 번 찾지 못하면 '이유 미확인'으로 남기고 다시 맡기지 않는다.
+      # 맡긴 항목의 절반보다 적게 검색한 실행의 skip 은 남기지 않는다(다음 실행이 다시 찾는다).
       - name: Claude 킥 (웹 검색)
         id: kclaude
         if: steps.cprep.outputs.run_kicks == 'true'
@@ -211,7 +219,7 @@ jobs:
           classify_inline_comments: "false"
           claude_args: >-
             --model ${{ vars.CLAUDE_KICKS_MODEL || vars.CLAUDE_MODEL || 'sonnet' }}
-            --max-turns 120
+            --max-turns 200
             --tools WebSearch,WebFetch
             --allowedTools WebSearch,WebFetch
             --strict-mcp-config
@@ -226,6 +234,8 @@ jobs:
           CLAUDE_CONCLUSION: ${{ steps.claude.outcome }}
           KICKS_OUT: ${{ steps.kclaude.outputs.structured_output }}
           KICKS_CONCLUSION: ${{ steps.kclaude.outcome }}
+          NOTES_EXEC: ${{ runner.temp }}/claude-exec-notes.json
+          KICKS_EXEC: ${{ steps.kclaude.outputs.execution_file }}
         run: python terminal/claude_notes.py merge
 
       - name: 페이지 생성 (터미널)
