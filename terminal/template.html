@@ -231,7 +231,6 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .sd .sdb{padding:8px 8px 10px;display:grid;gap:7px;font-size:11.5px;color:var(--ink-2)}
 .sd .sdh{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;line-height:1.3}
 .sd .sdh .tk{color:var(--amber);font-size:15px;font-weight:700} .sd .sdh .nm{color:#fff} .sd .sdh .ex{color:var(--muted);font-size:10px;letter-spacing:.08em}
-.sd .ven{font-size:11px;line-height:1.55} .sd .ven b{color:var(--amber);font-weight:700;display:inline-block;min-width:92px}
 :is(.sd,.eb) dl{display:grid;grid-template-columns:max-content 1fr;gap:2px 12px;margin:0} :is(.sd,.eb) dt{color:var(--muted)} :is(.sd,.eb) dd{margin:0;color:var(--ink)}
 :is(.sd,.eb) .on{color:var(--hot);font-weight:700} :is(.sd,.eb) .dn{color:var(--cold);font-weight:700} :is(.sd,.eb) .nr{color:var(--blue);font-weight:700} :is(.sd,.eb) .mu{color:var(--muted)}
 :is(.sd,.eb) .ttlrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:10.5px;letter-spacing:.06em;color:var(--amber);text-transform:uppercase;font-weight:700}
@@ -248,7 +247,6 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 :is(.sd,.eb) .big .edge{font-size:9px;font-weight:700} :is(.sd,.eb) .big .edge.y{fill:#ffe95c} :is(.sd,.eb) .big .edge.b{fill:#4d9cff} :is(.sd,.eb) .big .edge.o{fill:var(--amber)}
 :is(.sd,.eb) .lgd{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:10.5px} :is(.sd,.eb) .lgd span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 :is(.sd,.eb) .lgd svg{width:26px;height:10px;overflow:visible;display:block} :is(.sd,.eb) .lgd b{color:var(--ink);font-weight:400} :is(.sd,.eb) .lgd i{font-style:normal;color:var(--muted)}
-:is(.sd,.eb) table.hz{border-collapse:collapse;width:100%;font-size:11.5px} :is(.sd,.eb) .hz td{padding:2px 6px 2px 0;white-space:nowrap} :is(.sd,.eb) .hz td.k{color:var(--muted)} :is(.sd,.eb) .hz td.v{color:var(--ink);text-align:right}
 .sd .wlab{color:var(--amber);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
 .sd .wb{display:grid;grid-template-columns:48px 1fr 96px;align-items:center;gap:8px}
 .sd .wb button{color:var(--ink);font-weight:700;text-align:left} .sd .wb button:hover{color:var(--amber)}
@@ -257,7 +255,6 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .sd .links{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11px}
 /* ETF 차트 블록(Holdings 패널 맨 위): 자 토글은 아래 기여도 블록의 기준도 함께 바꾼다 */
 .eb{display:grid;gap:7px;font-size:11.5px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:8px}
-.eb .hz td.k small{color:var(--muted);font-size:9.5px;margin-left:4px}
 .eb .note{margin:0;font-size:10.5px;color:var(--muted)}
 /* 기여도 블록: Holdings 패널에서 구성종목 표 아래에 놓인다. 계산은 terminal/compute_contrib.py */
 .cb{display:grid;gap:6px;font-size:11.5px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:8px}
@@ -993,14 +990,14 @@ body.cover-open{overflow:hidden}
           <ol>
             <li>정렬을 <kbd class="k">22) 전환순</kbd>으로 바꾸어 맨 위 세 행을 봅니다. 최근에 순위가 가장 크게 오른 ETF입니다.</li>
             <li>그 행의 SPY 대비·QQQ 대비 비율선이 <span data-w="hot">초록</span> 색으로 강조되어 있는지, 신호 열에 상대 신고가나 이동평균선 돌파가 있는지 확인합니다.</li>
-            <li>행을 눌러 구성종목을 열고, 상승을 이끄는 종목이 한두 개에 몰려 있는지 고르게 퍼져 있는지 봅니다. 고르게 퍼진 상승이 섹터 전환에 가깝습니다. 구성종목 표의 종목 행을 누르면 그 아래에 종목 상세(일간·주간·30일 변동률, 90일 가격선과 50 SMA·89 HMA·144 HMA, 20일·55일·52주·사상 최고 돌파 상태, 이 종목을 담은 다른 ETF)가 펼쳐집니다. 돌파 지도의 종목 상세와 같은 내용이며, USD · vs QQQ · vs SPY 로 자를 바꿀 수 있습니다. 같은 패널의 기여도에서 ETF 를 실제로 움직인 종목을 확인하고, 뉴스·실적에서 그 이유를 찾습니다(아래 7).</li>
+            <li>행을 눌러 구성종목을 열고, 상승을 이끄는 종목이 한두 개에 몰려 있는지 고르게 퍼져 있는지 봅니다. 고르게 퍼진 상승이 섹터 전환에 가깝습니다. 구성종목 표의 종목 행을 누르면 그 아래에 종목 상세(일간·주간·30일 변동률, 90일 가격선과 50 SMA·89 HMA·144 HMA, 이 종목을 담은 다른 ETF)가 펼쳐집니다. 차트는 돌파 지도의 종목 상세와 같은 규칙으로 그리며, USD · vs QQQ · vs SPY 로 자를 바꿀 수 있습니다. 같은 패널의 기여도에서 ETF 를 실제로 움직인 종목을 확인하고, 뉴스·실적에서 그 이유를 찾습니다(아래 7).</li>
             <li><kbd class="k">2) RRG</kbd> 탭의 1단 그래프에서 Improving → Leading으로 넘어가는 섹터를 찾고, 그 점을 눌러 2단을 엽니다. 2단에서 그 섹터보다 강한(Leading) 하위 ETF가 섹터를 끌고 가는 주체입니다. 2025년이라면 1단에서 XLK, 2단에서 SMH였을 것입니다.</li>
             <li>마지막으로 <kbd class="k">12M</kbd> 열로 정렬해 오른쪽만 <span data-w="hot">초록</span> 색인 행을 찾고, 보유 중인 섹터가 거기에 있으면 이탈 조건을 점검합니다.</li>
           </ol>
         </section>
         <section class="wide">
           <h3>7. Holdings 패널: ETF 차트 · 기여도 · 뉴스와 실적</h3>
-          <p><b style="color:var(--amber)">ETF 차트.</b> 패널 맨 위에는 고른 ETF 의 90일 차트가 항상 펼쳐져 있습니다. 일간·주간·30일 변동률, 50 SMA · 89 HMA · 144 HMA, 20일 Shelf 와 천장, 52주 고점, 그리고 20일·55일·52주·사상 최고 네 지평의 돌파 상태를 종목 상세와 같은 규칙으로 보여 줍니다. 사상 최고는 ETF 의 전체 이력에서 찾으며, 이력은 한 달에 한 번 다시 받습니다. 제목줄의 USD · vs QQQ · vs SPY 단추(산업·테마 ETF 는 상위 섹터 대비 단추도 있음)는 차트와 아래 기여도의 기준을 함께 바꿉니다.</p>
+          <p><b style="color:var(--amber)">ETF 차트.</b> 패널 맨 위에는 고른 ETF 의 90일 차트가 항상 펼쳐져 있습니다. 일간·주간·30일 변동률, 50 SMA · 89 HMA · 144 HMA, 20일 Shelf 와 천장, 52주 고점을 종목 상세와 같은 규칙으로 보여 줍니다. 제목줄의 USD · vs QQQ · vs SPY 단추(산업·테마 ETF 는 상위 섹터 대비 단추도 있음)는 차트와 아래 기여도의 기준을 함께 바꿉니다.</p>
           <p><b style="color:var(--amber)">기여도.</b> 구성종목이 ETF 수익률에 얼마나 보탰는지를 기간 시작 비중 × 기간 수익률(USD)로 계산합니다. 1D · 1W · 1M 가운데 기간을 고르고, 기준이 USD 가 아니면 비교 대상(SPY, QQQ, 상위 섹터)의 기여도를 옆에 함께 놓아 차이가 어느 종목에서 났는지 보여 줍니다. 상위 10개 밖의 몫은 '나머지'로 적고, 표의 비중 합이 98% 이상인 ETF 는 남는 차이를 '미설명분'(현금·보수·시차·스왑)으로 적습니다. 해외 종목은 환율을 반영해 USD 로 환산하고, 1D 에서는 장 마감 시각이 다른 종목에 '시차' 표시를 붙입니다. 그 아래 표는 상승 종목 수, 합계와 같은 방향으로 움직인 기여 가운데 상위 1개·3개 종목이 차지한 몫, 나머지 평균, 최대 상승일과 하락일을 비교하고, 히트맵은 최근 8주의 주간 기여를 보여 줍니다. 4) 주간 브리핑 탭의 Drivers 패널은 보드 전체에서 ETF 를 가장 많이 움직인 종목을 모읍니다.</p>
           <p><b style="color:var(--amber)">뉴스와 실적.</b> 창 폭이 1,860px 이상이면 매트릭스 오른쪽에 뉴스 칼럼이 생기고, 그보다 좁으면 같은 내용이 Holdings 패널 안(차트 아래와 종목 상세 안)에 들어갑니다. ETF 를 고르면 기여도와 실적 일정으로 만든 '왜 움직였나' 요약 문장과 다가오는 실적 일정 아래에 상위 10개 종목의 최근 4주가 주별로 나옵니다. 주마다 열 종목을 그 주에 ETF 에 준 영향(지금 비중 × 그 주 수익률)이 큰 순서로 칩에 놓고 수익률로 칠하며, 칩을 누르면 그 종목의 그 주 기사가 칩 아래에 펼쳐집니다. 그 아래에는 그 주에 열 종목이 낸 SEC 공시 칩과, 실적을 낸 종목을 먼저 두고 영향순으로 세 종목에서 한 줄씩 고른 기사 줄이 있고, 나머지 기사는 종목별로 모아 '나머지 n건'에 둡니다. 종목 행을 펼치면 그 종목의 최근 4주가 주별로 나옵니다. 주마다 그 주의 SEC 공시(8-K 는 항목 번호와 이름, 배당·자사주 매입처럼 본문 첫 문장에서 알아본 이름)를 칩으로 붙이고, 같은 이야기를 실은 기사는 한 줄로 묶어 '비슷한 기사 +n'으로 적은 뒤 위 두 줄만 보여 줍니다. 나머지는 '나머지 n건'을 누르면 나옵니다. 4주보다 앞선 90일 안의 공시와 내부자 신고(Form 4·144) 건수는 맨 아래에 있고, TradingView 뉴스 링크(Key facts · Top news · Latest)도 함께 나옵니다. 실적은 SEC EDGAR 의 8-K 공시(Item 2.02)로 확인해 구성종목 표의 배지, 차트의 점선, 종목 상세의 '최근 실적' 줄로 표시합니다. 빌드 때 Claude 가 웹 검색으로 찾은 이유 문장(최근 1개월 동안 기준보다 가장 많이 앞선 3개와 뒤진 3개 ETF)이 요약 상자에 더해지고, 주도 종목(기여도 1개월·1주)을 펼치면 Claude 가 쓴 최근 4주 요약이 맨 위에 나옵니다. 종목 요약은 하루 몇 종목씩 돌아가며 주 1회 새로 쓰고, 문장마다 근거 기사 링크가 붙습니다.</p>
           <p><b style="color:var(--amber)">킥.</b> 킥은 한 주를 결정한 하루와 그날의 원인 한 구절입니다. 그 주 수익률을 비교 대상(종목은 그 ETF, ETF 는 산업·테마면 상위 섹터 ETF, 나머지는 SPY)과 견주어 차이가 1%p 안이면 'ETF 와 같이'로 두고 ETF 의 킥을 따릅니다. 다만 하루 차이가 1%p 를 넘은 실적일이 있으면 그 실적이 킥입니다. 차이가 1%p 를 넘으면 같은 방향으로 가장 크게 벌어진 날(1%p 이상)을 그 주를 결정한 하루로 고르고, 그런 날이 없으면 '여러 날에 나뉨'으로 둡니다. 원인은 그날의 실적 공시(8-K Item 2.02)와 Finnhub 기사 제목에 나온 목표가·투자의견 변경으로 먼저 찾고, 나머지는 빌드의 Claude 단계가 웹 검색으로 찾아 근거 기사 링크와 함께 적습니다. 원인을 찾지 못한 날은 '이유 미확인', 아직 찾지 않은 날은 '원인 찾는 중'으로 보입니다. ETF 한 주에 붙이는 종목 킥은 영향(비중 × 주간 차이)이 큰 세 종목까지이고, 해외 거래소 종목은 장 시간이 달라 하루 차이 대신 그 종목이 같은 방향으로 가장 크게 움직인 날을 씁니다. 킥은 ETF 모드의 주별 블록, 종목 모드의 주마다, Holdings 표의 종목명 아래(이번 주), 매트릭스의 ETF 이름 아래(최근 1개월, Claude 이유 문장이 있는 ETF), 4) 주간 브리핑 탭의 Drivers 패널과 텔레그램 주간 브리핑에 나옵니다. Drivers 패널의 비교 대상은 그 종목이 가장 크게 기여한 ETF 입니다.</p>
@@ -1287,7 +1284,6 @@ function render() {
 
 /* ---- 종목 상세: 돌파 지도와 같은 규칙(Shelf·돌파·이탈), 같은 이동평균(50 SMA · 89 HMA · 144 HMA) ---- */
 const SK = { TOL: 0.99, MAXAGE: 10, FAILWIN: 5, MARGIN: 1.005, GAP: 5, W: 30, NEAR: 0.01 };
-const HZ = ['20', '55', '52w', 'ath'], HZLAB = { '20': '20일', '55': '55일', '52w': '52주', 'ath': '사상 최고' };
 const SMLAB = { usd: 'USD', qqq: 'QQQ 대비', spy: 'SPY 대비' }, SMLONG = { usd: 'USD (절대 가격)', qqq: 'QQQ 대비 비율', spy: 'SPY 대비 비율' };
 const stockOf = sym => (STOCKS && STOCKS.stocks && STOCKS.stocks[String(sym).toUpperCase()]) ? String(sym).toUpperCase() : null;
 const sSeriesCache = {};
@@ -1398,25 +1394,6 @@ function maLegendHTML(ma, n, usd) {
   return `<div class="lgd">${item('ma50', '50 SMA', 'sma50')}${item('ma89', '89 HMA', 'hma89')}${item('ma144', '144 HMA', 'hma144')}</div>`;
 }
 function sLegend(k, mode) { return maLegendHTML(sMA(k, mode), stockSeries(k, mode).c.length, mode === 'usd'); }
-/* 지평 표: jf(H) 가 지평 H 의 판정을 돌려준다. athK 를 주면 '사상 최고' 이름 칸을 그것으로 바꾼다 */
-function hzRowsHTML(jf, athK) {
-  return HZ.map(H => {
-    const r = jf(H), lab = H === 'ath' && athK ? athK : HZLAB[H];
-    if (r.st === 'lit') return `<tr><td class="k">${lab}</td><td class="v on">돌파 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'down') return `<tr><td class="k">${lab}</td><td class="v dn">이탈 ${r.days}일째 · 바닥 ${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'failed') return `<tr><td class="k">${lab}</td><td class="v dn">실패 · 돌파 후 ${r.days}일, Shelf ${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'quiet') return `<tr><td class="k">${lab}</td><td class="v">유지 ${r.days}일째 · Shelf +${(r.over * 100).toFixed(1)}%</td></tr>`;
-    if (r.st === 'near') return `<tr><td class="k">${lab}</td><td class="v nr">직전 · 고점까지 ${(r.dist * 100).toFixed(1)}%</td></tr>`;
-    return `<tr><td class="k">${lab}</td><td class="v mu">${r.dist == null ? '–' : r.dist <= 0.001 ? '고점 부근' : '고점까지 ' + (r.dist * 100).toFixed(1) + '%'}</td></tr>`;
-  }).join('');
-}
-function sHorizonRows(k, mode) { return hzRowsHTML(H => sJ(k, mode, H)); }
-const VENUE = { b: '바이낸스 bStocks', p: '바이낸스 선물', h: '하이퍼리퀴드' };
-function sVenues(k) {
-  const f = STOCKS.listing && STOCKS.listing[k];
-  if (!f || !['b', 'p', 'h'].some(x => f[x] && f[x].length)) return '<span style="color:var(--muted)">코인 거래소 미상장</span>';
-  return ['b', 'p', 'h'].filter(x => f[x] && f[x].length).map(x => `<b>${VENUE[x]}</b> ${f[x].join(', ')}`).join('<br>') + `<br><span style="color:var(--muted)">확인 ${LIST_ASOF}</span>`;
-}
 let sdState = { k: null, mode: 'usd' };
 function stockDetailHTML(k, etf) {
   const st = STOCKS.stocks[k], mode = sdState.mode, ch = sChanges(k, mode), cur = etf;
@@ -1427,11 +1404,9 @@ function stockDetailHTML(k, etf) {
   const ex = st.x || (/^\d{6}$/.test(k) ? 'KRX' : 'US');
   return `<tr class="sd"><td colspan="5"><div class="sdb">
     <div class="sdh"><span class="tk">${k}</span><span class="nm">${st.n}</span><span class="ex">${ex} EQUITY</span></div>
-    <div class="ven">${sVenues(k)}</div>
     <dl><dt>${SMLAB[mode]} 일간</dt><dd class="${ch.d >= 0 ? 'on' : 'dn'}">${sPct(ch.d)}%</dd><dt>${SMLAB[mode]} 주간</dt><dd class="${ch.w >= 0 ? 'on' : 'dn'}">${sPct(ch.w)}%</dd><dt>${SMLAB[mode]} 30일</dt><dd class="${ch.m >= 0 ? 'on' : 'dn'}">${sPct(ch.m)}%</dd><dt>종가</dt><dd>${STOCKS.asof}${st.sym ? ' · ' + st.sym : ''}${stale}</dd>${st.ipo ? `<dt>상장</dt><dd>${st.ipo} · 그 앞은 첫 종가로 채움</dd>` : ''}${earnDl(k)}</dl>
     <div class="ttlrow"><span>90일 · ${SMLONG[mode]}</span><span class="tog" role="group" aria-label="차트의 자"><button type="button" data-sdmode="usd" aria-pressed="${mode === 'usd'}">USD</button><button type="button" data-sdmode="qqq" aria-pressed="${mode === 'qqq'}">vs QQQ</button><button type="button" data-sdmode="spy" aria-pressed="${mode === 'spy'}">vs SPY</button></span></div>
     <div class="big">${sChart(k, mode)}</div>${sLegend(k, mode)}
-    <table class="hz">${sHorizonRows(k, mode)}</table>
     ${newsWide() ? '' : `<div class="nw"><div class="wlab">뉴스 · ${cbEsc(k)}</div>${newsStockHTML(k, false, etf)}</div>`}
     <div class="wlab">ETF 구성 비중 · 상위 10개 안 순위</div>${wb || '<span class="mu">없음</span>'}
     <div class="links"><a href="${BREAKOUT_URL}${BREAKOUT_URL.indexOf('#') < 0 ? '#' + encodeURIComponent(k) : ''}" target="${NAV_TARGET}" rel="noopener">돌파 지도에서 보기 ↗</a>${st.sym && /^[A-Z.\-]+$/.test(st.sym) ? `<a href="https://stockanalysis.com/stocks/${st.sym.toLowerCase().replace('.', '-')}/" target="_blank" rel="noopener">stockanalysis.com ↗</a>` : ''}</div>
@@ -1468,13 +1443,10 @@ function etfChartHTML(t) {
   const X = ETFX.etfs[t], c = s.c, n = c.length, lab = eLab(t, kind);
   const ch = { d: c[n - 1] / c[n - 2] - 1, w: c[n - 1] / c[n - 6] - 1, m: c[n - 1] / c[n - SK.W] - 1 };
   const dd = v => `<dd class="${v >= 0 ? 'on' : 'dn'}">${sPct(v)}%</dd>`;
-  const lv = v => kind === 'usd' ? v.toFixed(2) : v.toFixed(4);
-  const athK = `<span title="사상 최고 수준 ${lv(s.ath)} (${s.athd}) · ${s.from}부터의 이력에서 찾았습니다(월 1회 갱신)">사상 최고<small>${s.from.slice(0, 4)}~</small></span>`;
   const stale = X.stale ? ` <span style="color:var(--yellow)">· 마지막 종가 ${X.stale}</span>` : '';
   return `<section class="eb" aria-label="${t} 차트">${head}`
     + `<dl><dt>${lab} 일간</dt>${dd(ch.d)}<dt>${lab} 주간</dt>${dd(ch.w)}<dt>${lab} 30일</dt>${dd(ch.m)}<dt>종가</dt><dd>${ETFX.asof} · ${t} ${X.c[n - 1].toFixed(2)}${stale}</dd></dl>`
-    + `<div class="big">${chartSVG({ c, h52: s.h52, ma: s.ma, dates: ETFX.dates, r: sJudge(c, '20', s.h52, s.ath), cid: 'eb_' + t + '_' + kind })}</div>${maLegendHTML(s.ma, n, kind === 'usd')}`
-    + `<table class="hz">${hzRowsHTML(H => sJudge(c, H, s.h52, s.ath), athK)}</table></section>`;
+    + `<div class="big">${chartSVG({ c, h52: s.h52, ma: s.ma, dates: ETFX.dates, r: sJudge(c, '20', s.h52, s.ath), cid: 'eb_' + t + '_' + kind })}</div>${maLegendHTML(s.ma, n, kind === 'usd')}</section>`;
 }
 
 /* ---- 기여도: 구성종목이 ETF 수익률에 얼마나 보탰는지(기간 시작 비중 × 기간 수익률, USD). 계산은 terminal/compute_contrib.py ----
@@ -1663,18 +1635,20 @@ function hasBatchim(w) {
 const josaWa = w => hasBatchim(w) ? '과' : '와';
 const josaEun = w => hasBatchim(w) ? '은' : '는';
 const kNote = id => (KICKS && KICKS.n && KICKS.n[id]) || null;
-/* 킥 한 구절: 찾은 원인 · 이유 미확인(찾았지만 없었거나 Claude 단계가 꺼짐) · 원인 찾는 중(다음 빌드들이 찾음) · 원인 찾지 않음(영향이 작은 날) */
+/* 킥 한 구절: 찾은 원인 · 이유 미확인(두 번 찾았지만 없었거나 Claude 단계가 꺼짐) · 원인 찾는 중(다음 빌드들이 찾음) ·
+   원인 찾지 않음(영향이 작은 날). retry 는 한 번 찾지 못해 다시 맡길 날이다 */
+const kPending = n => !!KICKS && KICKS.claude && (!n || (!!n.none && !!n.retry));
 function kickTitleHTML(id) {
   const n = kNote(id);
   if (n && n.k) return `<b class="kc-t">${cbEsc(n.k)}</b>`;
   if (!KICK_ASKED.has(id)) return '<b class="kc-t no">원인 찾지 않음</b>';
-  return `<b class="kc-t no">${!n && KICKS.claude ? '원인 찾는 중' : '이유 미확인'}</b>`;
+  return `<b class="kc-t no">${kPending(n) ? '원인 찾는 중' : '이유 미확인'}</b>`;
 }
 /* 근거 줄: 날 · 그날 움직임 · 근거 한 줄과 출처 링크 */
 function kickEvHTML(id, head, moves) {
   const n = kNote(id);
   const mv = moves.filter(m => m[1] != null).map(([k, v]) => `${cbEsc(k)} ${kPv(v)}`).join(', ');
-  const text = n && n.k ? (n.ev || '') : !KICK_ASKED.has(id) ? '영향이 작아 원인은 찾지 않음(ETF 마다 세 종목까지)' : n && n.none ? '그날 원인을 찾지 못함' : '';
+  const text = n && n.k ? (n.ev || '') : !KICK_ASKED.has(id) ? '영향이 작아 원인은 찾지 않음(ETF 마다 세 종목까지)' : n && n.none && !kPending(n) ? '그날 원인을 찾지 못함' : '';
   const src = n && n.k ? (n.src || []).slice(0, 2).map(x => ` <a href="${safeUrl(x.u)}" target="_blank" rel="noopener">${cbEsc(x.t || '근거')} ↗</a>`).join('') : '';
   return `<p class="kc-ev"><span class="d">${head}</span>${mv ? ' · ' + mv : ''}${text ? ' · ' + cbEsc(text) : ''}${src}</p>`;
 }
@@ -1908,7 +1882,7 @@ function etfWeekHTML(t, i, start, stocks) {
   /* 영향(지금 비중 × 그 주 수익률)이 큰 순서. 같으면 비중이 큰 종목 먼저 */
   const order = stocks.map(x => ({ k: x.k, w: x.w, r: ret(x.k) })).sort((a, b) => Math.abs(b.w * (b.r || 0)) - Math.abs(a.w * (a.r || 0)) || b.w - a.w);
   const top = (W && W.top) || [];
-  const mark = k => { const v = W && W.s && W.s[k]; if (!v || v.length < 2) return ''; if (v[1] === 'spread') return ' kc0'; if (!top.includes(k)) return ''; const n = kNote(`S:${k}:${v[2]}`); return n && n.k ? ' kc1' : ' kc0'; };
+  const mark = k => { const v = W && W.s && W.s[k]; if (!v || v.length < 2) return ''; if (v[1] === 'spread') return ' kc0'; if (!top.includes(k)) return ''; const n = kNote(`S:${k}:${v[2]}`); return n && n.k ? ' kc1' : kPending(n) ? '' : ' kc0'; };
   const head = `<div class="wkh"><b>${cbMd(start)} 주</b>${i === 0 ? '<span class="cur">이번 주</span>' : ''}${W && W.r != null ? `<span class="r">${cbEsc(t)} ${kPv(W.r)}${W.rb != null ? ` · ${cbEsc(E.b)} ${kPv(W.rb)}` : ''}</span>` : ''}</div>`;
   const chips = `<div class="tks"><span class="tl">영향순</span>${order.map(x => `<button type="button" class="tkb ${HEAT(x.r)}${mark(x.k)}" data-tkb="${cbEsc(x.k)}" aria-pressed="false" title="${cbEsc(x.k)} · 비중 ${x.w.toFixed(2)}%${x.r != null ? ` · 영향 ${cbPp(x.w / 100 * x.r)}%p` : ''} · 누르면 이 주 기사">${cbEsc(x.k)}<b>${x.r != null ? kPc(x.r).slice(0, -1) : '–'}</b></button>`).join('')}</div>`;
   let kicks = '';

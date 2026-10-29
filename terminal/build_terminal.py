@@ -409,8 +409,7 @@ def load_stocks(args, hold):
     fields = ("n", "x", "sym", "c", "cx", "h52", "ath", "rspy", "rqqq", "ipo", "athFrom")
     out = {"asof": best["asof"], "dates": best["dates"], "spy": best["spy"], "qqq": best["qqq"],
            "spyx": best.get("spyx", []), "qqqx": best.get("qqqx", []),
-           "stocks": {k: {f: best["stocks"][k][f] for f in fields if f in best["stocks"][k]} for k in sorted(keys)},
-           "listing": {k: v for k, v in (best.get("listing", {}).get("stocks", {})).items() if k in keys}}
+           "stocks": {k: {f: best["stocks"][k][f] for f in fields if f in best["stocks"][k]} for k in sorted(keys)}}
     return out, best_path
 
 
@@ -479,7 +478,11 @@ def load_claude(path, asof, keep_days=8):
 def load_kicks(path, notes_path, asof):
     """킥. 종가 기준일이 같을 때만 쓴다. 규칙 원인(kicks.json 의 n)에 Claude 원인(kick-notes.json)을 덮고,
     페이지에 나올 수 있는 id(ETF 의 그날, 상위 10 종목의 그날, 주도 종목의 그날)의 원인만 남긴다.
-    Claude 가 '찾지 못함'으로 둔 id 는 규칙 원인이 없을 때만 none 으로 남긴다."""
+    Claude 가 '찾지 못함'으로 둔 id 는 규칙 원인이 없을 때만 none 으로 남기고, 아직 다시 맡길 차례가 남았으면
+    retry 를 붙인다(화면에는 '이유 미확인' 대신 '원인 찾는 중')."""
+    import sys
+    sys.path.insert(0, HERE)
+    from claude_notes import KICK_TRIES, kick_tries
     k = load_json(path)
     if not k or k.get("asof") != asof:
         print(f"kicks data is for {(k or {}).get('asof')}, not {asof}: built without kicks")
@@ -505,7 +508,7 @@ def load_kicks(path, notes_path, asof):
         elif r:
             notes[i] = {x: r[x] for x in ("k", "ev", "src", "earn") if x in r}
         elif c and c.get("none"):
-            notes[i] = {"none": 1}
+            notes[i] = {"none": 1} if kick_tries(c) >= KICK_TRIES else {"none": 1, "retry": 1}
     out = {x: k[x] for x in ("asof", "weeks", "cap", "claude", "etf", "drivers") if x in k}
     out["n"] = notes
     return out
