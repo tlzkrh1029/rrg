@@ -128,12 +128,18 @@ def pick_etfs(contrib):
     par, F, rows = contrib.get("parent") or {}, contrib.get("funds") or {}, []
     for t in F:
         b = par.get(t) or PARENT.get(t) or "SPY"
-        a, z = (F[t].get("P") or {}).get("1M"), ((F.get(b) or {}).get("P") or {}).get("1M")
+        a, z = roll_p(F[t]), roll_p(F.get(b))
         if t not in ("SPY", "QQQ") and a and z:
             rows.append((a["R"] - z["R"], t, b))
     rows.sort()
     top = rows[-ETF_PICK:][::-1]
     return top + [r for r in rows[:ETF_PICK] if r not in top]
+
+
+def roll_p(fund):
+    """최근 1개월(21거래일 이동 창). 기여도 계산이 옛 형식이면 1M."""
+    P = (fund or {}).get("P") or {}
+    return P.get("21D") or P.get("1M")
 
 
 def pick_stocks(contrib, notes, asof, n):
@@ -188,8 +194,8 @@ def weekly_returns(series, starts, asof):
 
 
 def etf_block(t, b, delta, contrib, news, meta):
-    F = contrib["funds"][t]["P"]["1M"]
-    Fb = contrib["funds"][b]["P"]["1M"]
+    F = roll_p(contrib["funds"][t])
+    Fb = roll_p(contrib["funds"][b])
     m = meta.get(t) or {}
     rows = F.get("rows") or []
     ups = sorted([x for x in rows if x[4] > 0], key=lambda x: -x[4])[:3]

@@ -1,18 +1,33 @@
 name: terminal
 
-# 화~금 08:10 KST (월~목 23:10 UTC): 가격·구성종목·상장 목록 수집 → 계산 → docs/ 생성 → 커밋 → 변화가 있으면 텔레그램 조건 알림
-# 토 07:05 KST (금 22:05 UTC): 금요일 종가로 같은 일을 하고, 이어서 주간 브리핑을 텔레그램으로 전송
+# 아침 빌드(morning): 가격·구성종목·상장 목록 수집 → 계산 → 텔레그램 조건 알림(Claude 단계보다 먼저) → 돌파 지도 → Claude → 터미널 → 커밋.
+#   화~금 08:05 KST 에 전날 종가로, 토 07:05 KST 에 금요일 종가로 돌고, 토요일에는 주간 브리핑도 보낸다.
+# 저녁 실행(evening): 월~금 21:25 KST(미국 장전 시간)에 장후의 마지막 가격과 장전 가격만 받아(terminal/fetch_xh.py) 두 화면을 다시 만들고 커밋한 뒤
+#   '밤사이' 텔레그램(크게 움직인 ETF·종목)을 보낸다.
+# 시작: Claude 예약 작업 'rrg 빌드 시작'이 위 시각에 workflow_dispatch(mode)로 시작시킨다. GitHub 예약 실행(schedule)은 2~4시간 늦게
+#   시작하곤 해서 예비로만 둔다. guard 작업이 늦게 시작한 예비 실행을 거른다(같은 날 빌드가 이미 있거나, 저녁인데 장전 시간이 아니면).
+#   텔레그램은 같은 종가로 두 번 보내지 않는다(docs/data/sent.json, scripts/notify_telegram.py).
 # 두 화면을 한 번에 만든다: 돌파 지도의 수집·계산(breakout/) → 터미널(terminal/ → docs/, 종목 상세에 그 계산을 끼움) → 돌파 지도 페이지(docs/breakout/).
 # 돌파 지도 단계는 실패해도 터미널 빌드와 커밋을 막지 않는다(그날은 docs/breakout 이 직전 빌드로 남고, 터미널의 종목 상세는 직전 종목 가격을 쓴다).
 # 터미널 계산과 페이지 생성 사이에서 Claude(구독 토큰 CLAUDE_SETUP_TOKEN)가 웹 검색으로 이유 문장·종목 요약과 킥의 원인을 쓴다. 이 단계들도 실패해도 빌드를 막지 않는다.
 on:
   schedule:
-    - cron: "10 23 * * 1-4"
-    - cron: "5 22 * * 5"
+    - cron: "10 23 * * 1-4"   # 아침 예비: 화~금 08:10 KST
+    - cron: "5 22 * * 5"      # 아침 예비: 토 07:05 KST
+    - cron: "5 9 * * 1-5"     # 저녁 예비: 월~금 18:05 KST. 2~4시간 늦어도 미국 장전 시간 안에 들도록 일찍 둔다(scripts/run_guard.py 의 EVENING_CRON)
   workflow_dispatch:
     inputs:
+      mode:
+        description: "morning(아침 빌드) · evening(저녁 장전 실행)"
+        type: choice
+        options: [morning, evening]
+        default: morning
       digest:
-        description: "주간 브리핑도 함께 보낸다"
+        description: "주간 브리핑도 함께 보낸다(아침 빌드. 토요일에는 이 값과 상관없이 보낸다)"
+        type: boolean
+        default: false
+      resend:
+        description: "같은 종가로 이미 보낸 텔레그램도 다시 보낸다"
         type: boolean
         default: false
 
@@ -23,13 +38,33 @@ concurrency:
   group: terminal
   cancel-in-progress: false
 
-env:
-  SEND_DIGEST: ${{ github.event.schedule == '5 22 * * 5' || inputs.digest == true }}
-
 jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      mode: ${{ steps.g.outputs.mode }}
+      run: ${{ steps.g.outputs.run }}
+      digest: ${{ steps.g.outputs.digest }}
+    steps:
+      - uses: actions/checkout@v5
+      - id: g
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHED: ${{ github.event.schedule }}
+          IN_MODE: ${{ inputs.mode }}
+          IN_DIGEST: ${{ inputs.digest }}
+          BRANCH: ${{ github.event.repository.default_branch }}
+        run: python3 scripts/run_guard.py
+
   build:
+    needs: guard
+    if: needs.guard.outputs.run == 'true' && needs.guard.outputs.mode == 'morning'
     runs-on: ubuntu-latest
     timeout-minutes: 115
+    env:
+      SEND_DIGEST: ${{ needs.guard.outputs.digest }}
+      TG_FORCE: ${{ inputs.resend == true && '--force' || '' }}
     steps:
       - uses: actions/checkout@v5
 
@@ -83,6 +118,19 @@ jobs:
           set -e
           if [ "$rc" = "1" ]; then echo "::error::price fetch failed"; exit 1; fi
           if [ "$rc" = "2" ]; then echo "::warning::some holdings pages failed; see output/prices_summary.json"; fi
+
+      # 조건 알림은 ETF 가격과 구성종목만으로 계산하므로 여기서 먼저 만들어 보낸다(Claude 단계를 기다리지 않는다).
+      # --alerts-only 는 docs/data/alerts.txt·alerts.json 만 쓰고, 직전 빌드의 terminal-data.json 은 그대로 둔다(아래 전체 빌드가 같은 알림을 다시 계산한다).
+      - name: 계산 (터미널 · 조건 알림)
+        run: |
+          python terminal/compute_terminal.py
+          python terminal/build_terminal.py --lists "$LISTS_DIR" --alerts-only
+
+      - name: 텔레그램 조건 알림
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notify_telegram.py --mode alerts $TG_FORCE
 
       # ETF 차트: 매트릭스의 Holdings 패널과 돌파 지도의 ETF 패널이 함께 쓰는 90일 종가와 52주·사상 최고 수준(output/etf-chart-data.json).
       # 사상 최고는 ETF 마다 전체 이력(Yahoo range=max)을 월 1회 받아 둔 캐시(output/etf_ath.json)로 잡는다. 실패해도 다음 단계는 그대로 간다
@@ -143,6 +191,36 @@ jobs:
           if [ "$?" != "0" ]; then echo "::warning::breakout computation failed; docs/breakout keeps the previous build"; echo "BREAKOUT_OK=false" >> "$GITHUB_ENV"; fi
           exit 0
 
+      # 장후 가격: 터미널과 돌파 지도의 ETF·미국 상장 종목마다 마지막 정규장 종가 뒤의 장후 가격(output/xh.json).
+      # 아침 빌드는 장후 거래(16:00~20:00 ET)가 이어지는 도중에 돌기 때문에 그때까지의 가격이다. 저녁 실행이 마지막 가격과 장전 가격으로 고친다.
+      # 실패해도 다음 단계는 그대로 간다(그날 페이지는 장후·장전 없이 만든다).
+      - name: 장후 가격 수집
+        run: |
+          set +e
+          python terminal/fetch_xh.py
+          rc=$?
+          if [ "$rc" = "2" ]; then echo "::warning::some after-hours prices failed; see failed in output/xh.json"; fi
+          if [ "$rc" = "1" ]; then echo "::warning::no after-hours prices; pages are built without them"; fi
+          exit 0
+
+      # 돌파 지도 페이지와 알림은 Claude 단계와 상관이 없으므로 먼저 만든다
+      - name: 페이지 생성 (돌파 지도)
+        if: env.BREAKOUT_OK == 'true'
+        run: |
+          set +e
+          python breakout/build_breakout.py
+          if [ "$?" != "0" ]; then echo "::warning::breakout map build failed; docs/breakout keeps the previous build"; fi
+          exit 0
+
+      # 돌파 지도의 알림 채널은 아직 정하지 않았다. 저장소 변수 BREAKOUT_TELEGRAM 을 true 로 두면 같은 봇으로
+      # 조건 알림(새 돌파·새 이탈·블록 알림)과 토요일 주간 브리핑을 보낸다. 변수가 없으면 두 단계는 건너뛴다.
+      - name: 텔레그램 돌파 지도 알림
+        if: vars.BREAKOUT_TELEGRAM == 'true' && env.BREAKOUT_OK == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notify_telegram.py --mode alerts --docs docs/breakout $TG_FORCE
+
       # 터미널은 어떤 경우에도 만든다. 종목 상세는 output/breakout-data.json 이 있으면 그것을, 없으면 docs/breakout/data/ 의 직전 사본을 쓴다.
       # 킥(compute_kicks.py): 주마다 그 주를 결정한 하루를 종가로 정하고, 실적 공시·투자의견 제목으로 찾을 수 있는 원인은 규칙으로 붙인다.
       # 나머지 원인은 아래 'Claude 킥' 단계가 찾는다. 실패하면 페이지는 킥 없이 만든다.
@@ -152,7 +230,6 @@ jobs:
           CLAUDE_NOTES: ${{ vars.CLAUDE_NOTES }}
           CLAUDE_KICKS: ${{ vars.CLAUDE_KICKS }}
         run: |
-          python terminal/compute_terminal.py
           python terminal/compute_contrib.py || echo "::warning::contribution computation failed; the Holdings panel is built without the contribution block"
           python terminal/compute_news.py || echo "::warning::news computation failed; the page is built without news and earnings"
           python terminal/compute_kicks.py || echo "::warning::kick computation failed; the page is built without kicks"
@@ -241,14 +318,8 @@ jobs:
       - name: 페이지 생성 (터미널)
         run: python terminal/build_terminal.py --lists "$LISTS_DIR"
 
-      - name: 페이지 생성 (돌파 지도)
-        if: env.BREAKOUT_OK == 'true'
-        run: |
-          set +e
-          python breakout/build_breakout.py
-          if [ "$?" != "0" ]; then echo "::warning::breakout map build failed; docs/breakout keeps the previous build"; fi
-          exit 0
-
+      # 커밋 메시지 'terminal <종가 기준일>' 은 guard 가 늦게 시작한 예비 실행을 거를 때 찾는다.
+      # 그사이 다른 커밋이 올라왔으면(병합 등) 그 위에 다시 얹어 한 번 더 민다.
       - name: 커밋·푸시
         run: |
           git config user.name "github-actions[bot]"
@@ -258,34 +329,104 @@ jobs:
             echo "no changes"
           else
             git commit -m "terminal $(python -c 'import json;print(json.load(open("output/terminal-data.json"))["asof"])')"
-            git push
+            git push || { git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push; }
           fi
-
-      - name: 텔레그램 조건 알림
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python scripts/notify_telegram.py --mode alerts
 
       - name: 텔레그램 주간 브리핑
         if: env.SEND_DIGEST == 'true'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python scripts/notify_telegram.py --mode digest
-
-      # 돌파 지도의 알림 채널은 아직 정하지 않았다. 저장소 변수 BREAKOUT_TELEGRAM 을 true 로 두면 같은 봇으로
-      # 조건 알림(새 돌파·새 이탈·블록 알림)과 토요일 주간 브리핑을 보낸다. 변수가 없으면 두 단계는 건너뛴다.
-      - name: 텔레그램 돌파 지도 알림
-        if: vars.BREAKOUT_TELEGRAM == 'true'
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python scripts/notify_telegram.py --mode alerts --docs docs/breakout
+        run: python scripts/notify_telegram.py --mode digest $TG_FORCE
 
       - name: 텔레그램 돌파 지도 주간 브리핑
-        if: vars.BREAKOUT_TELEGRAM == 'true' && env.SEND_DIGEST == 'true'
+        if: vars.BREAKOUT_TELEGRAM == 'true' && env.SEND_DIGEST == 'true' && env.BREAKOUT_OK == 'true'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python scripts/notify_telegram.py --mode digest --docs docs/breakout
+        run: python scripts/notify_telegram.py --mode digest --docs docs/breakout $TG_FORCE
+
+      # 텔레그램 단계가 docs/data/sent.json(같은 종가로 다시 보내지 않게 하는 기록)을 고쳤으면 한 번 더 커밋한다
+      - name: 텔레그램 기록 커밋
+        if: always()
+        run: |
+          for f in docs/data/sent.json docs/breakout/data/sent.json; do if [ -f "$f" ]; then git add "$f"; fi; done
+          if git diff --cached --quiet; then
+            echo "no telegram record changes"
+          else
+            git commit -m "telegram record $(python -c 'import json;print(json.load(open("output/terminal-data.json"))["asof"])')"
+            git push || { git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push; }
+          fi
+
+  # 저녁 실행: 미국 장전 시간에 장후의 마지막 가격과 장전 가격을 받아(output/xh.json) 아침 빌드가 커밋한 자료로 두 화면을 다시 만든다.
+  # 가격·뉴스·Claude 단계는 돌리지 않는다. 조건 알림은 아침 빌드가 찾은 것을 그대로 두고(같은 종가), 텔레그램은 '밤사이'만 보낸다.
+  evening:
+    needs: guard
+    if: needs.guard.outputs.run == 'true' && needs.guard.outputs.mode == 'evening'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: 장후·장전 가격 수집
+        id: xh
+        run: |
+          set +e
+          python terminal/fetch_xh.py
+          rc=$?
+          set -e
+          if [ "$rc" = "3" ]; then echo "::notice::New York regular session; nothing to do"; echo "go=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if [ "$rc" = "1" ]; then echo "::error::no extended-hours prices"; exit 1; fi
+          if [ "$rc" = "2" ]; then echo "::warning::some extended-hours prices failed; see failed in output/xh.json"; fi
+          echo "go=true" >> "$GITHUB_OUTPUT"
+
+      - name: 페이지 생성 (터미널)
+        if: steps.xh.outputs.go == 'true'
+        run: python terminal/build_terminal.py --lists data/lists
+
+      - name: 페이지 생성 (돌파 지도)
+        if: steps.xh.outputs.go == 'true'
+        run: |
+          set +e
+          python breakout/build_breakout.py
+          if [ "$?" != "0" ]; then echo "::warning::breakout map build failed; docs/breakout keeps the previous build"; fi
+          exit 0
+
+      # 커밋 메시지 'evening <종가 기준일>' 은 guard 가 늦게 시작한 저녁 예비 실행을 거를 때 찾는다
+      - name: 커밋·푸시
+        if: steps.xh.outputs.go == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output docs
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "evening $(python -c 'import json;print(json.load(open("output/terminal-data.json"))["asof"])') pre-market"
+            git push || { git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push; }
+          fi
+
+      # '밤사이' 텔레그램(docs/data/night.txt): SPY·QQQ, 0.5% 넘게 움직인 ETF, 2% 넘게 움직였거나 실적을 낸 종목과 ETF 영향.
+      # 페이지를 올린 뒤에 보내고, 같은 종가로는 한 번만 보낸다(docs/data/sent.json 의 night).
+      - name: 텔레그램 밤사이
+        if: steps.xh.outputs.go == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TG_FORCE: ${{ inputs.resend == true && '--force' || '' }}
+        run: python scripts/notify_telegram.py --mode night $TG_FORCE
+
+      - name: 텔레그램 기록 커밋
+        if: steps.xh.outputs.go == 'true'
+        run: |
+          if [ -f docs/data/sent.json ]; then git add docs/data/sent.json; fi
+          if git diff --cached --quiet; then
+            echo "no telegram record changes"
+          else
+            git commit -m "telegram record $(python -c 'import json;print(json.load(open("output/terminal-data.json"))["asof"])') night"
+            git push || { git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push; }
+          fi

@@ -7,6 +7,7 @@
   2. 차이가 TH_WEEK 를 넘으면, 같은 방향으로 가장 크게 벌어진 날(TH_DAY 이상)을 그 주를 결정한 하루로 고른다.
      그런 날이 없으면 '여러 날에 나뉨'이다.
   3. ETF 한 주에 붙이는 자기 킥(위의 날과 실적)은 영향(비중 × |주간 차이|)이 큰 CAP(3) 종목까지다. 나머지는 '영향이 작아 붙이지 않음'.
+     같은 회사의 두 번째 주식(GOOG 등, SHARE_FOLD)은 첫 번째 주식에 비중을 더해 한 종목으로 고르고, top·over 에 따로 넣지 않는다.
   해외 거래소 종목은 장 시간이 미국 ETF 와 달라 하루 차이를 비교하지 않고, 같은 방향으로 가장 크게 움직인 날(TH_DAY 이상)을 쓴다.
   주도 종목(기여도 1주·1개월)은 가장 크게 기여한 ETF 와 견준다. 종목 수익률과 주간 차이의 방향이 다르면(같은 방향으로 덜 움직임) '같이'다.
 
@@ -58,6 +59,7 @@ WEEKS = 4
 US_EX = {"", "NYSE", "NASDAQ", "AMEX", "NYSEARCA", "NYSE ARCA", "ARCA", "BATS", "CBOE", "NYSEAMERICAN", "NYSE AMERICAN", "US"}
 NON_STOCK = re.compile(r"TRS|^B\.0|^XBOX$|CASH|^\s*$", re.I)
 TIMING_KO = {"bmo": "장 시작 전", "dmh": "장중", "amc": "장 마감 후"}
+SHARE_FOLD = {"GOOG": "GOOGL", "FOX": "FOXA", "NWS": "NWSA", "BRK.A": "BRK.B"}   # 같은 회사의 두 번째 주식 → 첫 번째 주식(페이지의 뉴스 칼럼과 같다)
 
 
 def load(path):
@@ -309,6 +311,11 @@ def main():
             if c and c[0] == "day":
                 need.append((0 if i == 0 else 3, (i, -abs(c[1] - c[2])), f"E:{t}:{c[3]}"))
             own = []
+            held = {k for k, _f, _w in top[t]}
+            fold_w = {}
+            for k, _f, wt in top[t]:
+                if SHARE_FOLD.get(k) in held:
+                    fold_w[SHARE_FOLD[k]] = fold_w.get(SHARE_FOLD[k], 0.0) + wt
             for k, foreign, wt in top[t]:
                 st = SP.get(k)
                 cc = classify(st, E[t], lo, hi, earn_days(k), foreign) if st else None
@@ -321,7 +328,8 @@ def main():
                     w["s"][k] = [r4(r), "spread"]
                 else:
                     w["s"][k] = [r4(r), kind, d, r4(dr), r4(de)]
-                    own.append((wt * abs(r - R), k, d, dr, foreign))
+                    if SHARE_FOLD.get(k) not in held:
+                        own.append(((wt + fold_w.get(k, 0.0)) * abs(r - R), k, d, dr, foreign))
             own.sort(key=lambda x: -x[0])
             w["top"] = [k for _imp, k, *_ in own[:CAP]]
             w["over"] = [k for _imp, k, *_ in own[CAP:]]

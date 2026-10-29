@@ -191,12 +191,24 @@ def make_brief(cur, listing):
     return "\n".join(lines)
 
 
+def load_xh(path, asof):
+    """장후·장전 가격(terminal/fetch_xh.py 의 output/xh.json). 마지막 정규장 날짜가 종가 기준일과 같을 때만 쓴다."""
+    try:
+        x = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    if not x or x.get("date") != asof or not x.get("s"):
+        return None
+    return {k: x.get(k) for k in ("date", "next", "close_ts", "ah_at", "pm_at", "s")}
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--data", default=os.path.join(ROOT, "output", "breakout-data.json"))
     ap.add_argument("--template", default=os.path.join(HERE, "template.html"))
     ap.add_argument("--docs", default=os.path.join(ROOT, "docs", "breakout"))
     ap.add_argument("--terminal-artifact", default=TERMINAL_ARTIFACT, help="아티팩트 본문의 매트릭스 링크가 열 주소")
+    ap.add_argument("--xh", default=os.path.join(ROOT, "output", "xh.json"), help="장후·장전 가격(terminal/fetch_xh.py)")
     args = ap.parse_args()
 
     cur = json.load(open(args.data, encoding="utf-8"))
@@ -205,6 +217,16 @@ def main():
     prev = json.load(open(prev_path, encoding="utf-8")) if os.path.exists(prev_path) else None
 
     alerts = make_alerts(cur, prev)
+    prev_asof = prev.get("asof") if prev else None
+    kept = None
+    if prev and prev.get("asof") == cur.get("asof"):
+        try:
+            old = json.load(open(os.path.join(args.docs, "data", "alerts.json"), encoding="utf-8"))
+        except (OSError, ValueError):
+            old = None
+        if old and old.get("asof") == cur["asof"]:
+            kept = old   # 같은 종가로 다시 만든 빌드(저녁 실행 등)는 그 종가의 첫 빌드가 찾은 변화를 그대로 둔다
+            alerts, prev_asof = old.get("alerts") or [], old.get("prev_asof")
     brief = make_brief(cur, cur["listing"])
     page_data = {k: v for k, v in cur.items() if k not in ("judge", "stats", "listing")}
     listing = cur["listing"]
@@ -219,6 +241,8 @@ def main():
         "__LIST_ASOF__": list_ts[:10] or "없음", "__LIST_TS__": list_ts.replace("T", " ").replace("Z", " UTC") or "수집 자료 없음",
         "__LIST_B__": str(listing["counts"]["b"]), "__LIST_F__": str(listing["counts"]["p"]), "__LIST_H__": str(listing["counts"]["h"]),
         "__BUILT_AT__": built_at_kst(),
+        # 장후·장전 가격(마지막 정규장 날짜가 종가 기준일과 같을 때만). 없으면 null
+        "__XH__": json.dumps(load_xh(args.xh, cur["asof"]), ensure_ascii=False, separators=(",", ":")),
     }
     tmpl = open(args.template, encoding="utf-8").read()
     for k in tokens:
@@ -243,13 +267,13 @@ def main():
     with open(prev_path, "w", encoding="utf-8") as f:
         json.dump(cur, f, ensure_ascii=False, separators=(",", ":"))
     with open(os.path.join(args.docs, "data", "alerts.json"), "w", encoding="utf-8") as f:
-        json.dump({"asof": cur["asof"], "prev_asof": prev.get("asof") if prev else None, "alerts": alerts}, f, ensure_ascii=False, indent=1)
+        json.dump({"asof": cur["asof"], "prev_asof": prev_asof, "alerts": alerts}, f, ensure_ascii=False, indent=1)
     with open(os.path.join(args.docs, "data", "alerts.txt"), "w", encoding="utf-8") as f:
         f.write(alerts_text(cur, alerts))
     with open(os.path.join(args.docs, "data", "brief.txt"), "w", encoding="utf-8") as f:
         f.write(brief)
     print(f"built {args.docs}: asof {cur['asof']}, {cur['stats']['blocks']} blocks, {cur['stats']['cells']} cells, "
-          f"alerts {len(alerts)}" + (" (same asof as the previous build: no alerts)" if prev and prev.get("asof") == cur.get("asof") else ""))
+          f"alerts {len(alerts)}" + ((" (kept from the first build of this close)" if kept else " (same asof as the previous build: no alerts)") if prev and prev.get("asof") == cur.get("asof") else ""))
     return 0
 
 

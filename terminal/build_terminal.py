@@ -24,6 +24,7 @@
   data/alerts.json                 직전 빌드와 비교한 변화 목록
   data/brief.txt                   텔레그램용 주간 브리핑 본문
   data/alerts.txt                  텔레그램용 조건 알림 본문(변화가 없으면 빈 파일)
+  data/night.txt                   텔레그램용 '밤사이' 본문(장전 가격이 있을 때만, 저녁 실행이 보낸다. 없으면 빈 파일)
 """
 import argparse
 import csv
@@ -263,6 +264,87 @@ def alerts_text(cur, alerts):
     return "\n".join(lines)
 
 
+# '밤사이' 텔레그램: 페이지와 같은 기준(매트릭스 줄 0.5%, 밤사이 상자 2% 넘게 움직였거나 실적)과 같은 회사 두 주식 합치기
+NIGHT_ETF, NIGHT_STOCK, NIGHT_MAX = 0.005, 0.02, 15
+SHARE_FOLD = {"GOOG": "GOOGL", "FOX": "FOXA", "NWS": "NWSA", "BRK.A": "BRK.B"}
+try:
+    from zoneinfo import ZoneInfo
+    NY_TZ, KST_TZ = ZoneInfo("America/New_York"), ZoneInfo("Asia/Seoul")
+except Exception:  # noqa: BLE001  (tzdata 가 없는 환경: 서머타임을 무시한 근사)
+    NY_TZ, KST_TZ = dt.timezone(dt.timedelta(hours=-4)), dt.timezone(dt.timedelta(hours=9))
+
+
+def night_text(cur, hold, xh, news):
+    """저녁 실행이 보내는 '밤사이' 텔레그램 본문. 장전 가격이 있을 때만 만들고, 없으면 빈 문자열.
+    ETF 는 가장 최근 값(장전, 없으면 장후)이 0.5% 넘게 움직인 것을 큰 순서로 적는다. 종목은 터미널 ETF 상위 10 가운데 밤사이에 실적
+    (마지막 정규장 날짜의 장 마감 후, 다음 거래일의 장 시작 전)을 낸 것과, 그 밖에 장후나 장전이 2% 넘게 움직인 것을 따로 묶어 큰 순서로
+    NIGHT_MAX 개까지 적고, 종목마다 ETF 영향(비중 × 변화)을 붙인다."""
+    if not xh or not xh.get("pm_at"):
+        return ""
+    S = xh.get("s") or {}
+
+    def chg(k):
+        v = S.get(str(k).upper())
+        if not v or not v[0]:
+            return None
+        ah = v[1] / v[0] - 1 if v[1] is not None else None
+        pm = v[3] / v[0] - 1 if v[3] is not None else None
+        return None if ah is None and pm is None else (ah, pm)
+
+    last = lambda c: c[1] if c[1] is not None else c[0]  # noqa: E731
+    pc = lambda x: f"{x * 100:+.1f}%".replace("-", "−")  # noqa: E731
+    pair = lambda c: (f"장전 {pc(c[1])}" if c[1] is not None else "장전 –") + (f" (장후 {pc(c[0])})" if c[0] is not None else "")  # noqa: E731
+    ns = (news or {}).get("s") or {}
+
+    def earn(k):
+        s = ns.get(k) or {}
+        e = (s.get("e") or [None])[0]
+        nx = s.get("nx")
+        return bool((e and e[0] == xh.get("date") and e[1] == "amc") or (nx and nx[0] == xh.get("next") and nx[1] == "bmo"))
+
+    at = dt.datetime.strptime(xh["pm_at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc)
+    md = lambda d: f"{int(d[5:7])}/{int(d[8:10])}"  # noqa: E731
+    lines = [f"🌙 섹터 전환 터미널 · 밤사이 · {md(xh['date'])} 종가 대비",
+             f"장후 마지막 가격과 {at.astimezone(NY_TZ):%H:%M} ET(한국 {at.astimezone(KST_TZ):%H:%M})까지의 장전 가격", ""]
+    for b in ("SPY", "QQQ"):
+        c = chg(b)
+        if c:
+            lines.append(f"{b}  {pair(c)}")
+    etfs = sorted(((t, chg(t)) for t in cur["etfs"] if chg(t) and abs(last(chg(t))) >= NIGHT_ETF), key=lambda x: -abs(last(x[1])))
+    lines += ["", f"ETF · 가장 최근 값이 {NIGHT_ETF * 100:g}% 넘게 움직인 것 {len(etfs)}개"]
+    lines += [f"  {t} {KO.get(t, '')}  {pair(c)}" for t, c in etfs] or ["  없음"]
+    imp = {}
+    for t, h in hold.items():
+        if t not in cur["etfs"]:
+            continue
+        rows = [(norm_sym(r[0]).upper(), float(str(r[2]).rstrip("%") or 0)) for r in h.get("rows") or [] if not SWAP_RE.search(r[0])]
+        keys = {k for k, _w in rows}
+        w = {}
+        for k, wt in rows:
+            k2 = SHARE_FOLD[k] if SHARE_FOLD.get(k) in keys else k
+            w[k2] = w.get(k2, 0.0) + wt
+        for k, wt in w.items():
+            c = chg(k)
+            if c:
+                imp.setdefault(k, []).append((t, wt / 100 * last(c)))
+    def stock_lines(ks):
+        out = []
+        for k in ks[:NIGHT_MAX]:
+            es = sorted(imp[k], key=lambda x: -abs(x[1]))[:3]
+            out.append(f"  {k}  {pair(chg(k))} · " + " · ".join(f"{t} {x * 100:+.2f}%p".replace("-", "−") for t, x in es))
+        if len(ks) > NIGHT_MAX:
+            out.append(f"  외 {len(ks) - NIGHT_MAX}종목")
+        return out or ["  없음"]
+
+    order = sorted(imp, key=lambda k: -abs(last(chg(k))))
+    reported = [k for k in order if earn(k)]
+    moved = [k for k in order if not earn(k) and any(x is not None and abs(x) >= NIGHT_STOCK for x in chg(k))]
+    lines += ["", f"실적 · 밤사이에 발표한 종목 {len(reported)}개 · ETF 영향은 비중 × 변화"] + stock_lines(reported)
+    lines += ["", f"그 밖에 {NIGHT_STOCK * 100:g}% 넘게 움직인 종목 {len(moved)}개"] + stock_lines(moved)
+    lines += ["", PAGE_URL]
+    return "\n".join(lines)
+
+
 def josa_wa(word):
     """과/와. 영문 티커는 L·M·N·R 로 끝나면(엘·엠·엔·알) 받침이 있는 것으로 읽는다(DRAM과, XLP와)."""
     last = word.strip()[-1:] if word.strip() else ""
@@ -423,6 +505,8 @@ def load_contrib(path, asof):
     if c.get("asof") != asof:
         print(f"contribution data is for {c.get('asof')}, not {asof}: built without the contribution block")
         return None
+    for F in (c.get("funds") or {}).values():
+        (F.get("P") or {}).pop("21D", None)   # 최근 1개월 이동 창은 요약 문장과 Claude 단계만 쓴다(페이지에는 싣지 않는다)
     return {k: v for k, v in c.items() if k not in ("generated_at", "warnings")}
 
 
@@ -450,6 +534,20 @@ def load_news(path, asof):
         print(f"news data is for {(n.get('meta') or {}).get('asof')}, not {asof}: built without news and earnings")
         return None
     return n
+
+
+def load_xh(path, asof):
+    """장후·장전 가격(terminal/fetch_xh.py 의 output/xh.json). 마지막 정규장 날짜가 종가 기준일과 같을 때만 쓴다.
+    페이지에는 {date, next, close_ts, ah_at, pm_at, s: {키: [종가, 장후, 장후 시각, 장전, 장전 시각]}} 를 넣는다."""
+    try:
+        x = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    if not x or x.get("date") != asof or not x.get("s"):
+        if x:
+            print(f"after-hours data is for {x.get('date')}, not {asof}: built without it")
+        return None
+    return {k: x.get(k) for k in ("date", "next", "close_ts", "ah_at", "pm_at", "s")}
 
 
 def load_claude(path, asof, keep_days=8):
@@ -608,6 +706,8 @@ def main():
     ap.add_argument("--claude", default=os.path.join(ROOT, "output", "claude-notes.json"))
     ap.add_argument("--kicks", default=os.path.join(ROOT, "output", "kicks.json"))
     ap.add_argument("--kick-notes", default=os.path.join(ROOT, "output", "kick-notes.json"))
+    ap.add_argument("--xh", default=os.path.join(ROOT, "output", "xh.json"), help="장후·장전 가격(terminal/fetch_xh.py)")
+    ap.add_argument("--alerts-only", action="store_true", help="조건 알림(docs/data/alerts.txt)만 쓰고 끝낸다. Claude 단계 전에 텔레그램을 먼저 보낼 때 쓴다")
     ap.add_argument("--holdings", default=os.path.join(ROOT, "output", "holdings"))
     ap.add_argument("--meta", default=os.path.join(ROOT, "data", "etf_meta.json"))
     ap.add_argument("--lists", default=None, help="tradfi-ticker-lists 의 output 폴더")
@@ -656,16 +756,37 @@ def main():
     list_asof = (list_ts or "")[:10] or "없음"
     list_ts_txt = (list_ts or "").replace("T", " ").replace("Z", " UTC") or "수집 자료 없음"
 
-    alerts = make_alerts(prev_for_alerts, cur)
+    kept = None
+    if same_asof:
+        ap_path = os.path.join(args.docs, "data", "alerts.json")
+        try:
+            old = json.load(open(ap_path, encoding="utf-8"))
+        except (OSError, ValueError):
+            old = None
+        if old and old.get("asof") == cur["asof"]:
+            kept = old   # 같은 종가로 다시 만든 빌드(저녁 실행 등)는 그 종가의 첫 빌드가 찾은 변화를 그대로 둔다
+    alerts = kept.get("alerts") or [] if kept else make_alerts(prev_for_alerts, cur)
+    prev_asof = kept.get("prev_asof") if kept else (prev_for_alerts.get("asof") if prev_for_alerts else None)
+    if args.alerts_only:
+        # 텔레그램 조건 알림을 Claude 단계 전에 먼저 보낼 때: alerts.txt 와 alerts.json(알림의 종가 기준일. 텔레그램 중복 확인에 쓴다)만 쓴다.
+        # 직전 빌드의 terminal-data.json 은 고치지 않으므로, 같은 실행의 전체 빌드도 같은 알림을 다시 계산한다
+        with open(os.path.join(args.docs, "data", "alerts.txt"), "w", encoding="utf-8") as f:
+            if alerts:
+                f.write(alerts_text(cur, alerts))
+        with open(os.path.join(args.docs, "data", "alerts.json"), "w", encoding="utf-8") as f:
+            json.dump({"asof": cur["asof"], "prev_asof": prev_asof, "alerts": alerts}, f, ensure_ascii=False, indent=1)
+        print(f"alerts for {cur['asof']} (prev {prev_asof or '없음'}): {len(alerts)}" + (" (kept from the first build of this close)" if kept else ""))
+        return
     contrib = load_contrib(args.contrib, cur["asof"])
     kicks = load_kicks(args.kicks, args.kick_notes, cur["asof"])
-    brief = make_brief(cur, hold, alerts, prev_for_alerts.get("asof") if prev_for_alerts else None, contrib, kicks)
+    brief = make_brief(cur, hold, alerts, prev_asof, contrib, kicks)
 
     data_slim = {t: {k: v for k, v in e.items() if k in ("pct", "rel", "S", "Q", "rrgPath", "rrgSpy", "sig", "weeks", "stale")} for t, e in cur["etfs"].items()}
     stocks_tok, stocks_src = load_stocks(args, hold)
     etfx = load_etf_chart(args.etf_chart, cur["asof"], set(cur["etfs"]) | {"SPY", "QQQ"})
     news = load_news(args.news, cur["asof"])
     claude = load_claude(args.claude, cur["asof"])
+    xh = load_xh(args.xh, cur["asof"])
     listlog = load_listing_log(args.listing_log, hold, set(cur["etfs"]))
     src = "·".join(cur.get("source") or ["yahoo"])
     src_ko = {"yahoo": "야후 파이낸스", "stooq": "Stooq"}.get(src, src)
@@ -680,7 +801,7 @@ def main():
         "__ELST__": json.dumps(elst, ensure_ascii=False, separators=(",", ":")),
         "__LST__": json.dumps(lst, ensure_ascii=False, separators=(",", ":")),
         "__SWAPS__": json.dumps(swaps, ensure_ascii=False, separators=(",", ":")),
-        "__ALERTS__": json.dumps({"asof": cur["asof"], "prev_asof": prev_for_alerts.get("asof") if prev_for_alerts else None, "same_asof": same_asof, "alerts": alerts}, ensure_ascii=False, separators=(",", ":")),
+        "__ALERTS__": json.dumps({"asof": cur["asof"], "prev_asof": prev_asof, "same_asof": same_asof and not kept, "alerts": alerts}, ensure_ascii=False, separators=(",", ":")),
         "__STOCKS__": json.dumps(stocks_tok, ensure_ascii=False, separators=(",", ":")),
         "__CONTRIB__": json.dumps(contrib, ensure_ascii=False, separators=(",", ":")),
         "__ETFX__": json.dumps(etfx, ensure_ascii=False, separators=(",", ":")),
@@ -693,6 +814,8 @@ def main():
         # 킥의 원인도 웹에서 온 글이라 같은 방식으로 적는다. 없으면 null
         "__KICKS__": json.dumps(kicks, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
         "__BRIEF__": brief_html(brief),
+        # 장후·장전 가격(마지막 정규장 날짜가 종가 기준일과 같을 때만). 없으면 null
+        "__XH__": json.dumps(xh, ensure_ascii=False, separators=(",", ":")),
         "__BUILT_AT__": built_at_kst(),
     }
     tmpl = open(args.template, encoding="utf-8").read()
@@ -719,12 +842,15 @@ def main():
     with open(prev_path, "w", encoding="utf-8") as f:
         json.dump(cur, f, ensure_ascii=False, indent=1)
     with open(os.path.join(args.docs, "data", "alerts.json"), "w", encoding="utf-8") as f:
-        json.dump({"asof": cur["asof"], "prev_asof": prev_for_alerts.get("asof") if prev_for_alerts else None, "alerts": alerts}, f, ensure_ascii=False, indent=1)
+        json.dump({"asof": cur["asof"], "prev_asof": prev_asof, "alerts": alerts}, f, ensure_ascii=False, indent=1)
     with open(os.path.join(args.docs, "data", "brief.txt"), "w", encoding="utf-8") as f:
         f.write(brief)
     with open(os.path.join(args.docs, "data", "alerts.txt"), "w", encoding="utf-8") as f:
         if alerts:
             f.write(alerts_text(cur, alerts))
+    night = night_text(cur, hold, xh, news)
+    with open(os.path.join(args.docs, "data", "night.txt"), "w", encoding="utf-8") as f:
+        f.write(night)
     open(os.path.join(args.docs, ".nojekyll"), "a").close()
     print(f"built docs/ for {cur['asof']} · holdings {hold_asof} (prev {hold_prev}) · lists {list_asof} ({counts['b']}/{counts['f']}/{counts['h']}) · alerts {len(alerts)}"
           + (f" · stock details {len(stocks_tok['stocks'])} (asof {stocks_tok['asof']}, {os.path.relpath(stocks_src, ROOT)})" if stocks_tok else " · stock details none")
@@ -733,7 +859,9 @@ def main():
           + (f" · news {sum(len(v.get('h', [])) for v in news['s'].values())} headlines, {sum(1 for v in news['s'].values() if v.get('e'))} with 8-K earnings" if news else " · news none")
           + (f" · listing log {len(listlog['ev'])} events ({sum(1 for e in listlog['ev'] if e[11] or e[12])} on this board, {sum(1 for e in listlog['ev'] if e[13])} same-stock)" if listlog else " · listing log none")
           + (f" · Claude notes {len(claude['etfs'])} ETFs, {len(claude.get('stocks', {}))} stocks" if claude else " · Claude notes none")
-          + (f" · kicks {len(kicks['etf'])} ETFs, {sum(1 for v in kicks['n'].values() if v.get('k'))} causes" if kicks else " · kicks none"))
+          + (f" · kicks {len(kicks['etf'])} ETFs, {sum(1 for v in kicks['n'].values() if v.get('k'))} causes" if kicks else " · kicks none")
+          + (f" · after-hours {sum(1 for v in xh['s'].values() if v[1] is not None)}, pre-market {sum(1 for v in xh['s'].values() if v[3] is not None)}" if xh else " · after-hours none")
+          + (" · alerts kept from the first build of this close" if kept else ""))
 
 
 if __name__ == "__main__":

@@ -11,7 +11,10 @@
   data/etf_meta.json, output/prices_summary.json  화면 구분, 구성종목 출처(Roundhill 여부)
 
 계산 규칙
-- 기여 = 기간 시작 비중 × 기간 수익률(USD). 기간은 1D 1, 1W 5, 1M 21 거래일이다.
+- 기여 = 기간 시작 비중 × 기간 수익률(USD). 기간의 시작은 1D 가 전 거래일 종가, 1W 가 직전 주(이번 주 월요일 앞)의 마지막 거래일 종가,
+  1M 이 직전 달(이번 달 1일 앞)의 마지막 거래일 종가다(주간·월간 누적). 페이지의 주간·월간 변동률과 같은 정의다.
+- 21D 는 최근 21거래일(약 1개월)의 이동 창이다. 화면의 기여도 블록에는 나오지 않고, '왜 움직였나' 데이터 요약(compute_news.py)과
+  Claude 이유 문장의 ETF 고르기(claude_notes.py)가 '최근 1개월'로 쓴다. 월초에도 한 달 치를 보게 하려는 것이다.
 - 기간 시작 비중: 스냅샷 비중을 그 스냅샷의 기준 종가부터 기간 시작 종가까지 가격 변화로 옮긴다(매수 후 보유).
     w(t) = w(스냅샷) × (종목 가격 t ÷ 종목 가격 기준일) ÷ (ETF 가격 t ÷ ETF 가격 기준일)
 - 스냅샷 기준일: 스냅샷 날짜(KST) 이전의 마지막 미국 종가에서 ETF 마다 lag 거래일 앞이다. lag 는 연속한 스냅샷 사이의
@@ -43,7 +46,8 @@ from compute_terminal import SECTORS, INDUSTRY, STYLE, PARENT  # noqa: E402
 TERMINAL = SECTORS + INDUSTRY + STYLE
 BENCH = ["SPY", "QQQ"]
 FUNDS = TERMINAL + BENCH
-PERIODS = [("1D", 1), ("1W", 5), ("1M", 21)]
+PERIODS = [("1D", "d"), ("1W", "w"), ("1M", "m")]   # 기간 시작: d 전 거래일 · w 직전 주 마지막 거래일 · m 직전 달 마지막 거래일
+ROLL = ("21D", 21)   # 최근 1개월 이동 창(요약 문장과 Claude 이유 문장용)
 HEAT_WEEKS = 8
 EQUAL_WEIGHT = {"XHB", "KRE", "XBI", "XME", "XOP"}   # S&P Select Industry 계열(수정 균등가중)
 LAG_MAX = 3
@@ -214,6 +218,18 @@ def end_index(X, E):
     return i
 
 
+def period_start(D, e, kind):
+    """기간 시작 인덱스. d 는 전 거래일, w 는 D[e] 가 속한 주의 월요일 앞 마지막 거래일, m 은 그 달 1일 앞 마지막 거래일."""
+    if kind == "d":
+        return e - 1
+    end = dt.date.fromisoformat(D[e])
+    cut = (end - dt.timedelta(days=end.weekday()) if kind == "w" else end.replace(day=1)).isoformat()
+    s = e
+    while s > 0 and D[s] >= cut:
+        s -= 1
+    return s
+
+
 def period(X, E, rows, a, s, e):
     """rows: [(symbol, name, w)] 스냅샷(기준일 a)의 상위 10. 기간 [s, e] 의 기여."""
     PE = X.etf[E]
@@ -379,8 +395,8 @@ def main():
              "src": "roundhill" if src.startswith("roundhill") else "stockanalysis",
              "eqw": E in EQUAL_WEIGHT, "cov": r6(snap_cov, 4), "end": X.D[e], "P": {}}
         per_fund[E] = {}
-        for p, n in PERIODS:
-            s = e - n
+        for p, kind in PERIODS:
+            s = period_start(X.D, e, kind)
             res = period(X, E, rows, a, s, e)
             if res is None:
                 continue
@@ -411,13 +427,18 @@ def main():
             if start:
                 out_p["start"] = start
             F["P"][p] = out_p
+        s = e - ROLL[1]
+        res = period(X, E, rows, a, s, e) if s >= 0 else None
+        if res:
+            F["P"][ROLL[0]] = {k: res[k] for k in ("R", "rows", "rest", "missing")}
+            F["P"][ROLL[0]]["from"], F["P"][ROLL[0]]["to"] = X.D[s], X.D[e]
         F["heat"] = heat(X, E, rows, a, e)
         F["fx"] = any(len(r) > 6 for P in F["P"].values() for r in P["rows"])
         F["tz"] = any(r[5] for P in F["P"].values() for r in P["rows"])
         funds_out[E] = F
     out = {
         "asof": X.D[-1], "generated_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "periods": {p: n for p, n in PERIODS}, "parent": PARENT, "bench": BENCH,
+        "periods": {p: k for p, k in PERIODS}, "parent": PARENT, "bench": BENCH,
         "funds": funds_out, "drivers": drivers(per_fund, spy_R),
         "fx": sorted(X.fx), "extraFailed": X.extra_failed, "warnings": warn,
     }
