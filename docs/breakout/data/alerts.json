@@ -1,34 +1,232 @@
 {
- "asof": "2026-10-29",
- "prev_asof": "2026-10-28",
+ "asof": "2026-10-30",
+ "prev_asof": "2026-10-29",
  "alerts": [
   {
    "type": "up",
    "H": "ath",
-   "key": "ABBV",
-   "name": "AbbVie Inc.",
+   "key": "MA",
+   "name": "Mastercard Incorporated",
    "etfs": [
-    "XLV",
-    "XBI"
+    "XLF"
    ],
-   "over": 0.00592,
-   "spy": "lit",
-   "qqq": "none"
-  },
-  {
-   "type": "up",
-   "H": "ath",
-   "key": "PM",
-   "name": "Philip Morris International Inc.",
-   "etfs": [
-    "XLP"
-   ],
-   "over": 0.0142,
+   "over": 0.00758,
    "spy": "none",
    "qqq": "none"
   },
   {
    "type": "up",
+   "H": "52w",
+   "key": "APD",
+   "name": "Air Products and Chemicals, Inc.",
+   "etfs": [
+    "XLB"
+   ],
+   "over": 0.01372,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "WMT",
+   "name": "Walmart Inc.",
+   "etfs": [
+    "XLP"
+   ],
+   "over": 0.01973,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "DUK",
+   "name": "Duke Energy Corporation",
+   "etfs": [
+    "XLU"
+   ],
+   "over": 0.01587,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "XEL",
+   "name": "Xcel Energy Inc.",
+   "etfs": [
+    "XLU"
+   ],
+   "over": 0.01166,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "LIN",
+   "name": "Linde plc",
+   "etfs": [
+    "XLB"
+   ],
+   "over": 0.0076,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "ABT",
+   "name": "Abbott Laboratories",
+   "etfs": [
+    "XLV"
+   ],
+   "over": 0.01249,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "CMCSA",
+   "name": "Comcast Corporation",
+   "etfs": [
+    "XLC"
+   ],
+   "over": 0.01664,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "D",
+   "name": "Dominion Energy, Inc.",
+   "etfs": [
+    "XLU"
+   ],
+   "over": 0.01865,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "NVDA",
+   "name": "NVIDIA Corporation",
+   "etfs": [
+    "XLK",
+    "SMH"
+   ],
+   "over": -0.01732
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "INTC",
+   "name": "Intel Corporation",
+   "etfs": [
+    "XLK"
+   ],
+   "over": -0.23079
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "BAC",
+   "name": "Bank of America Corporation",
+   "etfs": [
+    "XLF"
+   ],
+   "over": -0.00754
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "FCX",
+   "name": "Freeport-McMoRan Inc.",
+   "etfs": [
+    "XLB",
+    "XME"
+   ],
+   "over": -0.03282
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "TSM",
+   "name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "etfs": [
+    "SMH"
+   ],
+   "over": -0.00707
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "MRVL",
+   "name": "Marvell Technology, Inc.",
+   "etfs": [
+    "SMH"
+   ],
+   "over": -0.04861
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "CCJ",
+   "name": "Cameco Corporation",
+   "etfs": [
+    "URA"
+   ],
+   "over": -0.02559
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "SKYW",
+   "name": "SkyWest, Inc.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": -0.08977
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "AMD",
+   "name": "Advanced Micro Devices, Inc.",
+   "etfs": [
+    "XLK",
+    "SMH"
+   ],
+   "over": -0.00616
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "PLTR",
+   "name": "Palantir Technologies Inc.",
+   "etfs": [
+    "XLK",
+    "IGV"
+   ],
+   "over": -0.01032
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "ILMN",
+   "name": "Illumina, Inc.",
+   "etfs": [
+    "GNOM",
+    "ARKG"
+   ],
+   "over": -0.10113
+  },
+  {
+   "type": "failed",
    "H": "ath",
    "key": "NTRA",
    "name": "Natera, Inc.",
@@ -37,217 +235,93 @@
     "GNOM",
     "ARKG"
    ],
-   "over": 0.02434,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.02664
   },
   {
-   "type": "up",
-   "H": "ath",
-   "key": "SN",
-   "name": "SharkNinja, Inc.",
+   "type": "failed",
+   "H": "52w",
+   "key": "NTRA",
+   "name": "Natera, Inc.",
    "etfs": [
-    "XHB"
+    "XBI",
+    "GNOM",
+    "ARKG"
    ],
-   "over": 0.05233,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.02664
   },
   {
-   "type": "up",
-   "H": "ath",
-   "key": "FAST",
-   "name": "Fastenal Company",
+   "type": "failed",
+   "H": "52w",
+   "key": "ABSI",
+   "name": "Absci Corporation",
    "etfs": [
-    "PAVE"
+    "ARKG"
    ],
-   "over": 0.00622,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.04217
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "52w",
    "key": "W",
    "name": "Wayfair Inc.",
    "etfs": [
     "XHB"
    ],
-   "over": 0.00899,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.02638
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "55",
-   "key": "ETR",
-   "name": "Entergy Corporation",
+   "key": "NTRA",
+   "name": "Natera, Inc.",
    "etfs": [
-    "XLU"
+    "XBI",
+    "GNOM",
+    "ARKG"
    ],
-   "over": 0.01327,
-   "spy": "lit",
-   "qqq": "failed"
+   "over": -0.02664
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "55",
-   "key": "EXC",
-   "name": "Exelon Corporation",
+   "key": "ABSI",
+   "name": "Absci Corporation",
    "etfs": [
-    "XLU"
+    "ARKG"
    ],
-   "over": 0.01062,
-   "spy": "lit",
-   "qqq": "failed"
+   "over": -0.03469
   },
   {
-   "type": "up",
-   "H": "55",
-   "key": "NUE",
-   "name": "Nucor Corporation",
-   "etfs": [
-    "XLB",
-    "XME",
-    "PAVE"
-   ],
-   "over": 0.01197,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "55",
-   "key": "APD",
-   "name": "Air Products and Chemicals, Inc.",
-   "etfs": [
-    "XLB"
-   ],
-   "over": 0.014,
-   "spy": "lit",
-   "qqq": "failed"
-  },
-  {
-   "type": "up",
-   "H": "55",
-   "key": "CLF",
-   "name": "Cleveland-Cliffs Inc.",
-   "etfs": [
-    "XME"
-   ],
-   "over": 0.01135,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
+   "type": "failed",
    "H": "20",
-   "key": "JPM",
-   "name": "JPMorgan Chase & Co.",
+   "key": "NTRA",
+   "name": "Natera, Inc.",
    "etfs": [
-    "XLF"
+    "XBI",
+    "GNOM",
+    "ARKG"
    ],
-   "over": 0.01136,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.02664
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "20",
-   "key": "WFC",
-   "name": "Wells Fargo & Company",
+   "key": "ABSI",
+   "name": "Absci Corporation",
    "etfs": [
-    "XLF"
+    "ARKG"
    ],
-   "over": 0.01121,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.03469
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "20",
    "key": "CMC",
    "name": "Commercial Metals Company",
    "etfs": [
     "XME"
    ],
-   "over": 0.00606,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "TDG",
-   "name": "TransDigm Group Incorporated",
-   "etfs": [
-    "ITA"
-   ],
-   "over": 0.02874,
-   "spy": "lit",
-   "qqq": "none"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "ULCC",
-   "name": "Frontier Group Holdings, Inc.",
-   "etfs": [
-    "JETS"
-   ],
-   "over": 0.0368,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "AMZN",
-   "name": "Amazon.com, Inc.",
-   "etfs": [
-    "XLY"
-   ],
-   "over": -0.00882
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "NOW",
-   "name": "ServiceNow, Inc.",
-   "etfs": [
-    "IGV"
-   ],
-   "over": -0.06822
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "FTNT",
-   "name": "Fortinet, Inc.",
-   "etfs": [
-    "IGV"
-   ],
-   "over": -0.07753
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "HONA",
-   "name": "Honeywell Aerospace Inc.",
-   "etfs": [
-    "ITA"
-   ],
-   "over": -0.06063
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "HONA",
-   "name": "Honeywell Aerospace Inc.",
-   "etfs": [
-    "ITA"
-   ],
-   "over": -0.04789
+   "over": -0.02027
   }
  ]
 }

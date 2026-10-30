@@ -1,30 +1,30 @@
-📊 섹터 전환 터미널 · 2026-10-29 종가 기준
+📊 섹터 전환 터미널 · 2026-10-30 종가 기준
 
 전환순 상위 3 (1W·1M 평균 − 12M 백분위)
-  XHB 주택건설: +48  [55/68/36/23/14]
-  URA 우라늄: +41  [77/5/5/0/0]
-  ITA 항공우주·방산: +37  [82/50/0/32/29]
+  ITA 항공우주·방산: +48  [82/41/5/27/14]
+  XHB 주택건설: +47  [68/64/36/23/19]
+  XLU 유틸리티: +46  [64/86/55/18/29]
 
 주도 종목 (1W · 가장 크게 움직인 ETF 기여 %p · 킥)
-  ▲ 000660 DRAM +4.04 · 사상 최대 분기 실적 (10/28 +10.9%)
-  ▲ TWST ARKG +1.98 · 유전체주 반등·항체 서비스 (10/27 +10.1%)
-  ▲ GE ITA +1.89 · 이유 미확인 (10/27 +3.2%)
-  ▼ GOOGL·GOOG XLC −2.48 · 실적 발표 (10/29 −12.6%)
-  ▼ NOW IGV −1.56 · 실적 발표 (10/29 −27.0%)
-  ▼ FTNT IGV −0.84 · 실적 발표 (10/29 −20.1%)
+  ▲ SKHY·000660 DRAM +2.15 · Rosenblatt 목표가 상향 (10/28 +13.3%)
+  ▲ LLY XLV +1.84 · 실적 발표 (10/29 +6.6%)
+  ▲ TSLA XLY +1.31 · Barclays 투자의견 상향 (10/26 +5.2%)
+  ▼ GOOGL·GOOG XLC −2.41 · 실적 발표 (10/29 −12.6%)
+  ▼ NOW IGV −1.70 · 실적 발표 (10/29 −27.0%)
+  ▼ META XLC −0.97 · XLC 와 같이
 
 1단 RRG (섹터 ÷ SPY)
   Leading: XLV XLE
-  Improving: XLC XLP XLU XLB
+  Improving: XLY XLC XLP XLU XLB
   Weakening: XLK XLF
-  Lagging: XLY XLI XLRE
+  Lagging: XLI XLRE
 스타일·집중도 (÷ SPY · 섹터 집계 제외)
-  MAGS 매그니피센트 7: Leading (RS-Ratio 101.5, RS-Mom 101.5)  [9/22/70/48/36]
+  MAGS 매그니피센트 7: Leading (RS-Ratio 101.5, RS-Mom 101.5)  [9/26/61/43/36]
 
 2단 RRG (하위 ETF ÷ 상위 섹터)
   XLK: SMH Lagging · IGV Leading · DRAM N/A
   XLF: KRE Lagging
-  XLV: XBI Lagging · GNOM Leading · ARKG Weakening
+  XLV: XBI Lagging · GNOM Weakening · ARKG Weakening
   XLY: XHB Lagging
   XLI: ITA Lagging · PAVE Lagging
   XLE: URA Lagging
@@ -32,86 +32,69 @@
 
 신호
   ↘ XLK: SPY 비율 50일선 하향 이탈
-  ↓ XLK: 백분위 55점 하락 (6개월 → 1개월)
+  ↓ XLK: 백분위 54점 하락 (6개월 → 1개월)
   ↗ XLF: SPY 비율 200일선 상향 돌파
   ↗ XLF: SPY 비율 50일선 상향 돌파
   ★ XLV: SPY 대비 비율 52주 신고가
-  ↑ XLY: 백분위 41점 상승 (6개월 → 1개월)
-  ↘ XLP: SPY 비율 200일선 하향 이탈
-  ↑ XLP: 백분위 40점 상승 (6개월 → 1개월)
-  ↑ XLE: 백분위 32점 상승 (6개월 → 1개월)
-  ↑ XLU: 백분위 77점 상승 (6개월 → 1개월)
-  ↑ XLB: 백분위 37점 상승 (6개월 → 1개월)
+  ↑ XLY: 백분위 37점 상승 (6개월 → 1개월)
+  ↗ XLP: SPY 비율 200일선 상향 돌파
+  ↑ XLP: 백분위 36점 상승 (6개월 → 1개월)
+  ↑ XLU: 백분위 68점 상승 (6개월 → 1개월)
+  ↑ XLB: 백분위 32점 상승 (6개월 → 1개월)
   ↗ XLRE: SPY 비율 50일선 상향 돌파
-  ↗ SMH: SPY 비율 200일선 상향 돌파
-  ↓ SMH: 백분위 50점 하락 (6개월 → 1개월)
-  ≈ SMH: 1주 반등, 1개월 이상에서는 미확인
-  ↓ IGV: 백분위 54점 하락 (6개월 → 1개월)
+  ↑ XLRE: 백분위 36점 상승 (6개월 → 1개월)
+  ↘ SMH: SPY 비율 200일선 하향 이탈
+  ↓ SMH: 백분위 40점 하락 (6개월 → 1개월)
+  ↘ IGV: SPY 비율 50일선 하향 이탈
+  ↓ IGV: 백분위 55점 하락 (6개월 → 1개월)
   ↗ XBI: SPY 비율 50일선 상향 돌파
-  ↓ XBI: 백분위 50점 하락 (6개월 → 1개월)
-  ★ GNOM: SPY 대비 비율 52주 신고가
-  ↓ GNOM: 백분위 50점 하락 (6개월 → 1개월)
+  ↓ GNOM: 백분위 40점 하락 (6개월 → 1개월)
   ↗ ARKG: SPY 비율 50일선 상향 돌파
-  ↓ ARKG: 백분위 64점 하락 (6개월 → 1개월)
+  ↓ ARKG: 백분위 68점 하락 (6개월 → 1개월)
   ≈ ARKG: 1주 반등, 1개월 이상에서는 미확인
   ↗ KRE: SPY 비율 50일선 상향 돌파
   ↗ XHB: SPY 비율 50일선 상향 돌파
-  ↑ XHB: 백분위 45점 상승 (6개월 → 1개월)
-  ≈ URA: 1주 반등, 1개월 이상에서는 미확인
+  ↑ XHB: 백분위 41점 상승 (6개월 → 1개월)
   ↗ PAVE: SPY 비율 50일선 상향 돌파
-  ↑ PAVE: 백분위 37점 상승 (6개월 → 1개월)
-  ↓ DRAM: 백분위 91점 하락 (6개월 → 1개월)
-  ≈ DRAM: 1주 반등, 1개월 이상에서는 미확인
+  ↑ PAVE: 백분위 31점 상승 (6개월 → 1개월)
+  ↓ DRAM: 백분위 73점 하락 (6개월 → 1개월)
   ↘ MAGS: SPY 비율 200일선 하향 이탈
   ↘ MAGS: SPY 비율 50일선 하향 이탈
 
-직전 빌드(2026-10-28) 대비 변화 (1W 백분위 높은 순, [1W/1M/3M/6M/12M])
-  ARKG 유전체학 (액티브)  [100/36/100/100/100]  Weakening vs XLV
-    · ↓ 백분위 64점 하락 (6개월 → 1개월)
-    · ≈ 1주 반등, 1개월 이상에서는 미확인
-  GNOM 유전체학  [91/45/95/95/95]  Leading vs XLV
-    · ★ SPY 대비 비율 52주 신고가
-    · ↓ 백분위 50점 하락 (6개월 → 1개월)
-  SMH 반도체  [86/14/59/64/86]  Lagging vs XLK
-    · ≈ 1주 반등, 1개월 이상에서는 미확인
-  ITA 항공우주·방산  [82/50/0/32/29]  Lagging vs XLI
-    · 전환순 상위 3 진입 (점수 37)
-  URA 우라늄  [77/5/5/0/0]  Lagging vs XLE
-    · 전환순 상위 3 진입 (점수 41)
-  PAVE 미국 인프라  [73/55/27/18/52]  Lagging vs XLI
-    · ↗ SPY 비율 50일선 상향 돌파
+직전 빌드(2026-10-29) 대비 변화 (1W 백분위 높은 순, [1W/1M/3M/6M/12M])
+  ARKG 유전체학 (액티브)  [100/32/100/100/100]  Weakening vs XLV
+    · ↓ 백분위 68점 하락 (6개월 → 1개월)
+  GNOM 유전체학  [95/55/95/95/90]  Weakening vs XLV
+    · RRG Leading → Weakening (vs XLV)
+    · ↓ 백분위 40점 하락 (6개월 → 1개월)
+  PAVE 미국 인프라  [86/45/18/14/52]  Lagging vs XLI
+    · ↑ 백분위 31점 상승 (6개월 → 1개월)
+  XLB 소재  [73/82/68/50/67]  Improving vs SPY
+    · ↑ 백분위 32점 상승 (6개월 → 1개월)
+  XHB 주택건설  [68/64/36/23/19]  Lagging vs XLY
+    · ↑ 백분위 41점 상승 (6개월 → 1개월)
+  XLU 유틸리티  [64/86/55/18/29]  Improving vs SPY
+    · ↑ 백분위 68점 상승 (6개월 → 1개월)
+    · 전환순 상위 3 진입 (점수 46)
+  DRAM 메모리반도체  [59/0/23/73/n/a]  N/A vs XLK
+    · ↓ 백분위 73점 하락 (6개월 → 1개월)
+  XLY 경기소비재  [55/73/50/36/24]  Improving vs SPY
+    · RRG Lagging → Improving (vs SPY)
     · ↑ 백분위 37점 상승 (6개월 → 1개월)
-  XBI 바이오  [64/27/73/77/81]  Lagging vs XLV
-    · ↗ SPY 비율 50일선 상향 돌파
-    · ↓ 백분위 50점 하락 (6개월 → 1개월)
-  XLK 기술  [59/18/77/73/71]  Weakening vs SPY
+  XLRE 부동산  [41/77/45/41/43]  Lagging vs SPY
+    · ↑ 백분위 36점 상승 (6개월 → 1개월)
+  XLP 필수소비재  [36/95/77/59/62]  Improving vs SPY
+    · ↗ SPY 비율 200일선 상향 돌파
+    · ↑ 백분위 36점 상승 (6개월 → 1개월)
+  SMH 반도체  [18/5/41/45/86]  Lagging vs XLK
+    · ↘ SPY 비율 200일선 하향 이탈
+    · ↓ 백분위 40점 하락 (6개월 → 1개월)
+  XLK 기술  [9/14/64/68/57]  Weakening vs SPY
+    · ↓ 백분위 54점 하락 (6개월 → 1개월)
+  IGV 소프트웨어  [0/27/82/82/10]  Leading vs XLK
     · ↘ SPY 비율 50일선 하향 이탈
     · ↓ 백분위 55점 하락 (6개월 → 1개월)
-  XHB 주택건설  [55/68/36/23/14]  Lagging vs XLY
-    · ↗ SPY 비율 50일선 상향 돌파
-    · ↑ 백분위 45점 상승 (6개월 → 1개월)
-  XLB 소재  [41/82/68/45/62]  Improving vs SPY
-    · ↑ 백분위 37점 상승 (6개월 → 1개월)
-  XLV 헬스케어  [36/86/82/82/76]  Leading vs SPY
-    · ★ SPY 대비 비율 52주 신고가
-  XLRE 부동산  [32/64/23/41/38]  Lagging vs SPY
-    · ↗ SPY 비율 50일선 상향 돌파
-  XLY 경기소비재  [27/77/41/36/19]  Lagging vs SPY
-    · ↑ 백분위 41점 상승 (6개월 → 1개월)
-  XLU 유틸리티  [23/91/32/14/24]  Improving vs SPY
-    · ↑ 백분위 77점 상승 (6개월 → 1개월)
-  KRE 지역은행  [18/59/18/50/67]  Lagging vs XLF
-    · ↗ SPY 비율 50일선 상향 돌파
-  XLF 금융  [14/73/45/59/43]  Weakening vs SPY
-    · ↗ SPY 비율 200일선 상향 돌파
-    · ↗ SPY 비율 50일선 상향 돌파
-  IGV 소프트웨어  [9/32/86/86/10]  Leading vs XLK
-    · ↓ 백분위 54점 하락 (6개월 → 1개월)
-  MAGS 매그니피센트 7  [9/22/70/48/36]  Leading vs SPY
-    · ↘ SPY 비율 200일선 하향 이탈
-  XLP 필수소비재  [5/95/64/55/57]  Improving vs SPY
-    · ↑ 백분위 40점 상승 (6개월 → 1개월)
 
-구성종목 상위 10 변화: XLK(+1/−1), XLC(+1/−1), XLP(+1/−1), XLRE(+1/−1), SMH(+1/−1), IGV(+1/−1), XBI(+1/−1), ARKG(+1/−1), XHB(+1/−1), URA(+1/−1)
+구성종목 상위 10 변화: XLE(+1/−1), SMH(+1/−1), IGV(+1/−1), XBI(+1/−1), XHB(+2/−2), PAVE(+1/−1)
 
 https://tlzkrh1029.github.io/rrg/#board

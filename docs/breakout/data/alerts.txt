@@ -1,14 +1,15 @@
-돌파 지도 2026-10-29 (USD 기준, 직전 종가)
-켜진 칸 20일 59/279 (21%) · 55일 47 · 52주 28 · 사상 최고 22 · 이탈 28 · 실패 3
+돌파 지도 2026-10-30 (USD 기준, 직전 종가)
+켜진 칸 20일 54/279 (19%) · 55일 42 · 52주 23 · 사상 최고 19 · 이탈 34 · 실패 7
 
 새 돌파 (1일째)
-  사상 최고: ABBV(XLV·XBI)*, PM(XLP), NTRA(XBI·GNOM·ARKG)*, SN(XHB)*, FAST(PAVE)
-  52주: W(XHB)
-  55일: ETR(XLU)*, EXC(XLU)*, NUE(XLB·XME·PAVE)*, APD(XLB)*, CLF(XME)*
-  20일: JPM(XLF), WFC(XLF), CMC(XME)*, TDG(ITA)*, ULCC(JETS)*
+  사상 최고: MA(XLF)
+  52주: APD(XLB)
+  55일: WMT(XLP)*, DUK(XLU)*, XEL(XLU)*, LIN(XLB)*
+  20일: ABT(XLV)*, CMCSA(XLC)*, D(XLU)*
   * SPY 대비로도 켜진 칸
 새 이탈 (1일째)
-  55일 바닥: AMZN(XLY), NOW(IGV), FTNT(IGV)
-오늘 실패한 돌파: HONA(ITA, 55일), HONA(ITA, 20일)
+  55일 바닥: NVDA(XLK·SMH), INTC(XLK), BAC(XLF), FCX(XLB·XME), TSM(SMH), MRVL(SMH), CCJ(URA), SKYW(JETS)
+  20일 바닥: AMD(XLK·SMH), PLTR(XLK·IGV), ILMN(GNOM·ARKG)
+오늘 실패한 돌파: NTRA(XBI·GNOM·ARKG, 사상 최고), NTRA(XBI·GNOM·ARKG, 52주), ABSI(ARKG, 52주), W(XHB, 52주), NTRA(XBI·GNOM·ARKG, 55일), ABSI(ARKG, 55일), NTRA(XBI·GNOM·ARKG, 20일), ABSI(ARKG, 20일), CMC(XME, 20일)
 
 https://tlzkrh1029.github.io/rrg/breakout/

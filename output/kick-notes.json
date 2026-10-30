@@ -45,9 +45,20 @@
    "at": "10/29 10:21 KST"
   },
   "S:VLO:2026-10-27": {
-   "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "정유주 급락 기사 제목은 있으나 본문을 확인하지 못해 원인 불명"
+   "k": "유가 하락과 정유주 매도",
+   "ev": "미국과 이란 관계 개선 신호로 유가가 밀리며 정제 마진 우려가 커져 정유주가 함께 급락했음",
+   "src": [
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/marathon-petroleum-sinks-7-valero-down-8-phillips-66-down-7-as-refiners-slide-together"
+    },
+    {
+     "t": "Trefis",
+     "u": "https://www.trefis.com/stock/vlo/articles/621052/why-did-valero-stock-fall/2026-10-28"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
   },
   "S:TWST:2026-10-27": {
    "k": "유전체주 반등·항체 서비스",
@@ -95,8 +106,9 @@
   },
   "S:NVDA:2026-10-28": {
    "none": 1,
-   "at": "10/29 10:21 KST",
-   "why": "원인이 불분명함"
+   "tries": 2,
+   "at": "10/31 07:19 KST",
+   "why": "Nvidia 10/28 약세를 검색했으나 해당일 기사를 찾지 못함"
   },
   "E:ARKG:2026-10-27": {
    "k": "유전체·AI 바이오 반등",
@@ -337,8 +349,9 @@
   },
   "S:XOM:2026-10-14": {
    "none": 1,
-   "at": "10/29 11:34 KST",
-   "why": "뚜렷한 개별 원인 없음"
+   "tries": 2,
+   "at": "10/31 07:19 KST",
+   "why": "10/14 Exxon과 에너지 시황을 검색했으나 해당일 기사를 찾지 못함"
   },
   "S:LLY:2026-10-15": {
    "none": 1,
@@ -388,8 +401,9 @@
   },
   "S:EQIX:2026-10-27": {
    "none": 1,
-   "at": "10/29 11:34 KST",
-   "why": "원인 불분명"
+   "tries": 2,
+   "at": "10/31 07:19 KST",
+   "why": "Equinix 실적은 10/28 발표라 10/27 상승 원인은 검색에서 찾지 못함"
   },
   "S:AMD:2026-10-27": {
    "none": 1,
@@ -514,9 +528,333 @@
   },
   "E:XLY:2026-10-29": {
    "none": 1,
+   "tries": 2,
+   "at": "10/31 07:19 KST",
+   "why": "10/29 경기소비재 시황, HD·LOW 상승 원인을 검색했으나 해당일 기사를 찾지 못함"
+  },
+  "E:IGV:2026-10-29": {
+   "k": "ServiceNow 실적 쇼크",
+   "ev": "ServiceNow가 실적 발표 후 26.9% 급락했고 Alphabet 부진도 기술주를 눌렀음",
+   "src": [
+    {
+     "t": "CNBC 10/29 증시 라이브",
+     "u": "https://www.cnbc.com/2026/10/29/stock-market-today-live-updates.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "E:XLK:2026-10-30": {
+   "k": "Intel 가이던스 쇼크",
+   "ev": "Intel이 4분기 전망 부진으로 약 29% 급락해 반도체와 기술주 전반의 매도를 부름",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    },
+    {
+     "t": "Quartz Intel 급락",
+     "u": "https://qz.com/intel-stock-plunges-amazon-nasdaq-100-sell-off-103026"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "S:MRVL:2026-10-29": {
+   "k": "Lumentum 인수 보도",
+   "ev": "Marvell이 Lumentum 인수를 논의 중이라는 보도가 나와 매도가 나왔음",
+   "src": [
+    {
+     "t": "Newsquawk",
+     "u": "https://www.newsquawk.com/headlines/marvell-mrvl-is-said-to-be-in-talks-to-buy-lumentum-holdings-lite"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "S:MRNA:2026-10-09": {
+   "k": "NIH 암 백신 구상",
+   "ev": "미국 정부가 국가 차원의 암 백신 사업을 추진한다는 보도가 나와 4년 만의 고점을 냈음",
+   "src": [
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/moderna-stock-soared-14-as-nih-plans-covid-style-push-for-cancer-vaccines"
+    },
+    {
+     "t": "Journal Arta",
+     "u": "https://journalarta.com/en/2026/10/10/moderna-stock-jumps-planned-cancer-vaccine-effort/"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "S:AMZN:2026-10-29": {
+   "k": "Alphabet 급락 여파",
+   "ev": "Alphabet이 실적 부진으로 사상 최대 하락을 보여 기술주가 밀렸고 Amazon 실적도 앞두고 있었음",
+   "src": [
+    {
+     "t": "CNBC 10/29 증시 라이브",
+     "u": "https://www.cnbc.com/2026/10/29/stock-market-today-live-updates.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "S:MPC:2026-10-27": {
+   "k": "유가 하락과 정유주 매도",
+   "ev": "미국과 이란 관계 개선 신호로 유가가 밀리며 정제 마진 우려가 커져 정유주가 함께 급락했음",
+   "src": [
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/marathon-petroleum-sinks-7-valero-down-8-phillips-66-down-7-as-refiners-slide-together"
+    },
+    {
+     "t": "Trefis",
+     "u": "https://www.trefis.com/stock/mpc/articles/621055/what-is-behind-the-move-in-marathon-petroleum-stock/2026-10-28"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "E:XLE:2026-10-30": {
+   "k": "유가 상승과 대형주 실적",
+   "ev": "WTI가 약 2.4% 올라 104달러를 넘었고 Exxon과 Chevron이 실적을 낸 날 기술주는 급락했음",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "E:XLB:2026-10-30": {
+   "k": "기술주 매도 속 방어 선호",
+   "ev": "Nasdaq이 2.9% 급락하고 S&P 500이 1.8% 내린 날 소재 업종은 상대적으로 버텼음",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "E:XLU:2026-10-30": {
+   "k": "기술주 매도 속 방어 선호",
+   "ev": "Nasdaq이 2.9% 급락하고 S&P 500이 1.8% 내린 날 유틸리티는 오히려 올랐음",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "E:XLP:2026-10-30": {
+   "k": "기술주 매도 속 방어 선호",
+   "ev": "Nasdaq이 2.9% 급락한 날 필수소비재는 Colgate, Mondelez 실적과 함께 올랐음",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "E:XME:2026-10-30": {
+   "k": "금값 급락",
+   "ev": "금 선물이 약 3.7% 내려 1년여 만의 최저로 떨어지며 금속·광업주가 밀렸음",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "S:NEM:2026-10-30": {
+   "k": "금값 급락",
+   "ev": "금 선물이 약 3.7% 내린 3,880달러 안팎으로 1년여 만의 최저를 기록했음",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "S:FCX:2026-10-30": {
+   "k": "금값 급락과 AI 매도",
+   "ev": "금값이 3.7% 급락하고 AI 관련 매도가 번져 구리 대표주도 5%대 하락했음",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "E:URA:2026-10-30": {
+   "k": "AI 관련주 동반 매도",
+   "ev": "Nasdaq이 2.9% 급락한 날 Cameco 등 AI 전력 테마의 우라늄주가 5~8% 내렸음",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "E:XLF:2026-10-29": {
+   "k": "Mastercard 실적 호조",
+   "ev": "Mastercard가 3분기 순매출 98억 달러(14% 증가), 조정 EPS 5.31달러를 발표했음",
+   "src": [
+    {
+     "t": "Mastercard 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001141391/000114139126000122/ma09302026-exx991xearnings.htm"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "S:NUE:2026-10-30": {
+   "k": "철강주 방어력",
+   "ev": "금값 급락으로 금속·광업 ETF가 3.2% 내린 날 철강주는 0.5% 안팎 하락에 그쳤음",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "S:RS:2026-10-30": {
+   "k": "철강주 방어력",
+   "ev": "금값 급락으로 금속·광업 ETF가 3.2% 내린 날 철강 유통주는 0.6% 하락에 그쳤음",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "S:MSFT:2026-10-30": {
+   "k": "반도체 매도 비껴감",
+   "ev": "반도체 ETF가 8% 넘게 빠지고 Intel이 29% 급락한 날 Microsoft는 1.6% 하락에 그쳤음",
+   "src": [
+    {
+     "t": "Yahoo Finance 증시 시황",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nasdaq-p-123540419.html"
+    }
+   ],
+   "by": "claude",
+   "at": "10/31 07:19 KST"
+  },
+  "E:XLRE:2026-10-29": {
+   "none": 1,
    "tries": 1,
-   "at": "10/30 08:20 KST",
-   "why": "XLY 10/29 검색 시도. Amazon 하락은 확인했으나 Home Depot, Lowe's 등 상승 원인을 밝힌 기사를 찾지 못함"
+   "at": "10/31 07:19 KST",
+   "why": "10/29 부동산 업종 시황과 금리 동향을 검색했으나 해당일 기사를 찾지 못함"
+  },
+  "S:005930:2026-10-28": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "삼성전자 10/28 급등을 검색했으나 해당일 기사를 찾지 못함"
+  },
+  "S:TXG:2026-10-06": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "10x Genomics와 Twist 10/6 급락을 검색했으나 2026년 10월 기사가 없음"
+  },
+  "S:TWST:2026-10-06": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "Twist 10/6 급락을 검색했으나 2026년 10월 기사가 없음"
+  },
+  "S:CVX:2026-10-14": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "10/14 Chevron과 에너지 시황을 검색했으나 해당일 기사를 찾지 못함"
+  },
+  "S:TXG:2026-10-30": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "10x Genomics 10/30 급락과 실적을 검색했으나 해당일 기사를 찾지 못함"
+  },
+  "S:MRNA:2026-10-30": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "Moderna 10/30 관련 기사를 찾지 못했고 제공된 제목에도 원인이 없음"
+  },
+  "S:MRNA:2026-10-29": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "Moderna 10/29 상승을 검색했으나 해당일 기사를 찾지 못함"
+  },
+  "S:SNPS:2026-10-29": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "Synopsys 10/29 상승을 검색했으나 해당일 기사를 찾지 못함"
+  },
+  "S:KAP:2026-10-28": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "Kazatomprom 10/28 상승을 우라늄 검색에서 찾지 못함"
+  },
+  "S:CMCSA:2026-10-30": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "Comcast 10/30 상승 원인을 검색에서 찾지 못했고 제공된 제목에도 없음"
+  },
+  "S:UNH:2026-10-26": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "UnitedHealth 10/26 하락을 검색했으나 해당일 기사를 찾지 못함"
+  },
+  "S:PDN:2026-10-27": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "Paladin 10/27 상승을 우라늄 검색에서 찾지 못함"
+  },
+  "S:UEC:2026-10-27": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "UEC 10/27 상승을 우라늄 검색에서 찾지 못함"
+  },
+  "S:GE:2026-10-29": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "GE Aerospace 실적은 10/20 발표로 확인되고 10/29 상승 원인은 찾지 못함"
+  },
+  "S:TJX:2026-10-27": {
+   "none": 1,
+   "tries": 1,
+   "at": "10/31 07:19 KST",
+   "why": "TJX 10/27 하락과 BofA 목표가 하향 기사를 검색했으나 확인되지 않음"
   }
  },
  "runs": [
@@ -545,6 +883,18 @@
    36,
    "claude-sonnet-5-5",
    0.825
+  ],
+  [
+   "10/31 07:19 KST",
+   40,
+   19,
+   20,
+   "ok",
+   30,
+   3,
+   35,
+   "claude-sonnet-5-5",
+   0.827
   ]
  ]
 }

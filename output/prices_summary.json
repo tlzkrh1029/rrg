@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T23:08:01Z",
+  "generated_at": "2026-10-30T22:07:36Z",
   "source_order": [
     "stooq",
     "yahoo"
@@ -13,13 +13,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "QQQ": {
       "source": "yahoo",
@@ -29,13 +29,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLK": {
       "source": "yahoo",
@@ -45,13 +45,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLF": {
       "source": "yahoo",
@@ -61,13 +61,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLV": {
       "source": "yahoo",
@@ -77,13 +77,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLY": {
       "source": "yahoo",
@@ -93,13 +93,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLC": {
       "source": "yahoo",
@@ -109,13 +109,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLI": {
       "source": "yahoo",
@@ -125,13 +125,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLP": {
       "source": "yahoo",
@@ -141,13 +141,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLE": {
       "source": "yahoo",
@@ -157,13 +157,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLU": {
       "source": "yahoo",
@@ -173,13 +173,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLB": {
       "source": "yahoo",
@@ -189,13 +189,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLRE": {
       "source": "yahoo",
@@ -205,13 +205,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "SMH": {
       "source": "yahoo",
@@ -221,13 +221,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "IGV": {
       "source": "yahoo",
@@ -237,13 +237,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XBI": {
       "source": "yahoo",
@@ -253,13 +253,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "GNOM": {
       "source": "yahoo",
@@ -269,13 +269,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "ARKG": {
       "source": "yahoo",
@@ -285,13 +285,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "KRE": {
       "source": "yahoo",
@@ -301,13 +301,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XHB": {
       "source": "yahoo",
@@ -317,13 +317,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XME": {
       "source": "yahoo",
@@ -333,13 +333,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "URA": {
       "source": "yahoo",
@@ -349,13 +349,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "ITA": {
       "source": "yahoo",
@@ -365,13 +365,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "PAVE": {
       "source": "yahoo",
@@ -381,13 +381,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "DRAM": {
       "source": "yahoo",
@@ -398,10 +398,10 @@
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
       "first_date": "2026-04-02",
-      "last_date": "2026-10-29",
+      "last_date": "2026-10-30",
       "gap_days": 0,
-      "rows": 146,
-      "missing_days": 354,
+      "rows": 147,
+      "missing_days": 353,
       "off_axis_dates": [],
       "rows_before_axis": 0
     },
@@ -413,13 +413,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 393
+      "rows_before_axis": 394
     },
     "GDX": {
       "source": "yahoo",
@@ -429,13 +429,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "GRID": {
       "source": "yahoo",
@@ -445,13 +445,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XOP": {
       "source": "yahoo",
@@ -461,13 +461,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "TAN": {
       "source": "yahoo",
@@ -477,13 +477,13 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "JETS": {
       "source": "yahoo",
@@ -493,19 +493,19 @@
       },
       "partial_bar_dropped": null,
       "last_bar_from_quote": null,
-      "first_date": "2024-10-31",
-      "last_date": "2026-10-29",
+      "first_date": "2024-11-01",
+      "last_date": "2026-10-30",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     }
   },
   "base_axis": {
     "ticker": "SPY",
-    "first_date": "2024-10-31",
-    "last_date": "2026-10-29",
+    "first_date": "2024-11-01",
+    "last_date": "2026-10-30",
     "days": 500
   },
   "failed_tickers": [],
@@ -568,7 +568,7 @@
     ]
   },
   "holdings": {
-    "file": "holdings/2026-10-29.csv",
+    "file": "holdings/2026-10-30.csv",
     "source": "stockanalysis.com",
     "roundhill_file": "2026-10-29",
     "sources": {
