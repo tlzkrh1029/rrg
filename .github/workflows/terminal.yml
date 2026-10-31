@@ -125,9 +125,12 @@ jobs:
 
       # 조건 알림은 ETF 가격과 구성종목만으로 계산하므로 여기서 먼저 만들어 보낸다(Claude 단계를 기다리지 않는다).
       # --alerts-only 는 docs/data/alerts.txt·alerts.json 만 쓰고, 직전 빌드의 terminal-data.json 은 그대로 둔다(아래 전체 빌드가 같은 알림을 다시 계산한다).
+      # --week-base 는 지난주 마지막 거래일 종가로 다시 계산해 output/terminal-data-wk.json 에 쓴다. 주간 브리핑 탭의 This Week 가 이것과 견준다.
+      # 실패하면 지난 실행의 파일이 다른 주를 가리킬 수 있으므로 지우고 간다(그날 페이지는 This Week 없이 만든다). 저녁 실행은 아침 빌드가 커밋한 파일을 쓴다.
       - name: 계산 (터미널 · 조건 알림)
         run: |
           python terminal/compute_terminal.py
+          python terminal/compute_terminal.py --week-base --out output/terminal-data-wk.json || { rm -f output/terminal-data-wk.json; echo "::warning::week-base computation failed; the weekly tab is built without This Week"; }
           python terminal/build_terminal.py --lists "$LISTS_DIR" --alerts-only
 
       - name: 텔레그램 조건 알림
