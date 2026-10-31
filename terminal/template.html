@@ -453,7 +453,6 @@ ul.hl.one li{grid-template-columns:minmax(0,1fr)} ul.hl.one .src{grid-column:1}
 .wk.f{border-top:0;padding-top:0}
 .wkh{display:flex;align-items:baseline;gap:6px;font-size:11px;color:var(--muted)}
 .wkh b{color:#fff;font-size:11.5px}
-.wkh .cur{font-size:9.5px;color:var(--amber);border:1px solid var(--amber-dim);padding:0 4px;line-height:1.35}
 .wkh .r{margin-left:auto;white-space:nowrap}
 .wkh .on{color:var(--hot);font-weight:700} .wkh .dn{color:var(--cold);font-weight:700}
 ul.hl.cl li{padding:5px 0}
@@ -499,7 +498,7 @@ ul.hl.tr .tk small{display:block;font-size:10px;line-height:1.3}
 .wkby{display:grid;gap:1px}
 .fchips .more{font-size:10.5px;color:var(--link)}
 .fchips>.fmore{display:contents} .fchips>.fmore[hidden]{display:none}
-.wkh b,.wkh .cur{white-space:nowrap}
+.wkh b{white-space:nowrap}
 .fchip .fk{color:#fff;font-weight:700}
 /* 킥: 그 주를 결정한 하루와 그 원인(terminal/compute_kicks.py · Claude) */
 .kc-x{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 8px;align-items:baseline;border-left:2px solid var(--amber);padding:1px 0 2px 7px}
@@ -582,7 +581,7 @@ table.dr tr.kr .kc-ev{margin-top:1px}
 .wk{border-top:0;padding-top:0}
 /* 칼럼 안 단락 간격. --sg 는 단락과 단락 사이, --ssg 는 단락 안 소제목(KEY TAKEAWAYS, 이 주의 공시 및 실적, 최근 8주) 앞의 간격이다.
    그리드 간격(대부분 8px, 주별 블록 4px, 기여도 6px)에 여백을 더해 맞춘다 */
-:root{--sg:28px;--ssg:16px}
+:root{--sg:36px;--ssg:20px}
 /* Holdings: 이름·기본 정보 → 차트 → 기여도 → 구성종목 표. 좁은 화면에서는 기여도 아래 뉴스 묶음(다음 실적발표 · 밤사이 · 왜 움직였나 · 뉴스 펼치기)도 단락으로 띄운다 */
 #hbody > :is(.eb,.cb,.h-wrap,.ern,.nb,.ai,.hlrow){margin-top:calc(var(--sg) - 8px)}
 #hbody > .nb{margin-bottom:0}
@@ -594,6 +593,22 @@ table.dr tr.kr .kc-ev{margin-top:1px}
 :is(.nbody,.hnews,.nw) > .wk:not(.f){margin-top:calc(var(--sg) - 8px)}
 :is(.nbody,.hnews,.nw) > .nb{margin-bottom:0}
 .wk > :not(.wkh) + :is(.kc-lh,.fhd,ul.hl){margin-top:calc(var(--ssg) - 4px)}
+/* 단락 머리 줄: 주별 머리 줄과 같은 회색 바탕 줄을 깐다. 줄이 단락의 경계를 맡으므로 차트·기여도 위의 구분선은 뺀다 */
+:root{--hb:var(--band-2)}
+.hh .tk{background:var(--hb);padding:5px 7px}
+.eb,.cb{border-top:0;padding-top:0}
+.eb > .ttlrow,.cb > .ttlrow,.cb > .wlab{background:var(--hb);padding:4px 7px}
+table.h thead th{background:var(--hb)}
+table.h thead th:first-child{padding-left:7px}
+table.h thead th:last-child{padding-right:7px}
+:is(.nbody,#hbody) > .ern,.shd{background:var(--hb);padding:5px 7px}
+.shd{display:grid;gap:4px}
+.nb > .wlab:first-child{margin:-8px -10px 0;padding:5px 10px;background:var(--hb)}
+.ai > .wlab:first-child{margin:-8px -9px 0;padding:5px 9px;background:var(--hb)}
+.nb,.ai{background:transparent}   /* 상자 안의 머리 줄이 다른 머리 줄과 같은 회색으로 보이도록 상자 바탕은 비운다(테두리는 그대로) */
+:is(.nbody,.hnews,.nw) > .wlab,#hbody > .hlrow{background:var(--hb);padding:4px 7px}
+#hbody > .hlrow{border-top:0;border-bottom:0}
+.wk .kc-lh,.wk .fhd{background:var(--hb);padding:4px 7px}
 /* 좁은 화면 Holdings 창의 '왜 움직였나' 제목도 넓은 화면처럼 호박색 머리표로 적는다 */
 .ai .wlab{color:var(--amber);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
 /* '이 주의 공시 및 실적' 제목 */
@@ -2140,7 +2155,7 @@ function weekBlocksHTML(k, s, t) {
     /* 킥: 지금 고른 ETF 와 견준 그 주(ETF 와 같이 움직인 주에는 ETF 의 킥) */
     const ki = KICKS && t && KICKS.etf[t] ? KICKS.weeks.indexOf(start) : -1, KW = ki >= 0 ? KICKS.etf[t].w[ki] : null;
     const hr = [noNews ? '' : `기사 ${n}건${part ? ' 이상' : ''}`, px != null ? `주가 ${kPv(px)}` : '', KW && KW.r != null ? `${cbEsc(t)} ${kPv(KW.r)}` : ''].filter(Boolean).join(' · ');
-    const head = `<div class="wkh"><b>${cbMd(start)} 주</b><span class="r">${hr}</span></div>`   /* 종목 모드에는 '이번 주' 표시를 달지 않는다: 맨 위 주가 가장 최근 주다 */
+    const head = `<div class="wkh"><b>${cbMd(start)} 주</b><span class="r">${hr}</span></div>`   /* '이번 주' 표시는 달지 않는다: 맨 위 주가 가장 최근 주다 */
       + (ki >= 0 ? stockKickHTML(k, t, ki) : '');
     const chips = fs.length ? `<div class="fchips">${fs.map(f => filingChip(f, s)).join('')}</div>` : '';
     const top = cl.slice(0, 2), hid = cl.slice(2);
@@ -2164,7 +2179,8 @@ function newsStockHTML(k, wide, t) {
     + ((s.w || []).length ? '' : `<p class="mu" style="margin:0">${us ? '최근 4주 헤드라인이 없습니다.' : '미국 밖 상장 종목이라 헤드라인과 SEC 공시가 없습니다. TradingView 링크로 확인하세요.'}</p>`);
   else if ((s.h || []).length) body = `<div class="wlab">헤드라인 · ${cbEsc(k)} · 최근 7일</div>${hlHTML(s.h.map(x => x.concat([k])), true)}`;
   else body = `<div class="wlab">헤드라인 · ${cbEsc(k)}</div><p class="mu" style="margin:0">${us ? '최근 4주 헤드라인과 공시가 없습니다.' : '미국 밖 상장 종목이라 헤드라인과 SEC 공시가 없습니다. TradingView 링크로 확인하세요.'}</p>`;
-  return links + (ern ? `<dl class="ern">${ern}</dl>` : '') + (wide ? nightStockHTML(k) : '') + claudeStockBox(k) + widget + body + (wide ? newsFoot(true, k) : '');
+  const top = links || ern ? `<div class="shd">${links}${ern ? `<dl class="ern">${ern}</dl>` : ''}</div>` : '';   /* Filings · News · 최근 실적 · 다음 실적발표를 한 단락으로 */
+  return top + (wide ? nightStockHTML(k) : '') + claudeStockBox(k) + widget + body + (wide ? newsFoot(true, k) : '');
 }
 /* ---- ETF 모드: 최근 4주를 주별로. 주마다 ETF 의 킥 · 영향순 종목 칩(누르면 그 종목의 그 주 기사) · 영향이 큰 세 종목의 킥 ·
    그 주의 공시 칩 · 기사 줄 셋(실적을 낸 종목 먼저, 그다음 영향순) · 종목별 나머지 ---- */
@@ -2197,7 +2213,7 @@ function etfWeekHTML(t, i, start, stocks) {
   const order = stocks.map(x => ({ k: x.k, w: x.w, r: ret(x.k) })).sort((a, b) => Math.abs(b.w * (b.r || 0)) - Math.abs(a.w * (a.r || 0)) || b.w - a.w);
   const fin = foldedIn(t), top = ((W && W.top) || []).filter(k => !fin.has(k));
   const mark = k => { const v = W && W.s && W.s[k]; if (!v || v.length < 2) return ''; if (v[1] === 'spread') return ' kc0'; if (!top.includes(k)) return ''; const n = kNote(`S:${k}:${v[2]}`); return n && n.k ? ' kc1' : kPending(n) ? '' : ' kc0'; };
-  const head = `<div class="wkh"><b>${cbMd(start)} 주</b>${i === 0 ? '<span class="cur">이번 주</span>' : ''}${W && W.r != null ? `<span class="r">${cbEsc(t)} ${kPv(W.r)}${W.rb != null ? ` · ${cbEsc(E.b)} ${kPv(W.rb)}` : ''}</span>` : ''}</div>`;
+  const head = `<div class="wkh"><b>${cbMd(start)} 주</b>${W && W.r != null ? `<span class="r">${cbEsc(t)} ${kPv(W.r)}${W.rb != null ? ` · ${cbEsc(E.b)} ${kPv(W.rb)}` : ''}</span>` : ''}</div>`;
   const chips = `<div class="tks"><span class="tl">영향순</span>${order.map(x => `<button type="button" class="tkb ${HEAT(x.r)}${mark(x.k)}" data-tkb="${cbEsc(x.k)}" aria-pressed="false" title="${cbEsc(x.k)} · 비중 ${x.w.toFixed(2)}%${x.fold ? ` (${x.fold.map(f => f[0]).join('·')} 포함)` : ''}${x.r != null ? ` · 영향 ${cbPp(x.w / 100 * x.r)}%p` : ''} · 누르면 이 주 기사">${cbEsc(x.k)}<b>${x.r != null ? kPc(x.r).slice(0, -1) : '–'}</b></button>`).join('')}</div>`;
   let kicks = '';
   if (W && W.s) {
