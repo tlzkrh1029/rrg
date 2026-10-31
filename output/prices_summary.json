@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T22:07:36Z",
+  "generated_at": "2026-10-31T14:56:08Z",
   "source_order": [
     "stooq",
     "yahoo"
@@ -568,9 +568,9 @@
     ]
   },
   "holdings": {
-    "file": "holdings/2026-10-30.csv",
+    "file": "holdings/2026-10-31.csv",
     "source": "stockanalysis.com",
-    "roundhill_file": "2026-10-29",
+    "roundhill_file": "2026-10-30",
     "sources": {
       "SPY": "stockanalysis.com",
       "QQQ": "stockanalysis.com",
@@ -596,8 +596,8 @@
       "URA": "stockanalysis.com",
       "ITA": "stockanalysis.com",
       "PAVE": "stockanalysis.com",
-      "DRAM": "roundhill 2026-10-29",
-      "MAGS": "roundhill 2026-10-29",
+      "DRAM": "roundhill 2026-10-30",
+      "MAGS": "roundhill 2026-10-30",
       "GDX": "stockanalysis.com",
       "GRID": "stockanalysis.com",
       "XOP": "stockanalysis.com",

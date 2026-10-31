@@ -412,6 +412,143 @@
    ],
    "asof": "2026-10-30",
    "at": "10/31 07:19 KST"
+  },
+  "MRNA": {
+   "text": [
+    "MRNA는 10/5 주에 흑색종 백신 3상 전체 결과 발표가 다가온다는 기대로 올랐고, 10/20에도 약 7% 상승했습니다.",
+    "10/22에는 머크와 공동 개발한 개인맞춤 흑색종 백신 intismeran의 3상 일부 데이터가 학회 발표 전에 온라인에 유출되면서 주가가 약 17.6% 하락했습니다.",
+    "10/24 ESMO에서 공개된 전체 결과는 Keytruda 단독 대비 재발 또는 사망 위험을 42% 낮추는 것이었고, 높았던 기대에는 못 미친다는 평가가 나왔습니다.",
+    "마지막 주에는 10.8% 반등했으며, 다음 실적 발표는 11/6로 예정되어 있습니다."
+   ],
+   "src": [
+    {
+     "t": "TIKR 유출 데이터 후 하락",
+     "u": "https://www.tikr.com/blog/moderna-sinks-18-on-leaked-melanoma-data-benefit-was-greater-after-six-months"
+    },
+    {
+     "t": "TIKR ESMO 발표 후",
+     "u": "https://www.tikr.com/blog/moderna-sinks-another-8-even-as-lead-investigator-calls-melanoma-vaccine-data-transformational"
+    },
+    {
+     "t": "24/7 Wall St 10/5",
+     "u": "https://247wallst.com/investing/2026/10/05/moderna-surges-8-as-full-melanoma-readout-nears-biontech-ticks-up-pfizer-slips/"
+    },
+    {
+     "t": "24/7 Wall St 10/20",
+     "u": "https://247wallst.com/investing/2026/10/20/moderna-jumps-7-while-melanoma-vaccine-data-looms-bristol-myers-squibb-rises-5-pfizer-inches-higher/"
+    }
+   ],
+   "asof": "2026-10-30",
+   "at": "11/01 00:07 KST"
+  },
+  "CLF": {
+   "text": [
+    "CLF는 10/19 장 시작 전 3분기 실적을 발표했고, 조정 EBITDA 6억 1,200만 달러로 회사 가이던스 5억 7,500만 달러를 웃돌아 그날 주가가 올랐습니다.",
+    "회사는 4분기 조정 EBITDA를 약 7억 1,500만 달러로 예상하고 2027년 조정 EBITDA가 40억 달러를 넘을 것이라고 밝혔습니다.",
+    "캐나다 자회사 Stelco는 10/9경부터 도금 라인 가동을 중단하고 최대 500명을 감원하기로 했고, 캐나다 정부는 10/22에 15일 안에 감원을 되돌리지 않으면 법적 조치를 취하겠다고 통보했습니다.",
+    "10/30에는 Citigroup이 투자의견 중립을 유지하며 목표가를 14달러로 올렸습니다."
+   ],
+   "src": [
+    {
+     "t": "Cleveland-Cliffs 3분기 실적 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000764065/000076406526000112/clf-202609308xkex991.htm"
+    },
+    {
+     "t": "Finviz 실적 보도",
+     "u": "https://finviz.com/news/403791/cleveland-cliffs-shares-rise-over-7-as-third-quarter-earnings-exceed-expectations"
+    },
+    {
+     "t": "BNN Bloomberg Joly 통보",
+     "u": "https://www.bnnbloomberg.ca/business/politics/2026/10/22/joly-says-stelco-still-planning-mass-layoffs-gives-business-2-weeks-to-reverse-course-or-face-legal-action"
+    },
+    {
+     "t": "SteelOrbis 15일 통보",
+     "u": "https://www.steelorbis.com/steel-news/latest-news/canada-gives-cleveland-cliffs-15-days-to-reverse-stelco-layoffs-or-face-court-action-1485996.htm"
+    }
+   ],
+   "asof": "2026-10-30",
+   "at": "11/01 00:07 KST"
+  },
+  "ABSI": {
+   "text": [
+    "ABSI는 10/28에 특별한 회사 발표 없이 AI 신약개발주 전반이 오르는 가운데 약 12% 상승했고, 같은 날 Schrödinger는 11%, Recursion은 9% 올랐습니다.",
+    "해당 기사는 이 상승을 ABS-201 후보물질에 대한 기대와 위험선호 분위기로 설명했습니다.",
+    "다음 실적 발표는 11/12로 예정되어 있습니다."
+   ],
+   "src": [
+    {
+     "t": "TIKR AI 신약개발주 상승",
+     "u": "https://www.tikr.com/blog/absci-soars-12-schrodinger-up-11-recursion-up-9-as-ai-drug-discovery-stocks-rally"
+    }
+   ],
+   "asof": "2026-10-30",
+   "at": "11/01 00:07 KST"
+  },
+  "RTX": {
+   "text": [
+    "RTX는 10/20 장 시작 전 3분기 실적을 발표했고, 매출 250억 달러(11% 증가), 조정 EPS 2.26달러로 시장 예상을 웃돌았습니다.",
+    "회사는 2026년 조정 매출 전망을 970억~975억 달러로, 조정 EPS 전망을 7.65~7.75달러로 올렸고, 수주 잔고는 3,400억 달러로 사상 최대였습니다.",
+    "앞서 9/28에는 Raytheon이 최대 207억 달러 규모의 AMRAAM 미사일 다년 생산 계약을 국방부로부터 받았습니다."
+   ],
+   "src": [
+    {
+     "t": "RTX 3분기 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000101829/000010182926000030/a2026-10x208xkerexhibit99.htm"
+    },
+    {
+     "t": "RTTNews 가이던스 상향",
+     "u": "https://www.rttnews.com/3700578/rtx-raises-2026-outlook-for-adj-sales-adj-eps.aspx?type=ern"
+    },
+    {
+     "t": "Airforce Technology",
+     "u": "https://www.airforce-technology.com/newsletters/rtx-third-quarter-result"
+    }
+   ],
+   "asof": "2026-10-30",
+   "at": "11/01 00:07 KST"
+  },
+  "ILMN": {
+   "text": [
+    "ILMN은 10/29 장 마감 후 3분기 실적을 발표했고, 매출은 11억 3,000만 달러로 시장 예상보다 약 2,000만 달러 적었으며 조정 EPS는 1.44달러로 예상 1.36달러를 웃돌았습니다.",
+    "회사는 2026년 매출 전망을 46억 4,000만~46억 6,000만 달러로 올렸지만, 유기적 성장률 전망은 4% 이상으로 그대로 두었습니다.",
+    "다음 거래일인 10/30에 주가는 약 12~18% 하락했고, 중국 매출이 0.1% 감소한 점과 중국 불성실기업 명단 영향이 함께 거론되었습니다."
+   ],
+   "src": [
+    {
+     "t": "Illumina 3분기 실적 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001110803/000111080326000202/q326earningsrelease.htm"
+    },
+    {
+     "t": "Yahoo Finance 매출 부진 하락",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/illumina-sinks-13-light-q3-140130197.html"
+    },
+    {
+     "t": "Investing.com 실적 통화",
+     "u": "https://www.investing.com/news/transcripts/earnings-call-transcript-illumina-beats-q3-2026-estimates-but-shares-fall-after-hours-93CH-4985372"
+    }
+   ],
+   "asof": "2026-10-30",
+   "at": "11/01 00:07 KST"
+  },
+  "BA": {
+   "text": [
+    "BA는 10/27 장 시작 전 3분기 실적을 발표했고, 핵심 주당 손실이 0.34달러로 시장 예상 0.21달러보다 컸으며 상업용 항공기 부문 손실은 6억 9,700만 달러였습니다.",
+    "CEO Kelly Ortberg는 2026년 737 생산과 인도 목표를 달성하지 못할 것이라고 밝혔고, 월 47대 생산 속도는 2027년 초로 미뤄졌습니다.",
+    "이날 주가는 10.7% 하락해 18개월 만에 가장 큰 일간 낙폭을 기록했습니다.",
+    "한편 방산 부문 매출은 15% 늘었고 수주 잔고는 7,450억 달러로 사상 최대였습니다."
+   ],
+   "src": [
+    {
+     "t": "KIRO 7 보도",
+     "u": "https://www.kiro7.com/news/local/boeing-stock-tumbles-investors-react-third-quarter-losses/GJDAM3MKWJBAZABVWOXVDFTK2A/"
+    },
+    {
+     "t": "Khaleej Times",
+     "u": "https://www.khaleejtimes.com/business/boeing-jetliner-production-challenges-weigh-on-third-quarter-results-2"
+    }
+   ],
+   "asof": "2026-10-30",
+   "at": "11/01 00:07 KST"
   }
  },
  "runs": [
@@ -456,6 +593,19 @@
    35,
    "claude-sonnet-5-5",
    0.715
+  ],
+  [
+   "11/01 00:07 KST",
+   0,
+   0,
+   6,
+   6,
+   "ok",
+   14,
+   2,
+   18,
+   "claude-sonnet-5-5",
+   0.369
   ]
  ]
 }

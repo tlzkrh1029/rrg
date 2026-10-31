@@ -6,12 +6,12 @@
   XLU 유틸리티: +46  [64/86/55/18/29]
 
 주도 종목 (1W · 가장 크게 움직인 ETF 기여 %p · 킥)
-  ▲ SKHY·000660 DRAM +2.15 · Rosenblatt 목표가 상향 (10/28 +13.3%)
-  ▲ LLY XLV +1.84 · 실적 발표 (10/29 +6.6%)
-  ▲ TSLA XLY +1.31 · Barclays 투자의견 상향 (10/26 +5.2%)
-  ▼ GOOGL·GOOG XLC −2.41 · 실적 발표 (10/29 −12.6%)
-  ▼ NOW IGV −1.70 · 실적 발표 (10/29 −27.0%)
-  ▼ META XLC −0.97 · XLC 와 같이
+  ▲ SKHY·000660 DRAM +2.04 · Rosenblatt 목표가 상향 (10/28 +13.3%)
+  ▲ LLY XLV +1.77 · 실적 발표 (10/29 +6.6%)
+  ▲ TSLA XLY +1.32 · Barclays 투자의견 상향 (10/26 +5.2%)
+  ▼ GOOGL·GOOG XLC −2.70 · 실적 발표 (10/29 −12.6%)
+  ▼ NOW IGV −1.71 · 실적 발표 (10/29 −27.0%)
+  ▼ META XLC −0.94 · XLC 와 같이
 
 1단 RRG (섹터 ÷ SPY)
   Leading: XLV XLE
@@ -94,7 +94,5 @@
   IGV 소프트웨어  [0/27/82/82/10]  Leading vs XLK
     · ↘ SPY 비율 50일선 하향 이탈
     · ↓ 백분위 55점 하락 (6개월 → 1개월)
-
-구성종목 상위 10 변화: XLE(+1/−1), SMH(+1/−1), IGV(+1/−1), XBI(+1/−1), XHB(+2/−2), PAVE(+1/−1)
 
 https://tlzkrh1029.github.io/rrg/#board

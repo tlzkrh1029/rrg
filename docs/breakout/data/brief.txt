@@ -1,8 +1,8 @@
-돌파 지도 주간 브리핑 · 종가 2026-10-30 · 구성종목 2026-10-30
+돌파 지도 주간 브리핑 · 종가 2026-10-30 · 구성종목 2026-10-31
 
 켜진 칸 (지평별)
   USD: 20일 54/279 (19%) · 55일 42 · 52주 23 · 사상 최고 19 · 이탈 34 · 실패 7
-  QQQ 대비: 20일 93/279 (33%) · 55일 81 · 52주 18 · 사상 최고 15 · 이탈 26 · 실패 4
+  QQQ 대비: 20일 92/279 (33%) · 55일 81 · 52주 18 · 사상 최고 15 · 이탈 26 · 실패 4
   SPY 대비: 20일 67/279 (24%) · 55일 56 · 52주 21 · 사상 최고 18 · 이탈 33 · 실패 5
 
 켜진 비율이 높은 블록 (USD 20일)
@@ -22,6 +22,6 @@
 
 약세 신호 42: NVDA(XLK·SMH) 55일 이탈 1일, AMD(XLK·SMH) 20일 이탈 1일, INTC(XLK) 55일 이탈 1일, PLTR(XLK·IGV) 20일 이탈 1일, BAC(XLF) 55일 이탈 1일, AMZN(XLY) 55일 이탈 2일, BKNG(XLY) 55일 이탈 5일, GOOGL(XLC) 55일 이탈 7일, GOOG(XLC) 55일 이탈 7일, DIS(XLC) 실패, TTWO(XLC) 55일 이탈 3일, APP(XLC) 55일 이탈 6일, ETN(XLI·PAVE·GRID) 55일 이탈 9일, BA(XLI·ITA) 55일 이탈 4일, UBER(XLI) 55일 이탈 6일, MDLZ(XLP) 실패, FCX(XLB·XME) 55일 이탈 1일, TSM(SMH) 55일 이탈 1일, MRVL(SMH) 55일 이탈 1일, NOW(IGV) 55일 이탈 2일, NTRA(XBI·GNOM·ARKG) 실패, ILMN(GNOM·ARKG) 20일 이탈 1일, VRTX(GNOM) 실패, ABSI(ARKG) 실패, CMC(XME) 실패, AA(XME) 55일 이탈 7일, CCJ(URA) 55일 이탈 1일, 8001(URA) 실패, SSW(URA) 55일 이탈 7일, HONA(ITA) 실패, ABX(GDX) 55일 이탈 7일, WPM(GDX) 20일 이탈 7일, FNV(GDX) 20일 이탈 7일, AU(GDX) 55일 이탈 7일, PAAS(GDX) 55일 이탈 7일, PWR(GRID) 20일 이탈 10일, ABBN(GRID) 55일 이탈 10일, SU(GRID) 55일 이탈 10일, HUBB(GRID) 55일 이탈 4일, ENPH(TAN) 55일 이탈 3일, SEDG(TAN) 20일 이탈 3일, SKYW(JETS) 55일 이탈 1일
 
-켜진 종목 66 중 크립토 거래소 상장 7 (목록 2026-10-30)
+켜진 종목 66 중 크립토 거래소 상장 7 (목록 2026-10-31)
 
 https://tlzkrh1029.github.io/rrg/breakout/

@@ -762,33 +762,33 @@
   },
   "E:XLRE:2026-10-29": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "10/29 부동산 업종 시황과 금리 동향을 검색했으나 해당일 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "부동산 업종과 리츠 10/29 검색에서 해당 날짜 기사를 찾지 못함"
   },
   "S:005930:2026-10-28": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "삼성전자 10/28 급등을 검색했으나 해당일 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "Samsung 10/28 상승 검색에서 2026년 해당일 기사를 찾지 못함"
   },
   "S:TXG:2026-10-06": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "10x Genomics와 Twist 10/6 급락을 검색했으나 2026년 10월 기사가 없음"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "10x Genomics 10/6 검색 결과가 서로 엇갈리고 원인 기사가 없음"
   },
   "S:TWST:2026-10-06": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "Twist 10/6 급락을 검색했으나 2026년 10월 기사가 없음"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "Twist 10/6 검색에서 원인 기사를 찾지 못함"
   },
   "S:CVX:2026-10-14": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "10/14 Chevron과 에너지 시황을 검색했으나 해당일 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "Chevron 10/14 검색에서 당일 원인 기사를 찾지 못함"
   },
   "S:TXG:2026-10-30": {
    "none": 1,
@@ -798,21 +798,21 @@
   },
   "S:MRNA:2026-10-30": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "Moderna 10/30 관련 기사를 찾지 못했고 제공된 제목에도 원인이 없음"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "제목에 당일 원인이 없고 검색하지 못함"
   },
   "S:MRNA:2026-10-29": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "Moderna 10/29 상승을 검색했으나 해당일 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "Moderna 10/29 검색에서 당일 원인 기사를 찾지 못했고 제목에도 원인이 없음"
   },
   "S:SNPS:2026-10-29": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "Synopsys 10/29 상승을 검색했으나 해당일 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "Synopsys 10/29 검색에서 당일 기사를 찾지 못함"
   },
   "S:KAP:2026-10-28": {
    "none": 1,
@@ -822,39 +822,143 @@
   },
   "S:CMCSA:2026-10-30": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "Comcast 10/30 상승 원인을 검색에서 찾지 못했고 제공된 제목에도 없음"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "Comcast 10/30 검색에서 당일 원인 기사를 찾지 못함"
   },
   "S:UNH:2026-10-26": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "UnitedHealth 10/26 하락을 검색했으나 해당일 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "제목에 UNH 직접 원인이 없고 검색하지 못함"
   },
   "S:PDN:2026-10-27": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "Paladin 10/27 상승을 우라늄 검색에서 찾지 못함"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "우라늄 10/27 검색에서 2026년 당일 기사를 찾지 못함"
   },
   "S:UEC:2026-10-27": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "UEC 10/27 상승을 우라늄 검색에서 찾지 못함"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "같은 우라늄 10/27 검색에서 당일 기사를 찾지 못함"
   },
   "S:GE:2026-10-29": {
    "none": 1,
-   "tries": 1,
-   "at": "10/31 07:19 KST",
-   "why": "GE Aerospace 실적은 10/20 발표로 확인되고 10/29 상승 원인은 찾지 못함"
+   "tries": 2,
+   "at": "11/01 00:07 KST",
+   "why": "GE Aerospace 10/29 검색에서 당일 기사를 찾지 못함"
   },
   "S:TJX:2026-10-27": {
    "none": 1,
    "tries": 1,
    "at": "10/31 07:19 KST",
    "why": "TJX 10/27 하락과 BofA 목표가 하향 기사를 검색했으나 확인되지 않음"
+  },
+  "S:BA:2026-10-27": {
+   "k": "737 증산 지연",
+   "ev": "737 월 47대 생산 도달이 2027년 초로 늦어지고 올해 인도 목표 500대 미달을 밝힘",
+   "src": [
+    {
+     "t": "Why Boeing Stock Plunged 11%: 737 MAX De",
+     "u": "https://www.indmoney.com/blog/us-stocks/boeing-stock-crash-q3-2026-earnings-737-max-delays"
+    },
+    {
+     "t": "Boeing shares plunge on slower-than-expe",
+     "u": "https://www.devdiscourse.com/article/international/3998238-boeing-shares-plunge-on-slower-than-expected-737-production-weaker-free-cash-flow-outlook"
+    }
+   ],
+   "by": "claude",
+   "at": "11/01 00:07 KST"
+  },
+  "S:WELL:2026-10-27": {
+   "k": "3분기 매출 부진",
+   "ev": "FFO 전망을 올렸지만 3분기 매출과 주당순이익이 예상을 밑돌아 약 5.8% 내림",
+   "src": [
+    {
+     "t": "Welltower Fell 5% as Q3 Revenue Misses D",
+     "u": "https://www.tikr.com/blog/welltower-fell-5-as-q3-revenue-misses-despite-raised-ffo-outlook"
+    },
+    {
+     "t": "What Is Behind The Move In Welltower Sto",
+     "u": "https://www.trefis.com/stock/well/articles/621060/what-is-behind-the-move-in-welltower-stock/2026-10-28"
+    }
+   ],
+   "by": "claude",
+   "at": "11/01 00:07 KST"
+  },
+  "S:BRK.B:2026-10-29": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "제목에 원인이 없고 검색하지 못함"
+  },
+  "S:SN:2026-10-29": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "SharkNinja 10/29 검색에서 당일 기사를 찾지 못함"
+  },
+  "S:FAST:2026-10-27": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "Fastenal 10/27 검색에서 10/14 실적 기사만 나옴"
+  },
+  "S:TRGP:2026-10-29": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "Targa 10/29 검색에서 당일 기사를 찾지 못함"
+  },
+  "S:URI:2026-10-27": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "제목에 당일 원인이 불명확하고 검색하지 못함"
+  },
+  "S:EXC:2026-10-29": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "Exelon 10/29 검색에서 당일 기사를 찾지 못함"
+  },
+  "S:FIBK:2026-10-26": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "제목에 당일 원인이 불명확하고 검색하지 못함"
+  },
+  "S:VLY:2026-10-27": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "기사 제목이 없고 검색하지 못함"
+  },
+  "S:MSFT:2026-10-29": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "제목에 당일 원인이 불명확하고 검색하지 못함"
+  },
+  "S:VMC:2026-10-29": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "Vulcan 10/29 검색에서 실적 수치만 나오고 주가 반응 기사가 없음"
+  },
+  "S:FCX:2026-10-27": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "Freeport 10/27 검색에서 2026년 기사를 찾지 못함"
+  },
+  "S:CSL:2026-10-29": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/01 00:07 KST",
+   "why": "제목에 당일 원인이 불명확하고 검색하지 못함"
   }
  },
  "runs": [
@@ -895,6 +999,18 @@
    35,
    "claude-sonnet-5-5",
    0.827
+  ],
+  [
+   "11/01 00:07 KST",
+   40,
+   2,
+   25,
+   "ok",
+   30,
+   0,
+   32,
+   "claude-sonnet-5-5",
+   0.754
   ]
  ]
 }

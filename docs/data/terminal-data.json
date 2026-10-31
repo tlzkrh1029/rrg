@@ -3,8 +3,8 @@
  "first_date": "2024-11-01",
  "days": 500,
  "weeks": 105,
- "generated_at": "2026-10-30T22:08:26Z",
- "price_generated_at": "2026-10-30T22:07:36Z",
+ "generated_at": "2026-10-31T14:57:06Z",
+ "price_generated_at": "2026-10-31T14:56:08Z",
  "source": [
   "yahoo"
  ],
@@ -1485,7 +1485,7 @@
     90
    ],
    "rel": [
-    6.71,
+    6.7,
     2.29,
     26.82,
     48.03,
@@ -1571,7 +1571,7 @@
     ]
    ],
    "weeks": 105,
-   "lastClose": 69.6104,
+   "lastClose": 69.61,
    "stale": null
   },
   "ARKG": {
