@@ -475,8 +475,12 @@ a.fchip .on{color:var(--hot);font-weight:700} a.fchip .dn{color:var(--cold);font
 .hlrow .mu{letter-spacing:0;text-transform:none;color:var(--muted);font-weight:400}
 .h td.sy small.e{white-space:nowrap} .h td.sy small.e.in,.h td.sy small.e.nx{color:var(--amber)}
 /* ETF 모드 주별 블록: 영향순 종목 칩(누르면 그 종목의 그 주 기사가 칩 아래에 펼쳐짐), 기사 줄, 종목별 나머지 */
-.tks{display:flex;flex-wrap:wrap;gap:3px;align-items:center}
-.tks .tl{color:var(--muted);font-size:9.5px;margin-right:1px}
+/* 영향순 줄: 머리 글자는 칩의 티커와 같은 크기의 흰 글자이고, 칩은 한 줄에 넷씩 같은 너비로 놓아 둘째 줄부터도 첫 칩의 왼쪽 테두리에 맞춘다 */
+.tks{display:flex;align-items:baseline;gap:10px}
+.tks .tl{color:#fff;font-size:10.5px;flex:none}
+.tkg{flex:1;min-width:0;display:grid;grid-template-columns:repeat(4,auto);gap:3px}   /* 칸 너비는 내용에 맞춰 나누되 남는 폭은 고르게 나눈다(000660 같은 긴 티커도 한 줄에 들어가게) */
+.tkg .tkb{justify-content:space-between;flex-wrap:wrap;column-gap:2px;padding:1px 3px;min-width:0}   /* 티커는 왼쪽, 수익률은 오른쪽. 칸보다 길면 수익률이 다음 줄로 내려간다 */
+.tkg .tkb b{margin-left:auto}
 .tkb{display:inline-flex;gap:3px;align-items:baseline;font-size:10.5px;line-height:1.35;padding:1px 4px;border:1px solid var(--line-2);background:var(--neutral);color:#fff;font-weight:700;cursor:pointer}
 .tkb b{font-weight:400;color:var(--ink)}
 .tkb.p1{background:rgba(47,208,70,.16);background:color-mix(in srgb,var(--hot) 16%,transparent)} .tkb.p2{background:rgba(47,208,70,.32);background:color-mix(in srgb,var(--hot) 32%,transparent)} .tkb.p3{background:rgba(47,208,70,.55);background:color-mix(in srgb,var(--hot) 55%,transparent)}
@@ -591,7 +595,7 @@ table.dr tr.kr .kc-ev{margin-top:1px}
 :is(.nbody,.hnews,.nw) > .wlab:not(:first-child){margin-top:calc(var(--sg) - 8px)}
 :is(.nbody,.hnews,.nw) > .wk:not(.f){margin-top:calc(var(--sg) - 8px)}
 :is(.nbody,.hnews,.nw) > .nb{margin-bottom:0}
-.wk > :not(.wkh) + :is(.kc-lh,.fhd,ul.hl){margin-top:calc(var(--ssg) - 4px)}
+.wk > :not(.wkh) + :is(.tks,.kc-lh,.fhd,ul.hl){margin-top:calc(var(--ssg) - 4px)}
 /* 단락 머리 줄: 회색 바탕 줄을 깐다. 줄이 단락의 경계를 맡으므로 차트·기여도 위의 구분선은 뺀다 */
 :root{--hb:var(--band-2)}
 .eb,.cb{border-top:0;padding-top:0}
@@ -2220,7 +2224,7 @@ function etfWeekHTML(t, i, start, stocks) {
   const fin = foldedIn(t), top = ((W && W.top) || []).filter(k => !fin.has(k));
   const mark = k => { const v = W && W.s && W.s[k]; if (!v || v.length < 2) return ''; if (v[1] === 'spread') return ' kc0'; if (!top.includes(k)) return ''; const n = kNote(`S:${k}:${v[2]}`); return n && n.k ? ' kc1' : kPending(n) ? '' : ' kc0'; };
   const head = `<div class="wkh"><b>${cbMd(start)} 주</b>${W && W.r != null ? `<span class="r">${cbEsc(t)} ${kPv(W.r)}${W.rb != null ? ` · ${cbEsc(E.b)} ${kPv(W.rb)}` : ''}</span>` : ''}</div>`;
-  const chips = `<div class="tks"><span class="tl">영향순</span>${order.map(x => `<button type="button" class="tkb ${HEAT(x.r)}${mark(x.k)}" data-tkb="${cbEsc(x.k)}" aria-pressed="false" title="${cbEsc(x.k)} · 비중 ${x.w.toFixed(2)}%${x.fold ? ` (${x.fold.map(f => f[0]).join('·')} 포함)` : ''}${x.r != null ? ` · 영향 ${cbPp(x.w / 100 * x.r)}%p` : ''} · 누르면 이 주 기사">${cbEsc(x.k)}<b>${x.r != null ? kPc(x.r).slice(0, -1) : '–'}</b></button>`).join('')}</div>`;
+  const chips = `<div class="tks"><span class="tl">영향순</span><div class="tkg">${order.map(x => `<button type="button" class="tkb ${HEAT(x.r)}${mark(x.k)}" data-tkb="${cbEsc(x.k)}" aria-pressed="false" title="${cbEsc(x.k)} · 비중 ${x.w.toFixed(2)}%${x.fold ? ` (${x.fold.map(f => f[0]).join('·')} 포함)` : ''}${x.r != null ? ` · 영향 ${cbPp(x.w / 100 * x.r)}%p` : ''} · 누르면 이 주 기사">${cbEsc(x.k)}<b>${x.r != null ? kPc(x.r).slice(0, -1) : '–'}</b></button>`).join('')}</div></div>`;
   let kicks = '';
   if (W && W.s) {
     const lis = top.filter(k => (W.s[k] || []).length > 2).map(k => {
