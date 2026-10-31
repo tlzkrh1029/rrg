@@ -1,7 +1,9 @@
 name: terminal
 
 # 아침 빌드(morning): 가격·구성종목·상장 목록 수집 → 계산 → 텔레그램 조건 알림(Claude 단계보다 먼저) → 돌파 지도 → Claude → 터미널 → 커밋.
-#   화~금 08:05 KST 에 전날 종가로, 토 07:05 KST 에 금요일 종가로 돌고, 토요일에는 주간 브리핑도 보낸다.
+#   월~금 20:05 ET(장후 거래가 끝나고 5분 뒤, 한국 시각 화~토 아침: 겨울 10:05 · 여름 09:05)에 그날 종가와 장후 마지막 가격으로 돌고,
+#   한국 시각으로 토요일인 실행(금요일 밤 ET)에는 주간 브리핑도 보낸다. 장 시간에 맞춘 예약은 모두 미국 동부 시각으로 정해 두어
+#   서머타임이 시작하거나 끝나도 손댈 필요가 없다(Claude 예약 작업은 CRON_TZ=America/New_York, 아래 예비 실행은 timezone).
 # 저녁 실행(evening): 월~금 21:25 KST(미국 장전 시간)에 장후의 마지막 가격과 장전 가격만 받아(terminal/fetch_xh.py) 두 화면을 다시 만들고 커밋한 뒤
 #   '밤사이' 텔레그램(크게 움직인 ETF·종목)을 보낸다.
 # 시작: Claude 예약 작업 'rrg 빌드 시작'이 위 시각에 workflow_dispatch(mode)로 시작시킨다. GitHub 예약 실행(schedule)은 2~4시간 늦게
@@ -12,8 +14,8 @@ name: terminal
 # 터미널 계산과 페이지 생성 사이에서 Claude(구독 토큰 CLAUDE_SETUP_TOKEN)가 웹 검색으로 이유 문장·종목 요약과 킥의 원인을 쓴다. 이 단계들도 실패해도 빌드를 막지 않는다.
 on:
   schedule:
-    - cron: "10 23 * * 1-4"   # 아침 예비: 화~금 08:10 KST
-    - cron: "5 22 * * 5"      # 아침 예비: 토 07:05 KST
+    - cron: "10 20 * * 1-5"   # 아침 예비: 월~금 20:10 ET(장후 종료 10분 뒤). 서머타임은 GitHub 이 timezone 으로 맞춘다
+      timezone: "America/New_York"
     - cron: "5 9 * * 1-5"     # 저녁 예비: 월~금 18:05 KST. 2~4시간 늦어도 미국 장전 시간 안에 들도록 일찍 둔다(scripts/run_guard.py 의 EVENING_CRON)
   workflow_dispatch:
     inputs:

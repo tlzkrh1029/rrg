@@ -19,7 +19,7 @@
 
 출력 (docs/)
   index.html                       GitHub Pages 용 완전한 문서
-  terminal.artifact.html           Claude 아티팩트 발행용(문서 골격 없이 <title>부터)
+  terminal.artifact.html           Claude 아티팩트 발행용(완전한 문서, 첫 줄에 빌드 시각 rrg-build)
   data/terminal-data.json          이번 계산값 사본(다음 실행에서 변화 비교에 쓴다)
   data/alerts.json                 직전 빌드와 비교한 변화 목록
   data/brief.txt                   텔레그램용 주간 브리핑 본문
@@ -65,6 +65,17 @@ SKELETON_HEAD = ('<!doctype html><html><head><meta charset=utf8><meta name=viewp
                  'html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}'
                  'img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>\n')
 SKELETON_TAIL = "\n</body></html>\n"
+
+
+def artifact_doc(page, built):
+    """Claude 아티팩트 발행용 문서. 새 아티팩트 도구는 <!DOCTYPE html> 로 시작하는 완전한 문서만 받으므로 문서 골격을 씌우고,
+    본문 맨 앞의 <title> 을 머리로 옮긴다. 첫 줄에 빌드 시각(rrg-build)을 적어 두어, 재발행 예약 작업이 아티팩트의 첫 줄만 읽고
+    어느 빌드가 들어 있는지 알아보게 한다(예약 작업은 발행할 때 <title> 을 아티팩트의 지금 이름으로 바꾼다)."""
+    m = re.match(r"\s*<title>([^<]*)</title>\n?", page)
+    title, body = (m.group(1), page[m.end():]) if m else ("", page)
+    head = "<!DOCTYPE html>" + SKELETON_HEAD[len("<!doctype html>"):]
+    head = head.replace("<style>", f'<meta name="rrg-build" content="{built}"><title>{title}</title><style>', 1)
+    return head + body + SKELETON_TAIL
 
 
 def norm_sym(s):
@@ -790,6 +801,7 @@ def main():
     listlog = load_listing_log(args.listing_log, hold, set(cur["etfs"]))
     src = "·".join(cur.get("source") or ["yahoo"])
     src_ko = {"yahoo": "야후 파이낸스", "stooq": "Stooq"}.get(src, src)
+    built = built_at_kst()
     tokens = {
         "__HOLD__": json.dumps(hold, ensure_ascii=False, separators=(",", ":")),
         "__DATA__": json.dumps(data_slim, ensure_ascii=False, separators=(",", ":")),
@@ -816,7 +828,7 @@ def main():
         "__BRIEF__": brief_html(brief),
         # 장후·장전 가격(마지막 정규장 날짜가 종가 기준일과 같을 때만). 없으면 null
         "__XH__": json.dumps(xh, ensure_ascii=False, separators=(",", ":")),
-        "__BUILT_AT__": built_at_kst(),
+        "__BUILT_AT__": built,
     }
     tmpl = open(args.template, encoding="utf-8").read()
     for k in tokens:
@@ -836,7 +848,7 @@ def main():
     page_site = fill({"__BREAKOUT_URL__": BREAKOUT_PAGE, "__NAV_TARGET__": "_self", "__TV_WIDGET__": "true" if TV_WIDGET_PAGES else "false"})
     page_artifact = fill({"__BREAKOUT_URL__": args.breakout_artifact, "__NAV_TARGET__": "_blank", "__TV_WIDGET__": "false"})
     with open(os.path.join(args.docs, "terminal.artifact.html"), "w", encoding="utf-8") as f:
-        f.write(page_artifact)
+        f.write(artifact_doc(page_artifact, built))
     with open(os.path.join(args.docs, "index.html"), "w", encoding="utf-8") as f:
         f.write(SKELETON_HEAD + page_site + SKELETON_TAIL)
     with open(prev_path, "w", encoding="utf-8") as f:

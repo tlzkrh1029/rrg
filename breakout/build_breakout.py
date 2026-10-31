@@ -8,7 +8,7 @@
 
 출력 (docs/breakout/)
   index.html                       GitHub Pages 용 완전한 문서 (사이트 줄의 매트릭스 링크는 ../#board)
-  breakout.artifact.html           Claude 아티팩트 발행용(문서 골격 없이 <title>부터; 매트릭스 링크는 매트릭스 아티팩트)
+  breakout.artifact.html           Claude 아티팩트 발행용(완전한 문서, 첫 줄에 빌드 시각 rrg-build; 매트릭스 링크는 매트릭스 아티팩트)
   data/breakout-data.json          이번 계산값 사본(판정 포함; 다음 실행에서 비교에 쓴다)
   data/alerts.json                 오늘의 새 돌파·새 이탈·실패·블록 알림(USD 기준)
   data/alerts.txt                  텔레그램용 조건 알림 본문(알릴 것이 없으면 빈 파일)
@@ -27,7 +27,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(ROOT, "terminal"))
-from build_terminal import SKELETON_HEAD, SKELETON_TAIL, built_at_kst, html_escape  # noqa: E402
+from build_terminal import SKELETON_HEAD, SKELETON_TAIL, artifact_doc, built_at_kst, html_escape  # noqa: E402
 
 PAGE_URL = "https://tlzkrh1029.github.io/rrg/breakout/"
 TERMINAL_PAGE = "../"                                                   # Pages: 같은 사이트의 터미널
@@ -233,6 +233,7 @@ def main():
     src = "·".join(cur.get("sources") or ["yahoo"])
     src_ko = {"yahoo": "야후 파이낸스", "stooq": "Stooq", "yahoo·stooq": "야후 파이낸스·Stooq", "stooq·yahoo": "Stooq·야후 파이낸스"}.get(src, src)
     list_ts = listing.get("asof") or ""
+    built = built_at_kst()
     tokens = {
         "__DATA__": json.dumps(page_data, ensure_ascii=False, separators=(",", ":")),
         "__LISTING__": json.dumps(listing, ensure_ascii=False, separators=(",", ":")),
@@ -240,7 +241,7 @@ def main():
         "__HOLD_ASOF__": cur["holdings_asof"],
         "__LIST_ASOF__": list_ts[:10] or "없음", "__LIST_TS__": list_ts.replace("T", " ").replace("Z", " UTC") or "수집 자료 없음",
         "__LIST_B__": str(listing["counts"]["b"]), "__LIST_F__": str(listing["counts"]["p"]), "__LIST_H__": str(listing["counts"]["h"]),
-        "__BUILT_AT__": built_at_kst(),
+        "__BUILT_AT__": built,
         # 장후·장전 가격(마지막 정규장 날짜가 종가 기준일과 같을 때만). 없으면 null
         "__XH__": json.dumps(load_xh(args.xh, cur["asof"]), ensure_ascii=False, separators=(",", ":")),
     }
@@ -261,7 +262,7 @@ def main():
     page_site = fill({"__TERMINAL_URL__": TERMINAL_PAGE, "__NAV_TARGET__": "_self"})
     page_artifact = fill({"__TERMINAL_URL__": args.terminal_artifact, "__NAV_TARGET__": "_blank"})
     with open(os.path.join(args.docs, "breakout.artifact.html"), "w", encoding="utf-8") as f:
-        f.write(page_artifact)
+        f.write(artifact_doc(page_artifact, built))
     with open(os.path.join(args.docs, "index.html"), "w", encoding="utf-8") as f:
         f.write(SKELETON_HEAD + page_site + SKELETON_TAIL)
     with open(prev_path, "w", encoding="utf-8") as f:

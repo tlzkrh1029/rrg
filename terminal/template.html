@@ -759,28 +759,28 @@ body.cover-open{overflow:hidden}
         <div class="cv-head"><h2 id="h-beat" class="num">Cadence</h2><p>The numbers move on this beat.</p></div>
         <div class="cv-facts">
           <article class="cv-card cv-fact">
-            <span class="label">BEAT 1 · TUE–FRI</span>
+            <span class="label">BEAT 1 · MON–FRI, NEW YORK EVENING</span>
             <h3>Fetch, compute, rebuild</h3>
-            <div class="cv-big"><span class="num">08:05</span><span class="unit">KST, on the dot</span></div>
+            <div class="cv-big"><span class="num">20:05</span><span class="unit">ET, after-hours close + 5 min</span></div>
             <div class="vis">
               <div class="cv-week" role="img" aria-label="Tuesday to Friday rebuilds; Saturday is the weekly run">
                 <span><i></i>Mo</span><span><i class="on"></i>Tu</span><span><i class="on"></i>We</span><span><i class="on"></i>Th</span><span><i class="on"></i>Fr</span><span><i class="full"></i><b>Sa</b></span><span><i></i>Su</span>
               </div>
               <div class="cv-keyline"><span><i style="background:#c9cfd9"></i>rebuild</span><span><i style="background:var(--cv-hl)"></i>weekly run</span></div>
             </div>
-            <p>Prices, holdings and listings, then the board; the condition alert goes to Telegram first, around 08:10. A Claude task starts the run on time, and an evening run at 21:25 adds after-hours and pre-market prices. Another Claude task republishes this artifact (09:22, 14:22 and 21:45).</p>
+            <p>Prices with the final after-hours trade, holdings and listings, then the board; the condition alert goes to Telegram first, a few minutes after the start. In Korea this lands on Tuesday to Saturday mornings: 10:05 from November to March, 09:05 from March to November, because every schedule follows New York time. An evening run at 21:25 KST adds pre-market prices, and another Claude task republishes this artifact (20:25 and 23:25 ET, 21:45 KST).</p>
           </article>
           <article class="cv-card cv-fact">
             <span class="label">BEAT 2 · SATURDAY</span>
             <h3>Weekly brief</h3>
-            <div class="cv-big"><span class="num">07:05</span><span class="unit">KST to Telegram</span></div>
+            <div class="cv-big"><span class="num">20:05</span><span class="unit">ET Friday, to Telegram</span></div>
             <div class="vis">
               <div class="cv-week" role="img" aria-label="Saturday only">
                 <span><i></i>Mo</span><span><i></i>Tu</span><span><i></i>We</span><span><i></i>Th</span><span><i></i>Fr</span><span><i class="full"></i><b>Sa</b></span><span><i></i>Su</span>
               </div>
               <div class="cv-keyline"><span><i style="background:var(--cv-hl)"></i>weekly brief to Telegram</span></div>
             </div>
-            <p>Friday's close, read once: shift leaders, both RRG tiers, live signals. The artifact follows the same way as on weekdays, once the build has landed.</p>
+            <p>Friday's close and after-hours, read once: shift leaders, both RRG tiers, live signals. In Korea it arrives on Saturday morning (10:05 or 09:05). The artifact follows the same way as on weekdays, once the build has landed.</p>
           </article>
           <article class="cv-card cv-fact">
             <span class="label">BEAT 3 · ON CHANGE</span>
@@ -934,7 +934,7 @@ body.cover-open{overflow:hidden}
     <section class="panel">
       <header class="ph"><span class="pt">Weekly Brief<small>텔레그램으로 보낸 주간 브리핑과 같은 본문</small></span></header>
       <div class="pb">
-        <p class="meta">GitHub Actions가 화~토 아침(평일 08:05 KST, 토요일 07:05 KST)에 직전 종가로 계산해 생성한 본문입니다. 토요일 본문은 텔레그램 봇과 Claude 푸시 알림으로도 전달됩니다. 평일 저녁 21:25 KST 에는 장후·장전 가격만 더해 다시 만듭니다. 이 아티팩트는 Claude 예약 작업이 화~토 09:22 KST(14:22에 다시 확인)와 월~금 21:45 KST 에 main 의 빌드를 확인한 뒤 같은 데이터로 다시 발행하므로 Pages와 같은 빌드를 보여 줍니다. 빌드 시각 <b>__BUILT_AT__</b>.</p>
+        <p class="meta">GitHub Actions가 미국 장후 거래가 끝나고 5분 뒤(월~금 20:05 ET, 한국 시각 화~토 아침 · 겨울 10:05 · 여름 09:05)에 그날 종가와 장후 마지막 가격으로 계산해 생성한 본문입니다. 한국 시각으로 토요일 아침의 본문은 텔레그램 봇과 Claude 푸시 알림으로도 전달됩니다. 평일 저녁 21:25 KST 에는 장전 가격을 더해 다시 만듭니다. 이 아티팩트는 Claude 예약 작업이 아침 빌드 뒤(20:25 ET, 23:25 ET 에 다시 확인)와 저녁 실행 뒤(21:45 KST)에 main 의 빌드를 확인한 뒤 같은 데이터로 다시 발행하므로 Pages와 같은 빌드를 보여 줍니다. 빌드 시각 <b>__BUILT_AT__</b>.</p>
         <pre id="briefText">__BRIEF__</pre>
       </div>
     </section>
