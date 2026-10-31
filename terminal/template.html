@@ -561,6 +561,99 @@ table.dr tr.kr td{padding-top:0;padding-bottom:7px}
 table.dr tr.kr .kc-t{font-size:11.5px}
 table.dr tr.kr .kc-ev{margin-top:1px}
 :is(.sd,.eb) .big .em{stroke:var(--amber);stroke-width:1;stroke-dasharray:1 2.5} :is(.sd,.eb) .big text.emt{fill:var(--amber);font-size:9px;font-weight:700}
+/* ---- 2026-11 시안: 시안성 정리 ---- */
+/* 시간외 줄: '장후'·'장전' 글자는 보라·민트, 숫자는 오르내림 색(색 규약을 따름) */
+.mxh .on,.h td.sy small.xh .on{color:var(--hot)} .mxh .dn,.h td.sy small.xh .dn{color:var(--cold)}
+/* 매트릭스 '전환' 칸: 숫자만, 흰색 */
+.m thead th.c-sh{cursor:pointer;white-space:nowrap}
+.m thead th.c-sh[aria-pressed="true"]{color:var(--amber)}
+.m thead th.c-sh[aria-pressed="true"] .arr{opacity:1;border-top:5px solid currentColor}
+.m td.shs{text-align:right;color:#fff;font-weight:700;font-size:11.5px;padding:0 10px 0 6px;white-space:nowrap}
+/* 넓은 화면: Holdings 의 백분위 띠와 RRG 줄은 매트릭스 행과 같은 정보라 숨긴다(좁은 화면의 Holdings 창에서는 보인다) */
+@media (min-width:1280px){#hbody .hctx{display:none}}
+/* 기여도: 그 기간에 실적을 낸 종목이 있으면 티커 칸을 넓혀 티커 오른쪽에 '실적' 표시 */
+.cb.ew .cr{grid-template-columns:116px minmax(0,1fr) 44px 52px}
+.cb .cr .tk .tag{margin:0 0 0 5px}
+/* 왜 움직였나: 문장마다 줄을 바꾸고 두 묶음 사이를 띄운다 */
+.ai .sumg{display:grid;gap:3px}
+.ai .sumg + .sumg{margin-top:9px}
+/* 주별 블록의 머리 줄: 회색 바탕 */
+.wkh{background:var(--band-2);padding:4px 7px;flex-wrap:wrap;row-gap:2px}   /* 칸이 좁으면(종목 모드) 오른쪽 숫자를 다음 줄로 내린다 */
+.wk{border-top:0;padding-top:0;margin-top:8px}
+.wk.f{margin-top:0}
+/* '이 주의 공시 및 실적' 제목 */
+.fhd{font-size:10.5px;color:var(--amber);font-weight:700;letter-spacing:.04em;margin-top:3px}
+/* 기사 줄: 티커는 굵은 흰색, 제목은 회색 */
+:root{--nt:#b4b4b4}
+ul.hl .tk{color:#fff}
+ul.hl a{color:var(--nt)}
+ul.hl a:hover{color:#fff}
+/* 펼친 목록 맨 아래의 접기 단추 */
+.lessb{justify-self:start;font-size:10.5px;color:var(--link);margin-top:2px}
+.fchips .lessb{margin-top:0}
+/* 주간 브리핑 탭: 왼쪽에 Changes(오늘) · This Week · 텔레그램 글, 오른쪽에 Drivers */
+.brief .bcol{display:grid;gap:10px;align-content:start;min-width:0}
+.chg .cl .h2{display:flex;flex-wrap:wrap;gap:4px 7px;align-items:center;font-size:10px;color:var(--muted)}
+.chg .cl .h2 .ph{font-size:9.5px;letter-spacing:.06em;font-weight:700;opacity:.7}
+.chg .pcs.was,.wkv .pcs.was{opacity:.5}
+.wkv .pb{display:grid;gap:7px;padding:10px 12px 12px}
+.wkv .wlab{color:var(--amber);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:10px}
+.wkv .wlab span{color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;margin-left:6px}
+.wkv .none{font-size:11.5px;color:var(--muted);margin:0}
+.wkv .mu{color:var(--muted)}
+.wkv .pcs{display:inline-flex;gap:1px}
+.wkv .pcs i{display:inline-flex;align-items:center;justify-content:center;width:23px;height:15px;font-size:10px;font-weight:700;font-style:normal;background:var(--neutral);color:var(--ink-2)}
+.wv-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.wv-tile{background:var(--band);border:1px solid var(--line);padding:8px 10px;display:grid;gap:2px}
+.wv-tile b{font-size:22px;color:#fff;line-height:1.1}
+.wv-tile span{font-size:10.5px;color:var(--muted)}
+.wv-top{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px}
+.wv-card{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:5px 8px;align-items:center;text-align:left;background:var(--band);border:1px solid var(--line);padding:8px 10px}
+.wv-card:hover,.wv-chip:hover,.wv-sg:hover{border-color:var(--amber-dim)}
+.wv-card .rk{color:var(--amber);font-weight:700;font-size:16px}
+.wv-card .hd{display:flex;gap:6px;align-items:baseline;min-width:0}
+.wv-card .hd b{color:#fff;font-size:13px}
+.wv-card .ko{color:var(--ink-2);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wv-card .nw,.wv-sg i{font-size:9px;font-style:normal;color:var(--amber);border:1px solid var(--amber);padding:0 3px;line-height:1.3}
+.wv-card .sc{color:#fff;font-weight:700;font-size:16px;text-align:right;display:grid;justify-items:end;line-height:1.2}
+.wv-card .sc small{font-size:10px;color:var(--muted);font-weight:400}
+.wv-card .row{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:10.5px}
+.wv-card .row .lab{color:var(--muted);width:40px}
+.wv-card .ph{font-size:10px;letter-spacing:.06em;font-weight:700}
+.wv-card .vs{color:var(--muted)}
+.wv-quad{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.wv-q{border:1px solid var(--line);background:var(--band);padding:6px 8px;display:grid;gap:5px;min-height:58px;align-content:start}
+.wv-q .qn{font-size:10px;font-weight:700;letter-spacing:.08em}
+.wkv .qc{display:flex;flex-wrap:wrap;gap:4px}
+.wv-chip{display:inline-flex;gap:5px;align-items:baseline;border:1px solid var(--line-2);background:var(--bg);padding:2px 6px;font-size:11px;color:var(--ink-2)}
+.wv-chip b{color:#fff}
+.wv-chip i{font-style:normal;color:var(--amber);font-size:10px}
+.wv-chip.b-Leading{border-left:2px solid var(--lead)} .wv-chip.b-Weakening{border-left:2px solid var(--weak)} .wv-chip.b-Lagging{border-left:2px solid var(--lag)} .wv-chip.b-Improving{border-left:2px solid var(--impr)}
+.wv-chip span[class^="ph-"]{font-size:9.5px;letter-spacing:.06em;font-weight:700}
+.wv-stys{font-size:11px;color:var(--ink-2)} .wv-stys b{color:#fff} .wv-stys i{font-style:normal;color:var(--amber)}
+.wv-t2s,.wv-sgs,.wv-hold{display:grid;gap:4px}
+.wv-t2{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px;align-items:center;font-size:11px}
+.wv-t2 .pn{color:var(--ink-2)} .wv-t2 .pn b{color:#fff}
+.wv-sgr{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px;align-items:start;font-size:11px}
+.wv-sgr .gl{color:var(--ink-2);padding-top:2px} .wv-sgr .gl i{font-style:normal;color:var(--amber);font-weight:700;margin-right:6px}
+.wv-sg{display:inline-flex;gap:4px;align-items:baseline;border:1px solid var(--line-2);padding:1px 6px;font-size:11px;color:var(--ink-2)}
+.wv-sg b{color:#fff} .wv-sg.hot span{color:var(--hot)} .wv-sg.cold span{color:var(--cold)}
+.wv-sg.nw{border-color:var(--amber-dim)}
+.wv-hr{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:center;font-size:11px}
+.wv-hr .in,.wv-hr .out{display:flex;flex-wrap:wrap;gap:3px 9px}
+.wv-hr .in{color:#fff} .wv-hr .out{color:var(--muted)}
+.btxt summary{cursor:pointer;color:var(--link);font-size:11.5px;margin-bottom:6px}
+/* 넓은 화면: 변화 카드를 여러 줄로 늘어놓아 세로 길이를 줄인다 */
+.brief .chg .cbody,.wv-chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:6px 10px;align-items:start}
+.wv-chg .cl{border-color:var(--line)}
+/* 국면 표시(span.ph)가 패널 머리(.ph) 규칙을 물려받아 30px 상자가 되던 것을 작은 표로 줄인다 */
+.chg .cl .ph,.wv-card .ph{display:inline-block;min-height:0;padding:1px 6px;border:0;background:var(--band-2);line-height:1.4}
+/* 국면 변화 줄(span.dl.rrg)도 RRG 탭(.pane.rrg)의 위아래 여백을 물려받던 것을 없앤다 */
+.chg .cl .dl{padding:0}
+/* 주간 브리핑 탭의 패널 제목 옆 설명은 좁은 화면에서 줄을 바꾼다 */
+.brief .ph .pt{white-space:normal}
+.wv-hold{max-width:760px}
+@media (max-width:640px){.wv-t2,.wv-sgr{grid-template-columns:minmax(0,1fr)}.wv-hr{grid-template-columns:64px minmax(0,1fr)}.wv-hr .out{grid-column:2}}
 @media (min-width:1860px){
   .term{max-width:2200px}
   #pane1 .grid{grid-template-columns:minmax(0,1fr) 372px 372px}
@@ -866,6 +959,7 @@ body.cover-open{overflow:hidden}
               <tr class="grp2">
                 <th class="c-etf" rowspan="2" scope="col">ETF</th>
                 <th colspan="5" scope="colgroup">SPY 대비 상대수익률 백분위 (0~100)</th>
+                <th class="c-sh" rowspan="2" scope="col" data-sort="shift" title="전환 점수 = (1W 백분위 + 1M 백분위) ÷ 2 − 12M 백분위(12M 이 없으면 6M). 1년 순위보다 최근 순위가 얼마나 높은지를 나타냅니다. 누르면 전환순으로 정렬합니다.">전환<span class="arr"></span></th>
                 <th colspan="2" scope="colgroup" title="흰 실선은 ETF 가격을 벤치마크 가격으로 나눈 비율, 주황 점선은 그 이동평균입니다. 끝점 색은 지금 이동평균 위인지 아래인지를 나타내고, 선 전체에 색이 들어가면 최근 5주 안에 돌파 또는 이탈이 있었다는 뜻입니다.">가격 비율 12주 · 점선 = 이동평균</th>
                 <th rowspan="2" scope="col" style="text-align:left" title="섹터와 스타일(MAGS)은 SPY 대비, 산업·테마는 상위 섹터 ETF 대비 국면입니다. 괄호 안은 SPY 대비 국면입니다.">RRG 국면 · 벤치마크</th>
                 <th rowspan="2" scope="col" style="text-align:left">신호</th>
@@ -901,11 +995,6 @@ body.cover-open{overflow:hidden}
           <div class="hbody" id="hbody" aria-live="polite"></div>
         </section>
 
-        <section class="panel chg" aria-labelledby="chgTitle">
-          <header class="ph"><span class="pt" id="chgTitle">Changes<small id="chgSub"></small></span></header>
-          <div class="cbody" id="chgBody"></div>
-        </section>
-
         <section class="panel key" aria-label="읽는 법 범례">
           <header class="ph"><span class="pt">Key<small>행 형태 읽는 법</small></span></header>
           <div class="kbody">
@@ -931,13 +1020,23 @@ body.cover-open{overflow:hidden}
   </div>
 
   <div class="pane brief" id="pane4" role="tabpanel" aria-labelledby="tab4" hidden>
+    <div class="bcol">
+    <section class="panel chg" aria-labelledby="chgTitle">
+      <header class="ph"><span class="pt" id="chgTitle">Changes<small id="chgSub"></small></span></header>
+      <div class="cbody" id="chgBody"></div>
+    </section>
+    <section class="panel wkv" aria-labelledby="wkvTitle">
+      <header class="ph"><span class="pt" id="wkvTitle">This Week<small id="wkvSub"></small></span></header>
+      <div class="pb" id="wkvBody"></div>
+    </section>
     <section class="panel">
-      <header class="ph"><span class="pt">Weekly Brief<small>텔레그램으로 보낸 주간 브리핑과 같은 본문</small></span></header>
+      <header class="ph"><span class="pt">Weekly Brief<small>텔레그램으로 보내는 글</small></span></header>
       <div class="pb">
         <p class="meta">GitHub Actions가 미국 장후 거래가 끝나고 5분 뒤(월~금 20:05 ET, 한국 시각 화~토 아침 · 겨울 10:05 · 여름 09:05)에 그날 종가와 장후 마지막 가격으로 계산해 생성한 본문입니다. 한국 시각으로 토요일 아침의 본문은 텔레그램 봇과 Claude 푸시 알림으로도 전달됩니다. 평일 05:05 ET(장전 거래가 시작하고 1시간 뒤, 한국 시각 겨울 19:05 · 여름 18:05)에는 장전 가격을 더해 다시 만듭니다. 이 아티팩트는 Claude 예약 작업이 아침 빌드 뒤(20:25 ET, 23:25 ET 에 다시 확인)와 저녁 실행 뒤(05:25 ET)에 main 의 빌드를 확인한 뒤 같은 데이터로 다시 발행하므로 Pages와 같은 빌드를 보여 줍니다. 빌드 시각 <b>__BUILT_AT__</b>.</p>
-        <pre id="briefText">__BRIEF__</pre>
+        <details class="btxt"><summary>텔레그램으로 보내는 주간 브리핑 글 그대로 보기</summary><pre id="briefText">__BRIEF__</pre></details>
       </div>
     </section>
+    </div>
     <section class="panel drv" aria-labelledby="drvTitle">
       <header class="ph"><span class="pt" id="drvTitle">Drivers<small id="drvSub">주도 종목</small></span><span class="pctl"><span class="grp" role="group" aria-label="기여 기준"><button type="button" data-drb="usd">USD</button><button type="button" data-drb="spy">SPY 대비</button></span><span class="grp" role="group" aria-label="기간"><button type="button" data-drp="1W" title="주간: 직전 주 마지막 거래일 종가부터">1W</button><button type="button" data-drp="1M" title="월간: 직전 달 마지막 거래일 종가부터">1M</button></span></span></header>
       <div class="pb" id="drvBody"></div>
@@ -1153,6 +1252,9 @@ ETFS.forEach(e => {
 const LIST_ASOF = '__LIST_ASOF__';
 /* 직전 빌드 대비 변화 (build_terminal.py 가 채움): {asof, prev_asof, alerts:[{etf,type,text}]} */
 const ALERTS = __ALERTS__;
+/* 주간 브리핑 탭의 '이번 주'(build_terminal.py weekly_view): {base 지난주 마지막 거래일, asof, alerts(Changes 와 같은 형식),
+   prev: {ETF: {pct, ph 벤치마크 대비 국면, phs SPY 대비, sig, sc 전환 점수}}, hold: {ETF: {in, out}}, holdBase}. 없으면 null */
+const WEEKLY = __WEEKLY__;
 const ELST = __ELST__;
 ETFS.forEach(e => { e.lst = ELST[e.t] || ''; });
 const LST = __LST__;
@@ -1218,6 +1320,10 @@ const PRICE_WEEKS_OF = e => (DATA[e.t] && DATA[e.t].weeks) || PRICE_WEEKS;
 
 const state = { cat: 'all', mode: 'col', col: 1, dir: -1, search: null };
 const shiftScore = e => (e.pct[0] + e.pct[1]) / 2 - (e.pct[4] == null ? e.pct[3] : e.pct[4]);
+/* 전환 점수를 칸에 적을 때: 값을 낼 수 없으면 null. 부호를 붙인 정수(흰색)로 적는다 */
+const shiftVal = e => { const p = e.pct || []; return p[0] == null || p[1] == null || (p[4] == null && p[3] == null) ? null : shiftScore(e); };
+const scTxt = v => v == null || !isFinite(v) ? '—' : (Math.round(v) > 0 ? '+' : Math.round(v) < 0 ? '−' : '') + Math.abs(Math.round(v));
+const shTxt = e => scTxt(shiftVal(e));
 let current = [], selT = null;
 
 /* ---- 종목 검색: 상위 10개 구성종목을 티커·한국 거래소 코드·한글 별칭·영문 이름으로 찾는다. ETF 는 한글 이름으로도 찾는다 ---- */
@@ -1293,6 +1399,7 @@ function render() {
     return `<tr data-t="${e.t}"${e.t === selT ? ' class="sel"' : ''}>
       <td class="c-etf"><button type="button" class="etf" data-t="${e.t}" aria-label="${e.t} ${e.ko} 구성종목 보기"><span class="l1"><span class="tk">${e.t}</span><span class="ex">US</span>${dots(e.lst)}<span class="cat">${CATCODE(e)}</span></span>${ko}${mkickHTML(e.t)}${mxhHTML(e.t)}</button></td>
       ${cells}
+      <td class="shs" title="전환 점수 = (1W + 1M) ÷ 2 − 12M">${shTxt(e)}</td>
       <td class="sp" title="QQQ 대비 가격 비율 (주봉 12주)${chT(chQ)}">${spark(e.Q)}</td>
       <td class="sp" title="SPY 대비 가격 비율 (주봉 12주)${chT(chS)}">${spark(e.S)}</td>
       <td class="rr">${rr}</td>
@@ -1422,12 +1529,12 @@ function xhDl(sym, bench, lab) {
 function xhBadge(sym) {
   const x = xhChg(sym, null); if (!x) return '';
   const L = xhLast(x); if (Math.abs(L.v) < XH_BADGE) return '';
-  return `<small class="xh ${L.k}" title="${L.lab} ${L.at} ET · ${cbMd(XH.date)} 종가 대비">${L.lab} ${sPct(L.v)}%</small>`;
+  return `<small class="xh" title="${L.lab} ${L.at} ET · ${cbMd(XH.date)} 종가 대비"><span class="${L.k}">${L.lab}</span> <span class="${L.v >= 0 ? 'on' : 'dn'}">${sPct(L.v)}%</span></small>`;
 }
 function mxhHTML(t) {
   const x = xhChg(t, null); if (!x) return '';
   const L = xhLast(x); if (Math.abs(L.v) < XH_MX) return '';
-  return `<span class="mxh ${L.k}" title="${L.lab} ${L.at} ET · ${cbMd(XH.date)} 종가 대비">${L.lab} ${sPct(L.v)}%</span>`;
+  return `<span class="mxh" title="${L.lab} ${L.at} ET · ${cbMd(XH.date)} 종가 대비"><span class="${L.k}">${L.lab}</span> <span class="${L.v >= 0 ? 'on' : 'dn'}">${sPct(L.v)}%</span></span>`;
 }
 /* 밤사이에 나온 실적: 마지막 정규장 날짜의 장 마감 후, 또는 그다음 거래일의 장 시작 전 */
 function xhEarnTxt(k) {
@@ -1558,9 +1665,8 @@ function sChart(k, mode) {
   return chartSVG({ c: s.c, h52: s.h52, ma: sMA(k, mode), dates: STOCKS.dates, r: sJ(k, mode, '20'), earn: earnMarks(k, STOCKS.dates), xh: xhChg(k, mode === 'usd' ? null : mode.toUpperCase()), cid: 'sd_' + k.replace(/[^A-Za-z0-9]/g, '_') + '_' + mode });
 }
 function maLegendHTML(ma, n, usd) {
-  const fmt = v => usd ? (v >= 1000 ? v.toFixed(0) : v.toFixed(2)) : v.toFixed(4);
   const sw = cls => `<svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" class="${cls}"/></svg>`;
-  const item = (cls, lab, key) => { const v = ma[key][n - 1]; return `<span>${sw(cls)}<b>${lab}</b> ${v == null ? '<i>이력 부족</i>' : fmt(v)}</span>`; };
+  const item = (cls, lab, key) => { const v = ma[key][n - 1]; return `<span>${sw(cls)}<b>${lab}</b>${v == null ? ' <i>이력 부족</i>' : ''}</span>`; };   /* 범례만 두고 현재값은 적지 않는다 */
   return `<div class="lgd">${item('ma50', '50 SMA', 'sma50')}${item('ma89', '89 HMA', 'hma89')}${item('ma144', '144 HMA', 'hma144')}</div>`;
 }
 function sLegend(k, mode) { return maLegendHTML(sMA(k, mode), stockSeries(k, mode).c.length, mode === 'usd'); }
@@ -1648,10 +1754,10 @@ function cbRow(x, scale, p, per) {
   const [s, , , r, c, tz, cur, rl, rf, nofx] = x;
   const sub = [];
   const ev = per ? earnIn(s, per.from, per.to) : null;
-  if (ev) sub.push(`<span class="tag in" title="${TIMING[ev[1]] || ''} 발표 · 반응일 ${ev[3]}">실적 ${cbMd(ev[0])}</span>`);
+  const evTag = ev ? `<span class="tag in" title="${TIMING[ev[1]] || ''} 발표 · 반응일 ${ev[3]}">실적 ${cbMd(ev[0])}</span>` : '';   /* 티커 오른쪽에 붙인다 */
   if (p === '1D' && tz) sub.push('<span class="tag">시차</span>');
   if (cur) sub.push(`${cur} · 현지 ${cbPc(rl)}% · 환율 ${nofx ? '없음' : cbPc(rf) + '%'}`);
-  return `<div class="cr"><span class="tk" title="${cbEsc(s)}">${cbEsc(s)}</span>${cbBar(c, scale)}<span class="v ${cbSg(c)}">${cbPp(c)}</span><span class="r">${cbPc(r)}%</span>${sub.length ? `<span class="sub">${sub.join('')}</span>` : ''}</div>`;
+  return `<div class="cr"><span class="tk" title="${cbEsc(s)}">${cbEsc(s)}${evTag}</span>${cbBar(c, scale)}<span class="v ${cbSg(c)}">${cbPp(c)}</span><span class="r">${cbPc(r)}%</span>${sub.length ? `<span class="sub">${sub.join('')}</span>` : ''}</div>`;
 }
 function cbRest(A, scale, F) {
   const [w, c, r] = A.rest;
@@ -1738,7 +1844,8 @@ function contribHTML(t) {
   const met = cbMetrics(Bp ? [{ n: t, A }, { n: bt, A: Bp }] : [{ n: t, A }]);
   const heat = `<div class="wlab">최근 8주 · 주간 기여 %p</div>${cbHeat(t, F, Bp ? bt : null, Bp ? B : null)}<p class="note">칸은 종목의 주간 기여(%p)이고, 아래 ${Bp ? '세 줄은' : '줄은'} 주간 수익률(%)입니다. 목록은 지금 구성 기준이며, * 표시 주는 진행 중입니다.</p>`;
   const note = `<p class="note">${Bp ? span + ' · ' : ''}비중은 기간 시작 시점으로 보정했습니다. 구성종목은 ${cbMd(F.snap)} 스냅샷(기준 종가 ${cbMd(F.asof)})${useStart ? `이고, 목록은 ${cbMd(A0.start.snap)} 구성입니다` : '입니다'}.</p>`;
-  return `<section class="cb" aria-label="기여도"><div class="ttlrow"><span>${bt ? `기여도 · ${bt} 대비` : '기여도 · USD'}</span><span class="tog" role="group" aria-label="기간">${ptog}</span></div>`
+  const ew = sides.some(x => x.includes('class="tag in"'));   /* 실적 표시가 있으면 티커 칸을 넓힌다 */
+  return `<section class="cb${ew ? ' ew' : ''}" aria-label="기여도"><div class="ttlrow"><span>${bt ? `기여도 · ${bt} 대비` : '기여도 · USD'}</span><span class="tog" role="group" aria-label="기간">${ptog}</span></div>`
     + `<div class="sum">${sum}</div>${cbWarn(F, A0, A, info, useStart, p)}${sides.join('')}${met}${heat}${note}</section>`;
 }
 
@@ -1892,6 +1999,8 @@ const kst = ts => { const d = new Date(ts * 1000 + 9 * 3600e3); return `${d.getU
 const kstIso = iso => { const t = Date.parse(iso || ''); return isNaN(t) ? '' : kst(t / 1000); };
 const safeUrl = u => /^https?:\/\//i.test(u || '') ? cbEsc(u) : '#';
 const tvBase = tv => `https://www.tradingview.com/symbols/${encodeURIComponent(String(tv).replace(':', '-'))}/news/`;
+/* TradingView 종목 페이지: '거래소-티커' 형식(예 NASDAQ-GOOG). page 는 documents(공시·실적 자료) 또는 news */
+const tvPage = (tv, page) => `https://www.tradingview.com/symbols/${encodeURIComponent(String(tv).replace(':', '-'))}/${page}/`;
 const clSrcs = src => (src || []).length ? `<div class="srcs">${src.slice(0, 4).map((x, i) => `<a href="${safeUrl(x.u)}" target="_blank" rel="noopener">${cbEsc(x.t || '근거 ' + (i + 1))} ↗</a>`).join('')}</div>` : '';
 /* 기간 (from, to] 안에 주가가 반응한 실적 발표 */
 function earnIn(sym, from, to) { const s = nS(sym); return s && s.e ? (s.e.find(e => e[3] && from < e[3] && e[3] <= to) || null) : null; }
@@ -1911,8 +2020,8 @@ function earnDl(k) {
     if (s.u) seg.push(`<a href="${safeUrl(s.u)}" target="_blank" rel="noopener">8-K ↗</a>`);
     out.push(`<dt>최근 실적</dt><dd>${seg.map(x => `<span class="nobr">${x}</span>`).join(' · ')}</dd>`);
   }
-  if (s.nx) out.push(`<dt>다음 발표</dt><dd>${cbMd(s.nx[0])}${TIMING[s.nx[1]] ? ' ' + TIMING[s.nx[1]] : ''} <span class="dday">${dday(s.nx[0])}</span></dd>`);
-  else if (e) out.push('<dt>다음 발표</dt><dd><span style="color:var(--muted)">미확인</span></dd>');
+  if (s.nx) out.push(`<dt>다음 실적발표</dt><dd>${cbMd(s.nx[0])}${TIMING[s.nx[1]] ? ' ' + TIMING[s.nx[1]] : ''} <span class="dday">${dday(s.nx[0])}</span></dd>`);
+  else if (e) out.push('<dt>다음 실적발표</dt><dd><span style="color:var(--muted)">미확인</span></dd>');
   return out.join('');
 }
 /* 구성종목 표의 티커 아래: 14일 안 예정이면 '예정', 아니면 100일 안의 최근 발표(기여도 기간 안이면 호박색) */
@@ -1933,12 +2042,21 @@ function etfHeadlines(t) {
   ((HOLD[t] || {}).rows || []).forEach(r => { const s = nS(r[0]); (s && s.h || []).forEach(x => all.push([x[0], x[1], x[2], x[3], String(r[0]).toUpperCase()])); });
   return all.sort((a, b) => b[0] - a[0]);
 }
+/* 데이터 요약: 문장마다 줄을 바꾸고, 1개월 이야기와 이번 주·실적 이야기 사이를 띄운다.
+   sumb(앞 묶음의 문장 수)가 없는 옛 자료는 '이번 주'·'실적을 발표' 문장에서 나눈다 */
+function sumHTML(sum, sumb) {
+  if (!sum.length) return '';
+  let b = sumb != null ? sumb : sum.findIndex(x => /^이번 주|실적을 발표/.test(x));
+  if (b < 0) b = sum.length;
+  const g = a => a.length ? `<div class="sumg">${a.map(x => `<p>${cbEsc(x)}</p>`).join('')}</div>` : '';
+  return g(sum.slice(0, b)) + g(sum.slice(b));
+}
 function summaryBox(t) {
   const E = NEWS && NEWS.etf && NEWS.etf[t], sum = (E && E.sum) || [];
   const C = CLAUDE && CLAUDE.etfs[t];
   if (!sum.length && !C) return '';
   const cl = C ? `<div class="cl"><div class="cll">Claude · 웹 검색으로 찾은 이유</div>${(C.text || []).map(p => `<p>${cbEsc(p)}</p>`).join('')}${clSrcs(C.src)}</div>` : '';
-  return `<section class="ai" aria-label="왜 움직였나"><div class="wlab">왜 움직였나 · 데이터 요약${C ? ' + Claude' : ''}</div>${sum.length ? `<p>${sum.map(cbEsc).join(' ')}</p>` : ''}${cl}<div class="meta"><span>기여도(1개월 · ${cbEsc(PARENT[t] || 'SPY')} 대비, 지금 구성)와 실적 일정으로 만든 문장${C && CLAUDE.at ? ` · Claude ${cbEsc(CLAUDE.at)}` : ''}</span></div></section>`;
+  return `<section class="ai" aria-label="왜 움직였나"><div class="wlab">왜 움직였나 · 데이터 요약${C ? ' + Claude' : ''}</div>${sumHTML(sum, E && E.sumb)}${cl}<div class="meta"><span>기여도(1개월 · ${cbEsc(PARENT[t] || 'SPY')} 대비, 지금 구성)와 실적 일정으로 만든 문장${C && CLAUDE.at ? ` · Claude ${cbEsc(CLAUDE.at)}` : ''}</span></div></section>`;
 }
 function etfEarnHTML(t) {
   const E = NEWS && NEWS.etf && NEWS.etf[t]; if (!E) return '';
@@ -1947,7 +2065,7 @@ function etfEarnHTML(t) {
   const more = nxs.length > 4 ? ` <span class="mu">외 ${nxs.length - 4}</span>` : '';
   const re = (E.re || []).map(x => `${cbEsc(x[0])} ${cbMd(x[1])}`).join(' · ');
   const last = E.last || [];
-  return `<dl class="ern"><dt>다음 발표</dt><dd>${nx ? nx + more : '<span class="mu">35일 안 일정 없음</span>'}</dd><dt>최근 1개월</dt><dd>${re || `상위 10 종목 발표 없음${last.length ? ` <span class="mu">· 마지막 ${last.slice(0, 3).map(x => cbEsc(x[0])).join('·')} ${cbMd(last[0][1])}</span>` : ''}`}</dd></dl>`;
+  return `<dl class="ern"><dt>다음 실적발표</dt><dd>${nx ? nx + more : '<span class="mu">35일 안 일정 없음</span>'}</dd><dt>최근 1개월</dt><dd>${re || `상위 10 종목 발표 없음${last.length ? ` <span class="mu">· 마지막 ${last.slice(0, 3).map(x => cbEsc(x[0])).join('·')} ${cbMd(last[0][1])}</span>` : ''}`}</dd></dl>`;
 }
 function newsFoot(stock, k) {
   const m = (NEWS && NEWS.meta) || {};
@@ -1995,7 +2113,7 @@ function weekBlocksHTML(k, s, t) {
   const noNews = !(s.w || []).length, F = s.f || [];
   const W = noNews ? (stockHasKicks(k, t) ? KICKS.weeks.map(m => [m, 0, [], 0]) : []) : s.w;
   const days = (NEWS && NEWS.meta && NEWS.meta.fil_days) || 90;
-  const tv = s.tv ? ` <a href="${tvBase(s.tv)}?section=latest" target="_blank" rel="noopener">TradingView ↗</a>` : '';
+  const tv = s.tv ? ` <a href="${tvPage(s.tv, 'news')}" target="_blank" rel="noopener">TradingView News ↗</a>` : '';
   const li = x => clusterLi(x);
   const size = cl => cl.reduce((a, x) => a + 1 + (x[4] || 0), 0);
   if (!W.length) {   /* 헤드라인 없이 공시만 있을 때 */
@@ -2023,7 +2141,7 @@ function weekBlocksHTML(k, s, t) {
 function newsStockHTML(k, wide, t) {
   const s = nS(k) || {}, tv = s.tv;
   const us = !tv || /^(NASDAQ|NYSE|AMEX|CBOE|IEX):/.test(tv) || !/:/.test(tv);
-  const links = tv ? `<div class="nlinks"><a href="${tvBase(tv)}?section=key_facts" target="_blank" rel="noopener">Key facts ↗</a><a href="${tvBase(tv)}?section=top_news" target="_blank" rel="noopener">Top news ↗</a><a href="${tvBase(tv)}?section=latest" target="_blank" rel="noopener">Latest ↗</a></div>` : '';
+  const links = tv ? `<div class="nlinks"><a href="${tvPage(tv, 'documents')}" target="_blank" rel="noopener">Filings ↗</a><a href="${tvPage(tv, 'news')}" target="_blank" rel="noopener">News ↗</a></div>` : '';
   const widget = TV_WIDGET && tv ? `<div class="tvw" data-tv="${cbEsc(tv)}"></div>` : '';
   const ern = wide ? earnDl(k) : '';
   let body;
@@ -2031,7 +2149,7 @@ function newsStockHTML(k, wide, t) {
     + ((s.w || []).length ? '' : `<p class="mu" style="margin:0">${us ? '최근 4주 헤드라인이 없습니다.' : '미국 밖 상장 종목이라 헤드라인과 SEC 공시가 없습니다. TradingView 링크로 확인하세요.'}</p>`);
   else if ((s.h || []).length) body = `<div class="wlab">헤드라인 · ${cbEsc(k)} · 최근 7일</div>${hlHTML(s.h.map(x => x.concat([k])), true)}`;
   else body = `<div class="wlab">헤드라인 · ${cbEsc(k)}</div><p class="mu" style="margin:0">${us ? '최근 4주 헤드라인과 공시가 없습니다.' : '미국 밖 상장 종목이라 헤드라인과 SEC 공시가 없습니다. TradingView 링크로 확인하세요.'}</p>`;
-  return (wide ? nightStockHTML(k) : '') + (ern ? `<dl class="ern">${ern}</dl>` : '') + claudeStockBox(k) + widget + links + body + (wide ? newsFoot(true, k) : '');
+  return links + (ern ? `<dl class="ern">${ern}</dl>` : '') + (wide ? nightStockHTML(k) : '') + claudeStockBox(k) + widget + body + (wide ? newsFoot(true, k) : '');
 }
 /* ---- ETF 모드: 최근 4주를 주별로. 주마다 ETF 의 킥 · 영향순 종목 칩(누르면 그 종목의 그 주 기사) · 영향이 큰 세 종목의 킥 ·
    그 주의 공시 칩 · 기사 줄 셋(실적을 낸 종목 먼저, 그다음 영향순) · 종목별 나머지 ---- */
@@ -2078,13 +2196,13 @@ function etfWeekHTML(t, i, start, stocks) {
     if (spread.length) rest.push(`${spread.join('·')} ${josaEun(spread[spread.length - 1])} ${t} ${josaWa(t)} 1%p 넘게 달랐지만 하루에 몰린 날이 없습니다(여러 날에 나뉨).`);
     if (over.length) rest.push(`${over.join('·')} 도 하루에 1%p 넘게 벌어진 날이 있었지만, 영향이 작아 킥은 세 종목까지만 붙였습니다.`);
     if (nWith) rest.push(`${others ? '나머지 ' : ''}${KOR_N[nWith] || nWith} 종목${others ? '은' : '은 모두'} ${t} ${josaWa(t)} 같이 움직였${W.k === 'day' ? `으므로, 그 종목들의 킥은 위 ${t} 킥입니다` : '습니다'}.`);
-    kicks = (lis ? `<div class="kc-lh">킥 <span>영향이 큰 세 종목까지 · 칩 밑줄: 주황 = 자기 킥, 회색 = 이유 미확인·여러 날에 나뉨</span></div><ul class="kc-ls">${lis}</ul>` : '') + (rest.length ? `<p class="kc-rest">${rest.join(' ')}</p>` : '');
+    kicks = (lis ? `<div class="kc-lh">KEY TAKEAWAYS <span>영향이 큰 세 종목까지 · 칩 밑줄: 주황 = 자기 킥, 회색 = 이유 미확인·여러 날에 나뉨</span></div><ul class="kc-ls">${lis}</ul>` : '') + (rest.length ? `<p class="kc-rest">${rest.join(' ')}</p>` : '');
   }
   /* 공시 칩: 그 주에 열 종목이 낸 공시(앞에 티커), 날짜순. 여덟 개가 넘으면 나머지는 접는다 */
   const fl = [];
   order.forEach(x => { const s = nS(x.k); (s && s.f || []).forEach(f => { if (f[0] >= start && f[0] < end) fl.push([f[0], filingChip(f, s, x.k)]); }); });
   fl.sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
-  const fch = fl.length ? `<div class="fchips">${fl.slice(0, 8).map(x => x[1]).join('')}${fl.length > 8 ? `<button type="button" class="more" data-newsmore="1">공시 ${fl.length - 8}건 더 ▸</button><span class="fmore" hidden>${fl.slice(8).map(x => x[1]).join('')}</span>` : ''}</div>` : '';
+  const fch = fl.length ? `<div class="fhd">이 주의 공시 및 실적</div><div class="fchips">${fl.slice(0, 8).map(x => x[1]).join('')}${fl.length > 8 ? `<button type="button" class="more" data-newsmore="1">공시 ${fl.length - 8}건 더 ▸</button><span class="fmore" hidden>${fl.slice(8).map(x => x[1]).join('')}</span>` : ''}</div>` : '';
   /* 기사 줄: 그 주에 실적을 낸 종목 먼저, 그다음 영향순으로 세 종목에서 한 줄씩(그 종목의 첫 묶음) */
   const earnK = new Set(order.filter(x => { const s = nS(x.k); return s && (s.e || []).some(e => e[0] >= start && e[0] < end); }).map(x => x.k));
   const hasCl = order.filter(x => { const nw = nWeek(x.k, start); return nw && (nw[2] || []).length; });
@@ -2110,6 +2228,22 @@ function tkxHTML(k, start, t) {
   const r = v ? v[0] : weekPx(k, start), cl = (nw && nw[2]) || [];
   return `<div class="tkx"><div class="tkxh"><b>${cbEsc(k)}</b> ${kPv(r)} · 이 주 기사 ${nw ? nw[1] : 0}건${nw && nw[3] ? ' 이상' : ''}<button type="button" class="x" data-tkx="1">닫기 ✕</button></div>${cl.length ? `<ul class="hl cl one">${cl.map(c => clusterLi(c)).join('')}</ul>` : `<p class="note2">${nw && nw[1] ? '제목에 회사 이름이 든 기사가 없습니다.' : '이 주에 받은 기사가 없습니다.'}</p>`}</div>`;
 }
+/* 펼치기 단추: 누르면 펼치고 그 자리 단추가 '접기 ▴'로 바뀐다. 펼친 목록 맨 아래에도 '접기 ▴'를 두고,
+   아래쪽 단추로 접으면 위 단추가 보이도록 화면을 옮긴다 */
+function onMoreLess(ev) {
+  const less = ev.target.closest('[data-newsless]');
+  const btn = less ? (less.parentElement && less.parentElement.previousElementSibling) : ev.target.closest('[data-newsmore]');
+  if (!btn || !btn.matches('[data-newsmore]')) return false;
+  const box = btn.nextElementSibling; if (!box) return true;
+  const open = box.hidden;
+  if (!btn.dataset.lab) btn.dataset.lab = btn.innerHTML;
+  box.hidden = !open;
+  btn.innerHTML = open ? '접기 ▴' : btn.dataset.lab;
+  btn.setAttribute('aria-expanded', String(open));
+  if (open && !box.querySelector(':scope > [data-newsless]')) box.insertAdjacentHTML('beforeend', '<button type="button" class="lessb" data-newsless="1">접기 ▴</button>');
+  if (!open && less && btn.scrollIntoView) btn.scrollIntoView({ block: 'nearest' });
+  return true;
+}
 function onWeekChip(ev) {
   const x = ev.target.closest('[data-tkx]'), b = ev.target.closest('[data-tkb]'); if (!x && !b) return false;
   const sec = (x || b).closest('section.wk'); if (!sec) return true;
@@ -2124,7 +2258,7 @@ function etfNextHTML(t) {
   const fin = foldedIn(t), nxs = (E.nx || []).filter(x => !fin.has(String(x[0]).toUpperCase()));
   const nx = nxs.slice(0, 4).map(x => `<b>${cbEsc(x[0])}</b> ${cbMd(x[1])}<span class="dday">${dday(x[1])}</span>`).join(' · ');
   const more = nxs.length > 4 ? ` <span class="mu">외 ${nxs.length - 4}</span>` : '';
-  return `<dl class="ern"><dt>다음 발표</dt><dd>${nx ? nx + more : '<span class="mu">35일 안 일정 없음</span>'}</dd></dl>`;
+  return `<dl class="ern"><dt>다음 실적발표</dt><dd>${nx ? nx + more : '<span class="mu">35일 안 일정 없음</span>'}</dd></dl>`;
 }
 /* 4주보다 앞선 90일 안의 실적 공시(8-K Item 2.02), 최근 것부터 */
 function etfOlderHTML(t, from) {
@@ -2152,7 +2286,7 @@ function etfWeeksHTML(t, phone) {
   return lab + body + (weeks.length ? etfOlderHTML(t, weeks[weeks.length - 1]) : '') + etfNewsFoot(t);
 }
 function newsEtfHTML(t) {
-  if (etfHasWeeks(t)) return nightEtfHTML(t) + summaryBox(t) + etfNextHTML(t) + etfWeeksHTML(t, false);
+  if (etfHasWeeks(t)) return etfNextHTML(t) + nightEtfHTML(t) + summaryBox(t) + etfWeeksHTML(t, false);
   /* 주별 자료가 없는 옛 빌드: 최근 7일 헤드라인 */
   const all = etfHeadlines(t), shown = all.slice(0, 8);
   return summaryBox(t)
@@ -2167,8 +2301,8 @@ function hnewsHTML(t) {
   if (!NEWS) return '';
   if (etfHasWeeks(t)) {
     const weeks = newsWeeks(), N = newsStocks(t).reduce((a, x) => a + weeks.reduce((b, w) => { const nw = nWeek(x.k, w); return b + (nw ? nw[1] : 0); }, 0), 0);
-    const body = hnewsOpen ? `<div class="hnews">${etfNextHTML(t)}${etfWeeksHTML(t, true)}</div>` : '';
-    return nightEtfHTML(t) + summaryBox(t) + `<button type="button" class="hlrow" data-hnews="1" aria-expanded="${hnewsOpen}"><span>뉴스 · 최근 ${weeks.length}주 · ${KICKS ? `${cbEsc(t)} 의 킥과 상위 10 종목` : '상위 10 종목'}</span><span class="mu">${hnewsOpen ? '접기 ▴' : `기사 ${N}건 · 펼치기 ▸`}</span></button>${body}`;
+    const body = hnewsOpen ? `<div class="hnews">${etfWeeksHTML(t, true)}</div>` : '';
+    return etfNextHTML(t) + nightEtfHTML(t) + summaryBox(t) + `<button type="button" class="hlrow" data-hnews="1" aria-expanded="${hnewsOpen}"><span>뉴스 · 최근 ${weeks.length}주 · ${KICKS ? `${cbEsc(t)} 의 킥과 상위 10 종목` : '상위 10 종목'}</span><span class="mu">${hnewsOpen ? '접기 ▴' : `기사 ${N}건 · 펼치기 ▸`}</span></button>${body}`;
   }
   const all = etfHeadlines(t);
   const body = hnewsOpen ? `<div class="hnews"><div class="wlab">실적 · 상위 10 종목</div>${etfEarnHTML(t)}${all.length ? hlHTML(all.slice(0, 10)) : '<p class="mu" style="margin:0">헤드라인 자료가 없습니다.</p>'}${all.length > 10 ? `<button type="button" class="more" data-newsmore="1">더 보기 · ${all.length - 10}건</button><div hidden>${hlHTML(all.slice(10))}</div>` : ''}${newsFoot(false)}</div>` : '';
@@ -2254,14 +2388,14 @@ function renderHold(t) {
       <div class="row"><span>RRG vs <b style="color:var(--amber)">${e.parent || 'SPY'}</b> ${e.rrg ? `<b class="ph-${e.rrg}">${e.rrg.toUpperCase()}</b>${e.next ? ` <span class="nx">→ ${e.next.toUpperCase()}</span>` : ''}${e.parent ? ` <span class="nx">· vs SPY <span class="ph-${e.rrgVsSpy}">${e.rrgVsSpy.toUpperCase()}</span></span>` : ''}` : '<span style="color:var(--muted)">N/A · 주봉 39주 필요</span>'}</span><span>전환 점수 <b style="color:#fff">${shiftScore(e).toFixed(0)}</b></span></div>
     </div>
     ${etfChartHTML(e.t)}
+    ${contribHTML(e.t)}
     ${newsWide() ? '' : hnewsHTML(e.t)}
     <div class="h-wrap"><table class="h"><thead><tr><th>#</th><th>티커</th><th>종목명</th><th class="r">비중</th><th class="r"><abbr title="${h.prev} 스냅샷 대비 비중 변화(%p). NEW는 그때 상위 10개에 없던 종목">변동 %p</abbr></th></tr></thead><tbody>${rows}</tbody></table></div>${hknoteHTML(e.t)}
     <p class="hfn">${note ? note + ' ' : ''}${h.prevMissing
       ? (h.sourceChanged
         ? `${h.prev} 스냅샷과는 구성종목 출처가 달라(스왑·국채 행을 따로 적은 표 ↔ 스왑 노출을 합산한 표) 변동 %p와 진입·이탈을 비교하지 않았습니다. 다음 스냅샷부터 표시됩니다.`
         : `${h.prev} 스냅샷에는 이 ETF가 없어 변동 %p와 진입·이탈을 계산하지 않았습니다. 다음 스냅샷부터 표시됩니다.`)
-      : `${h.entered.length || h.left.length ? `상위 10개 진입: <b style="color:var(--ink-2)">${h.entered.join(', ') || '없음'}</b> · 이탈: <b style="color:var(--ink-2)">${h.left.join(', ') || '없음'}</b> (${h.prev} → ${h.asof}). ` : `${h.prev} 이후 상위 10개 구성에 변화가 없습니다. `}변동 %p는 두 스냅샷의 비중 차이입니다.`}</p>
-    ${contribHTML(e.t)}`;
+      : `${h.entered.length || h.left.length ? `상위 10개 진입: <b style="color:var(--ink-2)">${h.entered.join(', ') || '없음'}</b> · 이탈: <b style="color:var(--ink-2)">${h.left.join(', ') || '없음'}</b> (${h.prev} → ${h.asof}). ` : `${h.prev} 이후 상위 10개 구성에 변화가 없습니다. `}변동 %p는 두 스냅샷의 비중 차이입니다.`}</p>`;
   mountTV(document.getElementById('hbody'));
   renderNews();
 }
@@ -2317,10 +2451,10 @@ function msg(text, cls) {
 /* ---- 탭 ---- */
 let curTab = 1;
 /* Holdings 패널은 하나뿐이며, 1) 매트릭스의 오른쪽 레일과 2) RRG 탭의 오른쪽 레일 사이를 옮겨 다닌다 */
-const holdHome = document.querySelector('#pane1 .rail'), chgPanel = document.querySelector('.panel.chg'), rrgRail = document.getElementById('rrgRail');
+const holdHome = document.querySelector('#pane1 .rail'), rrgRail = document.getElementById('rrgRail');
 function placeHold(n) {
   if (n === 3) { if (holdPanel.parentNode !== rrgRail) rrgRail.appendChild(holdPanel); }
-  else if (holdPanel.parentNode !== holdHome) holdHome.insertBefore(holdPanel, chgPanel);
+  else if (holdPanel.parentNode !== holdHome) holdHome.prepend(holdPanel);
 }
 /* 3) 돌파 지도: 같은 저장소의 별도 화면(Pages 에서는 breakout/, 아티팩트에서는 돌파 지도 아티팩트) */
 const BREAKOUT_URL = '__BREAKOUT_URL__', NAV_TARGET = '__NAV_TARGET__';
@@ -2482,7 +2616,7 @@ document.getElementById('hbody').addEventListener('click', ev => {
   const tog = ev.target.closest('[data-sdmode]'); if (tog) { sdState.mode = tog.dataset.sdmode; if (selT) renderHold(selT); return; }
   if (ev.target.closest('[data-hnews]')) { hnewsOpen = !hnewsOpen; if (selT) renderHold(selT); return; }
   if (onWeekChip(ev)) return;
-  const more = ev.target.closest('[data-newsmore]'); if (more) { const nx = more.nextElementSibling; if (nx) nx.hidden = false; more.remove(); return; }
+  if (onMoreLess(ev)) return;
   const cbb = ev.target.closest('[data-cbp],[data-cbm],[data-cbc]');
   if (cbb) {
     if (cbb.dataset.cbp) CB.period = cbb.dataset.cbp;
@@ -2515,40 +2649,107 @@ document.getElementById('drvBody').addEventListener('click', ev => {
 renderDrivers();
 document.getElementById('newsBody').addEventListener('click', ev => {
   if (onWeekChip(ev)) return;
-  const more = ev.target.closest('[data-newsmore]'); if (more) { const nx = more.nextElementSibling; if (nx) nx.hidden = false; more.remove(); }
+  onMoreLess(ev);
 });
 document.getElementById('newsNav').addEventListener('click', ev => {
   if (ev.target.closest('[data-newsback]')) { newsBackK = sdState.k; renderNews(); }
 });
 if (window.matchMedia) { const mq = window.matchMedia('(min-width:1860px)'); const onMq = () => { if (selT) renderHold(selT); }; if (mq.addEventListener) mq.addEventListener('change', onMq); else if (mq.addListener) mq.addListener(onMq); }
 
-/* ---- 변화 패널: 직전 빌드 대비 RRG 국면 변화, 새 신호, 전환순 상위 3 진입 ---- */
+/* ---- Changes 카드(주간 브리핑 탭의 '오늘'과 '이번 주'가 함께 쓴다): ETF 마다 묶고, 백분위 띠·국면 배지·변화 줄을 적는다.
+   prev 를 주면 지난주 백분위 띠를 흐리게 덧붙인다 ---- */
+const CHG_ICON = { rrg: '↻', signal: '!', shift: '▲' };
+const pcsHTML = (p, cls, tip) => `<span class="pcs${cls ? ' ' + cls : ''}"${tip ? ` title="${tip}"` : ''}>${(p || []).map(v => v == null ? '<i>n/a</i>' : `<i style="${cellStyle(v)}">${v}</i>`).join('')}</span>`;
+function chgCards(items, prev) {
+  /* 빌드가 1W 백분위 내림차순으로 정렬해 두었으므로, 같은 ETF 의 항목을 한 묶음으로 보여 준다 */
+  const groups = [];
+  items.forEach(x => { const g = groups[groups.length - 1]; if (g && g.etf === x.etf) g.items.push(x); else groups.push({ etf: x.etf, items: [x] }); });
+  return groups.map(g => {
+    const e = ETFS.find(x => x.t === g.etf) || { ko: '' }, first = g.items[0], pw = prev && prev[g.etf];
+    const pct = first.pct ? pcsHTML(first.pct, '', '1W · 1M · 3M · 6M · 12M 백분위') : '';
+    const ph = first.phase ? `<span class="ph ph-${first.phase}">${first.phase.toUpperCase()}</span><span style="color:var(--muted);font-size:10px">vs ${first.bench || 'SPY'}</span>` : '';
+    const was = pw && pw.pct ? `<span class="h2"><span class="lab">지난주</span>${pcsHTML(pw.pct, 'was', '지난주 마지막 종가의 1W · 1M · 3M · 6M · 12M 백분위')}${pw.ph ? `<span class="ph ph-${pw.ph}">${pw.ph.toUpperCase()}</span>` : ''}</span>` : '';
+    const lines = g.items.map(x => { const d = x.detail || (x.text.match(/^(\S+) ([^:]+): (.*)$/) || [])[3] || x.text; return `<span class="dl ${x.type}"><i>${CHG_ICON[x.type] || '·'}</i><span>${d}</span></span>`; }).join('');
+    return `<button type="button" class="cl" data-t="${g.etf}" title="누르면 ${g.etf} 행을 선택하고 구성종목을 엽니다"><span class="h1"><b>${g.etf}</b><span style="color:var(--muted)">${e.ko}</span>${pct}${ph}</span>${was}${lines}</button>`;
+  }).join('');
+}
+/* ---- 변화 패널(주간 브리핑 탭 맨 위): 직전 빌드 대비 RRG 국면 변화, 새 신호, 전환순 상위 3 진입 ---- */
 function renderChanges() {
   const sub = document.getElementById('chgSub'), body = document.getElementById('chgBody');
   const a = ALERTS || { alerts: [] };
   if (!a.prev_asof) {
-    sub.textContent = '직전 빌드 대비';
+    sub.textContent = '오늘 바뀐 것 · 직전 빌드 대비';
     body.innerHTML = a.same_asof
       ? `<p class="none">같은 종가(${a.asof})로 다시 빌드해 비교 대상이 없습니다. 다음 종가의 빌드부터 직전 빌드 대비 RRG 국면 변화, 새로 켜진 신호, 전환순 상위 3 진입을 여기에 적습니다.</p>`
       : '<p class="none">첫 빌드라 비교 대상이 없습니다. 다음 빌드부터 직전 빌드 대비 RRG 국면 변화, 새로 켜진 신호, 전환순 상위 3 진입을 여기에 적습니다.</p>';
     return;
   }
-  sub.textContent = `${a.prev_asof} → ${a.asof} · ${a.alerts.length}건 · 1W 백분위 높은 순`;
+  sub.textContent = `오늘 바뀐 것 · ${cbMd(a.prev_asof)} → ${cbMd(a.asof)} 종가 · ${a.alerts.length}건 · 1W 백분위 높은 순`;
   if (!a.alerts.length) { body.innerHTML = '<p class="none">직전 빌드와 견주어 국면 변화, 새 신호, 전환순 상위 3 진입이 없습니다.</p>'; return; }
-  const icon = { rrg: '↻', signal: '!', shift: '▲' };
-  /* 빌드가 1W 백분위 내림차순으로 정렬해 두었으므로, 같은 ETF 의 항목을 한 묶음으로 보여 준다 */
-  const groups = [];
-  a.alerts.forEach(x => { const g = groups[groups.length - 1]; if (g && g.etf === x.etf) g.items.push(x); else groups.push({ etf: x.etf, items: [x] }); });
-  body.innerHTML = groups.map(g => {
-    const e = ETFS.find(x => x.t === g.etf) || { ko: '' }, first = g.items[0];
-    const pct = first.pct ? `<span class="pcs" title="1W · 1M · 3M · 6M · 12M 백분위">${first.pct.map(p => p == null ? '<i>n/a</i>' : `<i style="${cellStyle(p)}">${p}</i>`).join('')}</span>` : '';
-    const ph = first.phase ? `<span class="ph ph-${first.phase}">${first.phase.toUpperCase()}</span><span style="color:var(--muted);font-size:10px">vs ${first.bench || 'SPY'}</span>` : '';
-    const lines = g.items.map(x => { const d = x.detail || (x.text.match(/^(\S+) ([^:]+): (.*)$/) || [])[3] || x.text; return `<span class="dl ${x.type}"><i>${icon[x.type] || '·'}</i><span>${d}</span></span>`; }).join('');
-    return `<button type="button" class="cl" data-t="${g.etf}" title="누르면 ${g.etf} 행을 선택하고 구성종목을 엽니다"><span class="h1"><b>${g.etf}</b><span style="color:var(--muted)">${e.ko}</span>${pct}${ph}</span>${lines}</button>`;
-  }).join('');
+  body.innerHTML = chgCards(a.alerts);
   body.querySelectorAll('.cl').forEach(b => b.addEventListener('click', () => { showTab(1); if (state.search || state.cat !== 'all') setCat('all'); select(b.dataset.t, { open: true, scroll: true }); }));
 }
 renderChanges();
+
+/* ---- 주간 브리핑 탭 '이번 주': 지난주 마지막 종가 대비. Changes 의 카드·백분위 띠·국면·신호 표현을 주간 기준으로 쓴다 ---- */
+const QUAD = ['Improving', 'Leading', 'Lagging', 'Weakening'];   /* RRG 그래프와 같은 배치: 위 왼쪽 Improving, 위 오른쪽 Leading */
+const SIG_GROUPS = [['★', '52주 상대 신고가'], ['↗', '비율선 상향 돌파'], ['↘', '비율선 하향 이탈'], ['↑', '백분위 급등 (6개월 → 1개월)'], ['↓', '백분위 급락 (6개월 → 1개월)'], ['≈', '1주 반등 미확인']];
+const sigShort = s => /[↗↘]/.test(s[0]) ? ((s[1].match(/(\d+)일선/) || [])[1] || '') + (s[1].match(/(\d+)일선/) ? '일선' : '')
+  : /[↑↓]/.test(s[0]) ? (s[0] === '↑' ? '+' : '−') + ((s[1].match(/(\d+)점/) || [])[1] || '') : '';
+function renderWeekly() {
+  const sub = document.getElementById('wkvSub'), body = document.getElementById('wkvBody'); if (!body) return;
+  const W = WEEKLY;
+  if (!W) { sub.textContent = '지난주 마지막 종가 대비'; body.innerHTML = '<p class="none">이번 빌드에는 지난주와 견줄 자료가 없습니다.</p>'; return; }
+  const P = W.prev || {}, E = t => ETFS.find(e => e.t === t) || { t, ko: '', pct: [] };
+  sub.textContent = `지난주 마지막 종가(${cbMd(W.base)}) → ${cbMd(W.asof)} 종가`;
+  const alerts = W.alerts || [];
+  const isSty = t => ETFS.some(e => e.t === t && e.cat === 'sty');
+  const rank = get => ETFS.filter(e => !isSty(e.t) && get(e) != null).sort((a, b) => get(b) - get(a)).map(e => e.t);
+  const nowRank = rank(e => shiftVal(e)), wasRank = rank(e => (P[e.t] || {}).sc);
+  const top = nowRank.slice(0, 3), newTop = top.filter(t => { const i = wasRank.indexOf(t); return i < 0 || i > 2; });
+  const phN = new Set(alerts.filter(a => a.type === 'rrg').map(a => a.etf)).size, sigN = alerts.filter(a => a.type === 'signal').length;
+  const tiles = [[phN, '국면이 바뀐 ETF'], [sigN, '새로 켜진 신호'], [newTop.length, '전환순 상위 3 새로 진입']]
+    .map(([n, l]) => `<div class="wv-tile"><b>${n}</b><span>${l}</span></div>`).join('');
+  const card = (t, i) => {
+    const e = E(t), p = P[t] || {}, wr = wasRank.indexOf(t);
+    return `<button type="button" class="wv-card" data-t="${t}" title="누르면 ${t} 행을 선택하고 구성종목을 엽니다">`
+      + `<span class="rk">${i + 1}</span><span class="hd"><b>${t}</b><span class="ko">${e.ko}</span>${wr < 0 || wr > 2 ? '<span class="nw">NEW</span>' : ''}</span>`
+      + `<span class="sc">${shTxt(e)}<small>지난주 ${scTxt(p.sc)}${wr >= 0 ? ` · ${wr + 1}위` : ''}</small></span>`
+      + `<span class="row"><span class="lab">이번 주</span>${pcsHTML(e.pct, '', '1W · 1M · 3M · 6M · 12M 백분위')}</span>`
+      + (p.pct ? `<span class="row"><span class="lab">지난주</span>${pcsHTML(p.pct, 'was', '지난주 마지막 종가의 백분위')}</span>` : '')
+      + `<span class="row">${e.rrg ? `<span class="ph ph-${e.rrg}">${e.rrg.toUpperCase()}</span><span class="vs">vs ${e.parent || 'SPY'}</span>${p.ph && p.ph !== e.rrg ? `<span class="vs">← ${p.ph.toUpperCase()}</span>` : ''}` : '<span class="vs">RRG N/A · 주봉 39주 필요</span>'}</span>`
+      + `</button>`;
+  };
+  const chip = (e, t2) => {
+    const was = (P[e.t] || {}).ph, moved = was && e.rrg && was !== e.rrg;
+    return `<button type="button" class="wv-chip${t2 && e.rrg ? ' b-' + e.rrg : ''}" data-t="${e.t}" title="${e.t} ${e.ko}${moved ? ` · 지난주 ${was}` : ''}"><b>${e.t}</b>${t2 ? `<span class="${e.rrg ? 'ph-' + e.rrg : 'mu'}">${e.rrg ? e.rrg.toUpperCase() : 'N/A'}</span>` : `<span>${e.ko}</span>`}${moved ? `<i>← ${was.toUpperCase()}</i>` : ''}</button>`;
+  };
+  const sectors = ETFS.filter(e => e.cat === 'sec');
+  const quad = QUAD.map(ph => `<div class="wv-q"><span class="qn ph-${ph}">${ph.toUpperCase()}</span><div class="qc">${sectors.filter(e => e.rrg === ph).map(e => chip(e)).join('') || '<span class="mu">없음</span>'}</div></div>`).join('');
+  const sty = ETFS.filter(e => e.cat === 'sty').map(e => { const was = (P[e.t] || {}).ph; return `<span><b>${e.t}</b> ${e.ko} · ${e.rrg ? `<span class="ph-${e.rrg}">${e.rrg.toUpperCase()}</span>` : 'N/A'}${was && e.rrg && was !== e.rrg ? ` <i>← ${was.toUpperCase()}</i>` : ''} <span class="mu">(SPY 대비 · 섹터 집계 제외)</span></span>`; }).join('');
+  const tier2 = sectors.filter(s => ETFS.some(e => e.parent === s.t)).map(s => `<div class="wv-t2"><span class="pn"><b>${s.t}</b> ${s.ko}</span><div class="qc">${ETFS.filter(e => e.parent === s.t).map(e => chip(e, true)).join('')}</div></div>`).join('');
+  const sigs = SIG_GROUPS.map(([ic, lab]) => {
+    const items = [];
+    ETFS.forEach(e => (e.sig || []).forEach(sg => {
+      if (sg[0] !== ic) return;
+      const was = ((P[e.t] || {}).sig || []).some(x => x[1] === sg[1]), sh = sigShort(sg);
+      items.push(`<button type="button" class="wv-sg ${sg[2] || ''}${was ? '' : ' nw'}" data-t="${e.t}" title="${cbEsc(`${e.t} ${e.ko} · ${sg[1]}${was ? ' · 지난주에도 켜져 있음' : ' · 이번 주 새로 켜짐'}`)}"><b>${e.t}</b>${sh ? `<span>${sh}</span>` : ''}${was ? '' : '<i>NEW</i>'}</button>`);
+    }));
+    return items.length ? `<div class="wv-sgr"><span class="gl"><i>${ic}</i>${lab}</span><div class="qc">${items.join('')}</div></div>` : '';
+  }).join('');
+  const H = W.hold || {};
+  const holdRows = ETFS.filter(e => H[e.t]).map(e => `<div class="wv-hr"><button type="button" class="wv-chip" data-t="${e.t}"><b>${e.t}</b></button><span class="in">${H[e.t].in.map(x => `<span>+${cbEsc(x)}</span>`).join('')}</span><span class="out">${H[e.t].out.map(x => `<span>−${cbEsc(x)}</span>`).join('')}</span></div>`).join('');
+  body.innerHTML = `<div class="wv-tiles">${tiles}</div>`
+    + `<div class="wlab">전환순 상위 3 <span>전환 점수 = (1W + 1M) ÷ 2 − 12M · 1년 순위보다 최근 순위가 높은 ETF</span></div><div class="wv-top">${top.map(card).join('')}</div>`
+    + `<div class="wlab">이번 주 변화 <span>↻ RRG 국면 변화 · ! 새로 켜진 신호 · ▲ 전환순 상위 3 진입 · 1W 백분위 높은 순</span></div>`
+    + (alerts.length ? `<div class="chg wv-chg">${chgCards(alerts, P)}</div>` : '<p class="none">지난주와 견주어 국면 변화, 새 신호, 전환순 상위 3 진입이 없습니다.</p>')
+    + `<div class="wlab">1단 RRG <span>섹터 ÷ SPY · ← 는 지난주 국면</span></div><div class="wv-quad">${quad}</div>${sty ? `<div class="wv-stys">${sty}</div>` : ''}`
+    + `<div class="wlab">2단 RRG <span>산업·테마 ÷ 상위 섹터 · ← 는 지난주 국면</span></div><div class="wv-t2s">${tier2}</div>`
+    + `<div class="wlab">신호 <span>지금 켜진 신호 · NEW 는 이번 주에 새로 켜진 것</span></div>${sigs ? `<div class="wv-sgs">${sigs}</div>` : '<p class="none">켜진 신호가 없습니다.</p>'}`
+    + `<div class="wlab">구성종목 상위 10 변화 <span>${W.holdBase ? `${cbMd(W.holdBase)} 스냅샷 → 지금 · ` : ''}+ 진입 · − 이탈</span></div>${holdRows ? `<div class="wv-hold">${holdRows}</div>` : '<p class="none">이번 주 상위 10 구성에 변화가 없습니다.</p>'}`;
+  body.querySelectorAll('[data-t]').forEach(b => b.addEventListener('click', () => { showTab(1); if (state.search || state.cat !== 'all') setCat('all'); select(b.dataset.t, { open: true, scroll: true }); }));
+}
+renderWeekly();
 
 /* ---- 명령줄 ---- */
 const cmd = document.getElementById('cmd');

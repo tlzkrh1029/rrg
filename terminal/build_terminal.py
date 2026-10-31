@@ -261,6 +261,39 @@ def make_alerts(prev, cur):
     return alerts
 
 
+def weekly_view(wk, cur, snaps):
+    """주간 브리핑 탭의 '이번 주' 자료. wk 는 지난주 마지막 거래일 종가로 계산한 terminal-data(compute_terminal.py --week-base).
+    변화 항목은 Changes 패널과 같은 규칙(make_alerts)을 지난주 상태와 견주어 만들고, 화면이 지난주 백분위·국면·신호와
+    전환 점수를 나란히 그리도록 prev 를 함께 넘긴다. 구성종목 상위 10 의 진입·이탈은 지난주 마지막 거래일까지의
+    가장 늦은 스냅샷과 지금 스냅샷을 견준다."""
+    if not wk or wk.get("asof", "") >= cur["asof"]:
+        return None
+    pw = phases(wk)
+    prev = {}
+    for t, e in wk["etfs"].items():
+        sc = shift_score(e)
+        prev[t] = {"pct": e["pct"], "ph": pw[t]["bench"], "phs": pw[t]["spy"], "sig": e["sig"],
+                   "sc": None if sc is None else round(sc, 1)}
+    hold = {}
+    base = [p for p in snaps if os.path.splitext(os.path.basename(p))[0] <= wk["asof"]]
+    if base:
+        old, new = load_snapshot(base[-1]), load_snapshot(snaps[-1])
+        for t in cur["etfs"]:
+            o = {norm_sym(r["symbol"]) for r in old.get(t, [])}
+            n = [norm_sym(r["symbol"]) for r in new.get(t, [])]
+            if not o or not n:
+                continue
+            raw_o = any(SWAP_RE.search(x) for x in o)
+            raw_n = any(SWAP_RE.search(x) for x in n)
+            if raw_o != raw_n:   # 출처가 바뀌면(스왑 행 표기 차이) 견주지 않는다
+                continue
+            i, l = [x for x in n if x not in o], [x for x in o if x not in set(n)]
+            if i or l:
+                hold[t] = {"in": i, "out": l}
+    return {"base": wk["asof"], "asof": cur["asof"], "alerts": make_alerts(wk, cur), "prev": prev,
+            "hold": hold, "holdBase": os.path.splitext(os.path.basename(base[-1]))[0] if base else None}
+
+
 def alerts_text(cur, alerts):
     """텔레그램 조건 알림 본문: ETF 단위로 묶고, 머리글에 1W~12M 백분위와 RRG 국면을 적는다."""
     lines = [f"🔔 섹터 전환 터미널 · {cur['asof']} 종가 · 변화 {len(alerts)}건",
@@ -718,6 +751,8 @@ def main():
     ap.add_argument("--kicks", default=os.path.join(ROOT, "output", "kicks.json"))
     ap.add_argument("--kick-notes", default=os.path.join(ROOT, "output", "kick-notes.json"))
     ap.add_argument("--xh", default=os.path.join(ROOT, "output", "xh.json"), help="장후·장전 가격(terminal/fetch_xh.py)")
+    ap.add_argument("--week-base", default=os.path.join(ROOT, "output", "terminal-data-wk.json"),
+                    help="지난주 마지막 거래일 종가로 계산한 terminal-data(compute_terminal.py --week-base). 주간 브리핑 탭의 '이번 주' 비교 기준")
     ap.add_argument("--alerts-only", action="store_true", help="조건 알림(docs/data/alerts.txt)만 쓰고 끝낸다. Claude 단계 전에 텔레그램을 먼저 보낼 때 쓴다")
     ap.add_argument("--holdings", default=os.path.join(ROOT, "output", "holdings"))
     ap.add_argument("--meta", default=os.path.join(ROOT, "data", "etf_meta.json"))
@@ -745,6 +780,7 @@ def main():
         raise SystemExit("holdings snapshot not found")
     snapshots = [(os.path.splitext(os.path.basename(p))[0], load_snapshot(p)) for p in snaps[-2:]]
     hold, hold_asof, hold_prev = build_hold(snapshots, meta)
+    weekly = weekly_view(load_json(args.week_base) if os.path.exists(args.week_base) else None, cur, snaps)
 
     B, F, H, counts, list_ts = load_lists(args.lists) if args.lists else (None, None, None, {"b": 0, "f": 0, "h": 0}, None)
     elst, lst, swaps = {}, {}, {}
@@ -828,6 +864,8 @@ def main():
         "__BRIEF__": brief_html(brief),
         # 장후·장전 가격(마지막 정규장 날짜가 종가 기준일과 같을 때만). 없으면 null
         "__XH__": json.dumps(xh, ensure_ascii=False, separators=(",", ":")),
+        # 주간 브리핑 탭의 '이번 주'(지난주 마지막 종가 대비). 자료가 없으면 null
+        "__WEEKLY__": json.dumps(weekly, ensure_ascii=False, separators=(",", ":")),
         "__BUILT_AT__": built,
     }
     tmpl = open(args.template, encoding="utf-8").read()
