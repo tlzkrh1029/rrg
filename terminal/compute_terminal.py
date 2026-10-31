@@ -55,9 +55,18 @@ def main():
     ap.add_argument("--prices", default=os.path.join(ROOT, "output", "prices_wide.csv"))
     ap.add_argument("--summary", default=os.path.join(ROOT, "output", "prices_summary.json"))
     ap.add_argument("--out", default=os.path.join(ROOT, "output", "terminal-data.json"))
+    ap.add_argument("--asof", default=None, help="이 날짜(YYYY-MM-DD)까지의 가격으로 계산한다")
+    ap.add_argument("--week-base", action="store_true",
+                    help="마지막 날짜가 든 주(월요일 시작) 바로 앞 거래일까지로 계산한다. 주간 브리핑이 '지난주 마지막 종가'와 견줄 때 쓴다")
     args = ap.parse_args()
 
     rows = list(csv.DictReader(open(args.prices, encoding="utf-8-sig")))
+    if args.week_base:
+        last = dt.date.fromisoformat(rows[-1]["date"])
+        monday = (last - dt.timedelta(days=last.weekday())).isoformat()
+        rows = [r for r in rows if r["date"] < monday]
+    elif args.asof:
+        rows = [r for r in rows if r["date"] <= args.asof]
     dates = [r["date"] for r in rows]
     n_days = len(dates)
     tickers = ["SPY", "QQQ"] + ETFS

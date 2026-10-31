@@ -29,6 +29,7 @@
              그 한국어 이름이고, 첫 문장에 배당·자사주 매입 같은 낱말이 있으면 그 이름으로 바꾼다.
          ins 같은 기간의 내부자 신고 건수 {"4": n, "144": n, "3": n, "5": n}, cik (내부자 신고 목록 링크용)
   etf[ETF] sum  데이터 요약 문장 (기여도 1개월·1주와 실적으로 만든다. 기준은 산업·테마가 상위 섹터, 나머지는 SPY)
+          sumb 앞의 sumb 개 문장이 1개월 이야기, 나머지가 이번 주와 실적 이야기(화면이 두 묶음 사이를 띄운다)
            nx   상위 10 종목의 다가오는 실적 [[표시 심볼, 날짜, 시점]] (가까운 순)
            re   최근 30일 실적 발표 [[표시 심볼, 날짜]]; 없으면 last 에 가장 최근 발표
            nh   상위 10 종목의 헤드라인 수
@@ -180,7 +181,7 @@ def summary(t, funds, bench, earn, nxt, today):
     F = funds.get(t)
     roll = "21D" if "21D" in (F or {}).get("P", {}) else "1M"   # 최근 1개월: 21거래일 이동 창(없는 옛 계산이면 1M)
     if not F or roll not in F.get("P", {}):
-        return []
+        return [], 0
     A = dict(F["P"][roll])
     B = funds.get(bench, {}).get("P", {}).get(roll) if bench else None
     A["rows"] = fold_rows(A["rows"])
@@ -227,6 +228,7 @@ def summary(t, funds, bench, earn, nxt, today):
     rest_w, rest_c = A["rest"][0], A["rest"][1]
     if rest_w >= 0.02 and abs(rest_c) >= 0.003 and abs(rest_c) > max([abs(x[4]) for x in A["rows"]] or [0]):
         out.append(f"상위 10 밖 종목(비중 {round(rest_w * 100)}%)이 합계 {pc(rest_c)}%p로 가장 크게 움직였습니다.")
+    brk = len(out)   # 여기까지가 1개월 이야기, 아래는 이번 주와 실적 이야기(화면은 두 묶음 사이를 한 줄 띄운다)
     # 4) 이번 주(직전 주 마지막 종가부터)를 이끈 종목
     W = F["P"].get("1W")
     if W:
@@ -257,7 +259,7 @@ def summary(t, funds, bench, earn, nxt, today):
         items = [f"{s}({md(d)})" for d, s in soon[:4]]
         more = f" 외 {len(soon) - 4}종목" if len(soon) > 4 else ""
         out.append(f"{'·'.join(items)}{more}{josa(items[-1] if not more else '목', ('이', '가'))} {SOON_DAYS}일 안에 실적을 발표합니다.")
-    return out
+    return out, brk
 
 # ---------- 헤드라인: 주별 묶음 ----------
 STOP = set("""a an the and or but of to in on for at by with from as is are was were be been being it its this that these those
@@ -534,7 +536,7 @@ def main():
                 latest = max(x[1] for x in last)
                 out["last"] = [x for x in last if x[1] == latest]
         bench = PARENT.get(t) or "SPY"
-        out["sum"] = summary(t, funds, bench, earn, nxt, today)
+        out["sum"], out["sumb"] = summary(t, funds, bench, earn, nxt, today)
         etf[t] = out
 
     em, hm, cm, fm = E.get("meta") or {}, H.get("meta") or {}, C.get("meta") or {}, FL.get("meta") or {}
