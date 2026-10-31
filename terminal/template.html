@@ -579,8 +579,23 @@ table.dr tr.kr .kc-ev{margin-top:1px}
 .ai .sumg + .sumg{margin-top:9px}
 /* 주별 블록의 머리 줄: 회색 바탕 */
 .wkh{background:var(--band-2);padding:4px 7px;flex-wrap:wrap;row-gap:2px}   /* 칸이 좁으면(종목 모드) 오른쪽 숫자를 다음 줄로 내린다 */
-.wk{border-top:0;padding-top:0;margin-top:8px}
-.wk.f{margin-top:0}
+.wk{border-top:0;padding-top:0}
+/* 칼럼 안 단락 간격. --sg 는 단락과 단락 사이, --ssg 는 단락 안 소제목(KEY TAKEAWAYS, 이 주의 공시 및 실적, 최근 8주) 앞의 간격이다.
+   그리드 간격(대부분 8px, 주별 블록 4px, 기여도 6px)에 여백을 더해 맞춘다 */
+:root{--sg:28px;--ssg:16px}
+/* Holdings: 이름·기본 정보 → 차트 → 기여도 → 구성종목 표. 좁은 화면에서는 기여도 아래 뉴스 묶음(다음 실적발표 · 밤사이 · 왜 움직였나 · 뉴스 펼치기)도 단락으로 띄운다 */
+#hbody > :is(.eb,.cb,.h-wrap,.ern,.nb,.ai,.hlrow){margin-top:calc(var(--sg) - 8px)}
+#hbody > .nb{margin-bottom:0}
+@media (min-width:1280px){#hbody .hmeta{border-bottom:0}}   /* 넓은 화면은 백분위 띠를 숨기므로 기본 정보와 차트 사이 구분선을 차트 위 한 줄만 남긴다 */
+.cb .wlab{margin-top:calc(var(--ssg) - 6px)}
+/* 뉴스: 넓은 화면 뉴스 칼럼(.nbody), 좁은 화면 ETF 뉴스(.hnews), 좁은 화면 종목 뉴스(.nw) */
+:is(.nbody,.hnews,.nw) > :is(.nb,.ai,.older,.nfoot){margin-top:calc(var(--sg) - 8px)}
+:is(.nbody,.hnews,.nw) > .wlab:not(:first-child){margin-top:calc(var(--sg) - 8px)}
+:is(.nbody,.hnews,.nw) > .wk:not(.f){margin-top:calc(var(--sg) - 8px)}
+:is(.nbody,.hnews,.nw) > .nb{margin-bottom:0}
+.wk > :not(.wkh) + :is(.kc-lh,.fhd,ul.hl){margin-top:calc(var(--ssg) - 4px)}
+/* 좁은 화면 Holdings 창의 '왜 움직였나' 제목도 넓은 화면처럼 호박색 머리표로 적는다 */
+.ai .wlab{color:var(--amber);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
 /* '이 주의 공시 및 실적' 제목 */
 .fhd{font-size:10.5px;color:var(--amber);font-weight:700;letter-spacing:.04em;margin-top:3px}
 /* 기사 줄: 티커는 굵은 흰색, 제목은 회색 */
@@ -614,7 +629,7 @@ ul.hl a:hover{color:#fff}
 .wv-card .hd{display:flex;gap:6px;align-items:baseline;min-width:0}
 .wv-card .hd b{color:#fff;font-size:13px}
 .wv-card .ko{color:var(--ink-2);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.wv-card .nw,.wv-sg i{font-size:9px;font-style:normal;color:var(--amber);border:1px solid var(--amber);padding:0 3px;line-height:1.3}
+.wv-card .wv-new,.wv-sg i{font-size:9px;font-style:normal;color:var(--amber);border:1px solid var(--amber);padding:0 3px;line-height:1.3}
 .wv-card .sc{color:#fff;font-weight:700;font-size:16px;text-align:right;display:grid;justify-items:end;line-height:1.2}
 .wv-card .sc small{font-size:10px;color:var(--muted);font-weight:400}
 .wv-card .row{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:10.5px}
@@ -638,7 +653,7 @@ ul.hl a:hover{color:#fff}
 .wv-sgr .gl{color:var(--ink-2);padding-top:2px} .wv-sgr .gl i{font-style:normal;color:var(--amber);font-weight:700;margin-right:6px}
 .wv-sg{display:inline-flex;gap:4px;align-items:baseline;border:1px solid var(--line-2);padding:1px 6px;font-size:11px;color:var(--ink-2)}
 .wv-sg b{color:#fff} .wv-sg.hot span{color:var(--hot)} .wv-sg.cold span{color:var(--cold)}
-.wv-sg.nw{border-color:var(--amber-dim)}
+.wv-sg.isnew{border-color:var(--amber-dim)}
 .wv-hr{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:center;font-size:11px}
 .wv-hr .in,.wv-hr .out{display:flex;flex-wrap:wrap;gap:3px 9px}
 .wv-hr .in{color:#fff} .wv-hr .out{color:var(--muted)}
@@ -2125,7 +2140,7 @@ function weekBlocksHTML(k, s, t) {
     /* 킥: 지금 고른 ETF 와 견준 그 주(ETF 와 같이 움직인 주에는 ETF 의 킥) */
     const ki = KICKS && t && KICKS.etf[t] ? KICKS.weeks.indexOf(start) : -1, KW = ki >= 0 ? KICKS.etf[t].w[ki] : null;
     const hr = [noNews ? '' : `기사 ${n}건${part ? ' 이상' : ''}`, px != null ? `주가 ${kPv(px)}` : '', KW && KW.r != null ? `${cbEsc(t)} ${kPv(KW.r)}` : ''].filter(Boolean).join(' · ');
-    const head = `<div class="wkh"><b>${cbMd(start)} 주</b>${i === 0 ? '<span class="cur">이번 주</span>' : ''}<span class="r">${hr}</span></div>`
+    const head = `<div class="wkh"><b>${cbMd(start)} 주</b><span class="r">${hr}</span></div>`   /* 종목 모드에는 '이번 주' 표시를 달지 않는다: 맨 위 주가 가장 최근 주다 */
       + (ki >= 0 ? stockKickHTML(k, t, ki) : '');
     const chips = fs.length ? `<div class="fchips">${fs.map(f => filingChip(f, s)).join('')}</div>` : '';
     const top = cl.slice(0, 2), hid = cl.slice(2);
@@ -2713,7 +2728,7 @@ function renderWeekly() {
   const card = (t, i) => {
     const e = E(t), p = P[t] || {}, wr = wasRank.indexOf(t);
     return `<button type="button" class="wv-card" data-t="${t}" title="누르면 ${t} 행을 선택하고 구성종목을 엽니다">`
-      + `<span class="rk">${i + 1}</span><span class="hd"><b>${t}</b><span class="ko">${e.ko}</span>${wr < 0 || wr > 2 ? '<span class="nw">NEW</span>' : ''}</span>`
+      + `<span class="rk">${i + 1}</span><span class="hd"><b>${t}</b><span class="ko">${e.ko}</span>${wr < 0 || wr > 2 ? '<span class="wv-new">NEW</span>' : ''}</span>`
       + `<span class="sc">${shTxt(e)}<small>지난주 ${scTxt(p.sc)}${wr >= 0 ? ` · ${wr + 1}위` : ''}</small></span>`
       + `<span class="row"><span class="lab">이번 주</span>${pcsHTML(e.pct, '', '1W · 1M · 3M · 6M · 12M 백분위')}</span>`
       + (p.pct ? `<span class="row"><span class="lab">지난주</span>${pcsHTML(p.pct, 'was', '지난주 마지막 종가의 백분위')}</span>` : '')
@@ -2733,7 +2748,7 @@ function renderWeekly() {
     ETFS.forEach(e => (e.sig || []).forEach(sg => {
       if (sg[0] !== ic) return;
       const was = ((P[e.t] || {}).sig || []).some(x => x[1] === sg[1]), sh = sigShort(sg);
-      items.push(`<button type="button" class="wv-sg ${sg[2] || ''}${was ? '' : ' nw'}" data-t="${e.t}" title="${cbEsc(`${e.t} ${e.ko} · ${sg[1]}${was ? ' · 지난주에도 켜져 있음' : ' · 이번 주 새로 켜짐'}`)}"><b>${e.t}</b>${sh ? `<span>${sh}</span>` : ''}${was ? '' : '<i>NEW</i>'}</button>`);
+      items.push(`<button type="button" class="wv-sg ${sg[2] || ''}${was ? '' : ' isnew'}" data-t="${e.t}" title="${cbEsc(`${e.t} ${e.ko} · ${sg[1]}${was ? ' · 지난주에도 켜져 있음' : ' · 이번 주 새로 켜짐'}`)}"><b>${e.t}</b>${sh ? `<span>${sh}</span>` : ''}${was ? '' : '<i>NEW</i>'}</button>`);
     }));
     return items.length ? `<div class="wv-sgr"><span class="gl"><i>${ic}</i>${lab}</span><div class="qc">${items.join('')}</div></div>` : '';
   }).join('');
