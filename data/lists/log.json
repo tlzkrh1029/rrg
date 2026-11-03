@@ -1,4 +1,4 @@
-{"version":1,"updated":"2026-10-31T14:54:58Z","prev":"2026-10-30T22:07:05Z","counts":{"b":105,"p":222,"h":133},
+{"version":1,"updated":"2026-11-03T01:06:44Z","prev":"2026-10-31T14:54:58Z","counts":{"b":105,"p":222,"h":134},
 "state":{
 "b":{
 "AAOIBUSDT":{"u":"AAOI","lk":"AAOI","n":"Applied Optoelectronics","c":"stock","m":"US"},
@@ -332,6 +332,7 @@
 "ZSUSDT":{"u":"ZS","lk":"ZS","n":"Zscaler, Inc.","c":"stock","m":"US","od":"2026-09-02"}
 },
 "h":{
+"io:AAPL":{"u":"AAPL","lk":"AAPL","n":"Apple Inc.","c":"stock","m":"US","dex":"io"},
 "io:DRAM":{"u":"DRAM","lk":"DRAM","n":"Roundhill Memory ETF","c":"etf","m":"US","dex":"io"},
 "io:EWY":{"u":"EWY","lk":"EWY","n":"iShares MSCI South Korea ETF","c":"etf","m":"US","dex":"io"},
 "io:GPRO":{"u":"GPRO","lk":"GPRO","n":"GoPro, Inc.","c":"stock","m":"US","dex":"io"},
@@ -468,6 +469,7 @@
 }
 },
 "events":[
+{"v":"h","e":"add","s":"io:AAPL","u":"AAPL","lk":"AAPL","n":"Apple Inc.","c":"stock","m":"US","d":"2026-11-03","x":0,"t0":"2026-10-31T14:54:58Z","t1":"2026-11-03T01:06:44Z","dex":"io"},
 {"v":"h","e":"add","s":"xyz:ICE","u":"ICE","lk":"ICE","n":"Intercontinental Exchange Inc.","c":"stock","m":"US","d":"2026-10-30","x":0,"t0":"2026-10-29T02:23:52Z","t1":"2026-10-29T23:06:39Z","dex":"xyz"},
 {"v":"h","e":"del","s":"mkts:USBOND","u":"USBOND","lk":"TLT","n":"iShares 20+ Year Treasury Bond ETF","c":"etf","m":"US","d":"2026-10-30","x":0,"t0":"2026-10-29T02:23:52Z","t1":"2026-10-29T23:06:39Z","dex":"mkts"},
 {"v":"p","e":"add","s":"SMRUSDT","u":"SMR","lk":"SMR","n":"NuScale Power Corporation","c":"stock","m":"US","d":"2026-10-29","x":1,"t0":"2026-10-29T02:23:52Z","t1":"2026-10-29T23:06:39Z"},

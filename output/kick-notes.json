@@ -959,6 +959,254 @@
    "tries": 1,
    "at": "11/01 00:07 KST",
    "why": "제목에 당일 원인이 불명확하고 검색하지 못함"
+  },
+  "E:XLE:2026-11-02": {
+   "k": "유가 급락",
+   "ev": "미국과 이란의 평화 합의 기대로 유가가 6~7% 급락해 에너지 업종이 4% 내림",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    },
+    {
+     "t": "Detroit News",
+     "u": "https://www.detroitnews.com/story/business/2026/11/02/wall-street-rises-as-oil-falls-heading-into-us-midterm-elections/92564064007/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "E:XLY:2026-11-02": {
+   "k": "유가 하락, 아마존 강세",
+   "ev": "유가 급락 속에 경기소비재가 S&P 500 업종 중 가장 크게 올랐고 Amazon이 2.2% 오름",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "E:XLK:2026-11-02": {
+   "k": "AI 지출 우려, 반도체 급락",
+   "ev": "Intel이 8.8%, AMD가 7.5% 내리는 등 AI 지출 우려로 반도체 중심 기술주가 약세를 보임",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    },
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "E:XLF:2026-11-02": {
+   "k": "기술주에서 순환매",
+   "ev": "Nasdaq이 1% 넘게 내리고 Dow가 오르는 가운데 장기 금리 하락과 함께 금융주로 자금이 이동함",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "E:XLB:2026-11-02": {
+   "k": "유가 하락, 순환매",
+   "ev": "소재 업종이 1.83% 올라 업종 2위를 기록했고 유가 급락과 기술주 이탈 자금이 유입됨",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "E:XLP:2026-11-02": {
+   "k": "기술주 이탈 순환매",
+   "ev": "AI 지출 우려로 기술주가 내리고 유가와 장기 금리가 낮아지며 방어주로 자금이 이동함",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    },
+    {
+     "t": "Detroit News",
+     "u": "https://www.detroitnews.com/story/business/2026/11/02/wall-street-rises-as-oil-falls-heading-into-us-midterm-elections/92564064007/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "E:XLI:2026-11-02": {
+   "k": "유가 하락, 순환매",
+   "ev": "Dow가 0.41% 오르는 가운데 유가 급락과 기술주에서 빠진 자금이 산업재로 이동함",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "E:URA:2026-11-02": {
+   "k": "유가 급락 여파",
+   "ev": "유가가 7% 가까이 급락해 에너지 관련주가 내렸고 Cameco와 Oklo 등 우라늄주도 약세를 보임",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "E:XLRE:2026-11-02": {
+   "k": "장기 금리 하락",
+   "ev": "미국 장기 국채 금리가 내려 금리에 민감한 부동산 업종이 올랐음",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "E:XHB:2026-11-02": {
+   "k": "장기 금리 하락",
+   "ev": "유가 급락과 함께 장기 국채 금리가 내려 주택건설과 주택 관련 소비재가 올랐음",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    },
+    {
+     "t": "Detroit News",
+     "u": "https://www.detroitnews.com/story/business/2026/11/02/wall-street-rises-as-oil-falls-heading-into-us-midterm-elections/92564064007/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "E:XLU:2026-11-02": {
+   "k": "장기 금리 하락",
+   "ev": "장기 국채 금리가 내려 배당 성격의 유틸리티 업종에 매수세가 들어옴",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "S:ORCL:2026-11-02": {
+   "k": "200억 달러 자금 조달",
+   "ev": "Oracle이 AI 투자 자금으로 주식과 채권 200억 달러어치를 발행하는 계획이 공시로 드러남",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "S:MU:2026-11-02": {
+   "k": "Kioxia 신중 전망, 칩 급락",
+   "ev": "Kioxia의 신중한 전망으로 메모리주가 약세였고 Intel 급락 여파로 반도체 전반이 내림",
+   "src": [
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    },
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "S:CCJ:2026-11-02": {
+   "k": "유가 급락, 3분기 손실",
+   "ev": "지난 금요일 3분기 조정 손실로 9% 내린 데 이어 유가 급락으로 에너지주가 약세를 보임",
+   "src": [
+    {
+     "t": "Kitco/Reuters",
+     "u": "https://www.kitco.com/news/off-the-wire/2026-11-02/sp-500-ends-down-apple-dips-ahead-quarterly-report"
+    }
+   ],
+   "by": "claude",
+   "at": "11/03 10:19 KST"
+  },
+  "E:ARKG:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/03 10:19 KST",
+   "why": "시장 종합 기사와 ARKG 검색에서 11/2 하락 원인을 못 찾음. 구성종목 개별 기사도 없음"
+  },
+  "E:GNOM:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/03 10:19 KST",
+   "why": "유전체 업종 하락 기사를 검색했으나 11/2 원인을 확인하지 못함"
+  },
+  "E:XBI:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/03 10:19 KST",
+   "why": "바이오 업종 11/2 기사를 시장 종합과 유전체 검색에서 찾지 못함"
+  },
+  "E:XME:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/03 10:19 KST",
+   "why": "금속·광업 11/2 별도 기사를 찾지 못함. 소재 업종 상승 기사만 있음"
+  },
+  "S:TWST:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/03 10:19 KST",
+   "why": "Twist 11/2 하락 검색 2회. 10월 말 급등 후 조정이라는 기사만 있고 11/2 원인은 확인 못함"
+  },
+  "S:ABSI:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/03 10:19 KST",
+   "why": "Absci 11/2 하락 검색 2회. 10/30 AI 신약 발굴주 하락 기사만 있고 11/2 원인은 확인 못함"
+  },
+  "S:TXG:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/03 10:19 KST",
+   "why": "10x Genomics 11/2 급락 검색 2회. 11/5 실적 발표 예정 외에 당일 원인을 찾지 못함"
+  },
+  "S:SHW:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/03 10:19 KST",
+   "why": "Sherwin-Williams 검색 3회. 11/2 8-K는 신용한도 증액뿐이고 급등 원인을 확인하지 못함"
+  },
+  "S:GE:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/03 10:19 KST",
+   "why": "GE Aerospace 11/2 검색 2회. 당일 상승 원인 기사를 찾지 못함"
+  },
+  "S:WMT:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/03 10:19 KST",
+   "why": "Walmart 11/2 검색 2회. 당일 상승 원인 기사를 찾지 못함"
   }
  },
  "runs": [
@@ -1011,6 +1259,18 @@
    32,
    "claude-sonnet-5-5",
    0.754
+  ],
+  [
+   "11/03 10:19 KST",
+   24,
+   14,
+   10,
+   "ok",
+   18,
+   2,
+   22,
+   "claude-sonnet-5-5",
+   0.482
   ]
  ]
 }

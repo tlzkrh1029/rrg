@@ -1,4 +1,5 @@
 ﻿coin,dex,dex_name,ticker,display_name,category,reference_listing,asset_class,asset_source,annotation_says_etf,security_name,binance_equity_type,max_leverage,collateral_token,delisted,description
+io:AAPL,io,EntropyIO,AAPL,AAPL,stocks,US: AAPL,stock,nasdaq (displayName),False,Apple Inc. - Common Stock,stock,25,0,False,
 io:DRAM,io,EntropyIO,DRAM,DRAM,stocks,US: DRAM,etf,nasdaq (displayName),False,Roundhill Memory ETF,etf,25,0,False,
 io:EWY,io,EntropyIO,EWY,,(none),NYSE Arca: EWY,etf,nasdaq (manual reference),False,iShares MSCI South Korea ETF,etf,25,0,False,
 io:GPRO,io,EntropyIO,GPRO,GOPRO,stocks,US: GPRO,stock,nasdaq (coin name),False,"GoPro, Inc. - Class A Common Stock",stock,5,0,False,

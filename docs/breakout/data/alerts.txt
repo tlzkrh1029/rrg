@@ -1,15 +1,16 @@
-돌파 지도 2026-10-30 (USD 기준, 직전 종가)
-켜진 칸 20일 54/279 (19%) · 55일 42 · 52주 23 · 사상 최고 19 · 이탈 34 · 실패 7
+돌파 지도 2026-11-02 (USD 기준, 직전 종가)
+켜진 칸 20일 66/279 (24%) · 55일 54 · 52주 32 · 사상 최고 27 · 이탈 54 · 실패 7
 
 새 돌파 (1일째)
-  사상 최고: MA(XLF)
-  52주: APD(XLB)
-  55일: WMT(XLP)*, DUK(XLU)*, XEL(XLU)*, LIN(XLB)*
-  20일: ABT(XLV)*, CMCSA(XLC)*, D(XLU)*
+  사상 최고: BRK.B(XLF), V(XLF), MAR(XLY)*, HLT(XLY), KO(XLP), ECL(XLB), NUE(XLB·XME·PAVE)*, PSA(XLRE), UBSI(KRE), MAS(XHB)
+  52주: PFE(XLV), MDLZ(XLP), UCB(KRE)
+  55일: COST(XLP)*, SO(XLU)*, VMC(XLB)*, MLM(XLB)*, GBCI(KRE)*, SSD(XHB)*, TOL(XHB)*, LEN(XHB)*, CWEN(TAN)*, ULCC(JETS)*
+  20일: AXP(XLF)*, HD(XLY)*, GE(XLI·ITA)*, PEP(XLP)*, SHW(XLB)*, O(XLRE)*, NXT(TAN)*, RUN(TAN)*, AAL(JETS)*
   * SPY 대비로도 켜진 칸
 새 이탈 (1일째)
-  55일 바닥: NVDA(XLK·SMH), INTC(XLK), BAC(XLF), FCX(XLB·XME), TSM(SMH), MRVL(SMH), CCJ(URA), SKYW(JETS)
-  20일 바닥: AMD(XLK·SMH), PLTR(XLK·IGV), ILMN(GNOM·ARKG)
-오늘 실패한 돌파: NTRA(XBI·GNOM·ARKG, 사상 최고), NTRA(XBI·GNOM·ARKG, 52주), ABSI(ARKG, 52주), W(XHB, 52주), NTRA(XBI·GNOM·ARKG, 55일), ABSI(ARKG, 55일), NTRA(XBI·GNOM·ARKG, 20일), ABSI(ARKG, 20일), CMC(XME, 20일)
+  55일 바닥: MU(XLK·SMH·DRAM), CSCO(XLK), ASML(SMH), ORCL(IGV), MTRN(XME), NXE(URA), DML(URA), STX(DRAM), 285A(DRAM), NVT(GRID)
+  20일 바닥: MSFT(XLK·IGV), NTRA(XBI·GNOM·ARKG), TWST(XBI·GNOM·ARKG), TXG(GNOM·ARKG)
+오늘 실패한 돌파: TMO(XLV, 사상 최고), TRGP(XLE, 사상 최고), TMO(XLV, 52주), TRGP(XLE, 52주), TMO(XLV, 55일), TRGP(XLE, 55일), ADI(SMH, 55일), NST(GDX, 55일), TMO(XLV, 20일), ADI(SMH, 20일), NST(GDX, 20일)
+블록 알림 (20일): XLK ▼6/10 이탈 · XLF 6/10 켜짐 · XLP 6/10 켜짐 · XLU 5/10 켜짐 · XHB 6/10 켜짐
 
 https://tlzkrh1029.github.io/rrg/breakout/

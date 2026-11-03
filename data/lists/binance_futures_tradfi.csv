@@ -154,7 +154,7 @@ SMRUSDT,SMR,USDT,EQUITY,TradFi,US,SMR,constituents,stock,SMR,NuScale Power Corpo
 SNDKUSDT,SNDK,USDT,EQUITY,TradFi,US,SNDK,constituents,stock,SNDK,Sandisk Corporation - Common Stock When-Issued,stock,TRADING,2026-04-07
 SNOWUSDT,SNOW,USDT,EQUITY,TradFi,US,SNOW,constituents,stock,SNOW,Snowflake Inc. Common Stock,stock,TRADING,2026-07-10
 SNPSUSDT,SNPS,USDT,EQUITY,TradFi,US,SNPS,constituents,stock,SNPS,"Synopsys, Inc. - Common Stock",stock,TRADING,2026-10-12
-SNXXUSDT,SNXX,USDT,EQUITY,TradFi,US,SNXX,constituents,etf,SNXX,Tradr 2X Long SNDK Daily ETF,etf,TRADING,2026-07-09
+SNXXUSDT,SNXX,USDT,EQUITY,TradFi,US,SNXX,baseAsset,etf,SNXX,Tradr 2X Long SNDK Daily ETF,etf,TRADING,2026-07-09
 SOFIUSDT,SOFI,USDT,EQUITY,TradFi,US,SOFI,constituents,stock,SOFI,"SoFi Technologies, Inc.  - Common Stock",stock,TRADING,2026-07-21
 SONYUSDT,SONY,USDT,EQUITY,TradFi,US,SONY,constituents,stock,SONY,Sony Group Corporation American Depositary Shares,stock,TRADING,2026-06-22
 SOXLUSDT,SOXL,USDT,EQUITY,TradFi,US,SOXL,constituents,etf,SOXL,Direxion Daily Semiconductor Bull 3X ETF,etf,TRADING,2026-05-15

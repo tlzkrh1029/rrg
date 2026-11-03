@@ -1,95 +1,86 @@
 {
- "asof": "2026-10-30",
- "at": "10/31 07:19 KST",
+ "asof": "2026-11-02",
+ "at": "11/03 10:19 KST",
  "etfs": {
-  "XLE": {
-   "text": [
-    "10/8 호르무즈 해협에서 유조선 공격이 이어져 통행이 흔들렸고 허리케인으로 멕시코만 생산까지 멈추면서 브렌트유가 104달러를 넘었습니다. 이후 10/12와 10/14에 사우디 시설을 겨냥한 공격이 계속되자 유가와 함께 XOM과 CVX 같은 대형 석유주가 올랐습니다.",
-    "로이터 보도에 따르면 브렌트유는 10월 한 달 동안 14% 가까이 올랐고, 정유 마진이 좋아진 점도 대형 석유사 실적에 힘이 됐습니다."
-   ],
-   "src": [
-    {
-     "t": "CNN 10/8 호르무즈 유조선 공격",
-     "u": "https://www.cnn.com/2026/10/08/business/oil-diesel-prices-tanker-attacks-hormuz-intl"
-    },
-    {
-     "t": "TIKR XOM·CVX 한 달 상승 분석",
-     "u": "https://www.tikr.com/blog/exxonmobil-just-gained-12-in-a-month-and-chevron-11-take-profits-or-buy-more"
-    },
-    {
-     "t": "EnergyNow (로이터 인용) 유가 월간 상승",
-     "u": "https://energynow.com/2026/10/oil-prices-jump-more-than-2-as-strait-of-hormuz-tanker-attack-renews-middle-east-supply-fears/"
-    }
-   ],
-   "kick": "호르무즈 유조선 공격"
-  },
   "XLP": {
    "text": [
-    "10월 들어 AI·기술주에서 빠져나온 자금이 방어주로 옮겨 가면서 필수소비재가 올랐습니다. S&P 필수소비재 업종은 10/1부터 10/16까지 11.1% 올라 1990년 이후 세 번째로 좋은 월초 흐름을 보였고, 나스닥이 2.6% 급락한 10/22에는 PG가 분기 실적 발표 뒤 5.6% 뛰었습니다.",
-    "WMT는 같은 날 새 계약이나 가이던스 변경 없이 올라 업종 자금 흐름의 영향이 컸다는 평가를 받았습니다."
+    "10월에는 AI·기술주에서 빠진 자금이 방어주로 옮겨 가면서 필수소비재가 크게 올랐고, WMT는 10월 한 달 약 13.9% 올라 2014년 이후 가장 강한 월간 상승을 기록했다고 보도되었습니다.",
+    "10/22에는 PG가 회계연도 1분기 실적을 내놓은 뒤 크게 올랐고, 10/30에도 기술주가 내리는 동안 WMT 등 방어주가 선호되었습니다."
    ],
    "src": [
     {
-     "t": "24/7 Wall St. 월마트 10월 상승",
+     "t": "24/7 Wall St. WMT 월간 상승",
      "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
     },
     {
-     "t": "CNBC 증시 라이브",
-     "u": "https://www.cnbc.com/2026/10/29/stock-market-today-live-updates.html"
+     "t": "KuCoin(Benzinga 인용) WMT 10월 상승",
+     "u": "https://www.kucoin.com/news/flash/walmart-stock-rises-13-9-in-october-strongest-month-since-2014"
+    },
+    {
+     "t": "Nasdaq 필수소비재 로테이션",
+     "u": "https://www.nasdaq.com/articles/rotation-consumer-staples-defensive-strength-uncertain-2026"
     }
    ],
-   "kick": "AI주 이탈 순환매"
+   "kick": "AI주 이탈 방어주 로테이션"
   },
   "XLV": {
    "text": [
-    "10/29 Lilly는 3분기 매출이 39% 늘어난 244억 달러라고 발표하면서 연간 매출 가이던스 중간값을 55억 달러 올려 910억~920억 달러로 제시했습니다. 마운자로와 젭바운드 매출이 각각 65%, 49% 늘어난 것이 바탕이었습니다.",
-    "AI·기술주가 크게 흔들리던 시기에 자금이 헬스케어로 옮겨 가 XLV가 52주 고점을 새로 썼고, LLY·JNJ·화이자·길리어드도 함께 52주 고점에 올랐습니다."
+    "LLY가 10/29에 3분기 실적이 예상을 웃돌았다고 발표해 그날 6.6% 올랐고, 같은 날 XLV도 2.4% 상승했습니다.",
+    "MRK도 같은 날 3분기 실적이 좋게 나와 헬스케어 업종 전반의 상승을 거들었습니다."
    ],
    "src": [
     {
-     "t": "Lilly 8-K 3분기 실적",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000059478/000005947826000104/q326lillysalesandearningsp.htm"
+     "t": "Trefis LLY 10/29 실적",
+     "u": "https://www.trefis.com/stock/lly/articles/621588/what-sent-eli-lilly-stock-higher/2026-10-30"
     },
     {
-     "t": "CNBC 증시 라이브",
-     "u": "https://www.cnbc.com/2026/10/29/stock-market-today-live-updates.html"
+     "t": "Finimize 릴리·머크 3분기",
+     "u": "https://finimize.com/content/eli-lilly-and-merck-lifted-healthcare-stocks-on-q3-strength"
     }
    ],
-   "kick": "기술주 이탈과 LLY 실적"
+   "kick": "릴리·머크 3분기 호실적"
+  },
+  "XLB": {
+   "text": [
+    "LIN은 3분기 조정 EPS가 전년보다 9% 늘었다고 밝히면서 연간 조정 EPS 가이던스를 17.82~17.92달러로 높였습니다.",
+    "NUE는 10/26에 3분기 순이익 13억 2천만 달러(주당 5.80달러)를 발표하고 4분기 이익이 3분기와 비슷하거나 소폭 높을 것으로 내다보았습니다."
+   ],
+   "src": [
+    {
+     "t": "Linde 8-K 3분기 실적",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001707925/000165495426009199/lin_ex991.htm"
+    },
+    {
+     "t": "Nucor 3분기 보도자료",
+     "u": "https://s202.q4cdn.com/531038915/files/doc_news/Nucor-Reports-Results-for-the-Third-Quarter-of-2026-2026.pdf"
+    },
+    {
+     "t": "SteelOrbis Nucor 3분기",
+     "u": "https://www.steelorbis.com/steel-news/latest-news/nucors-net-income-up-141-percent-in-q3-2026-1486602.htm"
+    }
+   ],
+   "kick": "린데·누코 실적 호조"
   },
   "URA": {
    "text": [
-    "우라늄 장기 계약 가격은 10월 초 파운드당 96달러로 19년 만의 최고치를 기록했지만, 장기 계약 체결량은 8/31 기준 1년 전보다 약 15% 줄었습니다. TD Cowen은 전력회사들이 가격 부담 때문에 계약을 꺼린다고 짚었습니다.",
-    "골드만삭스도 원전 신규 주문이 매우 적다고 평가했고, CCJ는 실현 가격이 현물가보다 늦게 따라오는 구조여서 실적 기대에 못 미칠 것이라는 우려가 컸습니다. 이런 우려가 CCJ와 OKLO 같은 원전 관련주 약세로 이어졌습니다."
+    "우라늄 가격이 10월 초 19년 만의 최고치를 기록했는데도 CCJ, OKLO, SMR 같은 원자력 관련주는 한 달 사이 크게 내렸습니다. 매체는 이를 우라늄 현물이 아닌 원자력 주식에 대한 매도세로 설명했습니다.",
+    "CCJ는 10/30에 3분기 조정 순손실(C$2백만)을 발표한 뒤 9% 내렸고, 경영진은 원자력주의 변동성이 산업 펀더멘털 악화를 뜻하지 않는다고 말했습니다."
    ],
    "src": [
     {
-     "t": "24/7 Wall St. 우라늄 가격 신고가와 원전주 약세",
+     "t": "24/7 Wall St. 우라늄 신고가와 원자력주 하락",
      "u": "https://247wallst.com/investing/2026/10/03/uranium-prices-just-broke-a-19-year-record-but-nuclear-stocks-are-collapsing-anyway/"
     },
     {
      "t": "TIKR Cameco 한 달 하락",
      "u": "https://www.tikr.com/blog/cameco-sinks-11-in-a-month-while-uranium-hits-a-19-year-high-defined-by-delivery"
-    }
-   ],
-   "kick": "유틸리티 계약 부진"
-  },
-  "ARKG": {
-   "text": [
-    "10/6 유전체·진단 업종이 동반 급락해 TWST가 약 18.6%, TXG가 약 17.5% 내렸는데 뚜렷한 회사 소식은 없었고, 급등 뒤 차익 실현이 원인으로 거론됐습니다. 10/22에도 TWST가 업종 매도 속에 9% 내렸습니다.",
-    "10/28에는 ICON이 예약 호조로 13% 오른 것을 계기로 생명과학 도구주가 반등해 TWST와 TXG가 각각 12% 올랐으나, ARKG의 월간 낙폭을 메우기에는 부족했습니다."
-   ],
-   "src": [
-    {
-     "t": "FMP 10/6 하락 종목",
-     "u": "https://site.financialmodelingprep.com/market-news/notable-stock-decliners-october-6-2026"
     },
     {
-     "t": "TIKR 유전체주 반등",
-     "u": "https://www.tikr.com/blog/twist-bioscience-soars-12-10x-genomics-up-12-as-genomics-stocks-rebound"
+     "t": "TIKR Cameco 3분기",
+     "u": "https://www.tikr.com/blog/cameco-sinks-9-on-q3-adjusted-loss-as-ceo-insists-customer-requirements-do-not-disappear"
     }
    ],
-   "kick": "유전체주 투매와 반등"
+   "kick": "원자력주 동반 매도"
   }
  },
  "stocks": {
@@ -549,6 +540,86 @@
    ],
    "asof": "2026-10-30",
    "at": "11/01 00:07 KST"
+  },
+  "TEM": {
+   "text": [
+    "10/23에 BMY와 2031년 말까지 이어지는 종양 데이터 라이선스 계약을 맺었고, 8-K에 따르면 고정 지급액은 합계 1억 3,750만 달러입니다. Needham은 같은 날 매수 의견과 목표가 75달러를 유지했습니다.",
+    "11/2에는 3분기 매출이 4억 1,150만 달러(전년 대비 +23%)이고 조정 EBITDA가 2,560만 달러라고 발표했으며, 연간 매출 가이던스를 16억~16억 500만 달러로 올렸습니다. 이 실적 발표일에 주가가 8.7% 올라 마지막 주 수익률에 반영되었습니다."
+   ],
+   "src": [
+    {
+     "t": "Tempus 3분기 실적 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001717115/000119312526442619/tem-ex99_1.htm"
+    },
+    {
+     "t": "Tempus BMS 계약 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001717115/000119312526429533/d135568d8k.htm"
+    },
+    {
+     "t": "Tempus BMS 협력 보도자료",
+     "u": "https://www.tempus.com/news/pr/tempus-expands-strategic-collaboration-with-bristol-myers-squibb/"
+    }
+   ],
+   "asof": "2026-11-02",
+   "at": "11/03 10:19 KST"
+  },
+  "ORCL": {
+   "text": [
+    "10/28에 투자자의 날을 열어 FY30 목표로 매출 2,250억 달러 이상, 비GAAP 영업이익률 40% 이상, 비GAAP EPS 21달러 이상을 제시했고, FY30까지 추가 자본 조달을 기존 부채 차환 제외 200억 달러로 제한하겠다고 밝혔습니다.",
+    "마지막 주(11/2) 하락 −8.8%의 직접적인 원인은 찾지 못했고, 같은 날 Stephens가 투자의견을 비중확대로 올렸다는 기사가 있었습니다."
+   ],
+   "src": [
+    {
+     "t": "Oracle 투자자의 날 보도자료",
+     "u": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Investor-Day-2026-Accelerating-Value-Creation/default.aspx"
+    },
+    {
+     "t": "Finviz Oracle Investor Day",
+     "u": "https://finviz.com/news/410394/oracle-investor-day-2026-accelerating-value-creation"
+    }
+   ],
+   "asof": "2026-11-02",
+   "at": "11/03 10:19 KST"
+  },
+  "AMZN": {
+   "text": [
+    "10/29 장 마감 후 3분기 실적을 발표했고, 조정 EPS는 1.89달러로 시장 예상 1.97달러보다 낮았으며 매출은 약 2,019억 달러로 예상치를 소폭 밑돌았습니다.",
+    "AWS 매출은 전년 대비 39% 늘어 성장세가 가팔라졌으나 설비투자 부담이 현금흐름을 압박한다는 평가가 나왔고, 다음 거래일 주가는 1.4% 내렸습니다. 10/30에는 Cantor Fitzgerald가 목표가를 280달러로 낮췄습니다."
+   ],
+   "src": [
+    {
+     "t": "Newsquawk 3분기 실적",
+     "u": "https://www.newsquawk.com/headlines/amazoncom-inc-amzn-q3-2026-usd-eps-189-exp-197-sales-2019bln-exp-2022bln"
+    },
+    {
+     "t": "Constellation Research AWS 3분기",
+     "u": "https://www.constellationr.com/insights/news/aws-q3-revenue-growth-surges-39-capex-stings-amazons-cash-flow"
+    }
+   ],
+   "asof": "2026-11-02",
+   "at": "11/03 10:19 KST"
+  },
+  "SHW": {
+   "text": [
+    "10/27 장 시작 전 3분기 실적을 발표했고, 순매출은 7.9% 늘어난 68.6억 달러, 조정 EPS는 3.63달러(전년 3.59달러)였습니다. 연간 조정 EPS 가이던스는 11.85~12.15달러로 좁혔으며 중간값은 7월에 올린 수준을 유지했습니다.",
+    "매출총이익률이 전년의 49.2%에서 47.8%로 낮아졌고 경영진도 매출의 이익 전환이 평소보다 낮았다고 인정했습니다. 그날 주가는 2.7% 내렸고 10/28에는 Guggenheim이 목표가를 375달러로 낮췄습니다."
+   ],
+   "src": [
+    {
+     "t": "Sherwin-Williams 3분기 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000089800/000008980026000054/shwearningsrelease3q2026.htm"
+    },
+    {
+     "t": "Finviz 3분기 실적 보도자료",
+     "u": "https://finviz.com/news/408548/the-sherwin-williams-company-reports-2026-third-quarter-financial-results"
+    },
+    {
+     "t": "24/7 Wall St. SHW 3분기",
+     "u": "https://247wallst.com/cards/sherwin-williams-company-q3-2026-earnings-shw-01m5ygt1gszpngqcsx4atjffvq"
+    }
+   ],
+   "asof": "2026-11-02",
+   "at": "11/03 10:19 KST"
   }
  },
  "runs": [
@@ -606,6 +677,19 @@
    18,
    "claude-sonnet-5-5",
    0.369
+  ],
+  [
+   "11/03 10:19 KST",
+   6,
+   4,
+   5,
+   4,
+   "ok",
+   22,
+   1,
+   25,
+   "claude-sonnet-5-5",
+   0.597
   ]
  ]
 }
