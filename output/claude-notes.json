@@ -151,17 +151,31 @@
   },
   "005930": {
    "text": [
-    "삼성전자는 10/6부터 7거래일 연속 하락해 23.9% 내렸고, 10/15에는 AI 투자 부담과 미국 물가 우려로 코스피가 7.57% 급락했으며, 이 흐름이 10/12 주 −17.7%에 반영되었습니다.",
-    "10/16에 코스피가 2.05% 오르며 하락세가 멈췄고, 애널리스트들은 이번 하락을 실적 전망이 아닌 매수 여력 부족에 따른 과도한 조정으로 평가했습니다."
+    "10/8에 삼성전자는 3분기 영업이익이 약 107.4조 원으로 사상 최대가 될 것이라는 잠정 실적을 내놓았지만, 매출은 시장 전망치인 207조 원에 못 미쳤습니다.",
+    "10/6부터 7거래일 연속 매도세가 이어져 삼성전자 주가는 23.9%, SK하이닉스는 31.5%, 코스피는 21% 하락했고, 이 하락은 10/16에 멈췄습니다. 시장 관계자들은 이를 실적 악화보다 매수 기반 부족과 투자 심리 약화에 따른 과도한 매도로 평가했으며, 이 흐름이 10/12 주 -17.7% 수익률과 이어집니다.",
+    "10/21에 삼성전자는 2026년 주주환원 규모를 약 90조~110조 원으로 예상한다고 밝혔습니다.",
+    "10/29에 발표한 3분기 확정 실적은 영업이익 107.44조 원, 매출 195.25조 원이었고 HBM4 매출은 전 분기의 세 배 넘게 늘었습니다. 다만 결과가 애널리스트 예상에 소폭 못 미쳐 발표 당일 장 중 주가가 크게 내렸습니다."
    ],
    "src": [
     {
-     "t": "코리아타임스",
+     "t": "TrendForce 3분기 잠정실적",
+     "u": "https://trendforce.com/news/2026/10/08/news-samsung-sees-3q26-operating-profit-soaring-783-to-record-krw-107-4-trillion-on-hbm4-memory-price-gains"
+    },
+    {
+     "t": "Korea Times 10/16",
      "u": "https://www.koreatimes.co.kr/economy/20261016/samsung-sk-hynix-sell-off-excessive-as-memory-outlook-stays-strong-analysts"
+    },
+    {
+     "t": "3분기 확정 실적 보도",
+     "u": "https://telanganatoday.com/strong-memory-business-powers-samsung-to-record-third-quarter-profit"
+    },
+    {
+     "t": "RTTNews 주주환원",
+     "u": "https://www.rttnews.com/3683162/samsung-electronics-plans-krw-90-110-tln-shareholder-return-in-2026.aspx"
     }
    ],
-   "asof": "2026-10-28",
-   "at": "10/29 10:21 KST"
+   "asof": "2026-11-03",
+   "at": "11/04 16:12 KST"
   },
   "CVX": {
    "text": [
@@ -791,6 +805,19 @@
    43,
    "claude-sonnet-5-5",
    0.917
+  ],
+  [
+   "11/04 16:12 KST",
+   0,
+   0,
+   1,
+   1,
+   "ok",
+   4,
+   1,
+   7,
+   "claude-sonnet-5-5",
+   0.124
   ]
  ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T01:07:04Z",
+  "generated_at": "2026-11-04T06:50:04Z",
   "source_order": [
     "stooq",
     "yahoo"
@@ -9,10 +9,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "URLError(TimeoutError('timed out'))"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -25,10 +25,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "URLError(TimeoutError('timed out'))"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -41,10 +41,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "URLError(TimeoutError('timed out'))"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -57,10 +57,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -73,10 +73,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -89,10 +89,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -105,10 +105,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -121,10 +121,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -137,10 +137,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -153,10 +153,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -169,10 +169,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -185,10 +185,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -201,10 +201,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -217,10 +217,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -233,10 +233,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -249,10 +249,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -265,10 +265,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -281,10 +281,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -297,10 +297,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -313,10 +313,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -329,10 +329,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -345,10 +345,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -361,10 +361,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -377,10 +377,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -393,10 +393,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2026-04-02",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -409,10 +409,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -425,10 +425,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -441,10 +441,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -457,10 +457,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -473,10 +473,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,
@@ -489,10 +489,10 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
+        "stooq": "skipped: unreachable for the previous tickers"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-03",
+      "last_bar_from_quote": null,
       "first_date": "2024-11-05",
       "last_date": "2026-11-03",
       "gap_days": 0,

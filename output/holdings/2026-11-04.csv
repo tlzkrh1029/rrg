@@ -139,16 +139,16 @@ SMH,7,MU,"Micron Technology, Inc.",4.67
 SMH,8,ASML,ASML Holding N.V.,4.48
 SMH,9,KLAC,KLA Corporation,4.22
 SMH,10,SKHY,SK hynix Inc.,4.19
-IGV,1,PANW,"Palo Alto Networks, Inc.",9.07
-IGV,2,PLTR,Palantir Technologies Inc.,9.02
-IGV,3,MSFT,Microsoft Corporation,8.82
-IGV,4,CRWD,"CrowdStrike Holdings, Inc.",8.55
-IGV,5,ORCL,Oracle Corporation,6.72
-IGV,6,CRM,"Salesforce, Inc.",4.13
-IGV,7,NOW,"ServiceNow, Inc.",3.53
-IGV,8,ADBE,Adobe Inc.,3.51
-IGV,9,INTU,Intuit Inc.,3.29
-IGV,10,CDNS,"Cadence Design Systems, Inc.",3.19
+IGV,1,PLTR,Palantir Technologies Inc.,8.95
+IGV,2,PANW,"Palo Alto Networks, Inc.",8.93
+IGV,3,MSFT,Microsoft Corporation,8.77
+IGV,4,CRWD,"CrowdStrike Holdings, Inc.",8.45
+IGV,5,ORCL,Oracle Corporation,6.27
+IGV,6,CRM,"Salesforce, Inc.",4.17
+IGV,7,NOW,"ServiceNow, Inc.",3.64
+IGV,8,ADBE,Adobe Inc.,3.61
+IGV,9,INTU,Intuit Inc.,3.48
+IGV,10,CDNS,"Cadence Design Systems, Inc.",3.28
 XBI,1,MRNA,"Moderna, Inc.",2.43
 XBI,2,EXEL,"Exelixis, Inc.",1.79
 XBI,3,HALO,"Halozyme Therapeutics, Inc.",1.79
