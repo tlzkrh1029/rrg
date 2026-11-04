@@ -2,7 +2,7 @@
 
 28개 ETF 의 구성 비중 상위 10개 종목을 칸으로 놓고, 칸마다 최근 30일 종가 선을 그리며, 종가가 지평별 고점(Shelf)을 처음 넘은 칸을 켜는 화면입니다. 섹터 전환 매트릭스(`terminal/`)의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 것이 블록이고, 같은 ETF 를 매트릭스의 행과 이어 보도록 만들었습니다.
 
-- Pages: `https://tlzkrh1029.github.io/rrg/breakout/` (매트릭스의 `3) 돌파 지도` 탭, 돌파 지도의 사이트 줄 `1) 매트릭스`)
+- Pages: `https://tlzkrh1029.github.io/rrg/breakout/` (매트릭스의 `4) 돌파 지도` 탭, 돌파 지도의 사이트 줄 `1) 매트릭스`)
 - Claude 아티팩트: `https://claude.ai/artifact/AMAB2TMoSxwXPuLPWjtjGB` (`docs/breakout/breakout.artifact.html` 을 발행)
 
 ## 흐름
