@@ -37,7 +37,7 @@ import re
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 PAGE_URL = "https://tlzkrh1029.github.io/rrg/#board"   # #board 는 대문을 건너뛰고 바로 보드를 연다
-# 5) 돌파 지도 탭이 가리키는 곳. Pages 본문은 같은 사이트의 breakout/ 를, 아티팩트 본문은 돌파 지도 아티팩트를 새 탭으로 연다.
+# 4) 돌파 지도 탭이 가리키는 곳. Pages 본문은 같은 사이트의 breakout/ 를, 아티팩트 본문은 돌파 지도 아티팩트를 새 탭으로 연다.
 BREAKOUT_PAGE = "breakout/"
 BREAKOUT_ARTIFACT = "https://claude.ai/artifact/AMAB2TMoSxwXPuLPWjtjGB"
 # TradingView 뉴스 위젯(종목을 열면 불러옴)을 Pages 본문에 넣을지. 아티팩트는 외부 스크립트를 쓸 수 없어 늘 끈다.
@@ -760,7 +760,7 @@ def main():
     ap.add_argument("--listing-log", default=os.path.join(ROOT, "data", "lists", "log.json"), help="5) 상장 로그 탭의 누적 로그(terminal/listing_log.py)")
     ap.add_argument("--template", default=os.path.join(HERE, "template.html"))
     ap.add_argument("--docs", default=os.path.join(ROOT, "docs"))
-    ap.add_argument("--breakout-artifact", default=BREAKOUT_ARTIFACT, help="아티팩트 본문의 3) 돌파 지도 탭이 열 주소")
+    ap.add_argument("--breakout-artifact", default=BREAKOUT_ARTIFACT, help="아티팩트 본문의 4) 돌파 지도 탭이 열 주소")
     ap.add_argument("--stocks", default=None, help="종목 상세용 돌파 지도 계산 결과(breakout-data.json). 기본은 output/breakout-data.json 과 docs/breakout/data/breakout-data.json 가운데 종가 기준일이 새 것")
     args = ap.parse_args()
 
@@ -882,7 +882,7 @@ def main():
             raise SystemExit(f"unreplaced tokens: {sorted(set(leftover))}")
         return page
 
-    # 두 본문은 5) 돌파 지도 탭의 주소만 다르다
+    # 두 본문은 4) 돌파 지도 탭의 주소만 다르다
     page_site = fill({"__BREAKOUT_URL__": BREAKOUT_PAGE, "__NAV_TARGET__": "_self", "__TV_WIDGET__": "true" if TV_WIDGET_PAGES else "false"})
     page_artifact = fill({"__BREAKOUT_URL__": args.breakout_artifact, "__NAV_TARGET__": "_blank", "__TV_WIDGET__": "false"})
     with open(os.path.join(args.docs, "terminal.artifact.html"), "w", encoding="utf-8") as f:
