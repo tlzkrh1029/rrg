@@ -6,7 +6,7 @@ AAPLUSDT,AAPL,USDT,EQUITY,TradFi,US,AAPL,constituents,stock,AAPL,Apple Inc. - Co
 ABBVUSDT,ABBV,USDT,EQUITY,TradFi,US,ABBV,constituents,stock,ABBV,AbbVie Inc. Common Stock,stock,TRADING,2026-10-26
 ACNUSDT,ACN,USDT,EQUITY,TradFi,US,ACN,constituents,stock,ACN,Accenture plc Class A Ordinary Shares (Ireland),stock,TRADING,2026-09-29
 ADBEUSDT,ADBE,USDT,EQUITY,TradFi,US,ADBE,constituents,stock,ADBE,Adobe Inc. - Common Stock,stock,TRADING,2026-06-11
-AGPUUSDT,AGPU,USDT,EQUITY,TradFi,US,AGPU,constituents,stock,AGPU,Axe Compute Inc. - Common Stock,stock,TRADING,2026-09-18
+AGPUUSDT,AGPU,USDT,EQUITY,TradFi,US,AGPU,baseAsset,stock,AGPU,Axe Compute Inc. - Common Stock,stock,TRADING,2026-09-18
 AKAMUSDT,AKAM,USDT,EQUITY,TradFi,US,AKAM,constituents,stock,AKAM,"Akamai Technologies, Inc. - Common Stock",stock,TRADING,2026-10-06
 ALABUSDT,ALAB,USDT,EQUITY,TradFi,US,ALAB,constituents,stock,ALAB,"Astera Labs, Inc. - Common Stock",stock,TRADING,2026-06-22
 AMATUSDT,AMAT,USDT,EQUITY,TradFi,US,AMAT,constituents,stock,AMAT,"Applied Materials, Inc. - Common Stock",stock,TRADING,2026-06-08

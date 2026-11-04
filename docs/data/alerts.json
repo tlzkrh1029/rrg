@@ -1,123 +1,93 @@
 {
- "asof": "2026-11-02",
- "prev_asof": "2026-10-30",
+ "asof": "2026-11-03",
+ "prev_asof": "2026-11-02",
  "alerts": [
+  {
+   "etf": "XLRE",
+   "type": "signal",
+   "text": "XLRE 부동산: ↑ 백분위 41점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 41점 상승 (6개월 → 1개월)",
+   "pct": [
+    91,
+    86,
+    50,
+    45,
+    38
+   ],
+   "phase": "Lagging",
+   "bench": "SPY"
+  },
+  {
+   "etf": "XLRE",
+   "type": "shift",
+   "text": "XLRE 부동산: 전환순 상위 3 진입 (점수 50)",
+   "detail": "전환순 상위 3 진입 (점수 50)",
+   "pct": [
+    91,
+    86,
+    50,
+    45,
+    38
+   ],
+   "phase": "Lagging",
+   "bench": "SPY"
+  },
   {
    "etf": "XHB",
    "type": "signal",
-   "text": "XHB 주택건설: ↑ 백분위 37점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 37점 상승 (6개월 → 1개월)",
+   "text": "XHB 주택건설: ↑ 백분위 32점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 32점 상승 (6개월 → 1개월)",
    "pct": [
-    100,
-    82,
-    45,
-    45,
-    24
+    86,
+    68,
+    32,
+    36,
+    14
    ],
    "phase": "Lagging",
    "bench": "XLY"
   },
   {
-   "etf": "XLB",
+   "etf": "XLY",
    "type": "signal",
-   "text": "XLB 소재: ↗ SPY 비율 200일선 상향 돌파",
-   "detail": "↗ SPY 비율 200일선 상향 돌파",
+   "text": "XLY 경기소비재: ↑ 백분위 55점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 55점 상승 (6개월 → 1개월)",
    "pct": [
-    95,
-    91,
-    77,
-    50,
-    71
+    64,
+    82,
+    59,
+    27,
+    19
    ],
    "phase": "Improving",
    "bench": "SPY"
-  },
-  {
-   "etf": "XLB",
-   "type": "signal",
-   "text": "XLB 소재: ↑ 백분위 41점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 41점 상승 (6개월 → 1개월)",
-   "pct": [
-    95,
-    91,
-    77,
-    50,
-    71
-   ],
-   "phase": "Improving",
-   "bench": "SPY"
-  },
-  {
-   "etf": "PAVE",
-   "type": "rrg",
-   "text": "PAVE 미국 인프라: RRG Lagging → Improving (vs XLI)",
-   "detail": "RRG Lagging → Improving (vs XLI)",
-   "pct": [
-    91,
-    50,
-    32,
-    18,
-    52
-   ],
-   "phase": "Improving",
-   "bench": "XLI"
-  },
-  {
-   "etf": "PAVE",
-   "type": "signal",
-   "text": "PAVE 미국 인프라: ↑ 백분위 32점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 32점 상승 (6개월 → 1개월)",
-   "pct": [
-    91,
-    50,
-    32,
-    18,
-    52
-   ],
-   "phase": "Improving",
-   "bench": "XLI"
-  },
-  {
-   "etf": "ITA",
-   "type": "signal",
-   "text": "ITA 항공우주·방산: ↗ SPY 비율 50일선 상향 돌파",
-   "detail": "↗ SPY 비율 50일선 상향 돌파",
-   "pct": [
-    86,
-    55,
-    9,
-    32,
-    14
-   ],
-   "phase": "Lagging",
-   "bench": "XLI"
   },
   {
    "etf": "XLY",
-   "type": "signal",
-   "text": "XLY 경기소비재: ↑ 백분위 32점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 32점 상승 (6개월 → 1개월)",
+   "type": "shift",
+   "text": "XLY 경기소비재: 전환순 상위 3 진입 (점수 54)",
+   "detail": "전환순 상위 3 진입 (점수 54)",
    "pct": [
+    64,
     82,
-    73,
-    68,
-    41,
-    33
+    59,
+    27,
+    19
    ],
    "phase": "Improving",
    "bench": "SPY"
   },
   {
-   "etf": "XLP",
+   "etf": "XLB",
    "type": "signal",
-   "text": "XLP 필수소비재: ↑ 백분위 32점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 32점 상승 (6개월 → 1개월)",
+   "text": "XLB 소재: ↘ SPY 비율 200일선 하향 이탈",
+   "detail": "↘ SPY 비율 200일선 하향 이탈",
    "pct": [
+    59,
     77,
-    100,
-    82,
     68,
-    62
+    50,
+    71
    ],
    "phase": "Improving",
    "bench": "SPY"
@@ -125,41 +95,26 @@
   {
    "etf": "XLU",
    "type": "signal",
-   "text": "XLU 유틸리티: ↑ 백분위 72점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 72점 상승 (6개월 → 1개월)",
+   "text": "XLU 유틸리티: ↑ 백분위 77점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 77점 상승 (6개월 → 1개월)",
    "pct": [
-    64,
-    86,
     55,
+    91,
+    64,
     14,
-    19
+    24
    ],
    "phase": "Improving",
    "bench": "SPY"
   },
   {
-   "etf": "XLI",
-   "type": "signal",
-   "text": "XLI 산업재: ↗ SPY 비율 50일선 상향 돌파",
-   "detail": "↗ SPY 비율 50일선 상향 돌파",
-   "pct": [
-    50,
-    45,
-    27,
-    23,
-    43
-   ],
-   "phase": "Lagging",
-   "bench": "SPY"
-  },
-  {
    "etf": "KRE",
    "type": "signal",
-   "text": "KRE 지역은행: ↗ SPY 비율 200일선 상향 돌파",
-   "detail": "↗ SPY 비율 200일선 상향 돌파",
+   "text": "KRE 지역은행: ↘ SPY 비율 200일선 하향 이탈",
+   "detail": "↘ SPY 비율 200일선 하향 이탈",
    "pct": [
-    45,
-    59,
+    50,
+    55,
     41,
     59,
     67
@@ -170,13 +125,13 @@
   {
    "etf": "XBI",
    "type": "signal",
-   "text": "XBI 바이오: ↘ SPY 비율 50일선 하향 이탈",
-   "detail": "↘ SPY 비율 50일선 하향 이탈",
+   "text": "XBI 바이오: ↗ SPY 비율 50일선 상향 돌파",
+   "detail": "↗ SPY 비율 50일선 상향 돌파",
    "pct": [
-    41,
+    45,
     41,
     73,
-    77,
+    82,
     81
    ],
    "phase": "Lagging",
@@ -185,41 +140,26 @@
   {
    "etf": "XBI",
    "type": "signal",
-   "text": "XBI 바이오: ↓ 백분위 36점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 36점 하락 (6개월 → 1개월)",
+   "text": "XBI 바이오: ↓ 백분위 41점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 41점 하락 (6개월 → 1개월)",
    "pct": [
-    41,
+    45,
     41,
     73,
-    77,
+    82,
     81
    ],
    "phase": "Lagging",
    "bench": "XLV"
   },
   {
-   "etf": "GNOM",
-   "type": "signal",
-   "text": "GNOM 유전체학: ↓ 백분위 59점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 59점 하락 (6개월 → 1개월)",
-   "pct": [
-    36,
-    36,
-    100,
-    95,
-    90
-   ],
-   "phase": "Weakening",
-   "bench": "XLV"
-  },
-  {
    "etf": "ARKG",
    "type": "signal",
-   "text": "ARKG 유전체학 (액티브): ↘ SPY 비율 50일선 하향 이탈",
-   "detail": "↘ SPY 비율 50일선 하향 이탈",
+   "text": "ARKG 유전체학 (액티브): ↗ SPY 비율 50일선 상향 돌파",
+   "detail": "↗ SPY 비율 50일선 상향 돌파",
    "pct": [
-    32,
-    18,
+    23,
+    14,
     95,
     100,
     100
@@ -230,11 +170,11 @@
   {
    "etf": "ARKG",
    "type": "signal",
-   "text": "ARKG 유전체학 (액티브): ↓ 백분위 82점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 82점 하락 (6개월 → 1개월)",
+   "text": "ARKG 유전체학 (액티브): ↓ 백분위 86점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 86점 하락 (6개월 → 1개월)",
    "pct": [
-    32,
-    18,
+    23,
+    14,
     95,
     100,
     100
@@ -245,13 +185,13 @@
   {
    "etf": "DRAM",
    "type": "signal",
-   "text": "DRAM 메모리반도체: ↓ 백분위 64점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 64점 하락 (6개월 → 1개월)",
+   "text": "DRAM 메모리반도체: ↓ 백분위 55점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 55점 하락 (6개월 → 1개월)",
    "pct": [
     18,
     0,
-    5,
-    64,
+    14,
+    55,
     null
    ],
    "phase": null,
@@ -260,13 +200,13 @@
   {
    "etf": "XLK",
    "type": "signal",
-   "text": "XLK 기술: ↘ SPY 비율 200일선 하향 이탈",
-   "detail": "↘ SPY 비율 200일선 하향 이탈",
+   "text": "XLK 기술: ↗ SPY 비율 200일선 상향 돌파",
+   "detail": "↗ SPY 비율 200일선 상향 돌파",
    "pct": [
-    5,
     14,
-    36,
-    55,
+    18,
+    45,
+    64,
     57
    ],
    "phase": "Weakening",
@@ -275,13 +215,13 @@
   {
    "etf": "XLK",
    "type": "signal",
-   "text": "XLK 기술: ↓ 백분위 41점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 41점 하락 (6개월 → 1개월)",
+   "text": "XLK 기술: ↓ 백분위 46점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 46점 하락 (6개월 → 1개월)",
    "pct": [
-    5,
     14,
-    36,
-    55,
+    18,
+    45,
+    64,
     57
    ],
    "phase": "Weakening",
@@ -290,29 +230,14 @@
   {
    "etf": "IGV",
    "type": "rrg",
-   "text": "IGV 소프트웨어: RRG Leading → Weakening (vs SPY)",
-   "detail": "RRG Leading → Weakening (vs SPY)",
+   "text": "IGV 소프트웨어: RRG Weakening → Leading (vs SPY)",
+   "detail": "RRG Weakening → Leading (vs SPY)",
    "pct": [
     0,
     32,
-    64,
+    77,
     86,
-    10
-   ],
-   "phase": "Leading",
-   "bench": "XLK"
-  },
-  {
-   "etf": "IGV",
-   "type": "signal",
-   "text": "IGV 소프트웨어: ↓ 백분위 54점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 54점 하락 (6개월 → 1개월)",
-   "pct": [
-    0,
-    32,
-    64,
-    86,
-    10
+    5
    ],
    "phase": "Leading",
    "bench": "XLK"

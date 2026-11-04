@@ -1,16 +1,14 @@
-돌파 지도 2026-11-02 (USD 기준, 직전 종가)
-켜진 칸 20일 66/279 (24%) · 55일 54 · 52주 32 · 사상 최고 27 · 이탈 54 · 실패 7
+돌파 지도 2026-11-03 (USD 기준, 직전 종가)
+켜진 칸 20일 61/279 (22%) · 55일 48 · 52주 29 · 사상 최고 24 · 이탈 55 · 실패 13
 
 새 돌파 (1일째)
-  사상 최고: BRK.B(XLF), V(XLF), MAR(XLY)*, HLT(XLY), KO(XLP), ECL(XLB), NUE(XLB·XME·PAVE)*, PSA(XLRE), UBSI(KRE), MAS(XHB)
-  52주: PFE(XLV), MDLZ(XLP), UCB(KRE)
-  55일: COST(XLP)*, SO(XLU)*, VMC(XLB)*, MLM(XLB)*, GBCI(KRE)*, SSD(XHB)*, TOL(XHB)*, LEN(XHB)*, CWEN(TAN)*, ULCC(JETS)*
-  20일: AXP(XLF)*, HD(XLY)*, GE(XLI·ITA)*, PEP(XLP)*, SHW(XLB)*, O(XLRE)*, NXT(TAN)*, RUN(TAN)*, AAL(JETS)*
+  사상 최고: UTHR(XBI)
+  55일: DIS(XLC)*, SPG(XLRE)*
   * SPY 대비로도 켜진 칸
 새 이탈 (1일째)
-  55일 바닥: MU(XLK·SMH·DRAM), CSCO(XLK), ASML(SMH), ORCL(IGV), MTRN(XME), NXE(URA), DML(URA), STX(DRAM), 285A(DRAM), NVT(GRID)
-  20일 바닥: MSFT(XLK·IGV), NTRA(XBI·GNOM·ARKG), TWST(XBI·GNOM·ARKG), TXG(GNOM·ARKG)
-오늘 실패한 돌파: TMO(XLV, 사상 최고), TRGP(XLE, 사상 최고), TMO(XLV, 52주), TRGP(XLE, 52주), TMO(XLV, 55일), TRGP(XLE, 55일), ADI(SMH, 55일), NST(GDX, 55일), TMO(XLV, 20일), ADI(SMH, 20일), NST(GDX, 20일)
-블록 알림 (20일): XLK ▼6/10 이탈 · XLF 6/10 켜짐 · XLP 6/10 켜짐 · XLU 5/10 켜짐 · XHB 6/10 켜짐
+  55일 바닥: 688825(DRAM), 2408(DRAM), 2344(DRAM)
+  20일 바닥: AAPL(XLK), MPC(XLE·XOP), CRM(IGV), 1548(GNOM)
+오늘 실패한 돌파: ABBV(XLV·XBI, 사상 최고), UBSI(KRE, 사상 최고), ABBV(XLV·XBI, 52주), PFE(XLV, 52주), UBSI(KRE, 52주), ABBV(XLV·XBI, 55일), PFE(XLV, 55일), GBCI(KRE, 55일), W(XHB, 55일), LEN(XHB, 55일), CSX(PAVE, 55일), ULCC(JETS, 55일), ABBV(XLV·XBI, 20일), PFE(XLV, 20일), PEP(XLP, 20일), SHW(XLB, 20일), W(XHB, 20일), AAL(JETS, 20일)
+블록 알림 (20일): XLV ×3/10 실패 · IGV ▼5/10 이탈 · DRAM ▼6/10 이탈
 
 https://tlzkrh1029.github.io/rrg/breakout/

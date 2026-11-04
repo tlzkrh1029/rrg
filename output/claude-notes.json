@@ -1,86 +1,74 @@
 {
- "asof": "2026-11-02",
- "at": "11/03 10:19 KST",
+ "asof": "2026-11-03",
+ "at": "11/04 10:19 KST",
  "etfs": {
-  "XLP": {
-   "text": [
-    "10월에는 AI·기술주에서 빠진 자금이 방어주로 옮겨 가면서 필수소비재가 크게 올랐고, WMT는 10월 한 달 약 13.9% 올라 2014년 이후 가장 강한 월간 상승을 기록했다고 보도되었습니다.",
-    "10/22에는 PG가 회계연도 1분기 실적을 내놓은 뒤 크게 올랐고, 10/30에도 기술주가 내리는 동안 WMT 등 방어주가 선호되었습니다."
-   ],
-   "src": [
-    {
-     "t": "24/7 Wall St. WMT 월간 상승",
-     "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
-    },
-    {
-     "t": "KuCoin(Benzinga 인용) WMT 10월 상승",
-     "u": "https://www.kucoin.com/news/flash/walmart-stock-rises-13-9-in-october-strongest-month-since-2014"
-    },
-    {
-     "t": "Nasdaq 필수소비재 로테이션",
-     "u": "https://www.nasdaq.com/articles/rotation-consumer-staples-defensive-strength-uncertain-2026"
-    }
-   ],
-   "kick": "AI주 이탈 방어주 로테이션"
-  },
   "XLV": {
    "text": [
-    "LLY가 10/29에 3분기 실적이 예상을 웃돌았다고 발표해 그날 6.6% 올랐고, 같은 날 XLV도 2.4% 상승했습니다.",
-    "MRK도 같은 날 3분기 실적이 좋게 나와 헬스케어 업종 전반의 상승을 거들었습니다."
+    "10/29에 Eli Lilly가 3분기 실적을 발표하면서 2026년 매출 가이던스를 850억~870억 달러에서 910억~920억 달러로 올렸고, Merck도 같은 날 시장 예상을 웃도는 분기 실적을 냈습니다.",
+    "대형 제약주가 헬스케어 섹터 지수에 미치는 비중이 커서, 이 두 회사의 실적 호조가 그날 XLV를 약 2% 끌어올렸다고 Finimize가 전했습니다."
    ],
    "src": [
     {
-     "t": "Trefis LLY 10/29 실적",
-     "u": "https://www.trefis.com/stock/lly/articles/621588/what-sent-eli-lilly-stock-higher/2026-10-30"
-    },
-    {
-     "t": "Finimize 릴리·머크 3분기",
+     "t": "Finimize",
      "u": "https://finimize.com/content/eli-lilly-and-merck-lifted-healthcare-stocks-on-q3-strength"
+    },
+    {
+     "t": "Lilly 3분기 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000059478/000005947826000104/q326lillysalesandearningsp.htm"
+    },
+    {
+     "t": "Zacks",
+     "u": "https://www.zacks.com/stock/news/3018734/lly-stock-jumps-as-q3-earnings-beat-estimates-2026-sales-view-raised"
     }
    ],
-   "kick": "릴리·머크 3분기 호실적"
+   "kick": "릴리·머크 실적 호조"
   },
-  "XLB": {
+  "XLP": {
    "text": [
-    "LIN은 3분기 조정 EPS가 전년보다 9% 늘었다고 밝히면서 연간 조정 EPS 가이던스를 17.82~17.92달러로 높였습니다.",
-    "NUE는 10/26에 3분기 순이익 13억 2천만 달러(주당 5.80달러)를 발표하고 4분기 이익이 3분기와 비슷하거나 소폭 높을 것으로 내다보았습니다."
+    "10월에 Walmart가 월간 기준으로 1999년 이후 가장 큰 상승세를 보였고, 247WallSt는 이를 새 계약이나 가이던스 변경 없이 AI와 기술주에서 빠져나온 자금이 할인 소매업체로 옮겨간 결과로 설명했습니다.",
+    "Bank of America 고객들이 10/16까지 한 주 동안 개별 미국 주식을 사상 최대인 148억 달러 순매도하면서도 필수소비재는 사들였다는 점도 같은 기사에서 언급됐습니다."
    ],
    "src": [
     {
-     "t": "Linde 8-K 3분기 실적",
-     "u": "https://www.sec.gov/Archives/edgar/data/0001707925/000165495426009199/lin_ex991.htm"
-    },
-    {
-     "t": "Nucor 3분기 보도자료",
-     "u": "https://s202.q4cdn.com/531038915/files/doc_news/Nucor-Reports-Results-for-the-Third-Quarter-of-2026-2026.pdf"
-    },
-    {
-     "t": "SteelOrbis Nucor 3분기",
-     "u": "https://www.steelorbis.com/steel-news/latest-news/nucors-net-income-up-141-percent-in-q3-2026-1486602.htm"
+     "t": "247WallSt",
+     "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
     }
    ],
-   "kick": "린데·누코 실적 호조"
+   "kick": "AI 매도 속 방어주 쏠림"
+  },
+  "XLU": {
+   "text": [
+    "10월에 나스닥이 약 5% 내리는 등 기술주가 크게 흔들리자, 투자자금이 유틸리티·필수소비재·헬스케어 같은 방어 업종으로 옮겨갔다고 Investing.com이 전했습니다.",
+    "유틸리티는 이 순환의 수혜 업종으로 10월 한 달 약 10% 올라 S&P 500 업종 가운데 상위권이었습니다."
+   ],
+   "src": [
+    {
+     "t": "Investing.com",
+     "u": "https://www.investing.com/news/stock-market-news/us-stock-futures-edge-high-after-bruising-oct-earnings-elections-in-focus-4989789"
+    },
+    {
+     "t": "Morningstar 11월 시장 전망",
+     "u": "https://morningstar.com/markets/november-stock-market-outlook-how-position-your-portfolio-remainder-2026"
+    }
+   ],
+   "kick": "기술주 이탈 방어 순환"
   },
   "URA": {
    "text": [
-    "우라늄 가격이 10월 초 19년 만의 최고치를 기록했는데도 CCJ, OKLO, SMR 같은 원자력 관련주는 한 달 사이 크게 내렸습니다. 매체는 이를 우라늄 현물이 아닌 원자력 주식에 대한 매도세로 설명했습니다.",
-    "CCJ는 10/30에 3분기 조정 순손실(C$2백만)을 발표한 뒤 9% 내렸고, 경영진은 원자력주의 변동성이 산업 펀더멘털 악화를 뜻하지 않는다고 말했습니다."
+    "10/30에 Cameco가 3분기 조정 순손실 200만 캐나다달러를 발표했고, Key Lake 제분소의 장기 정비로 생산이 20% 줄어 주가가 약 9% 내렸습니다.",
+    "그에 앞서 10월 초에는 장기 우라늄 가격이 파운드당 96달러로 2007년 고점을 넘었지만, 유틸리티들이 가격 부담 때문에 장기계약 체결을 미루면서 원전 관련주 약세가 이어졌다고 247WallSt가 분석했습니다."
    ],
    "src": [
     {
-     "t": "24/7 Wall St. 우라늄 신고가와 원자력주 하락",
-     "u": "https://247wallst.com/investing/2026/10/03/uranium-prices-just-broke-a-19-year-record-but-nuclear-stocks-are-collapsing-anyway/"
-    },
-    {
-     "t": "TIKR Cameco 한 달 하락",
-     "u": "https://www.tikr.com/blog/cameco-sinks-11-in-a-month-while-uranium-hits-a-19-year-high-defined-by-delivery"
-    },
-    {
-     "t": "TIKR Cameco 3분기",
+     "t": "TIKR",
      "u": "https://www.tikr.com/blog/cameco-sinks-9-on-q3-adjusted-loss-as-ceo-insists-customer-requirements-do-not-disappear"
+    },
+    {
+     "t": "247WallSt",
+     "u": "https://247wallst.com/investing/2026/10/03/uranium-prices-just-broke-a-19-year-record-but-nuclear-stocks-are-collapsing-anyway/"
     }
    ],
-   "kick": "원자력주 동반 매도"
+   "kick": "Cameco 적자·계약 부진"
   }
  },
  "stocks": {
@@ -105,17 +93,25 @@
   },
   "XOM": {
    "text": [
-    "XOM은 10/16에 WTI가 100달러를 넘고 브렌트유가 109달러까지 오르는 가운데 1.9% 올랐고, 이는 10/12 주 +5.9%와 이어지는 흐름입니다.",
-    "당시 원유 강세는 중동 공급 불확실성과 러시아의 디젤 공급 여력에 대한 평가에서 비롯되었습니다."
+    "ExxonMobil은 10/30 장 시작 전에 3분기 순이익 154억 달러, 조정 순이익 175억 달러를 발표했고, 정제 설비 확장 등으로 증류유 생산이 2019년 대비 약 40% 늘었다고 밝히면서 4분기 배당을 주당 1.07달러로 선언했습니다. 그날 주가는 2.2% 올랐습니다.",
+    "11/2에는 이란이 평화 협상에 열려 있다는 신호를 보이고 트럼프 대통령이 이란이 합의를 원한다고 밝히면서 브렌트유가 크게 내렸고, 에너지주도 함께 약세를 보였습니다. 이 영향이 11/2 주의 하락으로 이어졌습니다."
    ],
    "src": [
     {
-     "t": "로이터 (BOE Report 전재)",
-     "u": "https://boereport.com/2026/10/16/us-energy-stocks-gain-as-oil-tops-100-on-supply-fears/amp/"
+     "t": "ExxonMobil 3분기 보도자료",
+     "u": "https://investor.exxonmobil.com/company-information/press-releases/detail/1213/exxonmobil-announces-third-quarter-2026-results"
+    },
+    {
+     "t": "Rallies.ai",
+     "u": "https://rallies.ai/news/us-energy-stocks-slip-as-crude-drops-on-iran-deal-hopes-aa1cd08aa24a0a92"
+    },
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/energy/articles/trump-says-iran-wants-settlement-203627510.html"
     }
    ],
-   "asof": "2026-10-28",
-   "at": "10/29 10:21 KST"
+   "asof": "2026-11-03",
+   "at": "11/04 10:19 KST"
   },
   "000660": {
    "text": [
@@ -169,22 +165,29 @@
   },
   "CVX": {
    "text": [
-    "CVX는 10/6 허니스 미드스트림(Hess Midstream) 지분과 DJ 분지 원유 미드스트림 자산을 넘기고 현금 2억 달러와 바켄 지역의 개선된 계약 조건을 받기로 했다고 발표했습니다.",
-    "이 거래로 바켄 단위 미드스트림 비용이 약 50% 줄어들 것으로 회사는 밝혔고, 완료 시 세후 30억~40억 달러의 일회성 손실이 예상됩니다.",
-    "10/16에는 WTI가 100달러를 넘는 가운데 2.2% 올라 10/12 주 +6.1%와 이어졌습니다."
+    "Chevron은 10/30 장 시작 전에 3분기 순이익 99억 달러를 발표했고, 정제 마진 개선과 미국 정유 설비 가동량 사상 최대(하루 109만 배럴)로 다운스트림 이익이 49억 달러까지 늘었다고 밝혔습니다. 회계 방식 변경으로 베네수엘라 생산분 한 달이 이번 분기에 반영됐고, 그날 주가는 1.8% 올랐습니다.",
+    "11/2에는 이란의 협상 의사 표명으로 유가가 급락하면서 에너지주가 함께 내렸고, 이것이 11/2 주의 하락과 이어졌습니다."
    ],
    "src": [
     {
-     "t": "Hellenic Shipping News (회사 보도자료 전재)",
-     "u": "https://www.hellenicshippingnews.com/chevron-to-divest-its-ownership-interests-in-hess-midstream-and-dj-basin-crude-midstream-assets/"
+     "t": "Chevron 3분기 보도자료",
+     "u": "https://finviz.com/news/412404/chevron-reports-third-quarter-2026-results"
     },
     {
-     "t": "로이터 (BOE Report 전재)",
-     "u": "https://boereport.com/2026/10/16/us-energy-stocks-gain-as-oil-tops-100-on-supply-fears/amp/"
+     "t": "Finviz",
+     "u": "https://finviz.com/news/412674/chevron-shares-rise-22-as-q3-earnings-beat-forecasts-on-strong-refining-margins"
+    },
+    {
+     "t": "Rallies.ai",
+     "u": "https://rallies.ai/news/us-energy-stocks-slip-as-crude-drops-on-iran-deal-hopes-aa1cd08aa24a0a92"
+    },
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/energy/articles/trump-says-iran-wants-settlement-203627510.html"
     }
    ],
-   "asof": "2026-10-28",
-   "at": "10/29 10:21 KST"
+   "asof": "2026-11-03",
+   "at": "11/04 10:19 KST"
   },
   "GOOGL": {
    "text": [
@@ -620,6 +623,91 @@
    ],
    "asof": "2026-11-02",
    "at": "11/03 10:19 KST"
+  },
+  "AAPL": {
+   "text": [
+    "11/2 장 마감 후 Apple은 회계 4분기 매출 1,144.8억 달러(전년 대비 12% 증가)와 주당순이익 2.10달러를 발표해 시장 예상을 웃돌았습니다.",
+    "그러나 12월 분기 매출총이익률 전망을 45~46%로 제시해 예상치 46.3%를 밑돌았고, 서비스 매출 성장률도 8~9%로 둔화될 것이라고 밝혔습니다.",
+    "9/1에 CEO를 넘겨받은 John Ternus의 첫 실적 발표였으며, CNBC는 메모리 비용 부담이 주된 우려였다고 전했습니다. 시간외에서 주가는 약 3% 내렸고, 이 흐름이 11/2 주의 하락과 이어졌습니다."
+   ],
+   "src": [
+    {
+     "t": "CNBC 실적 라이브",
+     "u": "https://www.cnbc.com/2026/11/02/apple-aapl-q4-2026-earnings-live-updates.html"
+    },
+    {
+     "t": "MacRumors",
+     "u": "https://www.macrumors.com/2026/11/02/apple-4q-2026-earnings/"
+    },
+    {
+     "t": "Apple 보도자료",
+     "u": "https://www.apple.com/qa/newsroom/2026/11/apple-reports-fourth-quarter-results/"
+    }
+   ],
+   "asof": "2026-11-03",
+   "at": "11/04 10:19 KST"
+  },
+  "HWM": {
+   "text": [
+    "Howmet은 10/20에 항공우주 업종 약세 속에 4% 안팎 내렸고, 10/23에는 5거래일 연속 하락해 15.9% 빠진 끝에 종가 185.91달러로 1년 내 최저를 기록했습니다.",
+    "10/29 장 시작 전에 3분기 매출 27억 달러(전년 대비 29% 증가)와 조정 EPS 1.46달러를 내놓았고, 2026년 매출 전망을 약 103억 달러로 올리면서 50억 달러 규모의 자사주 매입 한도 증액도 발표했습니다. 그날 주가는 5.5% 올랐습니다."
+   ],
+   "src": [
+    {
+     "t": "Trefis",
+     "u": "https://www.trefis.com/stock/hwm/articles/620309/howmet-aerospace-stock-5-straight-red-days-down-16/2026-10-24"
+    },
+    {
+     "t": "Stocktwits",
+     "u": "https://stocktwits.com/news-articles/markets/equity/howmet-aerospace-announces-5-b-buyback-raises-2026-guidance-as-q3-earnings-beat-estimates/cZUQmE7R9bA"
+    },
+    {
+     "t": "Howmet 3분기 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000004281/000110465926119857/tm2628456d1_ex99-1.htm"
+    },
+    {
+     "t": "Quiver Quant",
+     "u": "https://www.quiverquant.com/news/Why+Howmet+Aerospace+%28HWM%29+Stock+Is+Down+Today"
+    }
+   ],
+   "asof": "2026-11-03",
+   "at": "11/04 10:19 KST"
+  },
+  "BRK.B": {
+   "text": [
+    "10/14에 Berkshire가 Bending Spoons 신주 1,000만 주를 주당 33달러, 총 3억 3천만 달러에 사들이기로 했다고 발표했습니다.",
+    "7월 상장 때 투자한 6억 달러와 합쳐 지분이 4%가 됐고, Bending Spoons 주가는 발표 당일 41% 올랐습니다. 이는 1월에 CEO를 맡은 Greg Abel 체제에서 이뤄진 투자입니다."
+   ],
+   "src": [
+    {
+     "t": "The Next Web",
+     "u": "https://thenextweb.com/news/berkshire-hathaway-bending-spoons-330m-stake"
+    },
+    {
+     "t": "Morningstar",
+     "u": "https://www.morningstar.com/stocks/berkshire-hathaway-abel-pushes-into-new-territory-bending-spoons-investment"
+    }
+   ],
+   "asof": "2026-11-03",
+   "at": "11/04 10:19 KST"
+  },
+  "WELL": {
+   "text": [
+    "Welltower는 10/26 장 마감 후 3분기 정상화 FFO 주당 1.67달러로 예상치 1.64달러를 웃돌았고, 연간 FFO 전망을 6.47~6.53달러로 올렸습니다.",
+    "그러나 10/27에는 주가가 5.2% 내렸습니다. TIKR은 예상보다 낮은 매출 3.72억이 아닌 37.2억 달러의 매출, 실적 직전 예상치 대비 소폭 부진, 과거 평균을 웃도는 밸류에이션, 그리고 경영진이 실적 설명회에서 거시 환경이 계속 나빠지고 있다고 말한 점을 이유로 들었습니다."
+   ],
+   "src": [
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/welltower-fell-5-as-q3-revenue-misses-despite-raised-ffo-outlook"
+    },
+    {
+     "t": "Welltower 3분기 실적 보도자료(8-K)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000766704/000076670426000043/a3q26combinedearningsrel.htm"
+    }
+   ],
+   "asof": "2026-11-03",
+   "at": "11/04 10:19 KST"
   }
  },
  "runs": [
@@ -690,6 +778,19 @@
    25,
    "claude-sonnet-5-5",
    0.597
+  ],
+  [
+   "11/04 10:19 KST",
+   6,
+   4,
+   6,
+   6,
+   "ok",
+   33,
+   8,
+   43,
+   "claude-sonnet-5-5",
+   0.917
   ]
  ]
 }

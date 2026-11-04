@@ -1149,16 +1149,36 @@
    "at": "11/03 10:19 KST"
   },
   "E:ARKG:2026-11-02": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/03 10:19 KST",
-   "why": "시장 종합 기사와 ARKG 검색에서 11/2 하락 원인을 못 찾음. 구성종목 개별 기사도 없음"
+   "k": "유전체주 반등 반납",
+   "ev": "10/28 급등했던 유전체주가 11/2 TXG -12%, TWST -15% 등으로 반등분을 반납함",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    },
+    {
+     "t": "TIKR 10/28 유전체주 반등",
+     "u": "https://www.tikr.com/blog/twist-bioscience-soars-12-10x-genomics-up-12-as-genomics-stocks-rebound"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
   },
   "E:GNOM:2026-11-02": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/03 10:19 KST",
-   "why": "유전체 업종 하락 기사를 검색했으나 11/2 원인을 확인하지 못함"
+   "k": "유전체주 반등 반납",
+   "ev": "10/28 반등했던 유전체 종목이 11/2 TXG -12%, TWST -15%로 되돌림을 보임",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    },
+    {
+     "t": "TIKR 10/28 유전체주 반등",
+     "u": "https://www.tikr.com/blog/twist-bioscience-soars-12-10x-genomics-up-12-as-genomics-stocks-rebound"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
   },
   "E:XBI:2026-11-02": {
    "none": 1,
@@ -1173,16 +1193,36 @@
    "why": "금속·광업 11/2 별도 기사를 찾지 못함. 소재 업종 상승 기사만 있음"
   },
   "S:TWST:2026-11-02": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/03 10:19 KST",
-   "why": "Twist 11/2 하락 검색 2회. 10월 말 급등 후 조정이라는 기사만 있고 11/2 원인은 확인 못함"
+   "k": "유전체주 반등 반납",
+   "ev": "10/28 12% 급등했던 Twist 가 11/2 유전체주 동반 하락 속에 15% 내림",
+   "src": [
+    {
+     "t": "TIKR 10/28 유전체주 반등",
+     "u": "https://www.tikr.com/blog/twist-bioscience-soars-12-10x-genomics-up-12-as-genomics-stocks-rebound"
+    },
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
   },
   "S:ABSI:2026-11-02": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/03 10:19 KST",
-   "why": "Absci 11/2 하락 검색 2회. 10/30 AI 신약 발굴주 하락 기사만 있고 11/2 원인은 확인 못함"
+   "k": "AI 신약주 반등 반납",
+   "ev": "10/30 AI 신약개발주 급락에 이어 11/2 유전체주가 반등분을 반납함",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    },
+    {
+     "t": "TIKR 10/28 유전체주 반등",
+     "u": "https://www.tikr.com/blog/twist-bioscience-soars-12-10x-genomics-up-12-as-genomics-stocks-rebound"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
   },
   "S:TXG:2026-11-02": {
    "none": 1,
@@ -1197,16 +1237,250 @@
    "why": "Sherwin-Williams 검색 3회. 11/2 8-K는 신용한도 증액뿐이고 급등 원인을 확인하지 못함"
   },
   "S:GE:2026-11-02": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/03 10:19 KST",
-   "why": "GE Aerospace 11/2 검색 2회. 당일 상승 원인 기사를 찾지 못함"
+   "k": "유가 급락 항공주 강세",
+   "ev": "미국과 이란의 대화 신호로 유가가 약 7% 내리고 항공우주주가 올랐음",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    },
+    {
+     "t": "StockTitan 11/3 시황",
+     "u": "https://www.stocktitan.net/articles/stock-market-today-live-november-3-2026"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
   },
   "S:WMT:2026-11-02": {
+   "k": "필수소비재 선호",
+   "ev": "기술주가 내린 날 자금이 필수소비재와 경기소비재로 옮겨감",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:HWM:2026-11-02": {
+   "k": "유가 급락 항공주 강세",
+   "ev": "미국과 이란의 대화 신호로 유가가 약 7% 내리고 항공우주주가 올랐음",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    },
+    {
+     "t": "StockTitan 11/3 시황",
+     "u": "https://www.stocktitan.net/articles/stock-market-today-live-november-3-2026"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:AMZN:2026-11-03": {
+   "k": "빅테크 AI 반등",
+   "ev": "Amazon, Microsoft, Meta 가 2% 넘게 올라 시장을 끌어올림",
+   "src": [
+    {
+     "t": "BNN Bloomberg 11/3",
+     "u": "https://bnnbloomberg.ca/markets/dow-jones/2026/11/03/us-stocks-drift-in-mixed-early-trading-on-wall-street-as-apple-falls"
+    },
+    {
+     "t": "Motley Fool 11/3",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/03/stock-market-today-nov-3-markets-edge-higher-as-semiconductor-stocks-rebound/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:MRNA:2026-11-03": {
+   "k": "실적 앞둔 매수",
+   "ev": "11/6 3분기 실적 발표를 앞두고 Moderna 가 5% 가까이 오름",
+   "src": [
+    {
+     "t": "Moderna 실적 일정",
+     "u": "https://www.money365.market/news/latest/moderna-sets-november-6-date-for-q3-2026-earnings-release-2b57a91f"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:005930:2026-11-03": {
+   "k": "미국 반도체 약세 여파",
+   "ev": "11/2 미국 반도체지수가 고점 대비 22% 낮은 약세장으로 마감함",
+   "src": [
+    {
+     "t": "StockTitan 11/3 시황",
+     "u": "https://www.stocktitan.net/articles/stock-market-today-live-november-3-2026"
+    },
+    {
+     "t": "Yahoo Finance 11/3 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-3-dow-sp-500-nasdaq-midterms-amd-earnings-141143244.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:AMZN:2026-11-02": {
+   "k": "소비재로 자금 이동",
+   "ev": "Nasdaq 이 1% 내린 날 자금이 경기소비재와 필수소비재로 이동함",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:MRNA:2026-11-02": {
+   "k": "바이오 급락 속 방어",
+   "ev": "바이오 지수가 크게 내린 날 Moderna 는 실적 발표 기대로 보합권을 지킴",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    },
+    {
+     "t": "Moderna 실적 일정",
+     "u": "https://www.money365.market/news/latest/moderna-sets-november-6-date-for-q3-2026-earnings-release-2b57a91f"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:285A:2026-11-02": {
+   "k": "반도체 급락 여파",
+   "ev": "10/30 Intel 가 약 25% 급락하며 메모리와 반도체주 매도가 이어짐",
+   "src": [
+    {
+     "t": "KuCoin AMD Intel 급락",
+     "u": "https://www.kucoin.com/news/flash/amd-shares-drop-8-amid-intel-s-weak-guidance-and-market-pressure"
+    },
+    {
+     "t": "StockTitan 11/3 시황",
+     "u": "https://www.stocktitan.net/articles/stock-market-today-live-november-3-2026"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:TXN:2026-11-02": {
+   "k": "아날로그 반도체 방어",
+   "ev": "반도체지수가 약세장에 들어선 날 아날로그 칩주는 상대적으로 버팀",
+   "src": [
+    {
+     "t": "StockTitan 11/3 시황",
+     "u": "https://www.stocktitan.net/articles/stock-market-today-live-november-3-2026"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:PANW:2026-11-02": {
+   "k": "보안 소프트웨어 약세",
+   "ev": "기술주 매도 속에 CrowdStrike, Fortinet, Palo Alto 가 함께 내렸음",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:OKLO:2026-11-02": {
+   "k": "원전주 약세 지속",
+   "ev": "원전주가 한 달 30% 넘게 내린 흐름에서 Oklo 가 11/2 기술주 매도에 더 하락함",
+   "src": [
+    {
+     "t": "TIKR 원전주 하락",
+     "u": "https://www.tikr.com/blog/oklo-and-nuscale-sink-15-in-a-week-is-the-nuclear-selling-overdone"
+    },
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:NOC:2026-11-02": {
+   "k": "항공우주주 강세에 소외",
+   "ev": "유가 급락으로 항공우주주가 올라 ITA 가 2% 넘게 오르는 동안 NOC 는 내림",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/2 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-2-dow-sp-500-nasdaq-091835095.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:AMD:2026-11-02": {
+   "k": "실적 앞둔 반도체 급락",
+   "ev": "반도체지수가 약세장에 들어서고 AMD 는 11/3 실적 발표를 앞두고 내림",
+   "src": [
+    {
+     "t": "StockTitan 11/3 시황",
+     "u": "https://www.stocktitan.net/articles/stock-market-today-live-november-3-2026"
+    },
+    {
+     "t": "KuCoin AMD Intel 급락",
+     "u": "https://www.kucoin.com/news/flash/amd-shares-drop-8-amid-intel-s-weak-guidance-and-market-pressure"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:MSFT:2026-11-03": {
+   "k": "빅테크 AI 반등",
+   "ev": "Microsoft, Amazon, Meta 가 2% 넘게 오르고 반도체주가 반등함",
+   "src": [
+    {
+     "t": "BNN Bloomberg 11/3",
+     "u": "https://bnnbloomberg.ca/markets/dow-jones/2026/11/03/us-stocks-drift-in-mixed-early-trading-on-wall-street-as-apple-falls"
+    },
+    {
+     "t": "Motley Fool 11/3",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/03/stock-market-today-nov-3-markets-edge-higher-as-semiconductor-stocks-rebound/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/04 10:19 KST"
+  },
+  "S:1548:2026-11-03": {
    "none": 1,
    "tries": 1,
-   "at": "11/03 10:19 KST",
-   "why": "Walmart 11/2 검색 2회. 당일 상승 원인 기사를 찾지 못함"
+   "at": "11/04 10:19 KST",
+   "why": "GenScript 11/3 -15% 원인 보도를 영문 및 중문으로 검색했으나 해당 날짜 기사 없음"
+  },
+  "S:CMC:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/04 10:19 KST",
+   "why": "Commercial Metals 11/2 기사와 철강 업황을 검색했으나 해당 날짜 계기 없음(실적은 10월 중순)"
+  },
+  "S:JNJ:2026-11-03": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/04 10:19 KST",
+   "why": "J&J 11/3 하락 원인을 두 번 검색했으나 해당 날짜 기사 없음(제약주 약세 정황만 있음)"
+  },
+  "S:ABBV:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/04 10:19 KST",
+   "why": "AbbVie 11/2 하락 원인을 시황과 종목 기사로 찾았으나 날짜별 계기 확인 못함"
+  },
+  "S:NOW:2026-11-02": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/04 10:19 KST",
+   "why": "ServiceNow 11/2 상대 강세 원인을 시황과 종목 기사로 찾았으나 확인 못함"
   }
  },
  "runs": [
@@ -1271,6 +1545,18 @@
    22,
    "claude-sonnet-5-5",
    0.482
+  ],
+  [
+   "11/04 10:19 KST",
+   24,
+   19,
+   5,
+   "ok",
+   29,
+   4,
+   35,
+   "claude-sonnet-5-5",
+   0.773
   ]
  ]
 }
