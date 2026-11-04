@@ -340,6 +340,8 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 @media (min-width:1100px){.brief{grid-template-columns:minmax(0,620px) minmax(0,1fr);align-items:start} .brief > .drv{grid-column:1;grid-row:1} .brief > .bcol{grid-column:2;grid-row:1}}
 .drv .pb{display:grid;gap:6px}
 .drv .meta{margin:0}
+#drvSub{font-size:11.5px;color:#fff;display:inline-block;vertical-align:top;line-height:1.5}   /* Drivers 머리의 기간 문구: 바로 아래 설명 글과 같은 크기의 흰 글자 */
+#drvSub .kst{display:block}
 .drv .wlab{color:var(--amber);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:6px}
 table.dr{width:100%;border-collapse:collapse;font-size:11.5px}
 .dr th{color:var(--muted);font-weight:400;text-align:left;font-size:10.5px;padding:3px 8px 3px 0;border-bottom:1px solid var(--line-2)}
@@ -1893,6 +1895,20 @@ function contribHTML(t) {
 /* ---- 주간 브리핑 탭: 주도 종목(보드 전체에서 ETF 를 가장 많이 움직인 종목) ---- */
 const DR = { basis: 'usd', period: '1W' };
 function cbName(n) { return String(n || '').replace(/,?\s+(Inc\.?|Corporation|Corp\.?|Co\.?,? Ltd\.?|Ltd\.?|plc|PLC|Holdings,? Inc\.?|N\.V\.|S\.A\.)$/i, ''); }
+/* Drivers 머리의 기간: 뉴욕 거래일(요일)과, 그 종가(16:00 ET)가 한국 시각으로 언제인지. 서머타임은 뉴욕 시각이 16시가 되는 UTC 시각을 골라 맞춘다 */
+const KWD = ['일', '월', '화', '수', '목', '금', '토'];
+const nyDay = iso => { const [y, m, d] = String(iso).split('-').map(Number); return `${m}/${d} (${KWD[new Date(Date.UTC(y, m - 1, d)).getUTCDay()]})`; };
+function nyCloseKst(iso) {
+  const [y, m, d] = String(iso).split('-').map(Number);
+  try {
+    const hourNY = t => Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: '2-digit', hourCycle: 'h23' }).format(t));
+    for (const h of [20, 21]) {
+      const t = new Date(Date.UTC(y, m - 1, d, h));
+      if (hourNY(t) === 16) { const k = new Date(t.getTime() + 9 * 3600e3); return `${k.getUTCMonth() + 1}/${k.getUTCDate()} (${KWD[k.getUTCDay()]}) ${String(k.getUTCHours()).padStart(2, '0')}:00`; }
+    }
+  } catch (e) {}
+  return '';
+}
 function renderDrivers() {
   const body = document.getElementById('drvBody'); if (!body) return;
   document.querySelectorAll('[data-drb]').forEach(b => b.setAttribute('aria-pressed', b.dataset.drb === DR.basis));
@@ -1900,7 +1916,10 @@ function renderDrivers() {
   const D = CONTRIB && CONTRIB.drivers && CONTRIB.drivers[DR.period] && CONTRIB.drivers[DR.period][DR.basis];
   if (!D) { body.innerHTML = '<p class="meta">이번 빌드에는 기여도 계산 결과가 없어 주도 종목을 표시하지 않습니다.</p>'; return; }
   const any = CONTRIB.funds.SPY || Object.values(CONTRIB.funds)[0], per = any && any.P[DR.period];
-  document.getElementById('drvSub').textContent = `주도 종목 · ${DR.period}${per ? ` · ${cbMd(per.from)} → ${cbMd(per.to)} 종가` : ''}`;
+  const k0 = per ? nyCloseKst(per.from) : '', k1 = per ? nyCloseKst(per.to) : '';
+  /* 첫 줄은 뉴욕 거래일, 둘째 줄은 그 종가가 한국 시각으로 언제인지 */
+  document.getElementById('drvSub').innerHTML = cbEsc(`주도 종목 · ${DR.period}${per ? ` · ${nyDay(per.from)} 종가 → ${nyDay(per.to)} 종가 (뉴욕 기준)` : ''}`)
+    + (k0 && k1 ? `<span class="kst">${cbEsc(`한국 시각 ${k0} → ${k1}`)}</span>` : '');
   const th = `<thead><tr><th>#</th><th>종목</th><th class="r">${DR.period === '1W' ? '주간' : '월간'}</th><th>ETF별 기여 %p</th></tr></thead>`;
   const rows = (list, sign) => list.map((b, i) => {
     const es = b.e.filter(([, c]) => sign > 0 ? c > 0 : c < 0).slice(0, 4);
