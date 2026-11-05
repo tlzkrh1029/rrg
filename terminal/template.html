@@ -345,42 +345,45 @@ table.h{width:100%;border-collapse:collapse;font-size:11.5px}
 .drv .pb{display:grid;gap:6px}
 .drv .meta{margin:0}
 /* Drivers 머리의 기간 달력. 위 줄은 한국 시각, 아래 줄은 뉴욕 시각이고 같은 날짜 칸을 위아래로 맞춘다
-   - 날짜 칸(28px) 하나가 하루다. 바탕색 칸(22px) 하나가 뉴욕 정규장 하루이고, 기간 안의 실제 거래일(가격 자료)에만 칠한다
-     한국 칸: 그 정규장이 한국에서 열리는 밤. 그날 저녁부터 다음 날 새벽 꺾쇠까지
-     뉴욕 칸: 같은 칸을 두 꺾쇠의 위치 차만큼 왼쪽으로 옮겨 오후 꺾쇠에서 끝나게 칠한다
-   - 꺾쇠(세로선 + 바닥 점선): 새벽 종가는 숫자 왼쪽, 오후 종가는 숫자 오른쪽(숫자 구역 반폭 --z: 한국 3px, 뉴욕 7px)
+   - 날짜 칸(28px) 하나가 하루다. 회색 칸(22px) 하나가 뉴욕 정규장 하루다
+     한국 칸: 그 정규장이 한국에서 열리는 밤. 그날 저녁부터 다음 날 새벽까지
+     뉴욕 칸: 같은 칸을 두 꺾쇠의 위치 차만큼 왼쪽으로 옮겨 오후 종가에서 끝나게 칠한다
+     기간 안(시작 다음 거래일 ~ 끝)은 단색, 기간 밖(시작일과 그 앞)은 사선 빗금(.pbox). 끝 날짜 뒤는 칠하지 않는다
+   - 숫자 색: 글자마다 회색 칸에 닿으면 흰색, 닿지 않으면 일요일 숫자 색. 한국은 두 자리면 왼쪽 글자가 왼쪽 칸, 오른쪽 글자가
+     오른쪽 칸에 닿을 때, 한 자리면 어느 쪽이든 닿을 때. 뉴욕은 칸이 숫자를 물고 있으면 모든 글자
+   - 꺾쇠: 새벽 종가는 숫자 왼쪽, 오후 종가는 숫자 오른쪽(숫자 구역 반폭 --z: 한국 3px, 뉴욕 7px)
+   - 바닥선(.base): 시작 꺾쇠에서 끝 꺾쇠까지 줄마다 한 번에 그린다. 회색 칸 아래와 바로 이어지는 두 칸 사이는 실선,
+     주말·휴장일로 하루 이상 빈 곳은 둥근 점. 점 무늬는 줄 왼쪽 끝에 맞춰 조각이 나뉘어도 간격이 같다
    - 평일 휴장일은 숫자 뒤에 빨간 점(한국 줄은 한국거래소, 뉴욕 줄은 뉴욕증권거래소. data/market_holidays.json)
    - 가장 최근 종가의 꺾쇠 끝에 숨쉬는 원(한국 보라, 뉴욕 흰색 2/3 크기) */
 .drvl{display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px 14px;min-width:0}
 .drvl .pt{padding-top:3px}
-.dcal{--ln:#cfcfcf;--hi:rgba(255,255,255,.10);display:grid;gap:4px;font-size:10px;line-height:1.5;color:var(--muted);padding-bottom:3px;min-width:0;max-width:100%;overflow-x:auto}
-.dcal .row{display:flex;align-items:stretch}
+.dcal{--ln:#cfcfcf;--hi:rgba(255,255,255,.10);--dim:#4a4a4a;display:grid;gap:4px;font-size:10px;line-height:1.5;color:var(--muted);padding-bottom:3px;min-width:0;max-width:100%;overflow-x:auto}
+.dcal .row{position:relative;display:flex;align-items:stretch}
 .dcal .rl{width:30px;flex:none;align-self:center;font-size:9.5px;color:var(--ln);text-align:right;padding-right:6px}
-.dcal .c{--z:3px;--K:transparent;--BL:transparent;--BR:transparent;position:relative;flex:none;display:flex;justify-content:center;width:28px;height:21px;font-style:normal;color:var(--muted);
+.dcal .c{--z:3px;--K:transparent;--BL:transparent;--BR:transparent;position:relative;flex:none;display:flex;justify-content:center;width:28px;height:21px;font-style:normal;color:var(--dim);
   background:linear-gradient(var(--K),var(--K)) calc(14px + var(--z) + 2px - 22px) 0/22px 100% no-repeat,
     linear-gradient(var(--BL),var(--BL)) left/calc(50% - var(--z)) 100% no-repeat,
     linear-gradient(var(--BR),var(--BR)) right/calc(50% - var(--z)) 100% no-repeat}
 .dcal .ny .c{--z:7px}
 .dcal .c b{position:relative;z-index:1;color:inherit;font-weight:400;line-height:15px;padding-top:2px}   /* .brief .meta b 의 글자색을 받지 않는다 */
-.dcal .c.we{color:#4a4a4a}
-.dcal .c.on{color:var(--ink)}
+.dcal .c b .w{color:#fff}
 .dcal .c.in{--K:var(--hi)}
 .dcal .c.bl{--BL:var(--hi)}
 .dcal .c.br{--BR:var(--hi)}
-.dcal .c.end,.dcal .c.hol{color:#fff}
 .dcal .c.end b{font-weight:700}
 .dcal .c.hol::before{content:"";position:absolute;left:50%;top:8.5px;width:8px;height:8px;border-radius:50%;background:var(--red);transform:translate(-50%,-50%);z-index:0}
-.dcal .hd .c{height:13px}
+.dcal .hd .c{height:13px;color:var(--muted)}
+.dcal .hd .c.we{color:var(--dim)}
 .dcal .hd .c b{font-size:9px;line-height:12px;padding-top:0}
-.dcal .c.dl::after{content:"";position:absolute;left:0;right:0;bottom:0;border-bottom:1.5px dashed var(--ln)}
+.dcal .pbox{position:absolute;left:30px;top:0;width:0;height:21px;pointer-events:none}
+.dcal .pbox i{position:absolute;top:0;height:21px;background:repeating-linear-gradient(135deg,rgba(255,255,255,.22) 0 1px,transparent 1px 4px)}
+.dcal .base{position:absolute;left:30px;top:19.5px;width:0;height:1.5px;pointer-events:none}
+.dcal .base i{position:absolute;top:0;height:1.5px;background:var(--ln)}
+.dcal .base i.d{top:-.5px;height:2px;background:radial-gradient(circle,var(--ln) 0 .9px,transparent 1.1px) 0 50%/4px 2px repeat-x}
 .dcal .tk{position:absolute;bottom:0;width:2px;height:7px;background:var(--ln)}
 .dcal .tk.am{right:calc(50% + var(--z))}
 .dcal .tk.pm{left:calc(50% + var(--z))}
-.dcal .arm{position:absolute;top:0;bottom:0;border-bottom:1.5px dashed var(--ln)}
-.dcal .arm.sa{left:calc(50% - var(--z) - 2px);right:0}
-.dcal .arm.sp{left:calc(50% + var(--z));right:0}
-.dcal .arm.ea{left:0;right:calc(50% + var(--z))}
-.dcal .arm.ep{left:0;right:calc(50% - var(--z) - 2px)}
 .dcal .live{--lc:#a855f7;--lg:rgba(168,85,247,.55);--d:5px;position:absolute;left:calc(50% - var(--z) - 1px);top:calc(100% - 7px);width:0;height:0;z-index:2;pointer-events:none}
 .dcal .live.pm{--lc:#fff;--lg:rgba(255,255,255,.5);--d:calc(10px / 3);left:calc(50% + var(--z) + 1px)}
 .dcal .live::before{content:"";position:absolute;left:0;top:0;width:var(--d);height:var(--d);border-radius:50%;background:var(--lc);transform:translate(-50%,-50%);animation:dcal-breathe 2.2s ease-in-out infinite}
@@ -1974,43 +1977,75 @@ function nyClose(iso) {
 function drvCal(per) {
   const f = dUTC(per.from), t = dUTC(per.to), kf = nyClose(per.from), kt = nyClose(per.to);
   if (!kf || !kt) return '';
-  /* 기간 안의 실제 뉴욕 거래일: 가격 자료의 날짜. 없으면 주말과 휴장일을 뺀 평일 */
+  /* 정규장이 열린 뉴욕 날짜. 기간 안은 가격 자료의 거래일(없으면 주말·휴장일을 뺀 평일), 시작일은 늘 거래일,
+     그 앞은 주말·휴장일을 뺀 평일. 끝 날짜 뒤는 아직 열리지 않았다 */
   const tdays = per.days && per.days.length ? new Set(per.days.map(x => x[0])) : null;
-  const active = d => d > f && d <= t && (tdays ? tdays.has(dIso(d)) : !dWe(d) && !NYSE_HOL.has(dIso(d)));
+  const weekday = d => !dWe(d) && !NYSE_HOL.has(dIso(d));
+  const traded = d => d > t ? false : d > f ? (tdays ? tdays.has(dIso(d)) : weekday(d)) : dSame(d, f) || weekday(d);
   const last = kt.day, cols = [];
   for (let d = dAdd(f, -1); d <= last; d = dAdd(d, 1)) cols.push(d);
   const near = (d, e, n) => Math.abs(d - e) <= n * 864e5;
   const show = cols.length > 12 ? cols.filter(d => near(d, f, 2) || near(d, t, 2) || near(d, last, 1)) : cols;
   const items = [];   // 날짜 칸과, 날짜를 건너뛰는 자리의 … 칸. … 칸은 양옆이 모두 거래일이면 거래일 칸처럼 칠한다
   show.forEach((d, i) => { const p = show[i - 1]; if (p && !dSame(p, dAdd(d, -1))) items.push({ gap: true, p, n: d }); items.push({ d }); });
-  const act = it => !!it && (it.gap ? active(it.p) && active(it.n) : active(it.d));
+  const act = it => !!it && (it.gap ? traded(it.p) && traded(it.n) : traded(it.d));
+  const sess = it => it.gap ? null : it.d;                       // 칸이 나타내는 정규장의 뉴욕 날짜(… 칸은 기간 안)
+  const isPast = d => !!d && d <= f;
   const hr = hm => Number(String(hm).slice(0, 2));
-  const R = { kr: { s: kf.day, e: kt.day, shm: kf.hm, ehm: kt.hm, hol: KRX_HOL, tz: '한국', closed: '한국 증시 휴장' },
-              ny: { s: f, e: t, shm: kf.ny, ehm: kt.ny, hol: NYSE_HOL, tz: '뉴욕', closed: '뉴욕 증시 휴장' } };
+  const W = 28;
+  const R = { kr: { s: kf.day, e: kt.day, shm: kf.hm, ehm: kt.hm, hol: KRX_HOL, tz: '한국', closed: '한국 증시 휴장', z: 3 },
+              ny: { s: f, e: t, shm: kf.ny, ehm: kt.ny, hol: NYSE_HOL, tz: '뉴욕', closed: '뉴욕 증시 휴장', z: 7 } };
   const row = k => {
-    const r = R[k], kr = k === 'kr';
-    return items.map((it, i) => {
+    const r = R[k], kr = k === 'kr', z = r.z, boxes = [], pasts = [];
+    let si = -1, ei = -1;
+    const cells = items.map((it, i) => {
       const p = items[i - 1], c = ['c'], start = !it.gap && dSame(it.d, r.s), end = !it.gap && dSame(it.d, r.e);
-      const inside = it.gap ? (it.p >= r.s && it.n <= r.e) : (it.d > r.s && it.d < r.e);
       const hol = !it.gap && !dWe(it.d) && r.hol.has(dIso(it.d));   // 평일에 증시가 쉬는 날
       if (!it.gap && dWe(it.d)) c.push('we');
       if (hol) c.push('hol');
-      if (act(it)) c.push('on');
-      if (inside) c.push('dl');
+      /* 회색 칸: 한국은 왼쪽(앞날 밤의 정규장이 이날 새벽에 끝남)·오른쪽(이날 밤에 정규장이 열림), 뉴욕은 이날 낮의 정규장 */
+      let L = false, Rt = false, In = false;
       if (kr) {
-        if (p ? act(p) : active(dAdd(it.d, -1))) c.push('bl');   // 전날 밤에 열린 정규장이 이날 새벽에 끝남
-        if (act(it)) c.push('br');                              // 이날 밤에 정규장이 열림
-      } else if (act(it)) c.push('in');                         // 이날 낮에 정규장이 열림
+        const sl = p ? sess(p) : dAdd(it.d, -1);
+        L = p ? act(p) : traded(dAdd(it.d, -1)); Rt = act(it);
+        if (L && !isPast(sl)) c.push('bl');
+        if (Rt && !isPast(sess(it))) c.push('br');
+        if (Rt && isPast(sess(it))) pasts.push([i * W + 14 + z, (i + 1) * W + 14 - z]);
+        if (L && isPast(sl) && !(p && act(p) && isPast(sess(p)))) pasts.push([i * W, i * W + 14 - z]);   // 맨 왼쪽에서 잘린 칸
+        if (Rt && !isPast(sess(it))) boxes.push([i * W + 14 + z, (i + 1) * W + 14 - z]);
+      } else {
+        In = act(it);
+        if (In && !isPast(sess(it))) { c.push('in'); boxes.push([i * W + 14 + z + 2 - 22, i * W + 14 + z + 2]); }
+        if (In && isPast(sess(it))) pasts.push([i * W + 14 + z + 2 - 22, i * W + 14 + z + 2]);
+      }
+      /* 숫자 색은 글자마다: 회색 칸(단색·빗금 모두)에 닿으면 흰색 */
+      const digs = it.gap ? [] : String(it.d.getUTCDate()).split('');
+      const lit = digs.map((ch, j) => kr ? (digs.length === 1 ? L || Rt : j === 0 ? L : Rt) : In);
+      const num = it.gap ? '…' : digs.map((ch, j) => `<span${lit[j] ? ' class="w"' : ''}>${ch}</span>`).join('');
       let mark = '', tip = it.gap ? '' : `${r.tz} ${dMd(it.d)}${hol ? ' ' + r.closed : ''}`;
       if (start || end) {
         const hm = start ? r.shm : r.ehm, am = hr(hm) < 12;
         c.push('end');
-        mark = `<span class="arm ${start ? 's' : 'e'}${am ? 'a' : 'p'}"></span><span class="tk ${am ? 'am' : 'pm'}"></span>`
-          + (end ? `<span class="live ${am ? 'am' : 'pm'}" aria-hidden="true"></span>` : '');   // 가장 최근 종가: 숨쉬는 원
+        if (start) si = i; else ei = i;
+        mark = `<span class="tk ${am ? 'am' : 'pm'}"></span>` + (end ? `<span class="live ${am ? 'am' : 'pm'}" aria-hidden="true"></span>` : '');   // 가장 최근 종가: 숨쉬는 원
         tip += ` ${hm} 종가`;
+        if (start) r.sam = am; else r.eam = am;
       }
-      return `<i class="${c.join(' ')}"${tip ? ` title="${tip}"` : ''}><b>${it.gap ? '…' : it.d.getUTCDate()}</b>${mark}</i>`;
+      return `<i class="${c.join(' ')}"${tip ? ` title="${tip}"` : ''}><b>${num}</b>${mark}</i>`;
     }).join('');
+    /* 바닥선: 시작 꺾쇠의 왼쪽 끝부터 끝 꺾쇠의 오른쪽 끝까지. 바로 이어지는 칸(틈 6px)은 한 실선으로 묶는다 */
+    let base = '';
+    if (si >= 0 && ei >= 0) {
+      const x0 = si * W + 14 + (r.sam ? -z - 2 : z), x1 = ei * W + 14 + (r.eam ? -z : z + 2);
+      const runs = [];
+      boxes.forEach(bx => { const q = runs[runs.length - 1]; if (q && bx[0] - q[1] <= 8) q[1] = bx[1]; else runs.push(bx.slice()); });
+      const seg = []; let x = x0;
+      runs.forEach(([a, b]) => { a = Math.max(a, x0); b = Math.min(b, x1); if (a > x) seg.push([x, a, 'd']); if (b > a) seg.push([a, b, 's']); x = Math.max(x, b); });
+      if (x < x1) seg.push([x, x1, 'd']);
+      base = `<span class="base" aria-hidden="true">${seg.map(([a, b, ty]) => `<i class="${ty}" style="left:${a}px;width:${b - a}px${ty === 'd' ? `;background-position:${-a}px 50%` : ''}"></i>`).join('')}</span>`;
+    }
+    const pbox = pasts.length ? `<span class="pbox" aria-hidden="true">${pasts.map(([a, b]) => `<i style="left:${a}px;width:${b - a}px"></i>`).join('')}</span>` : '';
+    return pbox + cells + base;   // 빗금 칸을 먼저 그려 꺾쇠와 숫자가 그 위에 온다
   };
   const hd = items.map(it => `<i class="c${!it.gap && dWe(it.d) ? ' we' : ''}"><b>${it.gap ? '…' : KWD[it.d.getUTCDay()]}</b></i>`).join('');
   const label = `한국 시각 ${dMd(kf.day)} ${kf.hm} → ${dMd(kt.day)} ${kt.hm}, 뉴욕 시각 ${dMd(f)} ${kf.ny} → ${dMd(t)} ${kt.ny} 종가`;
