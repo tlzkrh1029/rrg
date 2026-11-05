@@ -304,17 +304,26 @@
   },
   "GE": {
    "text": [
-    "GE는 10/20 장 시작 전에 3분기 실적을 발표했습니다. 총수주가 190억 달러로 49% 늘었고 조정 주당순이익은 2.25달러로 36% 늘었으며, 회사는 2026년 전망을 전반적으로 올렸습니다.",
-    "상업엔진·서비스 부문 매출 성장률 전망은 20% 안팎에서 20% 초반대로, 이 부문 영업이익 전망은 102.5억~103.5억 달러에서 105억~106억 달러로 올랐고, 2027년에도 상업 서비스가 한 자릿수 후반이 아닌 두 자릿수 초반으로 성장할 것으로 내다봤습니다. 그럼에도 발표 당일 주가는 3.7% 내렸고 10/19 주에는 −9.0%를 기록했습니다."
+    "GE는 10/20 장 시작 전에 3분기 실적을 발표했습니다. 수주는 190억 달러로 49% 늘었고, 조정 EPS는 2.25달러로 36% 증가했으며, 회사는 올해 전망을 전반적으로 상향했습니다.",
+    "실적 발표 당일 주가는 3.7% 하락했고, 10/19 주 수익률은 −9.0%였습니다. 10/21에는 Morgan Stanley가 투자의견 비중확대를 유지하면서 목표가를 375달러로 낮췄습니다.",
+    "10/26 주 +5.7%와 11/2 주 +9.2%의 상승을 설명하는 별도의 개별 사건은 검색에서 확인하지 못했습니다."
    ],
    "src": [
     {
-     "t": "GE Aerospace 보도자료",
+     "t": "GE Aerospace 3분기 실적 보도자료",
      "u": "https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-third-quarter-2026-results"
+    },
+    {
+     "t": "SEC 8-K 3분기 실적 발표문",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000040545/000004054526000063/ge3q2026earningsrelease.htm"
+    },
+    {
+     "t": "Hargreaves Lansdown 실적 기사",
+     "u": "https://www.hl.co.uk/shares/stock-market-news/company--news/ge-aerospace-lifts-fy-profit-outlook-again-after-solid-q3"
     }
    ],
-   "asof": "2026-10-29",
-   "at": "10/30 08:20 KST"
+   "asof": "2026-11-04",
+   "at": "11/05 11:04 KST"
   },
   "WMT": {
    "text": [
@@ -809,6 +818,29 @@
    ],
    "asof": "2026-11-04",
    "at": "11/05 10:18 KST"
+  },
+  "MTRN": {
+   "text": [
+    "MTRN는 11/4 장 시작 전에 3분기 실적을 발표했고, 그날 주가는 17.7% 하락했습니다.",
+    "순매출은 5억 6,730만 달러로 전년 동기 4억 4,480만 달러보다 늘었지만, 애널리스트 예상치 6억 1,138만 달러에는 못 미쳤습니다. 조정 EPS는 1.93달러로 예상치 1.89달러를 웃돌았습니다.",
+    "회사는 같은 날 연간 조정 EPS 전망을 7.10~7.40달러로 올렸고, 주문과 수주잔고가 사상 최대라고 밝혔습니다. 이 낙폭이 11/2 주 수익률 −15.6%의 대부분을 차지했습니다."
+   ],
+   "src": [
+    {
+     "t": "Materion 3분기 실적 보도자료(재게시)",
+     "u": "https://www.01net.it/materion-corporation-reports-record-third-quarter-2026-financial-results-and-raises-full-year-outlook/"
+    },
+    {
+     "t": "GuruFocus 3분기 실적 기사",
+     "u": "https://www.gurufocus.com/news/9169243/materion-corp-reports-q3-2026-earnings-eps-of-181-beats-estimates-while-revenue-of-5673-million-misses"
+    },
+    {
+     "t": "Benzinga 실적 발표 콘퍼런스콜",
+     "u": "https://www.benzinga.com/news/26/11/62867196/materion-q3-2026-earnings-call-transcript"
+    }
+   ],
+   "asof": "2026-11-04",
+   "at": "11/05 11:04 KST"
   }
  },
  "runs": [
@@ -918,6 +950,19 @@
    41,
    "claude-sonnet-5-5",
    0.93
+  ],
+  [
+   "11/05 11:04 KST",
+   0,
+   0,
+   2,
+   2,
+   "ok",
+   6,
+   2,
+   10,
+   "claude-sonnet-5-5",
+   0.167
   ]
  ]
 }

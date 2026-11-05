@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T01:06:24Z",
+  "generated_at": "2026-11-05T01:53:07Z",
   "source_order": [
     "stooq",
     "yahoo"
@@ -570,6 +570,7 @@
   "holdings": {
     "file": "holdings/2026-11-05.csv",
     "source": "stockanalysis.com",
+    "fetched_at": "2026-11-05T01:54:07Z",
     "roundhill_file": "2026-11-04",
     "sources": {
       "SPY": "stockanalysis.com",
