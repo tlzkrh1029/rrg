@@ -824,6 +824,20 @@ def main():
             json.dump({"asof": cur["asof"], "prev_asof": prev_asof, "alerts": alerts}, f, ensure_ascii=False, indent=1)
         print(f"alerts for {cur['asof']} (prev {prev_asof or '없음'}): {len(alerts)}" + (" (kept from the first build of this close)" if kept else ""))
         return
+    # 머리 표시의 수집 시각(초까지, 한국 시각). 가격은 prices_summary.json 의 generated_at, 구성종목은 holdings.fetched_at
+    # (예전 파일에는 없으므로 가격 수집 시각으로 대신), 상장 목록은 tradfi-ticker-lists summary 의 generated_at
+    def ts_txt(iso):
+        try:
+            t = dt.datetime.strptime(iso, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc)
+        except (TypeError, ValueError):
+            return None
+        return {"kst": t.astimezone(KST_TZ).strftime("%m/%d %H:%M:%S"), "ny": t.astimezone(NY_TZ).strftime("%m/%d %H:%M:%S"), "utc": t.strftime("%Y-%m-%d %H:%M:%S")}
+    ps = load_json(os.path.join(ROOT, "output", "prices_summary.json")) if os.path.exists(os.path.join(ROOT, "output", "prices_summary.json")) else {}
+    p_ts = ts_txt(ps.get("generated_at"))
+    h_ts = ts_txt((ps.get("holdings") or {}).get("fetched_at")) or p_ts
+    l_ts = ts_txt(list_ts)
+    def flag_tip(x):
+        return f" · 수집 {x['kst']} KST (뉴욕 {x['ny']} ET · UTC {x['utc']})" if x else ""
     contrib = load_contrib(args.contrib, cur["asof"])
     kicks = load_kicks(args.kicks, args.kick_notes, cur["asof"])
     brief = make_brief(cur, hold, alerts, prev_asof, contrib, kicks)
@@ -845,6 +859,8 @@ def main():
         "__PRICE_DAYS__": str(cur["days"]), "__PRICE_WEEKS__": str(cur["weeks"]), "__PRICE_SOURCE__": src_ko,
         "__HOLD_ASOF__": hold_asof, "__HOLD_PREV__": hold_prev or "없음",
         "__LIST_ASOF__": list_asof, "__LIST_TS__": list_ts_txt,
+        "__PRICE_GOT__": p_ts["kst"] if p_ts else "", "__HOLD_GOT__": h_ts["kst"] if h_ts else "", "__LIST_GOT__": l_ts["kst"] if l_ts else "",
+        "__PRICE_GOT_TIP__": flag_tip(p_ts), "__HOLD_GOT_TIP__": flag_tip(h_ts), "__LIST_GOT_TIP__": flag_tip(l_ts),
         "__LIST_B__": str(counts["b"]), "__LIST_F__": str(counts["f"]), "__LIST_H__": str(counts["h"]),
         "__ELST__": json.dumps(elst, ensure_ascii=False, separators=(",", ":")),
         "__LST__": json.dumps(lst, ensure_ascii=False, separators=(",", ":")),

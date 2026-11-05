@@ -45,6 +45,7 @@ b{font-weight:700}
 .mi b{color:var(--amber)}
 .mi:hover{background:var(--band-2);color:#fff}
 .flag{font-size:10.5px;letter-spacing:.08em;color:var(--amber);border:1px solid var(--amber-dim);padding:1px 7px;text-transform:uppercase;white-space:nowrap}
+.flag i{font-style:normal;letter-spacing:.02em;text-transform:none;font-variant-numeric:tabular-nums}   /* 수집 시각(한국 시각, 초까지) */
 
 /* 탭 */
 .tabs{display:flex;flex-wrap:wrap;align-items:flex-end;gap:0 2px;border-bottom:1px solid var(--line);padding-top:6px}
@@ -956,9 +957,9 @@ body.cover-open{overflow:hidden}
     <div class="tools">
       <button type="button" class="mi" id="convBtn" aria-label="색 규약 바꾸기"><b>97)</b> <span id="convLabel">색 규약: 초록=강세 (US)</span> ▾</button>
       <button type="button" class="mi" id="helpBtn"><b>98)</b> 도움말</button>
-      <span class="flag" title="__PRICE_SOURCE__ 조정 종가, SPY 기준 __PRICE_DAYS__거래일(__PRICE_FIRST__ ~ __PRICE_ASOF__). 백분위·비율선·RRG·신호를 이 가격으로 계산했습니다. 출처 저장소: tlzkrh1029/rrg">Prices __PRICE_ASOF__</span>
-      <span class="flag" style="color:var(--ink-2);border-color:var(--line-2)" title="구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷이며, 변동 %p는 __HOLD_PREV__ 스냅샷과 비교한 값입니다">Holdings __HOLD_ASOF__</span>
-      <span class="flag" style="color:var(--ink-2);border-color:var(--line-2)" title="바이낸스 bStocks, 바이낸스 TradFi 선물, 하이퍼리퀴드 HIP-3 목록을 __LIST_TS__에 수집해 대조한 결과입니다">Listing __LIST_ASOF__</span>
+      <span class="flag" title="__PRICE_SOURCE__ 조정 종가, SPY 기준 __PRICE_DAYS__거래일(__PRICE_FIRST__ ~ __PRICE_ASOF__). 백분위·비율선·RRG·신호를 이 가격으로 계산했습니다__PRICE_GOT_TIP__. 출처 저장소: tlzkrh1029/rrg">Prices __PRICE_ASOF__ 종가 <i>· 수집 __PRICE_GOT__</i></span>
+      <span class="flag" style="color:var(--ink-2);border-color:var(--line-2)" title="구성종목 상위 10개는 stockanalysis.com __HOLD_ASOF__ 스냅샷이며, 변동 %p는 __HOLD_PREV__ 스냅샷과 비교한 값입니다__HOLD_GOT_TIP__">Holdings <i>수집 __HOLD_GOT__</i></span>
+      <span class="flag" style="color:var(--ink-2);border-color:var(--line-2)" title="바이낸스 bStocks, 바이낸스 TradFi 선물, 하이퍼리퀴드 HIP-3 목록을 __LIST_TS__에 수집해 대조한 결과입니다__LIST_GOT_TIP__">Listing <i>수집 __LIST_GOT__</i></span>
     </div>
   </div>
 

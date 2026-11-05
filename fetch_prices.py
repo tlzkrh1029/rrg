@@ -664,6 +664,7 @@ def main():
             time.sleep(1)  # one page per second is polite
         write_csv(hfile, HOLDINGS_FIELDS, rows)
         summary["holdings"] = {"file": os.path.relpath(hfile, args.out), "source": "stockanalysis.com",
+                               "fetched_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                                "roundhill_file": ROUNDHILL.date, "sources": sources,
                                "etfs": len(TICKERS) - len(summary["holdings_failed"]), "rows": len(rows)}
         if summary["holdings_failed"]:
