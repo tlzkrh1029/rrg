@@ -325,14 +325,59 @@ def heat(X, E, rows, a, e):
     return H
 
 
+# 회사 이름 끝의 회사 형태 낱말. 출처마다 표기가 달라(stockanalysis 'Microsoft Corporation', Roundhill 'Microsoft Corp',
+# 캐나다 상장 'CAMECO CORP') 지운 뒤 견준다. 이름이 비슷한 다른 회사를 합치지 않도록 회사 형태를 나타내는 낱말만 둔다
+CO_SUFFIX = re.compile(r"\b(corporation|corp|incorporated|inc|company|co|limited|ltd|plc|holdings?|class [a-z]|cl [a-z])\b")
+
+
 def company(name):
-    n = re.sub(r"\b(class [a-z]|cl [a-z])\b", "", (name or "").lower())
+    n = CO_SUFFIX.sub("", (name or "").lower().replace("&", " and "))
     return re.sub(r"[^a-z0-9]", "", n)
+
+
+def driver_groups(per_fund):
+    """Drivers 에서 한 회사로 볼 묶음. 티커가 같으면 같은 회사이고(출처마다 이름 표기가 달라도),
+    회사 이름(형태 낱말을 지운 것)이 같으면 티커가 달라도 같은 회사다(GOOGL·GOOG, SKHY·000660, CCJ·CCO.NE).
+    돌려주는 값: {티커: 묶음 대표}. 티커가 다른 종목을 이름으로 합친 경우는 화면에 찍어 둔다."""
+    parent = {}
+
+    def find(x):
+        parent.setdefault(x, x)
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(a, b):
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[max(ra, rb)] = min(ra, rb)
+
+    by_name = {}
+    for E in TERMINAL:
+        for p in ("1W", "1M"):
+            X = per_fund.get(E, {}).get(p)
+            if not X:
+                continue
+            for row in X["rows"]:
+                disp = row[0]
+                find(disp)
+                g = company(X.get("names", {}).get(disp, ""))
+                if g:
+                    by_name.setdefault(g, set()).add(disp)
+    for g, syms in by_name.items():
+        syms = sorted(syms)
+        for s in syms[1:]:
+            union(syms[0], s)
+        if len(syms) > 1:
+            print(f"drivers: one company by name '{g}': {'·'.join(syms)}")
+    return {s: find(s) for s in parent}
 
 
 def drivers(per_fund, spy_R):
     """per_fund: {E: {'1W': period, '1M': period}}. 종목(회사)별로 ETF 기여를 모아 순위를 매긴다."""
     out = {}
+    root = driver_groups(per_fund)
     for p in ("1W", "1M"):
         out[p] = {}
         for basis in ("usd", "spy"):
@@ -344,13 +389,15 @@ def drivers(per_fund, spy_R):
                 for row in X["rows"]:
                     disp, k, w, r, c = row[:5]
                     name = X.get("names", {}).get(disp, "")
-                    g = company(name) or disp
+                    g = root.get(disp, disp)
                     if g not in groups:
                         groups[g] = {"syms": [], "n": name, "r": r, "e": {}}
                         order.append(g)
                     G = groups[g]
                     if disp not in G["syms"]:
                         G["syms"].append(disp)
+                    if len(name) > len(G["n"]):   # 표시 이름은 가장 긴 표기(Microsoft Corporation > Microsoft Corp)
+                        G["n"] = name
                     v = c if basis == "usd" else w * (r - (spy_R.get(p) or 0))
                     G["e"][E] = G["e"].get(E, 0.0) + v
             items = []
