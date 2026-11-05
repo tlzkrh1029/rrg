@@ -5,6 +5,7 @@
   output/terminal-data.json        compute_terminal.py 결과
   output/holdings/<date>.csv       구성종목 스냅샷(최신 두 개를 써서 변동 %p 를 계산)
   data/etf_meta.json               ETF 이름·순자산·보유 종목 수·출처 URL
+  data/market_holidays.json        한국거래소·뉴욕증권거래소 평일 휴장일과 뉴욕 조기 폐장 시각(주간 브리핑 탭 Drivers 달력). 없으면 빈 목록
   --lists DIR                      tradfi-ticker-lists 의 output 폴더(상장 점). 없으면 점을 비운다.
   data/lists/log.json              5) 상장 로그 탭의 누적 로그(terminal/listing_log.py 가 쌓음). 없으면 탭에 안내만 적는다.
   output/breakout-data.json        돌파 지도 계산 결과(종목 상세용 가격·이동평균 재료). 없으면 docs/breakout/data/ 의 직전 사본, 그것도 없으면 종목 상세 없이 만든다.
@@ -94,6 +95,17 @@ def long_date(iso):
 
 def html_escape(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def load_holidays(path):
+    """data/market_holidays.json 에서 krx·nyse 휴장일 목록과 nyse_early 조기 폐장 시각만 꺼낸다."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            h = json.load(f)
+        return {"krx": sorted(h.get("krx") or []), "nyse": sorted(h.get("nyse") or []), "nyse_early": dict(h.get("nyse_early") or {})}
+    except (OSError, ValueError) as e:
+        print(f"holidays: {path} 를 읽지 못해 빈 목록으로 만든다 ({e})")
+        return {"krx": [], "nyse": [], "nyse_early": {}}
 
 
 def built_at_kst():
@@ -756,6 +768,7 @@ def main():
     ap.add_argument("--alerts-only", action="store_true", help="조건 알림(docs/data/alerts.txt)만 쓰고 끝낸다. Claude 단계 전에 텔레그램을 먼저 보낼 때 쓴다")
     ap.add_argument("--holdings", default=os.path.join(ROOT, "output", "holdings"))
     ap.add_argument("--meta", default=os.path.join(ROOT, "data", "etf_meta.json"))
+    ap.add_argument("--holidays", default=os.path.join(ROOT, "data", "market_holidays.json"), help="Drivers 달력의 휴장일·조기 폐장 시각")
     ap.add_argument("--lists", default=None, help="tradfi-ticker-lists 의 output 폴더")
     ap.add_argument("--listing-log", default=os.path.join(ROOT, "data", "lists", "log.json"), help="5) 상장 로그 탭의 누적 로그(terminal/listing_log.py)")
     ap.add_argument("--template", default=os.path.join(HERE, "template.html"))
@@ -882,6 +895,8 @@ def main():
         "__XH__": json.dumps(xh, ensure_ascii=False, separators=(",", ":")),
         # 주간 브리핑 탭의 '이번 주'(지난주 마지막 종가 대비). 자료가 없으면 null
         "__WEEKLY__": json.dumps(weekly, ensure_ascii=False, separators=(",", ":")),
+        # Drivers 달력의 휴장일 빨간 점과 조기 폐장 시각. 파일이 없거나 깨졌으면 빈 목록
+        "__MKT_HOL__": json.dumps(load_holidays(args.holidays), ensure_ascii=False, separators=(",", ":")),
         "__BUILT_AT__": built,
     }
     tmpl = open(args.template, encoding="utf-8").read()
