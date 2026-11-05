@@ -17,6 +17,7 @@ breakout/                돌파 지도: fetch_stock_prices.py → compute_breako
 scripts/notify_telegram.py   텔레그램 전송 (--docs 로 두 화면 모두 보냄, 같은 종가로는 한 번만)
 scripts/run_guard.py     워크플로의 첫 작업: 아침 빌드·저녁 실행을 가르고, 늦게 시작한 예비 실행을 거름
 data/etf_meta.json       ETF 메타. screens 로 어느 화면에 들어가는지 표시 (terminal / breakout)
+data/market_holidays.json  한국거래소·뉴욕증권거래소 평일 휴장일과 뉴욕 조기 폐장 시각 (Drivers 기간 달력). 해마다 갱신
 data/lists/              tradfi-ticker-lists 의 상장 목록 사본과 누적 상장 로그(log.json)
 output/                  수집·계산 결과 (prices_wide.csv, holdings/, stocks/, etf_ath.json, etf-chart-data.json, terminal-data.json, terminal-data-wk.json, breakout-data.json)
 docs/                    GitHub Pages 본문. docs/index.html 이 매트릭스, docs/breakout/index.html 이 돌파 지도
@@ -177,6 +178,7 @@ Claude 아티팩트 두 개(📊 Weekly RRG 와 돌파 지도)는 Claude 예약 
 - **This Week**: 지난주 마지막 거래일 종가와 견준 이번 주의 변화입니다. 국면이 바뀐 ETF, 새로 켜진 신호, 전환순 상위 3 에 새로 든 ETF 의 수를 먼저 적고, 이어서 전환순 상위 3(지금 점수와 지난주 점수·순위, 이번 주와 지난주의 백분위 띠), 이번 주 변화 카드(지난주 백분위 띠와 국면을 흐리게 덧붙임), 1단 RRG 네 칸과 2단 RRG(← 는 지난주 국면), 종류별 신호(NEW 는 이번 주에 새로 켜진 것), 구성종목 상위 10 의 진입(+)과 이탈(−)을 둡니다. 계산은 `compute_terminal.py --week-base` 가 쓴 `output/terminal-data-wk.json` 과 지금의 `terminal-data.json` 을 알림과 같은 규칙(`make_alerts`)으로 견주고, 구성종목은 지난주 마지막 거래일까지의 가장 최근 스냅샷과 지금 스냅샷을 견줍니다(출처가 바뀐 ETF 는 뺌). 월요일 종가의 빌드에서는 그날 하루의 변화입니다.
 - **텔레그램 글**: 텔레그램으로 보내는 주간 브리핑 본문(`docs/data/brief.txt`)은 맨 아래에 접어 둡니다.
 - **Drivers**: 넓은 화면에서는 왼쪽 칼럼이 주도 종목입니다(아래 "기여도" 절). 좁은 화면에서는 Changes · This Week 아래에 옵니다.
+- **Drivers 기간 달력**: 머리의 회색 띠에 고른 기간(1W·1M)을 두 줄 달력으로 그립니다. 위 줄은 한국 시각, 아래 줄은 뉴욕 시각이고 같은 날짜 칸을 위아래로 맞춥니다. 바탕색 칸 하나가 뉴욕 정규장 하루이며, 기간 안의 실제 거래일(가격 자료)에만 칠합니다. 한국 줄은 그 정규장이 열리는 밤(그날 저녁부터 다음 날 새벽 종가까지), 뉴욕 줄은 같은 칸을 두 줄 꺾쇠의 위치 차만큼 왼쪽으로 옮겨 오후 종가에서 끝나게 칠합니다. 꺾쇠는 새벽 종가면 숫자 왼쪽, 오후 종가면 숫자 오른쪽에 서고, 가장 최근 종가의 꺾쇠 끝에는 숨쉬는 원(한국 보라, 뉴욕 흰색)이 있습니다. 평일 휴장일은 숫자 뒤에 빨간 점으로 표시합니다(한국 줄은 한국거래소, 뉴욕 줄은 뉴욕증권거래소). 휴장일과 뉴욕 조기 폐장 시각은 `data/market_holidays.json` 에 있고, 한국거래소가 매년 12월에 다음 해 휴장일을 공지하면 `krx` 에 더해야 합니다.
 
 ### ETF 차트 (Holdings 패널 · 돌파 지도 ETF 패널)
 
