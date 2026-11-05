@@ -62,7 +62,7 @@ EQTUSDT,EQT,USDT,EQUITY,TradFi,US,EQT,constituents,stock,EQT,EQT Corporation Com
 EWJUSDT,EWJ,USDT,EQUITY,TradFi,US,EWJ,constituents,etf,EWJ,iShares MSCI Japan Index Fund,etf,TRADING,2026-03-19
 EWTUSDT,EWT,USDT,EQUITY,TradFi,US,EWT,constituents,etf,EWT,iShares MSCI Taiwan ETF,etf,TRADING,2026-06-01
 EWYUSDT,EWY,USDT,EQUITY,TradFi,US,EWY,constituents,etf,EWY,iShares MSCI South Korea ETF,etf,TRADING,2026-03-16
-EWZSUSDT,EWZS,USDT,EQUITY,TradFi,US,EWZS,baseAsset,etf,EWZS,iShares MSCI Brazil Small-Cap ETF,etf,TRADING,2026-10-29
+EWZSUSDT,EWZS,USDT,EQUITY,TradFi,US,EWZS,constituents,etf,EWZS,iShares MSCI Brazil Small-Cap ETF,etf,TRADING,2026-10-29
 EWZUSDT,EWZ,USDT,EQUITY,TradFi,US,EWZ,constituents,etf,EWZ,iShares MSCI Brazil ETF,etf,TRADING,2026-06-10
 FLEXUSDT,FLEX,USDT,EQUITY,TradFi,US,FLEX,constituents,stock,FLEX,Flex Ltd. - Ordinary Shares,stock,TRADING,2026-07-02
 FLNCUSDT,FLNC,USDT,EQUITY,TradFi,US,FLNC,constituents,stock,FLNC,"Fluence Energy, Inc. - Class A Common Stock",stock,TRADING,2026-05-18
@@ -154,7 +154,7 @@ SMRUSDT,SMR,USDT,EQUITY,TradFi,US,SMR,constituents,stock,SMR,NuScale Power Corpo
 SNDKUSDT,SNDK,USDT,EQUITY,TradFi,US,SNDK,constituents,stock,SNDK,Sandisk Corporation - Common Stock When-Issued,stock,TRADING,2026-04-07
 SNOWUSDT,SNOW,USDT,EQUITY,TradFi,US,SNOW,constituents,stock,SNOW,Snowflake Inc. Common Stock,stock,TRADING,2026-07-10
 SNPSUSDT,SNPS,USDT,EQUITY,TradFi,US,SNPS,constituents,stock,SNPS,"Synopsys, Inc. - Common Stock",stock,TRADING,2026-10-12
-SNXXUSDT,SNXX,USDT,EQUITY,TradFi,US,SNXX,constituents,etf,SNXX,Tradr 2X Long SNDK Daily ETF,etf,TRADING,2026-07-09
+SNXXUSDT,SNXX,USDT,EQUITY,TradFi,US,SNXX,baseAsset,etf,SNXX,Tradr 2X Long SNDK Daily ETF,etf,TRADING,2026-07-09
 SOFIUSDT,SOFI,USDT,EQUITY,TradFi,US,SOFI,constituents,stock,SOFI,"SoFi Technologies, Inc.  - Common Stock",stock,TRADING,2026-07-21
 SONYUSDT,SONY,USDT,EQUITY,TradFi,US,SONY,constituents,stock,SONY,Sony Group Corporation American Depositary Shares,stock,TRADING,2026-06-22
 SOXLUSDT,SOXL,USDT,EQUITY,TradFi,US,SOXL,constituents,etf,SOXL,Direxion Daily Semiconductor Bull 3X ETF,etf,TRADING,2026-05-15
@@ -166,7 +166,7 @@ SQQQUSDT,SQQQ,USDT,EQUITY,TradFi,US,SQQQ,constituents,etf,SQQQ,ProShares UltraPr
 STMUSDT,STM,USDT,EQUITY,TradFi,US,STM,constituents,stock,STM,STMicroelectronics N.V. Common Stock,stock,TRADING,2026-10-26
 STRCUSDT,STRC,USDT,EQUITY,TradFi,US,STRC,constituents,stock,STRC,Strategy Inc - Variable Rate Series A Perpetual Stretch Preferred Stock,stock,TRADING,2026-07-02
 STXXUSDT,STXX,USDT,EQUITY,TradFi,US,STX,constituents,stock,STX,Seagate Technology Holdings PLC - Ordinary Shares (Ireland),stock,TRADING,2026-06-11
-TBTUSDT,TBT,USDT,EQUITY,TradFi,US,TBT,baseAsset,etf,TBT,ProShares UltraShort Lehman 20  Year Treasury,etf,TRADING,2026-07-27
+TBTUSDT,TBT,USDT,EQUITY,TradFi,US,TBT,constituents,etf,TBT,ProShares UltraShort Lehman 20  Year Treasury,etf,TRADING,2026-07-27
 TEAMUSDT,TEAM,USDT,EQUITY,TradFi,US,TEAM,constituents,stock,TEAM,Atlassian Corporation  - Class A Common Stock,stock,TRADING,2026-09-02
 TEMUSDT,TEM,USDT,EQUITY,TradFi,US,TEM,constituents,stock,TEM,"Tempus AI, Inc. - Class A Common Stock",stock,TRADING,2026-08-28
 TERUSDT,TER,USDT,EQUITY,TradFi,US,TER,constituents,stock,TER,"Teradyne, Inc. - Common Stock",stock,TRADING,2026-07-02

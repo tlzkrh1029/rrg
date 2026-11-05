@@ -1,74 +1,103 @@
 {
- "asof": "2026-11-03",
- "at": "11/04 10:19 KST",
+ "asof": "2026-11-04",
+ "at": "11/05 10:18 KST",
  "etfs": {
   "XLV": {
    "text": [
-    "10/29에 Eli Lilly가 3분기 실적을 발표하면서 2026년 매출 가이던스를 850억~870억 달러에서 910억~920억 달러로 올렸고, Merck도 같은 날 시장 예상을 웃도는 분기 실적을 냈습니다.",
-    "대형 제약주가 헬스케어 섹터 지수에 미치는 비중이 커서, 이 두 회사의 실적 호조가 그날 XLV를 약 2% 끌어올렸다고 Finimize가 전했습니다."
+    "LLY가 10/29에 3분기 실적을 내며 올해 매출 가이던스를 850억~870억 달러에서 910억~920억 달러로 올렸고, 같은 날 MRK도 예상을 웃도는 실적과 함께 연간 이익 전망을 높였습니다.",
+    "JNJ는 10/13 실적에서 올해 매출과 조정 EPS 전망을 올렸으나 탤크 소송 관련 일회성 비용과 의료기기 매출 부진으로 그날 주가가 내렸습니다."
    ],
    "src": [
     {
-     "t": "Finimize",
-     "u": "https://finimize.com/content/eli-lilly-and-merck-lifted-healthcare-stocks-on-q3-strength"
-    },
-    {
-     "t": "Lilly 3분기 8-K",
+     "t": "Lilly 3분기 실적 8-K",
      "u": "https://www.sec.gov/Archives/edgar/data/0000059478/000005947826000104/q326lillysalesandearningsp.htm"
     },
     {
-     "t": "Zacks",
-     "u": "https://www.zacks.com/stock/news/3018734/lly-stock-jumps-as-q3-earnings-beat-estimates-2026-sales-view-raised"
+     "t": "Merck 3분기 실적 보도",
+     "u": "https://finviz.com/news/411712/merck-reports-q3-revenue-of-181-billion-raises-2026-earnings-guidance"
+    },
+    {
+     "t": "RTTNews, J&J 3분기",
+     "u": "https://www.rttnews.com/3698614/johnson-johnson-stock-falls-5-after-q3-profit-plunges.aspx"
     }
    ],
-   "kick": "릴리·머크 실적 호조"
+   "kick": "릴리 가이던스 상향"
   },
   "XLP": {
    "text": [
-    "10월에 Walmart가 월간 기준으로 1999년 이후 가장 큰 상승세를 보였고, 247WallSt는 이를 새 계약이나 가이던스 변경 없이 AI와 기술주에서 빠져나온 자금이 할인 소매업체로 옮겨간 결과로 설명했습니다.",
-    "Bank of America 고객들이 10/16까지 한 주 동안 개별 미국 주식을 사상 최대인 148억 달러 순매도하면서도 필수소비재는 사들였다는 점도 같은 기사에서 언급됐습니다."
+    "PG는 10/22 7~9월 분기에 순매출과 유기적 매출이 모두 4% 늘었고 10개 제품군과 6개 지역이 전부 성장했다고 밝혔습니다.",
+    "월마트는 10월에 1999년 이후 가장 좋은 월간 성과를 내는 흐름이었고, S&P 필수소비재 섹터도 10월 첫 16거래일에 11.1% 올랐다고 보도됐습니다."
    ],
    "src": [
     {
-     "t": "247WallSt",
+     "t": "P&G 2027 회계연도 1분기 보도자료",
+     "u": "https://us.pg.com/newsroom/news-releases/PG-Announces-Fiscal-Year-2027-First-Quarter-Results/"
+    },
+    {
+     "t": "247WallSt, 월마트 10월 강세",
      "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
     }
    ],
-   "kick": "AI 매도 속 방어주 쏠림"
+   "kick": "PG 실적과 월마트 강세"
   },
-  "XLU": {
+  "XLRE": {
    "text": [
-    "10월에 나스닥이 약 5% 내리는 등 기술주가 크게 흔들리자, 투자자금이 유틸리티·필수소비재·헬스케어 같은 방어 업종으로 옮겨갔다고 Investing.com이 전했습니다.",
-    "유틸리티는 이 순환의 수혜 업종으로 10월 한 달 약 10% 올라 S&P 500 업종 가운데 상위권이었습니다."
+    "WELL은 10/26 3분기 실적에서 정규화 FFO가 주당 1.67달러로 컨센서스 1.64달러를 웃돌았고, 올해 정규화 FFO 전망을 6.36~6.44달러에서 6.47~6.53달러로 올렸습니다.",
+    "같은 분기 시니어 주택 동일 점포 NOI가 21.0% 늘었습니다. 다만 GAAP 순이익이 기대에 못 미쳐 다음 거래일 주가는 내렸습니다."
    ],
    "src": [
     {
-     "t": "Investing.com",
-     "u": "https://www.investing.com/news/stock-market-news/us-stock-futures-edge-high-after-bruising-oct-earnings-elections-in-focus-4989789"
+     "t": "Tradingpedia, Welltower 실적",
+     "u": "https://www.tradingpedia.com/2026/10/27/welltower-rallies-on-raised-guidance-and-strong-ffo/"
     },
     {
-     "t": "Morningstar 11월 시장 전망",
-     "u": "https://morningstar.com/markets/november-stock-market-outlook-how-position-your-portfolio-remainder-2026"
+     "t": "TIKR, Welltower 3분기",
+     "u": "https://www.tikr.com/zh/blog/welltower-fell-5-as-q3-revenue-misses-despite-raised-ffo-outlook"
     }
    ],
-   "kick": "기술주 이탈 방어 순환"
+   "kick": "WELL 가이던스 상향"
   },
   "URA": {
    "text": [
-    "10/30에 Cameco가 3분기 조정 순손실 200만 캐나다달러를 발표했고, Key Lake 제분소의 장기 정비로 생산이 20% 줄어 주가가 약 9% 내렸습니다.",
-    "그에 앞서 10월 초에는 장기 우라늄 가격이 파운드당 96달러로 2007년 고점을 넘었지만, 유틸리티들이 가격 부담 때문에 장기계약 체결을 미루면서 원전 관련주 약세가 이어졌다고 247WallSt가 분석했습니다."
+    "CCJ는 10/30 3분기에 조정 순손실 200만 캐나다달러를 내고 주가가 9% 내렸습니다. Key Lake 제분소의 연례 정비 중단이 평소보다 길어져 분기 생산량이 20% 줄어든 3.5백만 파운드가 됐고, 생산 원가는 62% 올랐습니다.",
+    "OKLO는 10/19~10/28에 Piper Sandler, Barclays, Truist, B. Riley 등이 목표가를 잇달아 내렸고, 10억 달러 규모의 신규 주식 매각 프로그램에 따른 희석 우려가 함께 보도됐습니다."
    ],
    "src": [
     {
-     "t": "TIKR",
+     "t": "Cameco 3분기 6-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001009001/000119312526439858/d106072dex992.htm"
+    },
+    {
+     "t": "TIKR, Cameco 3분기",
      "u": "https://www.tikr.com/blog/cameco-sinks-9-on-q3-adjusted-loss-as-ceo-insists-customer-requirements-do-not-disappear"
     },
     {
-     "t": "247WallSt",
-     "u": "https://247wallst.com/investing/2026/10/03/uranium-prices-just-broke-a-19-year-record-but-nuclear-stocks-are-collapsing-anyway/"
+     "t": "TIKR, Oklo 목표가 인하",
+     "u": "https://www.tikr.com/blog/oklo-sinks-4-as-truist-slashes-price-target-39-to-31-ahead-of-q3-earnings"
     }
    ],
-   "kick": "Cameco 적자·계약 부진"
+   "kick": "카메코 Key Lake 정비"
+  },
+  "ARKG": {
+   "text": [
+    "CDNA는 10/29 3분기 매출이 39% 늘어난 1억 3,900만 달러로 나오고 올해 매출 가이던스를 5억 2,000만~5억 3,000만 달러로 올렸습니다.",
+    "ILMN은 같은 날 3분기 매출이 시장 예상에 못 미쳐 주가가 크게 내렸습니다. 연간 전망은 올렸으나 매출 부진이 더 크게 반영됐다고 보도됐습니다."
+   ],
+   "src": [
+    {
+     "t": "CareDx 3분기 보도자료",
+     "u": "https://s21.q4cdn.com/505754850/files/doc_news/CareDx-Announces-Third-Quarter-2026-Financial-Results-2026.pdf"
+    },
+    {
+     "t": "StockStory, Illumina 3분기",
+     "u": "https://stockstory.org/us/stocks/nasdaq/ilmn/news/earnings/illumina-nasdaqilmn-reports-sales-below-analyst-estimates-in-q3-2026-earnings-stock-drops-16percent"
+    },
+    {
+     "t": "Illumina 3분기 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001110803/000111080326000202/q326earningsrelease.htm"
+    }
+   ],
+   "kick": "CareDx 실적 상향"
   }
  },
  "stocks": {
@@ -133,21 +162,21 @@
   },
   "TSLA": {
    "text": [
-    "TSLA는 10/21 장 마감 후 3분기 실적을 발표했고, 매출은 280억 달러로 전년과 비슷했으며 시장 예상을 소폭 밑돌았지만 조정 EPS는 0.48달러로 예상 0.45달러를 웃돌았습니다.",
-    "순이익은 43% 감소한 7억 8,700만 달러였고 인도량은 486,532대였으며, 주가는 다음 거래일에 3.1% 내렸습니다."
+    "TSLA는 10/21 장 마감 후 3분기 실적을 냈고, 매출은 예상을 소폭 밑돌고 조정 이익은 예상을 웃돌았으며 설비투자가 크게 늘었다고 보도됐습니다. 시간외 반응은 3% 넘게 내렸다는 보도와 보합이라는 보도로 엇갈렸고, 다음 거래일에는 3.1% 내렸습니다.",
+    "11/4 하락의 원인은 이번 검색에서 근거 기사를 찾지 못해 적지 않습니다."
    ],
    "src": [
     {
-     "t": "Electrek",
-     "u": "https://electrek.co/2026/10/21/tesla-tsla-q3-2026-financial-results/"
+     "t": "Stocktwits, Tesla 3분기",
+     "u": "https://stocktwits.com/news-articles/markets/equity/tsla-stock-trades-flat-after-hours-following-drop-in-q3-revenue-earnings-and-heavy-ai-spending/cZxMWU7RBvC"
     },
     {
-     "t": "InvestingLive",
-     "u": "https://investinglive.com/stocks/tesla-q3-earnings-beat-as-margins-and-cash-flow-surprise-revenue-narrowly-misses/"
+     "t": "247WallSt, Tesla 실적 전",
+     "u": "https://247wallst.com/investing/2026/10/21/live-will-tesla-smash-q3-earnings-tonight-following-spacexs-10-pop-today/"
     }
    ],
-   "asof": "2026-10-28",
-   "at": "10/29 10:21 KST"
+   "asof": "2026-11-04",
+   "at": "11/05 10:18 KST"
   },
   "005930": {
    "text": [
@@ -243,21 +272,21 @@
   },
   "MU": {
    "text": [
-    "MU는 10/12 장 개시 전에 2% 넘게 내렸는데, 중국 CXMT가 차세대 4F² DRAM 구조에서 진전을 이뤘다고 알려지면서 메모리 업체의 점유율과 가격 결정력이 약해질 수 있다는 우려가 번진 영향으로 보도됐습니다.",
-    "이 사건은 10/12 주의 −14.6% 하락과 시기가 겹칩니다. 이후 10/15에는 장중 858달러까지 밀렸다가 931.24달러로 1.87% 오른 채 마감해 낙폭을 되돌렸고, 10/26 주에는 +6.5%로 반등했습니다."
+    "MU는 10/12 중국 CXMT가 차세대 DRAM 셀 기술의 진전을 발표하고 연말까지 서버용 메모리 제품을 내놓겠다고 밝힌 날 2%대 내렸고, 이 주 수익률은 −14.6%였습니다. 같은 시기 SK하이닉스와 삼성전자도 약세였고 금리 우려가 함께 거론됐습니다.",
+    "이 설명은 시황 해설 기사에 근거한 것이어서 단일 원인으로 단정하지는 않습니다."
    ],
    "src": [
     {
-     "t": "Mitrade",
-     "u": "https://www.mitrade.com/au/insights/news/live-news/article-8-2155585-20261012"
+     "t": "ZeroHedge, 메모리 약세",
+     "u": "https://www.zerohedge.com/markets/memory-remains-epicenter-micron-tumbles-blwo-1000-kospi-catches-down-and-cxmt-shrinks-dram"
     },
     {
-     "t": "HeyGoTrade",
-     "u": "https://www.heygotrade.com/en/news/micron-mu-stock-news-october-16-2026/"
+     "t": "Mitrade, 10/12 마이크론",
+     "u": "https://www.mitrade.com/au/insights/news/live-news/article-8-2155585-20261012"
     }
    ],
-   "asof": "2026-10-29",
-   "at": "10/30 08:20 KST"
+   "asof": "2026-11-04",
+   "at": "11/05 10:18 KST"
   },
   "LLY": {
    "text": [
@@ -722,6 +751,64 @@
    ],
    "asof": "2026-11-03",
    "at": "11/04 10:19 KST"
+  },
+  "MSFT": {
+   "text": [
+    "MSFT는 10/28 장 마감 후 7~9월 분기 실적을 냈고, 매출은 약 923억 달러로 19%, Azure는 48% 늘었다고 보도됐습니다. 설비투자가 크게 늘어 현금흐름에는 부담이 됐고, 경영진은 다음 분기 Azure 성장률을 49~50% 안팎으로 제시했습니다.",
+    "실적 발표 직후 시간외에서는 3~4% 올랐다는 보도가 있었으나 다음 거래일 종가는 0.2% 내렸습니다. 11/2 주의 상승(+6.5%)을 설명하는 개별 사건은 이번 검색에서 확인하지 못했습니다."
+   ],
+   "src": [
+    {
+     "t": "XTB, Microsoft 실적",
+     "u": "https://www.xtb.com/en/market-analysis/microsoft-results-cloud-growth-overshadows-capex-questions"
+    },
+    {
+     "t": "InsiderFinance, Microsoft 실적",
+     "u": "https://www.insiderfinance.io/news/microsoft-earnings-azure-growth-capex"
+    }
+   ],
+   "asof": "2026-11-04",
+   "at": "11/05 10:18 KST"
+  },
+  "NEE": {
+   "text": [
+    "NEE는 10/21 3분기에 조정 EPS 1.24달러(전년 1.13달러)를 냈고 올해 조정 EPS 목표 3.92~4.02달러의 상단을 노린다고 밝혔습니다. 재생에너지와 저장장치 수주잔고에 3.7GW가 새로 더해졌습니다.",
+    "Dominion과의 합병은 10/20에 버지니아 SCC 직원이 조건 없이는 승인하지 말 것을 권고했고, 양사는 11/3에 보완 증언을 내며 4년간 주주 부담 요금 공제 등을 제안했습니다. 심리는 11/17로 잡혀 있었는데 버지니아 법무장관이 일정 재설정을 요청한 상태입니다."
+   ],
+   "src": [
+    {
+     "t": "PV Tech, NextEra 3분기",
+     "u": "https://www.pv-tech.org/nextera-q3-2026-earnings-rise-9-7-shareholders-approve-dominion-merger/"
+    },
+    {
+     "t": "WHRO, SCC 직원 권고",
+     "u": "https://www.whro.org/business-growth/2026-10-20/scc-staff-recommend-axing-dominion-nextera-energy-merger-as-proposed"
+    },
+    {
+     "t": "Dominion SEC 425 공시",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000715957/000110465926122044/tm2627455d5_425.htm"
+    }
+   ],
+   "asof": "2026-11-04",
+   "at": "11/05 10:18 KST"
+  },
+  "NEM": {
+   "text": [
+    "NEM은 10/22 장 마감 후 3분기에 조정 EPS 2.20달러(컨센서스 약 1.94달러)와 잉여현금흐름 19억 달러를 발표했습니다. 평균 실현 금 가격은 온스당 4,317달러였습니다.",
+    "연간 금 생산 가이던스 526만 온스는 유지했으나 단위 비용 전망은 올렸고, 4분기에 Barrick에 19.5억 달러를 지급할 예정입니다. 다음 거래일 주가는 4.6% 내렸습니다."
+   ],
+   "src": [
+    {
+     "t": "Kitco, Newmont 3분기",
+     "u": "https://www.kitco.com/news/article/2026-10-22/newmont-beats-third-quarter-earnings-expectations-higher-gold-sales-boost"
+    },
+    {
+     "t": "Newmont 3분기 8-K",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001164727/000116472726000041/newmontq32026earningsrelea.htm"
+    }
+   ],
+   "asof": "2026-11-04",
+   "at": "11/05 10:18 KST"
   }
  },
  "runs": [
@@ -818,6 +905,19 @@
    7,
    "claude-sonnet-5-5",
    0.124
+  ],
+  [
+   "11/05 10:18 KST",
+   6,
+   5,
+   6,
+   5,
+   "ok",
+   39,
+   0,
+   41,
+   "claude-sonnet-5-5",
+   0.93
   ]
  ]
 }

@@ -1,32 +1,38 @@
-🔔 섹터 전환 터미널 · 2026-11-03 종가 · 변화 16건
+🔔 섹터 전환 터미널 · 2026-11-04 종가 · 변화 19건
 1W 백분위 높은 순 · [1W/1M/3M/6M/12M 백분위] · RRG 는 벤치마크 대비 국면
 
-XLRE 부동산  [91/86/50/45/38]  Lagging vs SPY
-  · ↑ 백분위 41점 상승 (6개월 → 1개월)
-  · 전환순 상위 3 진입 (점수 50)
-XHB 주택건설  [86/68/32/36/14]  Lagging vs XLY
-  · ↑ 백분위 32점 상승 (6개월 → 1개월)
-XLY 경기소비재  [64/82/59/27/19]  Improving vs SPY
-  · ↑ 백분위 55점 상승 (6개월 → 1개월)
-  · 전환순 상위 3 진입 (점수 54)
-XLB 소재  [59/77/68/50/71]  Improving vs SPY
-  · ↘ SPY 비율 200일선 하향 이탈
-XLU 유틸리티  [55/91/64/14/24]  Improving vs SPY
-  · ↑ 백분위 77점 상승 (6개월 → 1개월)
-KRE 지역은행  [50/55/41/59/67]  Lagging vs XLF
-  · ↘ SPY 비율 200일선 하향 이탈
-XBI 바이오  [45/41/73/82/81]  Lagging vs XLV
-  · ↗ SPY 비율 50일선 상향 돌파
-  · ↓ 백분위 41점 하락 (6개월 → 1개월)
-ARKG 유전체학 (액티브)  [23/14/95/100/100]  Weakening vs XLV
-  · ↗ SPY 비율 50일선 상향 돌파
-  · ↓ 백분위 86점 하락 (6개월 → 1개월)
-DRAM 메모리반도체  [18/0/14/55/n/a]  N/A vs XLK
-  · ↓ 백분위 55점 하락 (6개월 → 1개월)
-XLK 기술  [14/18/45/64/57]  Weakening vs SPY
+XHB 주택건설  [100/91/45/41/33]  Lagging vs XLY
+  · ↑ 백분위 50점 상승 (6개월 → 1개월)
+XLRE 부동산  [95/86/55/50/48]  Lagging vs SPY
+  · ↑ 백분위 36점 상승 (6개월 → 1개월)
+XLY 경기소비재  [91/77/73/45/29]  Improving vs SPY
   · ↗ SPY 비율 200일선 상향 돌파
-  · ↓ 백분위 46점 하락 (6개월 → 1개월)
-IGV 소프트웨어  [0/32/77/86/5]  Leading vs XLK
-  · RRG Weakening → Leading (vs SPY)
+  · ↑ 백분위 32점 상승 (6개월 → 1개월)
+XLV 헬스케어  [82/100/91/91/76]  Leading vs SPY
+  · ★ SPY 대비 비율 52주 신고가
+XLB 소재  [73/73/68/55/71]  Improving vs SPY
+  · ↗ SPY 비율 200일선 상향 돌파
+XLU 유틸리티  [64/68/50/36/19]  Improving vs SPY
+  · ↑ 백분위 32점 상승 (6개월 → 1개월)
+  · 전환순 상위 3 진입 (점수 47)
+ITA 항공우주·방산  [59/50/5/27/14]  Lagging vs XLI
+  · ↘ SPY 비율 50일선 하향 이탈
+XLI 산업재  [41/41/23/32/38]  Lagging vs SPY
+  · ↘ SPY 비율 50일선 하향 이탈
+MAGS 매그니피센트 7  [39/30/57/52/32]  Leading vs SPY
+  · ↗ SPY 비율 200일선 상향 돌파
+GNOM 유전체학  [36/55/100/95/95]  Weakening vs XLV
+  · ↓ 백분위 40점 하락 (6개월 → 1개월)
+XLE 에너지  [27/45/86/73/90]  Leading vs SPY
+  · ↘ SPY 비율 50일선 하향 이탈
+IGV 소프트웨어  [23/23/77/86/5]  Leading vs XLK
+  · RRG Leading → Weakening (vs SPY)
+  · ↓ 백분위 63점 하락 (6개월 → 1개월)
+XLK 기술  [18/14/36/59/57]  Weakening vs SPY
+  · ↘ SPY 비율 200일선 하향 이탈
+  · ↓ 백분위 45점 하락 (6개월 → 1개월)
+ARKG 유전체학 (액티브)  [14/32/95/100/100]  Weakening vs XLV
+  · ↘ SPY 비율 50일선 하향 이탈
+  · ↓ 백분위 68점 하락 (6개월 → 1개월)
 
 https://tlzkrh1029.github.io/rrg/#board

@@ -1,314 +1,613 @@
 {
- "asof": "2026-11-03",
- "prev_asof": "2026-11-02",
+ "asof": "2026-11-04",
+ "prev_asof": "2026-11-03",
  "alerts": [
   {
    "type": "up",
    "H": "ath",
-   "key": "UTHR",
-   "name": "United Therapeutics Corporation",
+   "key": "MSFT",
+   "name": "Microsoft Corporation",
    "etfs": [
-    "XBI"
+    "XLK",
+    "IGV"
    ],
-   "over": 0.00764,
+   "over": 0.02273,
    "spy": "none",
    "qqq": "none"
   },
   {
    "type": "up",
-   "H": "55",
+   "H": "ath",
+   "key": "CL",
+   "name": "Colgate-Palmolive Company",
+   "etfs": [
+    "XLP"
+   ],
+   "over": 0.01386,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "WSM",
+   "name": "Williams-Sonoma, Inc.",
+   "etfs": [
+    "XHB"
+   ],
+   "over": 0.03558,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "FAST",
+   "name": "Fastenal Company",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": 0.01422,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
+   "key": "SBUX",
+   "name": "Starbucks Corporation",
+   "etfs": [
+    "XLY"
+   ],
+   "over": 0.01115,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
    "key": "DIS",
    "name": "The Walt Disney Company",
    "etfs": [
     "XLC"
    ],
-   "over": 0.00928,
+   "over": 0.03436,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
+   "key": "PG",
+   "name": "The Procter & Gamble Company",
+   "etfs": [
+    "XLP"
+   ],
+   "over": 0.01714,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
+   "key": "AMT",
+   "name": "American Tower Corporation",
+   "etfs": [
+    "XLRE"
+   ],
+   "over": 0.02435,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
+   "key": "MRNA",
+   "name": "Moderna, Inc.",
+   "etfs": [
+    "XBI",
+    "GNOM"
+   ],
+   "over": 0.05114,
    "spy": "lit",
    "qqq": "lit"
   },
   {
    "type": "up",
    "H": "55",
-   "key": "SPG",
-   "name": "Simon Property Group, Inc.",
+   "key": "HD",
+   "name": "The Home Depot, Inc.",
+   "etfs": [
+    "XLY",
+    "XHB"
+   ],
+   "over": 0.03996,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "MCD",
+   "name": "McDonald's Corporation",
+   "etfs": [
+    "XLY"
+   ],
+   "over": 0.03549,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "LOW",
+   "name": "Lowe's Companies, Inc.",
+   "etfs": [
+    "XLY"
+   ],
+   "over": 0.04924,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "NEE",
+   "name": "NextEra Energy, Inc.",
+   "etfs": [
+    "XLU"
+   ],
+   "over": 0.03358,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "D",
+   "name": "Dominion Energy, Inc.",
+   "etfs": [
+    "XLU"
+   ],
+   "over": 0.02689,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "SHW",
+   "name": "The Sherwin-Williams Company",
+   "etfs": [
+    "XLB"
+   ],
+   "over": 0.0304,
+   "spy": "failed",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "CRH",
+   "name": "CRH plc",
+   "etfs": [
+    "XLB",
+    "PAVE"
+   ],
+   "over": 0.01803,
+   "spy": "failed",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "WELL",
+   "name": "Welltower Inc.",
    "etfs": [
     "XLRE"
    ],
-   "over": 0.00575,
+   "over": 0.02662,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "QGEN",
+   "name": "Qiagen N.V.",
+   "etfs": [
+    "GNOM"
+   ],
+   "over": 0.00873,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "DAL",
+   "name": "Delta Air Lines, Inc.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": 0.04424,
+   "spy": "lit",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "MS",
+   "name": "Morgan Stanley",
+   "etfs": [
+    "XLF"
+   ],
+   "over": 0.027,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "AMZN",
+   "name": "Amazon.com, Inc.",
+   "etfs": [
+    "XLY"
+   ],
+   "over": 0.01295,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "BKNG",
+   "name": "Booking Holdings Inc.",
+   "etfs": [
+    "XLY"
+   ],
+   "over": 0.03118,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "VZ",
+   "name": "Verizon Communications Inc.",
+   "etfs": [
+    "XLC"
+   ],
+   "over": 0.01157,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "TGT",
+   "name": "Target Corporation",
+   "etfs": [
+    "XLP"
+   ],
+   "over": 0.03156,
+   "spy": "failed",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "EQIX",
+   "name": "Equinix, Inc.",
+   "etfs": [
+    "XLRE"
+   ],
+   "over": 0.02081,
+   "spy": "none",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "VTR",
+   "name": "Ventas, Inc.",
+   "etfs": [
+    "XLRE"
+   ],
+   "over": 0.02036,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "RGLD",
+   "name": "Royal Gold, Inc.",
+   "etfs": [
+    "XME"
+   ],
+   "over": 0.01686,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "FSLR",
+   "name": "First Solar, Inc.",
+   "etfs": [
+    "TAN"
+   ],
+   "over": 0.04239,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "DORL",
+   "name": "Doral Group Renewable Energy Resources Ltd",
+   "etfs": [
+    "TAN"
+   ],
+   "over": 0.09583,
+   "spy": "lit",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "UAL",
+   "name": "United Airlines Holdings, Inc.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": 0.05074,
+   "spy": "failed",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "ALGT",
+   "name": "Allegiant Travel Company",
+   "etfs": [
+    "JETS"
+   ],
+   "over": 0.06673,
+   "spy": "lit",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "ALK",
+   "name": "Alaska Air Group, Inc.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": 0.01036,
    "spy": "lit",
    "qqq": "lit"
   },
   {
    "type": "down",
    "H": "55",
-   "key": "688825",
-   "name": "CXMT Corp",
-   "etfs": [
-    "DRAM"
-   ],
-   "over": -0.02267
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "2408",
-   "name": "Nanya Technology Corp",
-   "etfs": [
-    "DRAM"
-   ],
-   "over": -0.00725
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "2344",
-   "name": "Winbond Electronics Corp",
-   "etfs": [
-    "DRAM"
-   ],
-   "over": -0.04262
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "AAPL",
-   "name": "Apple Inc.",
+   "key": "AMAT",
+   "name": "Applied Materials, Inc.",
    "etfs": [
     "XLK"
    ],
-   "over": -0.00519
+   "over": -0.01645
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "ETN",
+   "name": "Eaton Corporation plc",
+   "etfs": [
+    "XLI",
+    "GRID"
+   ],
+   "over": -0.03559
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "CEG",
+   "name": "Constellation Energy Corporation",
+   "etfs": [
+    "XLU"
+   ],
+   "over": -0.02677
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "UEC",
+   "name": "Uranium Energy Corp.",
+   "etfs": [
+    "URA"
+   ],
+   "over": -0.02177
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "WDC",
+   "name": "Western Digital Corp",
+   "etfs": [
+    "DRAM"
+   ],
+   "over": -0.02461
   },
   {
    "type": "down",
    "H": "20",
-   "key": "MPC",
-   "name": "Marathon Petroleum Corporation",
+   "key": "PSX",
+   "name": "Phillips 66",
    "etfs": [
     "XLE",
     "XOP"
    ],
-   "over": -0.01161
+   "over": -0.03314
   },
   {
    "type": "down",
    "H": "20",
-   "key": "CRM",
-   "name": "Salesforce, Inc.",
+   "key": "WMB",
+   "name": "The Williams Companies, Inc.",
    "etfs": [
-    "IGV"
+    "XLE"
    ],
-   "over": -0.01051
+   "over": -0.01965
   },
   {
    "type": "down",
    "H": "20",
-   "key": "1548",
-   "name": "Genscript Biotech Corporation",
+   "key": "NST",
+   "name": "Northern Star Resources Limited",
    "etfs": [
-    "GNOM"
+    "GDX"
    ],
-   "over": -0.04367
+   "over": -0.01789
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "JCI",
+   "name": "Johnson Controls International plc",
+   "etfs": [
+    "GRID"
+   ],
+   "over": -0.01727
   },
   {
    "type": "failed",
    "H": "ath",
-   "key": "ABBV",
-   "name": "AbbVie Inc.",
+   "key": "NUE",
+   "name": "Nucor Corporation",
    "etfs": [
-    "XLV",
-    "XBI"
+    "XLB",
+    "XME",
+    "PAVE"
    ],
-   "over": -0.01065
+   "over": -0.02254
   },
   {
    "type": "failed",
    "H": "ath",
-   "key": "UBSI",
-   "name": "United Bankshares, Inc.",
-   "etfs": [
-    "KRE"
-   ],
-   "over": -0.01028
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "ABBV",
-   "name": "AbbVie Inc.",
-   "etfs": [
-    "XLV",
-    "XBI"
-   ],
-   "over": -0.01065
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "PFE",
-   "name": "Pfizer Inc.",
-   "etfs": [
-    "XLV"
-   ],
-   "over": -0.01381
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "UBSI",
-   "name": "United Bankshares, Inc.",
-   "etfs": [
-    "KRE"
-   ],
-   "over": -0.01028
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "ABBV",
-   "name": "AbbVie Inc.",
-   "etfs": [
-    "XLV",
-    "XBI"
-   ],
-   "over": -0.01065
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "PFE",
-   "name": "Pfizer Inc.",
-   "etfs": [
-    "XLV"
-   ],
-   "over": -0.01381
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "GBCI",
-   "name": "Glacier Bancorp, Inc.",
-   "etfs": [
-    "KRE"
-   ],
-   "over": -0.01293
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "W",
-   "name": "Wayfair Inc.",
-   "etfs": [
-    "XHB"
-   ],
-   "over": -0.01973
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "LEN",
-   "name": "Lennar Corporation",
-   "etfs": [
-    "XHB"
-   ],
-   "over": -0.01713
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "CSX",
-   "name": "CSX Corporation",
+   "key": "URI",
+   "name": "United Rentals, Inc.",
    "etfs": [
     "PAVE"
    ],
-   "over": -0.01741
+   "over": -0.03522
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "NUE",
+   "name": "Nucor Corporation",
+   "etfs": [
+    "XLB",
+    "XME",
+    "PAVE"
+   ],
+   "over": -0.02254
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "URI",
+   "name": "United Rentals, Inc.",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": -0.03522
   },
   {
    "type": "failed",
    "H": "55",
-   "key": "ULCC",
-   "name": "Frontier Group Holdings, Inc.",
+   "key": "NUE",
+   "name": "Nucor Corporation",
    "etfs": [
-    "JETS"
+    "XLB",
+    "XME",
+    "PAVE"
    ],
-   "over": -0.03288
+   "over": -0.01516
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "CLF",
+   "name": "Cleveland-Cliffs Inc.",
+   "etfs": [
+    "XME"
+   ],
+   "over": -0.08936
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "URI",
+   "name": "United Rentals, Inc.",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": -0.03522
   },
   {
    "type": "failed",
    "H": "20",
-   "key": "ABBV",
-   "name": "AbbVie Inc.",
+   "key": "CLF",
+   "name": "Cleveland-Cliffs Inc.",
    "etfs": [
-    "XLV",
-    "XBI"
+    "XME"
    ],
-   "over": -0.01065
+   "over": -0.08936
   },
   {
-   "type": "failed",
-   "H": "20",
-   "key": "PFE",
-   "name": "Pfizer Inc.",
-   "etfs": [
-    "XLV"
-   ],
-   "over": -0.01381
+   "type": "block_on",
+   "etf": "XLY",
+   "lit": 5,
+   "n": 10
   },
   {
-   "type": "failed",
-   "H": "20",
-   "key": "PEP",
-   "name": "PepsiCo, Inc.",
-   "etfs": [
-    "XLP"
-   ],
-   "over": -0.01124
+   "type": "block_on",
+   "etf": "XLRE",
+   "lit": 6,
+   "n": 10
   },
   {
-   "type": "failed",
-   "H": "20",
-   "key": "SHW",
-   "name": "The Sherwin-Williams Company",
-   "etfs": [
-    "XLB"
-   ],
-   "over": -0.01377
+   "type": "block_on",
+   "etf": "XBI",
+   "lit": 5,
+   "n": 10
   },
   {
-   "type": "failed",
-   "H": "20",
-   "key": "W",
-   "name": "Wayfair Inc.",
-   "etfs": [
-    "XHB"
-   ],
-   "over": -0.01973
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "AAL",
-   "name": "American Airlines Group Inc.",
-   "etfs": [
-    "JETS"
-   ],
-   "over": -0.01385
-  },
-  {
-   "type": "block_fail",
-   "etf": "XLV",
-   "failed": 3,
+   "type": "block_on",
+   "etf": "XHB",
+   "lit": 5,
    "n": 10
   },
   {
    "type": "block_down",
-   "etf": "IGV",
+   "etf": "URA",
    "down": 5,
+   "n": 9
+  },
+  {
+   "type": "block_on",
+   "etf": "TAN",
+   "lit": 5,
    "n": 10
   },
   {
-   "type": "block_down",
-   "etf": "DRAM",
-   "down": 6,
+   "type": "block_on",
+   "etf": "JETS",
+   "lit": 5,
    "n": 10
   }
  ]

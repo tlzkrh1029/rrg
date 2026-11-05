@@ -1,14 +1,16 @@
-돌파 지도 2026-11-03 (USD 기준, 직전 종가)
-켜진 칸 20일 61/279 (22%) · 55일 48 · 52주 29 · 사상 최고 24 · 이탈 55 · 실패 13
+돌파 지도 2026-11-04 (USD 기준, 직전 종가)
+켜진 칸 20일 77/279 (28%) · 55일 62 · 52주 35 · 사상 최고 24 · 이탈 49 · 실패 12
 
 새 돌파 (1일째)
-  사상 최고: UTHR(XBI)
-  55일: DIS(XLC)*, SPG(XLRE)*
+  사상 최고: MSFT(XLK·IGV), CL(XLP), WSM(XHB), FAST(PAVE)
+  52주: SBUX(XLY), DIS(XLC), PG(XLP), AMT(XLRE), MRNA(XBI·GNOM)*
+  55일: HD(XLY·XHB)*, MCD(XLY)*, LOW(XLY)*, NEE(XLU)*, D(XLU)*, SHW(XLB), CRH(XLB·PAVE), WELL(XLRE)*, QGEN(GNOM)*, DAL(JETS)*
+  20일: MS(XLF), AMZN(XLY)*, BKNG(XLY)*, VZ(XLC)*, TGT(XLP), EQIX(XLRE), VTR(XLRE)*, RGLD(XME)*, FSLR(TAN)*, DORL(TAN)*, UAL(JETS), ALGT(JETS)*, ALK(JETS)*
   * SPY 대비로도 켜진 칸
 새 이탈 (1일째)
-  55일 바닥: 688825(DRAM), 2408(DRAM), 2344(DRAM)
-  20일 바닥: AAPL(XLK), MPC(XLE·XOP), CRM(IGV), 1548(GNOM)
-오늘 실패한 돌파: ABBV(XLV·XBI, 사상 최고), UBSI(KRE, 사상 최고), ABBV(XLV·XBI, 52주), PFE(XLV, 52주), UBSI(KRE, 52주), ABBV(XLV·XBI, 55일), PFE(XLV, 55일), GBCI(KRE, 55일), W(XHB, 55일), LEN(XHB, 55일), CSX(PAVE, 55일), ULCC(JETS, 55일), ABBV(XLV·XBI, 20일), PFE(XLV, 20일), PEP(XLP, 20일), SHW(XLB, 20일), W(XHB, 20일), AAL(JETS, 20일)
-블록 알림 (20일): XLV ×3/10 실패 · IGV ▼5/10 이탈 · DRAM ▼6/10 이탈
+  55일 바닥: AMAT(XLK), ETN(XLI·GRID), CEG(XLU), UEC(URA), WDC(DRAM)
+  20일 바닥: PSX(XLE·XOP), WMB(XLE), NST(GDX), JCI(GRID)
+오늘 실패한 돌파: NUE(XLB·XME·PAVE, 사상 최고), URI(PAVE, 사상 최고), NUE(XLB·XME·PAVE, 52주), URI(PAVE, 52주), NUE(XLB·XME·PAVE, 55일), CLF(XME, 55일), URI(PAVE, 55일), CLF(XME, 20일)
+블록 알림 (20일): XLY 5/10 켜짐 · XLRE 6/10 켜짐 · XBI 5/10 켜짐 · XHB 5/10 켜짐 · URA ▼5/9 이탈 · TAN 5/10 켜짐 · JETS 5/10 켜짐
 
 https://tlzkrh1029.github.io/rrg/breakout/
