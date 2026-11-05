@@ -585,6 +585,12 @@ ul.kc-ls .kc-ev{margin-top:1px}
 :is(.sd,.eb) .big .xah,:is(.sd,.eb) .big .xpm{fill:none;stroke-width:1.4;stroke-dasharray:2 2;stroke-linecap:round}
 :is(.sd,.eb) .big .xah{stroke:var(--xa)} :is(.sd,.eb) .big .xpm{stroke:var(--xp)}
 :is(.sd,.eb) .big .xad{fill:var(--xa)} :is(.sd,.eb) .big .xpd{fill:var(--xp)}
+/* 가장 최근 값의 점(아침 빌드는 장후, 저녁 실행은 장전)만 숨쉬듯 커졌다 작아지고, 같은 색 빛이 퍼진다 */
+:is(.sd,.eb) .big .xlive,:is(.sd,.eb) .big .xhalo{transform-box:fill-box;transform-origin:center;animation:xbreathe 2.2s ease-in-out infinite}
+:is(.sd,.eb) .big .xhalo{opacity:0;animation-name:xhalo}
+:is(.sd,.eb) .big .xhalo.xa{fill:var(--xa)} :is(.sd,.eb) .big .xhalo.xp{fill:var(--xp)}
+@keyframes xbreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
+@keyframes xhalo{0%,100%{transform:scale(1);opacity:0}50%{transform:scale(2.4);opacity:.35}}
 :is(.sd,.eb) .big text.lv.xa{fill:var(--xa);font-weight:700} :is(.sd,.eb) .big text.lv.xp{fill:var(--xp);font-weight:700}
 :is(.sd,.eb) dl dd small.bs{color:var(--muted);font-size:10px;margin-left:6px;font-weight:400}
 :is(.sd,.eb) dl dt.xa{color:var(--xa)} :is(.sd,.eb) dl dt.xp{color:var(--xp)}
@@ -1740,8 +1746,10 @@ function chartSVG(o) {
   let xseg = '';
   if (xv.length) {
     const x0 = xs(n - 1), y0 = ys(last0); let px = x0, py = y0;
-    if (vA != null) { const x = x0 + 12, y = ys(vA); xseg += `<line class="xah" x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/><circle class="xad" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.7"/>`; labels.push({ y, t: '장후 ' + sPct(xh.ah) + '%', cls: 'xa' }); px = x; py = y; }
-    if (vP != null) { const x = x0 + 23, y = ys(vP); xseg += `<line class="xpm" x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/><circle class="xpd" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.7"/>`; labels.push({ y, t: '장전 ' + sPct(xh.pm) + '%', cls: 'xp' }); }
+    const liveA = vP == null;   // 가장 최근 값: 장전이 있으면 장전(저녁 실행), 없으면 장후(아침 빌드)
+    const halo = (x, y, k) => `<circle class="xhalo ${k}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.7"/>`;
+    if (vA != null) { const x = x0 + 12, y = ys(vA); xseg += `<line class="xah" x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/>${liveA ? halo(x, y, 'xa') : ''}<circle class="xad${liveA ? ' xlive' : ''}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.7"/>`; labels.push({ y, t: '장후 ' + sPct(xh.ah) + '%', cls: 'xa' }); px = x; py = y; }
+    if (vP != null) { const x = x0 + 23, y = ys(vP); xseg += `<line class="xpm" x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/>${halo(x, y, 'xp')}<circle class="xpd xlive" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.7"/>`; labels.push({ y, t: '장전 ' + sPct(xh.pm) + '%', cls: 'xp' }); }
   }
   out += chartLabels(labels, Wd - R + 4, Hd - B - 4);
   const ma = o.ma, P = a => a.map((v, i) => v == null ? null : `${xs(i).toFixed(1)},${ys(v).toFixed(1)}`).filter(Boolean).join(' ');
