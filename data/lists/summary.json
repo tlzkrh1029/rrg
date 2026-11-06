@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T01:52:11Z",
+  "generated_at": "2026-11-06T01:06:47Z",
   "binance_equity_catalog_error": null,
   "binance_spot_bstocks": {
     "count": 105,
@@ -21,7 +21,7 @@
       "unknown": 8
     },
     "exchange_info_source": "https://www.binance.com",
-    "exchange_info_server_time": "2026-11-05T01:01:01Z",
+    "exchange_info_server_time": "2026-11-06T01:01:01Z",
     "trading_but_not_in_exchange_info": [],
     "by_underlying_type": {
       "CN_EQUITY": 2,
@@ -76,14 +76,7 @@
         "SKHYNIXUSDT"
       ],
       "nasdaq_vs_binance_catalog": [],
-      "us_ticker_not_confirmed": [
-        "BSPUSDT",
-        "EWZSUSDT",
-        "GTLBUSDT",
-        "SNXXUSDT",
-        "TBTUSDT",
-        "URNMUSDT"
-      ],
+      "us_ticker_not_confirmed": [],
       "trading_but_not_in_exchange_info": []
     },
     "hyperliquid_hip3_stocks": {

@@ -1,16 +1,15 @@
-돌파 지도 2026-11-04 (USD 기준, 직전 종가)
-켜진 칸 20일 77/279 (28%) · 55일 62 · 52주 35 · 사상 최고 24 · 이탈 49 · 실패 12
+돌파 지도 2026-11-05 (USD 기준, 직전 종가)
+켜진 칸 20일 62/279 (22%) · 55일 51 · 52주 26 · 사상 최고 19 · 이탈 70 · 실패 18
 
 새 돌파 (1일째)
-  사상 최고: MSFT(XLK·IGV), CL(XLP), WSM(XHB), FAST(PAVE)
-  52주: SBUX(XLY), DIS(XLC), PG(XLP), AMT(XLRE), MRNA(XBI·GNOM)*
-  55일: HD(XLY·XHB)*, MCD(XLY)*, LOW(XLY)*, NEE(XLU)*, D(XLU)*, SHW(XLB), CRH(XLB·PAVE), WELL(XLRE)*, QGEN(GNOM)*, DAL(JETS)*
-  20일: MS(XLF), AMZN(XLY)*, BKNG(XLY)*, VZ(XLC)*, TGT(XLP), EQIX(XLRE), VTR(XLRE)*, RGLD(XME)*, FSLR(TAN)*, DORL(TAN)*, UAL(JETS), ALGT(JETS)*, ALK(JETS)*
+  사상 최고: 8001(URA)
+  55일: APP(XLC)*, NST(GDX), RUN(TAN)*, ALGT(JETS)*
+  20일: NEM(XLB·XME·GDX)*, VMRK(XLRE)*, FNV(GDX)*
   * SPY 대비로도 켜진 칸
 새 이탈 (1일째)
-  55일 바닥: AMAT(XLK), ETN(XLI·GRID), CEG(XLU), UEC(URA), WDC(DRAM)
-  20일 바닥: PSX(XLE·XOP), WMB(XLE), NST(GDX), JCI(GRID)
-오늘 실패한 돌파: NUE(XLB·XME·PAVE, 사상 최고), URI(PAVE, 사상 최고), NUE(XLB·XME·PAVE, 52주), URI(PAVE, 52주), NUE(XLB·XME·PAVE, 55일), CLF(XME, 55일), URI(PAVE, 55일), CLF(XME, 20일)
-블록 알림 (20일): XLY 5/10 켜짐 · XLRE 6/10 켜짐 · XBI 5/10 켜짐 · XHB 5/10 켜짐 · URA ▼5/9 이탈 · TAN 5/10 켜짐 · JETS 5/10 켜짐
+  55일 바닥: AVGO(XLK·SMH), AMD(XLK·SMH), PLTR(XLK·IGV), GS(XLF), C(XLF), GEV(XLI), WMB(XLE), KLAC(SMH), SKHY(SMH), PANW(IGV), TWST(GNOM·ARKG), GH(GNOM·ARKG), TXG(GNOM·ARKG), CRSP(ARKG), HONA(ITA), PWR(PAVE·GRID), ROK(PAVE), 005930(DRAM), JCI(GRID), SU(GRID), SEDG(TAN)
+  20일 바닥: TSLA(XLY), XOM(XLE·XOP), EOG(XLE·XOP), ADI(SMH), CRWD(IGV), CLF(XME), STLD(XME)
+오늘 실패한 돌파: MSFT(XLK·IGV, 사상 최고), PM(XLP, 사상 최고), UTHR(XBI, 사상 최고), MSFT(XLK·IGV, 52주), SBUX(XLY, 52주), PM(XLP, 52주), APD(XLB, 52주), MRNA(XBI·GNOM, 52주), UTHR(XBI, 52주), MSFT(XLK·IGV, 55일), SBUX(XLY, 55일), PM(XLP, 55일), SHW(XLB, 55일), CRH(XLB, 55일), MLM(XLB, 55일), MRNA(XBI·GNOM, 55일), MSFT(XLK·IGV, 20일), MS(XLF, 20일), PM(XLP, 20일), EQIX(XLRE, 20일), MRNA(XBI·GNOM, 20일), ALK(JETS, 20일)
+블록 알림 (20일): XLE ▼5/10 이탈 · SMH ▼8/10 이탈 · IGV ▼5/10 이탈 · ARKG ▼5/10 이탈
 
 https://tlzkrh1029.github.io/rrg/breakout/

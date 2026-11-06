@@ -1,9 +1,396 @@
 {
- "asof": "2026-11-04",
- "prev_asof": "2026-11-03",
+ "asof": "2026-11-05",
+ "prev_asof": "2026-11-04",
  "alerts": [
   {
    "type": "up",
+   "H": "ath",
+   "key": "8001",
+   "name": "ITOCHU Corporation",
+   "etfs": [
+    "URA"
+   ],
+   "over": 0.01055,
+   "spy": "near",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "APP",
+   "name": "AppLovin Corporation",
+   "etfs": [
+    "XLC"
+   ],
+   "over": 0.0654,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "NST",
+   "name": "Northern Star Resources Limited",
+   "etfs": [
+    "GDX"
+   ],
+   "over": 0.02046,
+   "spy": "failed",
+   "qqq": "failed"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "RUN",
+   "name": "Sunrun Inc.",
+   "etfs": [
+    "TAN"
+   ],
+   "over": 0.00714,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "ALGT",
+   "name": "Allegiant Travel Company",
+   "etfs": [
+    "JETS"
+   ],
+   "over": 0.06041,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "NEM",
+   "name": "Newmont Corporation",
+   "etfs": [
+    "XLB",
+    "XME",
+    "GDX"
+   ],
+   "over": 0.00936,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "VMRK",
+   "name": "Vivmark Residential",
+   "etfs": [
+    "XLRE"
+   ],
+   "over": 0.02643,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "FNV",
+   "name": "Franco-Nevada Corporation",
+   "etfs": [
+    "GDX"
+   ],
+   "over": 0.00629,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "AVGO",
+   "name": "Broadcom Inc.",
+   "etfs": [
+    "XLK",
+    "SMH"
+   ],
+   "over": -0.09373
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "AMD",
+   "name": "Advanced Micro Devices, Inc.",
+   "etfs": [
+    "XLK",
+    "SMH"
+   ],
+   "over": -0.11347
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "PLTR",
+   "name": "Palantir Technologies Inc.",
+   "etfs": [
+    "XLK",
+    "IGV"
+   ],
+   "over": -0.06554
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "GS",
+   "name": "The Goldman Sachs Group, Inc.",
+   "etfs": [
+    "XLF"
+   ],
+   "over": -0.00769
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "C",
+   "name": "Citigroup Inc.",
+   "etfs": [
+    "XLF"
+   ],
+   "over": -0.0126
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "GEV",
+   "name": "GE Vernova Inc.",
+   "etfs": [
+    "XLI"
+   ],
+   "over": -0.05404
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "WMB",
+   "name": "The Williams Companies, Inc.",
+   "etfs": [
+    "XLE"
+   ],
+   "over": -0.05473
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "KLAC",
+   "name": "KLA Corporation",
+   "etfs": [
+    "SMH"
+   ],
+   "over": -0.10858
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "SKHY",
+   "name": "SK hynix Inc.",
+   "etfs": [
+    "SMH"
+   ],
+   "over": -0.05915
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "PANW",
+   "name": "Palo Alto Networks, Inc.",
+   "etfs": [
+    "IGV"
+   ],
+   "over": -0.04204
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "TWST",
+   "name": "Twist Bioscience Corporation",
+   "etfs": [
+    "GNOM",
+    "ARKG"
+   ],
+   "over": -0.03295
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "GH",
+   "name": "Guardant Health, Inc.",
+   "etfs": [
+    "GNOM",
+    "ARKG"
+   ],
+   "over": -0.0251
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "TXG",
+   "name": "10x Genomics, Inc.",
+   "etfs": [
+    "GNOM",
+    "ARKG"
+   ],
+   "over": -0.03201
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "CRSP",
+   "name": "CRISPR Therapeutics AG",
+   "etfs": [
+    "ARKG"
+   ],
+   "over": -0.00918
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "HONA",
+   "name": "Honeywell Aerospace Inc.",
+   "etfs": [
+    "ITA"
+   ],
+   "over": -0.01313
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "PWR",
+   "name": "Quanta Services, Inc.",
+   "etfs": [
+    "PAVE",
+    "GRID"
+   ],
+   "over": -0.06839
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "ROK",
+   "name": "Rockwell Automation, Inc.",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": -0.07072
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "005930",
+   "name": "Samsung Electronics Co Ltd",
+   "etfs": [
+    "DRAM"
+   ],
+   "over": -0.04048
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "JCI",
+   "name": "Johnson Controls International plc",
+   "etfs": [
+    "GRID"
+   ],
+   "over": -0.04306
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "SU",
+   "name": "Schneider Electric S.E.",
+   "etfs": [
+    "GRID"
+   ],
+   "over": -0.01534
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "SEDG",
+   "name": "SolarEdge Technologies, Inc.",
+   "etfs": [
+    "TAN"
+   ],
+   "over": -0.11156
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "TSLA",
+   "name": "Tesla, Inc.",
+   "etfs": [
+    "XLY"
+   ],
+   "over": -0.03109
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "XOM",
+   "name": "ExxonMobil Holdings Corporation",
+   "etfs": [
+    "XLE",
+    "XOP"
+   ],
+   "over": -0.01899
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "EOG",
+   "name": "EOG Resources, Inc.",
+   "etfs": [
+    "XLE",
+    "XOP"
+   ],
+   "over": -0.01549
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "ADI",
+   "name": "Analog Devices, Inc.",
+   "etfs": [
+    "SMH"
+   ],
+   "over": -0.06416
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "CRWD",
+   "name": "CrowdStrike Holdings, Inc.",
+   "etfs": [
+    "IGV"
+   ],
+   "over": -0.04473
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "CLF",
+   "name": "Cleveland-Cliffs Inc.",
+   "etfs": [
+    "XME"
+   ],
+   "over": -0.07013
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "STLD",
+   "name": "Steel Dynamics, Inc.",
+   "etfs": [
+    "XME"
+   ],
+   "over": -0.05242
+  },
+  {
+   "type": "failed",
    "H": "ath",
    "key": "MSFT",
    "name": "Microsoft Corporation",
@@ -11,96 +398,71 @@
     "XLK",
     "IGV"
    ],
-   "over": 0.02273,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.01384
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "ath",
-   "key": "CL",
-   "name": "Colgate-Palmolive Company",
+   "key": "PM",
+   "name": "Philip Morris International Inc.",
    "etfs": [
     "XLP"
    ],
-   "over": 0.01386,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.01985
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "ath",
-   "key": "WSM",
-   "name": "Williams-Sonoma, Inc.",
+   "key": "UTHR",
+   "name": "United Therapeutics Corporation",
    "etfs": [
-    "XHB"
+    "XBI"
    ],
-   "over": 0.03558,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.05201
   },
   {
-   "type": "up",
-   "H": "ath",
-   "key": "FAST",
-   "name": "Fastenal Company",
+   "type": "failed",
+   "H": "52w",
+   "key": "MSFT",
+   "name": "Microsoft Corporation",
    "etfs": [
-    "PAVE"
+    "XLK",
+    "IGV"
    ],
-   "over": 0.01422,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.01384
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "52w",
    "key": "SBUX",
    "name": "Starbucks Corporation",
    "etfs": [
     "XLY"
    ],
-   "over": 0.01115,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.02148
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "52w",
-   "key": "DIS",
-   "name": "The Walt Disney Company",
-   "etfs": [
-    "XLC"
-   ],
-   "over": 0.03436,
-   "spy": "none",
-   "qqq": "none"
-  },
-  {
-   "type": "up",
-   "H": "52w",
-   "key": "PG",
-   "name": "The Procter & Gamble Company",
+   "key": "PM",
+   "name": "Philip Morris International Inc.",
    "etfs": [
     "XLP"
    ],
-   "over": 0.01714,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.01985
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "52w",
-   "key": "AMT",
-   "name": "American Tower Corporation",
+   "key": "APD",
+   "name": "Air Products and Chemicals, Inc.",
    "etfs": [
-    "XLRE"
+    "XLB"
    ],
-   "over": 0.02435,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.01496
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "52w",
    "key": "MRNA",
    "name": "Moderna, Inc.",
@@ -108,506 +470,174 @@
     "XBI",
     "GNOM"
    ],
-   "over": 0.05114,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.0177
   },
   {
-   "type": "up",
-   "H": "55",
-   "key": "HD",
-   "name": "The Home Depot, Inc.",
+   "type": "failed",
+   "H": "52w",
+   "key": "UTHR",
+   "name": "United Therapeutics Corporation",
    "etfs": [
-    "XLY",
-    "XHB"
+    "XBI"
    ],
-   "over": 0.03996,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.05201
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "55",
-   "key": "MCD",
-   "name": "McDonald's Corporation",
+   "key": "MSFT",
+   "name": "Microsoft Corporation",
    "etfs": [
-    "XLY"
+    "XLK",
+    "IGV"
    ],
-   "over": 0.03549,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.01384
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "55",
-   "key": "LOW",
-   "name": "Lowe's Companies, Inc.",
+   "key": "SBUX",
+   "name": "Starbucks Corporation",
    "etfs": [
     "XLY"
    ],
-   "over": 0.04924,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.02148
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "55",
-   "key": "NEE",
-   "name": "NextEra Energy, Inc.",
+   "key": "PM",
+   "name": "Philip Morris International Inc.",
    "etfs": [
-    "XLU"
+    "XLP"
    ],
-   "over": 0.03358,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.01985
   },
   {
-   "type": "up",
-   "H": "55",
-   "key": "D",
-   "name": "Dominion Energy, Inc.",
-   "etfs": [
-    "XLU"
-   ],
-   "over": 0.02689,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
+   "type": "failed",
    "H": "55",
    "key": "SHW",
    "name": "The Sherwin-Williams Company",
    "etfs": [
     "XLB"
    ],
-   "over": 0.0304,
-   "spy": "failed",
-   "qqq": "lit"
+   "over": -0.01067
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "55",
    "key": "CRH",
    "name": "CRH plc",
    "etfs": [
-    "XLB",
-    "PAVE"
+    "XLB"
    ],
-   "over": 0.01803,
-   "spy": "failed",
-   "qqq": "lit"
+   "over": -0.01649
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "55",
-   "key": "WELL",
-   "name": "Welltower Inc.",
+   "key": "MLM",
+   "name": "Martin Marietta Materials, Inc.",
    "etfs": [
-    "XLRE"
+    "XLB"
    ],
-   "over": 0.02662,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.03512
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "55",
-   "key": "QGEN",
-   "name": "Qiagen N.V.",
+   "key": "MRNA",
+   "name": "Moderna, Inc.",
    "etfs": [
+    "XBI",
     "GNOM"
    ],
-   "over": 0.00873,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.0177
   },
   {
-   "type": "up",
-   "H": "55",
-   "key": "DAL",
-   "name": "Delta Air Lines, Inc.",
+   "type": "failed",
+   "H": "20",
+   "key": "MSFT",
+   "name": "Microsoft Corporation",
    "etfs": [
-    "JETS"
+    "XLK",
+    "IGV"
    ],
-   "over": 0.04424,
-   "spy": "lit",
-   "qqq": "none"
+   "over": -0.01384
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "20",
    "key": "MS",
    "name": "Morgan Stanley",
    "etfs": [
     "XLF"
    ],
-   "over": 0.027,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.03404
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "20",
-   "key": "AMZN",
-   "name": "Amazon.com, Inc.",
-   "etfs": [
-    "XLY"
-   ],
-   "over": 0.01295,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "BKNG",
-   "name": "Booking Holdings Inc.",
-   "etfs": [
-    "XLY"
-   ],
-   "over": 0.03118,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "VZ",
-   "name": "Verizon Communications Inc.",
-   "etfs": [
-    "XLC"
-   ],
-   "over": 0.01157,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "TGT",
-   "name": "Target Corporation",
+   "key": "PM",
+   "name": "Philip Morris International Inc.",
    "etfs": [
     "XLP"
    ],
-   "over": 0.03156,
-   "spy": "failed",
-   "qqq": "lit"
+   "over": -0.01985
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "20",
    "key": "EQIX",
    "name": "Equinix, Inc.",
    "etfs": [
     "XLRE"
    ],
-   "over": 0.02081,
-   "spy": "none",
-   "qqq": "lit"
+   "over": -0.03414
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "20",
-   "key": "VTR",
-   "name": "Ventas, Inc.",
+   "key": "MRNA",
+   "name": "Moderna, Inc.",
    "etfs": [
-    "XLRE"
+    "XBI",
+    "GNOM"
    ],
-   "over": 0.02036,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.0177
   },
   {
-   "type": "up",
-   "H": "20",
-   "key": "RGLD",
-   "name": "Royal Gold, Inc.",
-   "etfs": [
-    "XME"
-   ],
-   "over": 0.01686,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "FSLR",
-   "name": "First Solar, Inc.",
-   "etfs": [
-    "TAN"
-   ],
-   "over": 0.04239,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "DORL",
-   "name": "Doral Group Renewable Energy Resources Ltd",
-   "etfs": [
-    "TAN"
-   ],
-   "over": 0.09583,
-   "spy": "lit",
-   "qqq": "none"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "UAL",
-   "name": "United Airlines Holdings, Inc.",
-   "etfs": [
-    "JETS"
-   ],
-   "over": 0.05074,
-   "spy": "failed",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "ALGT",
-   "name": "Allegiant Travel Company",
-   "etfs": [
-    "JETS"
-   ],
-   "over": 0.06673,
-   "spy": "lit",
-   "qqq": "none"
-  },
-  {
-   "type": "up",
+   "type": "failed",
    "H": "20",
    "key": "ALK",
    "name": "Alaska Air Group, Inc.",
    "etfs": [
     "JETS"
    ],
-   "over": 0.01036,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.02248
   },
   {
-   "type": "down",
-   "H": "55",
-   "key": "AMAT",
-   "name": "Applied Materials, Inc.",
-   "etfs": [
-    "XLK"
-   ],
-   "over": -0.01645
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "ETN",
-   "name": "Eaton Corporation plc",
-   "etfs": [
-    "XLI",
-    "GRID"
-   ],
-   "over": -0.03559
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "CEG",
-   "name": "Constellation Energy Corporation",
-   "etfs": [
-    "XLU"
-   ],
-   "over": -0.02677
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "UEC",
-   "name": "Uranium Energy Corp.",
-   "etfs": [
-    "URA"
-   ],
-   "over": -0.02177
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "WDC",
-   "name": "Western Digital Corp",
-   "etfs": [
-    "DRAM"
-   ],
-   "over": -0.02461
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "PSX",
-   "name": "Phillips 66",
-   "etfs": [
-    "XLE",
-    "XOP"
-   ],
-   "over": -0.03314
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "WMB",
-   "name": "The Williams Companies, Inc.",
-   "etfs": [
-    "XLE"
-   ],
-   "over": -0.01965
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "NST",
-   "name": "Northern Star Resources Limited",
-   "etfs": [
-    "GDX"
-   ],
-   "over": -0.01789
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "JCI",
-   "name": "Johnson Controls International plc",
-   "etfs": [
-    "GRID"
-   ],
-   "over": -0.01727
-  },
-  {
-   "type": "failed",
-   "H": "ath",
-   "key": "NUE",
-   "name": "Nucor Corporation",
-   "etfs": [
-    "XLB",
-    "XME",
-    "PAVE"
-   ],
-   "over": -0.02254
-  },
-  {
-   "type": "failed",
-   "H": "ath",
-   "key": "URI",
-   "name": "United Rentals, Inc.",
-   "etfs": [
-    "PAVE"
-   ],
-   "over": -0.03522
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "NUE",
-   "name": "Nucor Corporation",
-   "etfs": [
-    "XLB",
-    "XME",
-    "PAVE"
-   ],
-   "over": -0.02254
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "URI",
-   "name": "United Rentals, Inc.",
-   "etfs": [
-    "PAVE"
-   ],
-   "over": -0.03522
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "NUE",
-   "name": "Nucor Corporation",
-   "etfs": [
-    "XLB",
-    "XME",
-    "PAVE"
-   ],
-   "over": -0.01516
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "CLF",
-   "name": "Cleveland-Cliffs Inc.",
-   "etfs": [
-    "XME"
-   ],
-   "over": -0.08936
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "URI",
-   "name": "United Rentals, Inc.",
-   "etfs": [
-    "PAVE"
-   ],
-   "over": -0.03522
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "CLF",
-   "name": "Cleveland-Cliffs Inc.",
-   "etfs": [
-    "XME"
-   ],
-   "over": -0.08936
-  },
-  {
-   "type": "block_on",
-   "etf": "XLY",
-   "lit": 5,
-   "n": 10
-  },
-  {
-   "type": "block_on",
-   "etf": "XLRE",
-   "lit": 6,
-   "n": 10
-  },
-  {
-   "type": "block_on",
-   "etf": "XBI",
-   "lit": 5,
-   "n": 10
-  },
-  {
-   "type": "block_on",
-   "etf": "XHB",
-   "lit": 5,
+   "type": "block_down",
+   "etf": "XLE",
+   "down": 5,
    "n": 10
   },
   {
    "type": "block_down",
-   "etf": "URA",
-   "down": 5,
-   "n": 9
-  },
-  {
-   "type": "block_on",
-   "etf": "TAN",
-   "lit": 5,
+   "etf": "SMH",
+   "down": 8,
    "n": 10
   },
   {
-   "type": "block_on",
-   "etf": "JETS",
-   "lit": 5,
+   "type": "block_down",
+   "etf": "IGV",
+   "down": 5,
+   "n": 10
+  },
+  {
+   "type": "block_down",
+   "etf": "ARKG",
+   "down": 5,
    "n": 10
   }
  ]

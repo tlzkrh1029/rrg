@@ -1,103 +1,48 @@
 {
- "asof": "2026-11-04",
- "at": "11/05 10:18 KST",
+ "asof": "2026-11-05",
+ "at": "11/06 10:19 KST",
  "etfs": {
-  "XLV": {
+  "XLP": {
    "text": [
-    "LLY가 10/29에 3분기 실적을 내며 올해 매출 가이던스를 850억~870억 달러에서 910억~920억 달러로 올렸고, 같은 날 MRK도 예상을 웃도는 실적과 함께 연간 이익 전망을 높였습니다.",
-    "JNJ는 10/13 실적에서 올해 매출과 조정 EPS 전망을 올렸으나 탤크 소송 관련 일회성 비용과 의료기기 매출 부진으로 그날 주가가 내렸습니다."
+    "10월 중순부터 AI·기술주에서 빠진 자금이 방어주로 옮겨 가면서 필수소비재가 상대적으로 강했습니다. 10/22에는 나스닥이 2.60% 떨어진 날 PG가 분기 실적 발표 뒤 5.6% 올랐고 WMT와 COST도 함께 올랐으며, 보도에서는 WMT에 새로운 개별 호재는 없었다고 적었습니다.",
+    "BofA 고객이 10/16 주에 개별 미국 주식을 사상 최대인 148억 달러 순매도하는 가운데 필수소비재는 소수의 순매수 업종이었습니다. 월말 기술주 급락 장에서도 XLP는 장중 사상 최고가를 기록했습니다."
    ],
    "src": [
     {
-     "t": "Lilly 3분기 실적 8-K",
+     "t": "24/7 Wall St. 월트마트 10월 상승 분석",
+     "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
+    },
+    {
+     "t": "Tradingpedia PG 분기 실적",
+     "u": "https://www.tradingpedia.com/2026/10/22/pg-advances-in-premarket-as-strong-q1-beats-forecasts/"
+    },
+    {
+     "t": "Wealth Professional 나스닥 기술주 매도",
+     "u": "https://www.wealthprofessional.ca/investments/equity-markets/nasdaq-tech-sell-off-october-2026/393915"
+    }
+   ],
+   "kick": "AI주 이탈 방어주 순환"
+  },
+  "XLV": {
+   "text": [
+    "LLY가 10/29 3분기 매출이 39% 늘어난 244억 달러라고 발표하며 연간 매출 가이던스를 850억~870억 달러에서 910억~920억 달러로 올렸고, 주가는 그날 크게 올랐습니다. 마운자로와 젭바운드가 성장을 이끌었고 경구용 신약 판매도 시작됐습니다.",
+    "JNJ는 10/13 실적 발표 때 탤크 소송 합의 관련 일회성 비용으로 순이익이 크게 줄어 주가가 약 5% 내렸지만, 조정 EPS 전망은 올렸습니다. 같은 기간 AI·기술주 매도 속에 헬스케어가 방어 업종으로 매수되면서 XLV가 52주 신고가를 기록했습니다."
+   ],
+   "src": [
+    {
+     "t": "Eli Lilly 8-K 3분기 실적 보도자료",
      "u": "https://www.sec.gov/Archives/edgar/data/0000059478/000005947826000104/q326lillysalesandearningsp.htm"
     },
     {
-     "t": "Merck 3분기 실적 보도",
-     "u": "https://finviz.com/news/411712/merck-reports-q3-revenue-of-181-billion-raises-2026-earnings-guidance"
+     "t": "Zacks LLY 3분기 실적",
+     "u": "https://www.zacks.com/stock/news/3018734/lly-stock-jumps-as-q3-earnings-beat-estimates-2026-sales-view-raised"
     },
     {
-     "t": "RTTNews, J&J 3분기",
+     "t": "RTTNews JNJ 3분기",
      "u": "https://www.rttnews.com/3698614/johnson-johnson-stock-falls-5-after-q3-profit-plunges.aspx"
     }
    ],
-   "kick": "릴리 가이던스 상향"
-  },
-  "XLP": {
-   "text": [
-    "PG는 10/22 7~9월 분기에 순매출과 유기적 매출이 모두 4% 늘었고 10개 제품군과 6개 지역이 전부 성장했다고 밝혔습니다.",
-    "월마트는 10월에 1999년 이후 가장 좋은 월간 성과를 내는 흐름이었고, S&P 필수소비재 섹터도 10월 첫 16거래일에 11.1% 올랐다고 보도됐습니다."
-   ],
-   "src": [
-    {
-     "t": "P&G 2027 회계연도 1분기 보도자료",
-     "u": "https://us.pg.com/newsroom/news-releases/PG-Announces-Fiscal-Year-2027-First-Quarter-Results/"
-    },
-    {
-     "t": "247WallSt, 월마트 10월 강세",
-     "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
-    }
-   ],
-   "kick": "PG 실적과 월마트 강세"
-  },
-  "XLRE": {
-   "text": [
-    "WELL은 10/26 3분기 실적에서 정규화 FFO가 주당 1.67달러로 컨센서스 1.64달러를 웃돌았고, 올해 정규화 FFO 전망을 6.36~6.44달러에서 6.47~6.53달러로 올렸습니다.",
-    "같은 분기 시니어 주택 동일 점포 NOI가 21.0% 늘었습니다. 다만 GAAP 순이익이 기대에 못 미쳐 다음 거래일 주가는 내렸습니다."
-   ],
-   "src": [
-    {
-     "t": "Tradingpedia, Welltower 실적",
-     "u": "https://www.tradingpedia.com/2026/10/27/welltower-rallies-on-raised-guidance-and-strong-ffo/"
-    },
-    {
-     "t": "TIKR, Welltower 3분기",
-     "u": "https://www.tikr.com/zh/blog/welltower-fell-5-as-q3-revenue-misses-despite-raised-ffo-outlook"
-    }
-   ],
-   "kick": "WELL 가이던스 상향"
-  },
-  "URA": {
-   "text": [
-    "CCJ는 10/30 3분기에 조정 순손실 200만 캐나다달러를 내고 주가가 9% 내렸습니다. Key Lake 제분소의 연례 정비 중단이 평소보다 길어져 분기 생산량이 20% 줄어든 3.5백만 파운드가 됐고, 생산 원가는 62% 올랐습니다.",
-    "OKLO는 10/19~10/28에 Piper Sandler, Barclays, Truist, B. Riley 등이 목표가를 잇달아 내렸고, 10억 달러 규모의 신규 주식 매각 프로그램에 따른 희석 우려가 함께 보도됐습니다."
-   ],
-   "src": [
-    {
-     "t": "Cameco 3분기 6-K",
-     "u": "https://www.sec.gov/Archives/edgar/data/0001009001/000119312526439858/d106072dex992.htm"
-    },
-    {
-     "t": "TIKR, Cameco 3분기",
-     "u": "https://www.tikr.com/blog/cameco-sinks-9-on-q3-adjusted-loss-as-ceo-insists-customer-requirements-do-not-disappear"
-    },
-    {
-     "t": "TIKR, Oklo 목표가 인하",
-     "u": "https://www.tikr.com/blog/oklo-sinks-4-as-truist-slashes-price-target-39-to-31-ahead-of-q3-earnings"
-    }
-   ],
-   "kick": "카메코 Key Lake 정비"
-  },
-  "ARKG": {
-   "text": [
-    "CDNA는 10/29 3분기 매출이 39% 늘어난 1억 3,900만 달러로 나오고 올해 매출 가이던스를 5억 2,000만~5억 3,000만 달러로 올렸습니다.",
-    "ILMN은 같은 날 3분기 매출이 시장 예상에 못 미쳐 주가가 크게 내렸습니다. 연간 전망은 올렸으나 매출 부진이 더 크게 반영됐다고 보도됐습니다."
-   ],
-   "src": [
-    {
-     "t": "CareDx 3분기 보도자료",
-     "u": "https://s21.q4cdn.com/505754850/files/doc_news/CareDx-Announces-Third-Quarter-2026-Financial-Results-2026.pdf"
-    },
-    {
-     "t": "StockStory, Illumina 3분기",
-     "u": "https://stockstory.org/us/stocks/nasdaq/ilmn/news/earnings/illumina-nasdaqilmn-reports-sales-below-analyst-estimates-in-q3-2026-earnings-stock-drops-16percent"
-    },
-    {
-     "t": "Illumina 3분기 8-K",
-     "u": "https://www.sec.gov/Archives/edgar/data/0001110803/000111080326000202/q326earningsrelease.htm"
-    }
-   ],
-   "kick": "CareDx 실적 상향"
+   "kick": "Lilly 가이던스 상향"
   }
  },
  "stocks": {
@@ -144,21 +89,25 @@
   },
   "000660": {
    "text": [
-    "10/13 중국 CXMT가 더 촘촘한 DRAM 셀 설계(4F²)에서 진전을 이뤘다고 밝히자 SK hynix 서울 주가가 약 9% 내렸고 삼성전자와 코스피도 함께 급락했습니다. 이 소식은 독립적으로 확인되지 않았으나, 10/5 주 −13.4%와 10/12 주 −19.3%의 하락으로 이어졌습니다.",
-    "10/28 SK hynix는 3분기 매출 104.6조 원, 영업이익 83.3조 원을 발표했고 2026년 주주환원을 약 100조 원 규모로 하겠다고 밝혔습니다. 이는 10/26 주 +8.9% 반등과 같은 주에 있었던 일입니다."
+    "SK하이닉스는 10/28 3분기 잠정 영업이익이 83.33조 원(전년 대비 632% 증가), 매출이 104.62조 원이라고 발표해 시장 전망을 웃돌았습니다. 같은 날 분기 현금배당 14조 원과 자사주 매입 20조 원을 의결했고 올해 총 약 100조 원 주주환원 계획을 밝혔습니다.",
+    "그 직후인 11/2 주에는 10/30~31 나스닥 기술주·반도체 급락이 겹치면서 주가가 −17.0% 내렸습니다. 이 주간 하락의 개별 원인은 이번 검색에서 확인하지 못했습니다."
    ],
    "src": [
     {
-     "t": "TIKR CXMT 발표와 SK hynix 급락",
-     "u": "https://www.tikr.com/blog/sk-hynix-plunges-9-on-china-dram-scare-a-clear-trigger-for-the-selloff"
+     "t": "Korea Times SK hynix 3분기 실적",
+     "u": "https://www.koreatimes.co.kr/business/companies/20261028/sk-hynix-logs-record-q3-operating-profit-of-628-bil"
     },
     {
-     "t": "LetsDataScience 3분기 실적과 주주환원",
-     "u": "https://letsdatascience.com/news/sk-hynix-posts-record-q3-profit-and-100-trillion-won-payout-1458a688"
+     "t": "InvestingLive SK Hynix 3분기와 주주환원",
+     "u": "https://investinglive.com/stocks/sk-hynix-q3-operating-profit-beats-at-83tn-won-unveils-100tn-won-shareholder-payout-plan/"
+    },
+    {
+     "t": "Wealth Professional 나스닥 기술주 매도",
+     "u": "https://www.wealthprofessional.ca/investments/equity-markets/nasdaq-tech-sell-off-october-2026/393915"
     }
    ],
-   "asof": "2026-10-30",
-   "at": "10/31 07:19 KST"
+   "asof": "2026-11-05",
+   "at": "11/06 10:19 KST"
   },
   "TSLA": {
    "text": [
@@ -345,43 +294,47 @@
   },
   "SKHY": {
    "text": [
-    "10/13 중국 CXMT가 더 촘촘한 DRAM 셀 설계(4F²)에서 진전을 이뤘다고 밝히자 SK hynix 서울 주가가 약 9% 내렸고 삼성전자와 코스피도 함께 급락했습니다. 이 소식은 독립적으로 확인되지 않았으나, 10/5 주 −13.4%와 10/12 주 −19.3%의 하락으로 이어졌습니다.",
-    "10/28 SK hynix는 3분기 매출 104.6조 원, 영업이익 83.3조 원을 발표했고 2026년 주주환원을 약 100조 원 규모로 하겠다고 밝혔습니다. 이는 10/26 주 +8.9% 반등과 같은 주에 있었던 일입니다."
+    "SK하이닉스는 10/28 3분기 잠정 영업이익이 83.33조 원(전년 대비 632% 증가), 매출이 104.62조 원이라고 발표해 시장 전망을 웃돌았습니다. 같은 날 분기 현금배당 14조 원과 자사주 매입 20조 원을 의결했고 올해 총 약 100조 원 주주환원 계획을 밝혔습니다.",
+    "그 직후인 11/2 주에는 10/30~31 나스닥 기술주·반도체 급락이 겹치면서 주가가 −17.0% 내렸습니다. 이 주간 하락의 개별 원인은 이번 검색에서 확인하지 못했습니다."
    ],
    "src": [
     {
-     "t": "TIKR CXMT 발표와 SK hynix 급락",
-     "u": "https://www.tikr.com/blog/sk-hynix-plunges-9-on-china-dram-scare-a-clear-trigger-for-the-selloff"
+     "t": "Korea Times SK hynix 3분기 실적",
+     "u": "https://www.koreatimes.co.kr/business/companies/20261028/sk-hynix-logs-record-q3-operating-profit-of-628-bil"
     },
     {
-     "t": "LetsDataScience 3분기 실적과 주주환원",
-     "u": "https://letsdatascience.com/news/sk-hynix-posts-record-q3-profit-and-100-trillion-won-payout-1458a688"
+     "t": "InvestingLive SK Hynix 3분기와 주주환원",
+     "u": "https://investinglive.com/stocks/sk-hynix-q3-operating-profit-beats-at-83tn-won-unveils-100tn-won-shareholder-payout-plan/"
+    },
+    {
+     "t": "Wealth Professional 나스닥 기술주 매도",
+     "u": "https://www.wealthprofessional.ca/investments/equity-markets/nasdaq-tech-sell-off-october-2026/393915"
     }
    ],
-   "asof": "2026-10-30",
-   "at": "10/31 07:19 KST"
+   "asof": "2026-11-05",
+   "at": "11/06 10:19 KST"
   },
   "CCJ": {
    "text": [
-    "우라늄 장기 계약 가격이 19년 만의 최고였는데도 10월 초부터 원전 관련주가 약세였고, CCJ도 10/12 주 −7.4%, 10/19 주 −3.6%로 내렸습니다. 10/19에는 Barclays가 목표가를 95달러로 낮췄습니다.",
-    "10/30 Cameco는 3분기 순이익 4,300만 달러, 조정 순손실 200만 달러를 발표했습니다. Key Lake 정비 가동 중단이 예년보다 길어져 우라늄 생산 가이던스를 1,950만~2,050만 파운드로, 판매 가이던스를 2,950만~3,050만 파운드로 좁혔습니다."
+    "CCJ는 10/30 3분기 실적에서 순이익 4,300만 달러였지만 조정 기준으로는 200만 달러 손실을 냈다고 발표했고, 그날 주가가 약 8~9% 내렸습니다. Key Lake 정광 공장의 계획 정비가 길어진 것이 주된 원인으로 꼽혔고, 회사는 2026년 우라늄 인도량 가이던스를 2,950만~3,050만 파운드로 좁히며 단위 비용이 더 높을 것이라고 밝혔습니다.",
+    "이 발표가 11/2 주 −11.2% 하락으로 이어졌습니다. 11/4와 11/5에는 6-K 수시 보고가 제출됐습니다."
    ],
    "src": [
     {
-     "t": "Cameco 10/30 6-K 3분기 실적",
-     "u": "https://www.sec.gov/Archives/edgar/data/0001009001/000119312526439858/d106072dex991.htm"
+     "t": "BNN Bloomberg (Canadian Press) 3분기 실적",
+     "u": "https://www.bnnbloomberg.ca/business/company-news/2026/10/30/uranium-miner-cameco-reports-43m-q3-profit-revenue-edges-up-from-year-ago/"
     },
     {
-     "t": "24/7 Wall St. 우라늄 가격 신고가와 원전주 약세",
-     "u": "https://247wallst.com/investing/2026/10/03/uranium-prices-just-broke-a-19-year-record-but-nuclear-stocks-are-collapsing-anyway/"
+     "t": "Trefis CCJ 하락 분석",
+     "u": "https://www.trefis.com/stock/ccj/articles/621881/what-is-behind-the-move-in-cameco-stock/2026-11-01"
     },
     {
-     "t": "TIKR Cameco 한 달 하락",
-     "u": "https://www.tikr.com/blog/cameco-sinks-11-in-a-month-while-uranium-hits-a-19-year-high-defined-by-delivery"
+     "t": "TIKR CCJ 3분기",
+     "u": "https://www.tikr.com/blog/cameco-sinks-9-on-q3-adjusted-loss-as-ceo-insists-customer-requirements-do-not-disappear"
     }
    ],
-   "asof": "2026-10-30",
-   "at": "10/31 07:19 KST"
+   "asof": "2026-11-05",
+   "at": "11/06 10:19 KST"
   },
   "TXG": {
    "text": [
@@ -461,31 +414,25 @@
   },
   "MRNA": {
    "text": [
-    "MRNA는 10/5 주에 흑색종 백신 3상 전체 결과 발표가 다가온다는 기대로 올랐고, 10/20에도 약 7% 상승했습니다.",
-    "10/22에는 머크와 공동 개발한 개인맞춤 흑색종 백신 intismeran의 3상 일부 데이터가 학회 발표 전에 온라인에 유출되면서 주가가 약 17.6% 하락했습니다.",
-    "10/24 ESMO에서 공개된 전체 결과는 Keytruda 단독 대비 재발 또는 사망 위험을 42% 낮추는 것이었고, 높았던 기대에는 못 미친다는 평가가 나왔습니다.",
-    "마지막 주에는 10.8% 반등했으며, 다음 실적 발표는 11/6로 예정되어 있습니다."
+    "MRNA는 10/22 머크와 개발 중인 개인맞춤형 흑색종 백신 intismeran의 3상 상세 결과가 학회 발표 이틀 전에 온라인에 먼저 유출되면서 장중 최대 25% 넘게 빠졌고 17% 안팎 하락으로 마감했습니다. 위험 감소폭이 42%로 2b상보다 작았다는 점과 높았던 기대가 반영됐다는 분석이 나왔습니다.",
+    "10/26에는 장전 최대 9% 하락했다가 대부분 만회해 0.6% 내린 채 마감했고, 이후 10/26 주(+10.8%)와 11/2 주(+8.9%)에 주가가 회복됐습니다."
    ],
    "src": [
     {
-     "t": "TIKR 유출 데이터 후 하락",
-     "u": "https://www.tikr.com/blog/moderna-sinks-18-on-leaked-melanoma-data-benefit-was-greater-after-six-months"
+     "t": "TIKR 유출 데이터로 18% 하락",
+     "u": "https://www.tikr.com/blog/moderna-sinks-18-on-apparent-leak-of-embargoed-phase-3-melanoma-vaccine-data"
     },
     {
-     "t": "TIKR ESMO 발표 후",
-     "u": "https://www.tikr.com/blog/moderna-sinks-another-8-even-as-lead-investigator-calls-melanoma-vaccine-data-transformational"
+     "t": "Gulf News 유출 후 하락",
+     "u": "https://gulfnews.com/business/moderna-stock-plunged-18-after-cancer-vaccine-data-leak-1.500720912"
     },
     {
-     "t": "24/7 Wall St 10/5",
-     "u": "https://247wallst.com/investing/2026/10/05/moderna-surges-8-as-full-melanoma-readout-nears-biontech-ticks-up-pfizer-slips/"
-    },
-    {
-     "t": "24/7 Wall St 10/20",
-     "u": "https://247wallst.com/investing/2026/10/20/moderna-jumps-7-while-melanoma-vaccine-data-looms-bristol-myers-squibb-rises-5-pfizer-inches-higher/"
+     "t": "Boston Globe 흑색종 백신 3상",
+     "u": "https://www.bostonglobe.com/2026/10/22/business/moderna-merck-cancer-vaccine-key-endpoints-melanoma-trial/"
     }
    ],
-   "asof": "2026-10-30",
-   "at": "11/01 00:07 KST"
+   "asof": "2026-11-05",
+   "at": "11/06 10:19 KST"
   },
   "CLF": {
    "text": [
@@ -841,6 +788,56 @@
    ],
    "asof": "2026-11-04",
    "at": "11/05 11:04 KST"
+  },
+  "NVDA": {
+   "text": [
+    "10월 말 AI 투자 비용 우려로 나스닥이 한 달간 5.3% 내렸고 10/30에는 인텔의 약한 4분기 전망이 반도체 전반의 매도로 번지며 NVDA가 4.2% 하락했습니다. 알파벳과 아마존이 3분기에 잉여현금흐름 적자를 기록하고 자본지출 계획을 유지한 것이 시장에서 AI 인프라 비용 부담으로 읽혔습니다.",
+    "이 흐름이 11/2 주 −11.3% 하락과 이어집니다. 다음 실적 발표는 11/17로 예정돼 있습니다."
+   ],
+   "src": [
+    {
+     "t": "Wealth Professional 나스닥 기술주 매도",
+     "u": "https://www.wealthprofessional.ca/investments/equity-markets/nasdaq-tech-sell-off-october-2026/393915"
+    },
+    {
+     "t": "HeyGoTrade NVDA 10/30 하락",
+     "u": "https://www.heygotrade.com/en/news/nvidia-nvda-stock-news-november-2-2026/"
+    }
+   ],
+   "asof": "2026-11-05",
+   "at": "11/06 10:19 KST"
+  },
+  "APP": {
+   "text": [
+    "APP는 11/4 장 마감 후 3분기 매출이 55% 늘어난 21.8억 달러, 순이익이 72% 늘어난 14.4억 달러, 희석 EPS가 4.30달러라고 발표했습니다. 같은 날 회사는 분기 중 약 14억 달러어치 클래스 A 주식을 매입하거나 상계했다고 밝혔습니다.",
+    "10/26 주까지 −12.2% 약세였던 주가는 이 실적 발표 다음 거래일 31.0% 올라 주간 +55.8%로 이어졌습니다."
+   ],
+   "src": [
+    {
+     "t": "AppLovin 8-K 3분기 실적 보도자료",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001751008/000175100826000068/exhibit991-3q26earningspre.htm"
+    }
+   ],
+   "asof": "2026-11-05",
+   "at": "11/06 10:19 KST"
+  },
+  "RGLD": {
+   "text": [
+    "RGLD는 10/20에 3분기 잠정 실적과 발표 일정을 공시했고, 11/4 장 마감 후 매출 4.648억 달러, 영업현금흐름 3.444억 달러(모두 사상 최대), 판매량 10.9만 GEO(금 환산 온스)라고 발표했습니다.",
+    "같은 발표에서 회사는 리볼빙 차입금 2.5억 달러를 상환했고 분기 배당 0.475달러를 지급했으며, 이 실적 뒤 다음 거래일 주가가 6.2% 올라 주간 +14.2%가 됐습니다."
+   ],
+   "src": [
+    {
+     "t": "Royal Gold 8-K 3분기 실적 (11/4)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000085535/000008553526000049/rgld-20261104xexx991.htm"
+    },
+    {
+     "t": "Royal Gold 8-K 3분기 잠정 실적 (10/20)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000085535/000008553526000044/ex991q32026prequarterrelea.htm"
+    }
+   ],
+   "asof": "2026-11-05",
+   "at": "11/06 10:19 KST"
   }
  },
  "runs": [
@@ -963,6 +960,19 @@
    10,
    "claude-sonnet-5-5",
    0.167
+  ],
+  [
+   "11/06 10:19 KST",
+   6,
+   2,
+   6,
+   6,
+   "ok",
+   35,
+   2,
+   39,
+   "claude-sonnet-5-5",
+   0.867
   ]
  ]
 }
