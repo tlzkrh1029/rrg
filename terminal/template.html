@@ -2122,10 +2122,12 @@ function drvCal(per) {
   };
   const hd = items.map(it => `<i class="c${!it.gap && dWe(it.d) ? ' we' : ''}"><b>${it.gap ? '…' : KWD[it.d.getUTCDay()]}</b></i>`).join('');
   const label = `한국 시각 ${dMd(kf.day)} ${kf.hm} → ${dMd(kt.day)} ${kt.hm}, 뉴욕 시각 ${dMd(f)} ${kf.ny} → ${dMd(t)} ${kt.ny} 종가`;
+  /* 달력 오른쪽 글자: 시작 종가 ~ 끝 종가. 넓으면 한 줄, 좁으면 시작과 끝 두 줄로 나뉘어 달력 줄 높이(21px) 안에 든다 */
+  const tmHTML = (sd, sh, ed, eh) => `<span class="tm"><span>${sd} <b>${sh}</b> 종가</span> <span>~ ${ed} <b>${eh}</b> 종가</span></span>`;
   return `<div class="dcal" role="img" aria-label="${label}">
     <div class="row hd" aria-hidden="true"><span class="rl"></span>${hd}</div>
-    <div class="row kr"><span class="rl">한국</span>${row('kr')}<span class="tm"><span>${dMd(kt.day)}</span> <span><b>${kt.hm}</b> 종가</span></span></div>
-    <div class="row ny"><span class="rl">뉴욕</span>${row('ny')}<span class="tm"><span>${dMd(t)}</span> <span><b>${kt.ny}</b> 종가</span></span></div>
+    <div class="row kr"><span class="rl">한국</span>${row('kr')}${tmHTML(dMd(kf.day), kf.hm, dMd(kt.day), kt.hm)}</div>
+    <div class="row ny"><span class="rl">뉴욕</span>${row('ny')}${tmHTML(dMd(f), kf.ny, dMd(t), kt.ny)}</div>
   </div>`;
 }
 function renderDrivers() {
