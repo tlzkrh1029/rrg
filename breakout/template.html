@@ -213,6 +213,10 @@ h1 .code{background:#c8102e;color:#fff;font-size:11px;font-weight:600;letter-spa
 .side .big text{font-size:9.5px;fill:var(--muted)}
 .side .big text.lv{fill:var(--ink-2)}
 :root{--xa:#b48cff;--xp:#5fe3c0}
+/* 지난 장후·장전: 다음 거래일 정규장(09:30 ET)이 시작되면 둘 다(xs-p), 장전 시간(04:00 ET 부터)에 남은 장후는 장후만(xs-a) 회색. 터미널과 같다 */
+html.xs-a{--xa:#5a5a5a} html.xs-p{--xp:#5a5a5a}
+html.xs-a .xv-a,html.xs-p .xv-p{color:#5a5a5a!important}
+[data-xk]{cursor:help}
 .side .big .xah,.side .big .xpm{fill:none;stroke-width:1.4;stroke-dasharray:2 2;stroke-linecap:round}
 .side .big .xah{stroke:var(--xa)} .side .big .xpm{stroke:var(--xp)} .side .big .xad{fill:var(--xa)} .side .big .xpd{fill:var(--xp)}
 .side .big text.lv.xa{fill:var(--xa);font-weight:700} .side .big text.lv.xp{fill:var(--xp);font-weight:700}
@@ -590,21 +594,24 @@ function xhChg(sym, bench) {
   return o.ah == null && o.pm == null ? null : o;
 }
 /* 가장 최근의 시간외 값: 장전이 있으면 장전, 없으면 장후 */
-const xhLast = x => x.pm != null ? { k: 'xp', lab: '장전', v: x.pm, at: x.raw.pmT } : { k: 'xa', lab: '장후', v: x.ah, at: x.raw.ahT };
+/* 장후·장전 꼬리표에는 그 값이 속한 날짜를 늘 붙인다(장후 = 기준 종가일, 장전 = 다음 거래일). 터미널과 같다 */
+const xhLab = k => { const d = md2(k === 'xp' ? XH.next : XH.date), l = k === 'xp' ? '장전' : '장후'; return d ? `${d} ${l}` : l; };
+const xvc = k => k === 'xp' ? 'xv-p' : 'xv-a';
+const xhLast = x => x.pm != null ? { k: 'xp', lab: xhLab('xp'), v: x.pm, at: x.raw.pmT } : { k: 'xa', lab: xhLab('xa'), v: x.ah, at: x.raw.ahT };
 function bkXh(k) {
   const x = xhChg(k, null); if (!x) return '';
   const L = xhLast(x); if (Math.abs(L.v) < XH_BADGE) return '';
-  return `<small class="xh ${L.k}" title="${L.lab} ${L.at} ET · ${md2(XH.date)} 종가 대비">${L.lab} ${pct1(L.v)}%</small>`;
+  return `<small class="xh ${L.k}" data-xk="${L.k}" title="${L.lab} ${L.at} ET · ${md2(XH.date)} 종가 대비">${L.lab} ${pct1(L.v)}%</small>`;
 }
 /* 툴팁 한 줄: 장후·장전 변화(USD) */
 function xhTip(k) {
   const x = xhChg(k, null); if (!x) return '';
-  return [x.ah != null ? `<span class="xa">장후</span> <span class="${x.ah >= 0 ? 'on' : 'dn'}">${pct1(x.ah)}%</span>` : '', x.pm != null ? `<span class="xp">장전</span> <span class="${x.pm >= 0 ? 'on' : 'dn'}">${pct1(x.pm)}%</span>` : ''].filter(Boolean).join(' · ');
+  return [x.ah != null ? `<span class="xa">${xhLab('xa')}</span> <span class="${x.ah >= 0 ? 'on' : 'dn'} xv-a">${pct1(x.ah)}%</span>` : '', x.pm != null ? `<span class="xp">${xhLab('xp')}</span> <span class="${x.pm >= 0 ? 'on' : 'dn'} xv-p">${pct1(x.pm)}%</span>` : ''].filter(Boolean).join(' · ');
 }
 function xhDl(sym, bench, lab) {
   const x = xhChg(sym, bench); if (!x) return '';
-  const a = x.raw, row = (k, nm, v, p, at) => `<dt class="${k}">${lab} ${nm}</dt><dd class="${v >= 0 ? 'on' : 'dn'}">${pct1(v)}%<small class="bs">${bench ? `USD ${pct1(p / a.c - 1)}% · ` : ''}${p.toFixed(2)} · ${at} ET</small></dd>`;
-  return (x.ah != null ? row('xa', '장후', x.ah, a.ah, a.ahT) : '') + (x.pm != null ? row('xp', '장전', x.pm, a.pm, a.pmT) : '');
+  const a = x.raw, row = (k, nm, v, p, at) => `<dt class="${k}">${lab} ${nm}</dt><dd class="${v >= 0 ? 'on' : 'dn'} ${xvc(k)}">${pct1(v)}%<small class="bs">${bench ? `USD ${pct1(p / a.c - 1)}% · ` : ''}${p.toFixed(2)} · ${at} ET</small></dd>`;
+  return (x.ah != null ? row('xa', xhLab('xa'), x.ah, a.ah, a.ahT) : '') + (x.pm != null ? row('xp', xhLab('xp'), x.pm, a.pm, a.pmT) : '');
 }
 const chgEm = v => v == null ? '<em class="z">–</em>' : `<em class="${pcls(v)}">${pct1(v)}%</em>`;
 const chgHTML = (k, mode) => { const ch = changes(k, mode); return `<div class="chg"><span><i>D</i>${chgEm(ch.d)}</span><span title="${md2(ch.wd)} 종가부터"><i>W</i>${chgEm(ch.w)}</span><span title="${md2(ch.md)} 종가부터"><i>M</i>${chgEm(ch.m)}</span></div>`; };
@@ -886,7 +893,7 @@ function chartLabels(labels, x, yMax) {
 }
 /* 90일 차트: s = {c, h52} 시계열, ma 이동평균, r 지금 지평의 판정, cid clipPath 이름. 종목 상세와 ETF 패널이 함께 쓴다 */
 function chartSVG(s, ma, r, cid, xh) {
-  const c = s.c, n = c.length, Wd = 300, Hd = 120, L = 4, R = 62, T = 8, B = 14;   // 오른쪽 라벨 칸 62: 라벨이 잘리지 않는 폭
+  const c = s.c, n = c.length, Wd = 300, Hd = 120, L = 4, R = xh && (xh.ah != null || xh.pm != null) ? 92 : 62, T = 8, B = 14;   // 오른쪽 라벨 칸 62: 라벨이 잘리지 않는 폭. 장후·장전 라벨('11/6 장후 +0.2%')이 있으면 92
   const last0 = c[n - 1], vA = xh && xh.ah != null ? last0 * (1 + xh.ah) : null, vP = xh && xh.pm != null ? last0 * (1 + xh.pm) : null, xv = [vA, vP].filter(v => v != null);
   let lo = Math.min(...c, ...xv), hi = Math.max(...c, ...xv);
   const h52 = s.h52; if (h52 <= hi * 1.12) hi = Math.max(hi, h52);
@@ -911,8 +918,8 @@ function chartSVG(s, ma, r, cid, xh) {
   let xseg = '';
   if (xv.length) {
     const x0 = xs(n - 1), y0 = ys(last0); let px = x0, py = y0;
-    if (vA != null) { const x = x0 + 12, y = ys(vA); xseg += `<line class="xah" x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/><circle class="xad" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.7"/>`; labels.push({ y, t: '장후 ' + pct1(xh.ah) + '%', cls: 'xa' }); px = x; py = y; }
-    if (vP != null) { const x = x0 + 23, y = ys(vP); xseg += `<line class="xpm" x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/><circle class="xpd" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.7"/>`; labels.push({ y, t: '장전 ' + pct1(xh.pm) + '%', cls: 'xp' }); }
+    if (vA != null) { const x = x0 + 12, y = ys(vA); xseg += `<line class="xah" x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/><circle class="xad" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.7"/>`; labels.push({ y, t: xhLab('xa') + ' ' + pct1(xh.ah) + '%', cls: 'xa' }); px = x; py = y; }
+    if (vP != null) { const x = x0 + 23, y = ys(vP); xseg += `<line class="xpm" x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/><circle class="xpd" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.7"/>`; labels.push({ y, t: xhLab('xp') + ' ' + pct1(xh.pm) + '%', cls: 'xp' }); }
   }
   out += chartLabels(labels, Wd - R + 4, Hd - B - 4);
   /* 이동평균: 눈금을 바꾸지 않고, 그림 영역 밖은 잘라 낸다. 마지막 값이 눈금 밖이면 가장자리에 현재가 대비 거리를 적는다 */
@@ -1147,5 +1154,24 @@ render();
       a.onfinish = () => { busy = false; };
     }
   });
+})();
+/* 지난 장후·장전: 기기 시계로 1분마다 판단한다(터미널과 같은 규칙). 다음 빌드가 새 값으로 페이지를 다시 만들면 저절로 풀린다 */
+(function () {
+  if (!XH || !XH.next) return;
+  const etAt = (iso, h, m) => {
+    const [y, mo, d] = String(iso).split('-').map(Number); if (!d) return null;
+    const f = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: '2-digit', hourCycle: 'h23' });
+    for (const off of [4, 5]) { const t = Date.UTC(y, mo - 1, d, h + off, m); if (+f.format(new Date(t)) === h) return t; }
+    return null;
+  };
+  const R = document.documentElement, pre = etAt(XH.next, 4, 0), open = etAt(XH.next, 9, 30);
+  const titles = root => root.querySelectorAll('[data-xk]').forEach(el => {
+    if (el.dataset.t0 == null) el.dataset.t0 = el.title;
+    const p = R.classList.contains('xs-p'), old = el.dataset.xk === 'xp' ? p : R.classList.contains('xs-a');
+    el.title = !old ? el.dataset.t0 : el.dataset.t0 + (p ? ` · ${md2(XH.next)} 정규장(09:30 ET)이 시작되어 지난 값입니다` : ` · 지금은 ${md2(XH.next)} 장전 시간이라 ${md2(XH.date)} 저녁의 장후 값입니다`);
+  });
+  const tick = () => { try { const now = Date.now(), p = open != null && now >= open, a = p || (pre != null && now >= pre); R.classList.toggle('xs-a', a); R.classList.toggle('xs-p', p); titles(document); } catch (e) {} };
+  tick(); setInterval(tick, 60e3);
+  new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(x => { if (x.nodeType === 1) titles(x.parentElement || x); }))).observe(document.body, { childList: true, subtree: true });
 })();
 </script>
