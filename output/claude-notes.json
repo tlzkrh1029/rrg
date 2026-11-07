@@ -1,48 +1,100 @@
 {
- "asof": "2026-11-05",
- "at": "11/06 10:19 KST",
+ "asof": "2026-11-06",
+ "at": "11/07 10:18 KST",
  "etfs": {
-  "XLP": {
-   "text": [
-    "10월 중순부터 AI·기술주에서 빠진 자금이 방어주로 옮겨 가면서 필수소비재가 상대적으로 강했습니다. 10/22에는 나스닥이 2.60% 떨어진 날 PG가 분기 실적 발표 뒤 5.6% 올랐고 WMT와 COST도 함께 올랐으며, 보도에서는 WMT에 새로운 개별 호재는 없었다고 적었습니다.",
-    "BofA 고객이 10/16 주에 개별 미국 주식을 사상 최대인 148억 달러 순매도하는 가운데 필수소비재는 소수의 순매수 업종이었습니다. 월말 기술주 급락 장에서도 XLP는 장중 사상 최고가를 기록했습니다."
-   ],
-   "src": [
-    {
-     "t": "24/7 Wall St. 월트마트 10월 상승 분석",
-     "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
-    },
-    {
-     "t": "Tradingpedia PG 분기 실적",
-     "u": "https://www.tradingpedia.com/2026/10/22/pg-advances-in-premarket-as-strong-q1-beats-forecasts/"
-    },
-    {
-     "t": "Wealth Professional 나스닥 기술주 매도",
-     "u": "https://www.wealthprofessional.ca/investments/equity-markets/nasdaq-tech-sell-off-october-2026/393915"
-    }
-   ],
-   "kick": "AI주 이탈 방어주 순환"
-  },
   "XLV": {
    "text": [
-    "LLY가 10/29 3분기 매출이 39% 늘어난 244억 달러라고 발표하며 연간 매출 가이던스를 850억~870억 달러에서 910억~920억 달러로 올렸고, 주가는 그날 크게 올랐습니다. 마운자로와 젭바운드가 성장을 이끌었고 경구용 신약 판매도 시작됐습니다.",
-    "JNJ는 10/13 실적 발표 때 탤크 소송 합의 관련 일회성 비용으로 순이익이 크게 줄어 주가가 약 5% 내렸지만, 조정 EPS 전망은 올렸습니다. 같은 기간 AI·기술주 매도 속에 헬스케어가 방어 업종으로 매수되면서 XLV가 52주 신고가를 기록했습니다."
+    "Eli Lilly가 10/29에 3분기 매출이 39% 늘어난 244억 달러라고 발표하며 2026년 매출 전망을 910억~920억 달러로 올렸습니다.",
+    "Mounjaro와 Zepbound 판매가 성장을 이끌었고 매출과 주당순이익이 시장 예상을 넘었다는 점이 XLV 안에서 LLY 비중이 큰 헬스케어의 상대 강세를 뒷받침했습니다."
    ],
    "src": [
     {
-     "t": "Eli Lilly 8-K 3분기 실적 보도자료",
+     "t": "Eli Lilly 3분기 실적 8-K (SEC)",
      "u": "https://www.sec.gov/Archives/edgar/data/0000059478/000005947826000104/q326lillysalesandearningsp.htm"
-    },
-    {
-     "t": "Zacks LLY 3분기 실적",
-     "u": "https://www.zacks.com/stock/news/3018734/lly-stock-jumps-as-q3-earnings-beat-estimates-2026-sales-view-raised"
-    },
-    {
-     "t": "RTTNews JNJ 3분기",
-     "u": "https://www.rttnews.com/3698614/johnson-johnson-stock-falls-5-after-q3-profit-plunges.aspx"
     }
    ],
    "kick": "Lilly 가이던스 상향"
+  },
+  "XLP": {
+   "text": [
+    "P&G가 10/22에 회계연도 2027년 1분기 실적을 내놓았습니다.",
+    "순매출은 233억 달러로 4% 늘었고 핵심 주당순이익은 2.00달러로 시장 예상 1.88달러를 웃돌았으며, 회사는 연간 핵심 주당순이익 범위를 유지하고 매출 성장 전망은 2~4%로 올렸습니다."
+   ],
+   "src": [
+    {
+     "t": "P&G 1분기 실적 8-K (SEC)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000080424/000008042426000250/fy2627q1jas8-kexhibit991.htm"
+    },
+    {
+     "t": "Benzinga",
+     "u": "https://www.benzinga.com/node/62527709"
+    }
+   ],
+   "kick": "P&G 실적 발표"
+  },
+  "XLRE": {
+   "text": [
+    "Welltower가 10/26에 3분기 정규화 FFO가 주당 1.67달러로 24.6% 늘었다고 발표하고 연간 정규화 FFO 전망을 6.47~6.53달러로 올렸습니다.",
+    "시니어 하우징 운영 부문의 동일 자산 NOI가 21.0% 늘어난 것이 실적을 이끌었고, 회사는 2026년에 투자 210억 달러가 체결됐거나 계약 중이라고 밝혔습니다."
+   ],
+   "src": [
+    {
+     "t": "Welltower 3분기 실적 보도자료 (SEC)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000766704/000076670426000043/a3q26pressreleaseprnnewswi.htm"
+    },
+    {
+     "t": "Senior Housing News",
+     "u": "https://seniorhousingnews.com/2026/10/26/welltower-reports-2-7b-in-senior-housing-acquisitions-in-third-quarter/"
+    }
+   ],
+   "kick": "Welltower 가이던스 상향"
+  },
+  "ARKG": {
+   "text": [
+    "11/2에 10x Genomics가 12%, Twist Bioscience가 15%, Absci가 12% 하락하는 등 유전체 도구주가 함께 급락했습니다.",
+    "TIKR는 뚜렷한 개별 뉴스는 없었다고 전했고, 10x Genomics가 예상 매출의 14배로 거래돼 5년 평균 7.4배의 거의 두 배라는 밸류에이션 부담을 배경으로 지적했습니다."
+   ],
+   "src": [
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
+    }
+   ],
+   "kick": "유전체 도구주 동반 급락"
+  },
+  "XME": {
+   "text": [
+    "Freeport-McMoRan이 10/27에 3분기 실적을 내놓았는데, 구리 평균 실현가격은 파운드당 6.54달러로 올랐지만 인도네시아 PTFI의 구리 판매량은 1억 5300만 파운드로 전년 3억 6000만 파운드에서 크게 줄었습니다.",
+    "인도네시아 제련 처리량은 설비 용량의 67%에 그쳤고 미국 광산도 침수와 정전으로 계획을 밑돌아, XME에서 FCX가 가장 큰 하락 요인이 됐습니다."
+   ],
+   "src": [
+    {
+     "t": "Freeport-McMoRan 3분기 실적 8-K (SEC)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000831259/000083125926000045/a3q2026exhibit991.htm"
+    },
+    {
+     "t": "Mining.com",
+     "u": "https://www.mining.com/web/freeport-mcmorans-third-quarter-profit-beats-on-higher-copper-prices/"
+    }
+   ],
+   "kick": "인도네시아 판매 급감"
+  },
+  "DRAM": {
+   "text": [
+    "Sandisk가 10/29에 시장 예상을 웃도는 분기 매출 110억 달러를 발표했지만, 다음 날인 10/30에 주가가 13.5% 떨어졌습니다.",
+    "Kioxia가 플래시 가격 급등세가 둔화되고 있다고 밝힌 것이 원인으로 꼽혔고, 가격 상승이 성장에서 차지하는 비중이 전 분기 약 3분의 2에서 이번에는 약 40%로 낮아졌습니다."
+   ],
+   "src": [
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/sandisk-sinks-13-last-friday-after-a-beat-kioxia-says-the-flash-price-surge-is-fading"
+    },
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/sandisk-lost-14-in-a-week-on-kioxias-warning-wedbush-still-sees-2000"
+    }
+   ],
+   "kick": "낸드 가격 상승 둔화"
   }
  },
  "stocks": {
@@ -356,21 +408,18 @@
   },
   "TWST": {
    "text": [
-    "10/6 업종 동반 급락 속에 TWST가 약 18.6% 내렸고, 급등 뒤 차익 실현이 원인으로 거론됐습니다. 10/8에는 Jefferies가 Hold 의견과 목표가 150달러로 커버리지를 시작했고, 10/22에는 회사 소식 없이 9% 내렸습니다.",
-    "10/28에는 ICON의 예약 호조로 생명과학 도구주가 반등하며 12% 올랐습니다. 이런 흐름이 10/5 주 −15.3%, 10/12 주 −16.9%, 10/19 주 +5.4%, 10/26 주 +9.2%로 나타났습니다."
+    "Twist Bioscience는 10/12 주에 −16.9% 하락한 뒤 10/19 주와 10/26 주에 반등했습니다.",
+    "11/2에 10x Genomics가 12%, Twist가 15%, Absci가 12% 내리는 등 유전체 도구주가 함께 급락했고, TIKR는 이를 설명할 뚜렷한 뉴스가 없었다고 전했습니다.",
+    "이 급락이 11/2 주 −20.9% 하락의 큰 부분을 이루며, 다음 실적 발표는 11/12로 예정돼 있습니다."
    ],
    "src": [
     {
-     "t": "FMP 10/6 하락 종목",
-     "u": "https://site.financialmodelingprep.com/market-news/notable-stock-decliners-october-6-2026"
-    },
-    {
-     "t": "TIKR 유전체주 반등",
-     "u": "https://www.tikr.com/blog/twist-bioscience-soars-12-10x-genomics-up-12-as-genomics-stocks-rebound"
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
     }
    ],
-   "asof": "2026-10-30",
-   "at": "10/31 07:19 KST"
+   "asof": "2026-11-06",
+   "at": "11/07 10:18 KST"
   },
   "NOW": {
    "text": [
@@ -838,6 +887,25 @@
    ],
    "asof": "2026-11-05",
    "at": "11/06 10:19 KST"
+  },
+  "CDE": {
+   "text": [
+    "Coeur Mining은 10/12 주부터 10/26 주까지 세 주 연속 내렸는데, 이 기간에 따로 확인되는 회사 사건은 찾지 못했습니다.",
+    "11/4에 3분기 실적을 발표했고 매출은 10억 달러로 New Gold의 캐나다 광산이 더해져 전년보다 77% 늘었으며, 현금은 12억 달러로 증가했습니다.",
+    "분기 대비로는 금과 은 가격 하락과 구리 판매량 감소로 매출이 9% 줄었고, 회사는 7억 5000만 달러 자사주 매입과 새 10억 달러 신용한도를 갖췄다고 밝혔습니다. 이 발표는 11/2 주 +19.4% 상승과 같은 주에 나왔습니다."
+   ],
+   "src": [
+    {
+     "t": "Coeur Mining 3분기 실적 8-K (SEC)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000215466/000021546626000054/a3q26earningsreleaseex-991.htm"
+    },
+    {
+     "t": "Mugglehead",
+     "u": "https://mugglehead.com/coeur-mining-absorbs-new-gold-lifts-2026-production-guidance-and-capital-returns/"
+    }
+   ],
+   "asof": "2026-11-06",
+   "at": "11/07 10:18 KST"
   }
  },
  "runs": [
@@ -973,6 +1041,19 @@
    39,
    "claude-sonnet-5-5",
    0.867
+  ],
+  [
+   "11/07 10:18 KST",
+   6,
+   6,
+   2,
+   2,
+   "ok",
+   21,
+   0,
+   23,
+   "claude-sonnet-5-5",
+   0.523
   ]
  ]
 }

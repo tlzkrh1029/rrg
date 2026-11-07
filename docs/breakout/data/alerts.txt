@@ -1,15 +1,12 @@
-돌파 지도 2026-11-05 (USD 기준, 직전 종가)
-켜진 칸 20일 62/279 (22%) · 55일 51 · 52주 26 · 사상 최고 19 · 이탈 70 · 실패 18
+돌파 지도 2026-11-06 (USD 기준, 직전 종가)
+켜진 칸 20일 61/279 (22%) · 55일 44 · 52주 21 · 사상 최고 14 · 이탈 70 · 실패 22
 
 새 돌파 (1일째)
-  사상 최고: 8001(URA)
-  55일: APP(XLC)*, NST(GDX), RUN(TAN)*, ALGT(JETS)*
-  20일: NEM(XLB·XME·GDX)*, VMRK(XLRE)*, FNV(GDX)*
+  20일: TTWO(XLC)*, SYRE(XBI)*
   * SPY 대비로도 켜진 칸
 새 이탈 (1일째)
-  55일 바닥: AVGO(XLK·SMH), AMD(XLK·SMH), PLTR(XLK·IGV), GS(XLF), C(XLF), GEV(XLI), WMB(XLE), KLAC(SMH), SKHY(SMH), PANW(IGV), TWST(GNOM·ARKG), GH(GNOM·ARKG), TXG(GNOM·ARKG), CRSP(ARKG), HONA(ITA), PWR(PAVE·GRID), ROK(PAVE), 005930(DRAM), JCI(GRID), SU(GRID), SEDG(TAN)
-  20일 바닥: TSLA(XLY), XOM(XLE·XOP), EOG(XLE·XOP), ADI(SMH), CRWD(IGV), CLF(XME), STLD(XME)
-오늘 실패한 돌파: MSFT(XLK·IGV, 사상 최고), PM(XLP, 사상 최고), UTHR(XBI, 사상 최고), MSFT(XLK·IGV, 52주), SBUX(XLY, 52주), PM(XLP, 52주), APD(XLB, 52주), MRNA(XBI·GNOM, 52주), UTHR(XBI, 52주), MSFT(XLK·IGV, 55일), SBUX(XLY, 55일), PM(XLP, 55일), SHW(XLB, 55일), CRH(XLB, 55일), MLM(XLB, 55일), MRNA(XBI·GNOM, 55일), MSFT(XLK·IGV, 20일), MS(XLF, 20일), PM(XLP, 20일), EQIX(XLRE, 20일), MRNA(XBI·GNOM, 20일), ALK(JETS, 20일)
-블록 알림 (20일): XLE ▼5/10 이탈 · SMH ▼8/10 이탈 · IGV ▼5/10 이탈 · ARKG ▼5/10 이탈
+  55일 바닥: HALO(XBI), NTRA(GNOM·ARKG), 000660(DRAM), ABBN(GRID)
+오늘 실패한 돌파: ECL(XLB, 사상 최고), WSM(XHB, 사상 최고), 8001(URA, 사상 최고), ECL(XLB, 52주), WSM(XHB, 52주), 8001(URA, 52주), SO(XLU, 55일), UBSI(KRE, 55일), WSM(XHB, 55일), 8001(URA, 55일), AMZN(XLY, 20일), BKNG(XLY, 20일), SO(XLU, 20일), WSM(XHB, 20일), 8001(URA, 20일)
+블록 알림 (20일): XLC 5/10 켜짐 · GRID ▼6/10 이탈 · XOP ▼5/10 이탈
 
 https://tlzkrh1029.github.io/rrg/breakout/
