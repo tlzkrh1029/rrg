@@ -486,7 +486,7 @@ kbd.k{font-family:var(--mono);font-size:11.5px;background:var(--surface-2);borde
       </section>
       <section>
         <h3>장후·장전</h3>
-        <p>미국 상장 종목과 ETF 는 정규장 밖의 거래 가격도 보여 줍니다. <span style="color:var(--xa)">보라</span>는 장후(16:00~20:00 ET), <span style="color:var(--xp)">민트</span>는 장전(다음 거래일 04:00~09:30 ET)이고, 숫자는 모두 마지막 정규장 종가 대비입니다. 종목 상세와 ETF 패널의 차트 끝에는 마지막 종가에서 이어지는 점선과 점이 붙고, 변동률 줄 아래에 장후·장전 줄이 가격과 거래 시각(뉴욕 시각)과 함께 나옵니다. vs. QQQ·vs. SPY 탭에서는 그 지수의 같은 시각 가격으로 나눈 비율의 변화이고, 옆에 USD 변화를 함께 적습니다. ETF 패널의 구성종목 표에서는 가장 최근 값(장전이 있으면 장전)이 1% 넘게 움직인 종목의 티커 아래에 그 값을 적고, 칸에 마우스를 올리면 장후·장전 변화가 함께 나옵니다. 매일 아침 빌드(한국 시각 오전 8시 무렵)는 장후 거래가 이어지는 도중의 값을 받고, 저녁 실행(한국 시각 오후 9시 반 무렵, 미국 장전 시간)이 장후의 마지막 가격과 장전 가격으로 다시 만듭니다. 칸의 판정과 D·W·M 은 정규장 종가만으로 계산합니다.</p>
+        <p>미국 상장 종목과 ETF 는 정규장 밖의 거래 가격도 보여 줍니다. <span style="color:var(--xa)">보라</span>는 장후(16:00~20:00 ET), <span style="color:var(--xp)">민트</span>는 장전(다음 거래일 04:00~09:30 ET)이고, 숫자는 모두 마지막 정규장 종가 대비입니다. 종목 상세와 ETF 패널의 차트 끝에는 마지막 종가에서 이어지는 점선과 점이 붙고, 변동률 줄 아래에 장후·장전 줄이 가격과 거래 시각(뉴욕 시각)과 함께 나옵니다. vs. QQQ·vs. SPY 탭에서는 그 지수의 같은 시각 가격으로 나눈 비율의 변화이고, 옆에 USD 변화를 함께 적습니다. ETF 패널의 구성종목 표에서는 가장 최근 값(장전이 있으면 장전)이 0.1% 이상 움직인 종목의 티커 아래에 그 값을 적고, 칸에 마우스를 올리면 장후·장전 변화가 함께 나옵니다. 매일 아침 빌드(한국 시각 오전 8시 무렵)는 장후 거래가 이어지는 도중의 값을 받고, 저녁 실행(한국 시각 오후 9시 반 무렵, 미국 장전 시간)이 장후의 마지막 가격과 장전 가격으로 다시 만듭니다. 칸의 판정과 D·W·M 은 정규장 종가만으로 계산합니다.</p>
       </section>
       <section>
         <h3>상장 점</h3>
@@ -582,8 +582,8 @@ function calChanges(c, dates) {
 function changes(k, mode) { return calChanges(series[k][mode].c, DATA.dates); }
 const md2 = d => { const p = String(d || '').split('-'); return p.length === 3 ? `${+p[1]}/${+p[2]}` : ''; };
 const bsTxt = d => d ? `<small class="bs">${md2(d)} 종가부터</small>` : '';
-/* 장후·장전(시간외): 보라 = 장후, 민트 = 장전. 표의 배지는 1% 넘을 때만 붙인다(터미널과 같은 기준) */
-const XH_BADGE = 0.01;
+/* 장후·장전(시간외): 보라 = 장후, 민트 = 장전. 표의 배지는 0.1% 이상일 때만 붙인다(터미널과 같은 기준) */
+const XH_BADGE = 0.001;   /* 0.1% 이상(터미널 구성종목 표와 같은 기준) */
 function xhRaw(sym) { if (!XH || !sym) return null; const v = XH.s[String(sym).toUpperCase()]; if (!v || !v[0]) return null; return { c: v[0], ah: v[1], ahT: v[2], pm: v[3], pmT: v[4] }; }
 /* 차트의 자로 잰 변화. 기준(bench)이 있으면 두 종목의 시간외 변화의 비율 */
 function xhChg(sym, bench) {
