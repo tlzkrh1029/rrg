@@ -1,4 +1,4 @@
-{"version":1,"updated":"2026-11-07T01:06:12Z","prev":"2026-11-06T01:06:47Z","counts":{"b":105,"p":222,"h":135},
+{"version":1,"updated":"2026-11-10T01:07:29Z","prev":"2026-11-07T01:06:12Z","counts":{"b":105,"p":222,"h":137},
 "state":{
 "b":{
 "AAOIBUSDT":{"u":"AAOI","lk":"AAOI","n":"Applied Optoelectronics","c":"stock","m":"US"},
@@ -426,6 +426,7 @@
 "xyz:MSFT":{"u":"MSFT","lk":"MSFT","n":"Microsoft Corporation","c":"stock","m":"US","dex":"xyz"},
 "xyz:MSTR":{"u":"MSTR","lk":"MSTR","n":"Strategy Inc","c":"stock","m":"US","dex":"xyz"},
 "xyz:MU":{"u":"MU","lk":"MU","n":"Micron Technology, Inc.","c":"stock","m":"US","dex":"xyz"},
+"xyz:MUU":{"u":"MUU","lk":"MUU","n":"Direxion Daily MU Bull 2X ETF","c":"etf","m":"US","dex":"xyz"},
 "xyz:NBIS":{"u":"NBIS","lk":"NBIS","n":"Nebius Group N.V.","c":"stock","m":"US","dex":"xyz"},
 "xyz:NCLD":{"u":"NCLD","lk":"NCLD","n":"Roundhill Neocloud ETF","c":"etf","m":"US","dex":"xyz"},
 "xyz:NET":{"u":"NET","lk":"NET","n":"Cloudflare, Inc.","c":"stock","m":"US","dex":"xyz"},
@@ -457,6 +458,7 @@
 "xyz:TLT":{"u":"TLT","lk":"TLT","n":"iShares 20+ Year Treasury Bond ETF","c":"etf","m":"US","dex":"xyz"},
 "xyz:TSLA":{"u":"TSLA","lk":"TSLA","n":"Tesla, Inc.","c":"stock","m":"US","dex":"xyz"},
 "xyz:TSM":{"u":"TSM","lk":"TSM","n":"Taiwan Semiconductor Manufacturing Company Ltd.","c":"stock","m":"US","dex":"xyz"},
+"xyz:TTWO":{"u":"TTWO","lk":"TTWO","n":"Take-Two Interactive Software, Inc.","c":"stock","m":"US","dex":"xyz"},
 "xyz:TWST":{"u":"TWST","lk":"TWST","n":"Twist Bioscience Corporation","c":"stock","m":"US","dex":"xyz"},
 "xyz:UMC":{"u":"UMC","lk":"UMC","n":"United Microelectronics Corporation","c":"stock","m":"US","dex":"xyz"},
 "xyz:UNITREE":{"u":"UNITREE","lk":"SSE:688836","n":"UNITREE","c":"stock","m":"CN","dex":"xyz"},
@@ -470,6 +472,8 @@
 }
 },
 "events":[
+{"v":"h","e":"add","s":"xyz:TTWO","u":"TTWO","lk":"TTWO","n":"Take-Two Interactive Software, Inc.","c":"stock","m":"US","d":"2026-11-10","x":0,"t0":"2026-11-07T01:06:12Z","t1":"2026-11-10T01:07:29Z","dex":"xyz"},
+{"v":"h","e":"add","s":"xyz:MUU","u":"MUU","lk":"MUU","n":"Direxion Daily MU Bull 2X ETF","c":"etf","m":"US","d":"2026-11-10","x":0,"t0":"2026-11-07T01:06:12Z","t1":"2026-11-10T01:07:29Z","dex":"xyz"},
 {"v":"h","e":"add","s":"io:CRCL","u":"CRCL","lk":"CRCL","n":"Circle Internet Group, Inc.","c":"stock","m":"US","d":"2026-11-04","x":0,"t0":"2026-11-03T01:06:44Z","t1":"2026-11-04T01:06:31Z","dex":"io"},
 {"v":"h","e":"add","s":"io:AAPL","u":"AAPL","lk":"AAPL","n":"Apple Inc.","c":"stock","m":"US","d":"2026-11-03","x":0,"t0":"2026-10-31T14:54:58Z","t1":"2026-11-03T01:06:44Z","dex":"io"},
 {"v":"h","e":"add","s":"xyz:ICE","u":"ICE","lk":"ICE","n":"Intercontinental Exchange Inc.","c":"stock","m":"US","d":"2026-10-30","x":0,"t0":"2026-10-29T02:23:52Z","t1":"2026-10-29T23:06:39Z","dex":"xyz"},

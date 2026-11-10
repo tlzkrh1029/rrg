@@ -2125,10 +2125,20 @@
    "why": "방산 11/6 상승 원인을 찾지 못함. 제공된 제목에도 명확한 계기가 없음"
   },
   "S:000660:2026-11-06": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/07 10:18 KST",
-   "why": "SK hynix 11/6 하락을 검색했으나 7월 기사만 나오고 그날 기사는 없음"
+   "k": "AI 반도체 급락",
+   "ev": "미 중간선거 뒤 데이터센터 규제 우려로 AI주가 급락해 KOSPI가 6% 내리고 SK hynix가 10.44% 내림",
+   "src": [
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stocks-plunge-10-162015806.html"
+    },
+    {
+     "t": "Invezz",
+     "u": "https://invezz.com/ng/news/2026/11/06/ai-stock-bloodbath-hits-asia-as-samsung-sk-hynix-and-softbank-plunge/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
   },
   "S:CDE:2026-11-04": {
    "none": 1,
@@ -2249,6 +2259,218 @@
    "tries": 1,
    "at": "11/07 10:18 KST",
    "why": "제공된 제목이 배당주 비교 기사뿐이라 11/2 원인이 불분명하고 검색하지 못함"
+  },
+  "E:XME:2026-11-09": {
+   "k": "금·구리 반등",
+   "ev": "11/9 금과 구리가 반등하며 유럽 광업주가 1.7% 오르는 등 광업주가 강세를 보임",
+   "src": [
+    {
+     "t": "CNBC 11/9 증시 속보",
+     "u": "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
+  },
+  "E:DRAM:2026-11-09": {
+   "k": "AI 반도체 반등",
+   "ev": "전주 약 13% 급락했던 반도체 ETF SOXX가 7% 넘게 오르며 반도체주 반등을 이끎",
+   "src": [
+    {
+     "t": "CNBC 11/9 증시 속보",
+     "u": "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
+  },
+  "E:XLE:2026-11-09": {
+   "k": "국제유가 급락",
+   "ev": "WTI가 4.4%, 브렌트가 5.9% 내려 에너지가 S&P 500 업종 중 유일하게 하락함",
+   "src": [
+    {
+     "t": "CNBC 11/9 증시 속보",
+     "u": "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
+  },
+  "E:XLP:2026-11-09": {
+   "k": "경기민감주 순환매",
+   "ev": "11개 업종 중 10개가 올랐고 산업재와 경기소비재가 주도해 필수소비재는 상대적으로 소외됨",
+   "src": [
+    {
+     "t": "CNBC 11/9 증시 속보",
+     "u": "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
+  },
+  "E:XLI:2026-11-09": {
+   "k": "경기민감주 반등",
+   "ev": "AI 급락 뒤 시장이 반등하며 산업재가 4.2% 올라 S&P 500 업종 중 가장 강했음",
+   "src": [
+    {
+     "t": "CNBC 11/9 증시 속보",
+     "u": "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
+  },
+  "E:XLK:2026-11-09": {
+   "k": "기술주 반등",
+   "ev": "AMD가 13%, Broadcom이 9% 오르는 등 반도체가 이끈 반등에 나스닥이 2.7% 오름",
+   "src": [
+    {
+     "t": "CNBC 11/9 증시 속보",
+     "u": "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
+  },
+  "E:SMH:2026-11-09": {
+   "k": "반도체 낙폭 반등",
+   "ev": "전주 13% 급락한 반도체주가 반등해 SOXX가 7% 넘게 올랐고 Nvidia만 CEO 조사 소식에 4% 내림",
+   "src": [
+    {
+     "t": "CNBC 11/9 증시 속보",
+     "u": "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
+  },
+  "S:TSLA:2026-11-09": {
+   "k": "기술주 반등과 로보택시",
+   "ev": "AI 급락 뒤 기술주가 반등하는 가운데 Cybertruck 생산을 줄이고 Cybercab 생산을 늘린다는 소식에 5.5% 오름",
+   "src": [
+    {
+     "t": "CNBC 11/9 증시 속보",
+     "u": "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html"
+    },
+    {
+     "t": "TIKR Tesla 기사",
+     "u": "https://www.tikr.com/blog/tesla-rebounds-5-as-musk-ends-cybertruck-to-make-room-for-increased-cybercab-production"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
+  },
+  "S:META:2026-11-09": {
+   "k": "JPMorgan 선호주 편입",
+   "ev": "JPMorgan이 Meta를 Analyst Focus List에 올렸고 시장 반등도 겹쳐 약 5% 오름",
+   "src": [
+    {
+     "t": "Motley Fool 11/9",
+     "u": "https://fool.com/investing/2026/11/09/why-meta-platforms-stock-rallied-on-monday"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
+  },
+  "S:TTWO:2026-11-09": {
+   "k": "실적 앞 차익실현",
+   "ev": "최근 5개월 만의 최고 주간 상승 뒤 분기 실적 발표를 앞두고 약세였고 발표 후 순예약액은 18% 감소함",
+   "src": [
+    {
+     "t": "BigGo Finance",
+     "u": "https://finance.biggo.com/news/46ff1a2d-9c8b-4010-98b5-c0016303dd86"
+    },
+    {
+     "t": "MLQ 실적 기사",
+     "u": "https://mlq.ai/news/take-twos-net-bookings-fall-18-ten-days-before-gta-vi-as-it-stands-by-its-8-billion-plus-fiscal-year-outlook/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
+  },
+  "S:COP:2026-11-09": {
+   "k": "국제유가 급락",
+   "ev": "OPEC+ 증산 동결에도 WTI가 4.4%, 브렌트가 5.9% 내려 에너지주가 약세를 보임",
+   "src": [
+    {
+     "t": "CNBC 11/9 증시 속보",
+     "u": "https://www.cnbc.com/2026/11/08/stock-market-today-live-updates.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/10 10:23 KST"
+  },
+  "E:URA:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "우라늄·원전주 검색 3회. 원전주 반등 기사는 11/6 Oklo 실적뿐이고 11/9 우라늄 개별 계기는 찾지 못함"
+  },
+  "E:ARKG:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "유전체 바이오 11/9 검색 2회. 시장 반등 외에 ARKG 고유 계기를 찾지 못함"
+  },
+  "E:GNOM:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "유전체 업종 11/9 검색 2회. 11/2 하락, 10/28 반등 기사만 있고 11/9 계기는 없음"
+  },
+  "E:XBI:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "바이오 업종 11/9 검색 2회. 업종 고유 계기를 찾지 못함"
+  },
+  "E:IGV:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "소프트웨어주 11/9 움직임을 설명하는 기사를 찾지 못함. 반도체 주도 반등이라는 시장 기사만 있음"
+  },
+  "S:TWST:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "TWST 검색 2회. 10/28 반등 기사뿐이고 11/9 회사 소식이나 업종 계기를 찾지 못함"
+  },
+  "S:TEM:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "Tempus 11/9 검색 2회. 11월 주가 기사와 계기를 찾지 못함"
+  },
+  "S:TXG:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "10x Genomics 검색 2회. 11/2 하락, 11/5 실적 기사만 있고 11/9 계기는 찾지 못함"
+  },
+  "S:285A:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "Kioxia 11/9 검색 1회. 11/2 급락 기사만 있고 11/9 하락 원인은 찾지 못함"
+  },
+  "S:PM:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "Philip Morris 11/9 검색 1회. 10월 실적 관련 기사만 있고 11/9 원인은 찾지 못함"
+  },
+  "S:688825:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "CXMT 11/9 원인을 설명하는 기사를 검색에서 찾지 못함"
+  },
+  "S:005930:2026-11-05": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/10 10:23 KST",
+   "why": "11/5 삼성전자 낙폭을 직접 다룬 기사는 찾지 못함. 11/6 아시아 AI주 급락 기사만 확인함"
   }
  },
  "runs": [
@@ -2385,6 +2607,18 @@
    22,
    "claude-sonnet-5-5",
    0.543
+  ],
+  [
+   "11/10 10:23 KST",
+   24,
+   12,
+   12,
+   "ok",
+   20,
+   4,
+   26,
+   "claude-sonnet-5-5",
+   0.552
   ]
  ]
 }

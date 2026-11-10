@@ -1,20 +1,34 @@
-🔔 섹터 전환 터미널 · 2026-11-06 종가 · 변화 8건
+🔔 섹터 전환 터미널 · 2026-11-09 종가 · 변화 16건
 1W 백분위 높은 순 · [1W/1M/3M/6M/12M 백분위] · RRG 는 벤치마크 대비 국면
 
-ITA 항공우주·방산  [59/55/18/27/19]  Lagging vs XLI
+URA 우라늄  [95/14/0/0/0]  Lagging vs XLE
+  · ≈ 1주 반등, 1개월 이상에서는 미확인
+XBI 바이오  [91/55/55/86/86]  Lagging vs XLV
+  · ↓ 백분위 31점 하락 (6개월 → 1개월)
+XLY 경기소비재  [86/82/73/45/24]  Improving vs SPY
+  · ↑ 백분위 37점 상승 (6개월 → 1개월)
+XLRE 부동산  [82/86/77/50/52]  Improving vs SPY
+  · RRG Lagging → Improving (vs SPY)
+MAGS 매그니피센트 7  [74/26/65/43/32]  Leading vs SPY
+  · ≈ 1주 반등, 1개월 이상에서는 미확인
+XHB 주택건설  [73/100/41/59/19]  Lagging vs XLY
+  · RRG Lagging → Improving (vs SPY)
+  · ↑ 백분위 41점 상승 (6개월 → 1개월)
+GNOM 유전체학  [64/41/100/95/95]  Weakening vs XLV
+  · RRG Leading → Weakening (vs SPY)
+  · ↓ 백분위 54점 하락 (6개월 → 1개월)
+ITA 항공우주·방산  [50/59/18/27/29]  Lagging vs XLI
+  · ↑ 백분위 32점 상승 (6개월 → 1개월)
+XLP 필수소비재  [45/91/86/73/62]  Leading vs SPY
+  · RRG Improving → Leading (vs SPY)
+IGV 소프트웨어  [32/18/50/77/5]  Leading vs XLK
+  · ↓ 백분위 59점 하락 (6개월 → 1개월)
+XLI 산업재  [27/50/27/36/38]  Lagging vs SPY
   · ↗ SPY 비율 50일선 상향 돌파
-MAGS 매그니피센트 7  [57/30/57/39/32]  Leading vs SPY
-  · ↗ SPY 비율 200일선 상향 돌파
-XBI 바이오  [50/59/55/86/86]  Lagging vs XLV
+PAVE 미국 인프라  [14/45/23/23/48]  Improving vs XLI
+  · RRG Lagging → Improving (vs XLI)
   · ↗ SPY 비율 50일선 상향 돌파
-XLI 산업재  [45/45/27/36/38]  Lagging vs SPY
-  · ↘ SPY 비율 50일선 하향 이탈
-IGV 소프트웨어  [27/23/41/73/5]  Leading vs XLK
-  · ↓ 백분위 50점 하락 (6개월 → 1개월)
-GNOM 유전체학  [23/50/95/95/95]  Weakening vs XLV
-  · ↗ SPY 비율 50일선 상향 돌파
-  · ↓ 백분위 45점 하락 (6개월 → 1개월)
-XLE 에너지  [5/36/86/77/90]  Leading vs SPY
-  · ↓ 백분위 41점 하락 (6개월 → 1개월)
+XLE 에너지  [5/32/82/68/90]  Leading vs SPY
+  · ↓ 백분위 36점 하락 (6개월 → 1개월)
 
 https://tlzkrh1029.github.io/rrg/#board

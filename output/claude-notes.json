@@ -1,121 +1,156 @@
 {
- "asof": "2026-11-06",
- "at": "11/07 10:18 KST",
+ "asof": "2026-11-09",
+ "at": "11/10 10:23 KST",
  "etfs": {
   "XLV": {
    "text": [
-    "Eli Lilly가 10/29에 3분기 매출이 39% 늘어난 244억 달러라고 발표하며 2026년 매출 전망을 910억~920억 달러로 올렸습니다.",
-    "Mounjaro와 Zepbound 판매가 성장을 이끌었고 매출과 주당순이익이 시장 예상을 넘었다는 점이 XLV 안에서 LLY 비중이 큰 헬스케어의 상대 강세를 뒷받침했습니다."
+    "LLY가 10/29 3분기 실적에서 티르제파타이드 판매량이 세계적으로 53% 늘었다며 2026년 매출 전망을 850억~870억 달러에서 910억~920억 달러로 올렸습니다.",
+    "같은 시기 AI 투자 부담으로 기술주에서 자금이 빠져나가며 헬스케어로 방어적 순환매가 이어졌고, 매체들은 이 상승을 LLY, ABBV, JNJ가 이끌었다고 전했습니다."
    ],
    "src": [
     {
-     "t": "Eli Lilly 3분기 실적 8-K (SEC)",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000059478/000005947826000104/q326lillysalesandearningsp.htm"
+     "t": "Zacks, LLY 3분기 실적과 매출 전망 상향",
+     "u": "https://www.zacks.com/stock/news/3018734/lly-stock-jumps-as-q3-earnings-beat-estimates-2026-sales-view-raised"
+    },
+    {
+     "t": "Axios, 헬스케어 주식 상승 배경",
+     "u": "https://www.axios.com/2026/10/19/health-care-stocks-midterms"
+    },
+    {
+     "t": "Advisor Perspectives, 헬스케어 방어 수요",
+     "u": "https://www.advisorperspectives.com/articles/2026/10/27/healthcare-stocks-anti-ai-bet-investors-defensive"
     }
    ],
-   "kick": "Lilly 가이던스 상향"
+   "kick": "릴리 가이던스 상향"
   },
   "XLP": {
    "text": [
-    "P&G가 10/22에 회계연도 2027년 1분기 실적을 내놓았습니다.",
-    "순매출은 233억 달러로 4% 늘었고 핵심 주당순이익은 2.00달러로 시장 예상 1.88달러를 웃돌았으며, 회사는 연간 핵심 주당순이익 범위를 유지하고 매출 성장 전망은 2~4%로 올렸습니다."
+    "10/14 예상보다 높게 나온 9월 물가 지표 뒤에 투자 자금이 기술주에서 방어주로 옮겨 갔고, WMT가 그날 약 3% 올랐습니다.",
+    "WMT는 10/15 도이체방크가 투자의견을 매수로 올린 뒤 10월에 1999년 이후 가장 좋은 월간 흐름을 보였고, PG는 10/22 분기 실적을 낸 날 5.6% 올랐습니다."
    ],
    "src": [
     {
-     "t": "P&G 1분기 실적 8-K (SEC)",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000080424/000008042426000250/fy2627q1jas8-kexhibit991.htm"
+     "t": "24/7 Wall St., 물가 지표와 방어주",
+     "u": "https://247wallst.com/investing/2026/10/14/walmart-advances-3-as-inflation-data-sends-money-into-defensives-costco-and-target-edge-higher/"
     },
     {
-     "t": "Benzinga",
-     "u": "https://www.benzinga.com/node/62527709"
+     "t": "24/7 Wall St., 월마트 10월 흐름",
+     "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
+    },
+    {
+     "t": "TIKR, 월마트와 코스트코 한 달 상승",
+     "u": "https://www.tikr.com/blog/walmart-and-costco-just-gained-11-in-a-month-take-profits-or-buy-more"
     }
    ],
-   "kick": "P&G 실적 발표"
+   "kick": "방어주 순환매"
   },
   "XLRE": {
    "text": [
-    "Welltower가 10/26에 3분기 정규화 FFO가 주당 1.67달러로 24.6% 늘었다고 발표하고 연간 정규화 FFO 전망을 6.47~6.53달러로 올렸습니다.",
-    "시니어 하우징 운영 부문의 동일 자산 NOI가 21.0% 늘어난 것이 실적을 이끌었고, 회사는 2026년에 투자 210억 달러가 체결됐거나 계약 중이라고 밝혔습니다."
+    "미국 10년물 국채금리가 10/5 5.31%의 고점에서 10/29 4.98%까지 내려 차입 비용 부담이 줄었고, 리츠는 3분기 금리 급등으로 입은 타격을 4분기 초부터 되돌렸습니다.",
+    "WELL은 10/26 실적 발표 뒤 다음 거래일에 5% 넘게 내렸지만, 금리 하락이 부동산 업종 전체를 받쳤습니다."
    ],
    "src": [
     {
-     "t": "Welltower 3분기 실적 보도자료 (SEC)",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000766704/000076670426000043/a3q26pressreleaseprnnewswi.htm"
+     "t": "24/7 Wall St., 10년물 금리 하락과 리츠",
+     "u": "https://247wallst.com/investing/2026/11/01/the-10-year-treasury-yield-fell-33-basis-points-here-are-5-net-lease-reits-to-watch/"
     },
     {
-     "t": "Senior Housing News",
-     "u": "https://seniorhousingnews.com/2026/10/26/welltower-reports-2-7b-in-senior-housing-acquisitions-in-third-quarter/"
+     "t": "WealthManagement, 10월 리츠 반등",
+     "u": "https://www.wealthmanagement.com/alternative-investments/q-a-reits-bounce-back-in-october"
+    },
+    {
+     "t": "TIKR, WELL 3분기 실적 후 하락",
+     "u": "https://www.tikr.com/blog/welltower-fell-5-as-q3-revenue-misses-despite-raised-ffo-outlook"
     }
    ],
-   "kick": "Welltower 가이던스 상향"
+   "kick": "장기금리 하락"
   },
   "ARKG": {
    "text": [
-    "11/2에 10x Genomics가 12%, Twist Bioscience가 15%, Absci가 12% 하락하는 등 유전체 도구주가 함께 급락했습니다.",
-    "TIKR는 뚜렷한 개별 뉴스는 없었다고 전했고, 10x Genomics가 예상 매출의 14배로 거래돼 5년 평균 7.4배의 거의 두 배라는 밸류에이션 부담을 배경으로 지적했습니다."
+    "유전체 도구주가 AI 투자 우려 속에 10/22 TWST −9%, ILMN −5%로 함께 밀렸고, 11/2에는 TXG 12%, TWST 15%, ABSI 12%가 뚜렷한 재료 없이 급락했습니다.",
+    "ILMN은 10/29 실적에서 연간 전망을 올렸지만 유기적 매출이 시장 예상에 못 미쳐 다음 거래일 17% 넘게 떨어졌습니다. 반면 TEM은 11/2 연간 매출 전망을 16억 달러대로 올렸습니다."
    ],
    "src": [
     {
-     "t": "TIKR",
+     "t": "TIKR, TXG 12%와 TWST 15% 하락",
      "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
+    },
+    {
+     "t": "StockStory, ILMN 3분기 실적",
+     "u": "https://stockstory.org/us/stocks/nasdaq/ilmn/news/earnings-call/ilmn-q3-deep-dive-clinical-demand-and-ai-initiatives-drive-outlook-amid-revenue-miss"
+    },
+    {
+     "t": "Finviz, Tempus 3분기 실적과 전망 상향",
+     "u": "https://finviz.com/news/413244/tempus-ai-shares-rise-418-as-q3-earnings-beat-forecasts-and-revenue-guidance-increases"
     }
    ],
-   "kick": "유전체 도구주 동반 급락"
+   "kick": "유전체 장비주 급락"
   },
   "XME": {
    "text": [
-    "Freeport-McMoRan이 10/27에 3분기 실적을 내놓았는데, 구리 평균 실현가격은 파운드당 6.54달러로 올랐지만 인도네시아 PTFI의 구리 판매량은 1억 5300만 파운드로 전년 3억 6000만 파운드에서 크게 줄었습니다.",
-    "인도네시아 제련 처리량은 설비 용량의 67%에 그쳤고 미국 광산도 침수와 정전으로 계획을 밑돌아, XME에서 FCX가 가장 큰 하락 요인이 됐습니다."
+    "Fed가 10/28 금리를 동결하면서 두 명이 즉각 인상을 주장했고, 10/30 나스닥이 2.86% 떨어지는 위험 회피 장세에서 FCX가 5.55%, 남방구리가 7.42% 내렸습니다.",
+    "CLF는 10/19 3분기 조정 EBITDA가 시장 예상을 웃돌고 2027년 조정 EBITDA가 40억 달러를 넘을 것으로 내다보면서 장중 20%까지 올랐지만, 업종 전체의 하락을 막지는 못했습니다."
    ],
    "src": [
     {
-     "t": "Freeport-McMoRan 3분기 실적 8-K (SEC)",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000831259/000083125926000045/a3q2026exhibit991.htm"
+     "t": "Rio Times, 10/30 구리 시장",
+     "u": "https://www.riotimesonline.com/copper-markets-latam-friday-october-30-2026/"
     },
     {
-     "t": "Mining.com",
-     "u": "https://www.mining.com/web/freeport-mcmorans-third-quarter-profit-beats-on-higher-copper-prices/"
+     "t": "Finviz, CLF 3분기 실적 후 주가 상승",
+     "u": "https://finviz.com/news/403791/cleveland-cliffs-shares-rise-over-7-as-third-quarter-earnings-exceed-expectations"
+    },
+    {
+     "t": "Bloomberg Government, CLF 실적",
+     "u": "https://news.bgov.com/international-trade/cleveland-cliffs-profit-beats-estimates-as-us-steel-prices-climb"
     }
    ],
-   "kick": "인도네시아 판매 급감"
+   "kick": "구리 광산주 급락"
   },
   "DRAM": {
    "text": [
-    "Sandisk가 10/29에 시장 예상을 웃도는 분기 매출 110억 달러를 발표했지만, 다음 날인 10/30에 주가가 13.5% 떨어졌습니다.",
-    "Kioxia가 플래시 가격 급등세가 둔화되고 있다고 밝힌 것이 원인으로 꼽혔고, 가격 상승이 성장에서 차지하는 비중이 전 분기 약 3분의 2에서 이번에는 약 40%로 낮아졌습니다."
+    "삼성전자와 SK하이닉스는 10/6부터 7거래일간 각각 23.9%, 31.5% 떨어졌고, 이유로는 중국 CXMT의 DRAM 시장 진입과 AI 인프라 자금 조달 우려가 꼽혔습니다.",
+    "10/30 Sandisk가 13.5% 내린 데 이어 Kioxia가 11/2 10~12월 영업이익 전망을 약 2조 엔으로 전분기와 같게 제시하며 15.8% 급락해, 낸드 가격 상승세가 꺾인다는 우려가 번졌습니다."
    ],
    "src": [
     {
-     "t": "TIKR",
-     "u": "https://www.tikr.com/blog/sandisk-sinks-13-last-friday-after-a-beat-kioxia-says-the-flash-price-surge-is-fading"
+     "t": "Korea Times, 삼성·SK하이닉스 7거래일 하락",
+     "u": "https://www.koreatimes.co.kr/economy/20261016/samsung-sk-hynix-sell-off-excessive-as-memory-outlook-stays-strong-analysts"
     },
     {
-     "t": "TIKR",
-     "u": "https://www.tikr.com/blog/sandisk-lost-14-in-a-week-on-kioxias-warning-wedbush-still-sees-2000"
+     "t": "Forklog, 10/13 코스피 급락",
+     "u": "https://forklog.com/en/kospi-drops-5-5-amid-samsung-and-sk-hynix-stock-sell-off/"
+    },
+    {
+     "t": "FourWeekMBA, Kioxia 전망 실망",
+     "u": "https://fourweekmba.com/ai-kioxia-sinks-15-8-on-flat-2-trillion-guide-sk-hynix-rises/"
     }
    ],
-   "kick": "낸드 가격 상승 둔화"
+   "kick": "메모리 정점 우려"
   }
  },
  "stocks": {
   "META": {
    "text": [
-    "META는 10/21 장 마감 후 3분기 실적을 발표했고, 매출은 646억 달러로 가이던스 상단을 넘었지만 다음 거래일에 7.0% 하락해 10/19 주의 −9.4%와 이어졌습니다.",
-    "설비투자 349억 달러가 영업현금흐름 328억 달러를 웃돌아 잉여현금흐름이 마이너스였고, 약 99억 달러의 소송 합의 비용이 일반관리비에 반영되었습니다.",
-    "연간 설비투자 전망은 1,350억~1,450억 달러로 좁혀졌고 4분기 매출 전망은 730억~760억 달러로 제시되었습니다."
+    "Meta는 10/21 장 마감 후 3분기 매출 646억 달러로 시장 예상을 웃돌았지만, 분기 설비투자가 349억 달러로 늘어 잉여현금흐름이 약 −21억 달러가 됐고 2026년 설비투자 전망 하단을 1,350억 달러로 올리자 다음 거래일 7% 안팎 내렸습니다. 총비용에는 여러 주 검찰총장과의 합의에 따른 99억 달러 비용도 포함됐습니다.",
+    "이사회는 10/21 의결권 없는 Class C 보통주를 1월부터 주식배당으로 배정하는 안을 승인했고, 10/26에는 의무전환 우선주 발행 계약을 맺었습니다. 주가는 11/9 주에 5.1% 올랐지만 그 이유로 지목할 만한 개별 사건은 찾지 못했습니다."
    ],
    "src": [
     {
-     "t": "Let's Data Science",
-     "u": "https://letsdatascience.com/news/meta-narrows-2026-capital-spending-range-to-135-billion-145-46f12e07"
+     "t": "InvestingLive, Meta 7% 하락과 지출 계획",
+     "u": "https://investinglive.com/stocks/meta-shares-fall-7-on-huge-spending-plans/"
     },
     {
-     "t": "interactive investor",
-     "u": "https://www.ii.co.uk/analysis-commentary/ii-view-meta-enjoys-strong-q3-hit-costly-litigation-ii540660"
+     "t": "AP, Meta 3분기 매출과 Muse 계정",
+     "u": "https://www.news4jax.com/business/2026/10/21/meta-q3-revenue-tops-estimates-and-zuckerberg-says-muse-accounts-have-topped-10-million/"
+    },
+    {
+     "t": "LetsDataScience, 설비투자 전망 조정",
+     "u": "https://letsdatascience.com/news/meta-narrows-2026-capital-spending-range-to-135-billion-145-46f12e07"
     }
    ],
-   "asof": "2026-10-28",
-   "at": "10/29 10:21 KST"
+   "asof": "2026-11-09",
+   "at": "11/10 10:23 KST"
   },
   "XOM": {
    "text": [
@@ -233,44 +268,6 @@
    "asof": "2026-11-03",
    "at": "11/04 10:19 KST"
   },
-  "GOOGL": {
-   "text": [
-    "GOOGL은 10/19 주에 −6.0%를 기록한 뒤 10/28 장 마감 후 3분기 실적을 발표했습니다. 매출은 1,276억 달러로 25% 늘어 예상과 비슷했고 Google Cloud 매출은 약 307억 달러로 두 배 넘게 늘었지만, 검색 매출은 12% 증가에 그쳐 시장이 기대한 15%에 못 미쳤습니다.",
-    "설비투자는 514억 달러로 1년 전의 두 배를 넘었고 잉여현금흐름은 −91억 달러였으며, 회사는 2026년 설비투자 전망 약 2,000억 달러를 유지하고 2027년에는 3,000억 달러를 예상한다고 밝혔습니다.",
-    "주당순이익은 지분 투자 평가손실 때문에 2.12달러로 줄었고, 이런 배경 속에 주가는 실적 발표 직후 시간외에서 11% 넘게 내린 뒤 10/29에 약 13% 하락해 상장 이후 가장 큰 일간 낙폭을 기록했습니다."
-   ],
-   "src": [
-    {
-     "t": "Fortune",
-     "u": "https://fortune.com/2026/10/28/alphabet-google-stock-drops-cloud-revenue-doubles-free-cash-flow-negative/"
-    },
-    {
-     "t": "Yahoo Finance",
-     "u": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-29-dow-sp-500-nasdaq-alphabet-microsoft-earnings-130305714.html"
-    }
-   ],
-   "asof": "2026-10-29",
-   "at": "10/30 08:20 KST"
-  },
-  "GOOG": {
-   "text": [
-    "GOOGL은 10/19 주에 −6.0%를 기록한 뒤 10/28 장 마감 후 3분기 실적을 발표했습니다. 매출은 1,276억 달러로 25% 늘어 예상과 비슷했고 Google Cloud 매출은 약 307억 달러로 두 배 넘게 늘었지만, 검색 매출은 12% 증가에 그쳐 시장이 기대한 15%에 못 미쳤습니다.",
-    "설비투자는 514억 달러로 1년 전의 두 배를 넘었고 잉여현금흐름은 −91억 달러였으며, 회사는 2026년 설비투자 전망 약 2,000억 달러를 유지하고 2027년에는 3,000억 달러를 예상한다고 밝혔습니다.",
-    "주당순이익은 지분 투자 평가손실 때문에 2.12달러로 줄었고, 이런 배경 속에 주가는 실적 발표 직후 시간외에서 11% 넘게 내린 뒤 10/29에 약 13% 하락해 상장 이후 가장 큰 일간 낙폭을 기록했습니다."
-   ],
-   "src": [
-    {
-     "t": "Fortune",
-     "u": "https://fortune.com/2026/10/28/alphabet-google-stock-drops-cloud-revenue-doubles-free-cash-flow-negative/"
-    },
-    {
-     "t": "Yahoo Finance",
-     "u": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-29-dow-sp-500-nasdaq-alphabet-microsoft-earnings-130305714.html"
-    }
-   ],
-   "asof": "2026-10-29",
-   "at": "10/30 08:20 KST"
-  },
   "MU": {
    "text": [
     "MU는 10/12 중국 CXMT가 차세대 DRAM 셀 기술의 진전을 발표하고 연말까지 서버용 메모리 제품을 내놓겠다고 밝힌 날 2%대 내렸고, 이 주 수익률은 −14.6%였습니다. 같은 시기 SK하이닉스와 삼성전자도 약세였고 금리 우려가 함께 거론됐습니다.",
@@ -288,20 +285,6 @@
    ],
    "asof": "2026-11-04",
    "at": "11/05 10:18 KST"
-  },
-  "LLY": {
-   "text": [
-    "LLY는 10/29 장 시작 전에 3분기 실적을 발표했습니다. 매출은 39% 늘어난 244억 달러였고 Mounjaro가 107억 달러, 미국 Zepbound가 53억 달러였으며, 약 9억 달러의 일회성 효과가 포함됐습니다.",
-    "회사는 2026년 매출 전망을 기존 850억~870억 달러에서 910억~920억 달러로 올렸습니다. 같은 분기에 retatrutide가 제2형 당뇨병 3상에서 Ozempic 2mg을 이겼다는 결과도 공개했고, 인수 관련 연구개발비 비용 때문에 주당순이익 전망은 35.00~36.00달러로 제시했습니다. 이날 주가는 6.6% 올랐습니다."
-   ],
-   "src": [
-    {
-     "t": "Eli Lilly 8-K(SEC)",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000059478/000005947826000104/q326lillysalesandearningsp.htm"
-    }
-   ],
-   "asof": "2026-10-29",
-   "at": "10/30 08:20 KST"
   },
   "GE": {
    "text": [
@@ -325,24 +308,6 @@
    ],
    "asof": "2026-11-04",
    "at": "11/05 11:04 KST"
-  },
-  "WMT": {
-   "text": [
-    "WMT는 10/15에 Deutsche Bank가 투자의견을 Hold에서 Buy로 올리고 목표가를 113달러에서 136달러로 상향한 날 3% 가까이 올랐습니다. 근거로는 9월 소비자물가가 예상보다 높게 나온 가운데 인플레이션이 시장점유율 확대에 유리하다는 점과 광고·마켓플레이스·Walmart+ 같은 고마진 사업이 제시됐습니다.",
-    "10/22에는 WMT가 2.82% 올랐고 같은 날 PG가 실적 발표 뒤 5.58% 올랐습니다. 24/7 Wall St.는 이 상승에 회사 고유의 신규 계약이나 가이던스 변경은 없었고 AI·기술주에서 필수소비재로의 자금 이동이 배경이라고 설명했습니다. 10/23 기준 WMT는 10월에 약 16.6% 올라 1999년 이후 최고의 월간 성과를 향해 가고 있었습니다."
-   ],
-   "src": [
-    {
-     "t": "24/7 Wall St.",
-     "u": "https://247wallst.com/investing/2026/10/15/walmart-climbs-3-on-deutsche-bank-upgrade-costco-and-target-tick-up/"
-    },
-    {
-     "t": "24/7 Wall St.",
-     "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
-    }
-   ],
-   "asof": "2026-10-29",
-   "at": "10/30 08:20 KST"
   },
   "SKHY": {
    "text": [
@@ -906,6 +871,108 @@
    ],
    "asof": "2026-11-06",
    "at": "11/07 10:18 KST"
+  },
+  "285A": {
+   "text": [
+    "Kioxia는 11/2 10~12월 영업이익 전망을 약 2조 엔으로 전분기와 같은 수준으로 제시했고, 이 발표 뒤 도쿄에서 하루 만에 15.8% 내려 11,345엔에 마감했습니다.",
+    "직전 거래일인 10/30에는 협력사 Sandisk가 13.5% 내렸고, 낸드 가격 상승세가 둔화한다는 우려가 겹쳤습니다. 이 하락이 11/2 주의 −36.8% 수익률의 대부분을 설명합니다."
+   ],
+   "src": [
+    {
+     "t": "FourWeekMBA, Kioxia 15.8% 하락",
+     "u": "https://fourweekmba.com/ai-kioxia-sinks-15-8-on-flat-2-trillion-guide-sk-hynix-rises/"
+    },
+    {
+     "t": "Tiger Brokers, Kioxia 실적 충격과 미국 저장장치주",
+     "u": "https://www-web.itiger.com/news/1191786438"
+    }
+   ],
+   "asof": "2026-11-09",
+   "at": "11/10 10:23 KST"
+  },
+  "NTRA": {
+   "text": [
+    "Natera는 11/5 장 마감 후 3분기 매출 7억 9,400만 달러(전년 대비 34% 증가)를 발표하고 2026년 매출 전망을 30억 500만~30억 3,500만 달러로 올렸지만, 주당 순손실은 0.42달러로 예상보다 컸고 판관비와 R&D 지출 전망도 함께 올렸습니다.",
+    "같은 시기 Steve Chapman CEO가 약 8년 만에 물러나고 Solomon Moshkevich가 이어받는다고 알려졌으며, 주가는 11/6 14.6% 내렸습니다. 11/6에는 Evercore ISI가 투자의견 Outperform을 유지하며 목표가를 400달러로 낮췄습니다."
+   ],
+   "src": [
+    {
+     "t": "Natera 3분기 실적 보도자료",
+     "u": "https://www.natera.com/company/news/natera-reports-third-quarter-2026-financial-results/"
+    },
+    {
+     "t": "TIKR, CEO 교체와 주가 하락",
+     "u": "https://www.tikr.com/blog/natera-sinks-14-as-ceo-steve-chapman-steps-down-despite-q3-beat-an-excellent-time-to-transition"
+    },
+    {
+     "t": "Finimize, 전망 상향에도 주가 하락",
+     "u": "https://finimize.com/content/natera-lifted-its-2026-outlook-but-shares-still-slid"
+    }
+   ],
+   "asof": "2026-11-09",
+   "at": "11/10 10:23 KST"
+  },
+  "TTWO": {
+   "text": [
+    "Take-Two는 11/9 장 마감 후 2분기(FY2027) 총 순예약액이 16억 달러로 전년보다 18% 줄었다고 발표했습니다. 이는 회사가 제시한 16억 2,000만~16억 7,000만 달러 범위의 하단에 못 미치는 수치입니다.",
+    "회사는 같은 발표에서 FY2027 순예약액 전망 80억~82억 달러를 그대로 유지했고, GTA VI 출시일은 11/19로 8월 발표 때부터 안내돼 왔습니다. 마지막 주의 −3.5%는 이 실적 발표 전 종가까지의 움직임입니다."
+   ],
+   "src": [
+    {
+     "t": "SEC 8-K, 2분기 FY2027 실적 보도자료",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000946581/000162828026072175/ttwo2q27earningsrelease.htm"
+    },
+    {
+     "t": "Rallies.ai, FY2027 전망과 GTA VI 11/19 출시",
+     "u": "https://rallies.ai/news/take-two-forecasts-8-82b-fiscal-2027-bookings-confirms-november-19-gta-vi-launch"
+    }
+   ],
+   "asof": "2026-11-09",
+   "at": "11/10 10:23 KST"
+  },
+  "PM": {
+   "text": [
+    "PM은 10/21 3분기에 조정 EPS가 5.4% 늘어난 2.36달러로 사상 최고를 냈지만, 연간 조정 EPS 전망을 환율 영향만 반영해 8.29~8.44달러로 낮췄고 그날 주가는 1.2% 내렸습니다.",
+    "Benzinga는 에너지 비용 상승과 미국 ZYN 마케팅 비용 증가가 부담이 됐다고 전했습니다. 10-Q는 10/23에 제출됐습니다. 11/2 주의 −5.2%를 설명하는 뚜렷한 개별 사건은 찾지 못했습니다."
+   ],
+   "src": [
+    {
+     "t": "SEC 8-K, 3분기 실적 보도자료",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001413329/000162828026066596/earningsreleasepm-ex991xq3.htm"
+    },
+    {
+     "t": "Finviz, PM 연간 EPS 전망 환율 반영 수정",
+     "u": "https://finviz.com/news/405122/philip-morris-international-reports-2026-third-quarter-first-nine-months-results-and-updates-2026-full-year-adjusted-diluted-eps-forecast-for-currency-only"
+    },
+    {
+     "t": "Benzinga, PM 전망 하향",
+     "u": "https://www.benzinga.com/node/62498043"
+    }
+   ],
+   "asof": "2026-11-09",
+   "at": "11/10 10:23 KST"
+  },
+  "688825": {
+   "text": [
+    "CXMT는 10/16 3분기 실적 예고를 낸 뒤 10/19 장중 9% 가까이 내려 41위안으로 상장 후 최저를 기록했습니다. 예고에서 3분기 순이익의 전 분기 대비 증가폭이 크게 줄어든 점이 부담이 됐습니다.",
+    "10/30에는 3분기 매출 1,187억 위안(전년 대비 613% 증가)과 순이익 544억 위안을 공시했고, 회장 Zhu Yiming이 1억~2억 위안 규모의 자사주 매입을 제안했습니다. 회사 주가는 8월 고점보다 32% 낮은 상태였습니다."
+   ],
+   "src": [
+    {
+     "t": "SCMP, CXMT 3분기 실적과 자사주 매입",
+     "u": "https://scmp.com/tech/big-tech/article/3371314/cxmt-forecasts-us198-billion-3-quarters-net-income-pledges-share-buy-back"
+    },
+    {
+     "t": "The Standard, CXMT 분기 흑자",
+     "u": "https://www.thestandard.com.hk/innovation/article/347055/Chinas-CXMT-reports-quarterly-profit-after-Asias-biggest-IPO-this-year"
+    },
+    {
+     "t": "Sohu, 長鑫科技 3분기 보고",
+     "u": "https://m.sohu.com/a/1095082985_430392"
+    }
+   ],
+   "asof": "2026-11-09",
+   "at": "11/10 10:23 KST"
   }
  },
  "runs": [
@@ -1054,6 +1121,19 @@
    23,
    "claude-sonnet-5-5",
    0.523
+  ],
+  [
+   "11/10 10:23 KST",
+   6,
+   6,
+   6,
+   6,
+   "ok",
+   25,
+   0,
+   27,
+   "claude-sonnet-5-5",
+   0.661
   ]
  ]
 }

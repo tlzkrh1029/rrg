@@ -1,12 +1,15 @@
-돌파 지도 2026-11-06 (USD 기준, 직전 종가)
-켜진 칸 20일 61/279 (22%) · 55일 44 · 52주 21 · 사상 최고 14 · 이탈 70 · 실패 22
+돌파 지도 2026-11-09 (USD 기준, 직전 종가)
+켜진 칸 20일 69/278 (25%) · 55일 53 · 52주 23 · 사상 최고 16 · 이탈 55 · 실패 21
 
 새 돌파 (1일째)
-  20일: TTWO(XLC)*, SYRE(XBI)*
+  사상 최고: AAPL(XLK)*, JNJ(XLV), TMO(XLV)
+  52주: ULCC(JETS)*
+  55일: SYRE(XBI), RGLD(XME)*, UAL(JETS)*, AAL(JETS)*
+  20일: DE(XLI·PAVE), AA(XME)*, AEM(GDX)*, ABX(GDX)*, WPM(GDX)*, AU(GDX)*, AC(JETS)*
   * SPY 대비로도 켜진 칸
 새 이탈 (1일째)
-  55일 바닥: HALO(XBI), NTRA(GNOM·ARKG), 000660(DRAM), ABBN(GRID)
-오늘 실패한 돌파: ECL(XLB, 사상 최고), WSM(XHB, 사상 최고), 8001(URA, 사상 최고), ECL(XLB, 52주), WSM(XHB, 52주), 8001(URA, 52주), SO(XLU, 55일), UBSI(KRE, 55일), WSM(XHB, 55일), 8001(URA, 55일), AMZN(XLY, 20일), BKNG(XLY, 20일), SO(XLU, 20일), WSM(XHB, 20일), 8001(URA, 20일)
-블록 알림 (20일): XLC 5/10 켜짐 · GRID ▼6/10 이탈 · XOP ▼5/10 이탈
+  20일 바닥: PM(XLP)
+오늘 실패한 돌파: TTWO(XLC, 20일), EDG(GDX, 20일)
+블록 알림 (20일): GDX 7/10 켜짐
 
 https://tlzkrh1029.github.io/rrg/breakout/

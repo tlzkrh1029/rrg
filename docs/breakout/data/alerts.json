@@ -1,238 +1,222 @@
 {
- "asof": "2026-11-06",
- "prev_asof": "2026-11-05",
+ "asof": "2026-11-09",
+ "prev_asof": "2026-11-06",
  "alerts": [
   {
    "type": "up",
-   "H": "20",
-   "key": "TTWO",
-   "name": "Take-Two Interactive Software, Inc.",
+   "H": "ath",
+   "key": "AAPL",
+   "name": "Apple Inc.",
    "etfs": [
-    "XLC"
+    "XLK"
    ],
-   "over": 0.0067,
+   "over": 0.0051,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "JNJ",
+   "name": "Johnson & Johnson",
+   "etfs": [
+    "XLV"
+   ],
+   "over": 0.01322,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "TMO",
+   "name": "Thermo Fisher Scientific Inc.",
+   "etfs": [
+    "XLV"
+   ],
+   "over": 0.01756,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
+   "key": "ULCC",
+   "name": "Frontier Group Holdings, Inc.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": 0.03598,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "SYRE",
+   "name": "Spyre Therapeutics, Inc.",
+   "etfs": [
+    "XBI"
+   ],
+   "over": 0.01528,
+   "spy": "none",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "RGLD",
+   "name": "Royal Gold, Inc.",
+   "etfs": [
+    "XME"
+   ],
+   "over": 0.05309,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "UAL",
+   "name": "United Airlines Holdings, Inc.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": 0.0253,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "AAL",
+   "name": "American Airlines Group Inc.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": 0.01505,
    "spy": "lit",
    "qqq": "lit"
   },
   {
    "type": "up",
    "H": "20",
-   "key": "SYRE",
-   "name": "Spyre Therapeutics, Inc.",
+   "key": "DE",
+   "name": "Deere & Company",
    "etfs": [
-    "XBI"
+    "XLI",
+    "PAVE"
    ],
-   "over": 0.0412,
+   "over": 0.02339,
+   "spy": "none",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "AA",
+   "name": "Alcoa Corporation",
+   "etfs": [
+    "XME"
+   ],
+   "over": 0.0062,
    "spy": "lit",
-   "qqq": "quiet"
+   "qqq": "failed"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "AEM",
+   "name": "Agnico Eagle Mines Limited",
+   "etfs": [
+    "GDX"
+   ],
+   "over": 0.04996,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "ABX",
+   "name": "Barrick Mining Corporation",
+   "etfs": [
+    "GDX"
+   ],
+   "over": 0.02101,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "WPM",
+   "name": "Wheaton Precious Metals Corp.",
+   "etfs": [
+    "GDX"
+   ],
+   "over": 0.02697,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "AU",
+   "name": "AngloGold Ashanti plc",
+   "etfs": [
+    "GDX"
+   ],
+   "over": 0.06346,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "AC",
+   "name": "Air Canada",
+   "etfs": [
+    "JETS"
+   ],
+   "over": 0.01925,
+   "spy": "lit",
+   "qqq": "none"
   },
   {
    "type": "down",
-   "H": "55",
-   "key": "HALO",
-   "name": "Halozyme Therapeutics, Inc.",
+   "H": "20",
+   "key": "PM",
+   "name": "Philip Morris International Inc.",
    "etfs": [
-    "XBI"
+    "XLP"
    ],
-   "over": -0.01633
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "NTRA",
-   "name": "Natera, Inc.",
-   "etfs": [
-    "GNOM",
-    "ARKG"
-   ],
-   "over": -0.03146
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "000660",
-   "name": "SK hynix Inc",
-   "etfs": [
-    "DRAM"
-   ],
-   "over": -0.07441
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "ABBN",
-   "name": "ABB Ltd",
-   "etfs": [
-    "GRID"
-   ],
-   "over": -0.0118
-  },
-  {
-   "type": "failed",
-   "H": "ath",
-   "key": "ECL",
-   "name": "Ecolab Inc.",
-   "etfs": [
-    "XLB"
-   ],
-   "over": -0.01699
-  },
-  {
-   "type": "failed",
-   "H": "ath",
-   "key": "WSM",
-   "name": "Williams-Sonoma, Inc.",
-   "etfs": [
-    "XHB"
-   ],
-   "over": -0.02584
-  },
-  {
-   "type": "failed",
-   "H": "ath",
-   "key": "8001",
-   "name": "ITOCHU Corporation",
-   "etfs": [
-    "URA"
-   ],
-   "over": -0.05463
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "ECL",
-   "name": "Ecolab Inc.",
-   "etfs": [
-    "XLB"
-   ],
-   "over": -0.01699
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "WSM",
-   "name": "Williams-Sonoma, Inc.",
-   "etfs": [
-    "XHB"
-   ],
-   "over": -0.02584
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "8001",
-   "name": "ITOCHU Corporation",
-   "etfs": [
-    "URA"
-   ],
-   "over": -0.05463
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "SO",
-   "name": "The Southern Company",
-   "etfs": [
-    "XLU"
-   ],
-   "over": -0.01577
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "UBSI",
-   "name": "United Bankshares, Inc.",
-   "etfs": [
-    "KRE"
-   ],
-   "over": -0.01339
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "WSM",
-   "name": "Williams-Sonoma, Inc.",
-   "etfs": [
-    "XHB"
-   ],
-   "over": -0.02584
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "8001",
-   "name": "ITOCHU Corporation",
-   "etfs": [
-    "URA"
-   ],
-   "over": -0.05463
+   "over": -0.02198
   },
   {
    "type": "failed",
    "H": "20",
-   "key": "AMZN",
-   "name": "Amazon.com, Inc.",
+   "key": "TTWO",
+   "name": "Take-Two Interactive Software, Inc.",
    "etfs": [
-    "XLY"
+    "XLC"
    ],
-   "over": -0.01268
+   "over": -0.0283
   },
   {
    "type": "failed",
    "H": "20",
-   "key": "BKNG",
-   "name": "Booking Holdings Inc.",
+   "key": "EDG",
+   "name": "Gold Fields Limited",
    "etfs": [
-    "XLY"
+    "GDX"
    ],
-   "over": -0.03097
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "SO",
-   "name": "The Southern Company",
-   "etfs": [
-    "XLU"
-   ],
-   "over": -0.01577
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "WSM",
-   "name": "Williams-Sonoma, Inc.",
-   "etfs": [
-    "XHB"
-   ],
-   "over": -0.02584
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "8001",
-   "name": "ITOCHU Corporation",
-   "etfs": [
-    "URA"
-   ],
-   "over": -0.05463
+   "over": -0.04192
   },
   {
    "type": "block_on",
-   "etf": "XLC",
-   "lit": 5,
-   "n": 10
-  },
-  {
-   "type": "block_down",
-   "etf": "GRID",
-   "down": 6,
-   "n": 10
-  },
-  {
-   "type": "block_down",
-   "etf": "XOP",
-   "down": 5,
+   "etf": "GDX",
+   "lit": 7,
    "n": 10
   }
  ]

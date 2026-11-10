@@ -1,27 +1,27 @@
-돌파 지도 주간 브리핑 · 종가 2026-11-06 · 구성종목 2026-11-07
+돌파 지도 주간 브리핑 · 종가 2026-11-09 · 구성종목 2026-11-10
 
 켜진 칸 (지평별)
-  USD: 20일 61/279 (22%) · 55일 44 · 52주 21 · 사상 최고 14 · 이탈 70 · 실패 22
-  QQQ 대비: 20일 119/279 (43%) · 55일 107 · 52주 32 · 사상 최고 21 · 이탈 33 · 실패 14
-  SPY 대비: 20일 95/279 (34%) · 55일 75 · 52주 18 · 사상 최고 12 · 이탈 47 · 실패 12
+  USD: 20일 69/278 (25%) · 55일 53 · 52주 23 · 사상 최고 16 · 이탈 55 · 실패 21
+  QQQ 대비: 20일 110/278 (40%) · 55일 101 · 52주 25 · 사상 최고 15 · 이탈 25 · 실패 18
+  SPY 대비: 20일 92/278 (33%) · 55일 78 · 52주 19 · 사상 최고 12 · 이탈 41 · 실패 12
 
 켜진 비율이 높은 블록 (USD 20일)
-  XLP 필수소비재 7/10 ×2 · SPY 대비 9/10
+  XLP 필수소비재 7/10 ▼1 ×1 · SPY 대비 8/10
+  GDX 금광 7/10 ×1 · SPY 대비 6/10
   XLRE 부동산 6/10 ×1 · SPY 대비 6/10
-  XLC 커뮤니케이션 5/10 · SPY 대비 5/10
-  TAN 태양광 5/10 ▼1 · SPY 대비 5/10
-  XLF 금융 4/10 ▼2 ×2 · SPY 대비 7/10
-  GDX 금광 4/10 · SPY 대비 7/10
-이탈이 몰린 블록 (USD 20일): SMH ▼8/10 · DRAM ▼8/10 · XLK ▼7/10 · GRID ▼6/10
+  TAN 태양광 6/10 · SPY 대비 6/10
+  XLF 금융 4/10 ×1 · SPY 대비 7/10
+  XLC 커뮤니케이션 4/10 ×1 · SPY 대비 5/10
+이탈이 몰린 블록 (USD 20일): DRAM ▼8/10 · XLK ▼7/10 · SMH ▼6/10 · XLE ▼5/10
 
 켜진 칸 (USD, 가장 높은 지평; * 는 SPY 대비로도 켜짐)
-  사상 최고 13: FAST(PAVE) 3일, CL(XLP) 3일, BRK.B(XLF) 5일, PSA(XLRE) 5일, MAR(XLY) 5일*, HLT(XLY) 5일*, V(XLF) 5일, KO(XLP) 5일, MAS(XHB) 5일, MA(XLF) 6일, SN(XHB) 7일, EMR(PAVE) 9일, GILD(XLV·XBI) 10일
-  52주 7: DIS(XLC) 3일, PG(XLP) 3일, AMT(XLRE) 3일, MDLZ(XLP) 5일, UCB(KRE) 5일, REGN(XBI) 6일*, RRC(XOP) 10일
-  55일 24: APP(XLC·IGV) 2일*, ALGT(JETS) 2일*, RUN(TAN) 2일*, NST(GDX) 2일, LOW(XLY·XHB) 3일*, MCD(XLY) 3일*, DAL(JETS) 3일*, NEE(XLU) 3일*, WELL(XLRE) 3일*, D(XLU) 3일*, HD(XLY) 3일*, QGEN(GNOM) 3일*, SPG(XLRE) 4일*, COST(XLP) 5일*, CWEN(TAN) 5일*, TOL(XHB) 5일*, VMC(XLB) 5일*, CVCO(XHB) 6일*, WMT(XLP) 6일*, DUK(XLU) 6일*, XEL(XLU) 6일*, LIN(XLB) 6일*, ETR(XLU) 7일*, EXC(XLU) 7일*
-  20일 25: SYRE(XBI) 1일*, TTWO(XLC) 1일*, EDG(GDX) 2일*, VMRK(XLRE) 2일*, FNV(GDX) 2일*, NEM(XLB·XME·GDX) 2일*, RGLD(XME) 3일*, DORL(TAN) 3일*, FSLR(TAN) 3일*, UAL(JETS) 3일, VTR(XLRE) 3일*, TGT(XLP) 3일, VZ(XLC) 3일*, NXT(TAN) 5일*, O(XLRE) 5일*, GE(XLI·ITA) 5일*, CBRE(XLRE) 5일*, CMCSA(XLC) 6일*, ABT(XLV) 6일*, ULCC(JETS) 7일*, TDG(ITA) 7일*, WFC(XLF) 7일*, BEAM(ARKG) 8일*, HASI(TAN) 9일*, LUV(JETS) 10일*
+  사상 최고 16: TMO(XLV) 1일, JNJ(XLV) 1일, AAPL(XLK) 1일*, FAST(PAVE) 4일, BLK(XLF) 4일, CL(XLP) 4일, BRK.B(XLF) 6일, MAS(XHB) 6일, PSA(XLRE) 6일, MAR(XLY) 6일*, HLT(XLY) 6일*, V(XLF) 6일, KO(XLP) 6일, MA(XLF) 7일, SN(XHB) 8일, EMR(PAVE) 10일
+  52주 7: ULCC(JETS) 1일*, DIS(XLC) 4일, PG(XLP) 4일, AMT(XLRE) 4일, MDLZ(XLP) 6일, UCB(KRE) 6일, REGN(XBI) 7일*
+  55일 31: RGLD(XME) 1일*, UAL(JETS) 1일*, SYRE(XBI) 1일, AAL(JETS) 1일*, APP(XLC·IGV) 3일*, ALGT(JETS) 3일*, NST(GDX) 3일, RUN(TAN) 3일*, DAL(JETS) 4일*, LOW(XLY·XHB) 4일*, MCD(XLY) 4일*, HD(XLY) 4일*, WELL(XLRE) 4일*, NEE(XLU) 4일*, D(XLU) 4일*, QGEN(GNOM) 4일*, SHLS(TAN) 4일*, SPG(XLRE) 5일*, COST(XLP) 6일*, SSD(XHB) 6일*, TOL(XHB) 6일*, CWEN(TAN) 6일*, VMC(XLB) 6일*, CVCO(XHB) 7일*, WMT(XLP) 7일*, DUK(XLU) 7일*, LIN(XLB) 7일*, XEL(XLU) 7일*, ETR(XLU) 8일*, APD(XLB) 8일*, EXC(XLU) 8일*
+  20일 26: AU(GDX) 1일*, AEM(GDX) 1일*, WPM(GDX) 1일*, DE(XLI·PAVE) 1일, ABX(GDX) 1일*, AC(JETS) 1일*, AA(XME) 1일*, FNV(GDX) 3일*, NEM(XLB·XME·GDX) 3일*, VMRK(XLRE) 3일*, DORL(TAN) 4일*, TGT(XLP) 4일, FSLR(TAN) 4일*, VTR(XLRE) 4일*, TRN(GRID) 4일, VZ(XLC) 4일*, NXT(TAN) 6일*, GE(XLI·ITA) 6일*, O(XLRE) 6일*, CBRE(XLRE) 6일*, CMCSA(XLC) 7일*, ABT(XLV) 7일*, TDG(ITA) 8일*, WFC(XLF) 8일*, BEAM(ARKG) 9일*, HASI(TAN) 10일*
 
-약세 신호 84: NVDA(XLK·SMH) 55일 이탈 6일, MSFT(XLK·IGV) 실패, AVGO(XLK·SMH) 55일 이탈 2일, AMD(XLK·SMH) 55일 이탈 2일, MU(XLK·SMH·DRAM) 55일 이탈 5일, CSCO(XLK) 55일 이탈 5일, PLTR(XLK·IGV) 55일 이탈 2일, INTC(XLK) 55일 이탈 6일, PANW(XLK·IGV) 55일 이탈 2일, GS(XLF) 55일 이탈 2일, MS(XLF) 실패, C(XLF) 55일 이탈 2일, AXP(XLF) 실패, ABBV(XLV·XBI) 실패, TMO(XLV) 실패, PFE(XLV) 실패, AMZN(XLY) 실패, TSLA(XLY·GRID) 20일 이탈 2일, BKNG(XLY) 실패, SBUX(XLY) 실패, GEV(XLI) 55일 이탈 2일, BA(XLI·ITA) 55일 이탈 9일, ETN(XLI·GRID) 55일 이탈 3일, PM(XLP) 실패, PEP(XLP) 실패, XOM(XLE·XOP) 20일 이탈 2일, PSX(XLE·XOP) 20일 이탈 3일, MPC(XLE·XOP) 20일 이탈 4일, WMB(XLE) 55일 이탈 2일, EOG(XLE·XOP) 20일 이탈 2일, SO(XLU) 실패, CEG(XLU) 55일 이탈 3일, SHW(XLB) 실패, CRH(XLB·PAVE) 실패, MLM(XLB) 실패, FCX(XLB·XME) 55일 이탈 6일, NUE(XLB·XME·PAVE) 실패, EQIX(XLRE) 실패, TSM(SMH) 55일 이탈 6일, ADI(SMH) 20일 이탈 2일, ASML(SMH) 55일 이탈 5일, QCOM(SMH) 20일 이탈 6일, KLAC(SMH) 55일 이탈 2일, CRWD(IGV) 20일 이탈 2일, ORCL(IGV) 55일 이탈 5일, NOW(IGV) 55일 이탈 7일, MRNA(XBI·GNOM) 실패, HALO(XBI) 55일 이탈 1일, TWST(GNOM·ARKG) 55일 이탈 2일, TXG(GNOM·ARKG) 55일 이탈 2일, GH(GNOM·ARKG) 55일 이탈 2일, NTRA(GNOM·ARKG) 55일 이탈 1일, ILMN(GNOM·ARKG) 20일 이탈 6일, GBCI(KRE) 실패, UBSI(KRE) 실패, WSM(XHB) 실패, PHM(XHB) 실패, DHI(XHB) 실패, LEN(XHB) 실패, CLF(XME) 20일 이탈 2일, STLD(XME) 20일 이탈 2일, CCJ(URA) 55일 이탈 6일, UEC(URA) 55일 이탈 3일, 8001(URA) 실패, HONA(ITA) 55일 이탈 2일, CSX(PAVE) 실패, URI(PAVE) 실패, 005930(DRAM) 55일 이탈 2일, 000660(DRAM) 55일 이탈 1일, STX(DRAM) 55일 이탈 5일, WDC(DRAM) 55일 이탈 3일, 2408(DRAM) 55일 이탈 4일, 285A(DRAM) 55일 이탈 5일, 2344(DRAM) 55일 이탈 4일, JCI(GRID) 55일 이탈 2일, PWR(GRID) 55일 이탈 2일, ABBN(GRID) 55일 이탈 1일, SU(GRID) 55일 이탈 2일, MUR(XOP) 20일 이탈 3일, SEDG(TAN) 55일 이탈 2일, AAL(JETS) 실패, ULCC(JETS) 실패, ALK(JETS) 실패, SKYW(JETS) 55일 이탈 6일
+약세 신호 69: NVDA(XLK·SMH) 55일 이탈 7일, MSFT(XLK·IGV) 실패, AVGO(XLK·SMH) 55일 이탈 3일, AMD(XLK·SMH) 20일 이탈 7일, MU(XLK·SMH·DRAM) 55일 이탈 6일, CSCO(XLK) 55일 이탈 6일, PLTR(XLK·IGV) 20일 이탈 7일, INTC(XLK) 55일 이탈 7일, AMAT(XLK) 55일 이탈 4일, MS(XLF) 실패, ABBV(XLV·XBI) 실패, PFE(XLV) 실패, AMZN(XLY) 실패, BKNG(XLY) 실패, SBUX(XLY) 실패, TTWO(XLC) 실패, BA(XLI·ITA) 55일 이탈 10일, ETN(XLI·GRID) 55일 이탈 4일, PM(XLP) 20일 이탈 1일, PEP(XLP) 실패, XOM(XLE·XOP) 20일 이탈 3일, PSX(XLE·XOP) 20일 이탈 4일, MPC(XLE·XOP) 20일 이탈 5일, EOG(XLE·XOP) 20일 이탈 3일, WMB(XLE) 55일 이탈 3일, SO(XLU) 실패, SHW(XLB) 실패, CRH(XLB·PAVE) 실패, MLM(XLB) 실패, FCX(XLB·XME) 55일 이탈 7일, NUE(XLB·XME·PAVE) 실패, EQIX(XLRE) 실패, TSM(SMH) 55일 이탈 7일, ASML(SMH) 55일 이탈 6일, QCOM(SMH) 20일 이탈 7일, PANW(IGV) 55일 이탈 3일, CRWD(IGV) 20일 이탈 3일, ORCL(IGV) 55일 이탈 6일, NOW(IGV) 55일 이탈 8일, MRNA(XBI·GNOM) 실패, NTRA(GNOM·ARKG) 55일 이탈 2일, TXG(GNOM·ARKG) 20일 이탈 6일, GH(GNOM·ARKG) 55일 이탈 3일, ILMN(GNOM·ARKG) 20일 이탈 7일, GBCI(KRE) 실패, UBSI(KRE) 실패, WSM(XHB) 실패, W(XHB) 실패, PHM(XHB) 실패, CLF(XME) 실패, STLD(XME) 20일 이탈 3일, CCJ(URA) 55일 이탈 7일, 8001(URA) 실패, CSX(PAVE) 실패, URI(PAVE) 실패, 005930(DRAM) 55일 이탈 3일, 000660(DRAM) 55일 이탈 2일, STX(DRAM) 55일 이탈 6일, WDC(DRAM) 55일 이탈 4일, 2408(DRAM) 55일 이탈 5일, 285A(DRAM) 55일 이탈 6일, 2344(DRAM) 55일 이탈 5일, EDG(GDX) 실패, JCI(GRID) 20일 이탈 4일, MUR(XOP) 20일 이탈 4일, AAL(JETS) 실패, ULCC(JETS) 실패, ALK(JETS) 실패, SKYW(JETS) 55일 이탈 7일
 
-켜진 종목 69 중 크립토 거래소 상장 10 (목록 2026-11-07)
+켜진 종목 80 중 크립토 거래소 상장 10 (목록 2026-11-10)
 
 https://tlzkrh1029.github.io/rrg/breakout/
