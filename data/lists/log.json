@@ -1,4 +1,4 @@
-{"version":1,"updated":"2026-11-10T01:07:29Z","prev":"2026-11-07T01:06:12Z","counts":{"b":105,"p":222,"h":137},
+{"version":1,"updated":"2026-11-11T01:06:27Z","prev":"2026-11-10T01:07:29Z","counts":{"b":105,"p":222,"h":138},
 "state":{
 "b":{
 "AAOIBUSDT":{"u":"AAOI","lk":"AAOI","n":"Applied Optoelectronics","c":"stock","m":"US"},
@@ -340,6 +340,7 @@
 "io:IONQ":{"u":"IONQ","lk":"IONQ","n":"IonQ, Inc.","c":"stock","m":"US","dex":"io"},
 "io:NBIS":{"u":"NBIS","lk":"NBIS","n":"Nebius Group N.V.","c":"stock","m":"US","dex":"io"},
 "io:NVDA":{"u":"NVDA","lk":"NVDA","n":"","c":"unknown","m":"","dex":"io"},
+"io:SKHX":{"u":"SKHX","lk":"SKHX","n":"Leverage Shares 2X Long SK Hynix Daily ETF","c":"etf","m":"US","dex":"io"},
 "io:SNDK":{"u":"SNDK","lk":"SNDK","n":"Sandisk Corporation","c":"stock","m":"US","dex":"io"},
 "io:TCNT":{"u":"TCNT","lk":"TCNT","n":"TENCENT","c":"unknown","m":"","dex":"io"},
 "io:XIAOMI":{"u":"XIAOMI","lk":"XIAOMI","n":"XIAOMI","c":"unknown","m":"","dex":"io"},
@@ -472,6 +473,7 @@
 }
 },
 "events":[
+{"v":"h","e":"add","s":"io:SKHX","u":"SKHX","lk":"SKHX","n":"Leverage Shares 2X Long SK Hynix Daily ETF","c":"etf","m":"US","d":"2026-11-11","x":0,"t0":"2026-11-10T01:07:29Z","t1":"2026-11-11T01:06:27Z","dex":"io"},
 {"v":"h","e":"add","s":"xyz:TTWO","u":"TTWO","lk":"TTWO","n":"Take-Two Interactive Software, Inc.","c":"stock","m":"US","d":"2026-11-10","x":0,"t0":"2026-11-07T01:06:12Z","t1":"2026-11-10T01:07:29Z","dex":"xyz"},
 {"v":"h","e":"add","s":"xyz:MUU","u":"MUU","lk":"MUU","n":"Direxion Daily MU Bull 2X ETF","c":"etf","m":"US","d":"2026-11-10","x":0,"t0":"2026-11-07T01:06:12Z","t1":"2026-11-10T01:07:29Z","dex":"xyz"},
 {"v":"h","e":"add","s":"io:CRCL","u":"CRCL","lk":"CRCL","n":"Circle Internet Group, Inc.","c":"stock","m":"US","d":"2026-11-04","x":0,"t0":"2026-11-03T01:06:44Z","t1":"2026-11-04T01:06:31Z","dex":"io"},

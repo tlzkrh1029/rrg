@@ -1,222 +1,132 @@
 {
- "asof": "2026-11-09",
- "prev_asof": "2026-11-06",
+ "asof": "2026-11-10",
+ "prev_asof": "2026-11-09",
  "alerts": [
   {
    "type": "up",
    "H": "ath",
-   "key": "AAPL",
-   "name": "Apple Inc.",
+   "key": "LLY",
+   "name": "Eli Lilly and Company",
    "etfs": [
-    "XLK"
+    "XLV",
+    "ARKG"
    ],
-   "over": 0.0051,
+   "over": 0.01041,
    "spy": "lit",
    "qqq": "lit"
   },
   {
    "type": "up",
    "H": "ath",
-   "key": "JNJ",
-   "name": "Johnson & Johnson",
+   "key": "KO",
+   "name": "The Coca-Cola Company",
    "etfs": [
-    "XLV"
+    "XLP"
    ],
-   "over": 0.01322,
+   "over": 0.01127,
    "spy": "none",
    "qqq": "none"
   },
   {
    "type": "up",
-   "H": "ath",
-   "key": "TMO",
-   "name": "Thermo Fisher Scientific Inc.",
+   "H": "55",
+   "key": "AMZN",
+   "name": "Amazon.com, Inc.",
    "etfs": [
-    "XLV"
+    "XLY"
    ],
-   "over": 0.01756,
-   "spy": "none",
-   "qqq": "none"
-  },
-  {
-   "type": "up",
-   "H": "52w",
-   "key": "ULCC",
-   "name": "Frontier Group Holdings, Inc.",
-   "etfs": [
-    "JETS"
-   ],
-   "over": 0.03598,
+   "over": 0.01666,
    "spy": "lit",
    "qqq": "lit"
   },
   {
    "type": "up",
+   "H": "55",
+   "key": "TDG",
+   "name": "TransDigm Group Incorporated",
+   "etfs": [
+    "ITA"
+   ],
+   "over": 0.00982,
+   "spy": "none",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "ENLT",
+   "name": "Enlight Renewable Energy Ltd",
+   "etfs": [
+    "TAN"
+   ],
+   "over": 0.01528,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "failed",
    "H": "55",
    "key": "SYRE",
    "name": "Spyre Therapeutics, Inc.",
    "etfs": [
     "XBI"
    ],
-   "over": 0.01528,
-   "spy": "none",
-   "qqq": "lit"
+   "over": -0.02683
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "55",
-   "key": "RGLD",
-   "name": "Royal Gold, Inc.",
+   "key": "RUN",
+   "name": "Sunrun Inc.",
    "etfs": [
-    "XME"
+    "TAN"
    ],
-   "over": 0.05309,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.11122
   },
   {
-   "type": "up",
-   "H": "55",
-   "key": "UAL",
-   "name": "United Airlines Holdings, Inc.",
-   "etfs": [
-    "JETS"
-   ],
-   "over": 0.0253,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "55",
-   "key": "AAL",
-   "name": "American Airlines Group Inc.",
-   "etfs": [
-    "JETS"
-   ],
-   "over": 0.01505,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "DE",
-   "name": "Deere & Company",
-   "etfs": [
-    "XLI",
-    "PAVE"
-   ],
-   "over": 0.02339,
-   "spy": "none",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
+   "type": "failed",
    "H": "20",
    "key": "AA",
    "name": "Alcoa Corporation",
    "etfs": [
     "XME"
    ],
-   "over": 0.0062,
-   "spy": "lit",
-   "qqq": "failed"
+   "over": -0.03807
   },
   {
-   "type": "up",
-   "H": "20",
-   "key": "AEM",
-   "name": "Agnico Eagle Mines Limited",
-   "etfs": [
-    "GDX"
-   ],
-   "over": 0.04996,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
+   "type": "failed",
    "H": "20",
    "key": "ABX",
    "name": "Barrick Mining Corporation",
    "etfs": [
     "GDX"
    ],
-   "over": 0.02101,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.03622
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "20",
    "key": "WPM",
    "name": "Wheaton Precious Metals Corp.",
    "etfs": [
     "GDX"
    ],
-   "over": 0.02697,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "AU",
-   "name": "AngloGold Ashanti plc",
-   "etfs": [
-    "GDX"
-   ],
-   "over": 0.06346,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "AC",
-   "name": "Air Canada",
-   "etfs": [
-    "JETS"
-   ],
-   "over": 0.01925,
-   "spy": "lit",
-   "qqq": "none"
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "PM",
-   "name": "Philip Morris International Inc.",
-   "etfs": [
-    "XLP"
-   ],
-   "over": -0.02198
+   "over": -0.01862
   },
   {
    "type": "failed",
    "H": "20",
-   "key": "TTWO",
-   "name": "Take-Two Interactive Software, Inc.",
+   "key": "FSLR",
+   "name": "First Solar, Inc.",
    "etfs": [
-    "XLC"
+    "TAN"
    ],
-   "over": -0.0283
+   "over": -0.03012
   },
   {
-   "type": "failed",
-   "H": "20",
-   "key": "EDG",
-   "name": "Gold Fields Limited",
-   "etfs": [
-    "GDX"
-   ],
-   "over": -0.04192
-  },
-  {
-   "type": "block_on",
+   "type": "block_fail",
    "etf": "GDX",
-   "lit": 7,
+   "failed": 3,
    "n": 10
   }
  ]

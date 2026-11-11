@@ -2401,10 +2401,20 @@
    "at": "11/10 10:23 KST"
   },
   "E:URA:2026-11-09": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/10 10:23 KST",
-   "why": "우라늄·원전주 검색 3회. 원전주 반등 기사는 11/6 Oklo 실적뿐이고 11/9 우라늄 개별 계기는 찾지 못함"
+   "k": "원전주 반등",
+   "ev": "선거 주간 급락 뒤 원전·우라늄주가 반등하고 Oklo가 13.7% 오름",
+   "src": [
+    {
+     "t": "Nuclear Stocks Jump After Brutal Electio",
+     "u": "https://www.gurufocus.com/news/9185020/nuclear-stocks-jump-after-brutal-election-week"
+    },
+    {
+     "t": "Oklo Jumps 19% on Narrower-Than-Expected",
+     "u": "https://247wallst.com/investing/2026/11/06/oklo-jumps-19-on-narrower-than-expected-loss-as-nuclear-stocks-rebound-nuscale-power-surges-15-nano-nuclear-energy-jumps-9/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
   },
   "E:ARKG:2026-11-09": {
    "none": 1,
@@ -2425,16 +2435,22 @@
    "why": "바이오 업종 11/9 검색 2회. 업종 고유 계기를 찾지 못함"
   },
   "E:IGV:2026-11-09": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/10 10:23 KST",
-   "why": "소프트웨어주 11/9 움직임을 설명하는 기사를 찾지 못함. 반도체 주도 반등이라는 시장 기사만 있음"
+   "k": "반도체 주도 반등",
+   "ev": "AI 급락 뒤 반도체 ETF가 7.2% 올라 나스닥을 이끌고 소프트웨어는 상대적으로 덜 오름",
+   "src": [
+    {
+     "t": "Nasdaq Jumps 3%, Nvidia Lags Most Since ",
+     "u": "https://www.tradingview.com/news/benzinga:53009b946094b:0-nasdaq-100-jumps-3-as-chips-rebound-nvidia-lags-most-since-deepseek-stock-market-today/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
   },
   "S:TWST:2026-11-09": {
    "none": 1,
-   "tries": 1,
-   "at": "11/10 10:23 KST",
-   "why": "TWST 검색 2회. 10/28 반등 기사뿐이고 11/9 회사 소식이나 업종 계기를 찾지 못함"
+   "tries": 2,
+   "at": "11/11 10:20 KST",
+   "why": "Twist 11/9 급등 기사를 검색했으나 10월 말 기사만 나오고 그날 원인을 찾지 못함"
   },
   "S:TEM:2026-11-09": {
    "none": 1,
@@ -2456,9 +2472,9 @@
   },
   "S:PM:2026-11-09": {
    "none": 1,
-   "tries": 1,
-   "at": "11/10 10:23 KST",
-   "why": "Philip Morris 11/9 검색 1회. 10월 실적 관련 기사만 있고 11/9 원인은 찾지 못함"
+   "tries": 2,
+   "at": "11/11 10:20 KST",
+   "why": "Philip Morris 11/9 하락 기사를 검색했으나 날짜가 맞는 원인을 찾지 못함"
   },
   "S:688825:2026-11-09": {
    "none": 1,
@@ -2471,6 +2487,196 @@
    "tries": 1,
    "at": "11/10 10:23 KST",
    "why": "11/5 삼성전자 낙폭을 직접 다룬 기사는 찾지 못함. 11/6 아시아 AI주 급락 기사만 확인함"
+  },
+  "E:XHB:2026-11-10": {
+   "k": "금리 인상 우려",
+   "ev": "10월 CPI가 예상을 웃돌아 12월 금리 인상 기대가 커지고 증시가 내림",
+   "src": [
+    {
+     "t": "Wall St ends lower as hot inflation data",
+     "u": "https://gvwire.com/2026/11/10/wall-st-ends-lower-as-hot-inflation-data-fed-comments-heighten-rate-worries/"
+    },
+    {
+     "t": "Inflation Came in Hotter Than Expected a",
+     "u": "https://www.ibtimes.com/stocks-fall-inflation-anthropic-ipo-valuation-3809628"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "E:GNOM:2026-11-10": {
+   "k": "금리 인상 우려",
+   "ev": "10월 CPI 상회로 12월 금리 인상 기대가 커져 바이오 성장주가 약세를 보임",
+   "src": [
+    {
+     "t": "Wall St ends lower as hot inflation data",
+     "u": "https://gvwire.com/2026/11/10/wall-st-ends-lower-as-hot-inflation-data-fed-comments-heighten-rate-worries/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "S:AVGO:2026-11-10": {
+   "k": "낙폭 과대 반등",
+   "ev": "11/5 하루 10.4% 급락해 1년 최저 종가를 낸 뒤 AI 반도체 반등이 이어짐",
+   "src": [
+    {
+     "t": "What Just Happened To Broadcom Stock?",
+     "u": "https://www.trefis.com/stock/avgo/articles/623354/what-just-happened-to-broadcom-stock/2026-11-06"
+    },
+    {
+     "t": "Nasdaq 100 Jumps 3% as Chips Rebound",
+     "u": "https://www.tradingview.com/news/benzinga:53009b946094b:0-nasdaq-100-jumps-3-as-chips-rebound-nvidia-lags-most-since-deepseek-stock-market-today/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "S:CRSP:2026-11-10": {
+   "k": "바이오 성장주 약세",
+   "ev": "10월 CPI 상회로 금리 인상 기대가 커져 ARKG가 4.1% 내리는 가운데 낙폭이 더 컸음",
+   "src": [
+    {
+     "t": "Wall St ends lower as hot inflation data",
+     "u": "https://gvwire.com/2026/11/10/wall-st-ends-lower-as-hot-inflation-data-fed-comments-heighten-rate-worries/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "S:NVDA:2026-11-09": {
+   "k": "CEO 관련 조사",
+   "ev": "Nvidia 이사회가 Huang CEO가 외국 정보기관의 표적이었는지 조사한다고 밝혀 반등장에서 소외됨",
+   "src": [
+    {
+     "t": "Nvidia investigating reports that CEO Je",
+     "u": "https://www.ajc.com/news/2026/11/nvidia-investigating-reports-that-ceo-jensen-huang-was-targeted-by-chinese-intelligence/"
+    },
+    {
+     "t": "Nasdaq Jumps 3%, Nvidia Lags Most Since ",
+     "u": "https://www.benzinga.com/markets/equities/26/11/63055270/stock-market-today-nasdaq-100-chip-rebound-nvidia-deepseek"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "S:000660:2026-11-10": {
+   "k": "AI 급락 후 반등",
+   "ev": "11/6 코스피가 6% 급락하고 SK hynix가 10.4% 내린 뒤 반도체주가 되오름",
+   "src": [
+    {
+     "t": "KOSPI closes down 6% on Nov 6",
+     "u": "https://www.khan.co.kr/en/article/202611061703007"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "S:005930:2026-11-10": {
+   "k": "AI 급락 후 반등",
+   "ev": "11/6 코스피가 6% 급락한 뒤 미국 반도체 반등에 삼성전자도 오름",
+   "src": [
+    {
+     "t": "KOSPI closes down 6% on Nov 6",
+     "u": "https://www.khan.co.kr/en/article/202611061703007"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "S:BEAM:2026-11-10": {
+   "k": "pivotal 호재, 바이오 약세",
+   "ev": "risto-cel 겸상적혈구병 pivotal 성공과 승인 신청 계획을 냈으나 CPI 쇼크로 바이오주가 동반 하락함",
+   "src": [
+    {
+     "t": "Wall St ends lower as hot inflation data",
+     "u": "https://gvwire.com/2026/11/10/wall-st-ends-lower-as-hot-inflation-data-fed-comments-heighten-rate-worries/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "S:MRNA:2026-11-10": {
+   "k": "급등 후 차익실현",
+   "ev": "전 거래일 52주 신고가를 쓴 뒤 갭하락했고 CPI 쇼크로 바이오주가 약세였음",
+   "src": [
+    {
+     "t": "Wall St ends lower as hot inflation data",
+     "u": "https://gvwire.com/2026/11/10/wall-st-ends-lower-as-hot-inflation-data-fed-comments-heighten-rate-worries/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "S:MU:2026-11-10": {
+   "k": "CPI 쇼크",
+   "ev": "뜨거운 CPI가 Anthropic 투자 호재를 덮어 Micron이 1% 안팎 내림, DRAM ETF보다는 선방함",
+   "src": [
+    {
+     "t": "Wall St ends lower as hot inflation data",
+     "u": "https://gvwire.com/2026/11/10/wall-st-ends-lower-as-hot-inflation-data-fed-comments-heighten-rate-worries/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "S:PDN:2026-11-09": {
+   "k": "우라늄주 반등",
+   "ev": "9월 분기 생산 부진 뒤 우라늄주 반등에 편승해 11% 가까이 오름",
+   "src": [
+    {
+     "t": "Paladin Energy Shares Jump Nearly 11% as",
+     "u": "https://www.ibtimes.com.au/paladin-energy-shares-jump-after-uranium-update-1878146"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "S:CLF:2026-11-10": {
+   "k": "철강주 동반 강세",
+   "ev": "Nucor 3.1%, Steel Dynamics 3.6% 등 철강주가 함께 올라 Cleveland-Cliffs가 5% 안팎 오름",
+   "src": [
+    {
+     "t": "Cleveland-Cliffs Stock Jumps 5.6%",
+     "u": "https://www.marketbeat.com/instant-alerts/price-cleveland-cliffs-nyse-clf-stock-jumps-56-should-you-buy-2026-11-10/"
+    },
+    {
+     "t": "Cleveland-Cliffs Jumps 5.1% Amid Sector-",
+     "u": "https://news.alphastreet.com/cleveland-cliffs-jumps-5-1-amid-sector-wide-rally/amp/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/11 10:20 KST"
+  },
+  "E:ITA:2026-11-10": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/11 10:20 KST",
+   "why": "TransDigm 실적 발표일(11/10 장 전)은 확인했으나 결과와 방산 업종 상승 원인을 다룬 기사를 찾지 못함"
+  },
+  "S:AMZN:2026-11-10": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/11 10:20 KST",
+   "why": "종목 기사와 시장 기사를 검색했으나 그날 Amazon만 오른 분명한 원인을 찾지 못함"
+  },
+  "S:ABSI:2026-11-10": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/11 10:20 KST",
+   "why": "Absci 종목 뉴스와 바이오 업종 기사를 찾았으나 개별 원인이 없고 업종 약세 외 근거가 부족함"
+  },
+  "S:GOOGL:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/11 10:20 KST",
+   "why": "제목과 시장 기사를 확인했으나 XLC 대비 부진한 분명한 원인이 없음"
+  },
+  "S:1548:2026-11-10": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/11 10:20 KST",
+   "why": "Genscript 11/10 급등을 영문, 중문으로 검색했으나 해당일 기사를 찾지 못함"
   }
  },
  "runs": [
@@ -2619,6 +2825,18 @@
    26,
    "claude-sonnet-5-5",
    0.552
+  ],
+  [
+   "11/11 10:20 KST",
+   24,
+   14,
+   7,
+   "ok",
+   26,
+   0,
+   28,
+   "claude-sonnet-5-5",
+   0.698
   ]
  ]
 }

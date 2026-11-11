@@ -1,47 +1,32 @@
 {
- "asof": "2026-11-09",
- "prev_asof": "2026-11-06",
+ "asof": "2026-11-10",
+ "prev_asof": "2026-11-09",
  "alerts": [
   {
-   "etf": "URA",
+   "etf": "XLC",
    "type": "signal",
-   "text": "URA 우라늄: ≈ 1주 반등, 1개월 이상에서는 미확인",
-   "detail": "≈ 1주 반등, 1개월 이상에서는 미확인",
+   "text": "XLC 커뮤니케이션: ↗ SPY 비율 50일선 상향 돌파",
+   "detail": "↗ SPY 비율 50일선 상향 돌파",
    "pct": [
-    95,
-    14,
-    0,
-    0,
-    0
-   ],
-   "phase": "Lagging",
-   "bench": "XLE"
-  },
-  {
-   "etf": "XBI",
-   "type": "signal",
-   "text": "XBI 바이오: ↓ 백분위 31점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 31점 하락 (6개월 → 1개월)",
-   "pct": [
-    91,
+    100,
+    36,
     55,
-    55,
-    86,
-    86
+    18,
+    10
    ],
-   "phase": "Lagging",
-   "bench": "XLV"
+   "phase": "Improving",
+   "bench": "SPY"
   },
   {
    "etf": "XLY",
    "type": "signal",
-   "text": "XLY 경기소비재: ↑ 백분위 37점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 37점 상승 (6개월 → 1개월)",
+   "text": "XLY 경기소비재: ↑ 백분위 31점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 31점 상승 (6개월 → 1개월)",
    "pct": [
+    95,
     86,
     82,
-    73,
-    45,
+    55,
     24
    ],
    "phase": "Improving",
@@ -49,195 +34,90 @@
   },
   {
    "etf": "XLRE",
-   "type": "rrg",
-   "text": "XLRE 부동산: RRG Lagging → Improving (vs SPY)",
-   "detail": "RRG Lagging → Improving (vs SPY)",
+   "type": "signal",
+   "text": "XLRE 부동산: ↑ 백분위 32점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 32점 상승 (6개월 → 1개월)",
    "pct": [
     82,
-    86,
     77,
-    50,
-    52
+    73,
+    45,
+    43
    ],
    "phase": "Improving",
    "bench": "SPY"
   },
   {
-   "etf": "MAGS",
+   "etf": "XHB",
    "type": "signal",
-   "text": "MAGS 매그니피센트 7: ≈ 1주 반등, 1개월 이상에서는 미확인",
-   "detail": "≈ 1주 반등, 1개월 이상에서는 미확인",
+   "text": "XHB 주택건설: ↑ 백분위 36점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 36점 상승 (6개월 → 1개월)",
    "pct": [
-    74,
-    26,
-    65,
-    43,
-    32
+    73,
+    95,
+    41,
+    59,
+    14
    ],
-   "phase": "Leading",
+   "phase": "Lagging",
+   "bench": "XLY"
+  },
+  {
+   "etf": "XLB",
+   "type": "signal",
+   "text": "XLB 소재: ↑ 백분위 32점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 32점 상승 (6개월 → 1개월)",
+   "pct": [
+    64,
+    82,
+    64,
+    50,
+    71
+   ],
+   "phase": "Improving",
    "bench": "SPY"
-  },
-  {
-   "etf": "XHB",
-   "type": "rrg",
-   "text": "XHB 주택건설: RRG Lagging → Improving (vs SPY)",
-   "detail": "RRG Lagging → Improving (vs SPY)",
-   "pct": [
-    73,
-    100,
-    41,
-    59,
-    19
-   ],
-   "phase": "Lagging",
-   "bench": "XLY"
-  },
-  {
-   "etf": "XHB",
-   "type": "signal",
-   "text": "XHB 주택건설: ↑ 백분위 41점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 41점 상승 (6개월 → 1개월)",
-   "pct": [
-    73,
-    100,
-    41,
-    59,
-    19
-   ],
-   "phase": "Lagging",
-   "bench": "XLY"
-  },
-  {
-   "etf": "GNOM",
-   "type": "rrg",
-   "text": "GNOM 유전체학: RRG Leading → Weakening (vs SPY)",
-   "detail": "RRG Leading → Weakening (vs SPY)",
-   "pct": [
-    64,
-    41,
-    100,
-    95,
-    95
-   ],
-   "phase": "Weakening",
-   "bench": "XLV"
-  },
-  {
-   "etf": "GNOM",
-   "type": "signal",
-   "text": "GNOM 유전체학: ↓ 백분위 54점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 54점 하락 (6개월 → 1개월)",
-   "pct": [
-    64,
-    41,
-    100,
-    95,
-    95
-   ],
-   "phase": "Weakening",
-   "bench": "XLV"
   },
   {
    "etf": "ITA",
    "type": "signal",
-   "text": "ITA 항공우주·방산: ↑ 백분위 32점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 32점 상승 (6개월 → 1개월)",
+   "text": "ITA 항공우주·방산: ↑ 백분위 41점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 41점 상승 (6개월 → 1개월)",
    "pct": [
-    50,
     59,
+    68,
     18,
     27,
-    29
+    33
    ],
    "phase": "Lagging",
    "bench": "XLI"
   },
   {
-   "etf": "XLP",
-   "type": "rrg",
-   "text": "XLP 필수소비재: RRG Improving → Leading (vs SPY)",
-   "detail": "RRG Improving → Leading (vs SPY)",
-   "pct": [
-    45,
-    91,
-    86,
-    73,
-    62
-   ],
-   "phase": "Leading",
-   "bench": "SPY"
-  },
-  {
-   "etf": "IGV",
+   "etf": "GNOM",
    "type": "signal",
-   "text": "IGV 소프트웨어: ↓ 백분위 59점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 59점 하락 (6개월 → 1개월)",
+   "text": "GNOM 유전체학: ↘ SPY 비율 50일선 하향 이탈",
+   "detail": "↘ SPY 비율 50일선 하향 이탈",
    "pct": [
-    32,
-    18,
-    50,
-    77,
-    5
-   ],
-   "phase": "Leading",
-   "bench": "XLK"
-  },
-  {
-   "etf": "XLI",
-   "type": "signal",
-   "text": "XLI 산업재: ↗ SPY 비율 50일선 상향 돌파",
-   "detail": "↗ SPY 비율 50일선 상향 돌파",
-   "pct": [
-    27,
-    50,
-    27,
-    36,
-    38
-   ],
-   "phase": "Lagging",
-   "bench": "SPY"
-  },
-  {
-   "etf": "PAVE",
-   "type": "rrg",
-   "text": "PAVE 미국 인프라: RRG Lagging → Improving (vs XLI)",
-   "detail": "RRG Lagging → Improving (vs XLI)",
-   "pct": [
-    14,
-    45,
     23,
-    23,
-    48
+    41,
+    95,
+    95,
+    95
    ],
-   "phase": "Improving",
-   "bench": "XLI"
-  },
-  {
-   "etf": "PAVE",
-   "type": "signal",
-   "text": "PAVE 미국 인프라: ↗ SPY 비율 50일선 상향 돌파",
-   "detail": "↗ SPY 비율 50일선 상향 돌파",
-   "pct": [
-    14,
-    45,
-    23,
-    23,
-    48
-   ],
-   "phase": "Improving",
-   "bench": "XLI"
+   "phase": "Weakening",
+   "bench": "XLV"
   },
   {
    "etf": "XLE",
    "type": "signal",
-   "text": "XLE 에너지: ↓ 백분위 36점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 36점 하락 (6개월 → 1개월)",
+   "text": "XLE 에너지: ↓ 백분위 41점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 41점 하락 (6개월 → 1개월)",
    "pct": [
-    5,
+    9,
     32,
-    82,
-    68,
-    90
+    77,
+    73,
+    86
    ],
    "phase": "Leading",
    "bench": "SPY"

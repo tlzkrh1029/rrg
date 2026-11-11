@@ -1,132 +1,126 @@
 {
- "asof": "2026-11-09",
- "at": "11/10 10:23 KST",
+ "asof": "2026-11-10",
+ "at": "11/11 10:20 KST",
  "etfs": {
   "XLV": {
    "text": [
-    "LLY가 10/29 3분기 실적에서 티르제파타이드 판매량이 세계적으로 53% 늘었다며 2026년 매출 전망을 850억~870억 달러에서 910억~920억 달러로 올렸습니다.",
-    "같은 시기 AI 투자 부담으로 기술주에서 자금이 빠져나가며 헬스케어로 방어적 순환매가 이어졌고, 매체들은 이 상승을 LLY, ABBV, JNJ가 이끌었다고 전했습니다."
+    "LLY는 10/29 3분기 매출이 39% 늘어난 244억 달러라고 발표했고, 2026년 매출 가이던스 중간값을 55억 달러 올려 910억~920억 달러로 제시했습니다. 같은 기간 JNJ는 10/13 실적에서 메드텍 성장률이 시장 기대에 못 미쳐 하락했지만 연간 조정 EPS 가이던스는 올렸습니다."
    ],
    "src": [
     {
-     "t": "Zacks, LLY 3분기 실적과 매출 전망 상향",
-     "u": "https://www.zacks.com/stock/news/3018734/lly-stock-jumps-as-q3-earnings-beat-estimates-2026-sales-view-raised"
+     "t": "Lilly 3분기 실적 8-K (SEC)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000059478/000005947826000104/q326lillysalesandearningsp.htm"
     },
     {
-     "t": "Axios, 헬스케어 주식 상승 배경",
-     "u": "https://www.axios.com/2026/10/19/health-care-stocks-midterms"
+     "t": "24/7 Wall St. LLY 3분기",
+     "u": "https://247wallst.com/cards/eli-lilly-q3-2026-earnings-lly-01m63nk1x2d2k0eyrf4m78fs52"
     },
     {
-     "t": "Advisor Perspectives, 헬스케어 방어 수요",
-     "u": "https://www.advisorperspectives.com/articles/2026/10/27/healthcare-stocks-anti-ai-bet-investors-defensive"
+     "t": "RTTNews JNJ 3분기",
+     "u": "https://www.rttnews.com/3698614/johnson-johnson-stock-falls-5-after-q3-profit-plunges.aspx"
     }
    ],
-   "kick": "릴리 가이던스 상향"
+   "kick": "LLY 가이던스 상향"
   },
   "XLP": {
    "text": [
-    "10/14 예상보다 높게 나온 9월 물가 지표 뒤에 투자 자금이 기술주에서 방어주로 옮겨 갔고, WMT가 그날 약 3% 올랐습니다.",
-    "WMT는 10/15 도이체방크가 투자의견을 매수로 올린 뒤 10월에 1999년 이후 가장 좋은 월간 흐름을 보였고, PG는 10/22 분기 실적을 낸 날 5.6% 올랐습니다."
+    "PG는 10/22 회계연도 2027 1분기에 유기적 매출이 4.0% 늘고 핵심 EPS가 2.00달러로 시장 예상을 웃돌았다고 발표했습니다. MDLZ도 10/29 3분기에 물량·믹스 증가를 바탕으로 유기적 매출이 2.1% 늘고 조정 EPS가 예상을 넘었다고 밝혔습니다."
    ],
    "src": [
     {
-     "t": "24/7 Wall St., 물가 지표와 방어주",
-     "u": "https://247wallst.com/investing/2026/10/14/walmart-advances-3-as-inflation-data-sends-money-into-defensives-costco-and-target-edge-higher/"
+     "t": "P&G 1분기 실적 보도자료",
+     "u": "https://us.pg.com/newsroom/news-releases/PG-Announces-Fiscal-Year-2027-First-Quarter-Results/"
     },
     {
-     "t": "24/7 Wall St., 월마트 10월 흐름",
-     "u": "https://247wallst.com/investing/2026/10/23/walmart-is-having-its-best-month-since-1999-and-is-4-from-1-trillion/"
+     "t": "Trefis PG 실적 후 주가",
+     "u": "https://www.trefis.com/stock/pg/articles2/620996/what-did-procter-gambles-latest-quarter-change-for-its-stock/2026-10-28"
     },
     {
-     "t": "TIKR, 월마트와 코스트코 한 달 상승",
-     "u": "https://www.tikr.com/blog/walmart-and-costco-just-gained-11-in-a-month-take-profits-or-buy-more"
+     "t": "Food Manufacture MDLZ 3분기",
+     "u": "https://www.foodmanufacture.co.uk/Article/2026/10/30/mondelez-returns-to-volume-led-growth-as-q3-profits-surge/"
     }
    ],
-   "kick": "방어주 순환매"
+   "kick": "PG·MDLZ 실적"
   },
-  "XLRE": {
+  "XLY": {
    "text": [
-    "미국 10년물 국채금리가 10/5 5.31%의 고점에서 10/29 4.98%까지 내려 차입 비용 부담이 줄었고, 리츠는 3분기 금리 급등으로 입은 타격을 4분기 초부터 되돌렸습니다.",
-    "WELL은 10/26 실적 발표 뒤 다음 거래일에 5% 넘게 내렸지만, 금리 하락이 부동산 업종 전체를 받쳤습니다."
+    "AMZN은 10/29 3분기에 AWS 매출이 39% 늘어난 약 460억 달러로 5년 가까이 만에 가장 빠르게 성장했다고 밝혔습니다. 다만 EPS는 예상에 못 미쳤고 분기 설비투자가 773억 달러로 예상을 크게 웃돌았습니다. 또 BKNG(11/3)와 MCD(11/4)는 분기 실적 발표 뒤 옵션 시장이 반영한 변동폭을 넘어 올랐습니다."
    ],
    "src": [
     {
-     "t": "24/7 Wall St., 10년물 금리 하락과 리츠",
-     "u": "https://247wallst.com/investing/2026/11/01/the-10-year-treasury-yield-fell-33-basis-points-here-are-5-net-lease-reits-to-watch/"
+     "t": "AP 아마존 3분기",
+     "u": "https://mynews13.com/fl/orlando/ap-top-news/2026/10/29/amazons-3q-results-miss-analysts-estimates-but-posts-solid-sales-gains-in-cloud-computing-unit"
     },
     {
-     "t": "WealthManagement, 10월 리츠 반등",
-     "u": "https://www.wealthmanagement.com/alternative-investments/q-a-reits-bounce-back-in-october"
+     "t": "GeekWire AWS 39% 성장",
+     "u": "https://geekwire.com/2026/aws-growth-hits-39-its-fastest-in-nearly-five-years-as-amazon-misses-on-earnings/"
     },
     {
-     "t": "TIKR, WELL 3분기 실적 후 하락",
-     "u": "https://www.tikr.com/blog/welltower-fell-5-as-q3-revenue-misses-despite-raised-ffo-outlook"
+     "t": "11/4 실적 발표 후 주가 반응",
+     "u": "https://earnings-watcher.com/wiki/earnings-reactions-2026-11-04"
     }
    ],
-   "kick": "장기금리 하락"
+   "kick": "AWS 가속, BKNG·MCD 실적"
   },
   "ARKG": {
    "text": [
-    "유전체 도구주가 AI 투자 우려 속에 10/22 TWST −9%, ILMN −5%로 함께 밀렸고, 11/2에는 TXG 12%, TWST 15%, ABSI 12%가 뚜렷한 재료 없이 급락했습니다.",
-    "ILMN은 10/29 실적에서 연간 전망을 올렸지만 유기적 매출이 시장 예상에 못 미쳐 다음 거래일 17% 넘게 떨어졌습니다. 반면 TEM은 11/2 연간 매출 전망을 16억 달러대로 올렸습니다."
+    "ILMN은 10/29 3분기 매출이 시장 예상을 밑돌았고 중국 부진과 연구 수요 약화가 겹쳐, 연간 가이던스를 올렸는데도 급락했습니다. NTRA는 11/5 실적과 함께 CEO Steve Chapman의 사임을 발표했고 비용 증가와 예상보다 큰 주당 손실이 부담이 됐습니다. 반대로 TEM은 11/2 3분기 매출이 23% 늘었다고 밝히고 연간 매출 가이던스를 16억 달러로 올렸습니다."
    ],
    "src": [
     {
-     "t": "TIKR, TXG 12%와 TWST 15% 하락",
-     "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
+     "t": "TIKR ILMN 3분기",
+     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
     },
     {
-     "t": "StockStory, ILMN 3분기 실적",
-     "u": "https://stockstory.org/us/stocks/nasdaq/ilmn/news/earnings-call/ilmn-q3-deep-dive-clinical-demand-and-ai-initiatives-drive-outlook-amid-revenue-miss"
+     "t": "TIKR NTRA CEO 교체",
+     "u": "https://www.tikr.com/blog/natera-sinks-14-as-ceo-steve-chapman-steps-down-despite-q3-beat-an-excellent-time-to-transition"
     },
     {
-     "t": "Finviz, Tempus 3분기 실적과 전망 상향",
-     "u": "https://finviz.com/news/413244/tempus-ai-shares-rise-418-as-q3-earnings-beat-forecasts-and-revenue-guidance-increases"
+     "t": "Tempus 3분기 실적",
+     "u": "https://finviz.com/news/413037/tempus-reports-third-quarter-2026-results"
     }
    ],
-   "kick": "유전체 장비주 급락"
+   "kick": "ILMN·NTRA 급락"
   },
   "XME": {
    "text": [
-    "Fed가 10/28 금리를 동결하면서 두 명이 즉각 인상을 주장했고, 10/30 나스닥이 2.86% 떨어지는 위험 회피 장세에서 FCX가 5.55%, 남방구리가 7.42% 내렸습니다.",
-    "CLF는 10/19 3분기 조정 EBITDA가 시장 예상을 웃돌고 2027년 조정 EBITDA가 40억 달러를 넘을 것으로 내다보면서 장중 20%까지 올랐지만, 업종 전체의 하락을 막지는 못했습니다."
+    "금 현물은 8월 말 이후 약 16%, 은은 약 30% 떨어졌고, 구리 광산주도 함께 끌려 내려가 광산주 전반이 밀렸습니다. FCX는 10/27 3분기에 Grasberg 광산 처리량이 사고 이전의 약 67% 수준이고 80% 회복은 2027년 중반으로 예상한다고 밝혔습니다. 반면 CLF는 10/19 3분기 조정 EBITDA가 예상을 웃돌고 2027년 40억 달러 이상을 전망해 올랐습니다."
    ],
    "src": [
     {
-     "t": "Rio Times, 10/30 구리 시장",
-     "u": "https://www.riotimesonline.com/copper-markets-latam-friday-october-30-2026/"
+     "t": "Motley Fool Canada 광산주 하락",
+     "u": "https://www.fool.ca/2026/11/02/why-gold-silver-and-copper-miners-keep-sliding-and-what-it-means-for-tsx-mining-stocks/"
     },
     {
-     "t": "Finviz, CLF 3분기 실적 후 주가 상승",
-     "u": "https://finviz.com/news/403791/cleveland-cliffs-shares-rise-over-7-as-third-quarter-earnings-exceed-expectations"
+     "t": "The Deep Dive FCX Grasberg",
+     "u": "https://thedeepdive.ca/freeport-holds-copper-output-steady-as-grasberg-recovery-continues/"
     },
     {
-     "t": "Bloomberg Government, CLF 실적",
-     "u": "https://news.bgov.com/international-trade/cleveland-cliffs-profit-beats-estimates-as-us-steel-prices-climb"
+     "t": "Stocktwits CLF 3분기",
+     "u": "https://stocktwits.com/news-articles/Markets/Equity/clf-stock-rockets-following-upbeat-q3-ceo-sees-adjusted-ebitda-topping-4-b-in-2027/cZx8pfgRBMq"
     }
    ],
-   "kick": "구리 광산주 급락"
+   "kick": "금·은·구리 동반 약세"
   },
-  "DRAM": {
+  "GNOM": {
    "text": [
-    "삼성전자와 SK하이닉스는 10/6부터 7거래일간 각각 23.9%, 31.5% 떨어졌고, 이유로는 중국 CXMT의 DRAM 시장 진입과 AI 인프라 자금 조달 우려가 꼽혔습니다.",
-    "10/30 Sandisk가 13.5% 내린 데 이어 Kioxia가 11/2 10~12월 영업이익 전망을 약 2조 엔으로 전분기와 같게 제시하며 15.8% 급락해, 낸드 가격 상승세가 꺾인다는 우려가 번졌습니다."
+    "MRNA는 11/6 3분기 매출이 13억 달러로 시장 예상을 크게 웃돌았고, 2026년 매출 성장률 가이던스를 15~25%로 올렸습니다. 반면 ILMN은 10/29 매출 부진과 중국 압력으로, NTRA는 11/5 CEO 사임 발표와 비용 증가로 각각 큰 폭 하락했습니다."
    ],
    "src": [
     {
-     "t": "Korea Times, 삼성·SK하이닉스 7거래일 하락",
-     "u": "https://www.koreatimes.co.kr/economy/20261016/samsung-sk-hynix-sell-off-excessive-as-memory-outlook-stays-strong-analysts"
+     "t": "Moderna 3분기 보도자료",
+     "u": "https://finviz.com/news/418243/moderna-reports-third-quarter-2026-financial-results-and-provides-business-updates"
     },
     {
-     "t": "Forklog, 10/13 코스피 급락",
-     "u": "https://forklog.com/en/kospi-drops-5-5-amid-samsung-and-sk-hynix-stock-sell-off/"
+     "t": "24/7 Wall St. MRNA 3분기",
+     "u": "https://247wallst.com/cards/moderna-q3-2026-earnings-mrna-01m6rb6wpqb93fhyyrsekf8shr"
     },
     {
-     "t": "FourWeekMBA, Kioxia 전망 실망",
-     "u": "https://fourweekmba.com/ai-kioxia-sinks-15-8-on-flat-2-trillion-guide-sk-hynix-rises/"
+     "t": "TIKR ILMN 3분기",
+     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
     }
    ],
-   "kick": "메모리 정점 우려"
+   "kick": "ILMN·NTRA 실적 급락"
   }
  },
  "stocks": {
@@ -353,24 +347,6 @@
    "asof": "2026-11-05",
    "at": "11/06 10:19 KST"
   },
-  "TXG": {
-   "text": [
-    "10/6 유전체·진단 업종이 동반 급락할 때 TXG도 약 17.5% 내렸는데 회사 차원의 뚜렷한 소식은 확인되지 않았습니다. 10/5 주 −13.7%와 10/12 주 −13.4%의 하락 흐름이 이어졌습니다.",
-    "10/13 회사는 3분기 실적을 11/5에 발표하겠다고 알렸습니다. 10/28에는 ICON의 예약 호조로 생명과학 도구주가 오를 때 TXG도 12% 올랐으나 회사 발표는 없었습니다."
-   ],
-   "src": [
-    {
-     "t": "FMP 10/6 하락 종목",
-     "u": "https://site.financialmodelingprep.com/market-news/notable-stock-decliners-october-6-2026"
-    },
-    {
-     "t": "TIKR 유전체주 반등",
-     "u": "https://www.tikr.com/blog/twist-bioscience-soars-12-10x-genomics-up-12-as-genomics-stocks-rebound"
-    }
-   ],
-   "asof": "2026-10-30",
-   "at": "10/31 07:19 KST"
-  },
   "TWST": {
    "text": [
     "Twist Bioscience는 10/12 주에 −16.9% 하락한 뒤 10/19 주와 10/26 주에 반등했습니다.",
@@ -385,46 +361,6 @@
    ],
    "asof": "2026-11-06",
    "at": "11/07 10:18 KST"
-  },
-  "NOW": {
-   "text": [
-    "10/28 장 마감 후 ServiceNow는 3분기 매출 41.1억 달러, 조정 EPS 1.00달러를 발표했습니다. 매출은 예상과 비슷했고 EPS는 예상 1.02달러에 못 미쳤으며, 연간 구독 매출 전망은 약 157.85억 달러로 소폭 올렸습니다.",
-    "4분기 매출 전망이 42.5억~42.6억 달러로 예상 43.6억 달러보다 낮았고 4분기 cRPO 성장률은 18.5%로 3분기 21%에서 둔화될 것으로 제시됐습니다. 10/29 주가는 약 27% 내려 사상 최악의 하루를 기록했고, 투자자들이 AI가 기존 소프트웨어 모델을 위협한다는 우려를 다시 떠올린 것이 배경입니다."
-   ],
-   "src": [
-    {
-     "t": "CNBC 10/29 ServiceNow 실적",
-     "u": "https://www.cnbc.com/2026/10/29/servicenow-now-earnings-q3-2026.html"
-    },
-    {
-     "t": "Investing.com 실적 및 4분기 전망",
-     "u": "https://www.investing.com/news/earnings/servicenow-shares-sink-on-earnings-miss-weak-q4-revenue-outlook-4980689"
-    }
-   ],
-   "asof": "2026-10-30",
-   "at": "10/31 07:19 KST"
-  },
-  "COP": {
-   "text": [
-    "10/1 ConocoPhillips는 Venture Global과 연 100만 톤 규모의 20년 LNG 매매계약을 맺었다고 발표했고 도입은 2030년부터입니다. 이 계약은 이란 분쟁으로 카타르 LNG 운영이 영향을 받은 상황과 함께 보도됐습니다.",
-    "10/8 호르무즈 유조선 공격과 10/12, 10/14 사우디 공격으로 유가가 오르면서 대형 석유주가 함께 올랐고, 10/5 주 +5.8%, 10/12 주 +9.3%의 상승으로 이어졌습니다."
-   ],
-   "src": [
-    {
-     "t": "BOE Report (로이터) COP·Venture Global LNG ",
-     "u": "https://boereport.com/2026/10/01/conocophillips-signs-20-year-lng-deal-with-venture-global/"
-    },
-    {
-     "t": "Engineering News LNG 계약과 이란 분쟁",
-     "u": "https://engineeringnews.co.za/article/conocophillips-signs-20-year-lng-deal-with-venture-global-2026-10-02"
-    },
-    {
-     "t": "TIKR XOM·CVX 한 달 상승 분석",
-     "u": "https://www.tikr.com/blog/exxonmobil-just-gained-12-in-a-month-and-chevron-11-take-profits-or-buy-more"
-    }
-   ],
-   "asof": "2026-10-30",
-   "at": "10/31 07:19 KST"
   },
   "MRNA": {
    "text": [
@@ -448,136 +384,47 @@
    "asof": "2026-11-05",
    "at": "11/06 10:19 KST"
   },
-  "CLF": {
-   "text": [
-    "CLF는 10/19 장 시작 전 3분기 실적을 발표했고, 조정 EBITDA 6억 1,200만 달러로 회사 가이던스 5억 7,500만 달러를 웃돌아 그날 주가가 올랐습니다.",
-    "회사는 4분기 조정 EBITDA를 약 7억 1,500만 달러로 예상하고 2027년 조정 EBITDA가 40억 달러를 넘을 것이라고 밝혔습니다.",
-    "캐나다 자회사 Stelco는 10/9경부터 도금 라인 가동을 중단하고 최대 500명을 감원하기로 했고, 캐나다 정부는 10/22에 15일 안에 감원을 되돌리지 않으면 법적 조치를 취하겠다고 통보했습니다.",
-    "10/30에는 Citigroup이 투자의견 중립을 유지하며 목표가를 14달러로 올렸습니다."
-   ],
-   "src": [
-    {
-     "t": "Cleveland-Cliffs 3분기 실적 8-K",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000764065/000076406526000112/clf-202609308xkex991.htm"
-    },
-    {
-     "t": "Finviz 실적 보도",
-     "u": "https://finviz.com/news/403791/cleveland-cliffs-shares-rise-over-7-as-third-quarter-earnings-exceed-expectations"
-    },
-    {
-     "t": "BNN Bloomberg Joly 통보",
-     "u": "https://www.bnnbloomberg.ca/business/politics/2026/10/22/joly-says-stelco-still-planning-mass-layoffs-gives-business-2-weeks-to-reverse-course-or-face-legal-action"
-    },
-    {
-     "t": "SteelOrbis 15일 통보",
-     "u": "https://www.steelorbis.com/steel-news/latest-news/canada-gives-cleveland-cliffs-15-days-to-reverse-stelco-layoffs-or-face-court-action-1485996.htm"
-    }
-   ],
-   "asof": "2026-10-30",
-   "at": "11/01 00:07 KST"
-  },
-  "ABSI": {
-   "text": [
-    "ABSI는 10/28에 특별한 회사 발표 없이 AI 신약개발주 전반이 오르는 가운데 약 12% 상승했고, 같은 날 Schrödinger는 11%, Recursion은 9% 올랐습니다.",
-    "해당 기사는 이 상승을 ABS-201 후보물질에 대한 기대와 위험선호 분위기로 설명했습니다.",
-    "다음 실적 발표는 11/12로 예정되어 있습니다."
-   ],
-   "src": [
-    {
-     "t": "TIKR AI 신약개발주 상승",
-     "u": "https://www.tikr.com/blog/absci-soars-12-schrodinger-up-11-recursion-up-9-as-ai-drug-discovery-stocks-rally"
-    }
-   ],
-   "asof": "2026-10-30",
-   "at": "11/01 00:07 KST"
-  },
   "RTX": {
    "text": [
-    "RTX는 10/20 장 시작 전 3분기 실적을 발표했고, 매출 250억 달러(11% 증가), 조정 EPS 2.26달러로 시장 예상을 웃돌았습니다.",
-    "회사는 2026년 조정 매출 전망을 970억~975억 달러로, 조정 EPS 전망을 7.65~7.75달러로 올렸고, 수주 잔고는 3,400억 달러로 사상 최대였습니다.",
-    "앞서 9/28에는 Raytheon이 최대 207억 달러 규모의 AMRAAM 미사일 다년 생산 계약을 국방부로부터 받았습니다."
+    "RTX는 10/20 3분기에 매출 약 250억 달러(+11%)와 조정 EPS 2.26달러를 발표했고, 수주잔고는 사상 최대인 3,400억 달러였습니다. 2026년 조정 EPS 가이던스를 7.65~7.75달러로 올렸는데, 기존은 7.10~7.25달러였습니다. 3분기 EPS에는 IEEPA 비용 회수분 0.25달러가 들어 있습니다. 4분기에는 Collins Aerospace 마진이 압박받을 수 있다고 경영진이 밝혔습니다."
    ],
    "src": [
     {
-     "t": "RTX 3분기 8-K",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000101829/000010182926000030/a2026-10x208xkerexhibit99.htm"
-    },
-    {
-     "t": "RTTNews 가이던스 상향",
+     "t": "RTTNews RTX 가이던스 상향",
      "u": "https://www.rttnews.com/3700578/rtx-raises-2026-outlook-for-adj-sales-adj-eps.aspx?type=ern"
     },
     {
-     "t": "Airforce Technology",
-     "u": "https://www.airforce-technology.com/newsletters/rtx-third-quarter-result"
-    }
-   ],
-   "asof": "2026-10-30",
-   "at": "11/01 00:07 KST"
-  },
-  "ILMN": {
-   "text": [
-    "ILMN은 10/29 장 마감 후 3분기 실적을 발표했고, 매출은 11억 3,000만 달러로 시장 예상보다 약 2,000만 달러 적었으며 조정 EPS는 1.44달러로 예상 1.36달러를 웃돌았습니다.",
-    "회사는 2026년 매출 전망을 46억 4,000만~46억 6,000만 달러로 올렸지만, 유기적 성장률 전망은 4% 이상으로 그대로 두었습니다.",
-    "다음 거래일인 10/30에 주가는 약 12~18% 하락했고, 중국 매출이 0.1% 감소한 점과 중국 불성실기업 명단 영향이 함께 거론되었습니다."
-   ],
-   "src": [
-    {
-     "t": "Illumina 3분기 실적 8-K",
-     "u": "https://www.sec.gov/Archives/edgar/data/0001110803/000111080326000202/q326earningsrelease.htm"
+     "t": "MarketBeat RTX 3분기 콘퍼런스콜",
+     "u": "https://www.marketbeat.com/instant-alerts/transcript-rtx-q3-earnings-call-highlights-2026-10-20/"
     },
     {
-     "t": "Yahoo Finance 매출 부진 하락",
-     "u": "https://finance.yahoo.com/markets/stocks/articles/illumina-sinks-13-light-q3-140130197.html"
-    },
-    {
-     "t": "Investing.com 실적 통화",
-     "u": "https://www.investing.com/news/transcripts/earnings-call-transcript-illumina-beats-q3-2026-estimates-but-shares-fall-after-hours-93CH-4985372"
+     "t": "Securities.io RTX 3분기",
+     "u": "https://www.securities.io/rtx-raises-2026-outlook-as-q3-sales-rise-11-to-25-billion/"
     }
    ],
-   "asof": "2026-10-30",
-   "at": "11/01 00:07 KST"
-  },
-  "BA": {
-   "text": [
-    "BA는 10/27 장 시작 전 3분기 실적을 발표했고, 핵심 주당 손실이 0.34달러로 시장 예상 0.21달러보다 컸으며 상업용 항공기 부문 손실은 6억 9,700만 달러였습니다.",
-    "CEO Kelly Ortberg는 2026년 737 생산과 인도 목표를 달성하지 못할 것이라고 밝혔고, 월 47대 생산 속도는 2027년 초로 미뤄졌습니다.",
-    "이날 주가는 10.7% 하락해 18개월 만에 가장 큰 일간 낙폭을 기록했습니다.",
-    "한편 방산 부문 매출은 15% 늘었고 수주 잔고는 7,450억 달러로 사상 최대였습니다."
-   ],
-   "src": [
-    {
-     "t": "KIRO 7 보도",
-     "u": "https://www.kiro7.com/news/local/boeing-stock-tumbles-investors-react-third-quarter-losses/GJDAM3MKWJBAZABVWOXVDFTK2A/"
-    },
-    {
-     "t": "Khaleej Times",
-     "u": "https://www.khaleejtimes.com/business/boeing-jetliner-production-challenges-weigh-on-third-quarter-results-2"
-    }
-   ],
-   "asof": "2026-10-30",
-   "at": "11/01 00:07 KST"
+   "asof": "2026-11-10",
+   "at": "11/11 10:20 KST"
   },
   "TEM": {
    "text": [
-    "10/23에 BMY와 2031년 말까지 이어지는 종양 데이터 라이선스 계약을 맺었고, 8-K에 따르면 고정 지급액은 합계 1억 3,750만 달러입니다. Needham은 같은 날 매수 의견과 목표가 75달러를 유지했습니다.",
-    "11/2에는 3분기 매출이 4억 1,150만 달러(전년 대비 +23%)이고 조정 EBITDA가 2,560만 달러라고 발표했으며, 연간 매출 가이던스를 16억~16억 500만 달러로 올렸습니다. 이 실적 발표일에 주가가 8.7% 올라 마지막 주 수익률에 반영되었습니다."
+    "TEM은 10/23 BMS가 2031년까지 Tempus의 다중모달 종양학 데이터를 라이선스하는 다년 계약을 발표했고, 이 소식에 주가가 6% 올랐습니다. 11/2 3분기에는 매출이 4억 1,150만 달러로 23% 늘었고 조정 EBITDA가 2,560만 달러로 흑자를 냈으며, 연간 매출 가이던스를 16억 달러 안팎으로 올렸습니다. 같은 날 주가는 8.7% 올랐고, 이후 두 주 연속 5%대 상승이 이어졌습니다."
    ],
    "src": [
     {
-     "t": "Tempus 3분기 실적 8-K",
-     "u": "https://www.sec.gov/Archives/edgar/data/0001717115/000119312526442619/tem-ex99_1.htm"
+     "t": "TIKR TEM BMS 라이선스",
+     "u": "https://www.tikr.com/blog/tempus-ai-gains-6-as-bristol-myers-squibb-licenses-oncology-data"
     },
     {
-     "t": "Tempus BMS 계약 8-K",
-     "u": "https://www.sec.gov/Archives/edgar/data/0001717115/000119312526429533/d135568d8k.htm"
+     "t": "Tempus 3분기 실적",
+     "u": "https://finviz.com/news/413037/tempus-reports-third-quarter-2026-results"
     },
     {
-     "t": "Tempus BMS 협력 보도자료",
-     "u": "https://www.tempus.com/news/pr/tempus-expands-strategic-collaboration-with-bristol-myers-squibb/"
+     "t": "Tempus 3분기 실적 후 주가",
+     "u": "https://finviz.com/news/413244/tempus-ai-shares-rise-418-as-q3-earnings-beat-forecasts-and-revenue-guidance-increases"
     }
    ],
-   "asof": "2026-11-02",
-   "at": "11/03 10:19 KST"
+   "asof": "2026-11-10",
+   "at": "11/11 10:20 KST"
   },
   "ORCL": {
    "text": [
@@ -599,21 +446,24 @@
   },
   "AMZN": {
    "text": [
-    "10/29 장 마감 후 3분기 실적을 발표했고, 조정 EPS는 1.89달러로 시장 예상 1.97달러보다 낮았으며 매출은 약 2,019억 달러로 예상치를 소폭 밑돌았습니다.",
-    "AWS 매출은 전년 대비 39% 늘어 성장세가 가팔라졌으나 설비투자 부담이 현금흐름을 압박한다는 평가가 나왔고, 다음 거래일 주가는 1.4% 내렸습니다. 10/30에는 Cantor Fitzgerald가 목표가를 280달러로 낮췄습니다."
+    "AMZN은 10/29 3분기에 AWS 매출이 39% 늘어난 약 460억 달러로 5년 가까이 만에 가장 빠르게 성장했다고 발표했습니다. 다만 EPS 1.89달러는 시장 예상 1.97달러에 못 미쳤고, 분기 설비투자 773억 달러가 예상을 크게 웃돌며 최근 12개월 잉여현금흐름이 마이너스로 돌아섰습니다. 경영진은 AWS가 2027년과 2028년에 40% 넘게 성장할 것으로 본다고 밝혔습니다."
    ],
    "src": [
     {
-     "t": "Newsquawk 3분기 실적",
-     "u": "https://www.newsquawk.com/headlines/amazoncom-inc-amzn-q3-2026-usd-eps-189-exp-197-sales-2019bln-exp-2022bln"
+     "t": "AP 아마존 3분기",
+     "u": "https://mynews13.com/fl/orlando/ap-top-news/2026/10/29/amazons-3q-results-miss-analysts-estimates-but-posts-solid-sales-gains-in-cloud-computing-unit"
     },
     {
-     "t": "Constellation Research AWS 3분기",
-     "u": "https://www.constellationr.com/insights/news/aws-q3-revenue-growth-surges-39-capex-stings-amazons-cash-flow"
+     "t": "GeekWire AWS 39% 성장",
+     "u": "https://geekwire.com/2026/aws-growth-hits-39-its-fastest-in-nearly-five-years-as-amazon-misses-on-earnings/"
+    },
+    {
+     "t": "Techzine AWS 성장과 현금흐름",
+     "u": "https://www.techzine.eu/news/infrastructure/145406/aws-grows-by-nearly-40-percent-but-ai-investments-put-pressure-on-cash-flow/"
     }
    ],
-   "asof": "2026-11-02",
-   "at": "11/03 10:19 KST"
+   "asof": "2026-11-10",
+   "at": "11/11 10:20 KST"
   },
   "SHW": {
    "text": [
@@ -973,6 +823,48 @@
    ],
    "asof": "2026-11-09",
    "at": "11/10 10:23 KST"
+  },
+  "CRSP": {
+   "text": [
+    "CRSP는 10/19에 A.J. Silver가 CFO를 맡았고, 전임 Raju Prasad는 외부 기회를 찾아 회사를 떠났습니다. 11/2 3분기 실적에서는 Vertex가 보고한 CASGEVY 매출이 9,900만 달러로 전 분기보다 30% 늘었고 순손실은 1억 1,140만 달러였습니다. 11/9에는 AHA에서 CTX310 1b상 결과를 발표해 중증 고중성지방혈증 환자 10명에서 30일째 중성지방이 평균 63%, ANGPTL3가 65% 줄었다고 밝혔습니다. Benzinga는 11/10 장중 주가가 8% 가까이 내렸다고 전했고, 이는 11/9 주 −9.8%와 이어집니다."
+   ],
+   "src": [
+    {
+     "t": "CRSP 3분기 실적 보도자료",
+     "u": "https://finviz.com/news/413465/crispr-therapeutics-provides-business-update-and-reports-third-quarter-2026-financial-results"
+    },
+    {
+     "t": "CRSP CTX310 1b상 보도자료",
+     "u": "https://www.globenewswire.com/news-release/2026/11/09/3398537/0/en/crispr-therapeutics-presents-phase-1b-data-for-ctx310-demonstrating-reductions-in-angptl3-and-triglycerides-in-patients-with-severe-hypertriglyceridemia-at-the-american-heart-assoc.html"
+    },
+    {
+     "t": "Benzinga CRSP",
+     "u": "https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/11/63113462/crispr-therapeutics-highlights-substantial-lipid-reductions-with-investigational-gene-editing-therapy"
+    }
+   ],
+   "asof": "2026-11-10",
+   "at": "11/11 10:20 KST"
+  },
+  "BEAM": {
+   "text": [
+    "BEAM은 10/28 ESGCT에서 BEAM-301의 1/2상 초기 데이터를 발표했고, 회사는 1회 투여 뒤 내인성 포도당 생성이 회복됐다고 밝혔습니다. 이 소식은 10/26 주 +13.2%와 이어집니다. 11/3 3분기 실적에서는 주당 손실이 시장 예상보다 컸습니다. 11/10에는 겸상적혈구병 치료제 risto-cel의 BEACON 시험이 12개월 연속 중증 혈관폐쇄성 위기 없음이라는 1차 목표를 달성했다고 발표했고, 2026년 말 이르면 FDA에 BLA를 제출할 계획입니다."
+   ],
+   "src": [
+    {
+     "t": "BEAM-301 초기 데이터 발표 예고",
+     "u": "https://finviz.com/news/401585/beam-therapeutics-to-present-initial-data-from-phase-12-trial-of-beam-301-in-glycogen-storage-disease-type-ia-gsdia-at-the-esgct-33rd-annual-congress"
+    },
+    {
+     "t": "BioPharma Dive risto-cel",
+     "u": "https://www.biopharmadive.com/news/beam-sickle-cell-base-editing-risto-cel-results/874242/"
+    },
+    {
+     "t": "RTTNews risto-cel",
+     "u": "https://www.rttnews.com/3712610/beam-reports-positive-pivotal-results-for-gene-edited-sickle-cell-therapy-risto-cel.aspx"
+    }
+   ],
+   "asof": "2026-11-10",
+   "at": "11/11 10:20 KST"
   }
  },
  "runs": [
@@ -1134,6 +1026,19 @@
    27,
    "claude-sonnet-5-5",
    0.661
+  ],
+  [
+   "11/11 10:20 KST",
+   6,
+   6,
+   6,
+   5,
+   "ok",
+   34,
+   0,
+   36,
+   "claude-sonnet-5-5",
+   0.879
   ]
  ]
 }

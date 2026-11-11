@@ -7,6 +7,7 @@ io:GPRO,io,EntropyIO,GPRO,GOPRO,stocks,US: GPRO,stock,nasdaq (coin name),False,"
 io:IONQ,io,EntropyIO,IONQ,IONQ,stocks,US: IONQ,stock,nasdaq (displayName),False,"IonQ, Inc. Common Stock",stock,10,0,False,
 io:NBIS,io,EntropyIO,NBIS,NBIS,stocks,US: NBIS,stock,nasdaq (displayName),False,Nebius Group N.V. - Class A Ordinary Shares,stock,15,0,False,
 io:NVDA,io,EntropyIO,NVDA,,(none),,unknown,uncategorized; coin name matches US stock NVDA (NVIDIA Corporation - Common Stock),False,,,25,0,False,
+io:SKHX,io,EntropyIO,SKHX,SKHX,stocks,US: SKHX,etf,nasdaq (displayName),False,Leverage Shares 2X Long SK Hynix Daily ETF,,15,0,False,
 io:SNDK,io,EntropyIO,SNDK,SNDK,stocks,US: SNDK,stock,nasdaq (displayName),False,Sandisk Corporation - Common Stock When-Issued,stock,15,0,False,
 io:TCNT,io,EntropyIO,TCNT,TENCENT,stocks,,unknown,,False,,,10,0,False,
 io:XIAOMI,io,EntropyIO,XIAOMI,XIAOMI,stocks,,unknown,,False,,,10,0,False,
