@@ -1,4 +1,4 @@
-{"version":1,"updated":"2026-11-11T01:06:27Z","prev":"2026-11-10T01:07:29Z","counts":{"b":105,"p":222,"h":138},
+{"version":1,"updated":"2026-11-12T01:11:21Z","prev":"2026-11-11T01:06:27Z","counts":{"b":105,"p":224,"h":138},
 "state":{
 "b":{
 "AAOIBUSDT":{"u":"AAOI","lk":"AAOI","n":"Applied Optoelectronics","c":"stock","m":"US"},
@@ -177,6 +177,7 @@
 "EWZUSDT":{"u":"EWZ","lk":"EWZ","n":"iShares MSCI Brazil ETF","c":"etf","m":"US","od":"2026-06-10"},
 "FLEXUSDT":{"u":"FLEX","lk":"FLEX","n":"Flex Ltd.","c":"stock","m":"US","od":"2026-07-02"},
 "FLNCUSDT":{"u":"FLNC","lk":"FLNC","n":"Fluence Energy, Inc.","c":"stock","m":"US","od":"2026-05-18"},
+"FRHCUSDT":{"u":"FRHC","lk":"FRHC","n":"Freedom Holding Corp.","c":"stock","m":"US","od":"2026-11-12"},
 "FWDIUSDT":{"u":"FWDI","lk":"FWDI","n":"Forward Industries, Inc.","c":"stock","m":"US","od":"2026-07-09"},
 "GDXUSDT":{"u":"GDX","lk":"GDX","n":"VanEck Gold Miners ETF","c":"etf","m":"US","od":"2026-08-17"},
 "GEVUSDT":{"u":"GEV","lk":"GEV","n":"GE Vernova Inc.","c":"stock","m":"US","od":"2026-07-10"},
@@ -242,6 +243,7 @@
 "NKEUSDT":{"u":"NKE","lk":"NKE","n":"Nike, Inc.","c":"stock","m":"US","od":"2026-09-29"},
 "NOKUSDT":{"u":"NOK","lk":"NOK","n":"Nokia Corporation Sponsored","c":"stock","m":"US","od":"2026-06-01"},
 "NOWUSDT":{"u":"NOW","lk":"NOW","n":"ServiceNow, Inc.","c":"stock","m":"US","od":"2026-06-03"},
+"NUUSDT":{"u":"NU","lk":"NU","n":"Nu Holdings Ltd.","c":"stock","m":"US","od":"2026-11-12"},
 "NVDAUSDT":{"u":"NVDA","lk":"NVDA","n":"NVIDIA Corporation","c":"stock","m":"US","od":"2026-03-26"},
 "NVDLUSDT":{"u":"NVDL","lk":"NVDL","n":"GraniteShares 2x Long NVDA Daily ETF","c":"etf","m":"US","od":"2026-09-02"},
 "NVOUSDT":{"u":"NVO","lk":"NVO","n":"Novo Nordisk A/S","c":"stock","m":"US","od":"2026-06-01"},
@@ -473,6 +475,8 @@
 }
 },
 "events":[
+{"v":"p","e":"add","s":"NUUSDT","u":"NU","lk":"NU","n":"Nu Holdings Ltd.","c":"stock","m":"US","d":"2026-11-12","x":1,"t0":"2026-11-11T01:06:27Z","t1":"2026-11-12T01:11:21Z"},
+{"v":"p","e":"add","s":"FRHCUSDT","u":"FRHC","lk":"FRHC","n":"Freedom Holding Corp.","c":"stock","m":"US","d":"2026-11-12","x":1,"t0":"2026-11-11T01:06:27Z","t1":"2026-11-12T01:11:21Z"},
 {"v":"h","e":"add","s":"io:SKHX","u":"SKHX","lk":"SKHX","n":"Leverage Shares 2X Long SK Hynix Daily ETF","c":"etf","m":"US","d":"2026-11-11","x":0,"t0":"2026-11-10T01:07:29Z","t1":"2026-11-11T01:06:27Z","dex":"io"},
 {"v":"h","e":"add","s":"xyz:TTWO","u":"TTWO","lk":"TTWO","n":"Take-Two Interactive Software, Inc.","c":"stock","m":"US","d":"2026-11-10","x":0,"t0":"2026-11-07T01:06:12Z","t1":"2026-11-10T01:07:29Z","dex":"xyz"},
 {"v":"h","e":"add","s":"xyz:MUU","u":"MUU","lk":"MUU","n":"Direxion Daily MU Bull 2X ETF","c":"etf","m":"US","d":"2026-11-10","x":0,"t0":"2026-11-07T01:06:12Z","t1":"2026-11-10T01:07:29Z","dex":"xyz"},

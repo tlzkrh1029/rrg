@@ -1,12 +1,9 @@
-돌파 지도 2026-11-10 (USD 기준, 직전 종가)
-켜진 칸 20일 65/278 (23%) · 55일 53 · 52주 23 · 사상 최고 17 · 이탈 46 · 실패 17
+돌파 지도 2026-11-11 (USD 기준, 직전 종가)
+켜진 칸 20일 61/279 (22%) · 55일 54 · 52주 23 · 사상 최고 17 · 이탈 40 · 실패 21
 
 새 돌파 (1일째)
-  사상 최고: LLY(XLV·ARKG)*, KO(XLP)
-  55일: AMZN(XLY)*, TDG(ITA)
-  20일: ENLT(TAN)*
+  20일: PH(PAVE)*
   * SPY 대비로도 켜진 칸
-오늘 실패한 돌파: SYRE(XBI, 55일), RUN(TAN, 55일), AA(XME, 20일), ABX(GDX, 20일), WPM(GDX, 20일), FSLR(TAN, 20일)
-블록 알림 (20일): GDX ×3/10 실패
+오늘 실패한 돌파: AEM(GDX, 20일), AU(GDX, 20일), ENLT(TAN, 20일)
 
 https://tlzkrh1029.github.io/rrg/breakout/

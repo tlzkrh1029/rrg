@@ -1,133 +1,48 @@
 {
- "asof": "2026-11-10",
- "prev_asof": "2026-11-09",
+ "asof": "2026-11-11",
+ "prev_asof": "2026-11-10",
  "alerts": [
   {
    "type": "up",
-   "H": "ath",
-   "key": "LLY",
-   "name": "Eli Lilly and Company",
+   "H": "20",
+   "key": "PH",
+   "name": "Parker-Hannifin Corporation",
    "etfs": [
-    "XLV",
-    "ARKG"
+    "PAVE"
    ],
-   "over": 0.01041,
+   "over": 0.00687,
    "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "ath",
-   "key": "KO",
-   "name": "The Coca-Cola Company",
-   "etfs": [
-    "XLP"
-   ],
-   "over": 0.01127,
-   "spy": "none",
    "qqq": "none"
   },
   {
-   "type": "up",
-   "H": "55",
-   "key": "AMZN",
-   "name": "Amazon.com, Inc.",
+   "type": "failed",
+   "H": "20",
+   "key": "AEM",
+   "name": "Agnico Eagle Mines Limited",
    "etfs": [
-    "XLY"
+    "GDX"
    ],
-   "over": 0.01666,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.01779
   },
   {
-   "type": "up",
-   "H": "55",
-   "key": "TDG",
-   "name": "TransDigm Group Incorporated",
+   "type": "failed",
+   "H": "20",
+   "key": "AU",
+   "name": "AngloGold Ashanti plc",
    "etfs": [
-    "ITA"
+    "GDX"
    ],
-   "over": 0.00982,
-   "spy": "none",
-   "qqq": "lit"
+   "over": -0.01541
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "20",
    "key": "ENLT",
    "name": "Enlight Renewable Energy Ltd",
    "etfs": [
     "TAN"
    ],
-   "over": 0.01528,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "SYRE",
-   "name": "Spyre Therapeutics, Inc.",
-   "etfs": [
-    "XBI"
-   ],
-   "over": -0.02683
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "RUN",
-   "name": "Sunrun Inc.",
-   "etfs": [
-    "TAN"
-   ],
-   "over": -0.11122
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "AA",
-   "name": "Alcoa Corporation",
-   "etfs": [
-    "XME"
-   ],
-   "over": -0.03807
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "ABX",
-   "name": "Barrick Mining Corporation",
-   "etfs": [
-    "GDX"
-   ],
-   "over": -0.03622
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "WPM",
-   "name": "Wheaton Precious Metals Corp.",
-   "etfs": [
-    "GDX"
-   ],
-   "over": -0.01862
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "FSLR",
-   "name": "First Solar, Inc.",
-   "etfs": [
-    "TAN"
-   ],
-   "over": -0.03012
-  },
-  {
-   "type": "block_fail",
-   "etf": "GDX",
-   "failed": 3,
-   "n": 10
+   "over": -0.03101
   }
  ]
 }

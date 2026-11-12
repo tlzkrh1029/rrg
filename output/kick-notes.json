@@ -2478,15 +2478,25 @@
   },
   "S:688825:2026-11-09": {
    "none": 1,
-   "tries": 1,
-   "at": "11/10 10:23 KST",
-   "why": "CXMT 11/9 원인을 설명하는 기사를 검색에서 찾지 못함"
+   "tries": 2,
+   "at": "11/12 10:25 KST",
+   "why": "영문과 중문으로 11/9 CXMT 주가 원인을 검색했으나 해당일 기사를 찾지 못함"
   },
   "S:005930:2026-11-05": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/10 10:23 KST",
-   "why": "11/5 삼성전자 낙폭을 직접 다룬 기사는 찾지 못함. 11/6 아시아 AI주 급락 기사만 확인함"
+   "k": "AI 매도 확산",
+   "ev": "나스닥100이 6.4% 급락한 AI 투매가 서울로 번져 KOSPI가 5% 넘게 내리고 외국인이 매도함",
+   "src": [
+    {
+     "t": "Bloomberg",
+     "u": "https://www.bloomberg.com/news/articles/2026-11-05/korean-chip-stocks-sink-10-in-pre-market-as-ai-fears-deepen"
+    },
+    {
+     "t": "Korea Herald",
+     "u": "https://www.koreaherald.com/article/10933992"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
   },
   "E:XHB:2026-11-10": {
    "k": "금리 인상 우려",
@@ -2650,9 +2660,9 @@
   },
   "E:ITA:2026-11-10": {
    "none": 1,
-   "tries": 1,
-   "at": "11/11 10:20 KST",
-   "why": "TransDigm 실적 발표일(11/10 장 전)은 확인했으나 결과와 방산 업종 상승 원인을 다룬 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/12 10:25 KST",
+   "why": "11/10 방산주 움직임과 TDG 실적 반응을 검색했으나 그날 원인을 다룬 기사를 찾지 못함"
   },
   "S:AMZN:2026-11-10": {
    "none": 1,
@@ -2674,9 +2684,281 @@
   },
   "S:1548:2026-11-10": {
    "none": 1,
+   "tries": 2,
+   "at": "11/12 10:25 KST",
+   "why": "영문과 중문으로 11/10 Genscript 급등 원인을 검색했으나 해당일 기사를 찾지 못함"
+  },
+  "E:DRAM:2026-11-11": {
+   "k": "CoreWeave 호실적 메모리 반등",
+   "ev": "CoreWeave가 실적과 연간 전망 상향을 내놓자 Sandisk, Micron 등 메모리주가 10% 안팎 반등함",
+   "src": [
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-veterans-day-140638547.html"
+    },
+    {
+     "t": "TradingKey",
+     "u": "https://www.tradingkey.com/analysis/stocks/us-stocks/262300967-memory-stocks-morgan-stanley-micron-sandisk-ai-demand-buying-opportunity-tradingkey"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "E:SMH:2026-11-11": {
+   "k": "AI 반도체 반등",
+   "ev": "CoreWeave 실적이 AI 투자 자금 조달 우려를 덜어 반도체가 시장 반등을 주도함",
+   "src": [
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-veterans-day-140638547.html"
+    },
+    {
+     "t": "MLQ",
+     "u": "https://mlq.ai/news/chip-stocks-jump-4-at-the-open-as-coreweave-rallies-11-and-the-nasdaq-gains-15/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "E:XLK:2026-11-11": {
+   "k": "AI 인프라 반등",
+   "ev": "CoreWeave가 실적과 선수금 전망으로 자금 우려를 덜자 반도체 중심으로 기술주가 급반등함",
+   "src": [
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-veterans-day-140638547.html"
+    },
+    {
+     "t": "24/7 Wall St.",
+     "u": "https://247wallst.com/investing/2026/11/11/seagate-spikes-9-sandisk-surges-8-as-coreweaves-results-revive-ai-trade-micron-climbs-7/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "E:IGV:2026-11-11": {
+   "k": "반도체 주도 반등",
+   "ev": "CoreWeave 실적 이후 반등이 반도체와 하드웨어에 몰려 소프트웨어는 상대적으로 덜 오름",
+   "src": [
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-veterans-day-140638547.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "E:XLRE:2026-11-11": {
+   "k": "AI 반등 속 방어주 소외",
+   "ev": "AI 반도체가 지수 반등을 이끄는 동안 금리 인상 우려가 이어져 부동산 등 방어 업종은 제자리였음",
+   "src": [
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-veterans-day-140638547.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "E:XLU:2026-11-11": {
+   "k": "AI 반등 속 방어주 소외",
+   "ev": "AI 반도체 중심 반등과 12월 금리 인상 전망 속에 유틸리티는 거의 오르지 못함",
+   "src": [
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-veterans-day-140638547.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "E:KRE:2026-11-10": {
+   "k": "물가 쇼크 금리 인상 우려",
+   "ev": "10월 근원 CPI가 예상보다 높아 12월 금리 인상 기대가 커지고 국채금리가 급등함",
+   "src": [
+    {
+     "t": "Quartz",
+     "u": "https://qz.com/core-cpi-october-stocks-fall-fed-rate-hike-111026"
+    },
+    {
+     "t": "AOL",
+     "u": "https://www.aol.com/articles/spiking-yields-falling-stocks-wall-155325000.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "E:XLV:2026-11-11": {
+   "k": "AI 반등 속 방어주 소외",
+   "ev": "AI 반도체가 반등을 이끄는 동안 헬스케어는 거의 움직이지 않아 지수에 뒤처짐",
+   "src": [
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-veterans-day-140638547.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "S:MU:2026-11-11": {
+   "k": "메모리 저가 매수",
+   "ev": "Morgan Stanley가 주가 조정으로 메모리주 위험 대비 수익이 나아졌다고 보고 CoreWeave 호실적이 겹침",
+   "src": [
+    {
+     "t": "TradingKey",
+     "u": "https://www.tradingkey.com/analysis/stocks/us-stocks/262300967-memory-stocks-morgan-stanley-micron-sandisk-ai-demand-buying-opportunity-tradingkey"
+    },
+    {
+     "t": "24/7 Wall St.",
+     "u": "https://247wallst.com/investing/2026/11/11/seagate-spikes-9-sandisk-surges-8-as-coreweaves-results-revive-ai-trade-micron-climbs-7/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "S:TSLA:2026-11-11": {
+   "k": "Cybertruck 생산 연장",
+   "ev": "Musk가 주문 적체를 소화하려고 Cybertruck 생산을 2027년 여름까지 늘린다고 밝힘",
+   "src": [
+    {
+     "t": "Not a Tesla App",
+     "u": "https://www.notateslaapp.com/news/4967/tesla-to-add-extra-cybertruck-shift-to-clear-order-backlog"
+    },
+    {
+     "t": "Tesla North",
+     "u": "https://teslanorth.com/2026/11/07/tesla-cybertruck-backlog-extra-shift/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "S:CDE:2026-11-10": {
+   "k": "CPI 쇼크 금값 하락",
+   "ev": "10월 CPI가 예상을 웃돌아 금리 인상 기대가 커지며 금값이 2% 넘게 떨어짐",
+   "src": [
+    {
+     "t": "BigGo Finance",
+     "u": "https://finance.biggo.com/news/f226093e-5f67-487b-a93a-0bef7b7b0469"
+    },
+    {
+     "t": "Quartz",
+     "u": "https://qz.com/core-cpi-october-stocks-fall-fed-rate-hike-111026"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "S:NEM:2026-11-10": {
+   "k": "CPI 쇼크 금값 하락",
+   "ev": "10월 CPI가 예상을 웃돌아 금리 인상 기대가 커지며 금값이 2% 넘게 떨어져 금광주가 밀림",
+   "src": [
+    {
+     "t": "BigGo Finance",
+     "u": "https://finance.biggo.com/news/f226093e-5f67-487b-a93a-0bef7b7b0469"
+    },
+    {
+     "t": "Quartz",
+     "u": "https://qz.com/core-cpi-october-stocks-fall-fed-rate-hike-111026"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "S:XOM:2026-11-09": {
+   "k": "유가 하락",
+   "ev": "OPEC+가 12월 증산을 동결했는데도 원유가 내려 배럴당 87달러 부근으로 밀림",
+   "src": [
+    {
+     "t": "TheStreet Pro",
+     "u": "https://pro.thestreet.com/stock-market-today/2026-11-09"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "S:CRSP:2026-11-09": {
+   "k": "CTX310 1b상 자료",
+   "ev": "CTX310 1b상에서 ANGPTL3 65%, 중성지방 63% 감소를 발표했으나 주가는 반응하지 않음",
+   "src": [
+    {
+     "t": "CRISPR Therapeutics",
+     "u": "https://ir.crisprtx.com/news-releases/news-release-details/crispr-therapeutics-reports-positive-additional-phase-1-data"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "S:ORCL:2026-11-11": {
+   "k": "CoreWeave 자금 우려 완화",
+   "ev": "CoreWeave가 계약 기반 금융과 선수금으로 조달하겠다고 밝혀 AI 부채 우려가 줄며 Oracle이 오름",
+   "src": [
+    {
+     "t": "24/7 Wall St.",
+     "u": "https://247wallst.com/investing/2026/11/11/seagate-spikes-9-sandisk-surges-8-as-coreweaves-results-revive-ai-trade-micron-climbs-7/"
+    },
+    {
+     "t": "Yahoo Finance",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-veterans-day-140638547.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "S:CVX:2026-11-09": {
+   "k": "유가 하락",
+   "ev": "원유가 내리고 OPEC+가 12월 산유량을 동결해 시장이 오르는 동안 에너지주는 약세였음",
+   "src": [
+    {
+     "t": "TheStreet Pro",
+     "u": "https://pro.thestreet.com/stock-market-today/2026-11-09"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "S:BA:2026-11-09": {
+   "k": "민항기 인력 5% 감축",
+   "ev": "Boeing이 생산 증산 속도를 늦추면서 상업용 항공기 부문 인력 약 5%를 줄인다고 알려짐",
+   "src": [
+    {
+     "t": "Flying",
+     "u": "https://www.flyingmag.com/boeing-to-cut-commercial-division-workforce-by-5-percent/"
+    },
+    {
+     "t": "KIRO 7",
+     "u": "https://www.kiro7.com/news/national/boeing-cut-commercial-airplane-workforce-by-about-5-amid-production-setbacks/YBJZYWUEIVCHXCP7ORB6D3IOZQ/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "S:PLTR:2026-11-09": {
+   "k": "AI 소프트웨어 반등",
+   "ev": "전주 AI 급락 뒤 반발 매수로 Palantir가 5%, Snowflake가 6% 오름",
+   "src": [
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/palantir-rises-5-snowflake-up-6-as-ai-stocks-rebound-after-market-was-freaking-out"
+    },
+    {
+     "t": "GV Wire",
+     "u": "https://gvwire.com/2026/11/09/wall-street-rallies-after-last-weeks-ai-rout-nvidia-falls/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/12 10:25 KST"
+  },
+  "S:MSFT:2026-11-11": {
+   "none": 1,
    "tries": 1,
-   "at": "11/11 10:20 KST",
-   "why": "Genscript 11/10 급등을 영문, 중문으로 검색했으나 해당일 기사를 찾지 못함"
+   "at": "11/12 10:25 KST",
+   "why": "11/11 MSFT 하락 원인을 검색했으나 해당일 기사가 없고 데이터센터 세제 혜택 기사는 시점이 불분명함"
+  },
+  "S:NEE:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/12 10:25 KST",
+   "why": "11/9 NEE 주가와 EEI 콘퍼런스 관련 기사를 검색했으나 XLU 대비 부진 원인을 다룬 기사를 찾지 못함"
   }
  },
  "runs": [
@@ -2837,6 +3119,18 @@
    28,
    "claude-sonnet-5-5",
    0.698
+  ],
+  [
+   "11/12 10:25 KST",
+   24,
+   19,
+   5,
+   "ok",
+   33,
+   5,
+   40,
+   "claude-sonnet-5-5",
+   0.92
   ]
  ]
 }

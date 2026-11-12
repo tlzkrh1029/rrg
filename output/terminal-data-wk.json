@@ -1,10 +1,10 @@
 {
  "asof": "2026-11-06",
- "first_date": "2024-11-12",
- "days": 498,
+ "first_date": "2024-11-13",
+ "days": 497,
  "weeks": 104,
- "generated_at": "2026-11-11T01:07:55Z",
- "price_generated_at": "2026-11-11T01:06:59Z",
+ "generated_at": "2026-11-12T01:13:08Z",
+ "price_generated_at": "2026-11-12T01:12:09Z",
  "source": [
   "yahoo"
  ],

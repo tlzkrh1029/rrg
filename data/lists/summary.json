@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T01:06:27Z",
+  "generated_at": "2026-11-12T01:11:21Z",
   "binance_equity_catalog_error": null,
   "binance_spot_bstocks": {
     "count": 105,
@@ -14,18 +14,18 @@
     "missing_from_TRD_GRP_261": []
   },
   "binance_futures_tradfi": {
-    "count": 222,
+    "count": 224,
     "by_asset_class": {
       "etf": 41,
-      "stock": 173,
+      "stock": 175,
       "unknown": 8
     },
     "exchange_info_source": "https://www.binance.com",
-    "exchange_info_server_time": "2026-11-11T01:01:01Z",
+    "exchange_info_server_time": "2026-11-12T01:01:01Z",
     "trading_but_not_in_exchange_info": [],
     "by_underlying_type": {
       "CN_EQUITY": 2,
-      "EQUITY": 197,
+      "EQUITY": 199,
       "HK_EQUITY": 15,
       "KR_EQUITY": 8
     }

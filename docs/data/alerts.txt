@@ -1,21 +1,35 @@
-🔔 섹터 전환 터미널 · 2026-11-10 종가 · 변화 8건
+🔔 섹터 전환 터미널 · 2026-11-11 종가 · 변화 16건
 1W 백분위 높은 순 · [1W/1M/3M/6M/12M 백분위] · RRG 는 벤치마크 대비 국면
 
-XLC 커뮤니케이션  [100/36/55/18/10]  Improving vs SPY
-  · ↗ SPY 비율 50일선 상향 돌파
-XLY 경기소비재  [95/86/82/55/24]  Improving vs SPY
-  · ↑ 백분위 31점 상승 (6개월 → 1개월)
-XLRE 부동산  [82/77/73/45/43]  Improving vs SPY
-  · ↑ 백분위 32점 상승 (6개월 → 1개월)
-XHB 주택건설  [73/95/41/59/14]  Lagging vs XLY
-  · ↑ 백분위 36점 상승 (6개월 → 1개월)
-XLB 소재  [64/82/64/50/71]  Improving vs SPY
-  · ↑ 백분위 32점 상승 (6개월 → 1개월)
-ITA 항공우주·방산  [59/68/18/27/33]  Lagging vs XLI
-  · ↑ 백분위 41점 상승 (6개월 → 1개월)
-GNOM 유전체학  [23/41/95/95/95]  Weakening vs XLV
+XLC 커뮤니케이션  [100/36/50/18/10]  Improving vs SPY
   · ↘ SPY 비율 50일선 하향 이탈
-XLE 에너지  [9/32/77/73/86]  Leading vs SPY
-  · ↓ 백분위 41점 하락 (6개월 → 1개월)
+ITA 항공우주·방산  [95/86/18/27/33]  Lagging vs XLI
+  · ↑ 백분위 59점 상승 (6개월 → 1개월)
+  · 전환순 상위 3 진입 (점수 58)
+URA 우라늄  [91/14/0/0/0]  Lagging vs XLE
+  · ≈ 1주 반등, 1개월 이상에서는 미확인
+  · 전환순 상위 3 진입 (점수 52)
+XME 금속·광업  [86/23/9/5/29]  Lagging vs XLB
+  · ≈ 1주 반등, 1개월 이상에서는 미확인
+SMH 반도체  [77/5/14/14/81]  Lagging vs XLK
+  · ≈ 1주 반등, 1개월 이상에서는 미확인
+XLE 에너지  [64/27/82/73/90]  Leading vs SPY
+  · ↓ 백분위 46점 하락 (6개월 → 1개월)
+XLY 경기소비재  [41/82/77/45/24]  Improving vs SPY
+  · ↑ 백분위 37점 상승 (6개월 → 1개월)
+XLRE 부동산  [36/68/59/50/38]  Improving vs SPY
+  · ↘ SPY 비율 200일선 하향 이탈
+IGV 소프트웨어  [27/18/45/82/5]  Leading vs XLK
+  · ↓ 백분위 64점 하락 (6개월 → 1개월)
+KRE 지역은행  [23/59/36/68/62]  Lagging vs XLF
+  · ↘ SPY 비율 200일선 하향 이탈
+XLB 소재  [18/73/73/55/71]  Improving vs SPY
+  · ↘ SPY 비율 200일선 하향 이탈
+MAGS 매그니피센트 7  [13/22/65/30/32]  Leading vs SPY
+  · ↘ SPY 비율 200일선 하향 이탈
+XHB 주택건설  [9/95/41/59/14]  Lagging vs XLY
+  · RRG Improving → Lagging (vs SPY)
+ARKG 유전체학 (액티브)  [5/32/86/100/100]  Weakening vs XLV
+  · ↓ 백분위 68점 하락 (6개월 → 1개월)
 
 https://tlzkrh1029.github.io/rrg/#board
