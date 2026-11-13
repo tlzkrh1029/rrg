@@ -2949,16 +2949,192 @@
    "at": "11/12 10:25 KST"
   },
   "S:MSFT:2026-11-11": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/12 10:25 KST",
-   "why": "11/11 MSFT 하락 원인을 검색했으나 해당일 기사가 없고 데이터센터 세제 혜택 기사는 시점이 불분명함"
+   "k": "Anthropic 오피스 도구",
+   "ev": "Anthropic이 Excel 등과 경쟁하는 업무용 도구를 내놓아 Microsoft 365 경쟁 우려가 커짐",
+   "src": [
+    {
+     "t": "Microsoft Shares Drop Over 3% as Anthrop",
+     "u": "https://www.mitrade.com/insights/news/live-news/article-8-2246231-20261111"
+    },
+    {
+     "t": "Microsoft Stock Drops 3% After Anthropic",
+     "u": "https://officechai.com/ai/microsoft-stock-drops-3-after-anthropic-announces-claude-sheets-and-claude-data/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/13 10:19 KST"
   },
   "S:NEE:2026-11-09": {
    "none": 1,
+   "tries": 2,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(시장 마감, 11/9 급등장). NEE가 유틸리티 업종보다 부진했던 이유를 설명하는 기사가 없음"
+  },
+  "E:URA:2026-11-12": {
+   "k": "원전·우라늄주 약세",
+   "ev": "Oklo와 Centrus 등 원전 관련주가 한 달 낙폭 속에 다시 매도 압력을 받음",
+   "src": [
+    {
+     "t": "NuScale Power Just Dropped 25% in a Mont",
+     "u": "https://247wallst.com/investing/2026/11/12/nuscale-power-just-dropped-25-in-a-month-nuke-your-shares-now-or-hunker-down-and-hold/"
+    },
+    {
+     "t": "Nuclear Stocks To Follow Now - November ",
+     "u": "https://www.marketbeat.com/instant-alerts/list-nuclear-stocks-to-follow-now-november-12th-2026-11-12/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/13 10:19 KST"
+  },
+  "S:NXE:2026-11-12": {
+   "k": "원전·우라늄주 약세",
+   "ev": "Oklo와 Centrus 등 원전 관련주가 다시 매도 압력을 받아 우라늄 개발주도 동반 하락함",
+   "src": [
+    {
+     "t": "NuScale Power Just Dropped 25% in a Mont",
+     "u": "https://247wallst.com/investing/2026/11/12/nuscale-power-just-dropped-25-in-a-month-nuke-your-shares-now-or-hunker-down-and-hold/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/13 10:19 KST"
+  },
+  "S:AVGO:2026-11-12": {
+   "k": "Nvidia CEO 불확실성",
+   "ev": "Nvidia 후계 불확실성으로 Google TPU와 Broadcom이 대안으로 거론되며 AI 반도체 매수세가 몰림",
+   "src": [
+    {
+     "t": "Are AMD and Broadcom the real winners of",
+     "u": "https://www.morningstar.com/news/marketwatch/2026110986/are-amd-and-broadcom-the-real-winners-of-the-nvidia-spy-scandal"
+    }
+   ],
+   "by": "claude",
+   "at": "11/13 10:19 KST"
+  },
+  "S:GOOGL:2026-11-12": {
+   "k": "Nvidia CEO 불확실성",
+   "ev": "Nvidia 경영 불확실성으로 Google TPU가 대안으로 부각되며 Alphabet이 통신서비스 업종보다 강세를 보임",
+   "src": [
+    {
+     "t": "Are AMD and Broadcom the real winners of",
+     "u": "https://www.morningstar.com/news/marketwatch/2026110986/are-amd-and-broadcom-the-real-winners-of-the-nvidia-spy-scandal"
+    }
+   ],
+   "by": "claude",
+   "at": "11/13 10:19 KST"
+  },
+  "S:NEM:2026-11-12": {
+   "k": "금값 약세",
+   "ev": "금값이 추가로 내리면서 Newmont 등 금광주가 이날 업종 내 낙폭 상위에 오름",
+   "src": [
+    {
+     "t": "ASX gold miners lose favour (Mining.com.",
+     "u": "https://mining.com.au/asx-gold-miners-lose-favour/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/13 10:19 KST"
+  },
+  "S:STX:2026-11-09": {
+   "k": "AI 반등, 증권사 호평",
+   "ev": "AI 급락 뒤 반등장에서 Morgan Stanley가 펀더멘털 강세와 심리 약세를 짚으며 Seagate가 10% 가까이 오름",
+   "src": [
+    {
+     "t": "Wall Street rallies after last week's AI",
+     "u": "https://www.staradvertiser.com/2026/11/09/breaking-news/wall-street-rallies-after-last-weeks-ai-rout-nvidia-falls/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/13 10:19 KST"
+  },
+  "E:ARKG:2026-11-10": {
+   "none": 1,
    "tries": 1,
-   "at": "11/12 10:25 KST",
-   "why": "11/9 NEE 주가와 EEI 콘퍼런스 관련 기사를 검색했으나 XLU 대비 부진 원인을 다룬 기사를 찾지 못함"
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(유전체·CRISPR 하락, Hims 실적과 ARKG). 11/10 날짜의 구성종목 하락 원인 기사를 찾지 못함. 물가 지표 부담은 있었으나 ARKG만 4% 빠진 이유는 "
+  },
+  "E:XBI:2026-11-12": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(XBI와 Moderna 11/12, 바이오 업종 동향). 11/12 날짜 기사가 없고 MRNA 하락 원인도 확인 못 함"
+  },
+  "E:XLE:2026-11-12": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(에너지주와 유가 11/12, 브렌트·WTI). 11/12 날짜 유가와 에너지 업종 기사를 찾지 못함"
+  },
+  "S:TWST:2026-11-11": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(Twist 11/11 하락). 날짜가 맞는 원인 기사가 없고 공시는 인센티브 부여뿐임"
+  },
+  "S:688825:2026-11-12": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(CXMT 11/12 하락). 날짜가 맞는 기사가 없음"
+  },
+  "S:MTRN:2026-11-11": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(Materion 11/11). 11/4 실적 외에 그날 원인 기사가 없음"
+  },
+  "S:GE:2026-11-12": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(GE Aerospace 11/12 하락). 날짜가 맞는 원인 기사가 없고 제목도 원인을 담지 않음"
+  },
+  "S:LLY:2026-11-10": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(Hims 실적, ARKG 하락). LLY는 보합이었고 차이는 ARKG 급락에서 나와 LLY 자체 원인이 없음"
+  },
+  "S:EQIX:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(Equinix 11/9 급등). 채권 발행 공시뿐이고 상승 원인 기사를 찾지 못함"
+  },
+  "S:NTRA:2026-11-12": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(Natera 11/12, 유전체 업종). 날짜가 맞는 기사 없음. 11/5 실적 후 급락 뒤 반등으로 보이나 근거 부족"
+  },
+  "S:MPC:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(Marathon Petroleum 11/9). 정제업체 3분기 실적 언급은 있으나 그날 상승 원인으로 확인하지 못함"
+  },
+  "S:NUE:2026-11-10": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "2회 검색(Nucor 11/10). 11/5 급락 기사만 있고 11/10 원인 기사가 없음"
+  },
+  "S:8001:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "검색 결과가 일반 시장 기사뿐이고 ITOCHU 개별 원인을 찾지 못함"
+  },
+  "S:CSL:2026-11-10": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "검색 결과가 일반 시장 기사뿐이고 Carlisle 개별 원인을 찾지 못함"
+  },
+  "S:V:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/13 10:19 KST",
+   "why": "검색 결과가 일반 시장 기사뿐이고 Visa가 금융 업종 대비 부진했던 원인을 찾지 못함"
   }
  },
  "runs": [
@@ -3131,6 +3307,18 @@
    40,
    "claude-sonnet-5-5",
    0.92
+  ],
+  [
+   "11/13 10:19 KST",
+   24,
+   7,
+   16,
+   "ok",
+   28,
+   0,
+   30,
+   "claude-sonnet-5-5",
+   0.738
   ]
  ]
 }

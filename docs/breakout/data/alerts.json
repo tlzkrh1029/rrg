@@ -1,48 +1,156 @@
 {
- "asof": "2026-11-11",
- "prev_asof": "2026-11-10",
+ "asof": "2026-11-12",
+ "prev_asof": "2026-11-11",
  "alerts": [
   {
    "type": "up",
    "H": "20",
-   "key": "PH",
-   "name": "Parker-Hannifin Corporation",
+   "key": "AVGO",
+   "name": "Broadcom Inc.",
    "etfs": [
-    "PAVE"
+    "XLK",
+    "SMH"
    ],
-   "over": 0.00687,
+   "over": 0.03567,
    "spy": "lit",
-   "qqq": "none"
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "AMD",
+   "name": "Advanced Micro Devices, Inc.",
+   "etfs": [
+    "XLK",
+    "SMH"
+   ],
+   "over": 0.01186,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "CEG",
+   "name": "Constellation Energy Corporation",
+   "etfs": [
+    "XLU"
+   ],
+   "over": 0.02691,
+   "spy": "none",
+   "qqq": "lit"
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "PFE",
+   "name": "Pfizer Inc.",
+   "etfs": [
+    "XLV"
+   ],
+   "over": -0.00642
+  },
+  {
+   "type": "failed",
+   "H": "ath",
+   "key": "TMO",
+   "name": "Thermo Fisher Scientific Inc.",
+   "etfs": [
+    "XLV"
+   ],
+   "over": -0.01373
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "TMO",
+   "name": "Thermo Fisher Scientific Inc.",
+   "etfs": [
+    "XLV"
+   ],
+   "over": -0.01373
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "ULCC",
+   "name": "Frontier Group Holdings, Inc.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": -0.04467
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "TMO",
+   "name": "Thermo Fisher Scientific Inc.",
+   "etfs": [
+    "XLV"
+   ],
+   "over": -0.01373
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "RGLD",
+   "name": "Royal Gold, Inc.",
+   "etfs": [
+    "XME"
+   ],
+   "over": -0.04869
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "UAL",
+   "name": "United Airlines Holdings, Inc.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": -0.05247
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "AAL",
+   "name": "American Airlines Group Inc.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": -0.04588
   },
   {
    "type": "failed",
    "H": "20",
-   "key": "AEM",
-   "name": "Agnico Eagle Mines Limited",
+   "key": "TMO",
+   "name": "Thermo Fisher Scientific Inc.",
    "etfs": [
+    "XLV"
+   ],
+   "over": -0.01373
+  },
+  {
+   "type": "failed",
+   "H": "20",
+   "key": "NEM",
+   "name": "Newmont Corporation",
+   "etfs": [
+    "XLB",
+    "XME",
     "GDX"
    ],
-   "over": -0.01779
+   "over": -0.05025
   },
   {
    "type": "failed",
    "H": "20",
-   "key": "AU",
-   "name": "AngloGold Ashanti plc",
+   "key": "AC",
+   "name": "Air Canada",
    "etfs": [
-    "GDX"
+    "JETS"
    ],
-   "over": -0.01541
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "ENLT",
-   "name": "Enlight Renewable Energy Ltd",
-   "etfs": [
-    "TAN"
-   ],
-   "over": -0.03101
+   "over": -0.01137
   }
  ]
 }

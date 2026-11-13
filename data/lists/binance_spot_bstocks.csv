@@ -1,6 +1,6 @@
 ﻿symbol,base_asset,quote_asset,underlying,binance_name,asset_class,us_listing,us_security_name,binance_equity_type,status,dividend_multiplier
 AAOIBUSDT,AAOIB,USDT,AAOI,Applied Optoelectronics,stock,AAOI,"Applied Optoelectronics, Inc. - Common Stock",stock,TRADING,1
-AAPLBUSDT,AAPLB,USDT,AAPL,Apple,stock,AAPL,Apple Inc. - Common Stock,stock,TRADING,1.000603906075632366
+AAPLBUSDT,AAPLB,USDT,AAPL,Apple,stock,AAPL,Apple Inc. - Common Stock,stock,TRADING,1.001135424170860199
 ADBEBUSDT,ADBEB,USDT,ADBE,Adobe,stock,ADBE,Adobe Inc. - Common Stock,stock,TRADING,1
 AGPUBUSDT,AGPUB,USDT,AGPU,Axe Compute,stock,AGPU,Axe Compute Inc. - Common Stock,stock,TRADING,1
 ALABBUSDT,ALABB,USDT,ALAB,Astera Labs,stock,ALAB,"Astera Labs, Inc. - Common Stock",stock,TRADING,1

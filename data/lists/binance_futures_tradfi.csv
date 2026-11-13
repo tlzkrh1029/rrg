@@ -62,11 +62,11 @@ EQTUSDT,EQT,USDT,EQUITY,TradFi,US,EQT,constituents,stock,EQT,EQT Corporation Com
 EWJUSDT,EWJ,USDT,EQUITY,TradFi,US,EWJ,constituents,etf,EWJ,iShares MSCI Japan Index Fund,etf,TRADING,2026-03-19
 EWTUSDT,EWT,USDT,EQUITY,TradFi,US,EWT,constituents,etf,EWT,iShares MSCI Taiwan ETF,etf,TRADING,2026-06-01
 EWYUSDT,EWY,USDT,EQUITY,TradFi,US,EWY,constituents,etf,EWY,iShares MSCI South Korea ETF,etf,TRADING,2026-03-16
-EWZSUSDT,EWZS,USDT,EQUITY,TradFi,US,EWZS,constituents,etf,EWZS,iShares MSCI Brazil Small-Cap ETF,etf,TRADING,2026-10-29
+EWZSUSDT,EWZS,USDT,EQUITY,TradFi,US,EWZS,baseAsset,etf,EWZS,iShares MSCI Brazil Small-Cap ETF,etf,TRADING,2026-10-29
 EWZUSDT,EWZ,USDT,EQUITY,TradFi,US,EWZ,constituents,etf,EWZ,iShares MSCI Brazil ETF,etf,TRADING,2026-06-10
 FLEXUSDT,FLEX,USDT,EQUITY,TradFi,US,FLEX,constituents,stock,FLEX,Flex Ltd. - Ordinary Shares,stock,TRADING,2026-07-02
 FLNCUSDT,FLNC,USDT,EQUITY,TradFi,US,FLNC,constituents,stock,FLNC,"Fluence Energy, Inc. - Class A Common Stock",stock,TRADING,2026-05-18
-FRHCUSDT,FRHC,USDT,EQUITY,TradFi,US,FRHC,constituents,stock,FRHC,Freedom Holding Corp. - Common Stock,stock,PENDING_TRADING,2026-11-12
+FRHCUSDT,FRHC,USDT,EQUITY,TradFi,US,FRHC,baseAsset,stock,FRHC,Freedom Holding Corp. - Common Stock,stock,TRADING,2026-11-12
 FWDIUSDT,FWDI,USDT,EQUITY,TradFi,US,FWDI,constituents,stock,FWDI,"Forward Industries, Inc. - Common Stock",stock,TRADING,2026-07-09
 GDXUSDT,GDX,USDT,EQUITY,TradFi,US,GDX,constituents,etf,GDX,VanEck Gold Miners ETF,etf,TRADING,2026-08-17
 GEVUSDT,GEV,USDT,EQUITY,TradFi,US,GEV,constituents,stock,GEV,GE Vernova Inc. Common Stock,stock,TRADING,2026-07-10
@@ -119,7 +119,7 @@ NFLXUSDT,NFLX,USDT,EQUITY,TradFi,US,NFLX,constituents,stock,NFLX,"Netflix, Inc. 
 NKEUSDT,NKE,USDT,EQUITY,TradFi,US,NKE,constituents,stock,NKE,"Nike, Inc. Common Stock",stock,TRADING,2026-09-29
 NOKUSDT,NOK,USDT,EQUITY,TradFi,US,NOK,constituents,stock,NOK,Nokia Corporation Sponsored American Depositary Shares,stock,TRADING,2026-06-01
 NOWUSDT,NOW,USDT,EQUITY,TradFi,US,NOW,constituents,stock,NOW,"ServiceNow, Inc. Common Stock",stock,TRADING,2026-06-03
-NUUSDT,NU,USDT,EQUITY,TradFi,US,NU,constituents,stock,NU,Nu Holdings Ltd. Class A Ordinary Shares,stock,PENDING_TRADING,2026-11-12
+NUUSDT,NU,USDT,EQUITY,TradFi,US,NU,constituents,stock,NU,Nu Holdings Ltd. Class A Ordinary Shares,stock,TRADING,2026-11-12
 NVDAUSDT,NVDA,USDT,EQUITY,TradFi,US,NVDA,constituents,stock,NVDA,NVIDIA Corporation - Common Stock,stock,TRADING,2026-03-26
 NVDLUSDT,NVDL,USDT,EQUITY,TradFi,US,NVDL,constituents,etf,NVDL,GraniteShares 2x Long NVDA Daily ETF,etf,TRADING,2026-09-02
 NVOUSDT,NVO,USDT,EQUITY,TradFi,US,NVO,constituents,stock,NVO,Novo Nordisk A/S Common Stock,stock,TRADING,2026-06-01

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T01:11:21Z",
+  "generated_at": "2026-11-13T01:06:09Z",
   "binance_equity_catalog_error": null,
   "binance_spot_bstocks": {
     "count": 105,
@@ -21,7 +21,7 @@
       "unknown": 8
     },
     "exchange_info_source": "https://www.binance.com",
-    "exchange_info_server_time": "2026-11-12T01:01:01Z",
+    "exchange_info_server_time": "2026-11-13T01:01:01Z",
     "trading_but_not_in_exchange_info": [],
     "by_underlying_type": {
       "CN_EQUITY": 2,
@@ -34,17 +34,14 @@
     "count": 138,
     "by_asset_class": {
       "etf": 24,
-      "stock": 111,
-      "unknown": 3
+      "stock": 112,
+      "unknown": 2
     },
     "uncategorized_coins": [
       "mkts:BVIV",
-      "io:EWY",
-      "io:NVDA"
+      "io:EWY"
     ],
-    "uncategorized_kept": [
-      "io:NVDA"
-    ],
+    "uncategorized_kept": [],
     "manual_references": [
       "io:EWY"
     ],
@@ -77,20 +74,19 @@
       ],
       "nasdaq_vs_binance_catalog": [],
       "us_ticker_not_confirmed": [
+        "EWZSUSDT",
+        "FRHCUSDT",
         "SNXXUSDT"
       ],
       "trading_but_not_in_exchange_info": []
     },
     "hyperliquid_hip3_stocks": {
       "unknown": [
-        "io:NVDA",
         "io:TCNT",
         "io:XIAOMI"
       ],
       "nasdaq_vs_binance_catalog": [],
-      "uncategorized_kept": [
-        "io:NVDA"
-      ],
+      "uncategorized_kept": [],
       "dex_errors": {},
       "annotation_errors": []
     }

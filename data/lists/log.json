@@ -1,4 +1,4 @@
-{"version":1,"updated":"2026-11-12T01:11:21Z","prev":"2026-11-11T01:06:27Z","counts":{"b":105,"p":224,"h":138},
+{"version":1,"updated":"2026-11-13T01:06:09Z","prev":"2026-11-12T01:11:21Z","counts":{"b":105,"p":224,"h":138},
 "state":{
 "b":{
 "AAOIBUSDT":{"u":"AAOI","lk":"AAOI","n":"Applied Optoelectronics","c":"stock","m":"US"},
@@ -341,7 +341,7 @@
 "io:GPRO":{"u":"GPRO","lk":"GPRO","n":"GoPro, Inc.","c":"stock","m":"US","dex":"io"},
 "io:IONQ":{"u":"IONQ","lk":"IONQ","n":"IonQ, Inc.","c":"stock","m":"US","dex":"io"},
 "io:NBIS":{"u":"NBIS","lk":"NBIS","n":"Nebius Group N.V.","c":"stock","m":"US","dex":"io"},
-"io:NVDA":{"u":"NVDA","lk":"NVDA","n":"","c":"unknown","m":"","dex":"io"},
+"io:NVDA":{"u":"NVDA","lk":"NVDA","n":"NVIDIA Corporation","c":"stock","m":"US","dex":"io"},
 "io:SKHX":{"u":"SKHX","lk":"SKHX","n":"Leverage Shares 2X Long SK Hynix Daily ETF","c":"etf","m":"US","dex":"io"},
 "io:SNDK":{"u":"SNDK","lk":"SNDK","n":"Sandisk Corporation","c":"stock","m":"US","dex":"io"},
 "io:TCNT":{"u":"TCNT","lk":"TCNT","n":"TENCENT","c":"unknown","m":"","dex":"io"},

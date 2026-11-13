@@ -1,109 +1,132 @@
 {
- "asof": "2026-11-11",
- "at": "11/12 10:25 KST",
+ "asof": "2026-11-12",
+ "at": "11/13 10:19 KST",
  "etfs": {
+  "XLY": {
+   "text": [
+    "TSLA는 11/9 샌안토니오에서 로보택시 운행을 이번 주에 시작한다고 밝혔고, 2027년 중반쯤 텍사스 공장의 사이버트럭 생산을 줄여 사이버캡 생산 공간을 마련하겠다고 했습니다.",
+    "HD는 중간선거 다음 날인 11/4에 주택 관련주가 반등하면서 종가 기준 6.5% 올랐고, AMZN은 10/29 실적에서 AWS 매출이 39% 늘어난 점이 부각됐습니다."
+   ],
+   "src": [
+    {
+     "t": "Gotrade, 테슬라 11/9",
+     "u": "https://www.heygotrade.com/en/news/tesla-tsla-stock-news-november-10-2026/"
+    },
+    {
+     "t": "TIKR, 홈디포 선거 후 반등",
+     "u": "https://www.tikr.com/blog/home-depot-soars-7-as-housing-stocks-rally-on-midterm-election-results"
+    },
+    {
+     "t": "Constellation Research, AWS 3분기",
+     "u": "https://www.constellationr.com/insights/news/aws-q3-revenue-growth-surges-39-capex-stings-amazons-cash-flow"
+    }
+   ],
+   "kick": "테슬라·주택 관련주 반등"
+  },
   "XLV": {
    "text": [
-    "Lilly는 10/29 3분기 매출 244억 달러를 발표하고 2026년 매출 가이던스를 850억~870억 달러에서 910억~920억 달러로 올렸습니다. 같은 날 Merck도 Keytruda와 Gardasil 수요에 힘입어 월가 예상을 웃도는 3분기 실적을 냈습니다."
+    "LLY는 10/29 3분기 실적에서 마운자로와 젭바운드 매출이 크게 늘어 연간 매출 전망을 올렸고, 11/9에는 경구 비만약 Foundayo가 수면무호흡증 3상에서 주요 평가변수를 충족했다고 발표했습니다.",
+    "JNJ도 10/13 3분기 실적에서 연간 전망을 올렸고, 트렘피아 매출이 크게 늘어난 점이 알려졌습니다."
    ],
    "src": [
     {
-     "t": "Zacks",
-     "u": "https://www.zacks.com/stock/news/3018734/lly-stock-jumps-as-q3-earnings-beat-estimates-2026-sales-view-raised"
-    },
-    {
-     "t": "24/7 Wall St.",
-     "u": "https://247wallst.com/cards/eli-lilly-q3-2026-earnings-lly-01m63nk1x2d2k0eyrf4m78fs52"
-    },
-    {
-     "t": "Finimize",
+     "t": "Finimize, 릴리 3분기",
      "u": "https://finimize.com/content/eli-lilly-and-mercks-blockbuster-drugs-powered-better-than-expected-results"
+    },
+    {
+     "t": "Lilly 보도자료, Foundayo 수면무호흡",
+     "u": "https://investor.lilly.com/node/55271"
+    },
+    {
+     "t": "J&J 보도자료, 3분기 실적",
+     "u": "https://www.jnj.com/media-center/press-releases/johnson-johnson-reports-q3-2026-results-raises-2026-guidance"
     }
    ],
-   "kick": "Lilly 가이던스 상향"
+   "kick": "릴리 가이던스 상향"
   },
-  "XLP": {
+  "XLRE": {
    "text": [
-    "PG는 10/22 2027 회계연도 1분기에 유기적 매출이 4.0% 늘어 연간 전망치 1~3%를 웃돌았고, 같은 날 Colgate-Palmolive와 Church & Dwight도 올라 생활용품 업종 전반이 함께 움직였습니다."
+    "리츠는 10월에 10년물 국채금리가 9월 말 5.27%에서 4.91%로 내려오면서 FTSE Nareit 전체 지분형 리츠 지수가 4.7% 올라 일반 주식시장을 앞섰습니다.",
+    "SPG는 11/5 3분기 실적과 함께 연간 FFO 전망을 올리고 분기 배당을 인상했으며, WELL은 10/26 3분기 정상화 FFO가 시장 예상을 크게 웃돌았다고 발표했습니다."
    ],
    "src": [
     {
-     "t": "TIKR",
-     "u": "https://www.tikr.com/blog/procter-gamble-soars-6-on-earnings-beat-shrugs-off-1-4-billion-cost-hit-strong-start"
+     "t": "Nareit, 10월 리츠 시황",
+     "u": "https://www.reit.com/news/blog/market-commentary/reits-rebounded-october-leading-broader-equities"
     },
     {
-     "t": "Trefis",
-     "u": "https://www.trefis.com/stock/pg/articles/620996/what-did-procter-gambles-latest-quarter-change-for-its-stock/2026-10-28"
+     "t": "Simon 보도자료, 3분기",
+     "u": "https://finviz.com/news/417649/simon-reports-third-quarter-2026-results-increases-guidance-for-full-year-2026-real-estate-ffo-per-share-and-raises-quarterly-dividend"
     },
     {
-     "t": "P&G 보도자료",
-     "u": "https://us.pg.com/newsroom/news-releases/PG-Announces-Fiscal-Year-2027-First-Quarter-Results/"
+     "t": "Newsquawk, Welltower 3분기",
+     "u": "https://www.newsquawk.com/headlines/welltower-inc-well-q3-usd-adj-ffoshr-167-exp-137-revenue-372bln-exp-364bln"
     }
    ],
-   "kick": "PG 실적 호조"
+   "kick": "10월 장기금리 하락"
   },
   "ARKG": {
    "text": [
-    "ILMN은 10/29 3분기 매출이 예상보다 약 2,000만 달러 적게 나왔고 관세 환급분 3,700만 달러가 매출에서 빠졌으며, 유기적 성장 전망도 4% 남짓에 그쳐 다음 날 크게 내렸습니다.",
-    "NTRA는 11/5 3분기 매출이 예상을 웃돌고 연간 가이던스도 올렸지만 주당 손실이 예상보다 컸고, CEO 교체도 함께 알려져 11/6에 내렸습니다."
+    "유전체 분석 장비주는 10/30경 업종 전체가 하루에 크게 빠졌고, TXG는 11/5 3분기 실적에서 장비 매출이 43% 줄었다고 밝혔습니다.",
+    "NTRA는 같은 날 매출이 예상을 웃돌고 전망도 올렸지만 CEO 교체 소식이 함께 나오면서 주가가 내렸고, TWST는 11/12 연간 매출 전망 5억 5,000만~5억 6,000만 달러를 제시했습니다."
    ],
    "src": [
     {
-     "t": "TIKR",
-     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
+     "t": "TIKR, 유전체주 하락",
+     "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
     },
     {
-     "t": "Trefis",
-     "u": "https://www.trefis.com/stock/ntra/articles/623713/what-sent-natera-stock-lower/2026-11-07"
+     "t": "10x Genomics 3분기 실적",
+     "u": "https://finviz.com/news/417663/10x-genomics-reports-third-quarter-2026-financial-results"
     },
     {
-     "t": "Finimize",
-     "u": "https://finimize.com/content/natera-lifted-its-2026-outlook-but-shares-still-slid"
+     "t": "TIKR, Natera CEO 교체",
+     "u": "https://www.tikr.com/blog/natera-sinks-14-as-ceo-steve-chapman-steps-down-despite-q3-beat-an-excellent-time-to-transition"
     }
    ],
-   "kick": "ILMN·NTRA 실적 급락"
-  },
-  "XME": {
-   "text": [
-    "FCX는 10/27 3분기에 Grasberg 가동률이 아직 회복 중이어서 구리 판매량이 7억 4,900만 파운드로 전년 9억 7,700만 파운드보다 줄고 단위 현금비용도 파운드당 2.07달러로 올랐으며, 구리 판매 전망도 낮췄습니다.",
-    "반면 CLF는 10/19 3분기 실적과 미국 철강 가격 강세를 반영한 전망으로 크게 올랐습니다."
-   ],
-   "src": [
-    {
-     "t": "Mining Weekly",
-     "u": "https://www.miningweekly.com/article/freeport-tops-profit-estimates-on-copper-rally-as-grasberg-recovery-continues-2026-10-28"
-    },
-    {
-     "t": "Canadian Mining Journal",
-     "u": "https://www.canadianminingjournal.com/?p=1003791549"
-    },
-    {
-     "t": "Bloomberg Law",
-     "u": "https://news.bgov.com/international-trade/cleveland-cliffs-profit-beats-estimates-as-us-steel-prices-climb"
-    }
-   ],
-   "kick": "FCX 구리 판매 부진"
+   "kick": "유전체 도구주 부진"
   },
   "GNOM": {
    "text": [
-    "ILMN은 10/29 3분기 매출이 예상을 밑돌아 다음 날 13% 안팎 내렸고, NTRA도 11/5 실적 직후 11/6에 크게 내렸습니다.",
-    "MRNA는 10/22 Merck와 낸 흑색종 3상 결과가 유출되면서 하루 17% 안팎 내렸지만, 해당 결과에서 재발 또는 사망 위험이 42% 줄어든 것으로 확인되었습니다."
+    "ILMN은 10/29 3분기 매출이 11억 3,000만 달러로 시장 예상에 못 미쳤고, 순이익 호조 일부가 관세 환급에서 나왔다는 점과 중국 매출 압박, 연구 수요 둔화가 부담으로 거론됐습니다.",
+    "TWST는 11/12 회계연도 4분기에 회사 가이던스를 웃도는 매출을 냈지만, 10/22 AI·기술주 약세 때 하루 9% 빠지는 등 업종 변동성이 컸습니다."
    ],
    "src": [
     {
-     "t": "TIKR",
+     "t": "TIKR, 일루미나 3분기",
      "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
     },
     {
-     "t": "TIKR",
-     "u": "https://www.tikr.com/blog/moderna-sinks-18-on-leaked-melanoma-data-benefit-was-greater-after-six-months"
+     "t": "Trefis, 일루미나 하락",
+     "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
     },
     {
-     "t": "Trefis",
-     "u": "https://www.trefis.com/stock/ntra/articles/623713/what-sent-natera-stock-lower/2026-11-07"
+     "t": "Twist 8-K 4분기 실적",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001581280/000158128026000053/twst-2026930xex991.htm"
     }
    ],
-   "kick": "ILMN 매출 부진"
+   "kick": "일루미나 매출 미달"
+  },
+  "XME": {
+   "text": [
+    "FCX는 10/27 3분기 실적에서 구리 판매량 전망을 2026년 30억 파운드, 2027년 37억 파운드로 7월 전망보다 낮췄고, 그라스베르크 광산은 2025년 9월 산사태 이후 복구가 계속되고 있습니다.",
+    "MTRN은 11/4 분기 실적에서 연간 전망을 올렸지만 매출이 시장 예상에 못 미쳤고, RGLD는 11/5 분기 영업현금흐름과 금 환산 온스 판매량이 사상 최대라고 발표했습니다."
+   ],
+   "src": [
+    {
+     "t": "Mining Weekly, 프리포트 3분기",
+     "u": "https://www.miningweekly.com/article/freeport-tops-profit-estimates-on-copper-rally-as-grasberg-recovery-continues-2026-10-28"
+    },
+    {
+     "t": "Finviz, Materion 3분기",
+     "u": "https://finviz.com/news/415825/materion-beats-and-raises-again-but-a-pass-through-revenue-miss-and-thinner-q3-margins-meet-a-stock-already-down-30-from-its-peak"
+    },
+    {
+     "t": "Royal Gold 3분기 보도자료",
+     "u": "https://finviz.com/news/416138/royal-gold-reports-strong-third-quarter-results-including-record-operating-cash-flow-and-gold-equivalent-ounce-sales-additional-share-repurchases-and-full-repayment-of-debt-after-quarter-end"
+    }
+   ],
+   "kick": "프리포트 판매전망 하향"
   }
  },
  "stocks": {
@@ -503,21 +526,25 @@
   },
   "BRK.B": {
    "text": [
-    "10/14에 Berkshire가 Bending Spoons 신주 1,000만 주를 주당 33달러, 총 3억 3천만 달러에 사들이기로 했다고 발표했습니다.",
-    "7월 상장 때 투자한 6억 달러와 합쳐 지분이 4%가 됐고, Bending Spoons 주가는 발표 당일 41% 올랐습니다. 이는 1월에 CEO를 맡은 Greg Abel 체제에서 이뤄진 투자입니다."
+    "BRK.B는 11/7 3분기 실적에서 영업이익이 약 6% 줄어든 127억 달러였고, 보험 인수이익이 43% 감소했으며 GEICO 세전이익은 사고 손실과 광고비 증가로 45% 줄었습니다. BNSF 이익은 19% 늘었습니다.",
+    "같은 분기 자사주 매입은 약 96억 달러로 늘었고, 10월에도 약 20억 달러를 더 샀습니다. 이는 11/2 주 +5.2%, 11/9 주 +3.3%로 이어진 상승 흐름 속에서 나온 발표입니다."
    ],
    "src": [
     {
-     "t": "The Next Web",
-     "u": "https://thenextweb.com/news/berkshire-hathaway-bending-spoons-330m-stake"
+     "t": "AP, 버크셔 3분기",
+     "u": "https://mynews13.com/fl/orlando/ap-top-news/2026/11/07/berkshire-hathaway-buys-back-96-billion-of-its-own-stock-but-its-profits-declined"
     },
     {
-     "t": "Morningstar",
-     "u": "https://www.morningstar.com/stocks/berkshire-hathaway-abel-pushes-into-new-territory-bending-spoons-investment"
+     "t": "Reuters via GVWire",
+     "u": "https://gvwire.com/2026/11/07/berkshire-hathaway-accelerates-stock-buybacks-operating-profit-falls/"
+    },
+    {
+     "t": "Business Insurance",
+     "u": "https://www.businessinsurance.com/berkshire-hathaway-speeds-up-stock-buybacks-though-profit-falls/"
     }
    ],
-   "asof": "2026-11-03",
-   "at": "11/04 10:19 KST"
+   "asof": "2026-11-12",
+   "at": "11/13 10:19 KST"
   },
   "WELL": {
    "text": [
@@ -902,6 +929,94 @@
    ],
    "asof": "2026-11-11",
    "at": "11/12 10:25 KST"
+  },
+  "AVGO": {
+   "text": [
+    "AVGO는 11/5에 하루 10.4% 내려 1년 만의 최저 종가를 기록했는데, 회사 자체 소식이 아니라 반도체 업종 전체가 약했던 날이었습니다. 11/9에는 반도체주가 반등하면서 8.8% 올라 1년 만에 가장 큰 하루 상승폭을 보였고, 이 반등이 11/9 주 +24.1%의 대부분을 차지했습니다.",
+    "10/27에는 직접 금융채무 발생을 알리는 8-K를 냈고, 다음 실적 발표는 12/9로 예정돼 있습니다."
+   ],
+   "src": [
+    {
+     "t": "Trefis, 11/5 하락",
+     "u": "https://www.trefis.com/stock/avgo/articles/623354/what-just-happened-to-broadcom-stock/2026-11-06"
+    },
+    {
+     "t": "247WallSt, 11/9 반등",
+     "u": "https://247wallst.com/investing/2026/11/10/broadcom-just-had-its-best-day-in-nearly-a-year-back-above-1-5-trillion/"
+    },
+    {
+     "t": "Trefis, 11/10 상승 배경",
+     "u": "https://www.trefis.com/stock/avgo/articles/624088/what-sent-broadcom-stock-higher/2026-11-10"
+    }
+   ],
+   "asof": "2026-11-12",
+   "at": "11/13 10:19 KST"
+  },
+  "LLY": {
+   "text": [
+    "LLY는 10/29 3분기 실적에서 매출이 약 39% 늘고 마운자로·젭바운드가 성장을 이끌었으며 연간 매출 전망을 올렸습니다. 이 발표가 10/26 주 +11.3% 상승 이후 이어진 흐름입니다.",
+    "11/9에는 경구 비만약 Foundayo가 3상 ATTAIN-OSA에서 52주 시점에 무호흡저호흡지수를 PAP 비사용군 43.8%, 사용군 27.5% 줄였다고 발표했고, 연말까지 FDA 신청을 계획한다고 밝혔습니다. 같은 날 Jefferies가 목표주가를 1,610달러에서 1,700달러로 올렸으며 이는 11/9 주 +5.4%와 이어집니다."
+   ],
+   "src": [
+    {
+     "t": "Finimize, 릴리 3분기",
+     "u": "https://finimize.com/content/eli-lilly-and-mercks-blockbuster-drugs-powered-better-than-expected-results"
+    },
+    {
+     "t": "Lilly 보도자료, Foundayo 수면무호흡",
+     "u": "https://investor.lilly.com/node/55271"
+    },
+    {
+     "t": "Morningstar/Dow Jones, 11/9",
+     "u": "https://www.morningstar.com/news/dow-jones/202611097009/eli-lilly-says-foundayo-shows-promise-in-treating-sleep-apnea"
+    }
+   ],
+   "asof": "2026-11-12",
+   "at": "11/13 10:19 KST"
+  },
+  "COST": {
+   "text": [
+    "COST는 11/4 발표한 10월 월간 매출에서 4주 기준 동일점포 매출이 11.1% 늘었고, 휘발유 가격 상승이 일부 영향을 줬습니다. 이는 11/2 주 +4.1%와 이어집니다.",
+    "11/10에는 주당 30달러, 총 약 133억 달러 규모의 특별배당(11/24 기준일, 12/4 지급)과 40억 달러 자사주 매입 재승인을 발표했습니다. 같은 주 8-K에서 Helena Foulkes 이사가 11/7자로 이사회에서 물러났고, 회사 운영과 관련한 이견 때문은 아니라고 밝혔습니다."
+   ],
+   "src": [
+    {
+     "t": "Quartr, 10월 월간 매출",
+     "u": "https://quartr.com/events/costco-wholesale-corporation-cost-monthly-sales-update-october-2026_3s0B0AUR"
+    },
+    {
+     "t": "Costco 보도자료, 특별배당",
+     "u": "https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Declares-30-Special-Cash-Dividend-and-Reauthorizes-Stock-Repurchase-Program-2026.pdf"
+    },
+    {
+     "t": "SEC 8-K, 임원 사임",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000909832/000090983226000134/cost-20261107.htm"
+    }
+   ],
+   "asof": "2026-11-12",
+   "at": "11/13 10:19 KST"
+  },
+  "NXE": {
+   "text": [
+    "NXE는 11/2에 우라늄 개발주 전반에 매도세가 나오면서 4% 넘게 내렸고, 이는 11/9 주 −3.7% 하락과 같은 업종 약세 흐름으로 보도됐습니다.",
+    "3분기 순손실은 2,230만 캐나다달러로 줄었고 현금은 8억 2,160만 캐나다달러였으며, Rook I 건설은 6/8에 시작됐습니다. 경영진은 2027년 설비투자를 약 6억 캐나다달러로 보고 있고, 선지급과 프로젝트 금융을 포함한 자금 조달 방안을 검토 중이라고 밝혔습니다."
+   ],
+   "src": [
+    {
+     "t": "Kalkine, 우라늄주 매도",
+     "u": "https://kalkine.ca/news/mining/nexgen-energy-ltd-faces-selling-pressure-as-uranium-sector-sentiment-softens"
+    },
+    {
+     "t": "Mitrade, 3분기 실적 발표 전문",
+     "u": "https://www.mitrade.com/insights/news/live-news/article-8-2246248-20261111"
+    },
+    {
+     "t": "Panabee, 3분기 요약",
+     "u": "https://www.panabee.com/news/nexgen-energy-earnings-q3-2026"
+    }
+   ],
+   "asof": "2026-11-12",
+   "at": "11/13 10:19 KST"
   }
  },
  "runs": [
@@ -1089,6 +1204,19 @@
    34,
    "claude-sonnet-5-5",
    0.744
+  ],
+  [
+   "11/13 10:19 KST",
+   6,
+   6,
+   6,
+   5,
+   "ok",
+   38,
+   1,
+   41,
+   "claude-sonnet-5-5",
+   0.937
   ]
  ]
 }
