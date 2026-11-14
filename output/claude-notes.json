@@ -1,132 +1,132 @@
 {
- "asof": "2026-11-12",
- "at": "11/13 10:19 KST",
+ "asof": "2026-11-13",
+ "at": "11/14 10:19 KST",
  "etfs": {
-  "XLY": {
-   "text": [
-    "TSLA는 11/9 샌안토니오에서 로보택시 운행을 이번 주에 시작한다고 밝혔고, 2027년 중반쯤 텍사스 공장의 사이버트럭 생산을 줄여 사이버캡 생산 공간을 마련하겠다고 했습니다.",
-    "HD는 중간선거 다음 날인 11/4에 주택 관련주가 반등하면서 종가 기준 6.5% 올랐고, AMZN은 10/29 실적에서 AWS 매출이 39% 늘어난 점이 부각됐습니다."
-   ],
-   "src": [
-    {
-     "t": "Gotrade, 테슬라 11/9",
-     "u": "https://www.heygotrade.com/en/news/tesla-tsla-stock-news-november-10-2026/"
-    },
-    {
-     "t": "TIKR, 홈디포 선거 후 반등",
-     "u": "https://www.tikr.com/blog/home-depot-soars-7-as-housing-stocks-rally-on-midterm-election-results"
-    },
-    {
-     "t": "Constellation Research, AWS 3분기",
-     "u": "https://www.constellationr.com/insights/news/aws-q3-revenue-growth-surges-39-capex-stings-amazons-cash-flow"
-    }
-   ],
-   "kick": "테슬라·주택 관련주 반등"
-  },
   "XLV": {
    "text": [
-    "LLY는 10/29 3분기 실적에서 마운자로와 젭바운드 매출이 크게 늘어 연간 매출 전망을 올렸고, 11/9에는 경구 비만약 Foundayo가 수면무호흡증 3상에서 주요 평가변수를 충족했다고 발표했습니다.",
-    "JNJ도 10/13 3분기 실적에서 연간 전망을 올렸고, 트렘피아 매출이 크게 늘어난 점이 알려졌습니다."
+    "LLY가 10/29 3분기 실적에서 2026년 매출 가이던스를 910억~920억 달러로 55억 달러 올렸고, 마운자로와 젭바운드 수요가 매출을 이끌었습니다. MRK도 같은 시기 3분기 실적이 예상을 웃돌고 전망을 상향해 주가가 크게 올랐습니다.",
+    "10/27 보도에서는 AI 관련 기술주를 피하려는 투자자들이 LLY, ABBV, JNJ 같은 헬스케어 대형주로 옮겨 가고 있다고 전했습니다."
    ],
    "src": [
     {
-     "t": "Finimize, 릴리 3분기",
-     "u": "https://finimize.com/content/eli-lilly-and-mercks-blockbuster-drugs-powered-better-than-expected-results"
+     "t": "Lilly 3분기 실적 요약(Zacks)",
+     "u": "https://www.zacks.com/stock/news/3018734/lly-stock-jumps-as-q3-earnings-beat-estimates-2026-sales-view-raised"
     },
     {
-     "t": "Lilly 보도자료, Foundayo 수면무호흡",
-     "u": "https://investor.lilly.com/node/55271"
+     "t": "Merck 3분기 실적(TIKR)",
+     "u": "https://www.tikr.com/blog/merck-jumps-nearly-5-on-q3-beat-and-raised-outlook-as-ceo-touts-potentially-practice-changing-pipeline"
     },
     {
-     "t": "J&J 보도자료, 3분기 실적",
-     "u": "https://www.jnj.com/media-center/press-releases/johnson-johnson-reports-q3-2026-results-raises-2026-guidance"
+     "t": "헬스케어 방어 선호(Advisor Perspectives)",
+     "u": "https://www.advisorperspectives.com/articles/2026/10/27/healthcare-stocks-anti-ai-bet-investors-defensive"
     }
    ],
    "kick": "릴리 가이던스 상향"
   },
-  "XLRE": {
+  "XLP": {
    "text": [
-    "리츠는 10월에 10년물 국채금리가 9월 말 5.27%에서 4.91%로 내려오면서 FTSE Nareit 전체 지분형 리츠 지수가 4.7% 올라 일반 주식시장을 앞섰습니다.",
-    "SPG는 11/5 3분기 실적과 함께 연간 FFO 전망을 올리고 분기 배당을 인상했으며, WELL은 10/26 3분기 정상화 FFO가 시장 예상을 크게 웃돌았다고 발표했습니다."
+    "PG는 10/22 회계 2027년 1분기 순매출이 4% 늘고 핵심 EPS가 시장 예상을 넘었으며, 연간 전망을 유지해 그날 주가가 5% 넘게 올랐습니다. MO는 10/29 3분기에 2026년 조정 EPS 전망을 5.66~5.74달러로 올리고 자사주 매입 한도를 10억 달러 늘렸습니다.",
+    "AI 관련주에서 빠져나온 자금이 방어주로 몰리면서 MSCI 글로벌 필수소비재 지수가 10월 한 달 10.6% 올라 1998년 이후 가장 좋은 달을 기록했다는 보도도 있었습니다."
    ],
    "src": [
     {
-     "t": "Nareit, 10월 리츠 시황",
-     "u": "https://www.reit.com/news/blog/market-commentary/reits-rebounded-october-leading-broader-equities"
+     "t": "P&G 회계 2027년 1분기 실적 보도자료",
+     "u": "https://us.pg.com/newsroom/news-releases/PG-Announces-Fiscal-Year-2027-First-Quarter-Results/"
     },
     {
-     "t": "Simon 보도자료, 3분기",
-     "u": "https://finviz.com/news/417649/simon-reports-third-quarter-2026-results-increases-guidance-for-full-year-2026-real-estate-ffo-per-share-and-raises-quarterly-dividend"
+     "t": "Altria 3분기 실적(Trefis)",
+     "u": "https://www.trefis.com/stock/mo/articles/621602/what-just-happened-to-altria-stock/2026-10-30"
     },
     {
-     "t": "Newsquawk, Welltower 3분기",
-     "u": "https://www.newsquawk.com/headlines/welltower-inc-well-q3-usd-adj-ffoshr-167-exp-137-revenue-372bln-exp-364bln"
+     "t": "필수소비재 10월 성과(European Business Magazine)",
+     "u": "https://europeanbusinessmagazine.com/consumer-staples-post-best-month/"
     }
    ],
-   "kick": "10월 장기금리 하락"
+   "kick": "PG·MO 실적, 방어주 선호"
+  },
+  "XLF": {
+   "text": [
+    "BRK.B의 버크셔 해서웨이는 11/7 3분기 실적에서 영업이익이 약 6% 줄었지만 분기 중 96억 달러 규모의 자사주를 사들였고 10월에도 약 20억 달러를 더 샀다고 밝혔습니다. 그레그 에이블 CEO 체제에서 보유 현금을 쓰는 데 적극적이라는 해석이 나왔습니다.",
+    "MA는 10/29 3분기 순매출이 14% 늘고 조정 EPS가 예상을 웃돌아 주가가 52주 신고가를 냈습니다. 크로스보더 거래액과 부가서비스 성장이 배경이었습니다."
+   ],
+   "src": [
+    {
+     "t": "Berkshire 3분기 실적(AP)",
+     "u": "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/11/07/berkshire-hathaway-buys-back-96-billion-of-its-own-stock-but-its-profits-declined"
+    },
+    {
+     "t": "Berkshire 자사주 매입(The Star)",
+     "u": "https://www.thestar.com.my/business/business-news/2026/11/09/berkshire-hathaway-steps-up-stock-buybacks"
+    },
+    {
+     "t": "Mastercard 3분기 실적(Zacks)",
+     "u": "https://www.zacks.com/stock/news/3018925/mastercard-beats-q3-earnings-on-higher-cross-border-volumes-pricing"
+    }
+   ],
+   "kick": "버크셔 자사주 매입"
   },
   "ARKG": {
    "text": [
-    "유전체 분석 장비주는 10/30경 업종 전체가 하루에 크게 빠졌고, TXG는 11/5 3분기 실적에서 장비 매출이 43% 줄었다고 밝혔습니다.",
-    "NTRA는 같은 날 매출이 예상을 웃돌고 전망도 올렸지만 CEO 교체 소식이 함께 나오면서 주가가 내렸고, TWST는 11/12 연간 매출 전망 5억 5,000만~5억 6,000만 달러를 제시했습니다."
+    "유전체 진단·도구 종목이 실적 발표 직후 크게 밀렸습니다. NTRA는 11/5 3분기에 매출이 34% 늘고 연간 가이던스를 올렸지만 조정 손실이 예상보다 컸고 CEO 교체까지 발표해 다음 거래일 급락했습니다.",
+    "ILMN은 10/29 3분기 매출이 시장 예상에 못 미치고 중국 불매 대상 기업 목록 편입의 영향이 거론되면서 10/30에 크게 내렸습니다. ABSI는 11/12 3분기 보고에서 분기 매출이 30만 달러에 그쳤습니다."
    ],
    "src": [
     {
-     "t": "TIKR, 유전체주 하락",
-     "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
-    },
-    {
-     "t": "10x Genomics 3분기 실적",
-     "u": "https://finviz.com/news/417663/10x-genomics-reports-third-quarter-2026-financial-results"
-    },
-    {
-     "t": "TIKR, Natera CEO 교체",
+     "t": "Natera 3분기 실적과 CEO 교체(TIKR)",
      "u": "https://www.tikr.com/blog/natera-sinks-14-as-ceo-steve-chapman-steps-down-despite-q3-beat-an-excellent-time-to-transition"
-    }
-   ],
-   "kick": "유전체 도구주 부진"
-  },
-  "GNOM": {
-   "text": [
-    "ILMN은 10/29 3분기 매출이 11억 3,000만 달러로 시장 예상에 못 미쳤고, 순이익 호조 일부가 관세 환급에서 나왔다는 점과 중국 매출 압박, 연구 수요 둔화가 부담으로 거론됐습니다.",
-    "TWST는 11/12 회계연도 4분기에 회사 가이던스를 웃도는 매출을 냈지만, 10/22 AI·기술주 약세 때 하루 9% 빠지는 등 업종 변동성이 컸습니다."
-   ],
-   "src": [
-    {
-     "t": "TIKR, 일루미나 3분기",
-     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
     },
     {
-     "t": "Trefis, 일루미나 하락",
+     "t": "Illumina 하락 배경(Trefis)",
      "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
     },
     {
-     "t": "Twist 8-K 4분기 실적",
-     "u": "https://www.sec.gov/Archives/edgar/data/0001581280/000158128026000053/twst-2026930xex991.htm"
+     "t": "Absci 3분기 보고(SEC 8-K)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001672688/000167268826000150/exhibit991-2026q310xqpr.htm"
     }
    ],
-   "kick": "일루미나 매출 미달"
+   "kick": "유전체 실적 후 급락"
   },
-  "XME": {
+  "GNOM": {
    "text": [
-    "FCX는 10/27 3분기 실적에서 구리 판매량 전망을 2026년 30억 파운드, 2027년 37억 파운드로 7월 전망보다 낮췄고, 그라스베르크 광산은 2025년 9월 산사태 이후 복구가 계속되고 있습니다.",
-    "MTRN은 11/4 분기 실적에서 연간 전망을 올렸지만 매출이 시장 예상에 못 미쳤고, RGLD는 11/5 분기 영업현금흐름과 금 환산 온스 판매량이 사상 최대라고 발표했습니다."
+    "ILMN은 10/29 3분기에 조정 EPS가 예상을 넘고 연간 매출 가이던스를 올렸지만, 분기 매출이 컨센서스보다 약 2천만 달러 적어 10/30에 18.6% 하락했습니다. 중국 불매 대상 기업 목록의 영향도 원인으로 거론됐습니다.",
+    "NTRA는 11/5 실적에서 조정 손실이 예상보다 크고 CEO 교체가 발표돼 다음 거래일 14.6% 내렸습니다. TWST는 11/12 회계 2026년 4분기에 사상 최대 매출을 냈다고 밝혔지만 같은 날 주가는 하락했습니다."
    ],
    "src": [
     {
-     "t": "Mining Weekly, 프리포트 3분기",
-     "u": "https://www.miningweekly.com/article/freeport-tops-profit-estimates-on-copper-rally-as-grasberg-recovery-continues-2026-10-28"
+     "t": "Illumina 3분기 실적(TIKR)",
+     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
     },
     {
-     "t": "Finviz, Materion 3분기",
+     "t": "Natera 하락 배경(Trefis)",
+     "u": "https://www.trefis.com/stock/ntra/articles/623713/what-sent-natera-stock-lower/2026-11-07"
+    },
+    {
+     "t": "Twist 4분기 실적(SEC 8-K)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001581280/000158128026000053/twst-2026930xex991.htm"
+    }
+   ],
+   "kick": "ILMN 매출 부진"
+  },
+  "XME": {
+   "text": [
+    "MTRN은 11/4 3분기에 조정 EPS가 예상을 웃돌고 연간 전망을 올렸지만, 순매출이 컨센서스를 7% 넘게 밑돌고 3분기 마진이 얇아져 주가가 크게 내렸습니다.",
+    "FCX는 10/28 3분기 이익이 예상을 넘었으나 그라스베르크 복구가 이어지는 가운데 2026년 구리 판매 전망을 3억 파운드 낮춘 30억 파운드로 제시했습니다."
+   ],
+   "src": [
+    {
+     "t": "Materion 3분기 분석(Finviz)",
      "u": "https://finviz.com/news/415825/materion-beats-and-raises-again-but-a-pass-through-revenue-miss-and-thinner-q3-margins-meet-a-stock-already-down-30-from-its-peak"
     },
     {
-     "t": "Royal Gold 3분기 보도자료",
-     "u": "https://finviz.com/news/416138/royal-gold-reports-strong-third-quarter-results-including-record-operating-cash-flow-and-gold-equivalent-ounce-sales-additional-share-repurchases-and-full-repayment-of-debt-after-quarter-end"
+     "t": "Freeport 3분기 실적(Mining Weekly)",
+     "u": "https://www.miningweekly.com/article/freeport-tops-profit-estimates-on-copper-rally-as-grasberg-recovery-continues-2026-10-28"
+    },
+    {
+     "t": "Freeport 판매 전망 하향(Canadian Mining Journa",
+     "u": "https://www.canadianminingjournal.com/?p=1003755179"
     }
    ],
-   "kick": "프리포트 판매전망 하향"
+   "kick": "MTRN 매출 부진·구리 전망"
   }
  },
  "stocks": {
@@ -194,21 +194,21 @@
   },
   "TSLA": {
    "text": [
-    "TSLA는 10/21 장 마감 후 3분기 실적을 냈고, 매출은 예상을 소폭 밑돌고 조정 이익은 예상을 웃돌았으며 설비투자가 크게 늘었다고 보도됐습니다. 시간외 반응은 3% 넘게 내렸다는 보도와 보합이라는 보도로 엇갈렸고, 다음 거래일에는 3.1% 내렸습니다.",
-    "11/4 하락의 원인은 이번 검색에서 근거 기사를 찾지 못해 적지 않습니다."
+    "TSLA는 10/21 장 마감 후 3분기 실적을 발표했고 다음 거래일 주가는 3.1% 내렸습니다. 11/6 일론 머스크는 사이버트럭 생산 라인을 약 8개월 뒤 닫겠다고 밝혔고, 11/9에는 X에서 많은 예약자에게 보증금을 돌려줘야 할 것이라고 적었습니다.",
+    "보도에 따르면 사이버트럭 쪽 자원은 로보택시 차량 사이버캡으로 돌려질 예정입니다. 11/9 주 상승(8.9%)의 직접 원인은 확인한 기사에서 찾지 못했습니다."
    ],
    "src": [
     {
-     "t": "Stocktwits, Tesla 3분기",
-     "u": "https://stocktwits.com/news-articles/markets/equity/tsla-stock-trades-flat-after-hours-following-drop-in-q3-revenue-earnings-and-heavy-ai-spending/cZxMWU7RBvC"
+     "t": "사이버트럭 보증금 환불(Reuters, NST 전재)",
+     "u": "https://www.nst.com.my/amp/news-cars-bikes-trucks/2026/11/1574002/tesla-refund-many-cybertruck-deposits-demand-exceeds"
     },
     {
-     "t": "247WallSt, Tesla 실적 전",
-     "u": "https://247wallst.com/investing/2026/10/21/live-will-tesla-smash-q3-earnings-tonight-following-spacexs-10-pop-today/"
+     "t": "사이버트럭 생산 종료 계획(GCN)",
+     "u": "https://gcn.com/?p=23173"
     }
    ],
-   "asof": "2026-11-04",
-   "at": "11/05 10:18 KST"
+   "asof": "2026-11-13",
+   "at": "11/14 10:19 KST"
   },
   "005930": {
    "text": [
@@ -252,27 +252,30 @@
   },
   "MU": {
    "text": [
-    "MU는 10/12 중국 CXMT가 차세대 DRAM 셀 기술의 진전을 발표하고 연말까지 서버용 메모리 제품을 내놓겠다고 밝힌 날 2%대 내렸고, 이 주 수익률은 −14.6%였습니다. 같은 시기 SK하이닉스와 삼성전자도 약세였고 금리 우려가 함께 거론됐습니다.",
-    "이 설명은 시황 해설 기사에 근거한 것이어서 단일 원인으로 단정하지는 않습니다."
+    "MU는 11/2에 일본 키옥시아의 약한 전망으로 메모리주가 밀리며 5.8% 내렸고, 11/4에도 약 7% 내렸습니다. 11/5에는 Bloomberg가 MU의 45억 달러 규모 대만 메모리 공장 계획 보류를 보도하고 미 중간선거 뒤 AI 투자 둔화 우려가 겹치며 약 17.5% 하락했습니다.",
+    "11/9 주에는 이 낙폭에 대한 반등이 나와 주간 수익률이 플러스로 돌아섰습니다. 다음 실적 발표는 12/15로 잡혀 있습니다."
    ],
    "src": [
     {
-     "t": "ZeroHedge, 메모리 약세",
-     "u": "https://www.zerohedge.com/markets/memory-remains-epicenter-micron-tumbles-blwo-1000-kospi-catches-down-and-cxmt-shrinks-dram"
+     "t": "Micron 11/2 하락(HeyGoTrade)",
+     "u": "https://www.heygotrade.com/en/news/micron-mu-stock-news-november-3-2026/"
     },
     {
-     "t": "Mitrade, 10/12 마이크론",
-     "u": "https://www.mitrade.com/au/insights/news/live-news/article-8-2155585-20261012"
+     "t": "Micron 하락 배경(Trefis)",
+     "u": "https://www.trefis.com/stock/mu/articles/623345/what-sent-micron-stock-lower/2026-11-06"
+    },
+    {
+     "t": "Micron 11월 하락 요인(Kalkine)",
+     "u": "https://kalkine.ca/news/technology/why-did-a-700-drop-hit-micron-nasdaqmu-as-memory-stocks-unwound-on-heavy-activity"
     }
    ],
-   "asof": "2026-11-04",
-   "at": "11/05 10:18 KST"
+   "asof": "2026-11-13",
+   "at": "11/14 10:19 KST"
   },
   "GE": {
    "text": [
-    "GE는 10/20 장 시작 전에 3분기 실적을 발표했습니다. 수주는 190억 달러로 49% 늘었고, 조정 EPS는 2.25달러로 36% 증가했으며, 회사는 올해 전망을 전반적으로 상향했습니다.",
-    "실적 발표 당일 주가는 3.7% 하락했고, 10/19 주 수익률은 −9.0%였습니다. 10/21에는 Morgan Stanley가 투자의견 비중확대를 유지하면서 목표가를 375달러로 낮췄습니다.",
-    "10/26 주 +5.7%와 11/2 주 +9.2%의 상승을 설명하는 별도의 개별 사건은 검색에서 확인하지 못했습니다."
+    "GE는 10/20 3분기에 수주가 190억 달러로 49% 늘었다고 발표하고 2026년 조정 EPS 전망을 8.00~8.10달러로 올렸지만, 그날 주가는 3.7% 내렸습니다. 이 하락이 10/19 주 낙폭(9.0%)에 반영됐습니다.",
+    "11/6 전후로는 상하이 수입박람회에서 129억 달러 이상의 엔진 판매·정비 계약을 맺었다고 밝혔고, 이 중심에는 중국동방항공의 LEAP-1A 엔진 202기 주문이 있었습니다."
    ],
    "src": [
     {
@@ -280,16 +283,16 @@
      "u": "https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-third-quarter-2026-results"
     },
     {
-     "t": "SEC 8-K 3분기 실적 발표문",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000040545/000004054526000063/ge3q2026earningsrelease.htm"
+     "t": "GE 3분기 주가 반응(Trefis)",
+     "u": "https://www.trefis.com/stock/ge/articles/620161/what-did-ge-aerospaces-quarter-change-for-its-stock/2026-10-23"
     },
     {
-     "t": "Hargreaves Lansdown 실적 기사",
-     "u": "https://www.hl.co.uk/shares/stock-market-news/company--news/ge-aerospace-lifts-fy-profit-outlook-again-after-solid-q3"
+     "t": "중국 박람회 계약(AJOT)",
+     "u": "https://www.ajot.com/news/ge-aerospace-says-it-signs-record-12.9-billion-deals-at-china-expo"
     }
    ],
-   "asof": "2026-11-04",
-   "at": "11/05 11:04 KST"
+   "asof": "2026-11-13",
+   "at": "11/14 10:19 KST"
   },
   "SKHY": {
    "text": [
@@ -414,24 +417,6 @@
    "asof": "2026-11-10",
    "at": "11/11 10:20 KST"
   },
-  "ORCL": {
-   "text": [
-    "10/28에 투자자의 날을 열어 FY30 목표로 매출 2,250억 달러 이상, 비GAAP 영업이익률 40% 이상, 비GAAP EPS 21달러 이상을 제시했고, FY30까지 추가 자본 조달을 기존 부채 차환 제외 200억 달러로 제한하겠다고 밝혔습니다.",
-    "마지막 주(11/2) 하락 −8.8%의 직접적인 원인은 찾지 못했고, 같은 날 Stephens가 투자의견을 비중확대로 올렸다는 기사가 있었습니다."
-   ],
-   "src": [
-    {
-     "t": "Oracle 투자자의 날 보도자료",
-     "u": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Investor-Day-2026-Accelerating-Value-Creation/default.aspx"
-    },
-    {
-     "t": "Finviz Oracle Investor Day",
-     "u": "https://finviz.com/news/410394/oracle-investor-day-2026-accelerating-value-creation"
-    }
-   ],
-   "asof": "2026-11-02",
-   "at": "11/03 10:19 KST"
-  },
   "AMZN": {
    "text": [
     "AMZN은 10/29 3분기에 AWS 매출이 39% 늘어난 약 460억 달러로 5년 가까이 만에 가장 빠르게 성장했다고 발표했습니다. 다만 EPS 1.89달러는 시장 예상 1.97달러에 못 미쳤고, 분기 설비투자 773억 달러가 예상을 크게 웃돌며 최근 12개월 잉여현금흐름이 마이너스로 돌아섰습니다. 경영진은 AWS가 2027년과 2028년에 40% 넘게 성장할 것으로 본다고 밝혔습니다."
@@ -452,28 +437,6 @@
    ],
    "asof": "2026-11-10",
    "at": "11/11 10:20 KST"
-  },
-  "SHW": {
-   "text": [
-    "10/27 장 시작 전 3분기 실적을 발표했고, 순매출은 7.9% 늘어난 68.6억 달러, 조정 EPS는 3.63달러(전년 3.59달러)였습니다. 연간 조정 EPS 가이던스는 11.85~12.15달러로 좁혔으며 중간값은 7월에 올린 수준을 유지했습니다.",
-    "매출총이익률이 전년의 49.2%에서 47.8%로 낮아졌고 경영진도 매출의 이익 전환이 평소보다 낮았다고 인정했습니다. 그날 주가는 2.7% 내렸고 10/28에는 Guggenheim이 목표가를 375달러로 낮췄습니다."
-   ],
-   "src": [
-    {
-     "t": "Sherwin-Williams 3분기 8-K",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000089800/000008980026000054/shwearningsrelease3q2026.htm"
-    },
-    {
-     "t": "Finviz 3분기 실적 보도자료",
-     "u": "https://finviz.com/news/408548/the-sherwin-williams-company-reports-2026-third-quarter-financial-results"
-    },
-    {
-     "t": "24/7 Wall St. SHW 3분기",
-     "u": "https://247wallst.com/cards/sherwin-williams-company-q3-2026-earnings-shw-01m5ygt1gszpngqcsx4atjffvq"
-    }
-   ],
-   "asof": "2026-11-02",
-   "at": "11/03 10:19 KST"
   },
   "AAPL": {
    "text": [
@@ -606,21 +569,25 @@
   },
   "NEM": {
    "text": [
-    "NEM은 10/22 장 마감 후 3분기에 조정 EPS 2.20달러(컨센서스 약 1.94달러)와 잉여현금흐름 19억 달러를 발표했습니다. 평균 실현 금 가격은 온스당 4,317달러였습니다.",
-    "연간 금 생산 가이던스 526만 온스는 유지했으나 단위 비용 전망은 올렸고, 4분기에 Barrick에 19.5억 달러를 지급할 예정입니다. 다음 거래일 주가는 4.6% 내렸습니다."
+    "NEM은 10/22 3분기에 조정 EPS 2.20달러로 예상을 넘었고, 실현 금 가격은 온스당 4,317달러로 2분기보다 97달러 낮았습니다. 금 AISC 가이던스는 낮췄지만 4분기 AISC가 연중 최고인 약 1,900달러에 이를 것이고 바릭에 19억 5천만 달러를 지급한다고 밝혔으며, 다음 거래일 주가는 4.6% 내렸습니다.",
+    "10/26 FXStreet 분석은 NEM이 기록적인 3분기 이익 뒤에도 GDX보다 두 배 넘게 떨어졌다고 짚었습니다. 11/9 주 하락(6.4%)의 직접 원인은 확인한 기사에서 찾지 못했습니다."
    ],
    "src": [
     {
-     "t": "Kitco, Newmont 3분기",
+     "t": "Newmont 3분기 실적(Kitco)",
      "u": "https://www.kitco.com/news/article/2026-10-22/newmont-beats-third-quarter-earnings-expectations-higher-gold-sales-boost"
     },
     {
-     "t": "Newmont 3분기 8-K",
-     "u": "https://www.sec.gov/Archives/edgar/data/0001164727/000116472726000041/newmontq32026earningsrelea.htm"
+     "t": "Newmont 실적과 Cadia 회복(Engineering News)",
+     "u": "https://www.engineeringnews.co.za/article/newmont-beats-quarterly-profit-estimates-on-higher-gold-prices-cadia-recovery-2026-10-23"
+    },
+    {
+     "t": "금 채굴주 하락 분석(FXStreet)",
+     "u": "https://www.fxstreet.com/analysis/why-gold-miners-fall-even-after-record-profits-202610262002"
     }
    ],
-   "asof": "2026-11-04",
-   "at": "11/05 10:18 KST"
+   "asof": "2026-11-13",
+   "at": "11/14 10:19 KST"
   },
   "MTRN": {
    "text": [
@@ -1017,6 +984,42 @@
    ],
    "asof": "2026-11-12",
    "at": "11/13 10:19 KST"
+  },
+  "TXG": {
+   "text": [
+    "TXG는 11/5 장 마감 후 3분기 매출 1억 5,070만 달러(1% 증가)를 발표했고, 연간 매출 가이던스를 6억 2,500만~6억 3,500만 달러로 올렸습니다. 매출총이익률은 67%에서 75%로 높아졌지만 장비 매출은 43% 줄었습니다.",
+    "같은 실적에서 신제품 Atera의 글로벌 출하를 시작했다고 밝혔고, 발표 다음 거래일에 주가는 2.1% 올랐습니다. 11/2 주의 큰 하락은 이 실적보다 앞선 구간이어서, 실적 자체가 낙폭을 만든 것은 아닙니다."
+   ],
+   "src": [
+    {
+     "t": "10x Genomics 3분기 실적(SEC 8-K)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001770787/000162828026071025/txg-20261105xexx991.htm"
+    },
+    {
+     "t": "10x Genomics 실적 분석(Finviz)",
+     "u": "https://finviz.com/news/417900/10x-genomics-beats-and-raises-on-margin-repair-but-flat-sales-and-collapsing-instrument-revenue-leave-atera-to-carry-the-story"
+    }
+   ],
+   "asof": "2026-11-13",
+   "at": "11/14 10:19 KST"
+  },
+  "ABSI": {
+   "text": [
+    "ABSI는 11/12 3분기 보고에서 분기 매출이 약 30만 달러로 전년보다 줄었고 순손실은 3,320만 달러였다고 밝혔습니다. 같은 보고에서 탈모 치료 후보 ABS-201의 13주 중간 개념증명 데이터를 다음 달에 내놓겠다고 예고했고, 6월 유상증자 1억 달러로 운영 자금이 2028년 하반기까지 간다고 설명했습니다.",
+    "실적 발표일 주가는 9.7% 내려 11/9 주 하락(16.9%)을 키웠습니다."
+   ],
+   "src": [
+    {
+     "t": "Absci 3분기 보고(SEC 8-K)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001672688/000167268826000150/exhibit991-2026q310xqpr.htm"
+    },
+    {
+     "t": "Absci 3분기 보고 분석(Finviz)",
+     "u": "https://finviz.com/news/415711/abscis-third-quarter-report-puts-abs-201-hair-loss-readout-timing-in-the-spotlight"
+    }
+   ],
+   "asof": "2026-11-13",
+   "at": "11/14 10:19 KST"
   }
  },
  "runs": [
@@ -1217,6 +1220,19 @@
    41,
    "claude-sonnet-5-5",
    0.937
+  ],
+  [
+   "11/14 10:19 KST",
+   6,
+   6,
+   6,
+   6,
+   "ok",
+   32,
+   0,
+   34,
+   "claude-sonnet-5-5",
+   0.78
   ]
  ]
 }

@@ -1,137 +1,107 @@
 {
- "asof": "2026-11-12",
- "prev_asof": "2026-11-11",
+ "asof": "2026-11-13",
+ "prev_asof": "2026-11-12",
  "alerts": [
   {
-   "etf": "DRAM",
+   "etf": "XLE",
    "type": "signal",
-   "text": "DRAM 메모리반도체: ≈ 1주 반등, 1개월 이상에서는 미확인",
-   "detail": "≈ 1주 반등, 1개월 이상에서는 미확인",
+   "text": "XLE 에너지: ↓ 백분위 36점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 36점 하락 (6개월 → 1개월)",
    "pct": [
-    100,
-    0,
-    5,
-    9,
-    null
-   ],
-   "phase": null,
-   "bench": "XLK"
-  },
-  {
-   "etf": "DRAM",
-   "type": "shift",
-   "text": "DRAM 메모리반도체: 전환순 상위 3 진입 (점수 41)",
-   "detail": "전환순 상위 3 진입 (점수 41)",
-   "pct": [
-    100,
-    0,
-    5,
-    9,
-    null
-   ],
-   "phase": null,
-   "bench": "XLK"
-  },
-  {
-   "etf": "XLK",
-   "type": "signal",
-   "text": "XLK 기술: ≈ 1주 반등, 1개월 이상에서는 미확인",
-   "detail": "≈ 1주 반등, 1개월 이상에서는 미확인",
-   "pct": [
+    95,
+    41,
     91,
-    14,
-    32,
-    32,
-    57
+    77,
+    95
    ],
-   "phase": "Weakening",
+   "phase": "Leading",
    "bench": "SPY"
   },
   {
-   "etf": "XME",
+   "etf": "XLC",
    "type": "signal",
-   "text": "XME 금속·광업: ↑ 백분위 31점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 31점 상승 (6개월 → 1개월)",
+   "text": "XLC 커뮤니케이션: ↗ SPY 비율 50일선 상향 돌파",
+   "detail": "↗ SPY 비율 50일선 상향 돌파",
    "pct": [
-    82,
+    77,
     36,
-    9,
-    5,
-    29
+    55,
+    18,
+    10
    ],
-   "phase": "Lagging",
-   "bench": "XLB"
+   "phase": "Improving",
+   "bench": "SPY"
+  },
+  {
+   "etf": "XLC",
+   "type": "signal",
+   "text": "XLC 커뮤니케이션: ≈ 1주 반등, 1개월 이상에서는 미확인",
+   "detail": "≈ 1주 반등, 1개월 이상에서는 미확인",
+   "pct": [
+    77,
+    36,
+    55,
+    18,
+    10
+   ],
+   "phase": "Improving",
+   "bench": "SPY"
+  },
+  {
+   "etf": "XLC",
+   "type": "shift",
+   "text": "XLC 커뮤니케이션: 전환순 상위 3 진입 (점수 46)",
+   "detail": "전환순 상위 3 진입 (점수 46)",
+   "pct": [
+    77,
+    36,
+    55,
+    18,
+    10
+   ],
+   "phase": "Improving",
+   "bench": "SPY"
   },
   {
    "etf": "ITA",
    "type": "signal",
-   "text": "ITA 항공우주·방산: ↑ 백분위 37점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 37점 상승 (6개월 → 1개월)",
+   "text": "ITA 항공우주·방산: ↑ 백분위 32점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 32점 상승 (6개월 → 1개월)",
    "pct": [
-    77,
+    73,
     64,
-    14,
-    27,
+    18,
+    32,
     33
    ],
    "phase": "Lagging",
    "bench": "XLI"
   },
   {
-   "etf": "XLE",
-   "type": "signal",
-   "text": "XLE 에너지: ↗ SPY 비율 50일선 상향 돌파",
-   "detail": "↗ SPY 비율 50일선 상향 돌파",
-   "pct": [
-    68,
-    27,
-    86,
-    82,
-    95
-   ],
-   "phase": "Leading",
-   "bench": "SPY"
-  },
-  {
-   "etf": "XLE",
-   "type": "signal",
-   "text": "XLE 에너지: ↓ 백분위 55점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 55점 하락 (6개월 → 1개월)",
-   "pct": [
-    68,
-    27,
-    86,
-    82,
-    95
-   ],
-   "phase": "Leading",
-   "bench": "SPY"
-  },
-  {
    "etf": "IGV",
    "type": "signal",
-   "text": "IGV 소프트웨어: ↓ 백분위 50점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 50점 하락 (6개월 → 1개월)",
+   "text": "IGV 소프트웨어: ↓ 백분위 41점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 41점 하락 (6개월 → 1개월)",
    "pct": [
     55,
-    23,
-    55,
-    73,
+    27,
+    59,
+    68,
     5
    ],
    "phase": "Leading",
    "bench": "XLK"
   },
   {
-   "etf": "XLY",
+   "etf": "XLU",
    "type": "signal",
-   "text": "XLY 경기소비재: ↑ 백분위 50점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 50점 상승 (6개월 → 1개월)",
+   "text": "XLU 유틸리티: ↑ 백분위 36점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 36점 상승 (6개월 → 1개월)",
    "pct": [
-    50,
-    95,
-    82,
     45,
+    77,
+    68,
+    41,
     24
    ],
    "phase": "Improving",
@@ -139,58 +109,73 @@
   },
   {
    "etf": "XLY",
-   "type": "shift",
-   "text": "XLY 경기소비재: 전환순 상위 3 진입 (점수 48)",
-   "detail": "전환순 상위 3 진입 (점수 48)",
+   "type": "signal",
+   "text": "XLY 경기소비재: ↑ 백분위 37점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 37점 상승 (6개월 → 1개월)",
    "pct": [
-    50,
-    95,
+    41,
+    82,
     82,
     45,
-    24
+    29
    ],
    "phase": "Improving",
    "bench": "SPY"
+  },
+  {
+   "etf": "XHB",
+   "type": "signal",
+   "text": "XHB 주택건설: ↑ 백분위 41점 상승 (6개월 → 1개월)",
+   "detail": "↑ 백분위 41점 상승 (6개월 → 1개월)",
+   "pct": [
+    18,
+    100,
+    45,
+    59,
+    14
+   ],
+   "phase": "Lagging",
+   "bench": "XLY"
+  },
+  {
+   "etf": "XHB",
+   "type": "shift",
+   "text": "XHB 주택건설: 전환순 상위 3 진입 (점수 45)",
+   "detail": "전환순 상위 3 진입 (점수 45)",
+   "pct": [
+    18,
+    100,
+    45,
+    59,
+    14
+   ],
+   "phase": "Lagging",
+   "bench": "XLY"
   },
   {
    "etf": "XBI",
    "type": "signal",
-   "text": "XBI 바이오: ↘ SPY 비율 50일선 하향 이탈",
-   "detail": "↘ SPY 비율 50일선 하향 이탈",
+   "text": "XBI 바이오: ↓ 백분위 32점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 32점 하락 (6개월 → 1개월)",
    "pct": [
-    45,
-    55,
+    14,
     50,
-    77,
+    36,
+    82,
     81
    ],
    "phase": "Lagging",
    "bench": "XLV"
   },
   {
-   "etf": "ARKG",
-   "type": "signal",
-   "text": "ARKG 유전체학 (액티브): ↓ 백분위 82점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 82점 하락 (6개월 → 1개월)",
-   "pct": [
-    9,
-    18,
-    77,
-    100,
-    100
-   ],
-   "phase": "Weakening",
-   "bench": "XLV"
-  },
-  {
    "etf": "GNOM",
    "type": "signal",
-   "text": "GNOM 유전체학: ↓ 백분위 63점 하락 (6개월 → 1개월)",
-   "detail": "↓ 백분위 63점 하락 (6개월 → 1개월)",
+   "text": "GNOM 유전체학: ↓ 백분위 72점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 72점 하락 (6개월 → 1개월)",
    "pct": [
     5,
-    32,
-    95,
+    23,
+    86,
     95,
     90
    ],
@@ -198,19 +183,19 @@
    "bench": "XLV"
   },
   {
-   "etf": "XHB",
+   "etf": "ARKG",
    "type": "signal",
-   "text": "XHB 주택건설: ↑ 백분위 50점 상승 (6개월 → 1개월)",
-   "detail": "↑ 백분위 50점 상승 (6개월 → 1개월)",
+   "text": "ARKG 유전체학 (액티브): ↓ 백분위 91점 하락 (6개월 → 1개월)",
+   "detail": "↓ 백분위 91점 하락 (6개월 → 1개월)",
    "pct": [
     0,
-    100,
-    36,
+    9,
     50,
-    14
+    100,
+    100
    ],
-   "phase": "Lagging",
-   "bench": "XLY"
+   "phase": "Weakening",
+   "bench": "XLV"
   }
  ]
 }

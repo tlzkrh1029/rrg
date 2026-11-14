@@ -1,9 +1,79 @@
 {
- "asof": "2026-11-12",
- "prev_asof": "2026-11-11",
+ "asof": "2026-11-13",
+ "prev_asof": "2026-11-12",
  "alerts": [
   {
    "type": "up",
+   "H": "ath",
+   "key": "COST",
+   "name": "Costco Wholesale Corporation",
+   "etfs": [
+    "XLP"
+   ],
+   "over": 0.01397,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "MO",
+   "name": "Altria Group, Inc.",
+   "etfs": [
+    "XLP"
+   ],
+   "over": 0.00782,
+   "spy": "failed",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "CL",
+   "name": "Colgate-Palmolive Company",
+   "etfs": [
+    "XLP"
+   ],
+   "over": 0.00921,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "EOAN",
+   "name": "E.ON SE",
+   "etfs": [
+    "GRID"
+   ],
+   "over": 0.00776,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "CMCSA",
+   "name": "Comcast Corporation",
+   "etfs": [
+    "XLC"
+   ],
+   "over": 0.00842,
+   "spy": "quiet",
+   "qqq": "quiet"
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "BEAM",
+   "name": "Beam Therapeutics Inc.",
+   "etfs": [
+    "ARKG"
+   ],
+   "over": -0.01169
+  },
+  {
+   "type": "failed",
    "H": "20",
    "key": "AVGO",
    "name": "Broadcom Inc.",
@@ -11,12 +81,10 @@
     "XLK",
     "SMH"
    ],
-   "over": 0.03567,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.01364
   },
   {
-   "type": "up",
+   "type": "failed",
    "H": "20",
    "key": "AMD",
    "name": "Advanced Micro Devices, Inc.",
@@ -24,133 +92,33 @@
     "XLK",
     "SMH"
    ],
-   "over": 0.01186,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "CEG",
-   "name": "Constellation Energy Corporation",
-   "etfs": [
-    "XLU"
-   ],
-   "over": 0.02691,
-   "spy": "none",
-   "qqq": "lit"
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "PFE",
-   "name": "Pfizer Inc.",
-   "etfs": [
-    "XLV"
-   ],
-   "over": -0.00642
-  },
-  {
-   "type": "failed",
-   "H": "ath",
-   "key": "TMO",
-   "name": "Thermo Fisher Scientific Inc.",
-   "etfs": [
-    "XLV"
-   ],
-   "over": -0.01373
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "TMO",
-   "name": "Thermo Fisher Scientific Inc.",
-   "etfs": [
-    "XLV"
-   ],
-   "over": -0.01373
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "ULCC",
-   "name": "Frontier Group Holdings, Inc.",
-   "etfs": [
-    "JETS"
-   ],
-   "over": -0.04467
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "TMO",
-   "name": "Thermo Fisher Scientific Inc.",
-   "etfs": [
-    "XLV"
-   ],
-   "over": -0.01373
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "RGLD",
-   "name": "Royal Gold, Inc.",
-   "etfs": [
-    "XME"
-   ],
-   "over": -0.04869
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "UAL",
-   "name": "United Airlines Holdings, Inc.",
-   "etfs": [
-    "JETS"
-   ],
-   "over": -0.05247
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "AAL",
-   "name": "American Airlines Group Inc.",
-   "etfs": [
-    "JETS"
-   ],
-   "over": -0.04588
+   "over": -0.07672
   },
   {
    "type": "failed",
    "H": "20",
-   "key": "TMO",
-   "name": "Thermo Fisher Scientific Inc.",
+   "key": "PH",
+   "name": "Parker-Hannifin Corporation",
    "etfs": [
-    "XLV"
+    "PAVE"
    ],
-   "over": -0.01373
+   "over": -0.01095
   },
   {
    "type": "failed",
    "H": "20",
-   "key": "NEM",
-   "name": "Newmont Corporation",
+   "key": "SLR",
+   "name": "Solaria Energía y Medio Ambiente, S.A.",
    "etfs": [
-    "XLB",
-    "XME",
-    "GDX"
+    "TAN"
    ],
-   "over": -0.05025
+   "over": -0.03522
   },
   {
-   "type": "failed",
-   "H": "20",
-   "key": "AC",
-   "name": "Air Canada",
-   "etfs": [
-    "JETS"
-   ],
-   "over": -0.01137
+   "type": "block_fail",
+   "etf": "TAN",
+   "failed": 3,
+   "n": 10
   }
  ]
 }

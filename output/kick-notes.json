@@ -1225,10 +1225,16 @@
    "at": "11/04 10:19 KST"
   },
   "S:TXG:2026-11-02": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/03 10:19 KST",
-   "why": "10x Genomics 11/2 급락 검색 2회. 11/5 실적 발표 예정 외에 당일 원인을 찾지 못함"
+   "k": "유전체주 반등분 반납",
+   "ev": "앞서 오른 유전체 종목이 한꺼번에 되돌려져 10x Genomics 12%, Twist 15% 내림",
+   "src": [
+    {
+     "t": "TIKR, 유전체주 반등분 반납",
+     "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
+    }
+   ],
+   "by": "claude",
+   "at": "11/14 10:19 KST"
   },
   "S:SHW:2026-11-02": {
    "none": 1,
@@ -3048,69 +3054,69 @@
   },
   "E:ARKG:2026-11-10": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "2회 검색(유전체·CRISPR 하락, Hims 실적과 ARKG). 11/10 날짜의 구성종목 하락 원인 기사를 찾지 못함. 물가 지표 부담은 있었으나 ARKG만 4% 빠진 이유는 "
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "ARKG, CRSP, Beam 과 11/10 날짜로 두 번 검색했으나 그날 유전체주 하락 원인을 다룬 기사가 없었음"
   },
   "E:XBI:2026-11-12": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "2회 검색(XBI와 Moderna 11/12, 바이오 업종 동향). 11/12 날짜 기사가 없고 MRNA 하락 원인도 확인 못 함"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "XBI, Moderna 와 11/12 날짜로 세 번 검색했으나 그날 바이오 하락 원인 기사를 찾지 못함"
   },
   "E:XLE:2026-11-12": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "2회 검색(에너지주와 유가 11/12, 브렌트·WTI). 11/12 날짜 유가와 에너지 업종 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "에너지주와 유가를 11/12 날짜로 두 번 검색했으나 그날 원인을 특정하는 기사가 없었음"
   },
   "S:TWST:2026-11-11": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "2회 검색(Twist 11/11 하락). 날짜가 맞는 원인 기사가 없고 공시는 인센티브 부여뿐임"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "Twist 11/11 하락을 검색했으나 원인 기사가 없었고 차익 실현 추정만 있어 확정하지 못함"
   },
   "S:688825:2026-11-12": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "2회 검색(CXMT 11/12 하락). 날짜가 맞는 기사가 없음"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "CXMT 11/12 검색에서 그날 시세나 재료를 찾지 못함"
   },
   "S:MTRN:2026-11-11": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "2회 검색(Materion 11/11). 11/4 실적 외에 그날 원인 기사가 없음"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "Materion 11/11 검색에서 11/4 실적 기사만 나오고 그날 원인은 찾지 못함"
   },
   "S:GE:2026-11-12": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "2회 검색(GE Aerospace 11/12 하락). 날짜가 맞는 원인 기사가 없고 제목도 원인을 담지 않음"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "GE Aerospace 11/12 하락을 검색했으나 10월 기사만 나오고 그날 원인을 찾지 못함"
   },
   "S:LLY:2026-11-10": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "2회 검색(Hims 실적, ARKG 하락). LLY는 보합이었고 차이는 ARKG 급락에서 나와 LLY 자체 원인이 없음"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "LLY 는 ARKG 하락으로 차이가 벌어졌는데 ARKG 의 원인을 찾지 못했고 LLY 자체 재료도 확인되지 않음"
   },
   "S:EQIX:2026-11-09": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "2회 검색(Equinix 11/9 급등). 채권 발행 공시뿐이고 상승 원인 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "Equinix 11/9 재료는 채권 발행 공시뿐이고 반등장 외 구체 원인을 확인하지 못함"
   },
   "S:NTRA:2026-11-12": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "2회 검색(Natera 11/12, 유전체 업종). 날짜가 맞는 기사 없음. 11/5 실적 후 급락 뒤 반등으로 보이나 근거 부족"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "제공된 기사 제목에 Natera 원인이 없고 GNOM 하락일의 방어 흐름 외에 확인된 재료가 없음"
   },
   "S:MPC:2026-11-09": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "2회 검색(Marathon Petroleum 11/9). 정제업체 3분기 실적 언급은 있으나 그날 상승 원인으로 확인하지 못함"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "Marathon Petroleum 11/9 검색에서 그날 정제마진 재료를 확인하지 못함"
   },
   "S:NUE:2026-11-10": {
    "none": 1,
@@ -3120,21 +3126,241 @@
   },
   "S:8001:2026-11-09": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "검색 결과가 일반 시장 기사뿐이고 ITOCHU 개별 원인을 찾지 못함"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "ITOCHU 11/9 상승은 검색하지 않았고 일본 종목 원인을 확인하지 못함. 증시 반등 외 근거 없음"
   },
   "S:CSL:2026-11-10": {
    "none": 1,
-   "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "검색 결과가 일반 시장 기사뿐이고 Carlisle 개별 원인을 찾지 못함"
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "11/10 XHB 급락 원인을 검색했으나 찾지 못했고 CSL 자체 재료도 없음"
   },
   "S:V:2026-11-09": {
    "none": 1,
+   "tries": 2,
+   "at": "11/14 10:19 KST",
+   "why": "Visa 11/9 은 반등장에서 덜 오른 날인데 개별 원인을 찾지 못함"
+  },
+  "S:AMD:2026-11-09": {
+   "k": "목표가 상향·기술주 반등",
+   "ev": "S&P 500 이 2.3% 오른 반등장에서 $600 목표가 상향 등이 겹쳐 AMD 가 13% 오름",
+   "src": [
+    {
+     "t": "Kalkine, AMD 13.26% 상승과 $600 목표가",
+     "u": "https://kalkine.ca/news/technology/can-a-1326-jump-in-amd-nasdaqamd-hold-up-after-a-usd-600-upgrade-target"
+    },
+    {
+     "t": "Cboe, 광범위한 반등장",
+     "u": "https://cboe.com/insights/posts/stocks-stage-a-broad-based-relief-rally"
+    }
+   ],
+   "by": "claude",
+   "at": "11/14 10:19 KST"
+  },
+  "S:CAT:2026-11-09": {
+   "k": "Anthropic 발전기 주문",
+   "ev": "Anthropic 이 Caterpillar 가스 발전기 1.7GW, 34억 달러어치를 산다는 보도가 나옴",
+   "src": [
+    {
+     "t": "TIKR, Anthropic 34억 달러 발전기 주문",
+     "u": "https://www.tikr.com/blog/caterpillar-is-the-quiet-winner-in-anthropics-ipo-a-3-4-billion-generator-order"
+    },
+    {
+     "t": "AI Weekly, OnePWR 발전기 주문",
+     "u": "https://aiweekly.co/alerts/anthropic-pays-34b-for-onepwrs-17gw-generator-order"
+    }
+   ],
+   "by": "claude",
+   "at": "11/14 10:19 KST"
+  },
+  "S:CEG:2026-11-09": {
+   "k": "3분기 호실적·전망 상향",
+   "ev": "3분기 조정 EPS $5.06 으로 예상 $3.89 를 넘기고 연간 전망을 $12.50~12.80 으로 올림",
+   "src": [
+    {
+     "t": "TIKR, Constellation 10% 상승",
+     "u": "https://www.tikr.com/blog/constellation-energy-soars-10-as-guidance-raise-shrugs-off-data-center-backlash"
+    },
+    {
+     "t": "Stocktwits, Constellation 2026 전망 상향",
+     "u": "https://stocktwits.com/news-articles/markets/equity/constellation-energy-raises-2026-earnings-outlook-after-q3-beat-ceo-highlights-growing-demand-for-reliable-power/cNGrQIqR9ew"
+    }
+   ],
+   "by": "claude",
+   "at": "11/14 10:19 KST"
+  },
+  "S:MS:2026-11-09": {
+   "k": "Vinyl Equity 인수",
+   "ev": "Morgan Stanley 가 IPO 자산가 확보를 위해 Vinyl Equity 인수를 발표해 주가가 4% 가까이 오름",
+   "src": [
+    {
+     "t": "Morgan Stanley 보도자료",
+     "u": "https://www.morganstanley.com/press-releases/morgan-stanley-to-acquire-vinyl-equity"
+    },
+    {
+     "t": "Cboe, 광범위한 반등장",
+     "u": "https://cboe.com/insights/posts/stocks-stage-a-broad-based-relief-rally"
+    }
+   ],
+   "by": "claude",
+   "at": "11/14 10:19 KST"
+  },
+  "S:GS:2026-11-09": {
+   "k": "IPO 사업 기대·증시 반등",
+   "ev": "Morgan Stanley 의 Vinyl Equity 인수 발표와 함께 투자은행주가 올랐고 증시도 큰 폭으로 반등함",
+   "src": [
+    {
+     "t": "Morgan Stanley 보도자료",
+     "u": "https://www.morganstanley.com/press-releases/morgan-stanley-to-acquire-vinyl-equity"
+    },
+    {
+     "t": "Cboe, 광범위한 반등장",
+     "u": "https://cboe.com/insights/posts/stocks-stage-a-broad-based-relief-rally"
+    }
+   ],
+   "by": "claude",
+   "at": "11/14 10:19 KST"
+  },
+  "S:BKNG:2026-11-10": {
+   "k": "OpenAI 여행 AI 인수",
+   "ev": "OpenAI 가 AI 여행 스타트업 Odessia 를 인수했다고 알려져 온라인 여행주가 내림",
+   "src": [
+    {
+     "t": "Skift, OpenAI 의 Odessia 인수",
+     "u": "https://skift.com/2026/11/10/a-year-after-sonders-collapse-francis-davidson-sells-his-ai-travel-startup-to-openai/"
+    },
+    {
+     "t": "PhocusWire, OpenAI 의 Odessia 인수",
+     "u": "https://www.phocuswire.com/news/startups/openai-acquires-ai-travel-agent-odessia"
+    }
+   ],
+   "by": "claude",
+   "at": "11/14 10:19 KST"
+  },
+  "S:RTX:2026-11-10": {
+   "k": "2027 성장 전망",
+   "ev": "Baird 컨퍼런스에서 2027년 전 부문 영업이익 성장과 3,400억 달러 수주잔고를 밝힘",
+   "src": [
+    {
+     "t": "RTX 2027 성장 전망 보도",
+     "u": "https://www.foreignpolicyjournal.com/2026/11/11/rtx-sees-2027-growth-as-340-billion-backlog-fuels-aerospace-and-defense-demand/"
+    },
+    {
+     "t": "RTX 수주잔고 사상 최고",
+     "u": "https://www.webull.com/news/15781329697057792"
+    }
+   ],
+   "by": "claude",
+   "at": "11/14 10:19 KST"
+  },
+  "E:XLC:2026-11-13": {
+   "none": 1,
    "tries": 1,
-   "at": "11/13 10:19 KST",
-   "why": "검색 결과가 일반 시장 기사뿐이고 Visa가 금융 업종 대비 부진했던 원인을 찾지 못함"
+   "at": "11/14 10:19 KST",
+   "why": "11/13 증시 마감과 커뮤니케이션 업종을 검색했으나 2025년 기사뿐이었고 그날 원인을 찾지 못함"
+  },
+  "S:META:2026-11-13": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "Meta 의 11/13 상승을 두 번 검색했으나 그날 원인 기사가 없었고 예측시장 앱 보도는 6월 기사였음"
+  },
+  "S:GH:2026-11-12": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "Guardant 전환사채 검색에서 2025년 기사만 나와 11/12 원인을 확인하지 못함"
+  },
+  "S:KAP:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "Kazatomprom 11/9 검색에서 우라늄 가격 기사는 나왔으나 그날 주가 원인과 직접 연결되지 않음"
+  },
+  "S:CRH:2026-11-11": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "제공된 기사는 임원 매수뿐이고 PAVE 와 벌어진 원인을 확인하지 못함"
+  },
+  "S:MCD:2026-11-11": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "McDonald's 11/11 하락을 검색했으나 그날 원인 기사가 없었음"
+  },
+  "S:APD:2026-11-12": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "제공된 기사에 Air Products 원인이 없고 별도 검색도 하지 않아 확인하지 못함"
+  },
+  "S:D:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "Dominion 11/9 약세의 원인을 확인하지 못함. 제공된 기사에 관련 내용이 없음"
+  },
+  "S:ALLE:2026-11-10": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "11/10 XHB 급락 원인을 확인하지 못했고 Allegion 개별 재료도 없음"
+  },
+  "S:DE:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "Deere 11/9 의 PAVE 대비 약세 원인을 확인하지 못함"
+  },
+  "S:JNJ:2026-11-12": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "J&J 11/12 기사는 투자 소식뿐이고 주가 원인으로 확정하지 못함"
+  },
+  "S:MAS:2026-11-10": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "11/10 XHB 급락 원인을 확인하지 못했고 Masco 개별 재료도 없음"
+  },
+  "S:VMRK:2026-11-11": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "우선주 상환 공시 외에 11/11 원인을 확인하지 못함"
+  },
+  "S:REGN:2026-11-11": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "Regeneron 11/11 검색에서 10월 말 실적 기사만 나오고 그날 원인을 찾지 못함"
+  },
+  "S:PSA:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "Public Storage 11/9 은 채권 관련 공시뿐이고 주가 원인으로 보기 어려움"
+  },
+  "S:VZ:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "SpaceX 통신 진출 우려를 검색했으나 11/9 날짜 기사를 찾지 못하고 8월과 10월 기사뿐이었음"
+  },
+  "S:ABT:2026-11-09": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "Abbott 11/9 의 업종 대비 약세 원인을 확인하지 못함"
+  },
+  "S:URI:2026-11-11": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/14 10:19 KST",
+   "why": "United Rentals 11/11 검색에서 4월 실적 기사만 나오고 그날 원인을 찾지 못함"
   }
  },
  "runs": [
@@ -3319,6 +3545,18 @@
    30,
    "claude-sonnet-5-5",
    0.738
+  ],
+  [
+   "11/14 10:19 KST",
+   40,
+   8,
+   32,
+   "ok",
+   37,
+   0,
+   39,
+   "claude-sonnet-5-5",
+   0.949
   ]
  ]
 }

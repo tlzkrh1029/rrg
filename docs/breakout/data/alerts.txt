@@ -1,11 +1,14 @@
-돌파 지도 2026-11-12 (USD 기준, 직전 종가)
-켜진 칸 20일 59/279 (21%) · 55일 46 · 52주 21 · 사상 최고 15 · 이탈 38 · 실패 19
+돌파 지도 2026-11-13 (USD 기준, 직전 종가)
+켜진 칸 20일 47/278 (17%) · 55일 39 · 52주 21 · 사상 최고 16 · 이탈 28 · 실패 19
 
 새 돌파 (1일째)
-  20일: AVGO(XLK·SMH)*, AMD(XLK·SMH)*, CEG(XLU)
+  사상 최고: COST(XLP), MO(XLP), CL(XLP)
+  55일: EOAN(GRID)
+  20일: CMCSA(XLC)
   * SPY 대비로도 켜진 칸
 새 이탈 (1일째)
-  20일 바닥: PFE(XLV)
-오늘 실패한 돌파: TMO(XLV, 사상 최고), TMO(XLV, 52주), ULCC(JETS, 52주), TMO(XLV, 55일), RGLD(XME, 55일), UAL(JETS, 55일), AAL(JETS, 55일), TMO(XLV, 20일), NEM(XLB·XME·GDX, 20일), AC(JETS, 20일)
+  55일 바닥: BEAM(ARKG)
+오늘 실패한 돌파: AVGO(XLK·SMH, 20일), AMD(XLK·SMH, 20일), PH(PAVE, 20일), SLR(TAN, 20일)
+블록 알림 (20일): TAN ×3/10 실패
 
 https://tlzkrh1029.github.io/rrg/breakout/
