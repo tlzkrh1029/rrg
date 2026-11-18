@@ -1,261 +1,210 @@
 {
- "asof": "2026-11-16",
- "prev_asof": "2026-11-13",
+ "asof": "2026-11-17",
+ "prev_asof": "2026-11-16",
  "alerts": [
   {
-   "type": "up",
-   "H": "ath",
-   "key": "PG",
-   "name": "The Procter & Gamble Company",
+   "type": "down",
+   "H": "55",
+   "key": "PANW",
+   "name": "Palo Alto Networks, Inc.",
    "etfs": [
-    "XLP"
+    "IGV"
    ],
-   "over": 0.01695,
-   "spy": "none",
-   "qqq": "none"
+   "over": -0.0145
   },
   {
-   "type": "up",
+   "type": "down",
    "H": "55",
-   "key": "DUK",
-   "name": "Duke Energy Corporation",
+   "key": "CRM",
+   "name": "Salesforce, Inc.",
+   "etfs": [
+    "IGV"
+   ],
+   "over": -0.08954
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "1548",
+   "name": "Genscript Biotech Corporation",
+   "etfs": [
+    "GNOM"
+   ],
+   "over": -0.01985
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "AA",
+   "name": "Alcoa Corporation",
+   "etfs": [
+    "XME"
+   ],
+   "over": -0.01433
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "PDN",
+   "name": "Paladin Energy Ltd",
+   "etfs": [
+    "URA"
+   ],
+   "over": -0.0189
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "SNDK",
+   "name": "Sandisk Corp",
+   "etfs": [
+    "DRAM"
+   ],
+   "over": -0.0114
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "285A",
+   "name": "Kioxia Holdings Corp",
+   "etfs": [
+    "DRAM"
+   ],
+   "over": -0.04047
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "ENPH",
+   "name": "Enphase Energy, Inc.",
+   "etfs": [
+    "TAN"
+   ],
+   "over": -0.07723
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "UNH",
+   "name": "UnitedHealth Group Incorporated",
+   "etfs": [
+    "XLV"
+   ],
+   "over": -0.01134
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "SLB",
+   "name": "SLB N.V.",
+   "etfs": [
+    "XLE"
+   ],
+   "over": -0.01211
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "SRE",
+   "name": "Sempra",
    "etfs": [
     "XLU"
    ],
-   "over": 0.01246,
-   "spy": "quiet",
-   "qqq": "quiet"
+   "over": -0.00844
   },
   {
    "type": "down",
-   "H": "55",
-   "key": "GEV",
-   "name": "GE Vernova Inc.",
+   "H": "20",
+   "key": "ADBE",
+   "name": "Adobe Inc.",
    "etfs": [
-    "XLI"
+    "IGV"
    ],
-   "over": -0.00901
+   "over": -0.00746
   },
   {
    "type": "down",
-   "H": "55",
-   "key": "BA",
-   "name": "The Boeing Company",
+   "H": "20",
+   "key": "INTU",
+   "name": "Intuit Inc.",
    "etfs": [
-    "XLI",
+    "IGV"
+   ],
+   "over": -0.02255
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "TEM",
+   "name": "Tempus AI, Inc.",
+   "etfs": [
+    "ARKG"
+   ],
+   "over": -0.00596
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "W",
+   "name": "Wayfair Inc.",
+   "etfs": [
+    "XHB"
+   ],
+   "over": -0.03881
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "TDG",
+   "name": "TransDigm Group Incorporated",
+   "etfs": [
     "ITA"
    ],
-   "over": -0.01149
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "FCX",
-   "name": "Freeport-McMoRan Inc.",
-   "etfs": [
-    "XLB",
-    "XME"
-   ],
-   "over": -0.0468
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "TXG",
-   "name": "10x Genomics, Inc.",
-   "etfs": [
-    "GNOM",
-    "ARKG"
-   ],
-   "over": -0.05288
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "GH",
-   "name": "Guardant Health, Inc.",
-   "etfs": [
-    "GNOM",
-    "ARKG"
-   ],
-   "over": -0.04534
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "ILMN",
-   "name": "Illumina, Inc.",
-   "etfs": [
-    "GNOM",
-    "ARKG"
-   ],
-   "over": -0.01625
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "NTRA",
-   "name": "Natera, Inc.",
-   "etfs": [
-    "GNOM",
-    "ARKG"
-   ],
-   "over": -0.07143
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "ABSI",
-   "name": "Absci Corporation",
-   "etfs": [
-    "ARKG"
-   ],
-   "over": -0.05856
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "CMC",
-   "name": "Commercial Metals Company",
-   "etfs": [
-    "XME"
-   ],
-   "over": -0.03888
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "CCJ",
-   "name": "Cameco Corporation",
-   "etfs": [
-    "URA"
-   ],
-   "over": -0.03425
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "NXE",
-   "name": "NexGen Energy Ltd.",
-   "etfs": [
-    "URA"
-   ],
-   "over": -0.03808
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "UEC",
-   "name": "Uranium Energy Corp.",
-   "etfs": [
-    "URA"
-   ],
-   "over": -0.05401
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "000660",
-   "name": "SK hynix Inc",
-   "etfs": [
-    "DRAM"
-   ],
-   "over": -0.0106
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "688825",
-   "name": "CXMT Corp",
-   "etfs": [
-    "DRAM"
-   ],
-   "over": -0.01186
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "2408",
-   "name": "Nanya Technology Corp",
-   "etfs": [
-    "DRAM"
-   ],
-   "over": -0.01019
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "2344",
-   "name": "Winbond Electronics Corp",
-   "etfs": [
-    "DRAM"
-   ],
-   "over": -0.06224
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "PAAS",
-   "name": "Pan American Silver Corp.",
-   "etfs": [
-    "GDX"
-   ],
-   "over": -0.03888
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "FSLR",
-   "name": "First Solar, Inc.",
-   "etfs": [
-    "TAN"
-   ],
-   "over": -0.0339
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "3800",
-   "name": "GCL Technology Holdings Limited",
-   "etfs": [
-    "TAN"
-   ],
-   "over": -0.01724
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "TJX",
-   "name": "The TJX Companies, Inc.",
-   "etfs": [
-    "XLY"
-   ],
-   "over": -0.0277
+   "over": -0.02259
   },
   {
    "type": "failed",
    "H": "55",
-   "key": "AMZN",
-   "name": "Amazon.com, Inc.",
+   "key": "EOAN",
+   "name": "E.ON SE",
    "etfs": [
-    "XLY"
+    "GRID"
    ],
-   "over": -0.03258
+   "over": -0.02019
   },
   {
    "type": "failed",
    "H": "20",
-   "key": "DE",
-   "name": "Deere & Company",
+   "key": "CEG",
+   "name": "Constellation Energy Corporation",
    "etfs": [
-    "XLI",
-    "PAVE"
+    "XLU"
    ],
-   "over": -0.03181
+   "over": -0.02371
+  },
+  {
+   "type": "failed",
+   "H": "20",
+   "key": "TDG",
+   "name": "TransDigm Group Incorporated",
+   "etfs": [
+    "ITA"
+   ],
+   "over": -0.02259
+  },
+  {
+   "type": "failed",
+   "H": "20",
+   "key": "EOAN",
+   "name": "E.ON SE",
+   "etfs": [
+    "GRID"
+   ],
+   "over": -0.02019
   },
   {
    "type": "block_down",
-   "etf": "ARKG",
+   "etf": "GNOM",
    "down": 5,
    "n": 10
   }

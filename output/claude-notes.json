@@ -1,124 +1,118 @@
 {
- "asof": "2026-11-16",
- "at": "11/17 10:17 KST",
+ "asof": "2026-11-17",
+ "at": "11/18 10:29 KST",
  "etfs": {
   "XLV": {
    "text": [
-    "LLY가 10/29 3분기 실적에서 올해 매출 전망을 910억~920억 달러로 5조 5천억 원 아닌 55억 달러 높였고, MRK도 같은 날 실적이 예상을 웃돌면서 연간 이익 전망을 올렸습니다.",
-    "11/3 중간선거에서 민주당이 상하원을 모두 차지하자 11/4 보험사와 병원주가 크게 올랐고, 분석가들은 새 의회가 메디케이드 삭감을 늦출 수 있다고 보았습니다."
+    "LLY가 10/29 3분기 매출 244억 달러(전년 대비 39% 증가)와 조정 EPS 7.48달러를 발표하고 2026년 매출 가이던스를 910억~920억 달러로 올렸습니다. 중간선거 뒤 AI 관련주가 밀리던 11/5 전후에는 HCA 등 병원 운영사 주가가 오르며 비기술 업종으로 자금이 옮겨 간다는 분석이 나왔습니다."
    ],
    "src": [
     {
-     "t": "TIKR, 릴리 가이던스 상향",
-     "u": "https://www.tikr.com/blog/eli-lilly-soars-5-as-mounjaro-and-zepbound-demand-drives-5-5-billion-guidance-raise"
+     "t": "Zacks, LLY 3분기 실적",
+     "u": "https://www.zacks.com/stock/news/3018734/lly-stock-jumps-as-q3-earnings-beat-estimates-2026-sales-view-raised"
     },
     {
-     "t": "Finimize, 머크 3분기",
-     "u": "https://finimize.com/content/mercks-keytruda-and-gardasil-powered-a-strong-q3-beat"
+     "t": "Lilly 3분기 8-K 보도자료",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000059478/000005947826000104/q326lillysalesandearningsp.htm"
     },
     {
-     "t": "Becker's, 선거 후 보험·병원주",
-     "u": "https://www.beckersasc.com/asc-coding-billing-and-collections/election-results-send-tenet-hca-insurer-shares-soaring-5-takeaways"
+     "t": "Star/Reuters, 중간선거 후 업종 흐름",
+     "u": "https://www.thestar.com.my/tech/tech-news/2026/11/05/ai-data-center-stocks-slide-renewables-rally-after-democratic-us-midterm-sweep"
     }
    ],
-   "kick": "릴리 가이던스 상향"
+   "kick": "LLY 3분기 실적·가이던스 상향"
+  },
+  "XLU": {
+   "text": [
+    "11/3 중간선거에서 민주당이 약진하자 AI·데이터센터 관련주가 급락했고 재생에너지 종목은 올랐습니다. 11/9에는 CEG가 3분기 조정 영업이익 주당 5.06달러(예상 3.90달러)를 내놓고 연간 가이던스를 12.50~12.80달러로 올려 하루 10.5% 상승했습니다. 경영진은 시장이 선거 결과에 다소 과민 반응했다고 말했습니다."
+   ],
+   "src": [
+    {
+     "t": "Trefis, CEG 실적",
+     "u": "https://www.trefis.com/stock/ceg/articles/624082/what-explains-the-move-in-constellation-energy-stock/2026-11-10"
+    },
+    {
+     "t": "Star/Reuters, 중간선거 후 업종 흐름",
+     "u": "https://www.thestar.com.my/tech/tech-news/2026/11/05/ai-data-center-stocks-slide-renewables-rally-after-democratic-us-midterm-sweep"
+    }
+   ],
+   "kick": "CEG 실적·데이터센터 우려 속 방어 선호"
   },
   "XLP": {
    "text": [
-    "PG가 10/22 회계연도 1분기에 유기적 매출이 4% 늘고 주당 핵심이익이 시장 예상치 1.88달러를 웃도는 2.00달러를 기록했다고 발표했습니다.",
-    "MO는 10/29 3분기 실적과 함께 연간 조정 EPS 전망을 5.66~5.74달러로 올리고 자사주 매입 한도를 10억 달러 늘렸으며, 이날 주가는 최근 1년 중 가장 높게 마감했습니다."
+    "PG가 10/22 회계연도 1분기 실적에서 유기적 물량이 2.4% 늘었다고 밝히고 연간 핵심 EPS 가이던스를 유지해 그날 약 5.6% 올랐습니다. 같은 날 콜게이트와 처치앤드와이트도 올라 생활용품 전반이 강했습니다. COST는 10월 4주 순매출이 245억 달러로 12.6% 늘었다고 발표했습니다."
    ],
    "src": [
     {
-     "t": "P&G 1분기 보도자료",
-     "u": "https://us.pg.com/newsroom/news-releases/PG-Announces-Fiscal-Year-2027-First-Quarter-Results/"
+     "t": "TIKR, PG 실적",
+     "u": "https://www.tikr.com/blog/procter-gamble-soars-6-on-earnings-beat-shrugs-off-1-4-billion-cost-hit-strong-start"
     },
     {
-     "t": "Benzinga, P&G 실적",
-     "u": "https://www.benzinga.com/node/62527709"
+     "t": "Trefis, PG 분기 실적 이후",
+     "u": "https://www.trefis.com/stock/pg/articles2/620996/what-did-procter-gambles-latest-quarter-change-for-its-stock/2026-10-28"
     },
     {
-     "t": "Trefis, 알트리아 주가",
-     "u": "https://www.trefis.com/stock/mo/articles/621602/what-just-happened-to-altria-stock/2026-10-30"
+     "t": "Costco 10월 매출 보도",
+     "u": "https://www.retailcustomerexperience.com/news/costco-reports-double-digit-october-sales-growth/"
     }
    ],
-   "kick": "P&G·알트리아 실적"
-  },
-  "XLY": {
-   "text": [
-    "AMZN이 10/29 3분기에 AWS 매출이 39% 늘어 5년 만에 가장 빠른 성장세를 보였다고 발표했고, 4분기 매출 전망으로 2,400억~2,470억 달러를 제시했습니다.",
-    "반면 TSLA는 11/5 중간선거 결과로 데이터센터와 합병 계획의 전망이 불투명해졌다는 로이터 보도 속에서 하루에 10.8% 떨어졌습니다."
-   ],
-   "src": [
-    {
-     "t": "Constellation Research, AWS 3분기",
-     "u": "https://www.constellationr.com/insights/news/aws-q3-revenue-growth-surges-39-capex-stings-amazons-cash-flow"
-    },
-    {
-     "t": "Trefis, 테슬라 11/5 하락",
-     "u": "https://www.trefis.com/stock/tsla/articles/623330/what-is-behind-the-move-in-tesla-stock/2026-11-06"
-    }
-   ],
-   "kick": "AWS 성장 가속"
+   "kick": "PG 실적과 방어주 선호"
   },
   "ARKG": {
    "text": [
-    "ILMN은 10/29 3분기 매출이 예상보다 약 2천만 달러 적게 나온 데다 연간 유기적 성장률 전망이 4% 남짓에 머물러 다음 날 크게 떨어졌습니다.",
-    "NTRA는 11/5 3분기에 매출이 예상을 웃돌았지만 손실이 예상보다 컸고 CEO 교체까지 발표해 11/6 14.6% 하락했습니다. TXG는 11/5 분기에 장비 매출이 43% 줄었다고 밝혔습니다."
+    "유전체 진단·장비 종목이 실적 발표 뒤 크게 밀렸습니다. ILMN은 10/29 3분기 매출이 시장 예상에 못 미치고 중국 판매 부진이 겹쳐 10/30 18.6% 내렸고, NTRA는 11/5 적자 확대와 지출 계획 상향, CEO 교체를 발표해 11/6 14.6% 내렸습니다. TXG는 11/5 3분기 매출이 1% 늘어 정체였고 장비 매출은 43% 줄었으며, TWST는 11/12 회계연도 4분기 실적을 내놓은 뒤 하락했습니다."
    ],
    "src": [
     {
-     "t": "TIKR, 일루미나 3분기",
-     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
+     "t": "Trefis, ILMN 하락",
+     "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
     },
     {
-     "t": "TIKR, 나테라 CEO 교체",
+     "t": "TIKR, NTRA 하락",
      "u": "https://www.tikr.com/blog/natera-sinks-14-as-ceo-steve-chapman-steps-down-despite-q3-beat-an-excellent-time-to-transition"
     },
     {
-     "t": "Finviz, 10x 제노믹스 3분기",
+     "t": "10x Genomics 3분기 실적 요약",
      "u": "https://finviz.com/news/417900/10x-genomics-beats-and-raises-on-margin-repair-but-flat-sales-and-collapsing-instrument-revenue-leave-atera-to-carry-the-story"
     }
    ],
-   "kick": "유전체 실적 부진"
+   "kick": "ILMN·NTRA 실적 후 급락"
   },
   "GNOM": {
    "text": [
-    "ILMN은 10/29 3분기 매출이 시장 예상에 못 미쳤고 연간 유기적 성장률 전망이 4% 남짓으로 그대로여서 크게 하락했습니다.",
-    "NTRA는 11/5 3분기 매출이 예상을 웃돌았지만 조정 손실이 주당 39센트로 예상보다 컸고 CEO가 물러난다는 발표가 겹쳐 11/6 14.6% 떨어졌습니다."
+    "GNOM의 가장 큰 하락 요인은 두 종목의 실적 발표였습니다. ILMN은 10/29 3분기 매출이 예상보다 적고 중국 사업 부담이 이어져 10/30 18.6% 내렸습니다. NTRA는 11/5 매출이 34% 늘고 연간 매출 가이던스를 올렸지만 주당 손실이 0.42달러로 예상보다 크고 CEO가 물러난다고 밝혀 11/6 14.6% 내렸습니다."
    ],
    "src": [
     {
-     "t": "TIKR, 일루미나 3분기",
-     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
+     "t": "Trefis, ILMN 하락",
+     "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
     },
     {
-     "t": "TIKR, 나테라 CEO 교체",
+     "t": "TIKR, NTRA 하락",
      "u": "https://www.tikr.com/blog/natera-sinks-14-as-ceo-steve-chapman-steps-down-despite-q3-beat-an-excellent-time-to-transition"
+    },
+    {
+     "t": "Trefis, NTRA 하락",
+     "u": "https://www.trefis.com/stock/ntra/articles/623713/what-sent-natera-stock-lower/2026-11-07"
     }
    ],
-   "kick": "NTRA·ILMN 실적 충격"
+   "kick": "ILMN·NTRA 실적 후 급락"
   },
   "XME": {
    "text": [
-    "구리 가격이 11/3 런던금속거래소에서 하루 3% 넘게 떨어져 11주 만의 최저인 톤당 13,883달러를 기록했고, 기술주 약세와 AI 설비투자 우려가 원인으로 거론됐습니다.",
-    "11/6에는 민주당이 중간선거에서 이기면 AI 인프라 확대가 느려지고 구리 수입 관세 가능성이 낮아진다는 우려가 더해졌고, FCX는 11/16 하루에 6.84% 하락했습니다."
+    "11/3 중간선거 이후 기술주가 흔들리면서 산업금속 수요 기대가 약해졌고, 11/5에는 LME 구리가 1.72% 내려 몇 달 만의 저점권에 머물렀다고 SMM이 전했습니다. FCX 같은 구리 관련 종목이 그 영향을 받았습니다."
    ],
    "src": [
     {
-     "t": "GuruFocus, 구리 11주 저점",
-     "u": "https://www.gurufocus.com/news/9165810/copper-prices-hit-11week-low-amid-tech-selloff-impacting-freeportmcmoran-fcx"
+     "t": "SMM, 구리 시황",
+     "u": "https://news.metal.com/newscontent/104207748-market-risk-sentiment-cools-domestic-and-overseas-copper-prices-collectively-pull-back-smm-copper-morning-comment"
     },
     {
-     "t": "GuruFocus, 구리 7월 저점",
-     "u": "https://www.gurufocus.com/news/9181063/copper-prices-fall-to-july-lows-amid-us-midterm-uncertainty-fcx-reacts"
-    },
-    {
-     "t": "Motley Fool, 구리와 프리포트",
-     "u": "https://www.fool.com/investing/2026/11/01/copper-is-priced-like-an-ai-stock-what-the-sell/"
+     "t": "Star/Reuters, 중간선거 후 업종 흐름",
+     "u": "https://www.thestar.com.my/tech/tech-news/2026/11/05/ai-data-center-stocks-slide-renewables-rally-after-democratic-us-midterm-sweep"
     }
    ],
-   "kick": "구리 급락"
+   "kick": "구리 약세와 위험회피"
   }
  },
  "stocks": {
@@ -264,21 +258,6 @@
    "asof": "2026-11-13",
    "at": "11/14 10:19 KST"
   },
-  "TWST": {
-   "text": [
-    "Twist Bioscience는 10/12 주에 −16.9% 하락한 뒤 10/19 주와 10/26 주에 반등했습니다.",
-    "11/2에 10x Genomics가 12%, Twist가 15%, Absci가 12% 내리는 등 유전체 도구주가 함께 급락했고, TIKR는 이를 설명할 뚜렷한 뉴스가 없었다고 전했습니다.",
-    "이 급락이 11/2 주 −20.9% 하락의 큰 부분을 이루며, 다음 실적 발표는 11/12로 예정돼 있습니다."
-   ],
-   "src": [
-    {
-     "t": "TIKR",
-     "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
-    }
-   ],
-   "asof": "2026-11-06",
-   "at": "11/07 10:18 KST"
-  },
   "RTX": {
    "text": [
     "RTX는 10/20 3분기에 매출 약 250억 달러(+11%)와 조정 EPS 2.26달러를 발표했고, 수주잔고는 사상 최대인 3,400억 달러였습니다. 2026년 조정 EPS 가이던스를 7.65~7.75달러로 올렸는데, 기존은 7.10~7.25달러였습니다. 3분기 EPS에는 IEEPA 비용 회수분 0.25달러가 들어 있습니다. 4분기에는 Collins Aerospace 마진이 압박받을 수 있다고 경영진이 밝혔습니다."
@@ -385,25 +364,6 @@
    ],
    "asof": "2026-11-13",
    "at": "11/14 10:19 KST"
-  },
-  "CDE": {
-   "text": [
-    "Coeur Mining은 10/12 주부터 10/26 주까지 세 주 연속 내렸는데, 이 기간에 따로 확인되는 회사 사건은 찾지 못했습니다.",
-    "11/4에 3분기 실적을 발표했고 매출은 10억 달러로 New Gold의 캐나다 광산이 더해져 전년보다 77% 늘었으며, 현금은 12억 달러로 증가했습니다.",
-    "분기 대비로는 금과 은 가격 하락과 구리 판매량 감소로 매출이 9% 줄었고, 회사는 7억 5000만 달러 자사주 매입과 새 10억 달러 신용한도를 갖췄다고 밝혔습니다. 이 발표는 11/2 주 +19.4% 상승과 같은 주에 나왔습니다."
-   ],
-   "src": [
-    {
-     "t": "Coeur Mining 3분기 실적 8-K (SEC)",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000215466/000021546626000054/a3q26earningsreleaseex-991.htm"
-    },
-    {
-     "t": "Mugglehead",
-     "u": "https://mugglehead.com/coeur-mining-absorbs-new-gold-lifts-2026-production-guidance-and-capital-returns/"
-    }
-   ],
-   "asof": "2026-11-06",
-   "at": "11/07 10:18 KST"
   },
   "285A": {
    "text": [
@@ -856,6 +816,124 @@
    ],
    "asof": "2026-11-16",
    "at": "11/17 10:17 KST"
+  },
+  "000660": {
+   "text": [
+    "10/26 주 +11.0%로 오른 뒤 11/3 미국 중간선거에서 민주당이 약진하면서 데이터센터 건설 제한 우려가 커져, 11/2 주에 반도체주가 크게 밀렸습니다. 11/5에는 미국 상장 주식(SKHY)이 13.4% 떨어졌고, 미국 상무부가 중국 내 낸드 공장용 장비 수출 허가를 지연시키고 있다는 Wedbush 애널리스트의 분석도 나왔습니다. 11/9 주 +7.4%로 일부 반등했지만 11/16 주에는 다시 하락했습니다."
+   ],
+   "src": [
+    {
+     "t": "Motley Fool, SK hynix 11/5 하락",
+     "u": "https://www.fool.com/investing/2026/11/05/why-sk-hynix-plunged-today/"
+    },
+    {
+     "t": "Star/Reuters, 중간선거 후 반도체·데이터센터주",
+     "u": "https://www.thestar.com.my/tech/tech-news/2026/11/05/ai-data-center-stocks-slide-renewables-rally-after-democratic-us-midterm-sweep"
+    }
+   ],
+   "asof": "2026-11-17",
+   "at": "11/18 10:29 KST"
+  },
+  "NVDA": {
+   "text": [
+    "11/2 주 −8.8%는 중간선거 뒤 AI·데이터센터주가 밀린 흐름과 겹칩니다. 11/12에 NVDA 이사회가 Jensen Huang의 사장·CEO·이사직 사임을 즉시 발효한다고 발표했고, CFO Colette Kress가 CEO 직무를 임시로 맡았습니다. 회사 발표문에는 사임 이유가 적혀 있지 않았으며 사임 소식에 주가는 장 초반 크게 떨어졌습니다. 11/17 장 마감 후에 Kress 체제 첫 실적이 발표됐지만 그 내용은 확인하지 못했습니다."
+   ],
+   "src": [
+    {
+     "t": "SF Standard, Huang 사임",
+     "u": "https://sfstandard.com/2026/11/12/nvidia-ceo-jensen-huang-resigns/"
+    },
+    {
+     "t": "StockAnalysis, 사임 후 시간외 하락",
+     "u": "https://stockanalysis.com/news/jensen-huang-resigns-as-nvidia-ceo/"
+    },
+    {
+     "t": "Atlanta News First, 개장 직후 급락",
+     "u": "https://www.atlantanewsfirst.com/2026/11/12/nvidia-ceo-jensen-huang-resigns-after-his-affair-raises-national-security-concerns/"
+    }
+   ],
+   "asof": "2026-11-17",
+   "at": "11/18 10:29 KST"
+  },
+  "CCJ": {
+   "text": [
+    "CCJ는 10/30 3분기 실적에서 조정 순손실 200만 캐나다달러를 냈고, 키 레이크 제분소 정비로 분기 생산이 전년보다 20% 줄었습니다. 연간 생산 가이던스 상단은 2,150만 파운드에서 2,050만 파운드로 낮아졌고 비용 가이던스는 올랐습니다. 11/5에는 3분기 부진과 낮아진 연간 전망이 부담이 되어 52주 신저가를 기록했습니다."
+   ],
+   "src": [
+    {
+     "t": "Zacks, CCJ 3분기 콜 요약",
+     "u": "https://zacks.com/stock/news/3023346/cameco-q3-earnings-call-highlights-uranium-pricing-discipline"
+    },
+    {
+     "t": "Vermögenszentrum, CCJ 9개월 실적",
+     "u": "https://www.vermoegenszentrum.ch/en/stock-exchange-and-markets/news/cameco-9-month-profit-falls-narrows-fy26-guidance"
+    },
+    {
+     "t": "MarketBeat, 11/5 52주 신저가",
+     "u": "https://www.marketbeat.com/instant-alerts/price-cameco-nyse-ccj-hits-new-52-week-low-heres-why-2026-11-05/"
+    }
+   ],
+   "asof": "2026-11-17",
+   "at": "11/18 10:29 KST"
+  },
+  "APP": {
+   "text": [
+    "APP는 11/4 장 마감 후 3분기 매출이 55% 늘어 21.8억 달러, 순이익이 72% 늘어 14.4억 달러라고 발표했고 4분기 매출 가이던스를 23.65억~23.95억 달러로 제시했습니다. 이사회는 자사주 매입 한도를 32억 달러 늘려 총 36억 달러로 했고, 다음 거래일 주가는 약 30% 올라 11/2 주 +71.2%로 이어졌습니다. 11/12에는 SeekingAlpha에 밸류에이션을 이유로 한 투자의견 하향 글이 올라왔습니다."
+   ],
+   "src": [
+    {
+     "t": "StockAnalysis, APP 3분기 실적",
+     "u": "https://stockanalysis.com/news/applovin-q3-2026-earnings/"
+    },
+    {
+     "t": "Gulf News, 실적 후 급등",
+     "u": "https://gulfnews.com/business/markets/applovin-shares-jump-30-after-record-quarterly-profits-1.500737986"
+    },
+    {
+     "t": "PPC Land, APP 3분기 매출",
+     "u": "https://ppc.land/applovin-revenue-gains-55-to-2-18bn-as-new-ad-models-lift-gaming/"
+    }
+   ],
+   "asof": "2026-11-17",
+   "at": "11/18 10:29 KST"
+  },
+  "MRNA": {
+   "text": [
+    "MRNA는 11/6 3분기 매출이 13.1억 달러로 29% 늘고 1.62억 달러 순이익을 냈으며, 2026년 매출 성장률 전망을 기존 최대 10%에서 15~25%로 올렸습니다. 같은 날 주가가 올랐고 11/2 주 +14.6%에 반영됐습니다. 11/13에는 임원의 퇴직·전환 서비스 계약을 담은 8-K가 제출됐고, 11/9 주와 11/16 주에는 각각 12.1%, 7.4% 내렸습니다."
+   ],
+   "src": [
+    {
+     "t": "MarketScale, MRNA 3분기",
+     "u": "https://www.marketscale.com/industries/healthcare/moderna-q3-2026-profit-raises-revenue-outlook.md"
+    },
+    {
+     "t": "Finviz, 실적 후 주가",
+     "u": "https://finviz.com/news/418355/moderna-shares-jump-10-as-q3-earnings-beat-forecasts-and-revenue-outlook-improves"
+    }
+   ],
+   "asof": "2026-11-17",
+   "at": "11/18 10:29 KST"
+  },
+  "WELL": {
+   "text": [
+    "WELL은 10/26 3분기 정규화 FFO가 주당 1.67달러(전년 대비 24.6% 증가)였고 시니어하우징 동일점포 매출이 9.1% 늘었다고 발표하며 연간 FFO 가이던스를 6.47~6.53달러로 올렸습니다. 매출은 예상보다 약간 적었고 다음 거래일 주가는 5.8% 내렸습니다. 이후 Evercore(11/2), RBC(11/10), Wells Fargo(11/16)가 목표가를 올렸고 11/2 주에는 4.4% 올랐습니다."
+   ],
+   "src": [
+    {
+     "t": "Finviz, Welltower 3분기 보도자료",
+     "u": "https://finviz.com/news/408031/welltower-reports-third-quarter-2026-results"
+    },
+    {
+     "t": "Zacks, WELL 3분기 FFO",
+     "u": "https://zacks.com/stock/news/3016413/well-s-q3-ffo-beat-estimates-on-strong-sho-portfolio-growth"
+    },
+    {
+     "t": "24/7 Wall St, WELL 3분기",
+     "u": "https://247wallst.com/cards/welltower-q3-2026-earnings-well-01m5wyxs2zgn4nnazk3fqrnpwh"
+    }
+   ],
+   "asof": "2026-11-17",
+   "at": "11/18 10:29 KST"
   }
  },
  "runs": [
@@ -1082,6 +1160,19 @@
    34,
    "claude-sonnet-5-5",
    0.736
+  ],
+  [
+   "11/18 10:29 KST",
+   6,
+   6,
+   6,
+   6,
+   "ok",
+   31,
+   3,
+   36,
+   "claude-sonnet-5-5",
+   0.798
   ]
  ]
 }

@@ -1,4 +1,4 @@
-{"version":1,"updated":"2026-11-17T01:05:50Z","prev":"2026-11-14T01:06:18Z","counts":{"b":105,"p":224,"h":138},
+{"version":1,"updated":"2026-11-18T01:06:14Z","prev":"2026-11-17T01:05:50Z","counts":{"b":105,"p":224,"h":139},
 "state":{
 "b":{
 "AAOIBUSDT":{"u":"AAOI","lk":"AAOI","n":"Applied Optoelectronics","c":"stock","m":"US"},
@@ -339,6 +339,7 @@
 "io:DRAM":{"u":"DRAM","lk":"DRAM","n":"Roundhill Memory ETF","c":"etf","m":"US","dex":"io"},
 "io:EWY":{"u":"EWY","lk":"EWY","n":"iShares MSCI South Korea ETF","c":"etf","m":"US","dex":"io"},
 "io:GPRO":{"u":"GPRO","lk":"GPRO","n":"GoPro, Inc.","c":"stock","m":"US","dex":"io"},
+"io:INTC":{"u":"INTC","lk":"INTC","n":"Intel Corporation","c":"stock","m":"US","dex":"io"},
 "io:IONQ":{"u":"IONQ","lk":"IONQ","n":"IonQ, Inc.","c":"stock","m":"US","dex":"io"},
 "io:NBIS":{"u":"NBIS","lk":"NBIS","n":"Nebius Group N.V.","c":"stock","m":"US","dex":"io"},
 "io:NVDA":{"u":"NVDA","lk":"NVDA","n":"NVIDIA Corporation","c":"stock","m":"US","dex":"io"},
@@ -475,6 +476,7 @@
 }
 },
 "events":[
+{"v":"h","e":"add","s":"io:INTC","u":"INTC","lk":"INTC","n":"Intel Corporation","c":"stock","m":"US","d":"2026-11-18","x":0,"t0":"2026-11-17T01:05:50Z","t1":"2026-11-18T01:06:14Z","dex":"io"},
 {"v":"p","e":"add","s":"NUUSDT","u":"NU","lk":"NU","n":"Nu Holdings Ltd.","c":"stock","m":"US","d":"2026-11-12","x":1,"t0":"2026-11-11T01:06:27Z","t1":"2026-11-12T01:11:21Z"},
 {"v":"p","e":"add","s":"FRHCUSDT","u":"FRHC","lk":"FRHC","n":"Freedom Holding Corp.","c":"stock","m":"US","d":"2026-11-12","x":1,"t0":"2026-11-11T01:06:27Z","t1":"2026-11-12T01:11:21Z"},
 {"v":"h","e":"add","s":"io:SKHX","u":"SKHX","lk":"SKHX","n":"Leverage Shares 2X Long SK Hynix Daily ETF","c":"etf","m":"US","d":"2026-11-11","x":0,"t0":"2026-11-10T01:07:29Z","t1":"2026-11-11T01:06:27Z","dex":"io"},

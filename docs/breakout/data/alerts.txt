@@ -1,14 +1,10 @@
-돌파 지도 2026-11-16 (USD 기준, 직전 종가)
-켜진 칸 20일 28/279 (10%) · 55일 29 · 52주 14 · 사상 최고 11 · 이탈 38 · 실패 19
+돌파 지도 2026-11-17 (USD 기준, 직전 종가)
+켜진 칸 20일 22/279 (8%) · 55일 23 · 52주 13 · 사상 최고 11 · 이탈 48 · 실패 19
 
-새 돌파 (1일째)
-  사상 최고: PG(XLP)
-  55일: DUK(XLU)
-  * SPY 대비로도 켜진 칸
 새 이탈 (1일째)
-  55일 바닥: GEV(XLI), BA(XLI·ITA), FCX(XLB·XME), TXG(GNOM·ARKG), GH(GNOM·ARKG), ILMN(GNOM·ARKG), NTRA(GNOM·ARKG), ABSI(ARKG), CMC(XME), CCJ(URA), NXE(URA), UEC(URA), 000660(DRAM), 688825(DRAM), 2408(DRAM), 2344(DRAM), PAAS(GDX), FSLR(TAN), 3800(TAN)
-  20일 바닥: TJX(XLY)
-오늘 실패한 돌파: AMZN(XLY, 55일), DE(XLI·PAVE, 20일)
-블록 알림 (20일): ARKG ▼5/10 이탈
+  55일 바닥: PANW(IGV), CRM(IGV), 1548(GNOM), AA(XME), PDN(URA), SNDK(DRAM), 285A(DRAM), ENPH(TAN)
+  20일 바닥: UNH(XLV), SLB(XLE), SRE(XLU), ADBE(IGV), INTU(IGV), TEM(ARKG), W(XHB)
+오늘 실패한 돌파: TDG(ITA, 55일), EOAN(GRID, 55일), CEG(XLU, 20일), TDG(ITA, 20일), EOAN(GRID, 20일)
+블록 알림 (20일): GNOM ▼5/10 이탈
 
 https://tlzkrh1029.github.io/rrg/breakout/

@@ -3649,6 +3649,210 @@
    ],
    "by": "claude",
    "at": "11/17 10:17 KST"
+  },
+  "E:IGV:2026-11-17": {
+   "k": "Anthropic IPO 부담",
+   "ev": "Anthropic 대형 IPO 직전 자금 이탈과 AI 에이전트 위협 우려로 소프트웨어 ETF가 5번째 3% 급락을 기록함",
+   "src": [
+    {
+     "t": "Dow Slides 1.4% as Salesforce Leads Soft",
+     "u": "https://www.tradingview.com/news/benzinga:0092ea2b4094b:0-dow-slides-1-4-as-salesforce-leads-software-rout-before-anthropic-ipo-stock-market-today/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/18 10:29 KST"
+  },
+  "S:CRM:2026-11-17": {
+   "k": "Anthropic IPO 앞 매도",
+   "ev": "Anthropic IPO를 앞두고 소프트웨어주가 급락하며 Salesforce가 9% 넘게 떨어져 다우 최대 낙폭을 기록함",
+   "src": [
+    {
+     "t": "Dow Slides 1.4% as Salesforce Leads Soft",
+     "u": "https://www.tradingview.com/news/benzinga:0092ea2b4094b:0-dow-slides-1-4-as-salesforce-leads-software-rout-before-anthropic-ipo-stock-market-today/"
+    },
+    {
+     "t": "Salesforce Falls 9% as AI Stocks Sell Of",
+     "u": "https://pomegra.io/news/salesforce-falls-9-as-ai-stocks-sell-off-in-software"
+    }
+   ],
+   "by": "claude",
+   "at": "11/18 10:29 KST"
+  },
+  "S:MU:2026-11-16": {
+   "k": "DRAM 소송·엔비디아 쇼크",
+   "ev": "DRAM 공급 담합 소송의 기각 신청이 전부 기각됐고 엔비디아 CEO 퇴진 여파로 반도체주가 급락함",
+   "src": [
+    {
+     "t": "Suit vs Samsung, SK Hynix, Micron surviv",
+     "u": "https://fourweekmba.com/ai-suit-vs-samsung-sk-hynix-micron-91-5-of-dram-survives/"
+    },
+    {
+     "t": "Nvidia Turmoil Rattles Wall Street",
+     "u": "https://aroundprague.cz/en/news/us/nvidia-turmoil-rattles-wall-street-the-numbers-behind-the-chip-stock-slump"
+    }
+   ],
+   "by": "claude",
+   "at": "11/18 10:29 KST"
+  },
+  "S:000660:2026-11-16": {
+   "k": "엔비디아 쇼크·DRAM 소송",
+   "ev": "엔비디아 CEO 퇴진 충격과 DRAM 담합 소송 진행 결정으로 한국 메모리주가 내림",
+   "src": [
+    {
+     "t": "Nvidia Turmoil Rattles Wall Street",
+     "u": "https://aroundprague.cz/en/news/us/nvidia-turmoil-rattles-wall-street-the-numbers-behind-the-chip-stock-slump"
+    },
+    {
+     "t": "Suit vs Samsung, SK Hynix, Micron surviv",
+     "u": "https://fourweekmba.com/ai-suit-vs-samsung-sk-hynix-micron-91-5-of-dram-survives/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/18 10:29 KST"
+  },
+  "S:ORCL:2026-11-16": {
+   "k": "AI주 급락 확산",
+   "ev": "엔비디아 CEO 퇴진 후폭풍과 미국의 중국 AI칩 우회 차단 소식으로 AI 관련주가 함께 급락함",
+   "src": [
+    {
+     "t": "Nvidia Turmoil Rattles Wall Street",
+     "u": "https://aroundprague.cz/en/news/us/nvidia-turmoil-rattles-wall-street-the-numbers-behind-the-chip-stock-slump"
+    }
+   ],
+   "by": "claude",
+   "at": "11/18 10:29 KST"
+  },
+  "S:AAPL:2026-11-16": {
+   "k": "칩주 급락 속 방어",
+   "ev": "엔비디아 CEO 퇴진과 수출 규제 압박으로 반도체주가 급락한 날 애플은 낙폭이 작았음",
+   "src": [
+    {
+     "t": "Nvidia Turmoil Rattles Wall Street",
+     "u": "https://aroundprague.cz/en/news/us/nvidia-turmoil-rattles-wall-street-the-numbers-behind-the-chip-stock-slump"
+    }
+   ],
+   "by": "claude",
+   "at": "11/18 10:29 KST"
+  },
+  "S:AAPL:2026-11-04": {
+   "k": "중간선거 후 빅테크 반등",
+   "ev": "중간선거 결과 이후 대형 기술주가 오르는 가운데 애플이 5.3% 올라 2025년 5월 이후 최대 상승을 기록함",
+   "src": [
+    {
+     "t": "Apple Stock (AAPL) Rises 5.3% as Big Tec",
+     "u": "https://www.heygotrade.com/en/news/apple-aapl-stock-news-november-5-2026/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/18 10:29 KST"
+  },
+  "S:TSM:2026-11-17": {
+   "k": "미국 파운드리 규제",
+   "ev": "파운드리 고객 점검을 강화하는 미국 신규 규정과 엔비디아 실적 앞 AI주 매도로 TSM이 내림",
+   "src": [
+    {
+     "t": "Dow Slides 1.4% as Salesforce Leads Soft",
+     "u": "https://www.tradingview.com/news/benzinga:0092ea2b4094b:0-dow-slides-1-4-as-salesforce-leads-software-rout-before-anthropic-ipo-stock-market-today/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/18 10:29 KST"
+  },
+  "S:MRNA:2026-11-17": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "이유 검색 3회. JPMorgan 목표가 상향 후 고평가 의견 기사만 있고 그날 낙폭의 직접 원인을 확인하지 못함"
+  },
+  "S:GILD:2026-11-17": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "종목 검색 2회. Jefferies 컨퍼런스 발표 일정만 확인되고 주가 원인 기사를 찾지 못함"
+  },
+  "S:TWST:2026-11-17": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "종목 검색 2회. 11/17 자 기사가 없고 10월의 업종 반등 기사만 나옴"
+  },
+  "S:RTX:2026-11-17": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "방산 검색 2회. 11/17 방산주 상승 원인 기사를 찾지 못함"
+  },
+  "S:NOC:2026-11-17": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "방산 검색 2회. 11/17 방산주 상승 원인 기사를 찾지 못함"
+  },
+  "S:TTWO:2026-11-16": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "검색 2회. GTA VI 출시 전 선반영 매도 정황만 있고 11/16 낙폭의 직접 원인을 확인하지 못함"
+  },
+  "S:NTRA:2026-11-16": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "검색 2회. 11/6 CEO 교체와 실적 하락 기사만 있고 11/16 원인 기사를 찾지 못함"
+  },
+  "S:WELL:2026-11-17": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "검색 2회. 11/17 리츠 업종 움직임이나 Welltower 기사를 찾지 못함"
+  },
+  "S:AVGO:2026-11-17": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "검색 2회. 11/17 상승 원인 기사를 찾지 못함"
+  },
+  "S:TXG:2026-11-17": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "검색 2회. 11/17 원인 기사를 찾지 못함"
+  },
+  "S:RS:2026-11-16": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "검색 2회. Barclays 상향은 11/12 일이라 그날 원인으로 쓰기 어려움"
+  },
+  "S:MSFT:2026-11-16": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "검색 2회. 장애와 Anthropic 투자 기사는 있으나 그날 상대 강도의 원인으로 확정하지 못함"
+  },
+  "S:TXN:2026-11-16": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "검색 2회. UBS 컨퍼런스 일정 외에 원인 기사를 찾지 못함"
+  },
+  "S:MCD:2026-11-16": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "검색 2회. 11/16 원인 기사를 찾지 못함"
+  },
+  "S:FCX:2026-11-16": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "검색 3회. 중국 산업생산 부진 기사 제목만 있고 출처 주소를 확인하지 못함"
+  },
+  "S:NEM:2026-11-17": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/18 10:29 KST",
+   "why": "검색 2회. 11/17 금값이나 종목 기사를 찾지 못함"
   }
  },
  "runs": [
@@ -3857,6 +4061,18 @@
    12,
    "claude-sonnet-5-5",
    0.296
+  ],
+  [
+   "11/18 10:29 KST",
+   24,
+   8,
+   16,
+   "ok",
+   33,
+   2,
+   37,
+   "claude-sonnet-5-5",
+   0.835
   ]
  ]
 }

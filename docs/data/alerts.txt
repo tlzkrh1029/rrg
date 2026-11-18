@@ -1,32 +1,15 @@
-🔔 섹터 전환 터미널 · 2026-11-16 종가 · 변화 15건
+🔔 섹터 전환 터미널 · 2026-11-17 종가 · 변화 5건
 1W 백분위 높은 순 · [1W/1M/3M/6M/12M 백분위] · RRG 는 벤치마크 대비 국면
 
-XLE 에너지  [100/32/73/64/95]  Leading vs SPY
-  · ↓ 백분위 32점 하락 (6개월 → 1개월)
-  · ≈ 1주 반등, 1개월 이상에서는 미확인
-XLU 유틸리티  [91/73/82/41/29]  Improving vs SPY
-  · ↑ 백분위 32점 상승 (6개월 → 1개월)
-  · 전환순 상위 3 진입 (점수 53)
-XLF 금융  [86/77/77/82/43]  Leading vs SPY
-  · RRG Weakening → Leading (vs SPY)
-XLV 헬스케어  [82/95/100/91/76]  Leading vs SPY
-  · ★ SPY 대비 비율 52주 신고가
-XLRE 부동산  [73/82/68/50/52]  Improving vs SPY
-  · ↗ SPY 비율 200일선 상향 돌파
-  · ↑ 백분위 32점 상승 (6개월 → 1개월)
-KRE 지역은행  [68/68/45/73/67]  Lagging vs XLF
-  · ↗ SPY 비율 200일선 상향 돌파
-XLY 경기소비재  [55/86/91/45/33]  Improving vs SPY
-  · ↑ 백분위 41점 상승 (6개월 → 1개월)
-IGV 소프트웨어  [50/36/59/68/5]  Leading vs XLK
-  · ↓ 백분위 32점 하락 (6개월 → 1개월)
-XLK 기술  [36/23/23/23/57]  Lagging vs SPY
-  · RRG Weakening → Lagging (vs SPY)
-XHB 주택건설  [32/100/50/59/19]  Lagging vs XLY
-  · RRG Lagging → Improving (vs SPY)
-GNOM 유전체학  [5/27/86/95/90]  Weakening vs XLV
-  · ↓ 백분위 68점 하락 (6개월 → 1개월)
-ARKG 유전체학 (액티브)  [0/14/41/100/100]  Weakening vs XLV
-  · ↓ 백분위 86점 하락 (6개월 → 1개월)
+XLU 유틸리티  [91/91/82/41/24]  Improving vs SPY
+  · ↑ 백분위 50점 상승 (6개월 → 1개월)
+XLRE 부동산  [77/82/73/45/43]  Improving vs SPY
+  · ↑ 백분위 37점 상승 (6개월 → 1개월)
+KRE 지역은행  [59/68/64/73/62]  Lagging vs XLF
+  · ↘ SPY 비율 200일선 하향 이탈
+ITA 항공우주·방산  [45/64/23/27/29]  Lagging vs XLI
+  · ↑ 백분위 37점 상승 (6개월 → 1개월)
+XBI 바이오  [18/50/27/86/81]  Lagging vs XLV
+  · ↓ 백분위 36점 하락 (6개월 → 1개월)
 
 https://tlzkrh1029.github.io/rrg/#board
