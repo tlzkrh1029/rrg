@@ -1,212 +1,275 @@
 {
- "asof": "2026-11-17",
- "prev_asof": "2026-11-16",
+ "asof": "2026-11-18",
+ "prev_asof": "2026-11-17",
  "alerts": [
   {
-   "type": "down",
-   "H": "55",
-   "key": "PANW",
-   "name": "Palo Alto Networks, Inc.",
+   "type": "up",
+   "H": "52w",
+   "key": "DIS",
+   "name": "The Walt Disney Company",
    "etfs": [
-    "IGV"
+    "XLC"
    ],
-   "over": -0.0145
+   "over": 0.02642,
+   "spy": "none",
+   "qqq": "near"
   },
   {
-   "type": "down",
+   "type": "up",
    "H": "55",
-   "key": "CRM",
-   "name": "Salesforce, Inc.",
+   "key": "TGT",
+   "name": "Target Corporation",
    "etfs": [
-    "IGV"
+    "XLP"
    ],
-   "over": -0.08954
+   "over": 0.00722,
+   "spy": "lit",
+   "qqq": "lit"
   },
   {
-   "type": "down",
+   "type": "up",
    "H": "55",
-   "key": "1548",
-   "name": "Genscript Biotech Corporation",
+   "key": "LUV",
+   "name": "Southwest Airlines Co.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": 0.014,
+   "spy": "quiet",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "BMRN",
+   "name": "BioMarin Pharmaceutical Inc.",
    "etfs": [
     "GNOM"
    ],
-   "over": -0.01985
+   "over": 0.04991,
+   "spy": "lit",
+   "qqq": "lit"
   },
   {
    "type": "down",
    "H": "55",
-   "key": "AA",
-   "name": "Alcoa Corporation",
+   "key": "JPM",
+   "name": "JPMorgan Chase & Co.",
    "etfs": [
-    "XME"
+    "XLF"
    ],
-   "over": -0.01433
+   "over": -0.01542
   },
   {
    "type": "down",
    "H": "55",
-   "key": "PDN",
-   "name": "Paladin Energy Ltd",
+   "key": "BAC",
+   "name": "Bank of America Corporation",
    "etfs": [
-    "URA"
+    "XLF"
    ],
-   "over": -0.0189
+   "over": -0.01032
   },
   {
    "type": "down",
    "H": "55",
-   "key": "SNDK",
-   "name": "Sandisk Corp",
+   "key": "C",
+   "name": "Citigroup Inc.",
    "etfs": [
-    "DRAM"
+    "XLF"
    ],
-   "over": -0.0114
+   "over": -0.00937
   },
   {
    "type": "down",
    "H": "55",
-   "key": "285A",
-   "name": "Kioxia Holdings Corp",
-   "etfs": [
-    "DRAM"
-   ],
-   "over": -0.04047
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "ENPH",
-   "name": "Enphase Energy, Inc.",
-   "etfs": [
-    "TAN"
-   ],
-   "over": -0.07723
-  },
-  {
-   "type": "down",
-   "H": "20",
    "key": "UNH",
    "name": "UnitedHealth Group Incorporated",
    "etfs": [
     "XLV"
    ],
-   "over": -0.01134
+   "over": -0.04187
   },
   {
    "type": "down",
-   "H": "20",
-   "key": "SLB",
-   "name": "SLB N.V.",
+   "H": "55",
+   "key": "MRK",
+   "name": "Merck & Co., Inc.",
+   "etfs": [
+    "XLV"
+   ],
+   "over": -0.01261
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "VLO",
+   "name": "Valero Energy Corporation",
    "etfs": [
     "XLE"
    ],
-   "over": -0.01211
+   "over": -0.00794
   },
   {
    "type": "down",
-   "H": "20",
-   "key": "SRE",
-   "name": "Sempra",
+   "H": "55",
+   "key": "NEM",
+   "name": "Newmont Corporation",
    "etfs": [
-    "XLU"
+    "XLB",
+    "XME",
+    "GDX"
    ],
-   "over": -0.00844
+   "over": -0.01951
   },
   {
    "type": "down",
-   "H": "20",
+   "H": "55",
+   "key": "ORCL",
+   "name": "Oracle Corporation",
+   "etfs": [
+    "IGV"
+   ],
+   "over": -0.01103
+  },
+  {
+   "type": "down",
+   "H": "55",
    "key": "ADBE",
    "name": "Adobe Inc.",
    "etfs": [
     "IGV"
    ],
-   "over": -0.00746
+   "over": -0.02082
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "SSW",
+   "name": "Sibanye Stillwater Limited",
+   "etfs": [
+    "URA"
+   ],
+   "over": -0.04808
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "ABX",
+   "name": "Barrick Mining Corporation",
+   "etfs": [
+    "GDX"
+   ],
+   "over": -0.04357
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "K",
+   "name": "Kinross Gold Corporation",
+   "etfs": [
+    "GDX"
+   ],
+   "over": -0.02408
   },
   {
    "type": "down",
    "H": "20",
-   "key": "INTU",
-   "name": "Intuit Inc.",
+   "key": "WFC",
+   "name": "Wells Fargo & Company",
    "etfs": [
-    "IGV"
+    "XLF"
    ],
-   "over": -0.02255
+   "over": -0.01202
   },
   {
    "type": "down",
    "H": "20",
-   "key": "TEM",
-   "name": "Tempus AI, Inc.",
+   "key": "XOM",
+   "name": "ExxonMobil Holdings Corporation",
    "etfs": [
-    "ARKG"
+    "XLE",
+    "XOP"
    ],
-   "over": -0.00596
+   "over": -0.01749
   },
   {
    "type": "down",
    "H": "20",
-   "key": "W",
-   "name": "Wayfair Inc.",
+   "key": "CVX",
+   "name": "Chevron Corporation",
    "etfs": [
-    "XHB"
+    "XLE",
+    "XOP"
    ],
-   "over": -0.03881
+   "over": -0.02325
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "MRNA",
+   "name": "Moderna, Inc.",
+   "etfs": [
+    "XBI",
+    "GNOM"
+   ],
+   "over": -0.01036
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "DORL",
+   "name": "Doral Group Renewable Energy Resources Ltd",
+   "etfs": [
+    "TAN"
+   ],
+   "over": -0.0118
+  },
+  {
+   "type": "failed",
+   "H": "ath",
+   "key": "MO",
+   "name": "Altria Group, Inc.",
+   "etfs": [
+    "XLP"
+   ],
+   "over": -0.02268
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "MO",
+   "name": "Altria Group, Inc.",
+   "etfs": [
+    "XLP"
+   ],
+   "over": -0.02268
   },
   {
    "type": "failed",
    "H": "55",
-   "key": "TDG",
-   "name": "TransDigm Group Incorporated",
+   "key": "MO",
+   "name": "Altria Group, Inc.",
    "etfs": [
-    "ITA"
+    "XLP"
    ],
-   "over": -0.02259
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "EOAN",
-   "name": "E.ON SE",
-   "etfs": [
-    "GRID"
-   ],
-   "over": -0.02019
+   "over": -0.02268
   },
   {
    "type": "failed",
    "H": "20",
-   "key": "CEG",
-   "name": "Constellation Energy Corporation",
+   "key": "MO",
+   "name": "Altria Group, Inc.",
    "etfs": [
-    "XLU"
+    "XLP"
    ],
-   "over": -0.02371
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "TDG",
-   "name": "TransDigm Group Incorporated",
-   "etfs": [
-    "ITA"
-   ],
-   "over": -0.02259
-  },
-  {
-   "type": "failed",
-   "H": "20",
-   "key": "EOAN",
-   "name": "E.ON SE",
-   "etfs": [
-    "GRID"
-   ],
-   "over": -0.02019
+   "over": -0.02268
   },
   {
    "type": "block_down",
-   "etf": "GNOM",
+   "etf": "URA",
    "down": 5,
-   "n": 10
+   "n": 9
   }
  ]
 }

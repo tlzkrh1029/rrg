@@ -6,6 +6,7 @@ io:EWY,io,EntropyIO,EWY,,(none),NYSE Arca: EWY,etf,nasdaq (manual reference),Fal
 io:GPRO,io,EntropyIO,GPRO,GOPRO,stocks,US: GPRO,stock,nasdaq (coin name),False,"GoPro, Inc. - Class A Common Stock",stock,5,0,False,
 io:INTC,io,EntropyIO,INTC,INTC,stocks,US: INTC,stock,nasdaq (displayName),False,Intel Corporation - Common Stock,stock,15,0,False,
 io:IONQ,io,EntropyIO,IONQ,IONQ,stocks,US: IONQ,stock,nasdaq (displayName),False,"IonQ, Inc. Common Stock",stock,10,0,False,
+io:META,io,EntropyIO,META,META,stocks,US: META,stock,nasdaq (displayName),False,"Meta Platforms, Inc. - Class A Common Stock",stock,25,0,False,
 io:NBIS,io,EntropyIO,NBIS,NBIS,stocks,US: NBIS,stock,nasdaq (displayName),False,Nebius Group N.V. - Class A Ordinary Shares,stock,15,0,False,
 io:NVDA,io,EntropyIO,NVDA,NVDA,stocks,US: NVDA,stock,nasdaq (displayName),False,NVIDIA Corporation - Common Stock,stock,25,0,False,
 io:SKHX,io,EntropyIO,SKHX,SKHYNIX,stocks,US: SKHX,etf,nasdaq (coin name),False,Leverage Shares 2X Long SK Hynix Daily ETF,,15,0,False,

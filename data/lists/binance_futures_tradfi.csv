@@ -18,6 +18,7 @@ ANETUSDT,ANET,USDT,EQUITY,TradFi,US,ANET,constituents,stock,ANET,"Arista Network
 APLDUSDT,APLD,USDT,EQUITY,TradFi,US,APLD,constituents,stock,APLD,Applied Digital Corporation - Common Stock,stock,TRADING,2026-09-18
 APPUSDT,APP,USDT,EQUITY,TradFi,US,APP,constituents,stock,APP,Applovin Corporation - Class A Common Stock,stock,TRADING,2026-07-10
 ARMUSDT,ARM,USDT,EQUITY,TradFi,US,ARM,constituents,stock,ARM,Arm Holdings plc - American Depositary Shares,stock,TRADING,2026-05-26
+ARTYUSDT,ARTY,USDT,EQUITY,TradFi,US,ARTY,constituents,etf,ARTY,iShares Future AI & Tech ETF,etf,TRADING,2026-11-18
 ASMLUSDT,ASML,USDT,EQUITY,TradFi,US,ASML,constituents,stock,ASML,ASML Holding N.V. - New York Registry Shares,stock,TRADING,2026-06-11
 ASTSUSDT,ASTS,USDT,EQUITY,TradFi,US,ASTS,constituents,stock,ASTS,"AST SpaceMobile, Inc. - Class A Common Stock",stock,TRADING,2026-06-01
 AVGOUSDT,AVGO,USDT,EQUITY,TradFi,US,AVGO,constituents,stock,AVGO,Broadcom Inc. - Common Stock,stock,TRADING,2026-04-20
@@ -26,7 +27,6 @@ BABAUSDT,BABA,USDT,EQUITY,TradFi,US,BABA,constituents,stock,BABA,Alibaba Group H
 BACUSDT,BAC,USDT,EQUITY,TradFi,US,BAC,constituents,stock,BAC,Bank of America Corporation Common Stock,stock,TRADING,2026-10-21
 BBXUSDT,BBX,USDT,EQUITY,TradFi,US,BB,constituents,stock,BB,BlackBerry Limited Common Stock,stock,TRADING,2026-06-01
 BEUSDT,BE,USDT,EQUITY,TradFi,US,BE,constituents,stock,BE,Bloom Energy Corporation Class A Common Stock,stock,TRADING,2026-05-26
-BITOUSDT,BITO,USDT,EQUITY,TradFi,US,BITO,constituents,etf,BITO,ProShares Bitcoin ETF,etf,TRADING,2026-07-27
 BMNRUSDT,BMNR,USDT,EQUITY,TradFi,US,BMNR,constituents,stock,BMNR,"BitMine Immersion Technologies, Inc. Common Stock",stock,TRADING,2026-06-11
 BNCUSDT,BNC,USDT,EQUITY,TradFi,US,BNC,constituents,stock,BNC,BNB Standard Corporation - Common Stock,stock,TRADING,2026-07-09
 BOTUSDT,BOT,USDT,EQUITY,TradFi,US,BOT,constituents,stock,BOT,"RoboStrategy, Inc. - Common Stock",stock,TRADING,2026-07-09
@@ -36,6 +36,7 @@ BWETUSDT,BWET,USDT,EQUITY,TradFi,US,BWET,constituents,etf,BWET,Breakwave Tanker 
 BXUSDT,BX,USDT,EQUITY,TradFi,US,BX,constituents,stock,BX,Blackstone Inc. Common Stock,stock,TRADING,2026-06-08
 CATUSDT,CAT,USDT,EQUITY,TradFi,US,CAT,constituents,stock,CAT,"Caterpillar, Inc. Common Stock",stock,TRADING,2026-07-02
 CBRSUSDT,CBRS,USDT,EQUITY,TradFi,US,CBRS,constituents,stock,CBRS,Cerebras Systems Inc. - Class A Common Stock,stock,TRADING,2026-05-19
+CCJUSDT,CCJ,USDT,EQUITY,TradFi,US,CCJ,constituents,stock,CCJ,Cameco Corporation Common Stock,stock,TRADING,2026-11-18
 CEGUSDT,CEG,USDT,EQUITY,TradFi,US,CEG,constituents,stock,CEG,Constellation Energy Corporation - Common Stock When-Issued,stock,TRADING,2026-10-21
 CIENUSDT,CIEN,USDT,EQUITY,TradFi,US,CIEN,constituents,stock,CIEN,Ciena Corporation Common Stock,stock,TRADING,2026-06-22
 COHRUSDT,COHR,USDT,EQUITY,TradFi,US,COHR,constituents,stock,COHR,Coherent Corp. Common Stock,stock,TRADING,2026-05-26
@@ -59,6 +60,7 @@ DRAMUSDT,DRAM,USDT,EQUITY,TradFi,US,DRAM,constituents,etf,DRAM,Roundhill Memory 
 EBAYUSDT,EBAY,USDT,EQUITY,TradFi,US,EBAY,constituents,stock,EBAY,eBay Inc. - Common Stock,stock,TRADING,2026-06-09
 EIDOUSDT,EIDO,USDT,EQUITY,TradFi,US,EIDO,constituents,etf,EIDO,iShares MSCI Indonesia ETF,etf,TRADING,2026-10-26
 EQTUSDT,EQT,USDT,EQUITY,TradFi,US,EQT,constituents,stock,EQT,EQT Corporation Common Stock,stock,TRADING,2026-10-26
+ETNUSDT,ETN,USDT,EQUITY,TradFi,US,ETN,constituents,stock,ETN,"Eaton Corporation, PLC Ordinary Shares",stock,TRADING,2026-11-18
 EWJUSDT,EWJ,USDT,EQUITY,TradFi,US,EWJ,constituents,etf,EWJ,iShares MSCI Japan Index Fund,etf,TRADING,2026-03-19
 EWTUSDT,EWT,USDT,EQUITY,TradFi,US,EWT,constituents,etf,EWT,iShares MSCI Taiwan ETF,etf,TRADING,2026-06-01
 EWYUSDT,EWY,USDT,EQUITY,TradFi,US,EWY,constituents,etf,EWY,iShares MSCI South Korea ETF,etf,TRADING,2026-03-16
@@ -81,8 +83,10 @@ HIMSUSDT,HIMS,USDT,EQUITY,TradFi,US,HIMS,constituents,stock,HIMS,"Hims & Hers He
 HOODUSDT,HOOD,USDT,EQUITY,TradFi,US,HOOD,constituents,stock,HOOD,"Robinhood Markets, Inc. - Class A Common Stock",stock,TRADING,2026-02-02
 HPEUSDT,HPE,USDT,EQUITY,TradFi,US,HPE,constituents,stock,HPE,Hewlett Packard Enterprise Company Common Stock,stock,TRADING,2026-06-08
 HUTUSDT,HUT,USDT,EQUITY,TradFi,US,HUT,constituents,stock,HUT,Hut 8 Corp. - Common Stock,stock,TRADING,2026-09-18
+IBITUSDT,IBIT,USDT,EQUITY,TradFi,US,IBIT,constituents,etf,IBIT,iShares Bitcoin Trust ETF,etf,TRADING,2026-11-18
 IBKRUSDT,IBKR,USDT,EQUITY,TradFi,US,IBKR,constituents,stock,IBKR,"Interactive Brokers Group, Inc. - Class A Common Stock",stock,TRADING,2026-10-21
 IBMUSDT,IBM,USDT,EQUITY,TradFi,US,IBM,constituents,stock,IBM,International Business Machines Corporation Common Stock,stock,TRADING,2026-06-03
+IGVUSDT,IGV,USDT,EQUITY,TradFi,US,IGV,constituents,etf,IGV,iShares Expanded Tech-Software Sector ETF,etf,TRADING,2026-11-18
 INTCUSDT,INTC,USDT,EQUITY,TradFi,US,INTC,constituents,stock,INTC,Intel Corporation - Common Stock,stock,TRADING,2026-02-02
 INTWUSDT,INTW,USDT,EQUITY,TradFi,US,INTW,constituents,etf,INTW,GraniteShares 2x Long INTC Daily ETF,etf,TRADING,2026-07-09
 IONQUSDT,IONQ,USDT,EQUITY,TradFi,US,IONQ,constituents,stock,IONQ,"IonQ, Inc. Common Stock",stock,TRADING,2026-08-28
@@ -161,6 +165,7 @@ SOFIUSDT,SOFI,USDT,EQUITY,TradFi,US,SOFI,constituents,stock,SOFI,"SoFi Technolog
 SONYUSDT,SONY,USDT,EQUITY,TradFi,US,SONY,constituents,stock,SONY,Sony Group Corporation American Depositary Shares,stock,TRADING,2026-06-22
 SOXLUSDT,SOXL,USDT,EQUITY,TradFi,US,SOXL,constituents,etf,SOXL,Direxion Daily Semiconductor Bull 3X ETF,etf,TRADING,2026-05-15
 SOXSUSDT,SOXS,USDT,EQUITY,TradFi,US,SOXS,constituents,etf,SOXS,Direxion Daily Semiconductor Bear 3X ETF,etf,TRADING,2026-07-16
+SOXXUSDT,SOXX,USDT,EQUITY,TradFi,US,SOXX,constituents,etf,SOXX,iShares PHLX SOX Semiconductor Sector Index Fund,etf,TRADING,2026-11-18
 SPCXUSD1,SPCX,USD1,EQUITY,TradFi,US,SPCX,constituents,stock,SPCX,Space Exploration Technologies Corp. - Class A Common Stock,stock,TRADING,2026-07-20
 SPCXUSDT,SPCX,USDT,EQUITY,TradFi,US,SPCX,constituents,stock,SPCX,Space Exploration Technologies Corp. - Class A Common Stock,stock,TRADING,2026-05-21
 SPYUSDT,SPY,USDT,EQUITY,TradFi,US,SPY,constituents,etf,SPY,State Street SPDR S&P 500 ETF Trust,etf,TRADING,2026-04-06

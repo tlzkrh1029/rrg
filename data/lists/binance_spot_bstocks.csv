@@ -34,7 +34,11 @@ CYPHBUSDT,CYPHB,USDT,CYPH,Cypherpunk Technologies,stock,CYPH,Cypherpunk Technolo
 DELLBUSDT,DELLB,USDT,DELL,Dell,stock,DELL,Dell Technologies Inc. Class C Common Stock,stock,TRADING,1.0009618320644203
 DJTBUSDT,DJTB,USDT,DJT,Trump Media & Technology Group,stock,DJT,Trump Media & Technology Group Corp. - Common Stock,stock,TRADING,1
 DRAMBUSDT,DRAMB,USDT,DRAM,Roundhill Memory ETF,etf,DRAM,Roundhill Memory ETF,etf,TRADING,1
+EWJBUSDT,EWJB,USDT,EWJ,iShares MSCI Japan ETF,etf,EWJ,iShares MSCI Japan Index Fund,etf,TRADING,1
+EWTBUSDT,EWTB,USDT,EWT,iShares MSCI Taiwan ETF,etf,EWT,iShares MSCI Taiwan ETF,etf,TRADING,1
 EWYBUSDT,EWYB,USDT,EWY,iShares MSCI South Korea ETF,etf,EWY,iShares MSCI South Korea ETF,etf,TRADING,1
+EWZBUSDT,EWZB,USDT,EWZ,iShares MSCI Brazil ETF,etf,EWZ,iShares MSCI Brazil ETF,etf,TRADING,1
+EWZSBUSDT,EWZSB,USDT,EWZS,iShares MSCI Brazil Small-Cap ETF,etf,EWZS,iShares MSCI Brazil Small-Cap ETF,etf,TRADING,1
 FLNCBUSDT,FLNCB,USDT,FLNC,Fluence Energy,stock,FLNC,"Fluence Energy, Inc. - Class A Common Stock",stock,TRADING,1
 FWDIBUSDT,FWDIB,USDT,FWDI,Forward Industries,stock,FWDI,"Forward Industries, Inc. - Common Stock",stock,TRADING,1
 GEVBUSDT,GEVB,USDT,GEV,GE Vernova Inc (bStocks）,stock,GEV,GE Vernova Inc. Common Stock,stock,TRADING,1
@@ -50,12 +54,14 @@ IBMBUSDT,IBMB,USDT,IBM,IBM,stock,IBM,International Business Machines Corporation
 INTCBUSDT,INTCB,USDT,INTC,Intel,stock,INTC,Intel Corporation - Common Stock,stock,TRADING,1
 INTWBUSDT,INTWB,USDT,INTW,GraniteShares 2X Long INTC ETF,etf,INTW,GraniteShares 2x Long INTC Daily ETF,etf,TRADING,1
 IRENBUSDT,IRENB,USDT,IREN,IREN Limited,stock,IREN,IREN Limited - Ordinary Shares,stock,TRADING,1
+IWMBUSDT,IWMB,USDT,IWM,iShares Russell 2000 Index Fund,etf,IWM,iShares Russell 2000 Index Fund,etf,TRADING,1
 JPMBUSDT,JPMB,USDT,JPM,JPMorgan Chase,stock,JPM,JP Morgan Chase & Co. Common Stock,stock,TRADING,1
 KORUBUSDT,KORUB,USDT,KORU,South Korea Bull 3X ETF,etf,KORU,Direxion Daily South Korea Bull 3X ETF,etf,TRADING,1
 KSTRBUSDT,KSTRB,USDT,KSTR,KraneShares STAR Market 50 ETF (bStocks）,etf,KSTR,KraneShares China Technology & Semiconductor STAR 50 Index ETF,etf,TRADING,1
 LITEBUSDT,LITEB,USDT,LITE,Lumentum,stock,LITE,Lumentum Holdings Inc. - Common Stock,stock,TRADING,1
 LLYBUSDT,LLYB,USDT,LLY,Eli Lilly,stock,LLY,Eli Lilly and Company Common Stock,stock,TRADING,1.000844349625262753
 MDBBUSDT,MDBB,USDT,MDB,Mongodb,stock,MDB,"MongoDB, Inc. - Class A Common Stock",stock,TRADING,1
+MELIBUSDT,MELIB,USDT,MELI,MercadoLibre,stock,MELI,"MercadoLibre, Inc. - Common Stock",stock,TRADING,1
 METABUSDT,METAB,USDT,META,Meta,stock,META,"Meta Platforms, Inc. - Class A Common Stock",stock,TRADING,1.00054829041074495
 MRNABUSDT,MRNAB,USDT,MRNA,Moderna,stock,MRNA,"Moderna, Inc. - Common Stock",stock,TRADING,1
 MRVLBUSDT,MRVLB,USDT,MRVL,Marvell Technology,stock,MRVL,"Marvell Technology, Inc. - Common Stock",stock,TRADING,1.000153284671603306
@@ -67,6 +73,7 @@ MVLLBUSDT,MVLLB,USDT,MVLL,GraniteShares 2X Long MRVL ETF,etf,MVLL,GraniteShares 
 NBISBUSDT,NBISB,USDT,NBIS,Nebius,stock,NBIS,Nebius Group N.V. - Class A Ordinary Shares,stock,TRADING,1
 NFLXBUSDT,NFLXB,USDT,NFLX,Netflix,stock,NFLX,"Netflix, Inc. - Common Stock",stock,TRADING,1
 NOKBUSDT,NOKB,USDT,NOK,Nokia,stock,NOK,Nokia Corporation Sponsored American Depositary Shares,stock,TRADING,1.004115394700397672
+NUBUSDT,NUB,USDT,NU,Nu Holdings,stock,NU,Nu Holdings Ltd. Class A Ordinary Shares,stock,TRADING,1
 NVDABUSDT,NVDAB,USDT,NVDA,NVIDIA,stock,NVDA,NVIDIA Corporation - Common Stock,stock,TRADING,1.000778223752807865
 ORCLBUSDT,ORCLB,USDT,ORCL,Oracle,stock,ORCL,Oracle Corporation Common Stock,stock,TRADING,1.002571827467211643
 PDDBUSDT,PDDB,USDT,PDD,PDD Holdings,stock,PDD,PDD Holdings Inc. - American Depositary Shares,stock,TRADING,1

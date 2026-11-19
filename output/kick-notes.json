@@ -3772,15 +3772,15 @@
   },
   "S:TWST:2026-11-17": {
    "none": 1,
-   "tries": 1,
-   "at": "11/18 10:29 KST",
-   "why": "종목 검색 2회. 11/17 자 기사가 없고 10월의 업종 반등 기사만 나옴"
+   "tries": 2,
+   "at": "11/19 10:18 KST",
+   "why": "Twist 11/17 당일 원인 기사를 못 찾음. 시장 기사만 확인됨"
   },
   "S:RTX:2026-11-17": {
    "none": 1,
-   "tries": 1,
-   "at": "11/18 10:29 KST",
-   "why": "방산 검색 2회. 11/17 방산주 상승 원인 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/19 10:18 KST",
+   "why": "RTX 11/17 검색에서 당일 원인 기사를 못 찾음"
   },
   "S:NOC:2026-11-17": {
    "none": 1,
@@ -3802,15 +3802,15 @@
   },
   "S:WELL:2026-11-17": {
    "none": 1,
-   "tries": 1,
-   "at": "11/18 10:29 KST",
-   "why": "검색 2회. 11/17 리츠 업종 움직임이나 Welltower 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/19 10:18 KST",
+   "why": "Welltower 당일 원인 기사를 못 찾음. 제목은 시니어 주거 일반 기사뿐"
   },
   "S:AVGO:2026-11-17": {
    "none": 1,
-   "tries": 1,
-   "at": "11/18 10:29 KST",
-   "why": "검색 2회. 11/17 상승 원인 기사를 찾지 못함"
+   "tries": 2,
+   "at": "11/19 10:18 KST",
+   "why": "Broadcom 11/17 당일 원인 기사를 못 찾음. 11/10 급등 기사만 확인됨"
   },
   "S:TXG:2026-11-17": {
    "none": 1,
@@ -3820,9 +3820,9 @@
   },
   "S:RS:2026-11-16": {
    "none": 1,
-   "tries": 1,
-   "at": "11/18 10:29 KST",
-   "why": "검색 2회. Barclays 상향은 11/12 일이라 그날 원인으로 쓰기 어려움"
+   "tries": 2,
+   "at": "11/19 10:18 KST",
+   "why": "Reliance 11/16 검색에서 당일 원인 기사를 못 찾음"
   },
   "S:MSFT:2026-11-16": {
    "none": 1,
@@ -3853,6 +3853,146 @@
    "tries": 1,
    "at": "11/18 10:29 KST",
    "why": "검색 2회. 11/17 금값이나 종목 기사를 찾지 못함"
+  },
+  "E:XLY:2026-11-18": {
+   "k": "TJX 실적 호조",
+   "ev": "TJX가 시장 예상을 소폭 웃도는 분기 실적을 내 9.9% 올랐고 Lowe's도 예상치를 웃돌았음",
+   "src": [
+    {
+     "t": "Wall Street wobbles as Nvidia, other AI ",
+     "u": "https://www.adn.com/business-economy/2026/11/18/wall-street-wobbles-as-nvidia-other-ai-stocks-swing-sharply/"
+    },
+    {
+     "t": "Stock market today: Dow, S&P 500 slip ah",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-18-dow-sp-500-nasdaq-nvidia-earnings-anthropic-ipo-143530588.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/19 10:18 KST"
+  },
+  "E:XLE:2026-11-18": {
+   "k": "유가 하락",
+   "ev": "Brent유가가 배럴당 90달러 안팎으로 내려 8월 말 이후 최저가 되면서 Exxon과 Chevron이 급락함",
+   "src": [
+    {
+     "t": "Wall Street wobbles as Nvidia, other AI ",
+     "u": "https://www.adn.com/business-economy/2026/11/18/wall-street-wobbles-as-nvidia-other-ai-stocks-swing-sharply/"
+    },
+    {
+     "t": "Stock market today (Yahoo)",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-18-dow-sp-500-nasdaq-nvidia-earnings-anthropic-ipo-143530588.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/19 10:18 KST"
+  },
+  "S:UNH:2026-11-18": {
+   "k": "CMS 사기 방지 규정",
+   "ev": "CMS가 보험사 감사를 늘리고 과다 지급금 반환을 요구할 수 있는 CRUSH 사기 방지 규정을 제안함",
+   "src": [
+    {
+     "t": "Stock market today (Yahoo)",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-18-dow-sp-500-nasdaq-nvidia-earnings-anthropic-ipo-143530588.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/19 10:18 KST"
+  },
+  "S:AVGO:2026-11-18": {
+   "k": "Nvidia 실적 후 AI 반등",
+   "ev": "Nvidia 실적이 예상을 웃돌아 장 초반 3% 올랐고 AI 칩주 반등 속에 2.3% 상승 마감함",
+   "src": [
+    {
+     "t": "Wall Street wobbles as Nvidia, other AI ",
+     "u": "https://www.adn.com/business-economy/2026/11/18/wall-street-wobbles-as-nvidia-other-ai-stocks-swing-sharply/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/19 10:18 KST"
+  },
+  "S:MPC:2026-11-18": {
+   "k": "유가 하락",
+   "ev": "Brent유가가 90달러 안팎으로 떨어지며 정유와 에너지주가 함께 급락함",
+   "src": [
+    {
+     "t": "Wall Street wobbles as Nvidia, other AI ",
+     "u": "https://www.adn.com/business-economy/2026/11/18/wall-street-wobbles-as-nvidia-other-ai-stocks-swing-sharply/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/19 10:18 KST"
+  },
+  "S:CAT:2026-11-16": {
+   "k": "AI주 급락장",
+   "ev": "Huang 사임 여파로 Nvidia가 4.2% 내리며 AI주가 급락해 Dow 하락을 이끎",
+   "src": [
+    {
+     "t": "More drops for Nvidia and other AI stock",
+     "u": "https://www.itv.com/news/2026-11-16/more-drops-for-nvidia-and-other-ai-stocks-drag-the-us-market-lower"
+    }
+   ],
+   "by": "claude",
+   "at": "11/19 10:18 KST"
+  },
+  "S:MU:2026-11-18": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/19 10:18 KST",
+   "why": "Micron 11/18 검색 2회에서 당일 기사를 못 찾음. 기사 제목은 상승 소식인데 주가는 하락해 원인이 불분명함"
+  },
+  "S:BMRN:2026-11-16": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/19 10:18 KST",
+   "why": "BioMarin Amicus 건 검색에서 11/16 당일 기사를 못 찾음. 상대 차이는 GNOM 하락 영향이 큼"
+  },
+  "S:AMZN:2026-11-18": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/19 10:18 KST",
+   "why": "Amazon 11/18 검색 2회에서 당일 원인 기사를 못 찾음"
+  },
+  "S:005930:2026-11-18": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/19 10:18 KST",
+   "why": "삼성전자와 SK hynix 11/18 검색에서 8월 기사만 나오고 당일 기사를 못 찾음"
+  },
+  "S:000660:2026-11-18": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/19 10:18 KST",
+   "why": "SK hynix 11/18 검색에서 8월 기사만 나오고 당일 기사를 못 찾음"
+  },
+  "S:MRNA:2026-11-18": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/19 10:18 KST",
+   "why": "Moderna 11/18 검색에서 11/12와 11/16 기사만 나오고 당일 원인을 못 찾음"
+  },
+  "S:CEG:2026-11-18": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/19 10:18 KST",
+   "why": "Constellation 11/18 검색에서 당일 원인 기사를 못 찾음"
+  },
+  "S:ILMN:2026-11-17": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/19 10:18 KST",
+   "why": "Illumina 11/17 당일 원인 기사를 못 찾음"
+  },
+  "S:MLM:2026-11-18": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/19 10:18 KST",
+   "why": "Martin Marietta 11/18 검색에서 당일 원인 기사를 못 찾음"
+  },
+  "S:ARWR:2026-11-16": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/19 10:18 KST",
+   "why": "Arrowhead 11/16 당일 원인을 검색하지 못함. 바이오 약세 외에 확인된 것이 없음"
   }
  },
  "runs": [
@@ -4073,6 +4213,18 @@
    37,
    "claude-sonnet-5-5",
    0.835
+  ],
+  [
+   "11/19 10:18 KST",
+   24,
+   6,
+   15,
+   "ok",
+   25,
+   2,
+   29,
+   "claude-sonnet-5-5",
+   0.644
   ]
  ]
 }
