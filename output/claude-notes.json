@@ -1,138 +1,102 @@
 {
- "asof": "2026-11-18",
- "at": "11/19 10:18 KST",
+ "asof": "2026-11-19",
+ "at": "11/20 10:29 KST",
  "etfs": {
-  "XLU": {
-   "text": [
-    "SPY 는 11/5 에 AI 인프라 확장이 늦어질 수 있다는 우려로 엔비디아가 9% 내리는 등 반도체와 AI 관련주가 크게 밀리며 약해졌습니다. XLU 안에서는 CEG 가 11/9 에 3분기 조정 EPS 5.06달러로 예상을 웃돌고 2026년 EPS 전망 범위를 12.50~12.80달러로 올린 점이 지수에 보탬이 됐습니다."
-   ],
-   "src": [
-    {
-     "t": "Reuters(Korea Times) AI 매도",
-     "u": "https://www.koreatimes.co.kr/world/20261106/gathering-ai-storm-clouds-doom-tech-stocks-to-darkest-day-in-a-year"
-    },
-    {
-     "t": "CEG 3분기 실적 보도",
-     "u": "https://finviz.com/news/419132/constellation-energy-shares-rise-over-4-as-q3-earnings-beat-estimates-and-2026-outlook-improves"
-    }
-   ],
-   "kick": "AI 인프라 매도, CEG 실적"
-  },
   "XLP": {
    "text": [
-    "P&G 는 10/22 에 회계연도 2027 1분기 순매출 233억 달러(+4%)와 핵심 EPS 2.00달러를 발표했고, 이는 시장 예상 1.88달러를 웃돌아 주가가 그날 5% 넘게 올랐습니다. 같은 시기 SPY 는 11/5 AI 인프라 관련주 급락의 영향을 받았습니다."
+    "11/16 증시가 하락하는 동안 필수소비재 종목 다섯 개가 52주 신고가를 기록했고, 엔비디아 실적과 Anthropic 상장을 앞두고 기술주 불안이 커지자 투자자들이 방어적인 필수소비재로 이동했다고 보도되었습니다.",
+    "같은 기간 Costco는 주당 30달러, 약 133억 달러 규모의 특별배당을 발표했고 배당락일은 11/24입니다."
    ],
    "src": [
     {
-     "t": "P&G 보도자료",
-     "u": "https://us.pg.com/newsroom/news-releases/PG-Announces-Fiscal-Year-2027-First-Quarter-Results/"
-    },
-    {
-     "t": "Benzinga P&G 실적",
-     "u": "https://www.benzinga.com/node/62520617"
-    },
-    {
-     "t": "Reuters(Korea Times) AI 매도",
-     "u": "https://www.koreatimes.co.kr/world/20261106/gathering-ai-storm-clouds-doom-tech-stocks-to-darkest-day-in-a-year"
+     "t": "Finviz 필수소비재 신고가 기사",
+     "u": "https://finviz.com/news/423688/5-consumer-staples-stocks-reaching-new-highs-as-markets-retreat"
     }
    ],
-   "kick": "PG 실적 호조"
-  },
-  "XLY": {
-   "text": [
-    "TJX 는 11/18 에 3분기 동일점포 매출이 4% 늘고 EPS 가 회사 계획을 웃돌았다고 발표했습니다. 반면 BKNG 는 11/3 에 3분기 매출이 시장 예상에 못 미쳤고, 4분기 객실 예약 증가율을 1~3% 로 제시해 지수의 부담이 됐습니다."
-   ],
-   "src": [
-    {
-     "t": "TJX 3분기 보도자료(8-K)",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000109198/000010919826000058/tjxq3fy27earningspressrele.htm"
-    },
-    {
-     "t": "Booking 3분기 실적 보도",
-     "u": "https://finviz.com/news/415433/booking-holdings-shares-little-changed-as-revenue-miss-and-weaker-q4-outlook-offset-earnings-beat"
-    }
-   ],
-   "kick": "TJX 호실적, BKNG 가이던스"
+   "kick": "기술주 불안 속 방어 수요"
   },
   "ARKG": {
    "text": [
-    "ILMN 은 10/29 에 3분기 매출이 11억 3천만 달러로 시장 예상 11억 5천만 달러에 못 미쳤고, 연간 전망을 올렸는데도 주가가 16~19% 내렸습니다. NTRA 는 11/5 실적에서 매출은 예상을 웃돌았지만 CEO 교체가 함께 발표된 뒤 11/6 에 약 14.6% 내렸습니다."
+    "ARKG가 담고 있는 ILMN은 10/29 실적에서 EPS가 예상을 웃돌고 연간 가이던스도 올렸지만 3분기 매출이 시장 예상에 못 미쳤고 중국 사업 부담이 불거지면서 10/30에 18.6% 하락했습니다.",
+    "11/2에는 별다른 회사 소식 없이 유전체 도구주가 함께 밀리며 TXG가 12%, TWST가 15% 하락했습니다."
    ],
    "src": [
     {
-     "t": "StockStory Illumina",
-     "u": "https://stockstory.org/us/stocks/nasdaq/ilmn/news/earnings/illumina-nasdaqilmn-reports-sales-below-analyst-estimates-in-q3-2026-earnings-stock-drops-16percent"
+     "t": "TIKR, Illumina 3분기 실적 반응",
+     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
     },
     {
-     "t": "Illumina 실적 보도자료",
-     "u": "https://finviz.com/news/412012/illumina-reports-financial-results-for-third-quarter-of-fiscal-year-2026"
+     "t": "TIKR, 10x Genomics와 Twist 하락",
+     "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
     },
     {
-     "t": "TIKR Natera CEO 사임",
-     "u": "https://www.tikr.com/blog/natera-sinks-14-as-ceo-steve-chapman-steps-down-despite-q3-beat-an-excellent-time-to-transition"
+     "t": "Trefis, 10/30 ILMN 하락 설명",
+     "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
     }
    ],
-   "kick": "ILMN·NTRA 실적 후 급락"
+   "kick": "ILMN 매출 부진·유전체 도구주 급락"
   },
   "GNOM": {
    "text": [
-    "MRNA 는 11/12 애널리스트 데이를 연 날 7.0% 내렸고 바이오 종목 대부분이 함께 약했습니다. ARWR 는 11/4 에 4억 달러 규모 담보 신용시설을 마련했고, 11/8 학회 발표 뒤 11/9 에 큰 폭으로 내렸지만 해당 보도는 발표 내용이 하락 원인이라고 확인하지 않았습니다."
+    "GNOM의 최대 낙폭 종목인 ILMN은 10/29 실적에서 연간 가이던스를 올렸지만 3분기 매출이 예상에 못 미치고 중국 사업 우려가 나오면서 10/30에 18.6% 하락했습니다.",
+    "ARWR는 11/12 회계 4분기 실적이 시장 예상에 크게 못 미쳤다는 평가를 받았고, 같은 시기 sHTG 적응증 출시 일정을 2027년 2분기로 앞당긴다고 밝혔습니다."
    ],
    "src": [
     {
-     "t": "Trefis Moderna",
-     "u": "https://www.trefis.com/stock/mrna/articles/624900/why-is-moderna-stock-falling/2026-11-13"
+     "t": "TIKR, Illumina 3분기 실적 반응",
+     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
     },
     {
-     "t": "Goldesel Arrowhead",
-     "u": "https://goldesel.de/aktien/news/arrowhead-pharmaceuticals-aktie-kurssturz-trotz-neuer-rnai-daten"
+     "t": "Finviz, Arrowhead 4분기 실적 분석",
+     "u": "https://finviz.com/news/422354/arrowheads-deep-fourth-quarter-miss-collides-with-an-accelerated-shtg-timeline-and-inflecting-redemplo-demand"
+    },
+    {
+     "t": "Trefis, 10/30 ILMN 하락 설명",
+     "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
     }
    ],
-   "kick": "MRNA·ARWR 하락"
+   "kick": "ILMN 매출 부진"
   },
   "XME": {
    "text": [
-    "구리 가격이 11/5 에 파운드당 6.18달러로 7월 이후 최저로 내렸고, 11/10 에는 트럼프 당선인이 예고한 구리 관세가 시행되기 어려워졌다는 보도로 미국 구리 선물 매수세가 줄었습니다. XME 구성 종목인 MTRN 은 11/4 에 기록적인 3분기 실적과 연간 EPS 전망 상향을 발표했지만 매출이 예상에 못 미쳐 그날 17.7% 내렸습니다."
+    "XME 최대 낙폭 종목인 FCX는 11/5에 7.5%, 11/16에 6.8% 하락했고 같은 날 Southern Copper와 Teck도 각각 6.2%, 5.0% 내렸습니다.",
+    "11/16 하락은 중국 수요 부진과 연준 금리 인상 기대 강화가 겹친 증시 전반의 매도 속에서 나왔다고 보도되었습니다."
    ],
    "src": [
     {
-     "t": "Trading Economics 구리",
-     "u": "https://tradingeconomics.com/commodity/copper/news/600135"
+     "t": "Trefis, FCX 11/16 하락",
+     "u": "https://www.trefis.com/stock/fcx/articles/625809/why-did-freeport-mcmoran-stock-fall-nearly-7/2026-11-17"
     },
     {
-     "t": "Rio Times 구리 시황",
-     "u": "https://www.riotimesonline.com/copper-markets-latam-wednesday-november-11-2026/"
-    },
-    {
-     "t": "Materion 실적 보도",
-     "u": "https://finviz.com/news/415825/materion-beats-and-raises-again-but-a-pass-through-revenue-miss-and-thinner-q3-margins-meet-a-stock-already-down-30-from-its-peak"
+     "t": "StockStory, FCX 등 광산주 하락",
+     "u": "https://stockstory.org/us/stocks/nyse/fcx/news/why-up-down/freeport-mcmoran-vale-albemarle-dow-and-bhp-group-stocks-trade-down-what-you-need-to-know"
     }
    ],
-   "kick": "구리 약세, MTRN 급락"
+   "kick": "구리 광산주 급락"
   }
  },
  "stocks": {
   "META": {
    "text": [
-    "Meta는 10/21 장 마감 후 3분기 매출 646억 달러로 시장 예상을 웃돌았지만, 분기 설비투자가 349억 달러로 늘어 잉여현금흐름이 약 −21억 달러가 됐고 2026년 설비투자 전망 하단을 1,350억 달러로 올리자 다음 거래일 7% 안팎 내렸습니다. 총비용에는 여러 주 검찰총장과의 합의에 따른 99억 달러 비용도 포함됐습니다.",
-    "이사회는 10/21 의결권 없는 Class C 보통주를 1월부터 주식배당으로 배정하는 안을 승인했고, 10/26에는 의무전환 우선주 발행 계약을 맺었습니다. 주가는 11/9 주에 5.1% 올랐지만 그 이유로 지목할 만한 개별 사건은 찾지 못했습니다."
+    "Meta는 10/26 보통주 약 225억 달러와 6.50% 필수 전환 우선주 약 125억 달러를 합친 약 350억 달러 규모의 동시 증권 발행을 시작했습니다.",
+    "11/14에는 이탈리아 개인정보 당국이 안드로이드 사용자 사진 접근 문제로 8억 500만 유로 과징금을 부과했고 Meta는 불균형하다며 항소하겠다고 밝혔습니다. 11/17에는 아마존, 구글, 메타 등의 로비에도 중국산 데이터센터 장비를 규제하려는 미국 정부 계획이 계속 추진된다는 로이터 보도가 나왔으며, 이 시기가 11/16 주 −7.1%와 겹칩니다."
    ],
    "src": [
     {
-     "t": "InvestingLive, Meta 7% 하락과 지출 계획",
-     "u": "https://investinglive.com/stocks/meta-shares-fall-7-on-huge-spending-plans/"
+     "t": "Finviz, Meta 증권 발행 발표",
+     "u": "https://finviz.com/news/407538/meta-announces-launch-of-offering-of-depositary-shares-representing-series-a-mandatory-convertible-preferred-stock-and-offering-of-class-a-common-stock-in-connection-with-forward-sale-agreements"
     },
     {
-     "t": "AP, Meta 3분기 매출과 Muse 계정",
-     "u": "https://www.news4jax.com/business/2026/10/21/meta-q3-revenue-tops-estimates-and-zuckerberg-says-muse-accounts-have-topped-10-million/"
+     "t": "TIKR, 이탈리아 과징금",
+     "u": "https://www.tikr.com/blog/italy-fines-meta-e805-million-why-the-legal-route-matters-more-than-the-money"
     },
     {
-     "t": "LetsDataScience, 설비투자 전망 조정",
-     "u": "https://letsdatascience.com/news/meta-narrows-2026-capital-spending-range-to-135-billion-145-46f12e07"
+     "t": "Daily Guardian(로이터 기사 재게재)",
+     "u": "https://thedailyguardian.com/business/exclusive-trumps-china-data-center-curb-advances-despite-amazon-google-meta-lobbying-775621/"
     }
    ],
-   "asof": "2026-11-09",
-   "at": "11/10 10:23 KST"
+   "asof": "2026-11-19",
+   "at": "11/20 10:29 KST"
   },
   "XOM": {
    "text": [
@@ -277,24 +241,21 @@
   },
   "TEM": {
    "text": [
-    "TEM은 10/23 BMS가 2031년까지 Tempus의 다중모달 종양학 데이터를 라이선스하는 다년 계약을 발표했고, 이 소식에 주가가 6% 올랐습니다. 11/2 3분기에는 매출이 4억 1,150만 달러로 23% 늘었고 조정 EBITDA가 2,560만 달러로 흑자를 냈으며, 연간 매출 가이던스를 16억 달러 안팎으로 올렸습니다. 같은 날 주가는 8.7% 올랐고, 이후 두 주 연속 5%대 상승이 이어졌습니다."
+    "Tempus AI는 11/2 장 시작 전 3분기 실적을 발표하며 연간 매출 전망을 16억~16.05억 달러로 올렸고 그날 주가는 8.7% 올랐습니다. 11/3에는 Jefferies가 투자의견을 Underperform에서 Hold로 올리고 목표가를 35달러에서 70달러로 높였습니다.",
+    "이후 주가는 11/10 주 −5.9%, 11/16 주 −16.7%로 밀렸고 11월 16일까지 5거래일 연속 하락해 누적 23.3% 내렸으나, 검색한 보도에서 하락의 구체적 원인은 확인하지 못했습니다. Personalis 인수는 11/30 Personalis 주주 승인 표결이 예정되어 있습니다."
    ],
    "src": [
     {
-     "t": "TIKR TEM BMS 라이선스",
-     "u": "https://www.tikr.com/blog/tempus-ai-gains-6-as-bristol-myers-squibb-licenses-oncology-data"
-    },
-    {
-     "t": "Tempus 3분기 실적",
+     "t": "Finviz, Tempus 3분기 실적 보도자료",
      "u": "https://finviz.com/news/413037/tempus-reports-third-quarter-2026-results"
     },
     {
-     "t": "Tempus 3분기 실적 후 주가",
-     "u": "https://finviz.com/news/413244/tempus-ai-shares-rise-418-as-q3-earnings-beat-forecasts-and-revenue-guidance-increases"
+     "t": "Trefis, TEM 5거래일 연속 하락",
+     "u": "https://www.trefis.com/stock/tem/articles/625588/5-red-days-in-a-row-tempus-ai-stock-is-down-23/2026-11-17"
     }
    ],
-   "asof": "2026-11-10",
-   "at": "11/11 10:20 KST"
+   "asof": "2026-11-19",
+   "at": "11/20 10:29 KST"
   },
   "AMZN": {
    "text": [
@@ -403,21 +364,25 @@
   },
   "TTWO": {
    "text": [
-    "Take-Two는 11/9 장 마감 후 2분기(FY2027) 총 순예약액이 16억 달러로 전년보다 18% 줄었다고 발표했습니다. 이는 회사가 제시한 16억 2,000만~16억 7,000만 달러 범위의 하단에 못 미치는 수치입니다.",
-    "회사는 같은 발표에서 FY2027 순예약액 전망 80억~82억 달러를 그대로 유지했고, GTA VI 출시일은 11/19로 8월 발표 때부터 안내돼 왔습니다. 마지막 주의 −3.5%는 이 실적 발표 전 종가까지의 움직임입니다."
+    "Take-Two는 11/9 장 마감 후 회계 2분기 실적을 발표했고, 순예약액이 16억 달러로 18% 줄어 회사 가이던스를 소폭 밑돌았지만 연간 순예약액 80억~82억 달러 전망은 유지했습니다.",
+    "CEO Strauss Zelnick은 GTA VI 사전 주문이 회사 기대를 웃돈다고 밝혔고 주가는 다음 거래일 8.3% 올랐습니다. 11/19 GTA VI 출시를 앞둔 11/16 주에는 8.4% 내렸으며, 검색한 보도에서 그 하락의 구체적 원인은 확인하지 못했습니다."
    ],
    "src": [
     {
-     "t": "SEC 8-K, 2분기 FY2027 실적 보도자료",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000946581/000162828026072175/ttwo2q27earningsrelease.htm"
+     "t": "GamesBeat",
+     "u": "https://gamesbeat.com/?p=338567"
     },
     {
-     "t": "Rallies.ai, FY2027 전망과 GTA VI 11/19 출시",
-     "u": "https://rallies.ai/news/take-two-forecasts-8-82b-fiscal-2027-bookings-confirms-november-19-gta-vi-launch"
+     "t": "Motley Fool 11/10",
+     "u": "https://www.fool.com/investing/2026/11/10/why-take-two-stock-s-got-game-today/"
+    },
+    {
+     "t": "Take-Two 2분기 실적 8-K 첨부",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000946581/000162828026072175/ttwo2q27earningsrelease.htm"
     }
    ],
-   "asof": "2026-11-09",
-   "at": "11/10 10:23 KST"
+   "asof": "2026-11-19",
+   "at": "11/20 10:29 KST"
   },
   "PM": {
    "text": [
@@ -1015,17 +980,63 @@
    ],
    "asof": "2026-11-18",
    "at": "11/19 10:18 KST"
+  },
+  "CRWD": {
+   "text": [
+    "CrowdStrike는 11/3 바르셀로나 Fal.Con Europe에서 폭주하는 AI 에이전트를 멈출 수 있다는 'AI Kill Switch'를 Falcon Guardian 기능으로 공개했고, CEO George Kurtz는 같은 날 CNBC 인터뷰에서 이를 설명했습니다.",
+    "이 발표는 11/2 주 −13.4% 하락 구간에 있었고, 이후 11/9 주 +4.5%, 11/16 주 +7.4%로 반등했습니다. 검색한 보도에서 주간 등락의 원인으로 지목된 단일 사건은 확인하지 못했습니다."
+   ],
+   "src": [
+    {
+     "t": "CrowdStrike 보도자료",
+     "u": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-introduces-ai-kill-switch-for-ai-safety/"
+    },
+    {
+     "t": "TechRadar",
+     "u": "https://techradar.com/pro/security/crowdstrike-launches-ai-kill-switch-it-claims-can-stop-rogue-agents-and-more"
+    }
+   ],
+   "asof": "2026-11-19",
+   "at": "11/20 10:29 KST"
+  },
+  "TGT": {
+   "text": [
+    "Target은 11/18 장 시작 전 3분기 실적을 발표했고, 동일 매장 매출이 5.6% 늘어 시장 예상 3.8%를 웃돌았으며 순매출은 271억 달러로 5년여 만에 가장 빠르게 늘었습니다.",
+    "회사는 연간 순매출 성장률 전망을 약 6%로 1%p 높였고, 분기 EPS 2.65달러에는 관세 환급 0.50달러가 포함되었습니다. 11/18 주가는 이날 4.0% 올랐고 11/16 주 수익률 +3.7%와 이어집니다."
+   ],
+   "src": [
+    {
+     "t": "CNBC",
+     "u": "https://www.cnbc.com/2026/11/18/target-tgt-q3-2026-earnings.html"
+    },
+    {
+     "t": "Target 3분기 실적 보도자료",
+     "u": "https://corporate.target.com/press/release/2026/11/target-corporation-reports-third-quarter-earnings"
+    }
+   ],
+   "asof": "2026-11-19",
+   "at": "11/20 10:29 KST"
+  },
+  "CVCO": {
+   "text": [
+    "Cavco는 10/29 장 마감 후 회계 2분기 실적을 발표했고, 순매출이 6억 5,640만 달러로 17.9% 늘고 희석 EPS가 7.17달러로 시장 예상 5.42달러를 웃돌아 다음 거래일 13.1% 올랐습니다.",
+    "수주잔고는 3억 4,800만 달러로 직전 분기보다 5,000만 달러 늘었고, 보험료 환급 700만 달러가 EPS를 0.70달러 끌어올린 일회성 요인으로 포함되었습니다. 이 반응이 10/26 주 +15.9%로 이어졌고 이후 주간 수익률은 +3.2%, +0.9%, +0.9%로 완만했습니다."
+   ],
+   "src": [
+    {
+     "t": "Cavco 2분기 실적 8-K 첨부",
+     "u": "https://www.sec.gov/Archives/edgar/data/0000278166/000162828026068294/cvco-20260926xex991.htm"
+    },
+    {
+     "t": "Finviz, Cavco 실적 분석",
+     "u": "https://finviz.com/news/412858/cavcos-record-quarter-beats-big-but-a-one-time-refund-and-steel-inflation-complicate-the-backlog-story"
+    }
+   ],
+   "asof": "2026-11-19",
+   "at": "11/20 10:29 KST"
   }
  },
  "runs": [
-  [
-   "10/29 10:21 KST",
-   6,
-   4,
-   6,
-   6,
-   "ok"
-  ],
   [
    "10/29 11:34 KST",
    0,
@@ -1267,6 +1278,19 @@
    42,
    "claude-sonnet-5-5",
    0.894
+  ],
+  [
+   "11/20 10:29 KST",
+   6,
+   4,
+   6,
+   6,
+   "ok",
+   28,
+   0,
+   30,
+   "claude-sonnet-5-5",
+   0.715
   ]
  ]
 }

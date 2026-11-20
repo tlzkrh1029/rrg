@@ -1,275 +1,468 @@
 {
- "asof": "2026-11-18",
- "prev_asof": "2026-11-17",
+ "asof": "2026-11-19",
+ "prev_asof": "2026-11-18",
  "alerts": [
   {
-   "type": "up",
-   "H": "52w",
-   "key": "DIS",
-   "name": "The Walt Disney Company",
+   "type": "down",
+   "H": "55",
+   "key": "PLTR",
+   "name": "Palantir Technologies Inc.",
+   "etfs": [
+    "XLK",
+    "IGV"
+   ],
+   "over": -0.00845
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "GS",
+   "name": "The Goldman Sachs Group, Inc.",
+   "etfs": [
+    "XLF"
+   ],
+   "over": -0.02112
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "MS",
+   "name": "Morgan Stanley",
+   "etfs": [
+    "XLF"
+   ],
+   "over": -0.01358
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "GOOGL",
+   "name": "Alphabet Inc.",
    "etfs": [
     "XLC"
    ],
-   "over": 0.02642,
-   "spy": "none",
-   "qqq": "near"
+   "over": -0.02269
   },
   {
-   "type": "up",
+   "type": "down",
    "H": "55",
-   "key": "TGT",
-   "name": "Target Corporation",
+   "key": "GOOG",
+   "name": "Alphabet Inc.",
+   "etfs": [
+    "XLC"
+   ],
+   "over": -0.02525
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "CAT",
+   "name": "Caterpillar Inc.",
+   "etfs": [
+    "XLI"
+   ],
+   "over": -0.02939
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "PSX",
+   "name": "Phillips 66",
+   "etfs": [
+    "XLE",
+    "XOP"
+   ],
+   "over": -0.00718
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "MPC",
+   "name": "Marathon Petroleum Corporation",
+   "etfs": [
+    "XLE"
+   ],
+   "over": -0.01015
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "SRE",
+   "name": "Sempra",
+   "etfs": [
+    "XLU"
+   ],
+   "over": -0.0078
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "STLD",
+   "name": "Steel Dynamics, Inc.",
+   "etfs": [
+    "XLB",
+    "XME"
+   ],
+   "over": -0.01405
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "PLD",
+   "name": "Prologis, Inc.",
+   "etfs": [
+    "XLRE"
+   ],
+   "over": -0.00588
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "AEM",
+   "name": "Agnico Eagle Mines Limited",
+   "etfs": [
+    "GDX"
+   ],
+   "over": -0.01569
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "AU",
+   "name": "AngloGold Ashanti plc",
+   "etfs": [
+    "GDX"
+   ],
+   "over": -0.03509
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "NXT",
+   "name": "Nextpower Inc.",
+   "etfs": [
+    "TAN"
+   ],
+   "over": -0.00693
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "MSFT",
+   "name": "Microsoft Corporation",
+   "etfs": [
+    "XLK",
+    "IGV"
+   ],
+   "over": -0.01739
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "ABBV",
+   "name": "AbbVie Inc.",
+   "etfs": [
+    "XLV",
+    "XBI"
+   ],
+   "over": -0.00579
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "META",
+   "name": "Meta Platforms, Inc.",
+   "etfs": [
+    "XLC"
+   ],
+   "over": -0.01464
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "DE",
+   "name": "Deere & Company",
+   "etfs": [
+    "XLI",
+    "PAVE"
+   ],
+   "over": -0.02297
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "PM",
+   "name": "Philip Morris International Inc.",
    "etfs": [
     "XLP"
    ],
-   "over": 0.00722,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.03464
   },
   {
-   "type": "up",
+   "type": "down",
+   "H": "20",
+   "key": "UTHR",
+   "name": "United Therapeutics Corporation",
+   "etfs": [
+    "XBI"
+   ],
+   "over": -0.0052
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "UCB",
+   "name": "United Community Banks, Inc.",
+   "etfs": [
+    "KRE"
+   ],
+   "over": -0.02516
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "EBC",
+   "name": "Eastern Bankshares, Inc.",
+   "etfs": [
+    "KRE"
+   ],
+   "over": -0.02533
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "OZK",
+   "name": "Bank OZK",
+   "etfs": [
+    "KRE"
+   ],
+   "over": -0.02718
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "FULT",
+   "name": "Fulton Financial Corporation",
+   "etfs": [
+    "KRE"
+   ],
+   "over": -0.01884
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "WSM",
+   "name": "Williams-Sonoma, Inc.",
+   "etfs": [
+    "XHB"
+   ],
+   "over": -0.11722
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "GD",
+   "name": "General Dynamics Corporation",
+   "etfs": [
+    "ITA"
+   ],
+   "over": -0.00578
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "EMR",
+   "name": "Emerson Electric Co.",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": -0.01326
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "NSC",
+   "name": "Norfolk Southern Corporation",
+   "etfs": [
+    "PAVE"
+   ],
+   "over": -0.00975
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "NST",
+   "name": "Northern Star Resources Limited",
+   "etfs": [
+    "GDX"
+   ],
+   "over": -0.0339
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "NG",
+   "name": "National Grid plc",
+   "etfs": [
+    "GRID"
+   ],
+   "over": -0.00519
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "CWEN",
+   "name": "Clearway Energy, Inc.",
+   "etfs": [
+    "TAN"
+   ],
+   "over": -0.01093
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "RUN",
+   "name": "Sunrun Inc.",
+   "etfs": [
+    "TAN"
+   ],
+   "over": -0.02063
+  },
+  {
+   "type": "failed",
+   "H": "ath",
+   "key": "PG",
+   "name": "The Procter & Gamble Company",
+   "etfs": [
+    "XLP"
+   ],
+   "over": -0.01344
+  },
+  {
+   "type": "failed",
+   "H": "ath",
+   "key": "CL",
+   "name": "Colgate-Palmolive Company",
+   "etfs": [
+    "XLP"
+   ],
+   "over": -0.01904
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "ADP",
+   "name": "Automatic Data Processing, Inc.",
+   "etfs": [
+    "XLI"
+   ],
+   "over": -0.02192
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "CL",
+   "name": "Colgate-Palmolive Company",
+   "etfs": [
+    "XLP"
+   ],
+   "over": -0.01904
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "ADP",
+   "name": "Automatic Data Processing, Inc.",
+   "etfs": [
+    "XLI"
+   ],
+   "over": -0.02192
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "CL",
+   "name": "Colgate-Palmolive Company",
+   "etfs": [
+    "XLP"
+   ],
+   "over": -0.01904
+  },
+  {
+   "type": "failed",
    "H": "55",
    "key": "LUV",
    "name": "Southwest Airlines Co.",
    "etfs": [
     "JETS"
    ],
-   "over": 0.014,
-   "spy": "quiet",
-   "qqq": "lit"
-  },
-  {
-   "type": "up",
-   "H": "20",
-   "key": "BMRN",
-   "name": "BioMarin Pharmaceutical Inc.",
-   "etfs": [
-    "GNOM"
-   ],
-   "over": 0.04991,
-   "spy": "lit",
-   "qqq": "lit"
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "JPM",
-   "name": "JPMorgan Chase & Co.",
-   "etfs": [
-    "XLF"
-   ],
-   "over": -0.01542
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "BAC",
-   "name": "Bank of America Corporation",
-   "etfs": [
-    "XLF"
-   ],
-   "over": -0.01032
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "C",
-   "name": "Citigroup Inc.",
-   "etfs": [
-    "XLF"
-   ],
-   "over": -0.00937
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "UNH",
-   "name": "UnitedHealth Group Incorporated",
-   "etfs": [
-    "XLV"
-   ],
-   "over": -0.04187
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "MRK",
-   "name": "Merck & Co., Inc.",
-   "etfs": [
-    "XLV"
-   ],
-   "over": -0.01261
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "VLO",
-   "name": "Valero Energy Corporation",
-   "etfs": [
-    "XLE"
-   ],
-   "over": -0.00794
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "NEM",
-   "name": "Newmont Corporation",
-   "etfs": [
-    "XLB",
-    "XME",
-    "GDX"
-   ],
-   "over": -0.01951
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "ORCL",
-   "name": "Oracle Corporation",
-   "etfs": [
-    "IGV"
-   ],
-   "over": -0.01103
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "ADBE",
-   "name": "Adobe Inc.",
-   "etfs": [
-    "IGV"
-   ],
-   "over": -0.02082
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "SSW",
-   "name": "Sibanye Stillwater Limited",
-   "etfs": [
-    "URA"
-   ],
-   "over": -0.04808
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "ABX",
-   "name": "Barrick Mining Corporation",
-   "etfs": [
-    "GDX"
-   ],
-   "over": -0.04357
-  },
-  {
-   "type": "down",
-   "H": "55",
-   "key": "K",
-   "name": "Kinross Gold Corporation",
-   "etfs": [
-    "GDX"
-   ],
-   "over": -0.02408
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "WFC",
-   "name": "Wells Fargo & Company",
-   "etfs": [
-    "XLF"
-   ],
-   "over": -0.01202
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "XOM",
-   "name": "ExxonMobil Holdings Corporation",
-   "etfs": [
-    "XLE",
-    "XOP"
-   ],
-   "over": -0.01749
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "CVX",
-   "name": "Chevron Corporation",
-   "etfs": [
-    "XLE",
-    "XOP"
-   ],
-   "over": -0.02325
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "MRNA",
-   "name": "Moderna, Inc.",
-   "etfs": [
-    "XBI",
-    "GNOM"
-   ],
-   "over": -0.01036
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "DORL",
-   "name": "Doral Group Renewable Energy Resources Ltd",
-   "etfs": [
-    "TAN"
-   ],
-   "over": -0.0118
-  },
-  {
-   "type": "failed",
-   "H": "ath",
-   "key": "MO",
-   "name": "Altria Group, Inc.",
-   "etfs": [
-    "XLP"
-   ],
-   "over": -0.02268
-  },
-  {
-   "type": "failed",
-   "H": "52w",
-   "key": "MO",
-   "name": "Altria Group, Inc.",
-   "etfs": [
-    "XLP"
-   ],
-   "over": -0.02268
-  },
-  {
-   "type": "failed",
-   "H": "55",
-   "key": "MO",
-   "name": "Altria Group, Inc.",
-   "etfs": [
-    "XLP"
-   ],
-   "over": -0.02268
+   "over": -0.01745
   },
   {
    "type": "failed",
    "H": "20",
-   "key": "MO",
-   "name": "Altria Group, Inc.",
+   "key": "ADP",
+   "name": "Automatic Data Processing, Inc.",
+   "etfs": [
+    "XLI"
+   ],
+   "over": -0.02192
+  },
+  {
+   "type": "failed",
+   "H": "20",
+   "key": "CL",
+   "name": "Colgate-Palmolive Company",
    "etfs": [
     "XLP"
    ],
-   "over": -0.02268
+   "over": -0.01904
+  },
+  {
+   "type": "failed",
+   "H": "20",
+   "key": "LUV",
+   "name": "Southwest Airlines Co.",
+   "etfs": [
+    "JETS"
+   ],
+   "over": -0.01745
   },
   {
    "type": "block_down",
-   "etf": "URA",
+   "etf": "XLF",
+   "down": 6,
+   "n": 10
+  },
+  {
+   "type": "block_down",
+   "etf": "XLE",
+   "down": 6,
+   "n": 10
+  },
+  {
+   "type": "block_down",
+   "etf": "IGV",
+   "down": 6,
+   "n": 10
+  },
+  {
+   "type": "block_down",
+   "etf": "XME",
    "down": 5,
-   "n": 9
+   "n": 10
+  },
+  {
+   "type": "block_down",
+   "etf": "GDX",
+   "down": 7,
+   "n": 10
+  },
+  {
+   "type": "block_down",
+   "etf": "TAN",
+   "down": 7,
+   "n": 10
   }
  ]
 }
