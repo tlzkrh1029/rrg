@@ -1,10 +1,10 @@
-돌파 지도 2026-11-19 (USD 기준, 직전 종가)
-켜진 칸 20일 9/277 (3%) · 55일 6 · 52주 4 · 사상 최고 3 · 이탈 90 · 실패 13
+돌파 지도 2026-11-20 (USD 기준, 직전 종가)
+켜진 칸 20일 7/278 (3%) · 55일 5 · 52주 2 · 사상 최고 2 · 이탈 138 · 실패 7
 
 새 이탈 (1일째)
-  55일 바닥: PLTR(XLK·IGV), GS(XLF), MS(XLF), GOOGL(XLC), GOOG(XLC), CAT(XLI), PSX(XLE·XOP), MPC(XLE), SRE(XLU), STLD(XLB·XME), PLD(XLRE), AEM(GDX), AU(GDX), NXT(TAN)
-  20일 바닥: MSFT(XLK·IGV), ABBV(XLV·XBI), META(XLC), DE(XLI·PAVE), PM(XLP), UTHR(XBI), UCB(KRE), EBC(KRE), OZK(KRE), FULT(KRE), WSM(XHB), GD(ITA), EMR(PAVE), NSC(PAVE), NST(GDX), NG(GRID), CWEN(TAN), RUN(TAN)
-오늘 실패한 돌파: PG(XLP, 사상 최고), CL(XLP, 사상 최고), ADP(XLI, 52주), CL(XLP, 52주), ADP(XLI, 55일), CL(XLP, 55일), LUV(JETS, 55일), ADP(XLI, 20일), CL(XLP, 20일), LUV(JETS, 20일)
-블록 알림 (20일): XLF ▼6/10 이탈 · XLE ▼6/10 이탈 · IGV ▼6/10 이탈 · XME ▼5/10 이탈 · GDX ▼7/10 이탈 · TAN ▼7/10 이탈
+  55일 바닥: MSFT(XLK·IGV), MU(XLK·SMH·DRAM), CSCO(XLK), AMAT(XLK), WFC(XLF), BKNG(XLY), DE(XLI·PAVE), UBER(XLI), ETN(XLI·GRID), SLB(XLE), CEG(XLU), DLR(XLRE), TSM(SMH), ADI(SMH), ASML(SMH), KLAC(SMH), QCOM(SMH), TEM(ARKG), CLF(XME), RGLD(XME·GDX), URI(PAVE), PH(PAVE), 005930(DRAM), STX(DRAM), WDC(DRAM), WPM(GDX), JCI(GRID), ABBN(GRID), SU(GRID), HUBB(GRID), CWEN(TAN), RUN(TAN)
+  20일 바닥: TMO(XLV), AMGN(XLV·XBI), UNP(XLI·PAVE), ETR(XLU), APD(XLB), MLM(XLB), NUE(XLB·XME·PAVE), TXN(SMH), SDGR(ARKG), RS(XME), LHX(ITA), FAST(PAVE), CNX(XOP), AAL(JETS), ALK(JETS)
+오늘 실패한 돌파: DIS(XLC, 52주), DIS(XLC, 55일), DIS(XLC, 20일)
+블록 알림 (20일): XLK ▼5/10 이탈 · XLV ▼6/10 이탈 · XLI ▼6/10 이탈 · XLB ▼5/10 이탈 · SMH ▼7/10 이탈 · KRE ▼5/9 이탈 · PAVE ▼8/10 이탈 · DRAM ▼9/10 이탈 · GRID ▼6/10 이탈 · XOP ▼5/10 이탈
 
 https://tlzkrh1029.github.io/rrg/breakout/

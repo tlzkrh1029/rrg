@@ -1,78 +1,86 @@
 {
- "asof": "2026-11-19",
- "at": "11/20 10:29 KST",
+ "asof": "2026-11-20",
+ "at": "11/21 10:18 KST",
  "etfs": {
   "XLP": {
    "text": [
-    "11/16 증시가 하락하는 동안 필수소비재 종목 다섯 개가 52주 신고가를 기록했고, 엔비디아 실적과 Anthropic 상장을 앞두고 기술주 불안이 커지자 투자자들이 방어적인 필수소비재로 이동했다고 보도되었습니다.",
-    "같은 기간 Costco는 주당 30달러, 약 133억 달러 규모의 특별배당을 발표했고 배당락일은 11/24입니다."
+    "이 기간 AI 관련 기술주가 흔들리면서 방어적인 필수소비재로 자금이 옮겨 갔습니다. 10월에는 MSCI 글로벌 필수소비재 지수가 1998년 이후 가장 좋은 한 달을 보냈고, 11/16에는 S&P 500이 2% 가까이 내린 가운데 COST·KO·PG·MO·MDLZ가 52주 신고가를 기록했습니다. COST는 주당 30달러 특별배당 발표도 겹쳤습니다."
    ],
    "src": [
     {
-     "t": "Finviz 필수소비재 신고가 기사",
+     "t": "Finviz 11/16 필수소비재 신고가",
      "u": "https://finviz.com/news/423688/5-consumer-staples-stocks-reaching-new-highs-as-markets-retreat"
+    },
+    {
+     "t": "European Business Magazine (FT 인용)",
+     "u": "https://europeanbusinessmagazine.com/consumer-staples-post-best-month/"
     }
    ],
-   "kick": "기술주 불안 속 방어 수요"
+   "kick": "AI주 이탈, 방어주 쏠림"
+  },
+  "XLU": {
+   "text": [
+    "11/10에는 국채금리가 반등하고 AI 인프라 구축이 둔화할 수 있다는 우려가 나오면서 발전사 주가가 내렸고, CEG도 실적 발표 뒤 올랐던 폭을 일부 반납했습니다. 같은 주에 텍사스 신임 주지사가 데이터센터 개발을 막을 수 있다는 걱정도 거론됐습니다."
+   ],
+   "src": [
+    {
+     "t": "Dow Jones 유틸리티 시황 11/10",
+     "u": "https://www.morningstar.com/news/dow-jones/2026111012983/utilities-down-as-treasury-yields-rise-utilities-roundup"
+    }
+   ],
+   "kick": "AI 인프라 둔화 우려"
   },
   "ARKG": {
    "text": [
-    "ARKG가 담고 있는 ILMN은 10/29 실적에서 EPS가 예상을 웃돌고 연간 가이던스도 올렸지만 3분기 매출이 시장 예상에 못 미쳤고 중국 사업 부담이 불거지면서 10/30에 18.6% 하락했습니다.",
-    "11/2에는 별다른 회사 소식 없이 유전체 도구주가 함께 밀리며 TXG가 12%, TWST가 15% 하락했습니다."
+    "11/2에는 별다른 회사 소식 없이 위험 회피 분위기 속에 TXG가 12%, TWST가 15% 내렸습니다. 앞서 10/30에는 ILMN이 3분기 매출이 예상에 못 미쳤다는 이유로 18.6% 내렸고, 11/5에 실적을 낸 NTRA도 비용 증가와 수익성 시점에 대한 우려로 11/6에 14.6% 하락했습니다."
    ],
    "src": [
     {
-     "t": "TIKR, Illumina 3분기 실적 반응",
-     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
-    },
-    {
-     "t": "TIKR, 10x Genomics와 Twist 하락",
+     "t": "TIKR 11/2 유전체주 하락",
      "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
     },
     {
-     "t": "Trefis, 10/30 ILMN 하락 설명",
+     "t": "Trefis ILMN",
      "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
+    },
+    {
+     "t": "Trefis NTRA",
+     "u": "https://www.trefis.com/stock/ntra/articles/623713/what-sent-natera-stock-lower/2026-11-07"
     }
    ],
-   "kick": "ILMN 매출 부진·유전체 도구주 급락"
+   "kick": "유전체 도구주 급락"
   },
   "GNOM": {
    "text": [
-    "GNOM의 최대 낙폭 종목인 ILMN은 10/29 실적에서 연간 가이던스를 올렸지만 3분기 매출이 예상에 못 미치고 중국 사업 우려가 나오면서 10/30에 18.6% 하락했습니다.",
-    "ARWR는 11/12 회계 4분기 실적이 시장 예상에 크게 못 미쳤다는 평가를 받았고, 같은 시기 sHTG 적응증 출시 일정을 2027년 2분기로 앞당긴다고 밝혔습니다."
+    "ILMN이 10/29 3분기 실적에서 주당순이익은 예상을 웃돌았지만 매출이 1조 1,300억 원대가 아닌 11.3억 달러로 예상 11.5억 달러에 못 미쳐 다음 거래일 18.6% 내렸습니다. 연간 매출 전망은 소폭 올렸지만 유기적 성장률이 4% 안팎에 그친다는 점이 부담이 됐습니다."
    ],
    "src": [
     {
-     "t": "TIKR, Illumina 3분기 실적 반응",
-     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
-    },
-    {
-     "t": "Finviz, Arrowhead 4분기 실적 분석",
-     "u": "https://finviz.com/news/422354/arrowheads-deep-fourth-quarter-miss-collides-with-an-accelerated-shtg-timeline-and-inflecting-redemplo-demand"
-    },
-    {
-     "t": "Trefis, 10/30 ILMN 하락 설명",
+     "t": "Trefis ILMN",
      "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
+    },
+    {
+     "t": "TIKR ILMN 실적",
+     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
     }
    ],
    "kick": "ILMN 매출 부진"
   },
-  "XME": {
+  "URA": {
    "text": [
-    "XME 최대 낙폭 종목인 FCX는 11/5에 7.5%, 11/16에 6.8% 하락했고 같은 날 Southern Copper와 Teck도 각각 6.2%, 5.0% 내렸습니다.",
-    "11/16 하락은 중국 수요 부진과 연준 금리 인상 기대 강화가 겹친 증시 전반의 매도 속에서 나왔다고 보도되었습니다."
+    "CCJ가 10/30 3분기 실적에서 웨스팅하우스 지분 이익 감소와 판매량 감소, 단위 원가 상승을 공개하고 연간 생산 전망의 상단을 낮춰 하루에 약 10% 내렸습니다. 이후에도 AI 연계 원전·우라늄주 전반이 약세를 보여 CCJ가 한 주에 12% 더 내리며 52주 최저가를 기록했습니다."
    ],
    "src": [
     {
-     "t": "Trefis, FCX 11/16 하락",
-     "u": "https://www.trefis.com/stock/fcx/articles/625809/why-did-freeport-mcmoran-stock-fall-nearly-7/2026-11-17"
+     "t": "RTTNews CCJ 10/30",
+     "u": "https://www.rttnews.com/3706729/cameco-stock-falls-10-after-lower-9-month-profit.aspx?type=alleco"
     },
     {
-     "t": "StockStory, FCX 등 광산주 하락",
-     "u": "https://stockstory.org/us/stocks/nyse/fcx/news/why-up-down/freeport-mcmoran-vale-albemarle-dow-and-bhp-group-stocks-trade-down-what-you-need-to-know"
+     "t": "TIKR CCJ 52주 저점",
+     "u": "https://www.tikr.com/blog/cameco-sinks-12-in-a-week-to-a-new-52-week-low-is-the-selling-overdone"
     }
    ],
-   "kick": "구리 광산주 급락"
+   "kick": "CCJ 가이던스 축소"
   }
  },
  "stocks": {
@@ -100,21 +108,24 @@
   },
   "XOM": {
    "text": [
-    "ExxonMobil은 10/30 3분기 실적을 발표한 뒤 Chevron과 함께 사상 최고가 부근까지 올랐지만 11/2에 3% 넘게 내렸습니다.",
-    "11/4에는 미 중간선거에서 민주당이 의회를 장악하고 트럼프 대통령이 이란 즉각 타격 위협에서 물러서면서 유가에 얹혀 있던 지정학 위험 프리미엄이 줄었고, 이날 XOM은 2.9%, S&P 500 에너지 업종은 약 3% 내렸습니다."
+    "XOM은 10/30에 3분기 실적을 발표해 예상을 웃돌았고 2027년 자사주 매입 200억 달러 계획도 밝혔습니다. 그 뒤 미국과 이란의 종전 협상 기대로 유가가 크게 내려 11/9로 끝난 한 주에 브렌트유가 16% 하락했고, XOM은 11/4에 4.6% 내리는 등 약세를 이어갔습니다. 11/19에는 모잠비크가 300억 달러 규모 로부마 LNG 계획을 승인했다는 소식도 있었습니다."
    ],
    "src": [
     {
-     "t": "Reuters(BOE Report 게재)",
-     "u": "https://boereport.com/2026/11/04/energy-sector-falls-as-democratic-sweep-dents-iran-war-risk-premium/"
+     "t": "Nation Thailand 브렌트유 11/9",
+     "u": "https://www.nationthailand.com/news/world/40073309"
     },
     {
-     "t": "Finviz",
-     "u": "https://finviz.com/news/413860/chevron-exxon-mobil-stocks-retreat-from-52-week-highs-buy-the-dip"
+     "t": "CNBC XOM 3분기 실적",
+     "u": "https://www.cnbc.com/2026/10/30/exxonmobil-xom-earnings-q3-2026.html"
+    },
+    {
+     "t": "Yahoo 자사주 매입 계획",
+     "u": "https://finance.yahoo.com/sectors/energy/articles/exxon-mobil-chevron-fall-5-181337458.html"
     }
    ],
-   "asof": "2026-11-11",
-   "at": "11/12 10:25 KST"
+   "asof": "2026-11-20",
+   "at": "11/21 10:18 KST"
   },
   "TSLA": {
    "text": [
@@ -136,25 +147,24 @@
   },
   "005930": {
    "text": [
-    "삼성전자는 11/3 AI 투자 수익성 우려로 글로벌 기술주가 흔들리는 가운데 장 초반 4~5% 내렸고, 11/5에는 미 중간선거에서 민주당이 앞서면서 AI 데이터센터 규제가 강화될 수 있다는 우려로 KOSPI가 4% 넘게 하락하는 가운데 SK하이닉스와 함께 약세였습니다.",
-    "11/6 대만의 공매도 제한 조치로 반도체주가 반등한 뒤 11/9 주에는 상승했습니다."
+    "005930은 11/5에 7.57% 내린 201,500원으로 마감했고, 미국 중간선거에서 민주당이 상하원 다수당이 되면서 데이터센터 규제 강화와 AI 투자 둔화 우려가 커진 것이 원인으로 꼽혔습니다. 외국인은 그날까지 5거래일 연속 순매도였습니다. 11/16에는 엔비디아 CEO 사임 소식에 따른 혼란이 반도체주로 번져 코스피가 3.59% 내렸고, 이 흐름이 마지막 주 큰 낙폭으로 이어졌습니다."
    ],
    "src": [
     {
-     "t": "경향신문",
+     "t": "경향신문 11/5 코스피 하락",
      "u": "https://www.khan.co.kr/en/article/202611051700007"
     },
     {
-     "t": "연합뉴스(StockHub 재게재)",
-     "u": "https://stockhub.kr/en/news/news_beccc1a6e470"
+     "t": "Focus Taiwan 11/16 엔비디아 충격",
+     "u": "https://focustaiwan.tw/business/202611160014"
     },
     {
-     "t": "Motley Fool",
-     "u": "https://www.fool.com/investing/2026/11/05/why-sk-hynix-plunged-today/"
+     "t": "Seoul stocks tumble as Nvidia turmoil hi",
+     "u": "https://streamlinefeed.co.ke/news/seoul-stocks-tumble-as-nvidia-turmoil-hits-chipmakers"
     }
    ],
-   "asof": "2026-11-11",
-   "at": "11/12 10:25 KST"
+   "asof": "2026-11-20",
+   "at": "11/21 10:18 KST"
   },
   "CVX": {
    "text": [
@@ -322,46 +332,6 @@
    "asof": "2026-11-13",
    "at": "11/14 10:19 KST"
   },
-  "285A": {
-   "text": [
-    "Kioxia는 11/2 10~12월 영업이익 전망을 약 2조 엔으로 전분기와 같은 수준으로 제시했고, 이 발표 뒤 도쿄에서 하루 만에 15.8% 내려 11,345엔에 마감했습니다.",
-    "직전 거래일인 10/30에는 협력사 Sandisk가 13.5% 내렸고, 낸드 가격 상승세가 둔화한다는 우려가 겹쳤습니다. 이 하락이 11/2 주의 −36.8% 수익률의 대부분을 설명합니다."
-   ],
-   "src": [
-    {
-     "t": "FourWeekMBA, Kioxia 15.8% 하락",
-     "u": "https://fourweekmba.com/ai-kioxia-sinks-15-8-on-flat-2-trillion-guide-sk-hynix-rises/"
-    },
-    {
-     "t": "Tiger Brokers, Kioxia 실적 충격과 미국 저장장치주",
-     "u": "https://www-web.itiger.com/news/1191786438"
-    }
-   ],
-   "asof": "2026-11-09",
-   "at": "11/10 10:23 KST"
-  },
-  "NTRA": {
-   "text": [
-    "Natera는 11/5 장 마감 후 3분기 매출 7억 9,400만 달러(전년 대비 34% 증가)를 발표하고 2026년 매출 전망을 30억 500만~30억 3,500만 달러로 올렸지만, 주당 순손실은 0.42달러로 예상보다 컸고 판관비와 R&D 지출 전망도 함께 올렸습니다.",
-    "같은 시기 Steve Chapman CEO가 약 8년 만에 물러나고 Solomon Moshkevich가 이어받는다고 알려졌으며, 주가는 11/6 14.6% 내렸습니다. 11/6에는 Evercore ISI가 투자의견 Outperform을 유지하며 목표가를 400달러로 낮췄습니다."
-   ],
-   "src": [
-    {
-     "t": "Natera 3분기 실적 보도자료",
-     "u": "https://www.natera.com/company/news/natera-reports-third-quarter-2026-financial-results/"
-    },
-    {
-     "t": "TIKR, CEO 교체와 주가 하락",
-     "u": "https://www.tikr.com/blog/natera-sinks-14-as-ceo-steve-chapman-steps-down-despite-q3-beat-an-excellent-time-to-transition"
-    },
-    {
-     "t": "Finimize, 전망 상향에도 주가 하락",
-     "u": "https://finimize.com/content/natera-lifted-its-2026-outlook-but-shares-still-slid"
-    }
-   ],
-   "asof": "2026-11-09",
-   "at": "11/10 10:23 KST"
-  },
   "TTWO": {
    "text": [
     "Take-Two는 11/9 장 마감 후 회계 2분기 실적을 발표했고, 순예약액이 16억 달러로 18% 줄어 회사 가이던스를 소폭 밑돌았지만 연간 순예약액 80억~82억 달러 전망은 유지했습니다.",
@@ -383,50 +353,6 @@
    ],
    "asof": "2026-11-19",
    "at": "11/20 10:29 KST"
-  },
-  "PM": {
-   "text": [
-    "PM은 10/21 3분기에 조정 EPS가 5.4% 늘어난 2.36달러로 사상 최고를 냈지만, 연간 조정 EPS 전망을 환율 영향만 반영해 8.29~8.44달러로 낮췄고 그날 주가는 1.2% 내렸습니다.",
-    "Benzinga는 에너지 비용 상승과 미국 ZYN 마케팅 비용 증가가 부담이 됐다고 전했습니다. 10-Q는 10/23에 제출됐습니다. 11/2 주의 −5.2%를 설명하는 뚜렷한 개별 사건은 찾지 못했습니다."
-   ],
-   "src": [
-    {
-     "t": "SEC 8-K, 3분기 실적 보도자료",
-     "u": "https://www.sec.gov/Archives/edgar/data/0001413329/000162828026066596/earningsreleasepm-ex991xq3.htm"
-    },
-    {
-     "t": "Finviz, PM 연간 EPS 전망 환율 반영 수정",
-     "u": "https://finviz.com/news/405122/philip-morris-international-reports-2026-third-quarter-first-nine-months-results-and-updates-2026-full-year-adjusted-diluted-eps-forecast-for-currency-only"
-    },
-    {
-     "t": "Benzinga, PM 전망 하향",
-     "u": "https://www.benzinga.com/node/62498043"
-    }
-   ],
-   "asof": "2026-11-09",
-   "at": "11/10 10:23 KST"
-  },
-  "688825": {
-   "text": [
-    "CXMT는 10/16 3분기 실적 예고를 낸 뒤 10/19 장중 9% 가까이 내려 41위안으로 상장 후 최저를 기록했습니다. 예고에서 3분기 순이익의 전 분기 대비 증가폭이 크게 줄어든 점이 부담이 됐습니다.",
-    "10/30에는 3분기 매출 1,187억 위안(전년 대비 613% 증가)과 순이익 544억 위안을 공시했고, 회장 Zhu Yiming이 1억~2억 위안 규모의 자사주 매입을 제안했습니다. 회사 주가는 8월 고점보다 32% 낮은 상태였습니다."
-   ],
-   "src": [
-    {
-     "t": "SCMP, CXMT 3분기 실적과 자사주 매입",
-     "u": "https://scmp.com/tech/big-tech/article/3371314/cxmt-forecasts-us198-billion-3-quarters-net-income-pledges-share-buy-back"
-    },
-    {
-     "t": "The Standard, CXMT 분기 흑자",
-     "u": "https://www.thestandard.com.hk/innovation/article/347055/Chinas-CXMT-reports-quarterly-profit-after-Asias-biggest-IPO-this-year"
-    },
-    {
-     "t": "Sohu, 長鑫科技 3분기 보고",
-     "u": "https://m.sohu.com/a/1095082985_430392"
-    }
-   ],
-   "asof": "2026-11-09",
-   "at": "11/10 10:23 KST"
   },
   "CRSP": {
    "text": [
@@ -494,25 +420,20 @@
   },
   "TSM": {
    "text": [
-    "TSM의 미국 상장 주식은 11/5에 10% 넘게 내렸고, 대만 당국이 공매도 규제를 강화하고 150억 달러 규모 안정기금을 준비한다고 밝힌 11/6에 7% 가까이 올랐습니다.",
-    "공매도 증거금 요건은 90%에서 130%로 올랐고 제한 조치는 11/9부터 시행되었으며, 11/9에는 대만 증시도 반등했습니다."
+    "TSM은 11/5에 칩주 급락이 이어지며 ADR이 10.8% 내렸고, 미국 중간선거 뒤 AI 데이터센터 정책 불확실성이 이유로 거론됐습니다. 11/16에는 엔비디아 CEO 젠슨 황의 사임 소식과 미국 기술주 약세로 대만 가권지수가 6.03% 내렸고 TSMC 현지 주가가 5.74% 하락해 마지막 주 큰 낙폭의 원인이 됐습니다. 외국인 기관은 그날 대만 본장에서 701.9억 대만달러를 순매도했습니다."
    ],
    "src": [
     {
-     "t": "Longbridge",
-     "u": "https://longbridge.com/en/news/304645824.md"
+     "t": "Focus Taiwan 11/16",
+     "u": "https://focustaiwan.tw/business/202611160014"
     },
     {
-     "t": "NewsBytes",
-     "u": "https://www.newsbytesapp.com/news/business/taiwan-limits-short-selling-after-taiex-worst-week-since-2001/tldr"
-    },
-    {
-     "t": "Finimize",
-     "u": "https://finimize.com/content/taiwan-switched-on-a-market-backstop-after-a-tech-led-rout"
+     "t": "Focus Taiwan 11/5",
+     "u": "https://focustaiwan.tw/business/202611060006"
     }
    ],
-   "asof": "2026-11-11",
-   "at": "11/12 10:25 KST"
+   "asof": "2026-11-20",
+   "at": "11/21 10:18 KST"
   },
   "GOOGL": {
    "text": [
@@ -1034,17 +955,47 @@
    ],
    "asof": "2026-11-19",
    "at": "11/20 10:29 KST"
+  },
+  "WMT": {
+   "text": [
+    "WMT는 11/13에 조지프 크리드를 이사로 선임했고, 11/19 장 시작 전에 3분기 실적을 발표했습니다. 월마트 미국 동일점포 매출은 2.9% 늘었고 미국 전자상거래는 23% 늘었으며, 연간 순매출 증가율 전망을 4.9~5.2%로, 조정 주당순이익 전망을 2.84~2.89달러로 올렸습니다. 발표 당일 주가는 1.0% 내려 앞선 3주의 상승세가 이어지지 않았습니다."
+   ],
+   "src": [
+    {
+     "t": "Shelby Report 3분기 실적",
+     "u": "https://theshelbyreport.com/2026/11/19/walmart-u-s-comps-rise-2-9-in-q3-as-e-commerce-grows-23/"
+    },
+    {
+     "t": "월마트 FY27 3분기 실적 공시",
+     "u": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000168/earningsreleasefy27q3.htm"
+    }
+   ],
+   "asof": "2026-11-20",
+   "at": "11/21 10:18 KST"
+  },
+  "INSM": {
+   "text": [
+    "INSM은 10/29 3분기 실적에서 BRINSUPRI 매출이 4억 100만 달러로 직전 분기보다 29% 늘었고 연간 BRINSUPRI 매출 전망을 13.5억~14억 달러로 올려 그날 15.1% 올랐습니다. 11/19에는 블룸버그가 사노피가 인수를 검토 중이라고 보도하면서 주가가 18% 안팎 급등했고 변동성 완화 장치로 거래가 잠시 멈췄습니다. 이 보도에서 사노피와 INSM은 논평을 거부했고 협상이 아직 성사된 것은 아닙니다."
+   ],
+   "src": [
+    {
+     "t": "Investing.com 사노피 인수 검토 보도",
+     "u": "https://www.investing.com/news/stock-market-news/insmed-shares-jump-more-than-6-on-report-sanofi-is-weighing-acquisition-5039411"
+    },
+    {
+     "t": "Benzinga",
+     "u": "https://www.benzinga.com/m-a/26/11/63450896/with-dupixents-patent-clock-ticking-sanofi-circles-insmed"
+    },
+    {
+     "t": "Insmed 3분기 실적 보도자료",
+     "u": "https://finviz.com/news/411257/insmed-reports-third-quarter-2026-financial-results-and-provides-business-update"
+    }
+   ],
+   "asof": "2026-11-20",
+   "at": "11/21 10:18 KST"
   }
  },
  "runs": [
-  [
-   "10/29 11:34 KST",
-   0,
-   0,
-   6,
-   0,
-   "ok"
-  ],
   [
    "10/30 08:20 KST",
    6,
@@ -1291,6 +1242,19 @@
    30,
    "claude-sonnet-5-5",
    0.715
+  ],
+  [
+   "11/21 10:18 KST",
+   6,
+   5,
+   6,
+   5,
+   "ok",
+   26,
+   6,
+   34,
+   "claude-sonnet-5-5",
+   0.676
   ]
  ]
 }

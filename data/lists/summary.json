@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T01:06:12Z",
+  "generated_at": "2026-11-21T01:05:56Z",
   "binance_equity_catalog_error": null,
   "binance_spot_bstocks": {
     "count": 113,
@@ -14,27 +14,27 @@
     "missing_from_TRD_GRP_261": []
   },
   "binance_futures_tradfi": {
-    "count": 230,
+    "count": 234,
     "by_asset_class": {
-      "etf": 45,
-      "stock": 177,
+      "etf": 46,
+      "stock": 180,
       "unknown": 8
     },
     "exchange_info_source": "https://www.binance.com",
-    "exchange_info_server_time": "2026-11-20T01:01:01Z",
+    "exchange_info_server_time": "2026-11-20T10:11:35Z",
     "trading_but_not_in_exchange_info": [],
     "by_underlying_type": {
       "CN_EQUITY": 2,
-      "EQUITY": 205,
+      "EQUITY": 209,
       "HK_EQUITY": 15,
       "KR_EQUITY": 8
     }
   },
   "hyperliquid_hip3_stocks": {
-    "count": 142,
+    "count": 144,
     "by_asset_class": {
       "etf": 24,
-      "stock": 116,
+      "stock": 118,
       "unknown": 2
     },
     "uncategorized_coins": [
@@ -48,9 +48,9 @@
     "dex_errors": {},
     "annotation_errors": [],
     "by_dex": {
-      "io": 14,
+      "io": 15,
       "para": 24,
-      "xyz": 104
+      "xyz": 105
     }
   },
   "review": {

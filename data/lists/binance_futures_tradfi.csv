@@ -11,6 +11,7 @@ AKAMUSDT,AKAM,USDT,EQUITY,TradFi,US,AKAM,constituents,stock,AKAM,"Akamai Technol
 ALABUSDT,ALAB,USDT,EQUITY,TradFi,US,ALAB,constituents,stock,ALAB,"Astera Labs, Inc. - Common Stock",stock,TRADING,2026-06-22
 AMATUSDT,AMAT,USDT,EQUITY,TradFi,US,AMAT,constituents,stock,AMAT,"Applied Materials, Inc. - Common Stock",stock,TRADING,2026-06-08
 AMCUSDT,AMC,USDT,EQUITY,TradFi,US,AMC,constituents,stock,AMC,"AMC Entertainment Holdings, Inc. Class A Common Stock",stock,TRADING,2026-09-18
+AMDLUSDT,AMDL,USDT,EQUITY,TradFi,US,AMDL,constituents,etf,AMDL,GraniteShares 2x Long AMD Daily ETF,etf,TRADING,2026-11-20
 AMDUSDT,AMD,USDT,EQUITY,TradFi,US,AMD,constituents,stock,AMD,"Advanced Micro Devices, Inc. - Common Stock",stock,TRADING,2026-05-06
 AMGNUSDT,AMGN,USDT,EQUITY,TradFi,US,AMGN,constituents,stock,AMGN,Amgen Inc. - Common Stock,stock,TRADING,2026-10-29
 AMZNUSDT,AMZN,USDT,EQUITY,TradFi,US,AMZN,constituents,stock,AMZN,"Amazon.com, Inc. - Common Stock",stock,TRADING,2026-02-09
@@ -94,6 +95,7 @@ INTWUSDT,INTW,USDT,EQUITY,TradFi,US,INTW,constituents,etf,INTW,GraniteShares 2x 
 IONQUSDT,IONQ,USDT,EQUITY,TradFi,US,IONQ,constituents,stock,IONQ,"IonQ, Inc. Common Stock",stock,TRADING,2026-08-28
 IRENUSDT,IREN,USDT,EQUITY,TradFi,US,IREN,constituents,stock,IREN,IREN Limited - Ordinary Shares,stock,TRADING,2026-06-03
 IWMUSDT,IWM,USDT,EQUITY,TradFi,US,IWM,constituents,etf,IWM,iShares Russell 2000 Index Fund,etf,TRADING,2026-06-08
+JNJUSDT,JNJ,USDT,EQUITY,TradFi,US,JNJ,constituents,stock,JNJ,Johnson & Johnson Common Stock,stock,TRADING,2026-11-20
 JPMUSDT,JPM,USDT,EQUITY,TradFi,US,JPM,constituents,stock,JPM,JP Morgan Chase & Co. Common Stock,stock,TRADING,2026-05-18
 KLACUSDT,KLAC,USDT,EQUITY,TradFi,US,KLAC,constituents,stock,KLAC,KLA Corporation  - Common Stock,stock,TRADING,2026-06-22
 KORUUSDT,KORU,USDT,EQUITY,TradFi,US,KORU,constituents,etf,KORU,Direxion Daily South Korea Bull 3X ETF,etf,TRADING,2026-06-22
@@ -122,6 +124,7 @@ MVLLUSDT,MVLL,USDT,EQUITY,TradFi,US,MVLL,constituents,etf,MVLL,GraniteShares 2x 
 NBISUSDT,NBIS,USDT,EQUITY,TradFi,US,NBIS,constituents,stock,NBIS,Nebius Group N.V. - Class A Ordinary Shares,stock,TRADING,2026-05-26
 NETUSDT,NET,USDT,EQUITY,TradFi,US,NET,constituents,stock,NET,"Cloudflare, Inc. Class A Common Stock",stock,TRADING,2026-08-17
 NFLXUSDT,NFLX,USDT,EQUITY,TradFi,US,NFLX,constituents,stock,NFLX,"Netflix, Inc. - Common Stock",stock,TRADING,2026-06-09
+NIOUSDT,NIO,USDT,EQUITY,TradFi,US,NIO,constituents,stock,NIO,"NIO Inc. American depositary shares, each  representing one Class A ordinary share",stock,TRADING,2026-11-20
 NKEUSDT,NKE,USDT,EQUITY,TradFi,US,NKE,constituents,stock,NKE,"Nike, Inc. Common Stock",stock,TRADING,2026-09-29
 NOKUSDT,NOK,USDT,EQUITY,TradFi,US,NOK,constituents,stock,NOK,Nokia Corporation Sponsored American Depositary Shares,stock,TRADING,2026-06-01
 NOWUSDT,NOW,USDT,EQUITY,TradFi,US,NOW,constituents,stock,NOW,"ServiceNow, Inc. Common Stock",stock,TRADING,2026-06-03
@@ -159,6 +162,7 @@ SKUUUSDT,SKUU,USDT,EQUITY,TradFi,US,SKUU,constituents,etf,SKUU,GraniteShares 2x 
 SMCIUSDT,SMCI,USDT,EQUITY,TradFi,US,SMCI,constituents,stock,SMCI,"Super Micro Computer, Inc. - Common Stock",stock,TRADING,2026-06-22
 SMHUSDT,SMH,USDT,EQUITY,TradFi,US,SMH,constituents,etf,SMH,VanEck Semiconductor ETF,etf,TRADING,2026-07-29
 SMRUSDT,SMR,USDT,EQUITY,TradFi,US,SMR,constituents,stock,SMR,NuScale Power Corporation Class A Common Stock,stock,TRADING,2026-10-29
+SNDKUSDT,SNDK,USDT,EQUITY,TradFi,US,SNDK,constituents,stock,SNDK,Sandisk Corporation - Common Stock When-Issued,stock,TRADING,2026-04-07
 SNOWUSDT,SNOW,USDT,EQUITY,TradFi,US,SNOW,constituents,stock,SNOW,Snowflake Inc. Common Stock,stock,TRADING,2026-07-10
 SNPSUSDT,SNPS,USDT,EQUITY,TradFi,US,SNPS,constituents,stock,SNPS,"Synopsys, Inc. - Common Stock",stock,TRADING,2026-10-12
 SNXXUSDT,SNXX,USDT,EQUITY,TradFi,US,SNXX,constituents,etf,SNXX,Tradr 2X Long SNDK Daily ETF,etf,TRADING,2026-07-09

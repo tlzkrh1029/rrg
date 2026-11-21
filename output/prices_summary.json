@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T01:06:52Z",
+  "generated_at": "2026-11-21T01:06:45Z",
   "source_order": [
     "stooq",
     "yahoo"
@@ -9,399 +9,399 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "URLError(TimeoutError('timed out'))"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "QQQ": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "URLError(TimeoutError('timed out'))"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLK": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "URLError(TimeoutError('timed out'))"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLF": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLV": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLY": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLC": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLI": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLP": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLE": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLU": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLB": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XLRE": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "SMH": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "IGV": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XBI": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "GNOM": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "ARKG": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "KRE": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XHB": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XME": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "URA": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "ITA": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "PAVE": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "DRAM": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
       "first_date": "2026-04-02",
-      "last_date": "2026-11-19",
+      "last_date": "2026-11-20",
       "gap_days": 0,
-      "rows": 161,
-      "missing_days": 339,
+      "rows": 162,
+      "missing_days": 338,
       "off_axis_dates": [],
       "rows_before_axis": 0
     },
@@ -409,103 +409,103 @@
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 408
+      "rows_before_axis": 409
     },
     "GDX": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "GRID": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "XOP": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "TAN": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     },
     "JETS": {
       "source": "yahoo",
       "adj_close_available": true,
       "attempts": {
-        "stooq": "skipped: unreachable for the previous tickers"
+        "stooq": "ValueError('unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no')"
       },
       "partial_bar_dropped": null,
-      "last_bar_from_quote": "2026-11-19",
-      "first_date": "2024-11-21",
-      "last_date": "2026-11-19",
+      "last_bar_from_quote": "2026-11-20",
+      "first_date": "2024-11-22",
+      "last_date": "2026-11-20",
       "gap_days": 0,
       "rows": 500,
       "missing_days": 0,
       "off_axis_dates": [],
-      "rows_before_axis": 754
+      "rows_before_axis": 755
     }
   },
   "base_axis": {
     "ticker": "SPY",
-    "first_date": "2024-11-21",
-    "last_date": "2026-11-19",
+    "first_date": "2024-11-22",
+    "last_date": "2026-11-20",
     "days": 500
   },
   "failed_tickers": [],
@@ -568,10 +568,10 @@
     ]
   },
   "holdings": {
-    "file": "holdings/2026-11-20.csv",
+    "file": "holdings/2026-11-21.csv",
     "source": "stockanalysis.com",
-    "fetched_at": "2026-11-20T01:13:40Z",
-    "roundhill_file": "2026-11-19",
+    "fetched_at": "2026-11-21T01:07:33Z",
+    "roundhill_file": "2026-11-20",
     "sources": {
       "SPY": "stockanalysis.com",
       "QQQ": "stockanalysis.com",
@@ -597,8 +597,8 @@
       "URA": "stockanalysis.com",
       "ITA": "stockanalysis.com",
       "PAVE": "stockanalysis.com",
-      "DRAM": "roundhill 2026-11-19",
-      "MAGS": "roundhill 2026-11-19",
+      "DRAM": "roundhill 2026-11-20",
+      "MAGS": "roundhill 2026-11-20",
       "GDX": "stockanalysis.com",
       "GRID": "stockanalysis.com",
       "XOP": "stockanalysis.com",

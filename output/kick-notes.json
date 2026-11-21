@@ -4105,16 +4105,393 @@
    "tries": 1,
    "at": "11/20 10:29 KST",
    "why": "그날 원인을 검색하지 못함. 제공된 제목에도 원인이 없음"
+  },
+  "E:URA:2026-11-20": {
+   "k": "AI 투매 원전주 동반 하락",
+   "ev": "AI주 투매로 S&P 500 이 3.7% 내려 조정 구간에 들어가며 데이터센터 전력 테마 원전주도 약세를 보임",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:DRAM:2026-11-20": {
+   "k": "Nvidia 폭락 AI 투매",
+   "ev": "Nvidia 가 SEC 조사 보도로 14% 급락하고 나스닥이 5.3% 내리며 반도체 전반이 매도됨",
+   "src": [
+    {
+     "t": "Nvidia shares plunge as Anthropic can't ",
+     "u": "https://www.axios.com/2026/11/20/anthropic-ipo-nvidia-ai-tech-selloff"
+    },
+    {
+     "t": "Stock Market Today, Nov. 20: Nvidia's $2",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-nvidia-s-usd2-5-trillion-rout-deepens-as-sec-accounting-probe-adds-to-wall-street-s-ai-sell-off/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:XME:2026-11-20": {
+   "k": "AI 투매 속 경기민감주 약세",
+   "ev": "S&P 500 이 3.7% 내려 조정 구간에 들어서며 철강과 광산 등 경기민감주도 함께 밀림",
+   "src": [
+    {
+     "t": "Dow, S&P 500 enter correction as Nasdaq ",
+     "u": "https://www.upi.com/Top_News/US/2026/11/20/stocks-dow-jones-nasdaq-correction-territory/1061795214998/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:XLP:2026-11-20": {
+   "k": "AI 투매 속 방어주 선호",
+   "ev": "나스닥이 5.3% 급락하는 가운데 기술주에서 빠진 자금이 필수소비재 같은 방어주로 이동함",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:ARKG:2026-11-20": {
+   "k": "AI 투매 속 성장주 하락",
+   "ev": "나스닥이 5.3% 내리며 올해 상승분을 반납하는 가운데 고평가 성장주가 크게 밀림",
+   "src": [
+    {
+     "t": "Dow, S&P 500 enter correction as Nasdaq ",
+     "u": "https://www.upi.com/Top_News/US/2026/11/20/stocks-dow-jones-nasdaq-correction-territory/1061795214998/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:XLU:2026-11-20": {
+   "k": "AI 투매 속 방어주 선호",
+   "ev": "S&P 500 이 3.7% 급락한 날 유틸리티는 0.7% 하락에 그쳐 방어주로 매수세가 이어짐",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:SMH:2026-11-20": {
+   "k": "Nvidia SEC 조사 보도",
+   "ev": "WSJ 가 SEC 의 Nvidia 공시 조사를 보도하자 Nvidia 가 14% 급락하고 AMD 와 Broadcom 도 13% 넘게 내림",
+   "src": [
+    {
+     "t": "Nvidia shares plunge as Anthropic can't ",
+     "u": "https://www.axios.com/2026/11/20/anthropic-ipo-nvidia-ai-tech-selloff"
+    },
+    {
+     "t": "Stock Market Today, Nov. 20: Nvidia's $2",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-nvidia-s-usd2-5-trillion-rout-deepens-as-sec-accounting-probe-adds-to-wall-street-s-ai-sell-off/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:XLRE:2026-11-20": {
+   "k": "AI 투매 속 방어주 선호",
+   "ev": "S&P 500 이 3.7% 내린 날 AI 와 거리가 먼 부동산 업종은 1% 안팎 하락에 그침",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:XLK:2026-11-20": {
+   "k": "Nvidia 폭락 AI 투매",
+   "ev": "Nvidia 가 SEC 조사 보도로 14% 급락하고 AMD, Broadcom, Micron 이 13% 이상 내려 기술주가 7% 하락함",
+   "src": [
+    {
+     "t": "Nvidia shares plunge as Anthropic can't ",
+     "u": "https://www.axios.com/2026/11/20/anthropic-ipo-nvidia-ai-tech-selloff"
+    },
+    {
+     "t": "U.S. stocks tumble, and the S&P 500 drop",
+     "u": "https://www.inquirer.com/business/stock-market-sp-correction-ai-nvidia-anthropic-loss-20261120.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:IGV:2026-11-20": {
+   "k": "AI 투매 속 소프트웨어 선방",
+   "ev": "Nvidia 중심의 반도체 매도가 기술주를 끌어내렸고 소프트웨어는 상대적으로 하락폭이 작았음",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:XLV:2026-11-20": {
+   "k": "AI 투매 속 방어주 선호",
+   "ev": "S&P 500 이 3.7% 급락한 날 헬스케어는 보합권에 머물러 방어주로 자금이 이동함",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:XLE:2026-11-20": {
+   "k": "AI 투매 속 에너지 선방",
+   "ev": "기술주 중심으로 S&P 500 이 3.7% 내렸으나 AI 와 무관한 에너지주는 상대적으로 버팀",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:MAGS:2026-11-20": {
+   "k": "Nvidia 폭락 AI 투매",
+   "ev": "Nvidia 가 14% 급락하고 Tesla 와 Meta 등 대형 기술주가 함께 내려 지수보다 더 하락함",
+   "src": [
+    {
+     "t": "Nvidia shares plunge as Anthropic can't ",
+     "u": "https://www.axios.com/2026/11/20/anthropic-ipo-nvidia-ai-tech-selloff"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:XLF:2026-11-20": {
+   "k": "AI 투매 속 금융 선방",
+   "ev": "S&P 500 이 3.7% 내리고 다우가 1.9% 내린 날 금융주는 약 1.8% 하락에 그침",
+   "src": [
+    {
+     "t": "Dow, S&P 500 enter correction as Nasdaq ",
+     "u": "https://www.upi.com/Top_News/US/2026/11/20/stocks-dow-jones-nasdaq-correction-territory/1061795214998/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "E:XLB:2026-11-20": {
+   "k": "AI 투매 속 소재 선방",
+   "ev": "S&P 500 이 3.7% 내린 날 AI 비중이 낮은 소재 업종은 2% 안팎 하락에 그침",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:NVDA:2026-11-20": {
+   "k": "SEC 회계 조사 보도",
+   "ev": "WSJ 가 SEC 의 Nvidia 공시 조사를 보도하자 주가가 14% 급락해 시총 약 2.5조 달러가 증발함",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Nvidia's $2",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-nvidia-s-usd2-5-trillion-rout-deepens-as-sec-accounting-probe-adds-to-wall-street-s-ai-sell-off/"
+    },
+    {
+     "t": "Nvidia shares plunge as Anthropic can't ",
+     "u": "https://www.axios.com/2026/11/20/anthropic-ipo-nvidia-ai-tech-selloff"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:ORCL:2026-11-20": {
+   "k": "AI 투매 속 하락",
+   "ev": "AI 투매 속 Oracle 이 Bernstein 의 AI 데이터센터 하방 시나리오 목표가 133달러 아래로 내려감",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:META:2026-11-20": {
+   "k": "AI 투매 속 하락",
+   "ev": "Nvidia 폭락과 AI 지출 우려로 기술주가 투매되는 가운데 Meta 도 6% 가까이 내림",
+   "src": [
+    {
+     "t": "U.S. stocks tumble, and the S&P 500 drop",
+     "u": "https://www.inquirer.com/business/stock-market-sp-correction-ai-nvidia-anthropic-loss-20261120.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:TSLA:2026-11-20": {
+   "k": "AI 투매에 HSBC 상향 묻힘",
+   "ev": "HSBC 가 목표가 359달러로 상향했으나 AI 투매가 이를 압도해 Tesla 가 약 8% 내림",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:PANW:2026-11-18": {
+   "k": "1분기 실적과 인수 발표",
+   "ev": "1분기 조정 EPS 1.05달러로 예상을 넘기고 연간 매출 전망을 올렸으며 45억 달러 규모 Applied Compute 인수를 알림",
+   "src": [
+    {
+     "t": "Palo Alto Networks Reports Fiscal First ",
+     "u": "https://www.placera.se/pressmeddelanden/palo-alto-networks-reports-fiscal-first-quarter-2027-financial-results-20261118"
+    },
+    {
+     "t": "Palo Alto Networks acquires Applied Comp",
+     "u": "https://www.constellationr.com/insights/news/palo-alto-networks-acquires-applied-compute-45-billion"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:SNDK:2026-11-05": {
+   "k": "데이터센터 규제 우려",
+   "ev": "민주당 의회가 데이터센터 건설을 제한할 수 있다는 우려와 Qualcomm 의 메모리 부족 언급으로 메모리주가 급락함",
+   "src": [
+    {
+     "t": "What explains a 22.26% Sandisk drop alon",
+     "u": "https://kalkine.ca/news/technology/what-explains-a-2226-sandisk-nasdaqsndk-drop-alongside-its-storage-peers"
+    },
+    {
+     "t": "Why Sandisk stock bounced back Friday",
+     "u": "https://www.fool.com/investing/2026/11/06/why-sandisk-stock-bounced-back-friday/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:AAPL:2026-11-20": {
+   "k": "AI 투매 속 방어",
+   "ev": "Nvidia 폭락으로 XLK 가 7% 내렸으나 AI 투자 비중이 낮은 Apple 은 1.9% 하락에 그침",
+   "src": [
+    {
+     "t": "Nvidia shares plunge as Anthropic can't ",
+     "u": "https://www.axios.com/2026/11/20/anthropic-ipo-nvidia-ai-tech-selloff"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:CEG:2026-11-20": {
+   "k": "AI 투매 속 전력주 하락",
+   "ev": "AI 주식 약세로 데이터센터 전력 수요 기대가 꺾이며 Constellation 이 한 주 새 10% 넘게 빠짐",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:MSFT:2026-11-20": {
+   "k": "AI 투매 속 방어",
+   "ev": "Nvidia 폭락으로 XLK 가 7% 내렸으나 Microsoft 는 2.8% 하락에 그침",
+   "src": [
+    {
+     "t": "Nvidia shares plunge as Anthropic can't ",
+     "u": "https://www.axios.com/2026/11/20/anthropic-ipo-nvidia-ai-tech-selloff"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:CVX:2026-11-20": {
+   "k": "AI 투매 속 에너지 선방",
+   "ev": "S&P 500 이 3.7% 내린 날 AI 와 무관한 에너지주로 자금이 몰려 Chevron 은 오름",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:APP:2026-11-20": {
+   "k": "AI 투매 속 하락",
+   "ev": "Nvidia 폭락과 나스닥 5% 급락으로 고평가 AI 광고주 AppLovin 도 8% 넘게 내림",
+   "src": [
+    {
+     "t": "U.S. stocks tumble, and the S&P 500 drop",
+     "u": "https://www.inquirer.com/business/stock-market-sp-correction-ai-nvidia-anthropic-loss-20261120.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:BRK.B:2026-11-20": {
+   "k": "AI 투매 속 방어",
+   "ev": "S&P 500 이 3.7% 내린 날 기술주 비중이 낮은 Berkshire 는 0.4% 하락에 그침",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:MCD:2026-11-20": {
+   "k": "AI 투매 속 방어",
+   "ev": "소비재 지수가 3% 내린 날 AI 와 무관한 McDonald's 는 보합권을 지킴",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:TXN:2026-11-20": {
+   "k": "반도체 투매 속 선방",
+   "ev": "Nvidia 폭락으로 SMH 가 10.6% 내렸으나 아날로그 반도체인 TXN 은 7.7% 하락에 그침",
+   "src": [
+    {
+     "t": "Nvidia shares plunge as Anthropic can't ",
+     "u": "https://www.axios.com/2026/11/20/anthropic-ipo-nvidia-ai-tech-selloff"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
+  },
+  "S:XOM:2026-11-20": {
+   "k": "AI 투매 속 에너지 선방",
+   "ev": "S&P 500 이 3.7% 내린 날 AI 와 무관한 에너지주로 자금이 몰려 Exxon 은 오름",
+   "src": [
+    {
+     "t": "Stock Market Today, Nov. 20: Stocks Plun",
+     "u": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    }
+   ],
+   "by": "claude",
+   "at": "11/21 10:18 KST"
   }
  },
  "runs": [
-  [
-   "10/29 11:34 KST",
-   24,
-   4,
-   20,
-   "ok"
-  ],
   [
    "10/30 08:20 KST",
    24,
@@ -4342,6 +4719,18 @@
    20,
    "claude-sonnet-5-5",
    0.472
+  ],
+  [
+   "11/21 10:18 KST",
+   40,
+   30,
+   0,
+   "ok",
+   18,
+   1,
+   21,
+   "claude-sonnet-5-5",
+   0.572
   ]
  ]
 }
