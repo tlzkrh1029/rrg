@@ -1,10 +1,10 @@
-돌파 지도 2026-11-20 (USD 기준, 직전 종가)
-켜진 칸 20일 7/278 (3%) · 55일 5 · 52주 2 · 사상 최고 2 · 이탈 138 · 실패 7
+돌파 지도 2026-11-23 (USD 기준, 직전 종가)
+켜진 칸 20일 8/278 (3%) · 55일 7 · 52주 4 · 사상 최고 2 · 이탈 98 · 실패 7
 
+새 돌파 (1일째)
+  52주: BIIB(XBI)*, ULCC(JETS)*
+  * SPY 대비로도 켜진 칸
 새 이탈 (1일째)
-  55일 바닥: MSFT(XLK·IGV), MU(XLK·SMH·DRAM), CSCO(XLK), AMAT(XLK), WFC(XLF), BKNG(XLY), DE(XLI·PAVE), UBER(XLI), ETN(XLI·GRID), SLB(XLE), CEG(XLU), DLR(XLRE), TSM(SMH), ADI(SMH), ASML(SMH), KLAC(SMH), QCOM(SMH), TEM(ARKG), CLF(XME), RGLD(XME·GDX), URI(PAVE), PH(PAVE), 005930(DRAM), STX(DRAM), WDC(DRAM), WPM(GDX), JCI(GRID), ABBN(GRID), SU(GRID), HUBB(GRID), CWEN(TAN), RUN(TAN)
-  20일 바닥: TMO(XLV), AMGN(XLV·XBI), UNP(XLI·PAVE), ETR(XLU), APD(XLB), MLM(XLB), NUE(XLB·XME·PAVE), TXN(SMH), SDGR(ARKG), RS(XME), LHX(ITA), FAST(PAVE), CNX(XOP), AAL(JETS), ALK(JETS)
-오늘 실패한 돌파: DIS(XLC, 52주), DIS(XLC, 55일), DIS(XLC, 20일)
-블록 알림 (20일): XLK ▼5/10 이탈 · XLV ▼6/10 이탈 · XLI ▼6/10 이탈 · XLB ▼5/10 이탈 · SMH ▼7/10 이탈 · KRE ▼5/9 이탈 · PAVE ▼8/10 이탈 · DRAM ▼9/10 이탈 · GRID ▼6/10 이탈 · XOP ▼5/10 이탈
+  20일 바닥: COP(XLE·XOP), CRWD(IGV), OVV(XOP)
 
 https://tlzkrh1029.github.io/rrg/breakout/

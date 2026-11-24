@@ -1,86 +1,120 @@
 {
- "asof": "2026-11-20",
- "at": "11/21 10:18 KST",
+ "asof": "2026-11-23",
+ "at": "11/24 10:20 KST",
  "etfs": {
-  "XLP": {
+  "XLY": {
    "text": [
-    "이 기간 AI 관련 기술주가 흔들리면서 방어적인 필수소비재로 자금이 옮겨 갔습니다. 10월에는 MSCI 글로벌 필수소비재 지수가 1998년 이후 가장 좋은 한 달을 보냈고, 11/16에는 S&P 500이 2% 가까이 내린 가운데 COST·KO·PG·MO·MDLZ가 52주 신고가를 기록했습니다. COST는 주당 30달러 특별배당 발표도 겹쳤습니다."
+    "11/9 Tesla가 샌안토니오에서 로보택시 운행을 시작했고, Musk가 Cybertruck 조립을 줄여 자율주행차 양산을 앞당기겠다고 밝힌 뒤 TSLA가 올랐습니다.",
+    "11/18에는 TJX가 3분기 매출이 예상치를 웃돌았다고 발표하면서 연간 이익 전망을 올렸고 주가가 5% 안팎 상승했습니다."
    ],
    "src": [
     {
-     "t": "Finviz 11/16 필수소비재 신고가",
-     "u": "https://finviz.com/news/423688/5-consumer-staples-stocks-reaching-new-highs-as-markets-retreat"
+     "t": "Trefis, Tesla 주가 변동 요인",
+     "u": "https://www.trefis.com/stock/tsla/articles2/624104/what-triggered-the-move-in-tesla-stock/2026-11-10"
     },
     {
-     "t": "European Business Magazine (FT 인용)",
-     "u": "https://europeanbusinessmagazine.com/consumer-staples-post-best-month/"
+     "t": "IBTimes, TJX 매출 전망 상향",
+     "u": "https://www.ibtimes.com/tjx-raises-sales-outlook-off-price-shopping-3809911"
+    },
+    {
+     "t": "Benzinga, TJX 3분기 실적",
+     "u": "https://www.benzinga.com/node/63395874"
     }
    ],
-   "kick": "AI주 이탈, 방어주 쏠림"
+   "kick": "로보택시·TJX 실적"
+  },
+  "XLP": {
+   "text": [
+    "11/16과 11/17 AI 관련주가 연이어 급락하는 가운데 투자 자금이 필수소비재 같은 방어적 업종으로 옮겨 갔습니다.",
+    "11/18 Target은 3분기 동일점포 매출이 5.6% 늘었다고 발표하고 연간 주당순이익 전망을 10.65~11.40달러로 올렸습니다. 이 분기 실적에는 관세 환급 효과 3억 100만 달러가 포함돼 있습니다."
+   ],
+   "src": [
+    {
+     "t": "Target 3분기 실적 보도자료",
+     "u": "https://corporate.target.com/press/release/2026/11/target-corporation-reports-third-quarter-earnings"
+    },
+    {
+     "t": "AP, 11/17 AI주 급락",
+     "u": "https://www.wcax.com/2026/11/17/another-wipeout-hits-wall-street-nvidia-other-jittery-ai-stocks-swing-lower/?outputType=amp"
+    }
+   ],
+   "kick": "AI 매도 속 방어주"
   },
   "XLU": {
    "text": [
-    "11/10에는 국채금리가 반등하고 AI 인프라 구축이 둔화할 수 있다는 우려가 나오면서 발전사 주가가 내렸고, CEG도 실적 발표 뒤 올랐던 폭을 일부 반납했습니다. 같은 주에 텍사스 신임 주지사가 데이터센터 개발을 막을 수 있다는 걱정도 거론됐습니다."
+    "11/9 Constellation Energy(CEG)가 3분기 조정 영업이익이 주당 5.06달러로 예상치를 크게 웃돌았다고 발표했고, 2026년 조정 이익 전망 범위를 12.50~12.80달러로 좁혀 중간값을 올렸습니다.",
+    "회사는 3분기에 고객 세 곳과 4,560MW 규모의 전력 계약을 맺었다고 밝혔고, 원전 출력 증강에 43억 달러를 투자하는 계획도 공개했습니다."
    ],
    "src": [
     {
-     "t": "Dow Jones 유틸리티 시황 11/10",
-     "u": "https://www.morningstar.com/news/dow-jones/2026111012983/utilities-down-as-treasury-yields-rise-utilities-roundup"
+     "t": "Finviz, Constellation 실적과 전망 상향",
+     "u": "https://finviz.com/news/419339/constellation-energy-beats-by-30-and-raises-guidance-again-but-its-biggest-wins-arrive-after-2027-and-the-stock-remains-under-pressure"
+    },
+    {
+     "t": "ANS, Constellation 3분기 계약",
+     "u": "https://www.ans.org/news/article-8576/constellation-q3-updates-new-peak-uprates-restart-midterm-elections/"
     }
    ],
-   "kick": "AI 인프라 둔화 우려"
+   "kick": "Constellation 실적·계약"
   },
   "ARKG": {
    "text": [
-    "11/2에는 별다른 회사 소식 없이 위험 회피 분위기 속에 TXG가 12%, TWST가 15% 내렸습니다. 앞서 10/30에는 ILMN이 3분기 매출이 예상에 못 미쳤다는 이유로 18.6% 내렸고, 11/5에 실적을 낸 NTRA도 비용 증가와 수익성 시점에 대한 우려로 11/6에 14.6% 하락했습니다."
+    "11/2에 TXG가 12%, TWST가 15% 하락했는데, TIKR은 이 하락을 설명할 개별 소식이 없었다고 전했습니다. ILMN은 10/29 3분기 실적에서 연간 전망을 올렸는데도 10/30에 18.6% 하락했습니다.",
+    "NTRA는 11/5 3분기 실적과 함께 CEO 교체를 발표했고, 예상보다 큰 주당 손실과 비용 증가 계획이 알려지면서 11/6에 14.6% 하락했습니다."
    ],
    "src": [
     {
-     "t": "TIKR 11/2 유전체주 하락",
+     "t": "TIKR, 유전체주 동반 하락",
      "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
     },
     {
-     "t": "Trefis ILMN",
-     "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
+     "t": "Trefis, Illumina 10/30 하락",
+     "u": "https://www.trefis.com/stock/ilmn/articles2/621870/what-sent-illumina-stock-lower/2026-11-01"
     },
     {
-     "t": "Trefis NTRA",
-     "u": "https://www.trefis.com/stock/ntra/articles/623713/what-sent-natera-stock-lower/2026-11-07"
+     "t": "TIKR, Natera CEO 교체와 하락",
+     "u": "https://www.tikr.com/blog/natera-sinks-14-as-ceo-steve-chapman-steps-down-despite-q3-beat-an-excellent-time-to-transition"
     }
    ],
    "kick": "유전체 도구주 급락"
   },
+  "XME": {
+   "text": [
+    "11/5 STLD가 7.6%, CLF가 12.2% 하락했는데, Trefis는 STLD에 별도 공시가 없었고 AI 관련주 급락과 민주당 중간선거 승리로 데이터센터 투자가 둔화할 수 있다는 우려가 겹친 날이었다고 설명했습니다.",
+    "11/4 MTRN은 3분기 조정 주당순이익이 예상치를 웃돌았지만 매출이 예상치보다 7% 적게 나와 다음 날 주가가 크게 내렸습니다."
+   ],
+   "src": [
+    {
+     "t": "Trefis, Steel Dynamics 11/5 하락",
+     "u": "https://www.trefis.com/stock/stld/articles2/623363/what-sent-steel-dynamics-stock-lower/2026-11-06"
+    },
+    {
+     "t": "Finviz, Materion 3분기 실적",
+     "u": "https://finviz.com/news/415825/materion-beats-and-raises-again-but-a-pass-through-revenue-miss-and-thinner-q3-margins-meet-a-stock-already-down-30-from-its-peak"
+    }
+   ],
+   "kick": "철강주 동반 급락"
+  },
   "GNOM": {
    "text": [
-    "ILMN이 10/29 3분기 실적에서 주당순이익은 예상을 웃돌았지만 매출이 1조 1,300억 원대가 아닌 11.3억 달러로 예상 11.5억 달러에 못 미쳐 다음 거래일 18.6% 내렸습니다. 연간 매출 전망은 소폭 올렸지만 유기적 성장률이 4% 안팎에 그친다는 점이 부담이 됐습니다."
+    "ILMN은 10/29 3분기 실적에서 연간 전망을 올렸는데도 다음 거래일 18.6% 하락했고, 11/16까지 5거래일 연속 내렸습니다.",
+    "ARWR는 11/9 AHA 학회 발표 직후 유럽 거래에서 약 18% 하락했고, 11/12 회계 4분기 실적이 시장 예상에 크게 못 미쳤다는 평가가 나왔습니다."
    ],
    "src": [
     {
-     "t": "Trefis ILMN",
-     "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
+     "t": "Trefis, Illumina 5거래일 연속 하락",
+     "u": "https://www.trefis.com/stock/ilmn/articles/625589/illumina-stock-extends-a-5-day-losing-streak-to-a-10-loss/2026-11-17"
     },
     {
-     "t": "TIKR ILMN 실적",
-     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
-    }
-   ],
-   "kick": "ILMN 매출 부진"
-  },
-  "URA": {
-   "text": [
-    "CCJ가 10/30 3분기 실적에서 웨스팅하우스 지분 이익 감소와 판매량 감소, 단위 원가 상승을 공개하고 연간 생산 전망의 상단을 낮춰 하루에 약 10% 내렸습니다. 이후에도 AI 연계 원전·우라늄주 전반이 약세를 보여 CCJ가 한 주에 12% 더 내리며 52주 최저가를 기록했습니다."
-   ],
-   "src": [
-    {
-     "t": "RTTNews CCJ 10/30",
-     "u": "https://www.rttnews.com/3706729/cameco-stock-falls-10-after-lower-9-month-profit.aspx?type=alleco"
+     "t": "Finviz, Arrowhead 4분기 부진",
+     "u": "https://finviz.com/news/422354/arrowheads-deep-fourth-quarter-miss-collides-with-an-accelerated-shtg-timeline-and-inflecting-redemplo-demand"
     },
     {
-     "t": "TIKR CCJ 52주 저점",
-     "u": "https://www.tikr.com/blog/cameco-sinks-12-in-a-week-to-a-new-52-week-low-is-the-selling-overdone"
+     "t": "Goldesel, Arrowhead 11/9 하락",
+     "u": "https://goldesel.de/aktien/news/arrowhead-pharmaceuticals-aktie-kurssturz-trotz-neuer-rnai-daten"
     }
    ],
-   "kick": "CCJ 가이던스 축소"
+   "kick": "ILMN·ARWR 부진"
   }
  },
  "stocks": {
@@ -168,21 +202,21 @@
   },
   "CVX": {
    "text": [
-    "Chevron은 10/30 3분기 실적을 발표한 뒤 Exxon과 함께 사상 최고가 부근까지 올랐지만 11/2에 3% 넘게 내렸습니다.",
-    "11/4에는 미 중간선거에서 민주당이 의회를 장악하고 트럼프 대통령이 이란 즉각 타격 위협에서 물러서면서 유가의 위험 프리미엄이 줄었고, 이날 CVX는 약 2.6% 내렸으며 브렌트유는 2.5% 하락한 배럴당 100.97달러였습니다."
+    "10/30 3분기 실적에서 정제 부문 이익이 49억 달러로 전년 11억 달러에서 크게 늘었고, 조정 주당순이익 5.28달러로 LSEG 컨센서스 4.89달러를 웃돌았습니다.",
+    "11/16에는 Financial Times 보도로 Blackstone이 지원하는 Beacon Offshore Energy의 과반 지분을 약 50억 달러 가치로 인수하는 협상이 막바지라고 알려졌습니다. Chevron은 논평을 거부했고 아직 공식 발표는 없습니다."
    ],
    "src": [
     {
-     "t": "Reuters(BOE Report 게재)",
-     "u": "https://boereport.com/2026/11/04/energy-sector-falls-as-democratic-sweep-dents-iran-war-risk-premium/"
+     "t": "BOE Report(Reuters), Chevron 3분기 실적",
+     "u": "https://boereport.com/2026/10/30/chevron-tops-q3-expectations-on-higher-downstream-profit/amp/"
     },
     {
-     "t": "Finviz",
-     "u": "https://finviz.com/news/413860/chevron-exxon-mobil-stocks-retreat-from-52-week-highs-buy-the-dip"
+     "t": "BOE Report(Reuters), Beacon 인수 협상",
+     "u": "https://boereport.com/2026/11/16/chevron-closes-in-on-5-billion-beacon-deal-ft-reports/amp/"
     }
    ],
-   "asof": "2026-11-11",
-   "at": "11/12 10:25 KST"
+   "asof": "2026-11-23",
+   "at": "11/24 10:20 KST"
   },
   "MU": {
    "text": [
@@ -228,27 +262,6 @@
    "asof": "2026-11-13",
    "at": "11/14 10:19 KST"
   },
-  "RTX": {
-   "text": [
-    "RTX는 10/20 3분기에 매출 약 250억 달러(+11%)와 조정 EPS 2.26달러를 발표했고, 수주잔고는 사상 최대인 3,400억 달러였습니다. 2026년 조정 EPS 가이던스를 7.65~7.75달러로 올렸는데, 기존은 7.10~7.25달러였습니다. 3분기 EPS에는 IEEPA 비용 회수분 0.25달러가 들어 있습니다. 4분기에는 Collins Aerospace 마진이 압박받을 수 있다고 경영진이 밝혔습니다."
-   ],
-   "src": [
-    {
-     "t": "RTTNews RTX 가이던스 상향",
-     "u": "https://www.rttnews.com/3700578/rtx-raises-2026-outlook-for-adj-sales-adj-eps.aspx?type=ern"
-    },
-    {
-     "t": "MarketBeat RTX 3분기 콘퍼런스콜",
-     "u": "https://www.marketbeat.com/instant-alerts/transcript-rtx-q3-earnings-call-highlights-2026-10-20/"
-    },
-    {
-     "t": "Securities.io RTX 3분기",
-     "u": "https://www.securities.io/rtx-raises-2026-outlook-as-q3-sales-rise-11-to-25-billion/"
-    }
-   ],
-   "asof": "2026-11-10",
-   "at": "11/11 10:20 KST"
-  },
   "TEM": {
    "text": [
     "Tempus AI는 11/2 장 시작 전 3분기 실적을 발표하며 연간 매출 전망을 16억~16.05억 달러로 올렸고 그날 주가는 8.7% 올랐습니다. 11/3에는 Jefferies가 투자의견을 Underperform에서 Hold로 올리고 목표가를 35달러에서 70달러로 높였습니다.",
@@ -269,46 +282,25 @@
   },
   "AMZN": {
    "text": [
-    "AMZN은 10/29 3분기에 AWS 매출이 39% 늘어난 약 460억 달러로 5년 가까이 만에 가장 빠르게 성장했다고 발표했습니다. 다만 EPS 1.89달러는 시장 예상 1.97달러에 못 미쳤고, 분기 설비투자 773억 달러가 예상을 크게 웃돌며 최근 12개월 잉여현금흐름이 마이너스로 돌아섰습니다. 경영진은 AWS가 2027년과 2028년에 40% 넘게 성장할 것으로 본다고 밝혔습니다."
+    "10/29 3분기 실적에서 AWS 매출이 39% 늘었지만 설비투자가 773억 달러에 이르러 AI 투자 부담이 부각됐고, 10/30 나스닥은 Amazon의 AI 지출과 Intel의 현금 소진 우려로 2.5% 하락했습니다.",
+    "이 하락 직후인 11/2 주에 AMZN은 +7.9%로 반등했습니다. 11/16 주의 −7.4%는 AI 관련주 급락 국면과 같은 시기입니다."
    ],
    "src": [
     {
-     "t": "AP 아마존 3분기",
-     "u": "https://mynews13.com/fl/orlando/ap-top-news/2026/10/29/amazons-3q-results-miss-analysts-estimates-but-posts-solid-sales-gains-in-cloud-computing-unit"
+     "t": "Business Standard(Reuters), 10/30 나스닥 하락",
+     "u": "https://business-standard.com/world-news/nasdaq-hits-near-three-month-low-as-amazon-intel-rattle-ai-trade-126103001910_1.html"
     },
     {
-     "t": "GeekWire AWS 39% 성장",
-     "u": "https://geekwire.com/2026/aws-growth-hits-39-its-fastest-in-nearly-five-years-as-amazon-misses-on-earnings/"
+     "t": "KuCoin, Amazon 3분기 실적",
+     "u": "https://www.kucoin.com/blog/ph-amazon-q3-2026-earnings-aws-growth-ai-spending"
     },
     {
-     "t": "Techzine AWS 성장과 현금흐름",
-     "u": "https://www.techzine.eu/news/infrastructure/145406/aws-grows-by-nearly-40-percent-but-ai-investments-put-pressure-on-cash-flow/"
+     "t": "AP, 11/17 AI주 급락",
+     "u": "https://www.wcax.com/2026/11/17/another-wipeout-hits-wall-street-nvidia-other-jittery-ai-stocks-swing-lower/?outputType=amp"
     }
    ],
-   "asof": "2026-11-10",
-   "at": "11/11 10:20 KST"
-  },
-  "BRK.B": {
-   "text": [
-    "BRK.B는 11/7 3분기 실적에서 영업이익이 약 6% 줄어든 127억 달러였고, 보험 인수이익이 43% 감소했으며 GEICO 세전이익은 사고 손실과 광고비 증가로 45% 줄었습니다. BNSF 이익은 19% 늘었습니다.",
-    "같은 분기 자사주 매입은 약 96억 달러로 늘었고, 10월에도 약 20억 달러를 더 샀습니다. 이는 11/2 주 +5.2%, 11/9 주 +3.3%로 이어진 상승 흐름 속에서 나온 발표입니다."
-   ],
-   "src": [
-    {
-     "t": "AP, 버크셔 3분기",
-     "u": "https://mynews13.com/fl/orlando/ap-top-news/2026/11/07/berkshire-hathaway-buys-back-96-billion-of-its-own-stock-but-its-profits-declined"
-    },
-    {
-     "t": "Reuters via GVWire",
-     "u": "https://gvwire.com/2026/11/07/berkshire-hathaway-accelerates-stock-buybacks-operating-profit-falls/"
-    },
-    {
-     "t": "Business Insurance",
-     "u": "https://www.businessinsurance.com/berkshire-hathaway-speeds-up-stock-buybacks-though-profit-falls/"
-    }
-   ],
-   "asof": "2026-11-12",
-   "at": "11/13 10:19 KST"
+   "asof": "2026-11-23",
+   "at": "11/24 10:20 KST"
   },
   "NEM": {
    "text": [
@@ -354,70 +346,6 @@
    "asof": "2026-11-19",
    "at": "11/20 10:29 KST"
   },
-  "CRSP": {
-   "text": [
-    "CRSP는 10/19에 A.J. Silver가 CFO를 맡았고, 전임 Raju Prasad는 외부 기회를 찾아 회사를 떠났습니다. 11/2 3분기 실적에서는 Vertex가 보고한 CASGEVY 매출이 9,900만 달러로 전 분기보다 30% 늘었고 순손실은 1억 1,140만 달러였습니다. 11/9에는 AHA에서 CTX310 1b상 결과를 발표해 중증 고중성지방혈증 환자 10명에서 30일째 중성지방이 평균 63%, ANGPTL3가 65% 줄었다고 밝혔습니다. Benzinga는 11/10 장중 주가가 8% 가까이 내렸다고 전했고, 이는 11/9 주 −9.8%와 이어집니다."
-   ],
-   "src": [
-    {
-     "t": "CRSP 3분기 실적 보도자료",
-     "u": "https://finviz.com/news/413465/crispr-therapeutics-provides-business-update-and-reports-third-quarter-2026-financial-results"
-    },
-    {
-     "t": "CRSP CTX310 1b상 보도자료",
-     "u": "https://www.globenewswire.com/news-release/2026/11/09/3398537/0/en/crispr-therapeutics-presents-phase-1b-data-for-ctx310-demonstrating-reductions-in-angptl3-and-triglycerides-in-patients-with-severe-hypertriglyceridemia-at-the-american-heart-assoc.html"
-    },
-    {
-     "t": "Benzinga CRSP",
-     "u": "https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/11/63113462/crispr-therapeutics-highlights-substantial-lipid-reductions-with-investigational-gene-editing-therapy"
-    }
-   ],
-   "asof": "2026-11-10",
-   "at": "11/11 10:20 KST"
-  },
-  "BEAM": {
-   "text": [
-    "BEAM은 10/28 ESGCT에서 BEAM-301의 1/2상 초기 데이터를 발표했고, 회사는 1회 투여 뒤 내인성 포도당 생성이 회복됐다고 밝혔습니다. 이 소식은 10/26 주 +13.2%와 이어집니다. 11/3 3분기 실적에서는 주당 손실이 시장 예상보다 컸습니다. 11/10에는 겸상적혈구병 치료제 risto-cel의 BEACON 시험이 12개월 연속 중증 혈관폐쇄성 위기 없음이라는 1차 목표를 달성했다고 발표했고, 2026년 말 이르면 FDA에 BLA를 제출할 계획입니다."
-   ],
-   "src": [
-    {
-     "t": "BEAM-301 초기 데이터 발표 예고",
-     "u": "https://finviz.com/news/401585/beam-therapeutics-to-present-initial-data-from-phase-12-trial-of-beam-301-in-glycogen-storage-disease-type-ia-gsdia-at-the-esgct-33rd-annual-congress"
-    },
-    {
-     "t": "BioPharma Dive risto-cel",
-     "u": "https://www.biopharmadive.com/news/beam-sickle-cell-base-editing-risto-cel-results/874242/"
-    },
-    {
-     "t": "RTTNews risto-cel",
-     "u": "https://www.rttnews.com/3712610/beam-reports-positive-pivotal-results-for-gene-edited-sickle-cell-therapy-risto-cel.aspx"
-    }
-   ],
-   "asof": "2026-11-10",
-   "at": "11/11 10:20 KST"
-  },
-  "AMD": {
-   "text": [
-    "AMD는 11/3 장 마감 후 3분기 매출 134억 달러(전년 대비 45% 증가), 데이터센터 매출 85억 달러를 발표했고 4분기 매출 가이던스를 170억 달러 안팎으로 제시했습니다.",
-    "11/2 주에 낙폭이 컸던 반도체주는 11/6 대만의 공매도 제한 소식 뒤에 반등했고, 11/9에는 Nvidia 이사회가 젠슨 황 CEO 관련 보도를 조사하기로 하면서 Nvidia만 내리고 AMD를 포함한 다른 반도체주가 크게 올랐습니다."
-   ],
-   "src": [
-    {
-     "t": "AMD 실적 요약",
-     "u": "https://pulse2.com/amd-q3-2026/"
-    },
-    {
-     "t": "AMD 3분기 보도자료",
-     "u": "https://finviz.com/news/414840/amd-reports-third-quarter-2026-financial-results"
-    },
-    {
-     "t": "PrimeXBT",
-     "u": "https://primexbt.com/news/amd-and-broadcom-shares-jump-as-nvidia-falls-amid-huang-scandal/"
-    }
-   ],
-   "asof": "2026-11-11",
-   "at": "11/12 10:25 KST"
-  },
   "TSM": {
    "text": [
     "TSM은 11/5에 칩주 급락이 이어지며 ADR이 10.8% 내렸고, 미국 중간선거 뒤 AI 데이터센터 정책 불확실성이 이유로 거론됐습니다. 11/16에는 엔비디아 CEO 젠슨 황의 사임 소식과 미국 기술주 약세로 대만 가권지수가 6.03% 내렸고 TSMC 현지 주가가 5.74% 하락해 마지막 주 큰 낙폭의 원인이 됐습니다. 외국인 기관은 그날 대만 본장에서 701.9억 대만달러를 순매도했습니다."
@@ -434,122 +362,6 @@
    ],
    "asof": "2026-11-20",
    "at": "11/21 10:18 KST"
-  },
-  "GOOGL": {
-   "text": [
-    "Alphabet은 10/28 장 마감 후 3분기 매출 약 1,276억 달러와 조정 EPS 2.67달러를 발표했고, 검색 광고 성장이 AI Mode 사용 증가 영향으로 예상보다 둔화되었으며 잉여현금흐름이 약 90억 달러 적자였습니다.",
-    "CFO는 2027년 설비투자가 2026년 범위(1,950억~2,050억 달러)보다 크게 늘어난다고 밝혔고, 반면 Google Cloud 매출은 약 307억 달러로 예상을 웃돌았습니다. 주가는 다음 거래일에 12.6% 내렸습니다."
-   ],
-   "src": [
-    {
-     "t": "InvestingLive",
-     "u": "https://investinglive.com/stocks/alphabet-slides-over-9-after-hours-as-search-miss-and-9bn-cash-burn-overshadow-cloud/"
-    }
-   ],
-   "asof": "2026-11-11",
-   "at": "11/12 10:25 KST"
-  },
-  "GOOG": {
-   "text": [
-    "Alphabet은 10/28 장 마감 후 3분기 매출 약 1,276억 달러와 조정 EPS 2.67달러를 발표했고, 검색 광고 성장이 AI Mode 사용 증가 영향으로 예상보다 둔화되었으며 잉여현금흐름이 약 90억 달러 적자였습니다.",
-    "CFO는 2027년 설비투자가 2026년 범위(1,950억~2,050억 달러)보다 크게 늘어난다고 밝혔고, 반면 Google Cloud 매출은 약 307억 달러로 예상을 웃돌았습니다. 주가는 다음 거래일에 12.6% 내렸습니다."
-   ],
-   "src": [
-    {
-     "t": "InvestingLive",
-     "u": "https://investinglive.com/stocks/alphabet-slides-over-9-after-hours-as-search-miss-and-9bn-cash-burn-overshadow-cloud/"
-    }
-   ],
-   "asof": "2026-11-11",
-   "at": "11/12 10:25 KST"
-  },
-  "AVGO": {
-   "text": [
-    "AVGO는 11/5에 하루 10.4% 내려 1년 만의 최저 종가를 기록했는데, 회사 자체 소식이 아니라 반도체 업종 전체가 약했던 날이었습니다. 11/9에는 반도체주가 반등하면서 8.8% 올라 1년 만에 가장 큰 하루 상승폭을 보였고, 이 반등이 11/9 주 +24.1%의 대부분을 차지했습니다.",
-    "10/27에는 직접 금융채무 발생을 알리는 8-K를 냈고, 다음 실적 발표는 12/9로 예정돼 있습니다."
-   ],
-   "src": [
-    {
-     "t": "Trefis, 11/5 하락",
-     "u": "https://www.trefis.com/stock/avgo/articles/623354/what-just-happened-to-broadcom-stock/2026-11-06"
-    },
-    {
-     "t": "247WallSt, 11/9 반등",
-     "u": "https://247wallst.com/investing/2026/11/10/broadcom-just-had-its-best-day-in-nearly-a-year-back-above-1-5-trillion/"
-    },
-    {
-     "t": "Trefis, 11/10 상승 배경",
-     "u": "https://www.trefis.com/stock/avgo/articles/624088/what-sent-broadcom-stock-higher/2026-11-10"
-    }
-   ],
-   "asof": "2026-11-12",
-   "at": "11/13 10:19 KST"
-  },
-  "LLY": {
-   "text": [
-    "LLY는 10/29 3분기 실적에서 매출이 약 39% 늘고 마운자로·젭바운드가 성장을 이끌었으며 연간 매출 전망을 올렸습니다. 이 발표가 10/26 주 +11.3% 상승 이후 이어진 흐름입니다.",
-    "11/9에는 경구 비만약 Foundayo가 3상 ATTAIN-OSA에서 52주 시점에 무호흡저호흡지수를 PAP 비사용군 43.8%, 사용군 27.5% 줄였다고 발표했고, 연말까지 FDA 신청을 계획한다고 밝혔습니다. 같은 날 Jefferies가 목표주가를 1,610달러에서 1,700달러로 올렸으며 이는 11/9 주 +5.4%와 이어집니다."
-   ],
-   "src": [
-    {
-     "t": "Finimize, 릴리 3분기",
-     "u": "https://finimize.com/content/eli-lilly-and-mercks-blockbuster-drugs-powered-better-than-expected-results"
-    },
-    {
-     "t": "Lilly 보도자료, Foundayo 수면무호흡",
-     "u": "https://investor.lilly.com/node/55271"
-    },
-    {
-     "t": "Morningstar/Dow Jones, 11/9",
-     "u": "https://www.morningstar.com/news/dow-jones/202611097009/eli-lilly-says-foundayo-shows-promise-in-treating-sleep-apnea"
-    }
-   ],
-   "asof": "2026-11-12",
-   "at": "11/13 10:19 KST"
-  },
-  "COST": {
-   "text": [
-    "COST는 11/4 발표한 10월 월간 매출에서 4주 기준 동일점포 매출이 11.1% 늘었고, 휘발유 가격 상승이 일부 영향을 줬습니다. 이는 11/2 주 +4.1%와 이어집니다.",
-    "11/10에는 주당 30달러, 총 약 133억 달러 규모의 특별배당(11/24 기준일, 12/4 지급)과 40억 달러 자사주 매입 재승인을 발표했습니다. 같은 주 8-K에서 Helena Foulkes 이사가 11/7자로 이사회에서 물러났고, 회사 운영과 관련한 이견 때문은 아니라고 밝혔습니다."
-   ],
-   "src": [
-    {
-     "t": "Quartr, 10월 월간 매출",
-     "u": "https://quartr.com/events/costco-wholesale-corporation-cost-monthly-sales-update-october-2026_3s0B0AUR"
-    },
-    {
-     "t": "Costco 보도자료, 특별배당",
-     "u": "https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Declares-30-Special-Cash-Dividend-and-Reauthorizes-Stock-Repurchase-Program-2026.pdf"
-    },
-    {
-     "t": "SEC 8-K, 임원 사임",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000909832/000090983226000134/cost-20261107.htm"
-    }
-   ],
-   "asof": "2026-11-12",
-   "at": "11/13 10:19 KST"
-  },
-  "NXE": {
-   "text": [
-    "NXE는 11/2에 우라늄 개발주 전반에 매도세가 나오면서 4% 넘게 내렸고, 이는 11/9 주 −3.7% 하락과 같은 업종 약세 흐름으로 보도됐습니다.",
-    "3분기 순손실은 2,230만 캐나다달러로 줄었고 현금은 8억 2,160만 캐나다달러였으며, Rook I 건설은 6/8에 시작됐습니다. 경영진은 2027년 설비투자를 약 6억 캐나다달러로 보고 있고, 선지급과 프로젝트 금융을 포함한 자금 조달 방안을 검토 중이라고 밝혔습니다."
-   ],
-   "src": [
-    {
-     "t": "Kalkine, 우라늄주 매도",
-     "u": "https://kalkine.ca/news/mining/nexgen-energy-ltd-faces-selling-pressure-as-uranium-sector-sentiment-softens"
-    },
-    {
-     "t": "Mitrade, 3분기 실적 발표 전문",
-     "u": "https://www.mitrade.com/insights/news/live-news/article-8-2246248-20261111"
-    },
-    {
-     "t": "Panabee, 3분기 요약",
-     "u": "https://www.panabee.com/news/nexgen-energy-earnings-q3-2026"
-    }
-   ],
-   "asof": "2026-11-12",
-   "at": "11/13 10:19 KST"
   },
   "TXG": {
    "text": [
@@ -993,22 +805,93 @@
    ],
    "asof": "2026-11-20",
    "at": "11/21 10:18 KST"
+  },
+  "PLTR": {
+   "text": [
+    "11/2 장 마감 후 3분기 실적에서 매출이 23억 1천만 달러로 전년보다 96% 늘어 예상치를 웃돌았고 연간 매출 가이던스도 올렸지만, 높은 밸류에이션 부담이 거론되면서 다음 거래일 주가는 1.7% 내렸습니다. 이 주 수익률은 −12.9%였습니다.",
+    "11/16에는 영국 정부가 NHS 데이터 플랫폼 계약의 조기 해지 조항을 쓰지 않고 2029년 3월까지 유지한 뒤 새 경쟁입찰을 하겠다고 의회에 밝혔습니다. Palantir는 이 결정을 환영하며 영국 투자를 늘리겠다고 했고, 이 주 수익률은 −14.6%였습니다."
+   ],
+   "src": [
+    {
+     "t": "Stocktwits, 3분기 실적",
+     "u": "https://stocktwits.com/news-articles/markets/equity/palantir-blows-past-expectations-in-q3-on-strong-commercial-sales-but-valuation-concerns-dampen-sentiment/cNGaXtiR9Pv"
+    },
+    {
+     "t": "IBTimes, 실적 후 주가 하락",
+     "u": "https://www.ibtimes.com/palantir-revenue-growth-contracts-shares-fall-3809340"
+    },
+    {
+     "t": "TNW, 영국 NHS 계약 결정",
+     "u": "https://thenextweb.com/news/uk-to-end-palantirs-nhs-data-platform-contract-in-2029-not-now"
+    }
+   ],
+   "asof": "2026-11-23",
+   "at": "11/24 10:20 KST"
+  },
+  "SNDK": {
+   "text": [
+    "TIKR에 따르면 11/4 장 마감 후 Qualcomm이 실적을 발표한 다음 날인 11/5에 Sandisk가 22% 내렸고, 한 주 낙폭은 24%였습니다. 이 주 수익률은 −27.4%였습니다.",
+    "11/17에는 GF Securities가 NAND 가격이 2027년 1분기에 보합이고 이후 세 분기 연속 내려 공급 과잉이 올 수 있다고 전망하면서 Micron이 3%, Sandisk가 2% 내렸습니다. GF는 Sandisk를 가장 큰 영향을 받을 종목으로 꼽았습니다."
+   ],
+   "src": [
+    {
+     "t": "TIKR, GF Securities NAND 과잉 경고",
+     "u": "https://www.tikr.com/blog/why-is-micron-down-gf-securities-warns-a-nand-glut-could-hit-in-2027"
+    },
+    {
+     "t": "TIKR, Sandisk 주간 24% 하락",
+     "u": "https://www.tikr.com/blog/sandisk-sinks-24-in-a-week-on-industry-wide-memory-dynamics-time-to-sell-or-load-up"
+    }
+   ],
+   "asof": "2026-11-23",
+   "at": "11/24 10:20 KST"
+  },
+  "COP": {
+   "text": [
+    "11/5 3분기 실적에서 조정 주당순이익이 3.27달러로 Zacks 컨센서스 3.06달러를 웃돌았고, 분기 배당을 11% 올려 0.93달러로 했지만 주가는 그날 1.1% 내렸습니다. 4분기 생산량 가이던스는 하루 232만~236만 배럴(석유환산)이고 연간 투자비 가이던스는 그대로입니다.",
+    "10/2에는 원치 않은 인수 제안을 받아 노르웨이 사업과 영국 Teesside 자산의 매각을 검토 중이라고 밝혔고, 가치가 맞지 않으면 보유하겠다고 했습니다."
+   ],
+   "src": [
+    {
+     "t": "Zacks, ConocoPhillips 3분기 실적",
+     "u": "https://zacks.com/stock/news/3025227/conocophillips-q3-earnings-beat-estimates-on-higher-commodity-prices"
+    },
+    {
+     "t": "SEC 8-K, 11/5 실적",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001163165/000116316526000043/cop-20261105x8kexx991.htm"
+    },
+    {
+     "t": "OE Digital, 노르웨이 매각 검토",
+     "u": "https://www.oedigital.com/news/543421-conocophillips-considers-norway-exit-teesside-terminal-sale"
+    }
+   ],
+   "asof": "2026-11-23",
+   "at": "11/24 10:20 KST"
+  },
+  "AMT": {
+   "text": [
+    "11/23 DISH Wireless와 EchoStar 관련 소송에 대해 합의안에 도달했다고 8-K와 보도자료로 밝혔습니다. 12/31까지 FCC가 만든 신탁에서 5억 2,500만 달러를 현금으로 받을 것으로 예상하며, 확정 합의서 체결과 파산법원 승인이 필요하다고 했습니다.",
+    "합의 금액은 AMT가 청구했던 약 20억 달러보다 훨씬 적고, 소송을 낸 다른 타워 회사들은 아직 합의하지 못했습니다. 11/9와 11/16에는 선순위 채권 공모 발행 가격 결정도 발표했습니다."
+   ],
+   "src": [
+    {
+     "t": "SEC 8-K, 11/23 합의 발표",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001053507/000105350726000169/amt-20261123.htm"
+    },
+    {
+     "t": "DCD, Dish 5억 2,500만 달러 합의",
+     "u": "https://www.datacenterdynamics.com/en/news/dish-wireless-strikes-525m-settlement-with-american-tower/"
+    },
+    {
+     "t": "Light Reading, 타워사 중 첫 합의",
+     "u": "https://lightreading.com/finance/dish-settles-with-american-tower-but-crown-castle-left-out-so-far"
+    }
+   ],
+   "asof": "2026-11-23",
+   "at": "11/24 10:20 KST"
   }
  },
  "runs": [
-  [
-   "10/30 08:20 KST",
-   6,
-   4,
-   6,
-   5,
-   "ok",
-   29,
-   13,
-   44,
-   "claude-sonnet-5-5",
-   0.809
-  ],
   [
    "10/31 07:19 KST",
    6,
@@ -1255,6 +1138,19 @@
    34,
    "claude-sonnet-5-5",
    0.676
+  ],
+  [
+   "11/24 10:20 KST",
+   6,
+   6,
+   6,
+   6,
+   "ok",
+   38,
+   0,
+   40,
+   "claude-sonnet-5-5",
+   0.967
   ]
  ]
 }
