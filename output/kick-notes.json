@@ -4697,21 +4697,145 @@
    ],
    "by": "claude",
    "at": "11/24 10:20 KST"
+  },
+  "S:AMD:2026-11-24": {
+   "k": "AI 반도체주 매도",
+   "ev": "AI 칩 관련주가 일제히 내렸고 AMD 는 Hunterbrook 공매도 보고서 여파까지 겹침",
+   "src": [
+    {
+     "t": "Why AMD Stock Was Plunging on Thursday",
+     "u": "https://fool.com/investing/2026/11/19/why-amd-stock-was-plunging-on-thursday"
+    }
+   ],
+   "by": "claude",
+   "at": "11/25 10:19 KST"
+  },
+  "S:TECH:2026-11-23": {
+   "k": "Merck KGaA 인수가 고정",
+   "ev": "Merck KGaA 가 주당 73달러 현금 인수에 합의해 주가가 인수가 부근에 묶여 있음",
+   "src": [
+    {
+     "t": "Merck KGaA agreement to acquire Bio-Tech",
+     "u": "https://www.emdgroup.com/en/news/agreement-to-acquire-bio-techne-25-06-2026"
+    },
+    {
+     "t": "Germany's Merck to Buy Bio-Techne for $1",
+     "u": "https://www.morningstar.com/news/dow-jones/202606252440/germanys-merck-to-buy-bio-techne-for-11-billion"
+    }
+   ],
+   "by": "claude",
+   "at": "11/25 10:19 KST"
+  },
+  "S:QGEN:2026-11-23": {
+   "k": "EQT 인수가 고정",
+   "ev": "EQT 가 주당 46.50유로 현금 인수를 제안해 주가가 제안가 부근에 묶여 있음",
+   "src": [
+    {
+     "t": "Qiagen set for private ownership as EQT ",
+     "u": "https://www.bioxconomy.com/partnering/qiagen-set-for-private-ownership-as-eqt-proposes-10-8bn-takeover-deal"
+    }
+   ],
+   "by": "claude",
+   "at": "11/25 10:19 KST"
+  },
+  "E:XBI:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "XBI 바이오 ETF 날짜 검색을 두 번 했으나 11/23 시장 요약 기사가 나오지 않음"
+  },
+  "E:ARKG:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "ARKG 유전체학 ETF 검색에서 2026-11 기사가 없음"
+  },
+  "E:GNOM:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "XBI 와 ARKG 검색에서 11/23 바이오 업종 원인이 나오지 않음"
+  },
+  "E:XLF:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "금융주 날짜 검색과 BRK.B 검색에서 11/23 은행주 기사가 나오지 않음"
+  },
+  "S:MRNA:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "Moderna 11월 검색은 8월 흑색종 자료만 나오고 11/23 개별 원인이 없음"
+  },
+  "S:PRAX:2026-11-24": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "Praxis 11월 검색 두 번에서 11/24 소식이 없음(PDUFA 는 12/27)"
+  },
+  "S:CRSP:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "CRISPR 11/23 검색에서 그날 소식이 없음"
+  },
+  "S:OKLO:2026-11-24": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "Oklo 하락 검색 두 번에서 11/24 원인이 없음"
+  },
+  "S:TEM:2026-11-24": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "AstraZeneca 계약은 11/16 공시라 11/24 하락 원인으로 보기 어렵고 다른 원인도 없음"
+  },
+  "S:005930:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "한국 증시 11/23 기사를 찾지 못함"
+  },
+  "S:000660:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "한국 증시 11/23 기사를 찾지 못함"
+  },
+  "S:SNDK:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "등락률 0.00% 는 시세 누락으로 보이고 11/23 원인 기사도 없음"
+  },
+  "S:AMZN:2026-11-24": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "제공된 제목에 원인이 없고 별도 검색은 하지 못함"
+  },
+  "S:TWST:2026-11-24": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "Twist 11월 검색에서 11/24 소식이 없음"
+  },
+  "S:COST:2026-11-24": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "Walmart·Costco 검색에서 11/24 원인이 없음"
+  },
+  "S:BRK.B:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/25 10:19 KST",
+   "why": "BRK.B 검색에서 11/23 원인이 없음"
   }
  },
  "runs": [
-  [
-   "10/31 07:19 KST",
-   40,
-   19,
-   20,
-   "ok",
-   30,
-   3,
-   35,
-   "claude-sonnet-5-5",
-   0.827
-  ],
   [
    "11/01 00:07 KST",
    40,
@@ -4939,6 +5063,18 @@
    13,
    "claude-sonnet-5-5",
    0.333
+  ],
+  [
+   "11/25 10:19 KST",
+   24,
+   3,
+   16,
+   "ok",
+   32,
+   0,
+   34,
+   "claude-sonnet-5-5",
+   0.811
   ]
  ]
 }

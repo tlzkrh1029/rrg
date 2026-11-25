@@ -1,61 +1,196 @@
 {
- "asof": "2026-11-23",
- "prev_asof": "2026-11-20",
+ "asof": "2026-11-24",
+ "prev_asof": "2026-11-23",
  "alerts": [
   {
    "type": "up",
-   "H": "52w",
-   "key": "BIIB",
-   "name": "Biogen Inc.",
+   "H": "ath",
+   "key": "ABBV",
+   "name": "AbbVie Inc.",
    "etfs": [
+    "XLV",
     "XBI"
    ],
-   "over": 0.00722,
+   "over": 0.01779,
+   "spy": "failed",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "ath",
+   "key": "GILD",
+   "name": "Gilead Sciences, Inc.",
+   "etfs": [
+    "XLV",
+    "XBI"
+   ],
+   "over": 0.02184,
    "spy": "lit",
    "qqq": "lit"
   },
   {
    "type": "up",
+   "H": "ath",
+   "key": "VRTX",
+   "name": "Vertex Pharmaceuticals Incorporated",
+   "etfs": [
+    "GNOM"
+   ],
+   "over": 0.00902,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
+   "key": "TGT",
+   "name": "Target Corporation",
+   "etfs": [
+    "XLP"
+   ],
+   "over": 0.04361,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "52w",
+   "key": "REGN",
+   "name": "Regeneron Pharmaceuticals, Inc.",
+   "etfs": [
+    "XBI"
+   ],
+   "over": 0.01514,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "WMT",
+   "name": "Walmart Inc.",
+   "etfs": [
+    "XLP"
+   ],
+   "over": 0.02431,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "CVCO",
+   "name": "Cavco Industries, Inc.",
+   "etfs": [
+    "XHB"
+   ],
+   "over": 0.01269,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "VZ",
+   "name": "Verizon Communications Inc.",
+   "etfs": [
+    "XLC"
+   ],
+   "over": 0.01202,
+   "spy": "lit",
+   "qqq": "lit"
+  },
+  {
+   "type": "up",
+   "H": "20",
+   "key": "T",
+   "name": "AT&T Inc.",
+   "etfs": [
+    "XLC"
+   ],
+   "over": 0.02326,
+   "spy": "none",
+   "qqq": "failed"
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "PRY",
+   "name": "Prysmian S.p.A.",
+   "etfs": [
+    "GRID"
+   ],
+   "over": -0.00646
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "DORL",
+   "name": "Doral Group Renewable Energy Resources Ltd",
+   "etfs": [
+    "TAN"
+   ],
+   "over": -0.01581
+  },
+  {
+   "type": "down",
+   "H": "55",
+   "key": "SLR",
+   "name": "Solaria Energía y Medio Ambiente, S.A.",
+   "etfs": [
+    "TAN"
+   ],
+   "over": -0.02113
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "8001",
+   "name": "ITOCHU Corporation",
+   "etfs": [
+    "URA"
+   ],
+   "over": -0.01093
+  },
+  {
+   "type": "down",
+   "H": "20",
+   "key": "ENLT",
+   "name": "Enlight Renewable Energy Ltd",
+   "etfs": [
+    "TAN"
+   ],
+   "over": -0.01309
+  },
+  {
+   "type": "failed",
    "H": "52w",
    "key": "ULCC",
    "name": "Frontier Group Holdings, Inc.",
    "etfs": [
     "JETS"
    ],
-   "over": 0.02754,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": -0.01916
   },
   {
-   "type": "down",
-   "H": "20",
-   "key": "COP",
-   "name": "ConocoPhillips",
+   "type": "failed",
+   "H": "55",
+   "key": "ULCC",
+   "name": "Frontier Group Holdings, Inc.",
    "etfs": [
-    "XLE",
-    "XOP"
+    "JETS"
    ],
-   "over": -0.01049
+   "over": -0.01916
   },
   {
-   "type": "down",
+   "type": "failed",
    "H": "20",
-   "key": "CRWD",
-   "name": "CrowdStrike Holdings, Inc.",
+   "key": "ULCC",
+   "name": "Frontier Group Holdings, Inc.",
    "etfs": [
-    "IGV"
+    "JETS"
    ],
-   "over": -0.03656
-  },
-  {
-   "type": "down",
-   "H": "20",
-   "key": "OVV",
-   "name": "Ovintiv Inc.",
-   "etfs": [
-    "XOP"
-   ],
-   "over": -0.01504
+   "over": -0.01916
   }
  ]
 }

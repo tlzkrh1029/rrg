@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T01:06:11Z",
+  "generated_at": "2026-11-25T01:06:00Z",
   "binance_equity_catalog_error": null,
   "binance_spot_bstocks": {
     "count": 113,
@@ -21,7 +21,7 @@
       "unknown": 8
     },
     "exchange_info_source": "https://www.binance.com",
-    "exchange_info_server_time": "2026-11-24T01:01:01Z",
+    "exchange_info_server_time": "2026-11-25T01:01:01Z",
     "trading_but_not_in_exchange_info": [],
     "by_underlying_type": {
       "CN_EQUITY": 2,
@@ -31,26 +31,29 @@
     }
   },
   "hyperliquid_hip3_stocks": {
-    "count": 144,
+    "count": 147,
     "by_asset_class": {
-      "etf": 24,
-      "stock": 118,
-      "unknown": 2
+      "etf": 25,
+      "stock": 119,
+      "unknown": 3
     },
     "uncategorized_coins": [
+      "xyz:SOXS",
       "mkts:BVIV",
       "io:EWY"
     ],
-    "uncategorized_kept": [],
+    "uncategorized_kept": [
+      "xyz:SOXS"
+    ],
     "manual_references": [
       "io:EWY"
     ],
     "dex_errors": {},
     "annotation_errors": [],
     "by_dex": {
-      "io": 15,
+      "io": 16,
       "para": 24,
-      "xyz": 105
+      "xyz": 107
     }
   },
   "review": {
@@ -74,17 +77,21 @@
       ],
       "nasdaq_vs_binance_catalog": [],
       "us_ticker_not_confirmed": [
-        "FRHCUSDT"
+        "FRHCUSDT",
+        "SNXXUSDT"
       ],
       "trading_but_not_in_exchange_info": []
     },
     "hyperliquid_hip3_stocks": {
       "unknown": [
         "io:TCNT",
-        "io:XIAOMI"
+        "io:XIAOMI",
+        "xyz:SOXS"
       ],
       "nasdaq_vs_binance_catalog": [],
-      "uncategorized_kept": [],
+      "uncategorized_kept": [
+        "xyz:SOXS"
+      ],
       "dex_errors": {},
       "annotation_errors": []
     }
