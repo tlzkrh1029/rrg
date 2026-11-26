@@ -322,8 +322,22 @@ jobs:
           KICKS_EXEC: ${{ steps.kclaude.outputs.execution_file }}
         run: python terminal/claude_notes.py merge
 
+      # 주요 일정: 탭 줄 아래 한 줄의 '지난 밤 발표된 일정'. 하루 지도(비공개 저장소의 daymap 브랜치)가 화면 사진에서 읽은 기록 가운데
+      # 가장 새 날짜 파일 하나를 받아, 일정 항목의 시각·나라·이름·중요도·발표값·방향·예상·이전 값만 output/key-calendar.json 에 옮긴다.
+      # 메모와 그 밖의 화면 글자는 옮기지 않고, 로그에는 날짜와 건수만 적는다. 토큰은 그 저장소의 Contents 읽기 권한만 가진 DMAP_TOKEN(Secrets)이다.
+      # 토큰이 없거나 받지 못하면 이전 파일을 그대로 두고 이 단계는 실패하지 않는다. 하루 지도는 한국 시각 아침 9:45 와 11:15 에 갱신되므로,
+      # 아침 빌드가 그날 기록을 놓치면 저녁 실행이 받는다(그래서 페이지 생성 바로 앞에 둔다).
+      - name: 주요 일정 (하루 지도)
+        env:
+          DMAP_TOKEN: ${{ secrets.DMAP_TOKEN }}
+          DMAP_REPO: tlzkrh1029/osun-collector
+          DMAP_REF: daymap
+          DMAP_SCREENS: digest/screens
+        run: python terminal/fetch_key_calendar.py || echo "::warning::key calendar not updated; the page keeps the previous one"
+
+      # --run morning: 맨 아랫줄 '최근 반영'의 아침 칸(output/build-times.json)을 이번 빌드 시각으로 고친다
       - name: 페이지 생성 (터미널)
-        run: python terminal/build_terminal.py --lists "$LISTS_DIR"
+        run: python terminal/build_terminal.py --lists "$LISTS_DIR" --run morning
 
       # 커밋 메시지 'terminal <종가 기준일>' 은 guard 가 늦게 시작한 예비 실행을 거를 때 찾는다.
       # 그사이 다른 커밋이 올라왔으면(병합 등) 그 위에 다시 얹어 한 번 더 민다.
@@ -391,9 +405,20 @@ jobs:
           if [ "$rc" = "2" ]; then echo "::warning::some extended-hours prices failed; see failed in output/xh.json"; fi
           echo "go=true" >> "$GITHUB_OUTPUT"
 
+      # 아침 빌드와 같은 단계. 아침 빌드가 그날 하루 지도 기록을 놓쳤으면 여기서 받는다
+      - name: 주요 일정 (하루 지도)
+        if: steps.xh.outputs.go == 'true'
+        env:
+          DMAP_TOKEN: ${{ secrets.DMAP_TOKEN }}
+          DMAP_REPO: tlzkrh1029/osun-collector
+          DMAP_REF: daymap
+          DMAP_SCREENS: digest/screens
+        run: python terminal/fetch_key_calendar.py || echo "::warning::key calendar not updated; the page keeps the previous one"
+
+      # --run evening: 맨 아랫줄 '최근 반영'의 저녁 칸을 이번 실행 시각으로 고친다
       - name: 페이지 생성 (터미널)
         if: steps.xh.outputs.go == 'true'
-        run: python terminal/build_terminal.py --lists data/lists
+        run: python terminal/build_terminal.py --lists data/lists --run evening
 
       - name: 페이지 생성 (돌파 지도)
         if: steps.xh.outputs.go == 'true'

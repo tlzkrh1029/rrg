@@ -502,6 +502,27 @@ table.lg{border-collapse:collapse;width:100%;font-size:12px}
 .tabs .tabbtn b{color:var(--amber)} .tabs .tabbtn:hover{color:#fff}
 .status .mk{margin-left:10px;letter-spacing:.06em}
 .status .mk.open{color:var(--green)} .status .mk.closed{color:var(--muted)}
+/* 맨 아랫줄 왼쪽: 업데이트 예약 시각(뉴욕 시각으로 정한 예약을 한국 시각으로 바꿔 적는다) · 최근 반영 · 쉬는 때.
+   빌드 정보(종가·구성종목·상장 목록·빌드 시각·신호 규칙)는 이 칸에 마우스를 올리면 보인다. 가장 최근에 반영한 쪽을 밝게 쓴다 */
+.status .upd{min-width:0}
+.status .upd .ug{white-space:nowrap}   /* 좁은 화면에서는 '이름 + 시각' 묶음 사이에서만 줄을 바꾼다 */
+.status .upd .lt{color:var(--ink-2)} .status .upd .lt.now{color:var(--ink)}
+
+/* 주요 일정 한 줄(탭 줄 바로 아래, 모든 탭): 7일 안의 뉴욕 휴장·조기 폐장 · 지난 밤 발표된 주요 일정 · 다음 실적(이 보드 ETF 상위 10 종목).
+   세 칸 모두 비면 줄을 숨긴다. 좁은 화면에서는 칸끼리, 그리고 일정 항목 사이에서 줄을 바꾼다 */
+.sched{display:flex;flex-wrap:wrap;gap:2px 16px;padding:3px 8px;border-bottom:1px solid var(--line);font-size:10.5px;line-height:1.6;color:var(--ink-2);background:#070707}
+.sched[hidden]{display:none}
+.sched > span{min-width:0}
+.sched b{color:#fff;font-weight:700}
+.sched .k{color:var(--amber);letter-spacing:.06em;margin-right:6px}
+.sched .mu{color:var(--muted);margin-right:6px}
+.sched .ci{white-space:nowrap}
+.sched .ci i{font-style:normal;color:var(--muted);margin-left:5px}
+.sched .ci em{font-style:normal;color:var(--amber);margin-left:3px;font-size:9.5px}
+.sched .sep{color:var(--muted)}
+.sched .more{margin-left:8px;color:var(--link);font-size:10.5px;border:1px solid var(--line-2);padding:0 6px;line-height:1.45}
+.sched .more:hover{background:var(--band-2)}
+.sched .nxs{color:#fff;font-weight:700} .sched .nxs:hover{color:var(--amber);text-decoration:underline}
 
 /* ---- 뉴스·실적: 1,860px 이상에서는 오른쪽 세 번째 칼럼, 그보다 좁으면 Holdings 패널 안(기여도 아래와 종목 상세 안) ---- */
 .newscol{display:none}
@@ -1071,6 +1092,7 @@ body.cover-open{overflow:hidden}
     <a role="tab" id="tab7" href="#" hidden title="오선 하루 지도(DMAP)를 새 창으로 엽니다. 본인만 열 수 있는 Claude 아티팩트이고, 연결 링크는 이 브라우저에만 저장되어 있습니다"><b>7)</b> 오선 하루 지도<small>DMAP ↗</small></a>
     <span class="tabinfo">관찰 대상 24 ETF (섹터 11 · 산업·테마 12 · 스타일 1) · SPY 대비 상대수익률 백분위 · 종가 __PRICE_ASOF__ · 구성종목 __HOLD_ASOF__</span>
   </div>
+  <div class="sched" id="sched" role="region" aria-label="휴장 · 주요 일정 · 다음 실적" hidden></div>
 
   <div class="pane" id="pane1" role="tabpanel" aria-labelledby="tab1">
     <div class="grid">
@@ -1305,16 +1327,21 @@ body.cover-open{overflow:hidden}
           <p>점의 근거는 __LIST_TS__에 수집한 세 목록입니다. 바이낸스 bStocks __LIST_B__종(태그 bStocks가 붙은 현물 자산), 바이낸스 TradFi 무기한 선물 __LIST_F__계약(TRADIFI_PERPETUAL·거래 중), 하이퍼리퀴드 HIP-3 주식 선물 __LIST_H__종(xyz·para·io·mkts dex, 상장폐지 제외)입니다. 대조는 미국 티커로 하고, 삼성전자(005930)와 SK하이닉스(000660)는 KRX 코드로, SK하이닉스의 나스닥 상장분은 SKHY로 맞춥니다. 세 거래소 모두 매주 종목을 추가하므로, 목록을 다시 수집하면 이 점들도 함께 갱신합니다. 추가와 이탈의 기록은 5) 상장 로그 탭에 쌓입니다(아래 10).</p>
         </section>
         <section class="wide">
-          <h3>10. 상장 로그</h3>
+          <h3>11. 상장 로그</h3>
           <p>5) 탭은 세 목록을 매일 아침 받을 때마다 직전 목록과 비교해, 새로 상장된 종목(신규)과 목록에서 사라진 종목(이탈)을 날짜순으로 쌓은 기록입니다. 날짜는 거래소마다 뜻이 다릅니다. 바이낸스 TradFi 선물은 계약마다 거래소가 밝힌 상장일이 있어서 그 날짜를 그대로 적습니다('상장일'). bStocks 와 하이퍼리퀴드는 목록에 날짜가 없어서, 목록에서 처음 보인 날을 적습니다('확인'). 직전 수집과 4일 넘게 떨어진 경우에는 그 사이 어느 날에 상장되었는지 알 수 없으므로 시작일을 함께 적습니다(예: '9/27 이후'). 기록은 2026년 9월 27일 목록에서 시작하며, 선물은 그날 이미 상장되어 있던 계약의 상장일도 모두 적었습니다.</p>
           <p>'이 보드' 열은 그 종목이 이 보드 24개 ETF 의 상위 10개 구성종목에 들어 있는지와 그 ETF·순위를 보여 줍니다. 대조 규칙은 구성종목 표의 상장 점과 같습니다. 이 보드 종목의 신규 상장 행은 주황 바탕으로 표시합니다. 같은 거래소에 같은 종목이 이미 다른 심볼로 상장되어 있었다면(예: 하이퍼리퀴드에 xyz:NVDA 가 있는데 io:NVDA 가 더해진 경우) 새로 거래할 수 있게 된 것이 아니므로 '추가'로 적고, 강조하지 않으며 신규 수에도 넣지 않습니다. 반대로 다른 심볼이 남아 있는 채 한 심볼만 빠지면 '심볼 이탈'로 적습니다. 티커를 누르면 1) 매트릭스의 종목 검색으로 넘어가고, ETF 단추를 누르면 그 ETF 의 구성종목이 열립니다. 위쪽 세 칸은 거래소별 현재 상장 수, 이번 수집(직전 수집 이후)에서 생긴 신규·이탈 수, 최근 30일의 신규·이탈 수이며, 칸을 누르면 그 거래소만 보입니다. 기간은 마지막 목록 수집일을 기준으로 셉니다. 목록 수집이 실패한 날은 기록하지 않고, 한 거래소의 상장 수가 갑자기 크게 줄면 수집 오류로 보고 이탈을 바로 적지 않습니다.</p>
+        </section>
+        <section class="wide">
+          <h3>12. 주요 일정 줄과 맨 아랫줄</h3>
+          <p>탭 줄 바로 아래의 한 줄은 세 칸입니다. <b>휴장</b>은 오늘(뉴욕 날짜)부터 7일 안의 뉴욕증권거래소 휴장일과 조기 폐장 시각입니다. <b>주요 일정</b>은 지난 밤 발표된 경제 일정으로, 중요도가 가장 높고 발표값이 있는 항목 넷을 먼저 보이고 나머지는 '외 N건'으로 펼칩니다. 발표값 뒤의 ▲·▼·= 는 예상보다 높았는지, 낮았는지, 같았는지를 뜻하고, 항목에 마우스를 올리면 전체 이름, 발표 시각(한국 시각), 이전 값이 보입니다. 이 칸은 아침 빌드와 저녁 실행 때 받으므로, 아침 빌드가 그날 기록을 놓치면 저녁 실행에서 채워집니다. 기록이 7일보다 오래되면 싣지 않습니다. <b>다음 실적</b>은 이 보드 ETF 상위 10 종목의 다음 실적일 가운데 가까운 셋이고, 티커를 누르면 명령줄에서 그 티커를 검색한 것과 같습니다(그 종목을 상위 10개에 담은 ETF 를 보여 줌). 직전 실적 발표 뒤 30일 안에 잡힌 날짜는 일정 자료의 오류로 보고 뺍니다. 세 칸이 모두 비면 줄이 보이지 않습니다.</p>
+          <p>맨 아랫줄 왼쪽은 업데이트 시각입니다. 예약은 뉴욕 시각으로 정해져 있어서(아침 빌드 월~금 20:05 ET, 저녁 실행 월~금 05:05 ET), 한국 시각은 미국 서머타임 동안 한 시간씩 이릅니다(겨울 화~토 오전 10:05 · 월~금 오후 7:05, 여름 화~토 오전 9:05 · 월~금 오후 6:05). <b>최근 반영</b>은 두 실행이 마지막으로 이 페이지를 만든 시각이고, 늦은 쪽이 지금 보고 있는 화면입니다. 예약 시각보다 늦은 것은 수집과 계산에 걸리는 시간 때문입니다. 한국 시각으로 일요일 종일, 월요일 오전, 토요일 오후에는 업데이트가 없고, 뉴욕 휴장일에는 실행은 되지만 종가가 바뀌지 않습니다. 종가·구성종목·상장 목록의 기준일, 빌드 시각, 신호 규칙은 이 칸에 마우스를 올리면 보입니다.</p>
         </section>
       </div>
     </section>
   </div>
 
   <footer class="status">
-    <span><b>SRM</b> 섹터 전환 터미널 · 종가 __PRICE_ASOF__(__PRICE_SOURCE__, __PRICE_DAYS__거래일) · 구성종목 __HOLD_ASOF__ · 상장 목록 __LIST_ASOF__ · 빌드 __BUILT_AT__ · 신호 규칙: 52주 상대 신고가, 비율선 50·200일선 돌파(최근 5일), 백분위 ±30 급변</span>
+    <span class="upd" id="upd" title="SRM 섹터 전환 터미널 · 종가 __PRICE_ASOF__(__PRICE_SOURCE__, __PRICE_DAYS__거래일) · 구성종목 __HOLD_ASOF__ · 상장 목록 __LIST_ASOF__ · 빌드 __BUILT_AT__ · 신호 규칙: 52주 상대 신고가, 비율선 50·200일선 돌파(최근 5일), 백분위 ±30 급변"><b>업데이트</b> 화~토 오전 · 월~금 오후 · <b>쉬는 때</b> 일요일 종일 · 월요일 오전 · 토요일 오후</span>
     <span><span class="hint">←/→ 이전·다음 ETF · ESC 닫기</span><span class="clk" id="clock"></span></span>
   </footer>
 </div>
@@ -3213,10 +3240,10 @@ document.addEventListener('keydown', ev => {
 });
 
 /* ---- 상태 표시줄 시계: KST와 뉴욕 시간, 정규장 개장 여부(휴장일 미반영) ---- */
-function tzParts(tz) {
+function tzParts(tz, at) {
   const p = {};
   new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', weekday: 'short', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })
-    .formatToParts(new Date()).forEach(x => { p[x.type] = x.value; });
+    .formatToParts(at || new Date()).forEach(x => { p[x.type] = x.value; });
   return p;
 }
 function tick() {
@@ -3229,6 +3256,102 @@ function tick() {
     const top = document.getElementById('clockTop'); if (top) top.textContent = `${k.month}/${k.day} ${k.hour}:${k.minute}:${k.second} KST · NY ${n.hour}:${n.minute}`;
   } catch (e) { document.getElementById('clock').textContent = ''; }
 }
+
+/* ---- 맨 아랫줄 왼쪽: 업데이트 예약 시각 · 최근 반영 · 쉬는 때 ----
+   예약은 뉴욕 시각으로 정해져 있다(아침 빌드 월~금 20:05 ET → 한국 화~토 오전, 저녁 실행 월~금 05:05 ET → 한국 월~금 오후).
+   한국 시각은 미국 서머타임에 따라 한 시간 달라지므로, 다음 평일(뉴욕 날짜)의 예약 시각을 한국 시각으로 바꿔 적는다(겨울 10:05·19:05, 여름 09:05·18:05).
+   최근 반영은 아침 빌드와 저녁 실행이 마지막으로 이 페이지를 만든 시각이다(빌드가 output/build-times.json 에 남김). 둘 가운데 늦은 쪽이 지금 보는 화면이라 밝게 쓴다.
+   한국 시각으로 일요일 종일, 월요일 오전(뉴욕 일요일 밤), 토요일 오후(뉴욕 토요일 새벽)에는 예약이 없다 */
+const UPD = __UPD__;
+const updP2 = n => String(n).padStart(2, '0');
+const updApm = (h, m, s) => `${h < 12 ? '오전' : '오후'} ${updP2(h % 12 || 12)}:${updP2(m)}:${updP2(s || 0)}`;
+/* 뉴욕 벽시계 날짜 ymd 의 hh:mm 이 가리키는 순간(서머타임이면 UTC−4, 아니면 UTC−5 가운데 맞는 쪽) */
+function nyWall(ymd, hh, mm) {
+  const [y, m, d] = ymd.split('-').map(Number);
+  for (const off of [4, 5]) { const t = new Date(Date.UTC(y, m - 1, d, hh + off, mm)); const p = tzParts('America/New_York', t); if (+p.hour === hh && +p.minute === mm) return t; }
+  return new Date(Date.UTC(y, m - 1, d, hh + 5, mm));
+}
+const kstApm = t => { const p = tzParts('Asia/Seoul', t); return updApm(+p.hour, +p.minute, +p.second); };
+function updLine() {
+  const box = document.getElementById('upd'); if (!box) return;
+  try {
+    let d = nyToday();
+    while ([0, 6].includes(dUTC(d).getUTCDay())) { const t = dUTC(d); t.setUTCDate(t.getUTCDate() + 1); d = t.toISOString().slice(0, 10); }
+    const slots = [['morning', '아침 빌드(종가·장후 가격)'], ['evening', '저녁 실행(장전 가격)']].filter(([k]) => UPD && UPD[k] && UPD[k].at)
+      .map(([k, lab]) => ({ lab, t: new Date(UPD[k].at), asof: UPD[k].asof })).filter(s => !isNaN(s.t));
+    const newest = slots.reduce((a, s) => !a || s.t > a.t ? s : a, null);
+    const last = slots.map(s => { const p = tzParts('Asia/Seoul', s.t);
+      return `<span class="lt${s === newest ? ' now' : ''}" title="${cbEsc(`${s.lab}${s.asof ? ` · 종가 ${s.asof}` : ''}${s === newest ? ' · 지금 보는 화면' : ''}`)}">${+p.month}/${+p.day} ${updApm(+p.hour, +p.minute, +p.second)}</span>`; });
+    const g = (...xs) => xs.map(x => `<span class="ug">${x}</span>`).join(' · ');
+    box.innerHTML = g(`<b>업데이트</b> 화~토 ${kstApm(nyWall(d, 20, 5))}`, `월~금 ${kstApm(nyWall(d, 5, 5))}`,
+      ...last.map((x, i) => i ? x : `<b>최근 반영</b> ${x}`), '<b>쉬는 때</b> 일요일 종일', '월요일 오전', '토요일 오후');
+  } catch (e) { /* 시간대를 계산하지 못하는 브라우저는 템플릿의 글을 그대로 둔다 */ }
+}
+
+/* ---- 주요 일정 한 줄(탭 줄 아래, 모든 탭) ----
+   휴장: 오늘(뉴욕 날짜)부터 7일 안의 뉴욕증권거래소 휴장일과 조기 폐장(data/market_holidays.json).
+   주요 일정: 지난 밤 발표된 경제 일정(output/key-calendar.json, 화면 사진에서 읽은 일정). 중요도 별 3개이면서 발표값이 있는 항목 넷을 먼저 보이고,
+     나머지는 '외 N건'으로 편다. 이름 앞의 'N월'은 줄이고(마우스를 올리면 전체 이름, 한국 시각, 이전 값), 예상과 견준 방향을 ▲·▼·= 로 붙인다.
+     기록이 7일보다 오래되었으면 싣지 않는다.
+   다음 실적: 이 보드 ETF 상위 10 종목의 다음 실적일 가운데 가까운 셋. 직전 실적 뒤 30일 안에 잡힌 날짜는 일정 자료의 오류로 보고 뺀다.
+     티커를 누르면 명령줄에 그 티커를 넣은 것과 같다 */
+const KCAL = __KCAL__;
+const SCHED = { open: false };
+const KDIR = { up: ['▲', '예상보다 높음'], down: ['▼', '예상보다 낮음'], same: ['=', '예상과 같음'] };
+const TIMING_S = { bmo: '개장 전', dmh: '장중', amc: '장후' };
+const schedDay = (iso, n) => { const t = dUTC(iso); t.setUTCDate(t.getUTCDate() + n); return t.toISOString().slice(0, 10); };
+const schedMdW = iso => `${cbMd(iso)} (${KWD[dUTC(iso).getUTCDay()]})`;
+function schedHTML() {
+  const today = nyToday(), out = [];
+  const hol = [];
+  for (let i = 0; i < 8; i++) {
+    const d = schedDay(today, i), wd = dUTC(d).getUTCDay(); if (wd === 0 || wd === 6) continue;
+    if (NYSE_HOL.has(d)) hol.push(`<b>${schedMdW(d)}</b> 뉴욕 휴장`);
+    else if (NYSE_EARLY[d]) hol.push(`<b>${schedMdW(d)}</b> ${cbEsc(NYSE_EARLY[d])} ET 조기 폐장`);
+  }
+  if (hol.length) out.push(`<span><span class="k">휴장</span>${hol.join(' · ')}</span>`);
+  if (KCAL && (KCAL.items || []).length && dayDiff(KCAL.date, today) <= 7) {
+    const all = KCAL.items.map(r => ({ tm: r[0], co: r[1], nm: String(r[2] || ''), st: +r[3] || 0, ac: r[4], dir: r[5], fc: r[6], pv: r[7] }));
+    let top = all.filter(c => c.ac && c.st >= 3).slice(0, 4);
+    if (!top.length) top = all.filter(c => c.ac).slice(0, 4);
+    if (!top.length) top = all.slice(0, 4);
+    const shown = SCHED.open ? all : top, rest = all.length - top.length;
+    const item = c => {
+      const dm = KDIR[c.dir], tip = [c.nm, c.tm ? `${c.tm} KST` : '', c.pv ? `이전 ${c.pv}` : '', dm ? dm[1] : ''].filter(Boolean).join(' · ');
+      return `<span class="ci" title="${cbEsc(tip)}">${c.co && c.co !== '미국' ? cbEsc(c.co) + ' ' : ''}${cbEsc(c.nm.replace(/^\d{1,2}월\s*/, ''))}${c.ac ? ` <b>${cbEsc(c.ac)}</b>` : ''}${dm ? `<em>${dm[0]}</em>` : ''}${c.fc ? `<i>예상 ${cbEsc(c.fc)}</i>` : ''}</span>`;
+    };
+    out.push(`<span class="cg"><span class="k">주요 일정</span><span class="mu">${schedMdW(KCAL.date)} 발표</span> ${shown.map(item).join(' <span class="sep">·</span> ')}`
+      + `${rest > 0 ? `<button type="button" class="more" data-sched="more" aria-expanded="${SCHED.open}">${SCHED.open ? '접기' : `외 ${rest}건`}</button>` : ''}</span>`);
+  }
+  const seen = new Set(), nx = [];
+  Object.values((NEWS && NEWS.etf) || {}).forEach(E => (E.nx || []).forEach(x => {
+    const s = String(x[0] || '').toUpperCase(), d = x[1];
+    if (!s || !d || d < today || seen.has(s)) return;
+    seen.add(s);
+    const st = nS(s), last = st && st.e && st.e[0] && st.e[0][0];
+    if (last && dayDiff(last, d) >= 0 && dayDiff(last, d) < 30) return;
+    nx.push([s, d, x[2] || '']);
+  }));
+  nx.sort((a, b) => a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : a[0] < b[0] ? -1 : 1);
+  if (nx.length) {
+    const tm = x => TIMING_S[x[2]] ? ' ' + TIMING_S[x[2]] : '';
+    const near = nx.filter(x => dayDiff(today, x[1]) <= 21).map(x => `${x[0]} ${cbMd(x[1])}${tm(x)}`).join(' · ');
+    out.push(`<span${near ? ` title="${cbEsc('21일 안: ' + near)}"` : ''}><span class="k">다음 실적</span>`
+      + nx.slice(0, 3).map(x => `<button type="button" class="nxs" data-sym="${cbEsc(x[0])}" title="${cbEsc(`${x[0]} 검색 · 실적 ${x[1]}${TIMING[x[2]] ? ' ' + TIMING[x[2]] : ''} · ${dday(x[1])}`)}">${cbEsc(x[0])}</button> ${cbMd(x[1])}${tm(x)}`).join(' · ') + '</span>');
+  }
+  return out.join('');
+}
+function renderSched() {
+  const box = document.getElementById('sched'); if (!box) return;
+  let h = '';
+  try { h = schedHTML(); } catch (e) { h = ''; }
+  box.innerHTML = h; box.hidden = !h;
+}
+document.getElementById('sched').addEventListener('click', ev => {
+  const m = ev.target.closest('[data-sched="more"]');
+  if (m) { SCHED.open = !SCHED.open; renderSched(); const b = document.querySelector('#sched [data-sched="more"]'); if (b) b.focus(); return; }
+  const s = ev.target.closest('[data-sym]'); if (s) runCmd(s.dataset.sym);
+});
 
 /* ---- 대문: 해시 없이 들어왔고 건너뛰기를 켜지 않았을 때만 보드 위에 덮인다. 배경은 뒤에 그려진 보드 자체 ---- */
 const cover = document.getElementById('cover'), termRoot = document.querySelector('.term');
@@ -3399,4 +3522,6 @@ else if (location.hash === '#log') showTab(6);
   if (h === '#cover' || (!h && !skip)) showCover();
 })();
 tick(); setInterval(tick, 1000);
+updLine(); renderSched();
+setInterval(() => { updLine(); renderSched(); }, 10 * 60 * 1000);   // 열어 둔 채로 날짜가 바뀌면 휴장 7일 창과 다음 실적을 다시 고른다
 </script>
