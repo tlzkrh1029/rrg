@@ -16,6 +16,8 @@
                                    8일 안에 쓴 종목 요약만 페이지의 claudeNotes 자리에 넣고, 둘 다 없으면 null 로 둔다(아티팩트 예약 작업이 채울 수 있게).
   output/kicks.json                킥(terminal/compute_kicks.py): 주마다 그 주를 결정한 하루와 규칙으로 찾은 원인. 종가 기준일이 다르면 킥 없이 만든다.
   output/kick-notes.json           Claude 가 웹 검색으로 찾은 킥의 원인(terminal/claude_notes.py). 규칙 원인보다 앞서고, '찾지 못함'은 규칙 원인이 없을 때만 쓴다.
+  output/key-calendar.json         탭 줄 아래 '주요 일정' 한 줄의 지난 밤 발표 일정(terminal/fetch_key_calendar.py). 없으면 그 칸 없이 만든다.
+  output/build-times.json          맨 아랫줄 '최근 반영'의 아침 빌드·저녁 실행 시각. --run 을 주면 이번 실행의 칸을 이번 시각으로 고쳐 쓴다.
   terminal/template.html           토큰이 든 HTML 템플릿
 
 출력 (docs/)
@@ -108,9 +110,44 @@ def load_holidays(path):
         return {"krx": [], "nyse": [], "nyse_early": {}}
 
 
-def built_at_kst():
-    now = dt.datetime.now(dt.timezone(dt.timedelta(hours=9)))
+def built_at_kst(now=None):
+    now = now or dt.datetime.now(dt.timezone(dt.timedelta(hours=9)))
     return now.strftime("%Y-%m-%d %H:%M KST")
+
+
+def load_key_calendar(path):
+    """output/key-calendar.json(terminal/fetch_key_calendar.py)에서 날짜와 [시각, 나라, 이름, 별, 발표값, 방향, 예상, 이전] 항목만 꺼낸다.
+    파일이 없거나 모양이 다르면 None(페이지는 '주요 일정' 칸 없이 만든다)."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            k = json.load(f)
+    except (OSError, ValueError):
+        return None
+    if not isinstance(k, dict) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(k.get("date") or "")):
+        return None
+    items = [[x if isinstance(x, (str, int)) else "" for x in it] for it in (k.get("items") or []) if isinstance(it, list) and len(it) == 8]
+    return {"date": k["date"], "items": items} if items else None
+
+
+def build_times(path, run, asof, now):
+    """맨 아랫줄 '최근 반영'에 쓸 아침 빌드·저녁 실행 시각. run 이 morning·evening 이면 그 칸을 이번 시각으로 바꾼 값을 돌려준다
+    (파일은 페이지를 다 쓴 뒤 save_build_times 가 쓴다). 칸마다 {at: ISO 시각(한국 시각, 초까지), asof: 종가 기준일}."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            t = json.load(f)
+    except (OSError, ValueError):
+        t = {}
+    out = {k: {"at": str(v["at"]), "asof": str(v.get("asof") or "")} for k, v in (t.items() if isinstance(t, dict) else [])
+           if k in ("morning", "evening") and isinstance(v, dict) and v.get("at")}
+    if run in ("morning", "evening"):
+        out[run] = {"at": now.isoformat(timespec="seconds"), "asof": asof}
+    return out
+
+
+def save_build_times(path, times):
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(times, f, ensure_ascii=False, indent=1)
 
 
 def phase(r, m):
@@ -775,6 +812,10 @@ def main():
     ap.add_argument("--docs", default=os.path.join(ROOT, "docs"))
     ap.add_argument("--breakout-artifact", default=BREAKOUT_ARTIFACT, help="아티팩트 본문의 4) 돌파 지도 탭이 열 주소")
     ap.add_argument("--stocks", default=None, help="종목 상세용 돌파 지도 계산 결과(breakout-data.json). 기본은 output/breakout-data.json 과 docs/breakout/data/breakout-data.json 가운데 종가 기준일이 새 것")
+    ap.add_argument("--key-calendar", default=os.path.join(ROOT, "output", "key-calendar.json"), help="탭 줄 아래 '주요 일정'의 지난 밤 발표 일정(terminal/fetch_key_calendar.py)")
+    ap.add_argument("--build-times", default=os.path.join(ROOT, "output", "build-times.json"), help="맨 아랫줄 '최근 반영'의 아침 빌드·저녁 실행 시각")
+    ap.add_argument("--run", choices=["morning", "evening"], default=None,
+                    help="워크플로의 아침 빌드·저녁 실행이 준다. 주면 --build-times 의 그 칸을 이번 빌드 시각으로 고쳐 쓴다(로컬 빌드는 주지 않는다)")
     args = ap.parse_args()
 
     cur = json.load(open(args.data, encoding="utf-8"))
@@ -864,7 +905,10 @@ def main():
     listlog = load_listing_log(args.listing_log, hold, set(cur["etfs"]))
     src = "·".join(cur.get("source") or ["yahoo"])
     src_ko = {"yahoo": "야후 파이낸스", "stooq": "Stooq"}.get(src, src)
-    built = built_at_kst()
+    now_kst = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).replace(microsecond=0)
+    built = built_at_kst(now_kst)
+    times = build_times(args.build_times, args.run, cur["asof"], now_kst)
+    kcal = load_key_calendar(args.key_calendar)
     tokens = {
         "__HOLD__": json.dumps(hold, ensure_ascii=False, separators=(",", ":")),
         "__DATA__": json.dumps(data_slim, ensure_ascii=False, separators=(",", ":")),
@@ -898,6 +942,10 @@ def main():
         # Drivers 달력의 휴장일 빨간 점과 조기 폐장 시각. 파일이 없거나 깨졌으면 빈 목록
         "__MKT_HOL__": json.dumps(load_holidays(args.holidays), ensure_ascii=False, separators=(",", ":")),
         "__BUILT_AT__": built,
+        # 맨 아랫줄 '최근 반영': 아침 빌드·저녁 실행이 마지막으로 페이지를 만든 시각. 없으면 빈 객체
+        "__UPD__": json.dumps(times, ensure_ascii=False, separators=(",", ":")),
+        # 탭 줄 아래 '주요 일정'의 지난 밤 발표 일정. 화면 사진에서 읽은 바깥 글이라 '<' 를 < 로 적는다. 없으면 null
+        "__KCAL__": json.dumps(kcal, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
     }
     tmpl = open(args.template, encoding="utf-8").read()
     for k in tokens:
@@ -933,6 +981,8 @@ def main():
     with open(os.path.join(args.docs, "data", "night.txt"), "w", encoding="utf-8") as f:
         f.write(night)
     open(os.path.join(args.docs, ".nojekyll"), "a").close()
+    if args.run:
+        save_build_times(args.build_times, times)   # 페이지를 다 쓴 뒤에만 이번 시각을 남긴다(중간에 실패한 실행은 '최근 반영'에 들지 않는다)
     print(f"built docs/ for {cur['asof']} · holdings {hold_asof} (prev {hold_prev}) · lists {list_asof} ({counts['b']}/{counts['f']}/{counts['h']}) · alerts {len(alerts)}"
           + (f" · stock details {len(stocks_tok['stocks'])} (asof {stocks_tok['asof']}, {os.path.relpath(stocks_src, ROOT)})" if stocks_tok else " · stock details none")
           + (f" · contribution {len(contrib['funds'])} funds" if contrib else " · contribution none")
@@ -942,6 +992,8 @@ def main():
           + (f" · Claude notes {len(claude['etfs'])} ETFs, {len(claude.get('stocks', {}))} stocks" if claude else " · Claude notes none")
           + (f" · kicks {len(kicks['etf'])} ETFs, {sum(1 for v in kicks['n'].values() if v.get('k'))} causes" if kicks else " · kicks none")
           + (f" · after-hours {sum(1 for v in xh['s'].values() if v[1] is not None)}, pre-market {sum(1 for v in xh['s'].values() if v[3] is not None)}" if xh else " · after-hours none")
+          + (f" · key calendar {kcal['date']} ({len(kcal['items'])})" if kcal else " · key calendar none")
+          + ((" · updated " + ", ".join(k + " " + v["at"][5:16] for k, v in times.items())) if times else "")
           + (" · alerts kept from the first build of this close" if kept else ""))
 
 
