@@ -58,6 +58,21 @@ b{font-weight:700}
 .tabs [role="tab"]:hover{color:#fff}
 .tabs [role="tab"][aria-selected="true"]{color:#fff;border-bottom-color:var(--amber);background:var(--band)}
 .tabs a[role="tab"]{text-decoration:none;display:inline-block;line-height:normal} .tabs a[role="tab"] small{color:var(--muted);font-size:10px;margin-left:4px;letter-spacing:.06em}
+/* 7) 오선 하루 지도: 본인만 열 수 있는 Claude 아티팩트로 가는 탭. 연결 링크를 저장한 브라우저에서만 보인다(공개 페이지에는 주소를 적지 않는다) */
+.tabs a[role="tab"][hidden]{display:none}
+.dmapset{position:fixed;z-index:90;left:50%;top:96px;transform:translateX(-50%);width:min(560px,calc(100vw - 24px));background:var(--band);border:1px solid var(--line-2);box-shadow:0 10px 30px rgba(0,0,0,.8);padding:10px 12px 12px;font-size:12px;color:var(--ink-2)}
+.dmapset[hidden]{display:none}
+.dmapset h2{margin:0 24px 6px 0;font-size:12px;color:var(--amber);letter-spacing:.06em;font-weight:700}
+.dmapset p{margin:0 0 8px;line-height:1.55}
+.dmapset .r{display:flex;gap:6px}
+.dmapset input{flex:1;min-width:0;background:#000;border:1px solid var(--line-2);color:var(--ink);font:inherit;padding:4px 6px}
+.dmapset input:focus{outline:1px solid var(--amber);outline-offset:0}
+.dmapset button{border:1px solid var(--line-2);color:var(--ink);padding:3px 9px;white-space:nowrap;background:none;font:inherit;cursor:pointer}
+.dmapset button:hover{background:var(--band-2)}
+.dmapset button.ok{background:var(--amber);color:#000;border-color:var(--amber);font-weight:700}
+.dmapset button.x{position:absolute;right:6px;top:4px;border:0;color:var(--muted);font-size:15px;padding:0 6px}
+.dmapset .m{min-height:1.4em;margin:6px 0 4px;color:var(--muted)}
+.dmapset .m.err{color:var(--red)}
 .tabinfo{margin-left:auto;color:var(--muted);font-size:11.5px;padding:6px 4px}
 
 /* 패널 배치 */
@@ -1054,6 +1069,7 @@ body.cover-open{overflow:hidden}
     <a role="tab" id="tab5" href="breakout/" target="_self" rel="noopener" title="돌파 지도(BKM)로 이동: 이 보드의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 28개 ETF 의 상위 10개 구성종목"><b>4)</b> 돌파 지도<small>BKM</small></a>
     <button type="button" role="tab" id="tab6" aria-selected="false" aria-controls="pane6"><b>5)</b> 상장 로그</button>
     <button type="button" role="tab" id="tab2" aria-selected="false" aria-controls="pane2"><b>6)</b> 도움말</button>
+    <a role="tab" id="tab7" href="#" hidden title="오선 하루 지도(DMAP)를 새 창으로 엽니다. 본인만 열 수 있는 Claude 아티팩트이고, 연결 링크는 이 브라우저에만 저장되어 있습니다"><b>7)</b> 오선 하루 지도<small>DMAP ↗</small></a>
     <span class="tabinfo">관찰 대상 24 ETF (섹터 11 · 산업·테마 12 · 스타일 1) · SPY 대비 상대수익률 백분위 · 종가 2026-11-25 · 구성종목 2026-11-26</span>
   </div>
 
@@ -1347,6 +1363,7 @@ https://tlzkrh1029.github.io/rrg/#board</pre></details>
               <tr><td>1W · 1M · 3M · 6M · 12M</td><td>그 기간 열의 백분위가 높은 순으로 정렬합니다. 뒤에 ASC를 붙이면 낮은 순입니다(예: 3M ASC).</td></tr>
               <tr><td># THEME · COLOR · US · KR</td><td>테마(색 규약)를 바꾸거나 지정합니다. 매트릭스 머리의 # 테마 변경 단추와 같습니다.</td></tr>
               <tr><td>1 MATRIX · 2 BRIEF · 3 RRG · 5 LOG · 6 HELP</td><td>매트릭스, 주간 브리핑, RRG 1단·2단, 상장 로그, 도움말 화면을 오갑니다. 4 는 돌파 지도로 이동합니다.</td></tr>
+              <tr><td>7 DMAP · OSUN · 오선 · DMAPSET</td><td>7) 오선 하루 지도(본인만 열 수 있는 Claude 아티팩트)를 새 창으로 엽니다. 이 공개 페이지에는 주소를 적지 않으므로, 이 브라우저에 연결 링크를 저장했을 때만 탭이 보입니다. 연결이 없으면 링크를 붙여 넣는 상자가 열리고, DMAPSET 은 연결을 바꾸거나 지웁니다.</td></tr>
               <tr><td>3 BKM · BREAKOUT · MAP</td><td>돌파 지도(BKM)로 이동합니다. 이 보드의 23개 ETF 에 GDX·GRID·XOP·TAN·JETS 를 더한 28개 ETF 의 상위 10개 구성종목을 칸으로 놓고, 20일·55일·52주·사상 최고 고점 돌파와 저점 이탈을 USD·QQQ 대비·SPY 대비로 보여 줍니다.</td></tr>
               <tr><td>0 COVER</td><td>대문 화면을 다시 엽니다. 대문은 주소에 #rrg·#brief·#log·#board 같은 해시가 없을 때만 처음에 보이고, 대문의 "Skip this door"를 켜면 이 브라우저에서는 건너뜁니다.</td></tr>
               <tr><td>RRG XLK · XLK RRG</td><td>3) 탭을 열고 2단 그래프를 그 섹터 대비로 바꿉니다. 하위 ETF를 적으면 그 상위 섹터의 2단을 열고 그 ETF를 강조하며, MAGS를 적으면 1단에서 MAGS 점을 강조합니다. 3) 탭에서는 1단·2단의 점과 2단 표의 행을 눌러도 탭을 벗어나지 않고 오른쪽 Holdings 패널에 그 ETF의 구성종목이 열립니다.</td></tr>
@@ -2817,6 +2834,64 @@ function placeHold(n) {
 /* 4) 돌파 지도: 같은 저장소의 별도 화면(Pages 에서는 breakout/, 아티팩트에서는 돌파 지도 아티팩트) */
 const BREAKOUT_URL = 'breakout/', NAV_TARGET = '_self';
 function goBreakout() { if (NAV_TARGET === '_blank') window.open(BREAKOUT_URL, '_blank', 'noopener'); else location.href = BREAKOUT_URL; }
+/* 7) 오선 하루 지도: 본인만 열 수 있는 Claude 아티팩트(다른 저장소에서 매일 갱신). 이 페이지는 공개이므로 주소를 적지 않고,
+   이 브라우저(localStorage)에 저장한 연결이 있을 때만 탭을 보인다. 연결은 주소 끝에 #dmap=아티팩트코드 를 붙여 한 번 열거나,
+   명령줄 DMAP(연결이 없을 때)·DMAPSET 으로 여는 상자에 링크를 붙여 넣는다. 주소의 해시(#…)는 서버로 보내지지 않는다 */
+const DMAP_KEY = 'rrg-dmap', DMAP_BASE = 'https://claude.ai/artifact/', DMAP_ID = /^[A-Za-z0-9_-]{10,64}$/;
+function dmapId() { try { const v = localStorage.getItem(DMAP_KEY); return v && DMAP_ID.test(v) ? v : null; } catch (e) { return null; } }
+function dmapSave(id) { try { if (id) localStorage.setItem(DMAP_KEY, id); else localStorage.removeItem(DMAP_KEY); return true; } catch (e) { return false; } }
+function dmapTab() { const t = document.getElementById('tab7'); if (t) t.hidden = !dmapId(); }
+/** 붙여 넣은 글에서 아티팩트 코드만 꺼낸다(링크 전체, claude.ai/artifact/코드, 코드만 모두 받는다) */
+const dmapParse = s => { const m = String(s || '').trim().match(/^(?:https?:\/\/)?(?:claude\.ai\/artifact\/)?([A-Za-z0-9_-]{10,64})\/?(?:[?#]\S*)?$/); return m ? m[1] : null; };
+function goDaymap() {
+  const id = dmapId();
+  if (!id) { dmapSetup(); return; }
+  window.open(DMAP_BASE + id, '_blank', 'noopener');
+  msg('오선 하루 지도(DMAP)를 새 창으로 엽니다', 'ok');
+}
+function dmapSetup() {
+  let box = document.getElementById('dmapSet');
+  if (!box) {
+    box = document.createElement('div'); box.id = 'dmapSet'; box.className = 'dmapset'; box.hidden = true;
+    box.setAttribute('role', 'dialog'); box.setAttribute('aria-labelledby', 'dmapSetT');
+    box.innerHTML = '<button type="button" class="x" aria-label="닫기">×</button><h2 id="dmapSetT">7) 오선 하루 지도 연결</h2>'
+      + '<p>오선 하루 지도는 본인만 열 수 있는 Claude 아티팩트입니다. 이 페이지는 누구나 볼 수 있어서 주소를 적어 두지 않습니다. 아티팩트 링크를 한 번 붙여 넣으면 이 브라우저에만 저장되고, 탭 줄에 7) 오선 하루 지도가 나타납니다.</p>'
+      + '<div class="r"><input type="text" id="dmapIn" placeholder="https://claude.ai/artifact/…" spellcheck="false" autocomplete="off" aria-label="아티팩트 링크"><button type="button" class="ok" id="dmapOk">저장하고 열기</button></div>'
+      + '<p class="m" id="dmapMsg" aria-live="polite"></p><div class="r"><button type="button" id="dmapDel">이 브라우저의 연결 지우기</button></div>';
+    document.body.appendChild(box);
+    const inp = box.querySelector('#dmapIn'), del = box.querySelector('#dmapDel');
+    const say = (t, err) => { const m = box.querySelector('#dmapMsg'); m.textContent = t; m.className = 'm' + (err ? ' err' : ''); };
+    const close = () => { box.hidden = true; cmd.focus(); };
+    const save = () => {
+      const id = dmapParse(inp.value);
+      if (!id) { say('claude.ai/artifact/ 로 시작하는 링크를 붙여 넣어 주세요.', true); return; }
+      if (!dmapSave(id)) { say('이 브라우저는 저장 공간을 쓸 수 없게 되어 있어서 연결을 저장하지 못했습니다.', true); return; }
+      dmapTab(); box.hidden = true;
+      window.open(DMAP_BASE + id, '_blank', 'noopener');
+      msg('오선 하루 지도를 연결했습니다 · 7) 탭이나 명령 7 · DMAP 으로 엽니다', 'ok');
+    };
+    box.querySelector('#dmapOk').addEventListener('click', save);
+    box.querySelector('.x').addEventListener('click', close);
+    del.addEventListener('click', () => { dmapSave(null); dmapTab(); inp.value = ''; del.hidden = true; say('이 브라우저의 연결을 지웠습니다. 탭 줄의 7) 도 사라졌습니다.'); });
+    box.addEventListener('keydown', ev => {
+      if (ev.key === 'Escape') { ev.preventDefault(); ev.stopPropagation(); close(); }
+      else if (ev.key === 'Enter' && ev.target === inp) { ev.preventDefault(); save(); }
+    });
+  }
+  const id = dmapId(), inp = box.querySelector('#dmapIn');
+  inp.value = id ? DMAP_BASE + id : ''; box.querySelector('#dmapDel').hidden = !id; box.querySelector('#dmapMsg').textContent = '';
+  box.hidden = false;
+  setTimeout(() => { inp.focus(); inp.select(); }, 0);
+}
+/* 연결 링크(#dmap=코드)로 열었을 때: 이 브라우저에 저장하고, 주소창에서는 지운 뒤 보드를 바로 연다(#board) */
+(function () {
+  const m = location.hash.match(/^#dmap=([A-Za-z0-9_-]{10,64})$/);
+  if (m && dmapSave(m[1])) {
+    history.replaceState(null, '', location.pathname + location.search + '#board');
+    setTimeout(() => msg('오선 하루 지도를 이 브라우저에 연결했습니다 · 탭 줄의 7) 로 엽니다', 'ok'), 0);
+  }
+  dmapTab();
+})();
 function showTab(n) {
   curTab = n;
   [1, 2, 3, 4, 6].forEach(k => {
@@ -3008,6 +3083,7 @@ document.getElementById('tab2').addEventListener('click', () => showTab(2));
 document.getElementById('tab3').addEventListener('click', () => showTab(3));
 document.getElementById('tab4').addEventListener('click', () => showTab(4));
 document.getElementById('tab6').addEventListener('click', () => showTab(6));
+document.getElementById('tab7').addEventListener('click', ev => { ev.preventDefault(); goDaymap(); });
 /* 1W·1M, USD·SPY 대비를 바꾸면 같은 종목은 바뀐 순위 자리로 움직이고, 새로 들어온 종목은 한 번 밝아진다 */
 document.querySelectorAll('[data-drb]').forEach(b => b.addEventListener('click', () => { DR.basis = b.dataset.drb; flipKeyed(document.getElementById('drvBody'), 'tr[data-k]', renderDrivers); }));
 document.querySelectorAll('[data-drp]').forEach(b => b.addEventListener('click', () => { DR.period = b.dataset.drp; flipKeyed(document.getElementById('drvBody'), 'tr[data-k]', renderDrivers); }));
@@ -3155,7 +3231,8 @@ function runCmd(raw0) {
     '3': () => showTab(3), 'RRG': () => showTab(3), '41': () => showTab(3), '42': () => showTab(1),
     '4': () => goBreakout(), 'BKM': () => goBreakout(), 'BREAKOUT': () => goBreakout(), 'MAP': () => goBreakout(),
     '5': () => showTab(6), 'LOG': () => showTab(6), 'LISTING': () => showTab(6),
-    '6': () => showTab(2), '7': () => showTab(2), 'HELP': () => showTab(2), '98': () => showTab(2),   /* 7 은 도움말이 7) 이던 때의 번호 */
+    '6': () => showTab(2), 'HELP': () => showTab(2), '98': () => showTab(2),
+    '7': () => goDaymap(), 'DMAP': () => goDaymap(), 'OSUN': () => goDaymap(), '오선': () => goDaymap(), 'DMAPSET': () => dmapSetup(),   /* 7 은 예전 도움말 번호였는데 7) 오선 하루 지도로 바꿨다 */
     '0': () => showCover(), 'COVER': () => showCover(), 'DOOR': () => showCover(),
     '11': () => setCat('all'), 'ALL': () => setCat('all'),
     '12': () => setCat('sec'), 'SEC': () => setCat('sec'), 'SECT': () => setCat('sec'),
@@ -3166,12 +3243,12 @@ function runCmd(raw0) {
     '#': () => setConv(conv === 'US' ? 'KR' : 'US'), 'THEME': () => setConv(conv === 'US' ? 'KR' : 'US'), '97': () => setConv(conv === 'US' ? 'KR' : 'US'), 'COLOR': () => setConv(conv === 'US' ? 'KR' : 'US'), 'CONV': () => setConv(conv === 'US' ? 'KR' : 'US'),
     'US': () => setConv('US'), 'KR': () => setConv('KR'),
   };
-  const labels = { '1': '매트릭스 화면', 'MATRIX': '매트릭스 화면', 'MAIN': '매트릭스 화면', '5': '상장 로그 화면', 'LOG': '상장 로그 화면', 'LISTING': '상장 로그 화면', '6': '도움말 화면', '7': '도움말 화면', 'HELP': '도움말 화면', '98': '도움말 화면',
+  const labels = { '1': '매트릭스 화면', 'MATRIX': '매트릭스 화면', 'MAIN': '매트릭스 화면', '5': '상장 로그 화면', 'LOG': '상장 로그 화면', 'LISTING': '상장 로그 화면', '6': '도움말 화면', 'HELP': '도움말 화면', '98': '도움말 화면',
     '3': 'RRG 1단·2단 화면', 'RRG': 'RRG 1단·2단 화면', '41': 'RRG 1단·2단 화면', '42': '매트릭스 화면', '2': '주간 브리핑 화면', 'BRIEF': '주간 브리핑 화면', '4': '돌파 지도(BKM)로 이동', 'BKM': '돌파 지도(BKM)로 이동', 'BREAKOUT': '돌파 지도(BKM)로 이동', 'MAP': '돌파 지도(BKM)로 이동',
     '11': '필터 → 전체 24', 'ALL': '필터 → 전체 24', '12': '필터 → 섹터 11', 'SEC': '필터 → 섹터 11', 'SECT': '필터 → 섹터 11',
     '13': '필터 → 산업·테마 12', 'IND': '필터 → 산업·테마 12', 'THM': '필터 → 산업·테마 12', '14': '필터 → 스타일 1', 'STY': '필터 → 스타일 1', 'STYLE': '필터 → 스타일 1',
     '21': '정렬 → 열 기준', 'COL': '정렬 → 열 기준', '22': '정렬 → 전환순', 'SHIFT': '정렬 → 전환순' };
-  if (table[c]) { if (!/^(#|97|THEME|COLOR|CONV|US|KR|2|3|4|5|6|7|LOG|LISTING|HELP|RRG|BRIEF|BKM|BREAKOUT|MAP|98|41|42|0|COVER|DOOR)$/.test(c)) showTab(1); table[c](); if (labels[c]) msg(labels[c], 'ok'); return; }
+  if (table[c]) { if (!/^(#|97|THEME|COLOR|CONV|US|KR|2|3|4|5|6|7|LOG|LISTING|HELP|RRG|BRIEF|BKM|BREAKOUT|MAP|DMAP|OSUN|오선|DMAPSET|98|41|42|0|COVER|DOOR)$/.test(c)) showTab(1); table[c](); if (labels[c]) msg(labels[c], 'ok'); return; }
   /* 명령이 아니면 종목 검색: 상위 10개 구성종목(티커·코드·한글 별칭·영문 이름) → ETF 한글 이름 */
   const raw = raw0.trim().replace(/\s+/g, ' ');
   const st = findStock(c);
