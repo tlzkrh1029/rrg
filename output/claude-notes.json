@@ -1,126 +1,91 @@
 {
- "asof": "2026-11-24",
- "at": "11/25 10:19 KST",
+ "asof": "2026-11-25",
+ "at": "11/26 10:19 KST",
  "etfs": {
   "XLP": {
    "text": [
-    "월마트는 11/19 3분기 실적에서 미국 이커머스 매출이 23% 늘었다고 밝히고 연간 매출·영업이익 전망을 두 번째로 올렸습니다. 타깃도 11/18 3분기 동일점포 매출이 5.6% 늘었다고 발표하며 연간 전망을 상향했고, AI 관련주가 흔들리던 시기에 실적이 받쳐 주는 소비재로 자금이 옮겨 간 것으로 보도됐습니다."
+    "10월 들어 AI 데이터센터 투자 수익성에 의문이 커지면서 자금이 기술주에서 방어적인 필수소비재로 옮겨 갔고, MSCI 글로벌 필수소비재 지수는 10월에 1998년 이후 가장 큰 월간 상승을 기록했습니다.",
+    "Citi가 미국과 글로벌 기술주 투자의견을 중립으로 내리고 방어주의 상대 강세가 이어질 것으로 본 점도 이 흐름에 힘을 보탰습니다."
    ],
    "src": [
     {
-     "t": "Walmart 3분기 보도(Finviz)",
-     "u": "https://finviz.com/news/425226/walmart-raises-fy2027-forecast-as-third-quarter-revenue-climbs-52-to-1888-billion"
-    },
-    {
-     "t": "Supermarket News",
-     "u": "https://www.supermarketnews.com/finance/walmart-raises-full-year-outlook-after-strong-third-quarter-sales-ecommerce-growth"
-    },
-    {
-     "t": "Target 3분기 실적",
-     "u": "https://corporate.target.com/news-features/article/2026/11/q3-2026-earnings"
+     "t": "European Business Magazine",
+     "u": "https://europeanbusinessmagazine.com/?p=146249"
     }
    ],
-   "kick": "월마트·타깃 가이던스 상향"
+   "kick": "AI 기술주 이탈 순환매"
   },
   "XLV": {
    "text": [
-    "Eli Lilly는 10/29 3분기 매출이 39% 늘어난 244억 달러라고 발표하고 연간 매출 전망의 중간값을 55억 달러 올렸습니다. 한편 UnitedHealth는 CMS가 11/16 메디케어 어드밴티지 과다지급 환수 규정안을 내놓은 뒤 11/17에 5.4%, 11/18에 10.2% 하락해 지수의 상승폭을 일부 깎았습니다."
+    "LLY는 10/29 3분기 실적에서 매출이 전년 대비 39% 늘고 연간 매출 전망을 910억~920억 달러로 올려 헬스케어 ETF를 끌어올렸습니다.",
+    "반면 UNH는 11/17에 다른 대형 관리형 건강보험사들과 함께 5.4% 내렸고, 한 시장 논평은 이를 규제 당국의 감시 강화 때문으로 설명했습니다."
    ],
    "src": [
     {
-     "t": "Lilly 3분기 실적(Finviz)",
+     "t": "Finviz 릴리 3분기 실적",
      "u": "https://finviz.com/news/411746/eli-lilly-shares-rise-4-as-q3-earnings-exceed-estimates-and-revenue-outlook-increases"
     },
     {
-     "t": "Trefis, UNH 하락",
+     "t": "Trefis UNH 11/17",
      "u": "https://www.trefis.com/stock/unh/articles/626290/why-is-unitedhealth-stock-falling/2026-11-18"
-    },
-    {
-     "t": "TIKR, UNH 감사 규정",
-     "u": "https://www.tikr.com/blog/unitedhealth-sinks-5-on-medicare-advantage-audit-plan-as-cms-moves-to-crush-medical-fraud"
     }
    ],
    "kick": "릴리 가이던스 상향"
   },
-  "XLY": {
-   "text": [
-    "TJX는 11/18 3분기 매출이 시장 예상을 웃돌았다고 발표하고 연간 동일점포 매출 증가율 전망을 4%로 올렸습니다. 같은 기간 SPY는 AI 관련주 매도로 크게 밀렸고, 홈디포와 로우스도 11/17~11/18에 3분기 실적을 내놓았지만 연료비와 주택시장 부진에 대한 우려가 함께 언급됐습니다."
-   ],
-   "src": [
-    {
-     "t": "FashionUnited, TJX 3분기",
-     "u": "https://fashionunited.com/news/business/tjx-beats-expectations-in-third-quarter/2026111875834"
-    },
-    {
-     "t": "Mass Market Retailers",
-     "u": "https://massmarketretailers.com/tjx-cos-posts-third-quarter-sales-gains-and-raises-guidance/"
-    },
-    {
-     "t": "InvestingLive",
-     "u": "https://investinglive.com/stocks/macro-signals-from-today-s-earnings-target-tjx-and-lowe-s/"
-    }
-   ],
-   "kick": "TJX 전망 상향"
-  },
   "ARKG": {
    "text": [
-    "Illumina는 10/29 실적에서 조정 EPS는 예상을 웃돌았지만 매출이 시장 예상에 못 미쳐 10/30에 18.6% 하락했습니다. Natera는 11/5 3분기 보고에서 주당 손실이 예상보다 커지고 경영진 교체가 알려진 뒤 11/6에 14.6% 떨어졌고, Twist와 10x Genomics도 11/2에 각각 15%, 12% 하락했습니다."
+    "11/2에 TWST가 약 15%, TXG가 약 12% 하락했습니다. 두 종목 모두 회사 소식은 없었고, 비싼 성장주에서 차익 실현과 자금 이탈이 나타난 영향으로 전해졌습니다.",
+    "ILMN은 10/29 3분기 실적에서 매출이 시장 예상을 밑돌아 10/30에 18.6% 하락했고, 이 충격이 유전체 도구 업종 전반의 투자심리를 더 눌렀습니다."
    ],
    "src": [
     {
-     "t": "TIKR, Illumina",
-     "u": "https://www.tikr.com/blog/illumina-sinks-13-on-light-q3-revenue-despite-eps-beat-and-raised-guidance"
-    },
-    {
-     "t": "Trefis, Natera",
-     "u": "https://www.trefis.com/stock/ntra/articles/623713/what-sent-natera-stock-lower/2026-11-07"
-    },
-    {
-     "t": "TIKR, 유전체 종목 하락",
+     "t": "TIKR 유전체주 하락",
      "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
+    },
+    {
+     "t": "StockStory ILMN 실적",
+     "u": "https://stockstory.org/us/stocks/nasdaq/ilmn/news/earnings/illumina-nasdaqilmn-reports-sales-below-analyst-estimates-in-q3-2026-earnings-stock-drops-16percent"
     }
    ],
-   "kick": "진단 업체 실적 부진"
+   "kick": "유전체주 동반 급락"
   },
   "XME": {
    "text": [
-    "광산주는 구리가 11/3에 7주 만의 저점으로 내려가고 금 관련주가 크게 밀리면서 약세를 보였습니다. 대형 광산 50곳의 시가총액이 이란 분쟁 이후 7,120억 달러 줄었다는 집계도 나왔습니다. Materion은 11/4 3분기에 조정 EPS가 예상을 웃돌고 연간 전망을 올렸지만, 금속 가격 연동 효과로 보고 매출이 예상보다 약 7% 적었습니다."
+    "11/5에 AI 관련주 중심으로 나스닥이 5.5% 급락하자 철강주가 시장보다 더 크게 떨어졌고, CLF는 12.2% 하락했습니다. 개별 회사 소식은 없었습니다.",
+    "MTRN은 11/4 3분기 실적에서 연간 전망을 올렸지만 매출이 시장 예상을 밑돌아 17.7% 하락했습니다. 11/16에는 중국 수요 부진과 연준 금리 인상 우려로 금속 가격이 내려 금속·광업주가 다시 약세를 보였습니다."
    ],
    "src": [
     {
-     "t": "Share Talk, 광산 시총 감소",
-     "u": "https://www.share-talk.com/worlds-50-largest-mining-companies-lose-712bn-as-gold-copper-and-lithium-stocks-slump/"
+     "t": "Trefis 철강주 11/5",
+     "u": "https://www.trefis.com/stock/stld/articles/623363/what-sent-steel-dynamics-stock-lower/2026-11-06"
     },
     {
-     "t": "Kalkine, 구리 저점",
-     "u": "https://kalkine.co.uk/news/general-news/how-a-26-basic-resources-rout-set-the-tone-for-the-ftse-100"
-    },
-    {
-     "t": "Materion 3분기 분석(Finviz)",
+     "t": "Finviz Materion 3분기",
      "u": "https://finviz.com/news/415825/materion-beats-and-raises-again-but-a-pass-through-revenue-miss-and-thinner-q3-margins-meet-a-stock-already-down-30-from-its-peak"
+    },
+    {
+     "t": "StockStory 금속주 11/16",
+     "u": "https://stockstory.org/us/stocks/nyse/bvn/news/why-up-down/compania-de-minas-buenaventura-companhia-siderurgica-nacional-axt-materion-and-southern-copper-shares-are-falling-what-you-need-to-know"
     }
    ],
-   "kick": "금속가격 하락·MTRN 실적"
+   "kick": "철강주 동반 급락"
   },
   "DRAM": {
    "text": [
-    "10/29 Sandisk 실적 직후 파트너사 Kioxia가 낸 시장 예상보다 낮은 가이던스와 낸드 가격 급등세가 약해지고 있다는 경고가 알려지며 10/30에 메모리 종목이 함께 하락했습니다. 11/5에는 한 대형 휴대폰 칩업체가 메모리 가격 부담으로 핸드셋 칩 매출이 26% 줄었다고 밝혔고, Bloomberg는 Micron이 노조 분쟁 때문에 대만 45억 달러 규모 공장 건설을 사실상 중단했다고 보도했습니다."
+    "11/5에 Bloomberg가 Micron이 대만의 45억 달러 규모 메모리 공장 계획을 중단했다고 보도했고, 미국 중간선거 이후 AI 투자가 느려질 수 있다는 우려가 겹쳐 MU가 17.5% 하락했습니다.",
+    "11/14에는 MU가 DRAM 가격 담합 집단소송의 기각 신청에서 졌고, Nvidia 경영진 논란으로 AI 수요가 줄 수 있다는 걱정이 커져 11/16까지 약세가 이어졌습니다."
    ],
    "src": [
     {
-     "t": "TIKR, Sandisk와 Kioxia",
-     "u": "https://www.tikr.com/blog/sandisk-sinks-13-last-friday-after-a-beat-kioxia-says-the-flash-price-surge-is-fading"
+     "t": "Trefis MU 11/5",
+     "u": "https://www.trefis.com/stock/mu/articles/623345/what-sent-micron-stock-lower/2026-11-06"
     },
     {
-     "t": "TIKR, Micron 대만 공장",
-     "u": "https://www.tikr.com/blog/micron-sinks-13-as-chip-rout-deepens-and-4-5-billion-taiwan-plant-stalls"
-    },
-    {
-     "t": "Newsquawk, Bloomberg 인용",
-     "u": "https://www.newsquawk.com/headlines/micron-technology-mu-has-suspended-construction-of-a-planned-usd-45bln-memory-chip-facility-in-taoyuan-taiwan-amid-a-prolonged-labour-dispute-bloomberg-reports"
+     "t": "Motley Fool MU 11/16",
+     "u": "https://www.fool.com/investing/2026/11/16/why-micron-stock-keeps-going-down/"
     }
    ],
-   "kick": "키옥시아 경고, 마이크론 공장 중단"
+   "kick": "AI 투자 둔화 우려"
   }
  },
  "stocks": {
@@ -905,22 +870,104 @@
    ],
    "asof": "2026-11-24",
    "at": "11/25 10:19 KST"
+  },
+  "MU": {
+   "text": [
+    "MU는 11/3 메모리주 매도를 이끌었고, 11/5에는 Bloomberg가 대만의 45억 달러 규모 공장 계획 중단을 보도하면서 AI 투자 둔화 우려와 함께 17.5% 급락했습니다. 같은 날 이사 퇴임을 알리는 8-K도 제출했으며, 이 공시와 하락의 연관은 기사에 적혀 있지 않습니다.",
+    "11/14에는 DRAM 가격 담합 집단소송에서 기각 신청이 받아들여지지 않았고, 11/16에는 Nvidia 경영진 논란으로 3거래일 연속 내렸습니다. 11/24에는 BNP Paribas가 2028년 하이퍼스케일러 증설 계획의 위험을 이유로 투자의견을 낮췄습니다.",
+    "다음 실적 발표는 12/17로 예정돼 있습니다."
+   ],
+   "src": [
+    {
+     "t": "Trefis MU 11/5",
+     "u": "https://www.trefis.com/stock/mu/articles/623345/what-sent-micron-stock-lower/2026-11-06"
+    },
+    {
+     "t": "Motley Fool MU 11/16",
+     "u": "https://www.fool.com/investing/2026/11/16/why-micron-stock-keeps-going-down/"
+    }
+   ],
+   "asof": "2026-11-25",
+   "at": "11/26 10:19 KST"
+  },
+  "GE": {
+   "text": [
+    "GE Aerospace는 11/6에 중국 국제수입박람회에서 총 129억 달러 규모의 엔진 판매와 정비 계약을 맺었다고 밝혔고, 이는 이 박람회에서 역대 최대 규모의 서명액입니다. 가장 큰 건은 China Eastern이 A320neo 계열 101대에 쓸 LEAP-1A 엔진 202기를 사는 계약입니다.",
+    "이 소식은 11/2 주의 +7.1% 상승과 같은 시기에 나왔습니다. 다만 129억 달러에는 CFM 합작사 몫이 포함돼 있어 GE Aerospace 단독 매출로 볼 수는 없다는 지적이 있습니다."
+   ],
+   "src": [
+    {
+     "t": "AJOT",
+     "u": "https://www.ajot.com/news/ge-aerospace-says-it-signs-record-12.9-billion-deals-at-china-expo"
+    },
+    {
+     "t": "SCMP",
+     "u": "https://www.scmp.com/economy/article/3373805/amid-c919-delivery-challenges-ge-signs-us129b-jet-engine-deals-china"
+    }
+   ],
+   "asof": "2026-11-25",
+   "at": "11/26 10:19 KST"
+  },
+  "ABSI": {
+   "text": [
+    "ABSI는 11/2 주에 유전체·바이오 성장주가 함께 급락하면서 하루 약 12% 내렸고, 이 약세는 11/9 주와 11/16 주까지 이어졌습니다.",
+    "11/12에는 3분기 실적을 발표해 주당 손실이 0.19달러로 예상보다 작았으나 매출은 30만 4천 달러로 예상에 못 미쳤고, 그날 주가는 9.7% 내렸습니다. 같은 날 Galderma 출신 Gerry Muhle을 최고상업책임자로 선임했고, 탈모 후보물질 ABS-201의 중간 결과는 12월에 나올 것이라고 밝혔습니다."
+   ],
+   "src": [
+    {
+     "t": "Finviz Absci 3분기 실적",
+     "u": "https://finviz.com/news/421520/absci-reports-business-updates-and-third-quarter-2026-financial-and-operating-results"
+    },
+    {
+     "t": "Finviz 최고상업책임자 선임",
+     "u": "https://finviz.com/news/421482/absci-appoints-gerry-muhle-as-chief-commercial-officer-to-build-category-defining-brands-for-abs-201-and-its-broader-pipeline"
+    },
+    {
+     "t": "TIKR 유전체주 하락",
+     "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
+    }
+   ],
+   "asof": "2026-11-25",
+   "at": "11/26 10:19 KST"
+  },
+  "688825": {
+   "text": [
+    "CXMT는 11/3에 7.0% 내려 38.80위안으로 마감했고, 이는 7/27 상장 이후 종가 기준 최저치입니다. 당일 AI 하드웨어와 반도체 업종이 함께 약했습니다.",
+    "시장에서는 DRAM 가격 상승이 정점에 이르렀다는 우려와 중국 업체의 증설 속도가 너무 빠르다는 걱정이 커졌고, 투자 논점이 메모리 부족에서 공급 과잉으로 옮겨 갔다는 분석이 나왔습니다. 3분기 보고서에서는 매출 2690억 위안과 흑자 전환이 확인됐으나, 11/9 주 이후의 추가 하락 원인은 이번 검색에서 확인하지 못했습니다."
+   ],
+   "src": [
+    {
+     "t": "Eastmoney 11/3",
+     "u": "https://wap.eastmoney.com/a/202611033920619086.html"
+    },
+    {
+     "t": "CTEE",
+     "u": "https://www.ctee.com.tw/news/20261104701388-430704"
+    }
+   ],
+   "asof": "2026-11-25",
+   "at": "11/26 10:19 KST"
+  },
+  "MPC": {
+   "text": [
+    "MPC는 11/3에 3분기 실적을 발표했고, 정제 마진이 배럴당 45.70달러로 전년의 17.60달러보다 크게 올라 조정 순이익은 75억 달러였습니다. 경영진은 높은 정제 마진이 최소 2027년 중반까지 이어질 것으로 보았고, 배당을 10% 올렸습니다.",
+    "11/18에는 회사 발표 없이 정유주가 함께 내려 MPC가 5.2%, Valero가 5.5%, Phillips 66이 4.7% 하락했고, 이 시기에 크랙 스프레드도 낮아졌습니다. 11/13에는 Mizuho가, 11/23에는 Citigroup이 목표가를 각각 440달러와 415달러로 낮췄고 둘 다 중립 의견은 유지했습니다."
+   ],
+   "src": [
+    {
+     "t": "Finviz MPC 3분기 실적",
+     "u": "https://finviz.com/news/414014/marathon-petroleum-corp-reports-third-quarter-2026-results"
+    },
+    {
+     "t": "Trefis MPC 11/18",
+     "u": "https://www.trefis.com/stock/mpc/articles/626943/what-moved-marathon-petroleum-stock/2026-11-19"
+    }
+   ],
+   "asof": "2026-11-25",
+   "at": "11/26 10:19 KST"
   }
  },
  "runs": [
-  [
-   "11/01 00:07 KST",
-   0,
-   0,
-   6,
-   6,
-   "ok",
-   14,
-   2,
-   18,
-   "claude-sonnet-5-5",
-   0.369
-  ],
   [
    "11/03 10:19 KST",
    6,
@@ -1167,6 +1214,19 @@
    36,
    "claude-sonnet-5-5",
    0.835
+  ],
+  [
+   "11/26 10:19 KST",
+   6,
+   5,
+   6,
+   5,
+   "ok",
+   25,
+   6,
+   33,
+   "claude-sonnet-5-5",
+   0.677
   ]
  ]
 }

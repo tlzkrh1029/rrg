@@ -1,4 +1,4 @@
-{"version":1,"updated":"2026-11-25T01:06:00Z","prev":"2026-11-24T01:06:11Z","counts":{"b":113,"p":234,"h":147},
+{"version":1,"updated":"2026-11-26T01:06:12Z","prev":"2026-11-25T01:06:00Z","counts":{"b":118,"p":234,"h":147},
 "state":{
 "b":{
 "AAOIBUSDT":{"u":"AAOI","lk":"AAOI","n":"Applied Optoelectronics","c":"stock","m":"US"},
@@ -13,6 +13,7 @@
 "ANTBUSDT":{"u":"ANT","lk":"ANT","n":"Anthropic","c":"stock","m":"US"},
 "APPBUSDT":{"u":"APP","lk":"APP","n":"Applovin Corp","c":"stock","m":"US"},
 "ARMBUSDT":{"u":"ARM","lk":"ARM","n":"ARM","c":"stock","m":"US"},
+"ARTYBUSDT":{"u":"ARTY","lk":"ARTY","n":"iShares Future AI & Tech ETF","c":"etf","m":"US"},
 "ASMLBUSDT":{"u":"ASML","lk":"ASML","n":"ASML","c":"stock","m":"US"},
 "ASTSBUSDT":{"u":"ASTS","lk":"ASTS","n":"AST SpaceMobile","c":"stock","m":"US"},
 "AVGOBUSDT":{"u":"AVGO","lk":"AVGO","n":"Broadcom","c":"stock","m":"US"},
@@ -43,6 +44,7 @@
 "EWZBUSDT":{"u":"EWZ","lk":"EWZ","n":"iShares MSCI Brazil ETF","c":"etf","m":"US"},
 "EWZSBUSDT":{"u":"EWZS","lk":"EWZS","n":"iShares MSCI Brazil Small-Cap ETF","c":"etf","m":"US"},
 "FLNCBUSDT":{"u":"FLNC","lk":"FLNC","n":"Fluence Energy","c":"stock","m":"US"},
+"FRHCBUSDT":{"u":"FRHC","lk":"FRHC","n":"Freedom Holding Corp","c":"stock","m":"US"},
 "FWDIBUSDT":{"u":"FWDI","lk":"FWDI","n":"Forward Industries","c":"stock","m":"US"},
 "GEVBUSDT":{"u":"GEV","lk":"GEV","n":"GE Vernova Inc","c":"stock","m":"US"},
 "GLWBUSDT":{"u":"GLW","lk":"GLW","n":"Corning","c":"stock","m":"US"},
@@ -53,7 +55,9 @@
 "HIMSBUSDT":{"u":"HIMS","lk":"HIMS","n":"Hims & Hers","c":"stock","m":"US"},
 "HOODBUSDT":{"u":"HOOD","lk":"HOOD","n":"Robinhood","c":"stock","m":"US"},
 "HPEBUSDT":{"u":"HPE","lk":"HPE","n":"Hewlett Packard","c":"stock","m":"US"},
+"IBITBUSDT":{"u":"IBIT","lk":"IBIT","n":"iShares Bitcoin Trust","c":"etf","m":"US"},
 "IBMBUSDT":{"u":"IBM","lk":"IBM","n":"IBM","c":"stock","m":"US"},
+"IGVBUSDT":{"u":"IGV","lk":"IGV","n":"iShares Expanded Tech-Software Sector ETF","c":"etf","m":"US"},
 "INTCBUSDT":{"u":"INTC","lk":"INTC","n":"Intel","c":"stock","m":"US"},
 "INTWBUSDT":{"u":"INTW","lk":"INTW","n":"GraniteShares 2X Long INTC ETF","c":"etf","m":"US"},
 "IRENBUSDT":{"u":"IREN","lk":"IREN","n":"IREN Limited","c":"stock","m":"US"},
@@ -99,6 +103,7 @@
 "SNXXBUSDT":{"u":"SNXX","lk":"SNXX","n":"Tr","c":"etf","m":"US"},
 "SOXLBUSDT":{"u":"SOXL","lk":"SOXL","n":"Semicon Bull 3X ETF","c":"etf","m":"US"},
 "SOXSBUSDT":{"u":"SOXS","lk":"SOXS","n":"Direxion Semiconductor Bear 3X ETF","c":"etf","m":"US"},
+"SOXXBUSDT":{"u":"SOXX","lk":"SOXX","n":"iShares Semiconductor ETF","c":"etf","m":"US"},
 "SPCXBUSDT":{"u":"SPCX","lk":"SPCX","n":"SpaceX","c":"stock","m":"US"},
 "SPYBUSDT":{"u":"SPY","lk":"SPY","n":"SPY","c":"etf","m":"US"},
 "SQQQBUSDT":{"u":"SQQQ","lk":"SQQQ","n":"ProShares UltraPro Short QQQ","c":"etf","m":"US"},
@@ -502,6 +507,11 @@
 }
 },
 "events":[
+{"v":"b","e":"add","s":"SOXXBUSDT","u":"SOXX","lk":"SOXX","n":"iShares Semiconductor ETF","c":"etf","m":"US","d":"2026-11-26","x":0,"t0":"2026-11-25T01:06:00Z","t1":"2026-11-26T01:06:12Z"},
+{"v":"b","e":"add","s":"IGVBUSDT","u":"IGV","lk":"IGV","n":"iShares Expanded Tech-Software Sector ETF","c":"etf","m":"US","d":"2026-11-26","x":0,"t0":"2026-11-25T01:06:00Z","t1":"2026-11-26T01:06:12Z"},
+{"v":"b","e":"add","s":"IBITBUSDT","u":"IBIT","lk":"IBIT","n":"iShares Bitcoin Trust","c":"etf","m":"US","d":"2026-11-26","x":0,"t0":"2026-11-25T01:06:00Z","t1":"2026-11-26T01:06:12Z"},
+{"v":"b","e":"add","s":"FRHCBUSDT","u":"FRHC","lk":"FRHC","n":"Freedom Holding Corp","c":"stock","m":"US","d":"2026-11-26","x":0,"t0":"2026-11-25T01:06:00Z","t1":"2026-11-26T01:06:12Z"},
+{"v":"b","e":"add","s":"ARTYBUSDT","u":"ARTY","lk":"ARTY","n":"iShares Future AI & Tech ETF","c":"etf","m":"US","d":"2026-11-26","x":0,"t0":"2026-11-25T01:06:00Z","t1":"2026-11-26T01:06:12Z"},
 {"v":"h","e":"add","s":"xyz:TQQQ","u":"TQQQ","lk":"TQQQ","n":"ProShares UltraPro QQQ","c":"etf","m":"US","d":"2026-11-25","x":0,"t0":"2026-11-24T01:06:11Z","t1":"2026-11-25T01:06:00Z","dex":"xyz"},
 {"v":"h","e":"add","s":"xyz:SOXS","u":"SOXS","lk":"SOXS","n":"","c":"unknown","m":"","d":"2026-11-25","x":0,"t0":"2026-11-24T01:06:11Z","t1":"2026-11-25T01:06:00Z","dex":"xyz"},
 {"v":"h","e":"add","s":"io:GOOGL","u":"GOOGL","lk":"GOOGL","n":"Alphabet Inc.","c":"stock","m":"US","d":"2026-11-25","x":0,"t0":"2026-11-24T01:06:11Z","t1":"2026-11-25T01:06:00Z","dex":"io"},

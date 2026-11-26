@@ -1,15 +1,11 @@
-돌파 지도 2026-11-24 (USD 기준, 직전 종가)
-켜진 칸 20일 16/278 (6%) · 55일 13 · 52주 9 · 사상 최고 6 · 이탈 94 · 실패 6
+돌파 지도 2026-11-25 (USD 기준, 직전 종가)
+켜진 칸 20일 29/279 (10%) · 55일 27 · 52주 14 · 사상 최고 11 · 이탈 82 · 실패 4
 
 새 돌파 (1일째)
-  사상 최고: ABBV(XLV·XBI), GILD(XLV·XBI)*, VRTX(GNOM)
-  52주: TGT(XLP)*, REGN(XBI)*
-  55일: WMT(XLP)*, CVCO(XHB)*
-  20일: VZ(XLC)*, T(XLC)
+  사상 최고: ADP(XLI), DUK(XLU), SN(XHB)*, MAS(XHB)
+  55일: HD(XLY·XHB)*, LOW(XLY·XHB)*, CMCSA(XLC), O(XLRE)*, BMRN(GNOM)*, CSL(XHB)*, SKY(XHB)*
+  20일: TJX(XLY)*
   * SPY 대비로도 켜진 칸
-새 이탈 (1일째)
-  55일 바닥: PRY(GRID), DORL(TAN), SLR(TAN)
-  20일 바닥: 8001(URA), ENLT(TAN)
-오늘 실패한 돌파: ULCC(JETS, 52주), ULCC(JETS, 55일), ULCC(JETS, 20일)
+블록 알림 (20일): XBI 5/10 켜짐 · XHB 7/10 켜짐
 
 https://tlzkrh1029.github.io/rrg/breakout/

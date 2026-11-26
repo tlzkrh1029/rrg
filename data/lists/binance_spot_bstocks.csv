@@ -11,6 +11,7 @@ AMZNBUSDT,AMZNB,USDT,AMZN,Amazon,stock,AMZN,"Amazon.com, Inc. - Common Stock",st
 ANTBUSDT,ANTB,USDT,ANT,Anthropic,stock,ANT,"Anthropic, PBC - Class A Common Stock",stock,TRADING,1
 APPBUSDT,APPB,USDT,APP,Applovin Corp,stock,APP,Applovin Corporation - Class A Common Stock,stock,TRADING,1
 ARMBUSDT,ARMB,USDT,ARM,ARM,stock,ARM,Arm Holdings plc - American Depositary Shares,stock,TRADING,1
+ARTYBUSDT,ARTYB,USDT,ARTY,iShares Future AI & Tech ETF（bStocks）,etf,ARTY,iShares Future AI & Tech ETF,etf,TRADING,1
 ASMLBUSDT,ASMLB,USDT,ASML,ASML,stock,ASML,ASML Holding N.V. - New York Registry Shares,stock,TRADING,1.001120398374345428
 ASTSBUSDT,ASTSB,USDT,ASTS,AST SpaceMobile,stock,ASTS,"AST SpaceMobile, Inc. - Class A Common Stock",stock,TRADING,1
 AVGOBUSDT,AVGOB,USDT,AVGO,Broadcom,stock,AVGO,Broadcom Inc. - Common Stock,stock,TRADING,1.001269208611258122
@@ -41,6 +42,7 @@ EWYBUSDT,EWYB,USDT,EWY,iShares MSCI South Korea ETF,etf,EWY,iShares MSCI South K
 EWZBUSDT,EWZB,USDT,EWZ,iShares MSCI Brazil ETF,etf,EWZ,iShares MSCI Brazil ETF,etf,TRADING,1
 EWZSBUSDT,EWZSB,USDT,EWZS,iShares MSCI Brazil Small-Cap ETF,etf,EWZS,iShares MSCI Brazil Small-Cap ETF,etf,TRADING,1
 FLNCBUSDT,FLNCB,USDT,FLNC,Fluence Energy,stock,FLNC,"Fluence Energy, Inc. - Class A Common Stock",stock,TRADING,1
+FRHCBUSDT,FRHCB,USDT,FRHC,Freedom Holding Corp（bStocks）,stock,FRHC,Freedom Holding Corp. - Common Stock,stock,TRADING,1
 FWDIBUSDT,FWDIB,USDT,FWDI,Forward Industries,stock,FWDI,"Forward Industries, Inc. - Common Stock",stock,TRADING,1
 GEVBUSDT,GEVB,USDT,GEV,GE Vernova Inc (bStocks）,stock,GEV,GE Vernova Inc. Common Stock,stock,TRADING,1
 GLWBUSDT,GLWB,USDT,GLW,Corning,stock,GLW,Corning Incorporated Common Stock,stock,TRADING,1.002885821286458685
@@ -51,7 +53,9 @@ GSBUSDT,GSB,USDT,GS,Goldman Sachs,stock,GS,"Goldman Sachs Group, Inc. (The) Comm
 HIMSBUSDT,HIMSB,USDT,HIMS,Hims & Hers,stock,HIMS,"Hims & Hers Health, Inc. Class A Common Stock",stock,TRADING,1
 HOODBUSDT,HOODB,USDT,HOOD,Robinhood,stock,HOOD,"Robinhood Markets, Inc. - Class A Common Stock",stock,TRADING,1
 HPEBUSDT,HPEB,USDT,HPE,Hewlett Packard,stock,HPE,Hewlett Packard Enterprise Company Common Stock,stock,TRADING,1
+IBITBUSDT,IBITB,USDT,IBIT,iShares Bitcoin Trust （bStocks）,etf,IBIT,iShares Bitcoin Trust ETF,etf,TRADING,1
 IBMBUSDT,IBMB,USDT,IBM,IBM,stock,IBM,International Business Machines Corporation Common Stock,stock,TRADING,1.009761489077096437
+IGVBUSDT,IGVB,USDT,IGV,iShares Expanded Tech-Software Sector ETF（bStocks）,etf,IGV,iShares Expanded Tech-Software Sector ETF,etf,TRADING,1
 INTCBUSDT,INTCB,USDT,INTC,Intel,stock,INTC,Intel Corporation - Common Stock,stock,TRADING,1
 INTWBUSDT,INTWB,USDT,INTW,GraniteShares 2X Long INTC ETF,etf,INTW,GraniteShares 2x Long INTC Daily ETF,etf,TRADING,1
 IRENBUSDT,IRENB,USDT,IREN,IREN Limited,stock,IREN,IREN Limited - Ordinary Shares,stock,TRADING,1
@@ -97,6 +101,7 @@ SNDKBUSDT,SNDKB,USDT,SNDK,SanDisk,stock,SNDK,Sandisk Corporation - Common Stock 
 SNXXBUSDT,SNXXB,USDT,SNXX,Tradr 2X Long SNDK ETF,etf,SNXX,Tradr 2X Long SNDK Daily ETF,etf,TRADING,1
 SOXLBUSDT,SOXLB,USDT,SOXL,Semicon Bull 3X ETF,etf,SOXL,Direxion Daily Semiconductor Bull 3X ETF,etf,TRADING,1.000441939278863313
 SOXSBUSDT,SOXSB,USDT,SOXS,Direxion Semiconductor Bear 3X ETF,etf,SOXS,Direxion Daily Semiconductor Bear 3X ETF,etf,TRADING,1.009026219854107205
+SOXXBUSDT,SOXXB,USDT,SOXX,iShares Semiconductor ETF（bStocks）,etf,SOXX,iShares PHLX SOX Semiconductor Sector Index Fund,etf,TRADING,1
 SPCXBUSDT,SPCXB,USDT,SPCX,SpaceX,stock,SPCX,Space Exploration Technologies Corp. - Class A Common Stock,stock,TRADING,1
 SPYBUSDT,SPYB,USDT,SPY,SPY,etf,SPY,State Street SPDR S&P 500 ETF Trust,etf,TRADING,1.001729792036835231
 SQQQBUSDT,SQQQB,USDT,SQQQ,ProShares UltraPro Short QQQ,etf,SQQQ,ProShares UltraPro Short QQQ,etf,TRADING,1.009841016242566331
