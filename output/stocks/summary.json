@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-26T01:08:04Z",
- "holdings_snapshot": "2026-11-26",
+ "generated_at": "2026-11-27T01:08:05Z",
+ "holdings_snapshot": "2026-11-27",
  "axis_first": "2024-11-27",
  "axis_last": "2026-11-25",
  "axis_days": 500,
@@ -34,8 +34,8 @@
   "TAN",
   "JETS"
  ],
- "stocks": 241,
- "fetched": 241,
+ "stocks": 244,
+ "fetched": 244,
  "last_date_differs": {},
  "failed": {},
  "tickers": {
@@ -51,7 +51,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 235.44119262695312,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -68,7 +68,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 137.88003540039062,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -85,7 +85,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 416.9037170410156,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -102,7 +102,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 169.56382751464844,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -119,7 +119,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 192.52999877929688,
    "ath_old_date": "2023-12-01",
    "ath_refreshed": null
@@ -136,7 +136,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 124.09069061279297,
    "ath_old_date": "2024-03-01",
    "ath_refreshed": null
@@ -153,7 +153,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 65.7699966430664,
    "ath_old_date": "2024-11-11",
    "ath_refreshed": null
@@ -170,7 +170,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 56.67229080200195,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -187,7 +187,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 193.91000366210938,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -204,7 +204,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 56.098506927490234,
    "ath_old_date": "2020-03-01",
    "ath_refreshed": null
@@ -221,7 +221,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 483.0199890136719,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -238,7 +238,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 239.92242431640625,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -255,7 +255,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 310.4158020019531,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -272,7 +272,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 526.510986328125,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -289,7 +289,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 44.53772735595703,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -306,7 +306,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 72.9101791381836,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -323,7 +323,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 584.896728515625,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -340,7 +340,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 125.18704223632812,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -357,7 +357,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 366.13311767578125,
    "ath_old_date": "2006-10-01",
    "ath_refreshed": null
@@ -374,7 +374,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 981.201904296875,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -391,7 +391,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 945.6152954101562,
    "ath_old_date": "2024-06-01",
    "ath_refreshed": null
@@ -408,7 +408,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 158.69757080078125,
    "ath_old_date": "2022-10-01",
    "ath_refreshed": null
@@ -425,7 +425,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 191.25827026367188,
    "ath_old_date": "2024-10-01",
    "ath_refreshed": null
@@ -442,7 +442,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 122.05626678466797,
    "ath_old_date": "2024-01-01",
    "ath_refreshed": null
@@ -459,7 +459,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 557.4260864257812,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -476,7 +476,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 623.8536987304688,
    "ath_old_date": "2021-09-01",
    "ath_refreshed": null
@@ -493,7 +493,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 312.5050048828125,
    "ath_old_date": "2024-06-01",
    "ath_refreshed": null
@@ -510,7 +510,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 87.7331771850586,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -527,7 +527,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 113.95803833007812,
    "ath_old_date": "2021-06-01",
    "ath_refreshed": null
@@ -544,7 +544,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 41.11600112915039,
    "ath_old_date": "2022-03-01",
    "ath_refreshed": null
@@ -561,7 +561,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 207.88999938964844,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -578,7 +578,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 381.586669921875,
    "ath_old_date": "2021-11-01",
    "ath_refreshed": null
@@ -595,7 +595,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 409.7946472167969,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -612,7 +612,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 290.103271484375,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -629,7 +629,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 122.57601165771484,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -646,7 +646,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 261.3348693847656,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -663,7 +663,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 106.8116226196289,
    "ath_old_date": "2021-07-01",
    "ath_refreshed": null
@@ -680,7 +680,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 204.72308349609375,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -697,7 +697,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 284.1140441894531,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -714,7 +714,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 252.51124572753906,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -731,7 +731,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 570.58447265625,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -748,7 +748,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 180.64012145996094,
    "ath_old_date": "2024-06-01",
    "ath_refreshed": null
@@ -765,7 +765,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 181.90577697753906,
    "ath_old_date": "2024-06-01",
    "ath_refreshed": null
@@ -782,7 +782,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 333.30999755859375,
    "ath_old_date": "2024-11-18",
    "ath_refreshed": null
@@ -799,7 +799,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 178.90380859375,
    "ath_old_date": "2021-01-01",
    "ath_refreshed": null
@@ -816,7 +816,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 207.7899932861328,
    "ath_old_date": "2020-12-01",
    "ath_refreshed": null
@@ -833,7 +833,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 47.57855224609375,
    "ath_old_date": "2021-06-01",
    "ath_refreshed": null
@@ -850,7 +850,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 41.023685455322266,
    "ath_old_date": "2021-02-01",
    "ath_refreshed": null
@@ -867,7 +867,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 239.29598999023438,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -884,7 +884,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 21.953388214111328,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -901,7 +901,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 186.41798400878906,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -918,7 +918,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 116.60100555419922,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -935,7 +935,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 380.6849060058594,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -952,7 +952,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 347.4873962402344,
    "ath_old_date": "2024-11-18",
    "ath_refreshed": null
@@ -969,7 +969,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 246.45770263671875,
    "ath_old_date": "2022-01-01",
    "ath_refreshed": null
@@ -986,7 +986,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 454.25933837890625,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -1003,7 +1003,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 86.33999633789062,
    "ath_old_date": "2024-10-07",
    "ath_refreshed": null
@@ -1020,26 +1020,9 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 376.0252685546875,
    "ath_old_date": "2019-07-01",
-   "ath_refreshed": null
-  },
-  "ETN": {
-   "symbol": "ETN",
-   "source": "yahoo",
-   "exch": "",
-   "code": "ETN",
-   "name": "Eaton Corporation plc",
-   "first": "2024-11-27",
-   "last": "2026-11-25",
-   "days": 500,
-   "filled_days": 0,
-   "adj_close_available": true,
-   "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 366.4461975097656,
-   "ath_old_date": "2024-09-01",
    "ath_refreshed": null
   },
   "ADP": {
@@ -1054,8 +1037,25 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 292.1779479980469,
+   "ath_old_date": "2024-09-01",
+   "ath_refreshed": null
+  },
+  "ETN": {
+   "symbol": "ETN",
+   "source": "yahoo",
+   "exch": "",
+   "code": "ETN",
+   "name": "Eaton Corporation plc",
+   "first": "2024-11-27",
+   "last": "2026-11-25",
+   "days": 500,
+   "filled_days": 0,
+   "adj_close_available": true,
+   "dropped_partial": null,
+   "filled_from_quote": null,
+   "ath_old": 366.4461975097656,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
   },
@@ -1071,7 +1071,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 96.61407470703125,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -1088,10 +1088,10 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 881.408203125,
    "ath_old_date": "2024-10-01",
-   "ath_refreshed": "readjusted"
+   "ath_refreshed": null
   },
   "PG": {
    "symbol": "PG",
@@ -1105,7 +1105,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 163.02365112304688,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -1122,7 +1122,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 67.95526885986328,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -1139,7 +1139,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 123.88479614257812,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -1156,7 +1156,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 94.10877227783203,
    "ath_old_date": "2024-05-01",
    "ath_refreshed": null
@@ -1173,7 +1173,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 221.0753936767578,
    "ath_old_date": "2021-05-01",
    "ath_refreshed": null
@@ -1190,7 +1190,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 46.5384407043457,
    "ath_old_date": "2024-10-01",
    "ath_refreshed": null
@@ -1207,7 +1207,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 69.35624694824219,
    "ath_old_date": "2023-04-01",
    "ath_refreshed": null
@@ -1224,7 +1224,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 162.04855346679688,
    "ath_old_date": "2022-09-01",
    "ath_refreshed": null
@@ -1241,7 +1241,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 109.25349426269531,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -1258,7 +1258,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 152.6695556640625,
    "ath_old_date": "2022-10-01",
    "ath_refreshed": null
@@ -1275,7 +1275,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 108.2001724243164,
    "ath_old_date": "2022-09-01",
    "ath_refreshed": null
@@ -1292,25 +1292,8 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 149.62489318847656,
-   "ath_old_date": "2024-03-01",
-   "ath_refreshed": null
-  },
-  "MPC": {
-   "symbol": "MPC",
-   "source": "yahoo",
-   "exch": "",
-   "code": "MPC",
-   "name": "Marathon Petroleum Corporation",
-   "first": "2024-11-27",
-   "last": "2026-11-25",
-   "days": 500,
-   "filled_days": 0,
-   "adj_close_available": true,
-   "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 191.36753845214844,
    "ath_old_date": "2024-03-01",
    "ath_refreshed": null
   },
@@ -1326,7 +1309,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 54.86983108520508,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -1343,9 +1326,26 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 124.83377075195312,
    "ath_old_date": "2024-11-01",
+   "ath_refreshed": null
+  },
+  "MPC": {
+   "symbol": "MPC",
+   "source": "yahoo",
+   "exch": "",
+   "code": "MPC",
+   "name": "Marathon Petroleum Corporation",
+   "first": "2024-11-27",
+   "last": "2026-11-25",
+   "days": 500,
+   "filled_days": 0,
+   "adj_close_available": true,
+   "dropped_partial": null,
+   "filled_from_quote": null,
+   "ath_old": 191.36753845214844,
+   "ath_old_date": "2024-03-01",
    "ath_refreshed": null
   },
   "VLO": {
@@ -1360,7 +1360,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 159.66015625,
    "ath_old_date": "2024-01-01",
    "ath_refreshed": null
@@ -1377,7 +1377,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 78.83451843261719,
    "ath_old_date": "2014-06-01",
    "ath_refreshed": null
@@ -1394,7 +1394,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 26.093149185180664,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -1411,7 +1411,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 75.02936553955078,
    "ath_old_date": "2022-05-01",
    "ath_refreshed": null
@@ -1428,7 +1428,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 83.49048614501953,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -1445,7 +1445,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 109.15397644042969,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -1462,7 +1462,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 281.8020935058594,
    "ath_old_date": "2024-09-30",
    "ath_refreshed": null
@@ -1479,7 +1479,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 95.25871276855469,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -1496,7 +1496,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 68.42204284667969,
    "ath_old_date": "2022-03-01",
    "ath_refreshed": null
@@ -1513,7 +1513,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 88.087890625,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -1530,7 +1530,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 63.63742446899414,
    "ath_old_date": "2022-05-01",
    "ath_refreshed": null
@@ -1547,7 +1547,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 74.13963317871094,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -1564,7 +1564,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 39.79825973510742,
    "ath_old_date": "2022-05-01",
    "ath_refreshed": null
@@ -1581,7 +1581,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 464.5276794433594,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -1598,7 +1598,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 62.95695877075195,
    "ath_old_date": "2021-03-01",
    "ath_refreshed": null
@@ -1615,7 +1615,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 270.0771179199219,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -1632,7 +1632,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 245.65682983398438,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -1649,7 +1649,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 390.2113037109375,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -1666,7 +1666,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 100.34911346435547,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -1683,7 +1683,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 317.5785217285156,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -1700,7 +1700,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 605.3267211914062,
    "ath_old_date": "2024-03-01",
    "ath_refreshed": null
@@ -1717,27 +1717,27 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 184.93869018554688,
    "ath_old_date": "2023-12-01",
    "ath_refreshed": null
   },
-  "STLD": {
-   "symbol": "STLD",
+  "PPG": {
+   "symbol": "PPG",
    "source": "yahoo",
    "exch": "",
-   "code": "STLD",
-   "name": "Steel Dynamics, Inc.",
+   "code": "PPG",
+   "name": "PPG Industries, Inc.",
    "first": "2024-11-27",
    "last": "2026-11-25",
    "days": 500,
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 143.3415985107422,
-   "ath_old_date": "2024-03-01",
-   "ath_refreshed": null
+   "filled_from_quote": null,
+   "ath_old": 160.0662841796875,
+   "ath_old_date": "2021-03-01",
+   "ath_refreshed": "new"
   },
   "WELL": {
    "symbol": "WELL",
@@ -1751,7 +1751,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 133.8883056640625,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -1768,7 +1768,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 145.8811492919922,
    "ath_old_date": "2021-12-01",
    "ath_refreshed": null
@@ -1785,7 +1785,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 940.3499755859375,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -1802,7 +1802,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 249.89573669433594,
    "ath_old_date": "2021-12-01",
    "ath_refreshed": null
@@ -1819,7 +1819,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 303.6863708496094,
    "ath_old_date": "2024-08-01",
    "ath_refreshed": null
@@ -1836,7 +1836,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 167.12579345703125,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -1853,7 +1853,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 74.59164428710938,
    "ath_old_date": "2022-03-01",
    "ath_refreshed": null
@@ -1870,7 +1870,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 58.81935501098633,
    "ath_old_date": "2022-07-01",
    "ath_refreshed": null
@@ -1887,7 +1887,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 62.06667709350586,
    "ath_old_date": "2024-10-01",
    "ath_refreshed": null
@@ -1904,7 +1904,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 139.99000549316406,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -1921,7 +1921,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 185.94952392578125,
    "ath_old_date": "2024-10-01",
    "ath_refreshed": null
@@ -1938,8 +1938,42 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 201.84498596191406,
+   "ath_old_date": "2024-06-01",
+   "ath_refreshed": null
+  },
+  "QCOM": {
+   "symbol": "QCOM",
+   "source": "yahoo",
+   "exch": "",
+   "code": "QCOM",
+   "name": "QUALCOMM Incorporated",
+   "first": "2024-11-27",
+   "last": "2026-11-25",
+   "days": 500,
+   "filled_days": 0,
+   "adj_close_available": true,
+   "dropped_partial": null,
+   "filled_from_quote": null,
+   "ath_old": 194.4822235107422,
+   "ath_old_date": "2024-05-01",
+   "ath_refreshed": null
+  },
+  "ASML": {
+   "symbol": "ASML",
+   "source": "yahoo",
+   "exch": "",
+   "code": "ASML",
+   "name": "ASML Holding N.V.",
+   "first": "2024-11-27",
+   "last": "2026-11-25",
+   "days": 500,
+   "filled_days": 0,
+   "adj_close_available": true,
+   "dropped_partial": null,
+   "filled_from_quote": null,
+   "ath_old": 1002.6884155273438,
    "ath_old_date": "2024-06-01",
    "ath_refreshed": null
   },
@@ -1955,25 +1989,8 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 227.12335205078125,
-   "ath_old_date": "2024-06-01",
-   "ath_refreshed": null
-  },
-  "ASML": {
-   "symbol": "ASML",
-   "source": "yahoo",
-   "exch": "",
-   "code": "ASML",
-   "name": "ASML Holding N.V.",
-   "first": "2024-11-27",
-   "last": "2026-11-25",
-   "days": 500,
-   "filled_days": 0,
-   "adj_close_available": true,
-   "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 1002.6884155273438,
    "ath_old_date": "2024-06-01",
    "ath_refreshed": null
   },
@@ -1989,26 +2006,26 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 80.95388793945312,
    "ath_old_date": "2024-04-01",
    "ath_refreshed": null
   },
-  "QCOM": {
-   "symbol": "QCOM",
+  "AMAT": {
+   "symbol": "AMAT",
    "source": "yahoo",
    "exch": "",
-   "code": "QCOM",
-   "name": "QUALCOMM Incorporated",
+   "code": "AMAT",
+   "name": "Applied Materials, Inc.",
    "first": "2024-11-27",
    "last": "2026-11-25",
    "days": 500,
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 194.4822235107422,
-   "ath_old_date": "2024-05-01",
+   "filled_from_quote": null,
+   "ath_old": 210.9714813232422,
+   "ath_old_date": "2024-03-01",
    "ath_refreshed": null
   },
   "CRWD": {
@@ -2023,7 +2040,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 97.41999816894531,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -2040,7 +2057,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 180.60317993164062,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -2057,7 +2074,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 325.24591064453125,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -2074,7 +2091,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 650.3599853515625,
    "ath_old_date": "2021-08-01",
    "ath_refreshed": null
@@ -2091,7 +2108,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 209.88800048828125,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -2108,7 +2125,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 306.80999755859375,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -2125,7 +2142,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 449.3800048828125,
    "ath_old_date": "2021-09-06",
    "ath_refreshed": null
@@ -2142,7 +2159,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 194.375,
    "ath_old_date": "2000-08-01",
    "ath_refreshed": null
@@ -2159,7 +2176,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 126.5625,
    "ath_old_date": "2010-06-01",
    "ath_refreshed": null
@@ -2176,7 +2193,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 422.239990234375,
    "ath_old_date": "2015-03-01",
    "ath_refreshed": null
@@ -2193,10 +2210,10 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 86.0999984741211,
    "ath_old_date": "2020-12-21",
-   "ath_refreshed": "new"
+   "ath_refreshed": null
   },
   "REGN": {
    "symbol": "REGN",
@@ -2210,7 +2227,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 1173.6148681640625,
    "ath_old_date": "2024-08-01",
    "ath_refreshed": null
@@ -2227,26 +2244,9 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 273.25,
    "ath_old_date": "2018-08-01",
-   "ath_refreshed": null
-  },
-  "BMRN": {
-   "symbol": "BMRN",
-   "source": "yahoo",
-   "exch": "",
-   "code": "BMRN",
-   "name": "BioMarin Pharmaceutical Inc.",
-   "first": "2024-11-27",
-   "last": "2026-11-25",
-   "days": 500,
-   "filled_days": 0,
-   "adj_close_available": true,
-   "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 146.27000427246094,
-   "ath_old_date": "2015-07-01",
    "ath_refreshed": null
   },
   "PRAX": {
@@ -2261,9 +2261,26 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 884.4000244140625,
    "ath_old_date": "2021-01-04",
+   "ath_refreshed": null
+  },
+  "BMRN": {
+   "symbol": "BMRN",
+   "source": "yahoo",
+   "exch": "",
+   "code": "BMRN",
+   "name": "BioMarin Pharmaceutical Inc.",
+   "first": "2024-11-27",
+   "last": "2026-11-25",
+   "days": 500,
+   "filled_days": 0,
+   "adj_close_available": true,
+   "dropped_partial": null,
+   "filled_from_quote": null,
+   "ath_old": 146.27000427246094,
+   "ath_old_date": "2015-07-01",
    "ath_refreshed": null
   },
   "VRTX": {
@@ -2278,9 +2295,26 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 495.8900146484375,
    "ath_old_date": "2024-08-01",
+   "ath_refreshed": null
+  },
+  "BNTX": {
+   "symbol": "BNTX",
+   "source": "yahoo",
+   "exch": "",
+   "code": "BNTX",
+   "name": "BioNTech SE",
+   "first": "2024-11-27",
+   "last": "2026-11-25",
+   "days": 500,
+   "filled_days": 0,
+   "adj_close_available": true,
+   "dropped_partial": null,
+   "filled_from_quote": null,
+   "ath_old": 383.92486572265625,
+   "ath_old_date": "2021-08-02",
    "ath_refreshed": null
   },
   "TECH": {
@@ -2295,7 +2329,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 127.81670379638672,
    "ath_old_date": "2021-08-01",
    "ath_refreshed": null
@@ -2312,26 +2346,9 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 55.088348388671875,
    "ath_old_date": "2021-08-01",
-   "ath_refreshed": null
-  },
-  "BNTX": {
-   "symbol": "BNTX",
-   "source": "yahoo",
-   "exch": "",
-   "code": "BNTX",
-   "name": "BioNTech SE",
-   "first": "2024-11-27",
-   "last": "2026-11-25",
-   "days": 500,
-   "filled_days": 0,
-   "adj_close_available": true,
-   "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 383.92486572265625,
-   "ath_old_date": "2021-08-02",
    "ath_refreshed": null
   },
   "GH": {
@@ -2346,26 +2363,9 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 179.10000610351562,
    "ath_old_date": "2021-02-08",
-   "ath_refreshed": null
-  },
-  "CRSP": {
-   "symbol": "CRSP",
-   "source": "yahoo",
-   "exch": "",
-   "code": "CRSP",
-   "name": "CRISPR Therapeutics AG",
-   "first": "2024-11-27",
-   "last": "2026-11-25",
-   "days": 500,
-   "filled_days": 0,
-   "adj_close_available": true,
-   "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 165.6999969482422,
-   "ath_old_date": "2021-01-01",
    "ath_refreshed": null
   },
   "ARWR": {
@@ -2380,9 +2380,26 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 1787.5,
    "ath_old_date": "1994-01-01",
+   "ath_refreshed": null
+  },
+  "CRSP": {
+   "symbol": "CRSP",
+   "source": "yahoo",
+   "exch": "",
+   "code": "CRSP",
+   "name": "CRISPR Therapeutics AG",
+   "first": "2024-11-27",
+   "last": "2026-11-25",
+   "days": 500,
+   "filled_days": 0,
+   "adj_close_available": true,
+   "dropped_partial": null,
+   "filled_from_quote": null,
+   "ath_old": 165.6999969482422,
+   "ath_old_date": "2021-01-01",
    "ath_refreshed": null
   },
   "TWST": {
@@ -2397,7 +2414,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 190.63999938964844,
    "ath_old_date": "2021-01-18",
    "ath_refreshed": null
@@ -2414,7 +2431,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 73.7699966430664,
    "ath_old_date": "2024-11-04",
    "ath_refreshed": null
@@ -2431,7 +2448,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 197.8000030517578,
    "ath_old_date": "2021-04-26",
    "ath_refreshed": null
@@ -2448,7 +2465,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 28.479999542236328,
    "ath_old_date": "2021-07-26",
    "ath_refreshed": null
@@ -2465,7 +2482,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 482.2470703125,
    "ath_old_date": "2021-07-01",
    "ath_refreshed": null
@@ -2482,7 +2499,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 167.77999877929688,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -2499,7 +2516,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 130.2100067138672,
    "ath_old_date": "2021-06-28",
    "ath_refreshed": null
@@ -2516,7 +2533,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 115.87369537353516,
    "ath_old_date": "2006-11-01",
    "ath_refreshed": null
@@ -2533,10 +2550,10 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 54.645347595214844,
+   "filled_from_quote": null,
+   "ath_old": 54.64535140991211,
    "ath_old_date": "2024-09-01",
-   "ath_refreshed": null
+   "ath_refreshed": "stale"
   },
   "VLY": {
    "symbol": "VLY",
@@ -2550,10 +2567,10 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 11.337445259094238,
+   "filled_from_quote": null,
+   "ath_old": 11.337446212768555,
    "ath_old_date": "2022-02-01",
-   "ath_refreshed": null
+   "ath_refreshed": "stale"
   },
   "EBC": {
    "symbol": "EBC",
@@ -2567,7 +2584,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 19.65245819091797,
    "ath_old_date": "2021-05-17",
    "ath_refreshed": null
@@ -2584,7 +2601,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 39.18062210083008,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -2601,7 +2618,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 46.18453598022461,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -2618,7 +2635,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 78.32388305664062,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -2635,7 +2652,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 35.652828216552734,
    "ath_old_date": "2022-10-01",
    "ath_refreshed": null
@@ -2652,7 +2669,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 134.3636932373047,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -2669,7 +2686,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 109.2893295288086,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -2686,7 +2703,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 109.72000122070312,
    "ath_old_date": "2024-09-30",
    "ath_refreshed": null
@@ -2703,7 +2720,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 514.5,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -2720,7 +2737,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 142.46791076660156,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -2737,7 +2754,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 77.72978210449219,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -2754,7 +2771,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 411.1265563964844,
    "ath_old_date": "2024-08-01",
    "ath_refreshed": null
@@ -2771,7 +2788,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 92.33000183105469,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -2788,7 +2805,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 151.82095336914062,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -2805,7 +2822,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 204.9130096435547,
    "ath_old_date": "2024-02-01",
    "ath_refreshed": null
@@ -2822,7 +2839,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 320.62860107421875,
    "ath_old_date": "2024-03-01",
    "ath_refreshed": null
@@ -2839,9 +2856,26 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 89.19218444824219,
    "ath_old_date": "2008-05-01",
+   "ath_refreshed": null
+  },
+  "STLD": {
+   "symbol": "STLD",
+   "source": "yahoo",
+   "exch": "",
+   "code": "STLD",
+   "name": "Steel Dynamics, Inc.",
+   "first": "2024-11-27",
+   "last": "2026-11-25",
+   "days": 500,
+   "filled_days": 0,
+   "adj_close_available": true,
+   "dropped_partial": null,
+   "filled_from_quote": null,
+   "ath_old": 143.3415985107422,
+   "ath_old_date": "2024-03-01",
    "ath_refreshed": null
   },
   "RGLD": {
@@ -2856,7 +2890,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 143.47900390625,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -2873,7 +2907,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 60.108428955078125,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -2890,7 +2924,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 85.61054992675781,
    "ath_old_date": "2022-01-01",
    "ath_refreshed": null
@@ -2907,7 +2941,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 56.540000915527344,
    "ath_old_date": "2022-03-28",
    "ath_refreshed": null
@@ -2924,7 +2958,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 132.72677612304688,
    "ath_old_date": "2023-12-01",
    "ath_refreshed": null
@@ -2941,7 +2975,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 59.33447265625,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -2972,7 +3006,7 @@
    "first": "2026-07-17",
    "last": "2026-11-25",
    "days": 93,
-   "filled_days": 2,
+   "filled_days": 1,
    "adj_close_available": true,
    "dropped_partial": null,
    "filled_from_quote": null,
@@ -2992,7 +3026,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 25.200000762939453,
    "ath_old_date": "2024-11-18",
    "ath_refreshed": null
@@ -3009,7 +3043,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 8.3100004196167,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -3031,6 +3065,23 @@
    "ath_old_date": "2024-06-01",
    "ath_refreshed": null
   },
+  "ARE": {
+   "symbol": "ARE.TO",
+   "source": "yahoo",
+   "exch": "TSX",
+   "code": "ARE",
+   "name": "Aecon Group Inc.",
+   "first": "2024-11-27",
+   "last": "2026-11-25",
+   "days": 500,
+   "filled_days": 10,
+   "adj_close_available": true,
+   "dropped_partial": null,
+   "filled_from_quote": null,
+   "ath_old": 27.2647705078125,
+   "ath_old_date": "2024-11-01",
+   "ath_refreshed": null
+  },
   "SSW": {
    "symbol": "SSW.JO",
    "source": "yahoo",
@@ -3043,7 +3094,7 @@
    "filled_days": 17,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": "2026-11-26",
    "ath_old": 7347.0380859375,
    "ath_old_date": "2022-02-28",
    "ath_refreshed": null
@@ -3065,23 +3116,6 @@
    "ath_old_date": "2007-03-01",
    "ath_refreshed": null
   },
-  "ARE": {
-   "symbol": "ARE.TO",
-   "source": "yahoo",
-   "exch": "TSX",
-   "code": "ARE",
-   "name": "Aecon Group Inc.",
-   "first": "2024-11-27",
-   "last": "2026-11-25",
-   "days": 500,
-   "filled_days": 10,
-   "adj_close_available": true,
-   "dropped_partial": null,
-   "filled_from_quote": null,
-   "ath_old": 27.2647705078125,
-   "ath_old_date": "2024-11-01",
-   "ath_refreshed": null
-  },
   "LMT": {
    "symbol": "LMT",
    "source": "yahoo",
@@ -3094,7 +3128,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 554.245361328125,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -3111,7 +3145,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 503.9512939453125,
    "ath_old_date": "2024-06-01",
    "ath_refreshed": null
@@ -3128,7 +3162,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 1264.740234375,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -3145,7 +3179,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 289.45953369140625,
    "ath_old_date": "2024-07-01",
    "ath_refreshed": null
@@ -3162,7 +3196,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 117.80741119384766,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -3179,7 +3213,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": null,
    "ath_old_date": null,
    "ath_refreshed": null
@@ -3196,7 +3230,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 238.66761779785156,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -3213,7 +3247,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 37.4678840637207,
    "ath_old_date": "2024-08-01",
    "ath_refreshed": null
@@ -3230,7 +3264,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 128.46054077148438,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -3247,10 +3281,10 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 34.34892272949219,
    "ath_old_date": "2023-11-01",
-   "ath_refreshed": null
+   "ath_refreshed": "stale"
   },
   "PH": {
    "symbol": "PH",
@@ -3264,26 +3298,26 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 690.4130249023438,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
   },
-  "PWR": {
-   "symbol": "PWR",
+  "NSC": {
+   "symbol": "NSC",
    "source": "yahoo",
    "exch": "",
-   "code": "PWR",
-   "name": "Quanta Services, Inc.",
+   "code": "NSC",
+   "name": "Norfolk Southern Corporation",
    "first": "2024-11-27",
    "last": "2026-11-25",
    "days": 500,
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 343.83807373046875,
-   "ath_old_date": "2024-11-01",
+   "filled_from_quote": null,
+   "ath_old": 265.5809326171875,
+   "ath_old_date": "2024-09-01",
    "ath_refreshed": null
   },
   "URI": {
@@ -3298,10 +3332,10 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 799.236328125,
-   "ath_old_date": "2024-10-01",
-   "ath_refreshed": null
+   "filled_from_quote": null,
+   "ath_old": 851.6600952148438,
+   "ath_old_date": "2024-11-01",
+   "ath_refreshed": "stale"
   },
   "005930": {
    "symbol": "005930.KS",
@@ -3366,7 +3400,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 106.30592346191406,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -3383,7 +3417,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 69.9388198852539,
    "ath_old_date": "2014-10-01",
    "ath_refreshed": null
@@ -3536,7 +3570,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 47.25881576538086,
    "ath_old_date": "2006-01-01",
    "ath_refreshed": null
@@ -3550,7 +3584,7 @@
    "first": "2024-11-27",
    "last": "2026-11-25",
    "days": 500,
-   "filled_days": 11,
+   "filled_days": 10,
    "adj_close_available": true,
    "dropped_partial": null,
    "filled_from_quote": null,
@@ -3592,6 +3626,23 @@
    "ath_old_date": "2024-10-01",
    "ath_refreshed": null
   },
+  "PWR": {
+   "symbol": "PWR",
+   "source": "yahoo",
+   "exch": "",
+   "code": "PWR",
+   "name": "Quanta Services, Inc.",
+   "first": "2024-11-27",
+   "last": "2026-11-25",
+   "days": 500,
+   "filled_days": 0,
+   "adj_close_available": true,
+   "dropped_partial": null,
+   "filled_from_quote": null,
+   "ath_old": 343.83807373046875,
+   "ath_old_date": "2024-11-01",
+   "ath_refreshed": null
+  },
   "JCI": {
    "symbol": "JCI",
    "source": "yahoo",
@@ -3604,7 +3655,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 82.08912658691406,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -3621,7 +3672,7 @@
    "filled_days": 16,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": "2026-11-26",
    "ath_old": 48.59720230102539,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -3638,7 +3689,7 @@
    "filled_days": 6,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": "2026-11-26",
    "ath_old": 235.51844787597656,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -3655,7 +3706,7 @@
    "filled_days": 8,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": "2026-11-26",
    "ath_old": 1191.229248046875,
    "ath_old_date": "2022-04-01",
    "ath_refreshed": null
@@ -3672,7 +3723,7 @@
    "filled_days": 10,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": "2026-11-26",
    "ath_old": 17.08462905883789,
    "ath_old_date": "2007-12-01",
    "ath_refreshed": null
@@ -3689,7 +3740,7 @@
    "filled_days": 11,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": "2026-11-26",
    "ath_old": 63.564788818359375,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -3706,7 +3757,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 450.07659912109375,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -3723,10 +3774,10 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
-   "ath_old": 86.2208251953125,
+   "filled_from_quote": null,
+   "ath_old": 86.2208480834961,
    "ath_old_date": "2014-03-01",
-   "ath_refreshed": null
+   "ath_refreshed": "stale"
   },
   "APA": {
    "symbol": "APA",
@@ -3740,7 +3791,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 96.37242126464844,
    "ath_old_date": "2011-02-01",
    "ath_refreshed": null
@@ -3757,7 +3808,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 154.04403686523438,
    "ath_old_date": "2008-06-01",
    "ath_refreshed": null
@@ -3774,7 +3825,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 86.5931396484375,
    "ath_old_date": "2008-06-01",
    "ath_refreshed": null
@@ -3791,7 +3842,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 65.66999816894531,
    "ath_old_date": "2014-04-01",
    "ath_refreshed": null
@@ -3808,7 +3859,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 60.310001373291016,
    "ath_old_date": "2024-02-12",
    "ath_refreshed": null
@@ -3825,7 +3876,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 291.989990234375,
    "ath_old_date": "2008-04-01",
    "ath_refreshed": null
@@ -3842,7 +3893,7 @@
    "filled_days": 84,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": "2026-11-26",
    "ath_old": 10050.0,
    "ath_old_date": "2000-02-01",
    "ath_refreshed": null
@@ -3859,7 +3910,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 47.89652633666992,
    "ath_old_date": "2020-12-01",
    "ath_refreshed": null
@@ -3876,7 +3927,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 320.5899963378906,
    "ath_old_date": "2022-11-01",
    "ath_refreshed": null
@@ -3893,7 +3944,7 @@
    "filled_days": 84,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": "2026-11-26",
    "ath_old": 1794.0,
    "ath_old_date": "2021-01-18",
    "ath_refreshed": null
@@ -3910,7 +3961,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 29.68760108947754,
    "ath_old_date": "2022-07-01",
    "ath_refreshed": null
@@ -3927,7 +3978,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 77.06999969482422,
    "ath_old_date": "2020-09-01",
    "ath_refreshed": null
@@ -3961,7 +4012,7 @@
    "filled_days": 6,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": "2026-11-26",
    "ath_old": 23.639999389648438,
    "ath_old_date": "2020-12-01",
    "ath_refreshed": null
@@ -3978,7 +4029,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 58.41679763793945,
    "ath_old_date": "2017-10-01",
    "ath_refreshed": null
@@ -3995,7 +4046,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 62.39542770385742,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -4012,7 +4063,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 96.83000183105469,
    "ath_old_date": "2024-11-01",
    "ath_refreshed": null
@@ -4029,7 +4080,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 53.510009765625,
    "ath_old_date": "2006-11-01",
    "ath_refreshed": null
@@ -4046,7 +4097,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 21.3700008392334,
    "ath_old_date": "2021-04-05",
    "ath_refreshed": null
@@ -4063,7 +4114,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 243.75140380859375,
    "ath_old_date": "2021-02-01",
    "ath_refreshed": null
@@ -4080,7 +4131,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 92.1906967163086,
    "ath_old_date": "2016-12-01",
    "ath_refreshed": null
@@ -4097,7 +4148,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 114.73999786376953,
    "ath_old_date": "2024-09-01",
    "ath_refreshed": null
@@ -4114,7 +4165,7 @@
    "filled_days": 0,
    "adj_close_available": true,
    "dropped_partial": null,
-   "filled_from_quote": "2026-11-25",
+   "filled_from_quote": null,
    "ath_old": 27.057777404785156,
    "ath_old_date": "2003-09-01",
    "ath_refreshed": null

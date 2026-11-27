@@ -71,7 +71,7 @@ EWZSUSDT,EWZS,USDT,EQUITY,TradFi,US,EWZS,constituents,etf,EWZS,iShares MSCI Braz
 EWZUSDT,EWZ,USDT,EQUITY,TradFi,US,EWZ,constituents,etf,EWZ,iShares MSCI Brazil ETF,etf,TRADING,2026-06-10
 FLEXUSDT,FLEX,USDT,EQUITY,TradFi,US,FLEX,constituents,stock,FLEX,Flex Ltd. - Ordinary Shares,stock,TRADING,2026-07-02
 FLNCUSDT,FLNC,USDT,EQUITY,TradFi,US,FLNC,constituents,stock,FLNC,"Fluence Energy, Inc. - Class A Common Stock",stock,TRADING,2026-05-18
-FRHCUSDT,FRHC,USDT,EQUITY,TradFi,US,FRHC,constituents,stock,FRHC,Freedom Holding Corp. - Common Stock,stock,TRADING,2026-11-12
+FRHCUSDT,FRHC,USDT,EQUITY,TradFi,US,FRHC,baseAsset,stock,FRHC,Freedom Holding Corp. - Common Stock,stock,TRADING,2026-11-12
 FWDIUSDT,FWDI,USDT,EQUITY,TradFi,US,FWDI,constituents,stock,FWDI,"Forward Industries, Inc. - Common Stock",stock,TRADING,2026-07-09
 GDXUSDT,GDX,USDT,EQUITY,TradFi,US,GDX,constituents,etf,GDX,VanEck Gold Miners ETF,etf,TRADING,2026-08-17
 GEVUSDT,GEV,USDT,EQUITY,TradFi,US,GEV,constituents,stock,GEV,GE Vernova Inc. Common Stock,stock,TRADING,2026-07-10
@@ -178,7 +178,7 @@ SQQQUSDT,SQQQ,USDT,EQUITY,TradFi,US,SQQQ,constituents,etf,SQQQ,ProShares UltraPr
 STMUSDT,STM,USDT,EQUITY,TradFi,US,STM,constituents,stock,STM,STMicroelectronics N.V. Common Stock,stock,TRADING,2026-10-26
 STRCUSDT,STRC,USDT,EQUITY,TradFi,US,STRC,constituents,stock,STRC,Strategy Inc - Variable Rate Series A Perpetual Stretch Preferred Stock,stock,TRADING,2026-07-02
 STXXUSDT,STXX,USDT,EQUITY,TradFi,US,STX,constituents,stock,STX,Seagate Technology Holdings PLC - Ordinary Shares (Ireland),stock,TRADING,2026-06-11
-TBTUSDT,TBT,USDT,EQUITY,TradFi,US,TBT,constituents,etf,TBT,ProShares UltraShort Lehman 20  Year Treasury,etf,TRADING,2026-07-27
+TBTUSDT,TBT,USDT,EQUITY,TradFi,US,TBT,baseAsset,etf,TBT,ProShares UltraShort Lehman 20  Year Treasury,etf,TRADING,2026-07-27
 TEAMUSDT,TEAM,USDT,EQUITY,TradFi,US,TEAM,constituents,stock,TEAM,Atlassian Corporation  - Class A Common Stock,stock,TRADING,2026-09-02
 TEMUSDT,TEM,USDT,EQUITY,TradFi,US,TEM,constituents,stock,TEM,"Tempus AI, Inc. - Class A Common Stock",stock,TRADING,2026-08-28
 TERUSDT,TER,USDT,EQUITY,TradFi,US,TER,constituents,stock,TER,"Teradyne, Inc. - Common Stock",stock,TRADING,2026-07-02
@@ -218,11 +218,13 @@ HK0625USDT,HK0625,USDT,HK_EQUITY,TradFi,HK,HKEX:0625,constituents,stock,HKEX:062
 HK0700USDT,HK0700,USDT,HK_EQUITY,TradFi,HK,HKEX:0700,constituents,stock,HKEX:0700,Tencent Holdings Limited (HKD quanto),,TRADING,2026-07-22
 HK0992USDT,HK0992,USDT,HK_EQUITY,TradFi,HK,HKEX:0992,constituents,stock,HKEX:0992,Lenovo Group Limited,,TRADING,2026-09-07
 HK1810USDT,HK1810,USDT,HK_EQUITY,TradFi,HK,HKEX:1810,constituents,stock,HKEX:1810,Xiaomi Corporation,,TRADING,2026-07-22
+HK1888USDT,HK1888,USDT,HK_EQUITY,TradFi,HK,HK1888,baseAsset,unknown,,,,PENDING_TRADING,2026-11-27
 KUAISHOUUSDT,KUAISHOU,USDT,HK_EQUITY,TradFi,HK,HKEX:1024,constituents,stock,HKEX:1024,Kuaishou Technology,,TRADING,2026-08-11
 MEITUANUSDT,MEITUAN,USDT,HK_EQUITY,TradFi,HK,HKEX:3690,constituents,stock,HKEX:3690,Meituan,,TRADING,2026-08-11
 MINIMAXUSDT,MINIMAX,USDT,HK_EQUITY,TradFi,HK,HKEX:0100,constituents,stock,HKEX:0100,MiniMax Group Inc.,,TRADING,2026-07-17
 POPMARTUSDT,POPMART,USDT,HK_EQUITY,TradFi,HK,HKEX:9992,constituents,stock,HKEX:9992,Pop Mart International Group Limited,,TRADING,2026-07-23
 TENCENTUSDT,TENCENT,USDT,HK_EQUITY,TradFi,HK,HKEX:0700,constituents,stock,HKEX:0700,Tencent Holdings Limited,,TRADING,2026-07-22
+XIAOMIUSDT,XIAOMI,USDT,HK_EQUITY,TradFi,HK,XIAOMI,baseAsset,unknown,,,,PENDING_TRADING,2026-11-27
 ZHIPUUSDT,ZHIPU,USDT,HK_EQUITY,TradFi,HK,HKEX:2513,constituents,stock,HKEX:2513,Knowledge Atlas Technology (Zhipu AI),,TRADING,2026-07-17
 ZHONGJIUSDT,ZHONGJI,USDT,HK_EQUITY,TradFi,HK,HKEX:3308,constituents,stock,HKEX:3308,"Zhongji Innolight Co., Ltd. (H shares)",,TRADING,2026-08-14
 HANMIUSDT,HANMI,USDT,KR_EQUITY,TradFi,KR,HANMI,constituents,unknown,KRX:042700,"constituents say HANMI, table says KRX:042700",,TRADING,2026-08-14

@@ -4818,9 +4818,9 @@
   },
   "S:TWST:2026-11-24": {
    "none": 1,
-   "tries": 1,
-   "at": "11/25 10:19 KST",
-   "why": "Twist 11월 검색에서 11/24 소식이 없음"
+   "tries": 2,
+   "at": "11/27 10:18 KST",
+   "why": "Twist 날짜 검색 1회. 11/12 실적 이후 소식뿐이고 11/24 원인 기사 없음"
   },
   "S:COST:2026-11-24": {
    "none": 1,
@@ -4830,9 +4830,9 @@
   },
   "S:BRK.B:2026-11-23": {
    "none": 1,
-   "tries": 1,
-   "at": "11/25 10:19 KST",
-   "why": "BRK.B 검색에서 11/23 원인이 없음"
+   "tries": 2,
+   "at": "11/27 10:18 KST",
+   "why": "Berkshire 날짜 검색 1회와 제공 기사 확인. 11/23 부진 원인 기사 없음"
   },
   "S:AMD:2026-11-23": {
    "k": "공매도 보고서 부담",
@@ -4859,91 +4859,227 @@
    "at": "11/26 10:19 KST"
   },
   "E:XHB:2026-11-25": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "주택건설주와 모기지 금리 11/25 검색 결과에 해당일 기사가 없음"
+   "k": "기술주 이탈 순환매",
+   "ev": "AI 우려로 기술주가 밀리는 날 비기술 업종이 올라 S&P 500 은 낙폭을 만회했다고 보도됨",
+   "src": [
+    {
+     "t": "CNBC 기술주 매도 보도",
+     "u": "https://www.cnbc.com/2026/11/25/nvidia-ai-stock-tech-selloff.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
   },
   "E:XLB:2026-11-25": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "소재 업종 11/25 검색 결과에 해당일 기사가 없음"
+   "k": "기술주 이탈 순환매",
+   "ev": "AI 우려로 기술주가 밀리는 날 비기술 업종이 올라 S&P 500 은 낙폭을 만회했다고 보도됨",
+   "src": [
+    {
+     "t": "CNBC 기술주 매도 보도",
+     "u": "https://www.cnbc.com/2026/11/25/nvidia-ai-stock-tech-selloff.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
   },
   "E:XLC:2026-11-24": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "통신서비스 업종과 TTWO 검색에서 11/24 원인을 찾지 못함"
+   "k": "칩주 급락 속 순환매",
+   "ev": "필라델피아 반도체지수가 7.9% 급락한 날 다우는 올랐고 S&P 500 과 나스닥은 하락함",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/24 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
   },
   "S:ARWR:2026-11-24": {
    "none": 1,
-   "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "ARWR 11/24 검색에서 원인을 찾지 못함, 기사 제목도 회사 소식 없음이라고 적음"
+   "tries": 2,
+   "at": "11/27 10:18 KST",
+   "why": "ARWR 날짜 검색과 바이오 업종 검색 2회. 11/24 자료 없음. 제공 기사도 회사 소식 없이 9.2% 상승이라고만 함"
   },
   "S:ABSI:2026-11-24": {
    "none": 1,
-   "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "Needham 목표가 재확인 제목뿐이고 11/24 상승 원인으로 볼 근거를 찾지 못함"
+   "tries": 2,
+   "at": "11/27 10:18 KST",
+   "why": "ABSI ABS-201 날짜 검색과 바이오 업종 검색 2회. 11/24 원인 기사 없음. Needham 목표가 재확인만 확인됨"
   },
   "S:BMRN:2026-11-25": {
    "none": 1,
-   "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "제목이 회사 소식 없음이라고 적었고 별도 원인도 찾지 못함"
+   "tries": 2,
+   "at": "11/27 10:18 KST",
+   "why": "BMRN 날짜 검색 1회, 업종 검색 1회. 11/25 자료 없음. 제공 기사는 회사 소식 없다고만 함"
   },
   "S:CCJ:2026-11-25": {
    "none": 1,
-   "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "Cameco 11/25 검색에서 해당일 원인을 찾지 못함"
+   "tries": 2,
+   "at": "11/27 10:18 KST",
+   "why": "Cameco 날짜 검색과 우라늄주 검색 2회. 11/25 상승 원인 기사 없음"
   },
   "S:MPC:2026-11-25": {
    "none": 1,
-   "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "MPC와 정유주 11/25 검색에서 해당일 원인을 찾지 못함"
+   "tries": 2,
+   "at": "11/27 10:18 KST",
+   "why": "Marathon Petroleum 날짜 검색과 정유주 유가 검색 2회. 11/25 자료 없음. 11/18 이전 기사뿐"
   },
   "S:AMZN:2026-11-25": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "Amazon 11/25 검색에서 해당일 원인을 찾지 못함"
+   "k": "AI 기술주 매도",
+   "ev": "강한 물가 지표와 AI 지출 우려 속 Amazon 과 Alphabet 이 약 2% 하락했다고 보도됨",
+   "src": [
+    {
+     "t": "CNBC 기술주 매도 보도",
+     "u": "https://www.cnbc.com/2026/11/25/nvidia-ai-stock-tech-selloff.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
   },
   "S:GOOGL:2026-11-25": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "AI 관련 하락이라는 제목뿐이고 구체적 원인 기사를 두 번 검색해도 찾지 못함"
+   "k": "AI 기술주 매도",
+   "ev": "강한 물가 지표와 AI 지출 우려 속 Alphabet 이 약 2% 하락했다고 보도됨",
+   "src": [
+    {
+     "t": "CNBC 기술주 매도 보도",
+     "u": "https://www.cnbc.com/2026/11/25/nvidia-ai-stock-tech-selloff.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
   },
   "S:MSFT:2026-11-23": {
-   "none": 1,
-   "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "MSFT가 랠리에 덜 올라탄 원인을 찾지 못함"
+   "k": "엔비디아 급등 쏠림",
+   "ev": "Huang 의 Nvidia CEO 복귀로 Nvidia 가 31.5% 급등해 XLK 가 크게 오른 날 MSFT 상승폭은 작았음",
+   "src": [
+    {
+     "t": "CNBC 11/23 기술주 랠리",
+     "u": "https://www.cnbc.com/2026/11/23/anthropic-nvidia-shares.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
   },
   "S:GE:2026-11-25": {
    "none": 1,
+   "tries": 2,
+   "at": "11/27 10:18 KST",
+   "why": "GE Aerospace 날짜 검색 1회와 제공 기사 확인. 11/25 하락 원인이 될 기사 없음. Malaysia Aviation GEnx 수주는 호재라 원인 아님"
+  },
+  "S:SNDK:2026-11-25": {
+   "k": "AI 메모리 우려",
+   "ev": "Huang 복귀 랠리가 꺼지며 AI 메모리 우려로 Sandisk 가 장중 10~12% 급락했다고 보도됨",
+   "src": [
+    {
+     "t": "CNBC 기술주 매도 보도",
+     "u": "https://www.cnbc.com/2026/11/25/nvidia-ai-stock-tech-selloff.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
+  },
+  "S:000660:2026-11-25": {
+   "k": "한국 반도체 급락",
+   "ev": "코스피 6.16% 급락 속 SK hynix 11.05% 하락, AI 의구심과 메모리 공급 과잉 우려가 겹침",
+   "src": [
+    {
+     "t": "Korea JoongAng Daily",
+     "u": "https://www.koreajoongangdaily.com/business/kospi-plunges-back-below-5000-as-chip-selloff-returns/12990750"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
+  },
+  "S:005930:2026-11-25": {
+   "k": "한국 반도체 급락",
+   "ev": "코스피 6.16% 급락 속 Samsung 9.87% 하락, AI 의구심과 메모리 공급 과잉 우려가 겹침",
+   "src": [
+    {
+     "t": "Korea JoongAng Daily",
+     "u": "https://www.koreajoongangdaily.com/business/kospi-plunges-back-below-5000-as-chip-selloff-returns/12990750"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
+  },
+  "S:688825:2026-11-25": {
+   "k": "메모리주 동반 급락",
+   "ev": "미국 칩주 급락 여파로 Samsung, SK hynix 가 10% 안팎 떨어진 날 메모리주가 함께 밀림",
+   "src": [
+    {
+     "t": "Korea JoongAng Daily",
+     "u": "https://www.koreajoongangdaily.com/business/kospi-plunges-back-below-5000-as-chip-selloff-returns/12990750"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
+  },
+  "S:MU:2026-11-24": {
+   "k": "엔비디아 반등 반납",
+   "ev": "필라델피아 반도체지수 7.9% 급락 속 Micron 이 약 11% 하락, 전날 Huang 복귀 랠리를 반납함",
+   "src": [
+    {
+     "t": "Yahoo Finance 11/24 시황",
+     "u": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+    },
+    {
+     "t": "ABC News",
+     "u": "https://abcnews.com/Business/stocks-tumble-tech-sell-off-resumes-nvidia-falls/story?id=138442070"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
+  },
+  "S:AVGO:2026-11-23": {
+   "k": "엔비디아 급등 쏠림",
+   "ev": "Huang 의 Nvidia CEO 복귀로 Nvidia 가 31.5% 급등해 XLK 가 크게 오른 날 AVGO 상승폭은 작았음",
+   "src": [
+    {
+     "t": "CNBC 11/23 기술주 랠리",
+     "u": "https://www.cnbc.com/2026/11/23/anthropic-nvidia-shares.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
+  },
+  "S:CBRE:2026-11-25": {
+   "k": "부동산주 강세",
+   "ev": "기술주가 밀리는 날 비기술 업종이 올랐고 부동산주 랠리가 함께 나타났다고 보도됨",
+   "src": [
+    {
+     "t": "CNBC 기술주 매도 보도",
+     "u": "https://www.cnbc.com/2026/11/25/nvidia-ai-stock-tech-selloff.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
+  },
+  "S:CRH:2026-11-25": {
+   "k": "기술주 이탈 순환매",
+   "ev": "AI 우려로 기술주가 밀리는 날 소재 등 비기술 업종이 올랐다고 보도됨",
+   "src": [
+    {
+     "t": "CNBC 기술주 매도 보도",
+     "u": "https://www.cnbc.com/2026/11/25/nvidia-ai-stock-tech-selloff.html"
+    }
+   ],
+   "by": "claude",
+   "at": "11/27 10:18 KST"
+  },
+  "S:KAP:2026-11-25": {
+   "none": 1,
    "tries": 1,
-   "at": "11/26 10:19 KST",
-   "why": "Malaysia Aviation GEnx 수주와 GE 11/25 주가 검색에서 하락 원인을 찾지 못함"
+   "at": "11/27 10:18 KST",
+   "why": "Kazatomprom 날짜 검색, 우라늄주 검색, 11월 공시 검색 3회. 11/25 하락 원인 기사 없음"
+  },
+  "S:NXE:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/27 10:18 KST",
+   "why": "NexGen 날짜 검색 2회(11/23 주식, 우라늄주). 11/23 상승 원인 기사 없음"
   }
  },
  "runs": [
-  [
-   "11/03 10:19 KST",
-   24,
-   14,
-   10,
-   "ok",
-   18,
-   2,
-   22,
-   "claude-sonnet-5-5",
-   0.482
-  ],
   [
    "11/04 10:19 KST",
    24,
@@ -5171,6 +5307,18 @@
    26,
    "claude-sonnet-5-5",
    0.603
+  ],
+  [
+   "11/27 10:18 KST",
+   24,
+   14,
+   10,
+   "ok",
+   34,
+   3,
+   39,
+   "claude-sonnet-5-5",
+   0.862
   ]
  ]
 }

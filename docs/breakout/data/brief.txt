@@ -1,9 +1,9 @@
-돌파 지도 주간 브리핑 · 종가 2026-11-25 · 구성종목 2026-11-26
+돌파 지도 주간 브리핑 · 종가 2026-11-25 · 구성종목 2026-11-27
 
 켜진 칸 (지평별)
-  USD: 20일 29/279 (10%) · 55일 27 · 52주 14 · 사상 최고 11 · 이탈 82 · 실패 4
-  QQQ 대비: 20일 57/279 (20%) · 55일 53 · 52주 19 · 사상 최고 13 · 이탈 28 · 실패 65
-  SPY 대비: 20일 71/279 (25%) · 55일 68 · 52주 21 · 사상 최고 12 · 이탈 40 · 실패 18
+  USD: 20일 29/279 (10%) · 55일 27 · 52주 14 · 사상 최고 11 · 이탈 81 · 실패 4
+  QQQ 대비: 20일 57/279 (20%) · 55일 53 · 52주 19 · 사상 최고 13 · 이탈 29 · 실패 67
+  SPY 대비: 20일 72/279 (26%) · 55일 69 · 52주 21 · 사상 최고 12 · 이탈 39 · 실패 18
 
 켜진 비율이 높은 블록 (USD 20일)
   XHB 주택건설 7/10 · SPY 대비 10/10
@@ -20,8 +20,8 @@
   55일 11: BMRN(GNOM) 1일*, CSL(XHB) 1일*, HD(XLY·XHB) 1일*, LOW(XLY·XHB) 1일*, SKY(XHB) 1일*, O(XLRE) 1일*, CMCSA(XLC) 1일, CVCO(XHB) 2일*, WMT(XLP) 2일*, INSM(XBI) 5일*, SO(XLU) 8일*
   20일 3: TJX(XLY) 1일*, T(XLC) 2일, VZ(XLC) 2일*
 
-약세 신호 78: MSFT(XLK·IGV) 20일 이탈 5일, JPM(XLF) 55일 이탈 6일, BAC(XLF) 55일 이탈 6일, WFC(XLF) 20일 이탈 6일, GS(XLF) 55일 이탈 5일, MS(XLF) 55일 이탈 5일, C(XLF) 55일 이탈 6일, MRK(XLV) 20일 이탈 6일, UNH(XLV) 55일 이탈 6일, PFE(XLV) 20일 이탈 10일, META(XLC) 20일 이탈 5일, GOOG(XLC) 55일 이탈 5일, DIS(XLC) 실패, CAT(XLI) 55일 이탈 5일, DE(XLI·PAVE) 20일 이탈 5일, BA(XLI·ITA) 55일 이탈 8일, PM(XLP) 20일 이탈 5일, CL(XLP) 실패, XOM(XLE·XOP) 20일 이탈 6일, CVX(XLE·XOP) 20일 이탈 6일, PSX(XLE·XOP) 55일 이탈 5일, MPC(XLE) 55일 이탈 5일, VLO(XLE) 55일 이탈 6일, SLB(XLE) 20일 이탈 7일, ETR(XLU) 20일 이탈 4일, NEM(XLB·XME·GDX) 55일 이탈 6일, STLD(XLB·XME) 55일 이탈 5일, CRWD(IGV) 20일 이탈 3일, ORCL(IGV) 55일 이탈 6일, CRM(IGV) 55일 이탈 7일, ADBE(IGV) 55일 이탈 6일, CDNS(IGV) 20일 이탈 7일, TEM(ARKG) 55일 이탈 4일, TXG(ARKG) 55일 이탈 8일, ILMN(ARKG) 20일 이탈 8일, NTRA(ARKG) 55일 이탈 8일, UCB(KRE) 20일 이탈 5일, EBC(KRE) 20일 이탈 5일, OZK(KRE) 20일 이탈 5일, FIBK(KRE) 20일 이탈 5일, WTFC(KRE) 20일 이탈 5일, NIC(KRE) 20일 이탈 5일, RS(XME) 20일 이탈 4일, CLF(XME) 20일 이탈 4일, CMC(XME) 55일 이탈 8일, AA(XME) 55일 이탈 7일, CCJ(URA) 55일 이탈 8일, NXE(URA) 55일 이탈 8일, KAP(URA) 55일 이탈 6일, UEC(URA) 55일 이탈 8일, SSW(URA) 55일 이탈 6일, PDN(URA) 55일 이탈 7일, EMR(PAVE) 20일 이탈 5일, URI(PAVE) 20일 이탈 4일, 005930(DRAM) 55일 이탈 4일, 688825(DRAM) 55일 이탈 8일, SNDK(DRAM) 55일 이탈 7일, 2408(DRAM) 55일 이탈 8일, 285A(DRAM) 55일 이탈 7일, 2344(DRAM) 55일 이탈 8일, AEM(GDX) 55일 이탈 5일, ABX(GDX) 55일 이탈 6일, AU(GDX) 55일 이탈 5일, K(GDX) 55일 이탈 6일, NST(GDX) 20일 이탈 5일, PRY(GRID) 55일 이탈 2일, OVV(XOP) 20일 이탈 3일, NXT(TAN) 55일 이탈 5일, FSLR(TAN) 55일 이탈 8일, ENLT(TAN) 20일 이탈 2일, ENPH(TAN) 55일 이탈 7일, DORL(TAN) 55일 이탈 2일, CWEN(TAN) 20일 이탈 5일, RUN(TAN) 20일 이탈 5일, 3800(TAN) 55일 이탈 8일, SLR(TAN) 55일 이탈 2일, LUV(JETS) 실패, ULCC(JETS) 실패
+약세 신호 78: MSFT(XLK·IGV) 20일 이탈 5일, JPM(XLF) 55일 이탈 6일, BAC(XLF) 55일 이탈 6일, WFC(XLF) 20일 이탈 6일, GS(XLF) 55일 이탈 5일, MS(XLF) 55일 이탈 5일, C(XLF) 55일 이탈 6일, MRK(XLV) 20일 이탈 6일, UNH(XLV) 55일 이탈 6일, PFE(XLV) 20일 이탈 10일, META(XLC) 20일 이탈 5일, GOOG(XLC) 55일 이탈 5일, DIS(XLC) 실패, CAT(XLI) 55일 이탈 5일, DE(XLI·PAVE) 20일 이탈 5일, BA(XLI·ITA) 55일 이탈 8일, PM(XLP) 20일 이탈 5일, CL(XLP) 실패, XOM(XLE·XOP) 20일 이탈 6일, CVX(XLE·XOP) 20일 이탈 6일, PSX(XLE·XOP) 55일 이탈 5일, MPC(XLE) 55일 이탈 5일, VLO(XLE) 55일 이탈 6일, SLB(XLE) 20일 이탈 7일, ETR(XLU) 20일 이탈 4일, NEM(XLB·XME·GDX) 55일 이탈 6일, CRWD(IGV) 20일 이탈 3일, ORCL(IGV) 55일 이탈 6일, CRM(IGV) 55일 이탈 7일, ADBE(IGV) 55일 이탈 6일, CDNS(IGV) 20일 이탈 7일, TEM(ARKG) 55일 이탈 4일, TXG(ARKG) 55일 이탈 8일, ILMN(ARKG) 20일 이탈 8일, NTRA(ARKG) 55일 이탈 8일, UCB(KRE) 20일 이탈 5일, EBC(KRE) 20일 이탈 5일, OZK(KRE) 20일 이탈 5일, FIBK(KRE) 20일 이탈 5일, WTFC(KRE) 20일 이탈 5일, NIC(KRE) 20일 이탈 5일, RS(XME) 20일 이탈 4일, CLF(XME) 20일 이탈 4일, STLD(XME) 55일 이탈 5일, CMC(XME) 55일 이탈 8일, AA(XME) 55일 이탈 7일, CCJ(URA) 55일 이탈 8일, NXE(URA) 55일 이탈 8일, KAP(URA) 55일 이탈 6일, UEC(URA) 55일 이탈 8일, SSW(URA) 55일 이탈 6일, PDN(URA) 55일 이탈 7일, EMR(PAVE) 20일 이탈 5일, URI(PAVE) 20일 이탈 4일, 005930(DRAM) 55일 이탈 4일, 688825(DRAM) 55일 이탈 8일, SNDK(DRAM) 55일 이탈 7일, 2408(DRAM) 55일 이탈 8일, 285A(DRAM) 55일 이탈 7일, 2344(DRAM) 55일 이탈 8일, AEM(GDX) 55일 이탈 5일, ABX(GDX) 55일 이탈 6일, AU(GDX) 55일 이탈 5일, K(GDX) 55일 이탈 6일, NST(GDX) 20일 이탈 5일, PRY(GRID) 55일 이탈 2일, OVV(XOP) 20일 이탈 3일, NXT(TAN) 55일 이탈 5일, FSLR(TAN) 55일 이탈 8일, ENLT(TAN) 20일 이탈 2일, ENPH(TAN) 55일 이탈 7일, DORL(TAN) 55일 이탈 2일, CWEN(TAN) 20일 이탈 5일, RUN(TAN) 20일 이탈 5일, 3800(TAN) 55일 이탈 8일, SLR(TAN) 55일 이탈 2일, LUV(JETS) 실패, ULCC(JETS) 실패
 
-켜진 종목 26 중 크립토 거래소 상장 4 (목록 2026-11-26)
+켜진 종목 26 중 크립토 거래소 상장 4 (목록 2026-11-27)
 
 https://tlzkrh1029.github.io/rrg/breakout/

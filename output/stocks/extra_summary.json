@@ -195,17 +195,6 @@
    "source": "yahoo",
    "symbol": "1548.HK"
   },
-  "AMAT": {
-   "code": "AMAT",
-   "etf": "XLK",
-   "exch": "",
-   "first": "2024-11-27",
-   "last": "2026-11-25",
-   "name": "Applied Materials, Inc.",
-   "seen": "2026-10-13",
-   "source": "yahoo",
-   "symbol": "AMAT"
-  },
   "AUB": {
    "code": "AUB",
    "etf": "KRE",
@@ -249,17 +238,6 @@
    "seen": "2026-10-28",
    "source": "yahoo",
    "symbol": "CCI"
-  },
-  "CCO.NE": {
-   "code": "CCO.NE",
-   "etf": "URA",
-   "exch": "",
-   "first": "2026-11-25",
-   "last": "2026-11-25",
-   "name": "CAMECO CORP",
-   "seen": "2026-10-13",
-   "source": "yahoo",
-   "symbol": "CCO.NE"
   },
   "CDE": {
    "code": "CDE",
@@ -348,17 +326,6 @@
    "seen": "2026-10-20",
    "source": "yahoo",
    "symbol": "DML.TO"
-  },
-  "EFR.NE": {
-   "code": "EFR.NE",
-   "etf": "URA",
-   "exch": "",
-   "first": "2026-11-25",
-   "last": "2026-11-25",
-   "name": "ENERGY FUELS INC",
-   "seen": "2026-10-13",
-   "source": "yahoo",
-   "symbol": "EFR.NE"
   },
   "EWBC": {
    "code": "EWBC",
@@ -590,17 +557,6 @@
    "seen": "2026-10-13",
    "source": "yahoo",
    "symbol": "NFLX"
-  },
-  "NSC": {
-   "code": "NSC",
-   "etf": "PAVE",
-   "exch": "",
-   "first": "2024-11-27",
-   "last": "2026-11-25",
-   "name": "Norfolk Southern Corporation",
-   "seen": "2026-10-17",
-   "source": "yahoo",
-   "symbol": "NSC"
   },
   "ONB": {
    "code": "ONB",
@@ -875,6 +831,24 @@
    "error": "RuntimeError('all symbols failed: RuntimeError(\\'yahoo: RuntimeError(\"https://query1.finance.yahoo.com: <HTTPError 404: \\\\\\'Not Found\\\\\\'>; https://query2.finance.yahoo.com: <HTTPError 404: \\\\\\'Not Found\\\\\\'>\"); stooq: InvalidURL(\"URL can\\\\\\'t contain control characters. \\\\\\'/q/d/l/?s=595112103 swp.us&i=d\\\\\\' (found at least \\\\\\' \\\\\\')\")\\')')",
    "etf": "DRAM",
    "seen": "2026-11-19"
+  },
+  "CCO.NE": {
+   "attempts": {
+    "CCO-NE": "RuntimeError('yahoo: RuntimeError(\"https://query1.finance.yahoo.com: <HTTPError 404: \\'Not Found\\'>; https://query2.finance.yahoo.com: <HTTPError 404: \\'Not Found\\'>\"); stooq: ValueError(\\'unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no\\')')",
+    "CCO.NE": {}
+   },
+   "error": "no bars on the SPY axis",
+   "etf": "URA",
+   "seen": "2026-10-13"
+  },
+  "EFR.NE": {
+   "attempts": {
+    "EFR-NE": "RuntimeError('yahoo: RuntimeError(\"https://query1.finance.yahoo.com: <HTTPError 404: \\'Not Found\\'>; https://query2.finance.yahoo.com: <HTTPError 404: \\'Not Found\\'>\"); stooq: ValueError(\\'unexpected response: <!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no\\')')",
+    "EFR.NE": {}
+   },
+   "error": "no bars on the SPY axis",
+   "etf": "URA",
+   "seen": "2026-10-13"
   }
  },
  "funds": [
@@ -920,7 +894,7 @@
   "ZAR"
  ],
  "fx_failed": {},
- "generated_at": "2026-11-26T01:09:16Z",
+ "generated_at": "2026-11-27T01:09:22Z",
  "lookback_days": 45,
  "snapshots": [
   "2026-10-13",
@@ -955,6 +929,7 @@
   "2026-11-21",
   "2026-11-24",
   "2026-11-25",
-  "2026-11-26"
+  "2026-11-26",
+  "2026-11-27"
  ]
 }

@@ -364,83 +364,89 @@
   },
   "000660": {
    "text": [
-    "10/26 주 +11.0%로 오른 뒤 11/3 미국 중간선거에서 민주당이 약진하면서 데이터센터 건설 제한 우려가 커져, 11/2 주에 반도체주가 크게 밀렸습니다. 11/5에는 미국 상장 주식(SKHY)이 13.4% 떨어졌고, 미국 상무부가 중국 내 낸드 공장용 장비 수출 허가를 지연시키고 있다는 Wedbush 애널리스트의 분석도 나왔습니다. 11/9 주 +7.4%로 일부 반등했지만 11/16 주에는 다시 하락했습니다."
+    "SK hynix 는 11/3 미국 중간선거에서 민주당이 예상보다 크게 선전하자 데이터센터 증설 규제 우려가 퍼지면서 11/5 미국 상장 주식이 13.4% 하락했습니다.",
+    "같은 날 Wedbush 애널리스트는 미국 상무부가 중국 내 SK hynix 낸드 공장으로 가는 반도체 장비의 수출 허가를 지연시키고 있다고 지적했습니다.",
+    "이 기사는 SK hynix 가 직전에 강한 실적을 발표했다고 전했으며, 11/2 주 −20.2%, 11/16 주 −8.5%, 11/23 주 −7.5% 로 이어진 약세는 AI 반도체주 전반의 하락과 함께 나타났습니다."
    ],
    "src": [
     {
-     "t": "Motley Fool, SK hynix 11/5 하락",
+     "t": "Motley Fool 11/5",
      "u": "https://www.fool.com/investing/2026/11/05/why-sk-hynix-plunged-today/"
-    },
-    {
-     "t": "Star/Reuters, 중간선거 후 반도체·데이터센터주",
-     "u": "https://www.thestar.com.my/tech/tech-news/2026/11/05/ai-data-center-stocks-slide-renewables-rally-after-democratic-us-midterm-sweep"
     }
    ],
-   "asof": "2026-11-17",
-   "at": "11/18 10:29 KST"
+   "asof": "2026-11-25",
+   "at": "11/27 10:18 KST"
   },
   "NVDA": {
    "text": [
-    "11/2 주 −8.8%는 중간선거 뒤 AI·데이터센터주가 밀린 흐름과 겹칩니다. 11/12에 NVDA 이사회가 Jensen Huang의 사장·CEO·이사직 사임을 즉시 발효한다고 발표했고, CFO Colette Kress가 CEO 직무를 임시로 맡았습니다. 회사 발표문에는 사임 이유가 적혀 있지 않았으며 사임 소식에 주가는 장 초반 크게 떨어졌습니다. 11/17 장 마감 후에 Kress 체제 첫 실적이 발표됐지만 그 내용은 확인하지 못했습니다."
+    "Nvidia 는 11/12 Jensen Huang 이 사장 겸 CEO 와 이사직에서 사임했다고 발표했고, CFO Colette Kress 가 후임을 찾을 때까지 임시 CEO 를 맡기로 했습니다.",
+    "11/17 장 마감 후 발표한 실적에서 매출은 1,158억 달러로 103% 늘었고 다음 분기 매출 전망은 약 1,300억 달러로 제시했으며, 다음 거래일 주가는 2.9% 내렸습니다.",
+    "같은 날 이사회 의장 Harvey Jones 는 이사회가 Huang 을 CEO 로 복귀시킬 계획이 없다고 밝혔습니다.",
+    "11/2 주 −8.8%, 11/9 주 −12.7%, 11/16 주 −22.9% 로 이어진 하락 뒤에 11/23 주에는 +18.9% 반등했습니다."
    ],
    "src": [
     {
-     "t": "SF Standard, Huang 사임",
-     "u": "https://sfstandard.com/2026/11/12/nvidia-ceo-jensen-huang-resigns/"
+     "t": "NVIDIA 보도자료",
+     "u": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
     },
     {
-     "t": "StockAnalysis, 사임 후 시간외 하락",
-     "u": "https://stockanalysis.com/news/jensen-huang-resigns-as-nvidia-ceo/"
+     "t": "SiliconANGLE",
+     "u": "https://siliconangle.com/2026/11/17/business-as-usual-for-nvidia-as-it-beats-expectations-in-its-first-earnings-call-after-jensen-huangs-resignation/"
     },
     {
-     "t": "Atlanta News First, 개장 직후 급락",
-     "u": "https://www.atlantanewsfirst.com/2026/11/12/nvidia-ceo-jensen-huang-resigns-after-his-affair-raises-national-security-concerns/"
+     "t": "SCMP",
+     "u": "https://www.scmp.com/tech/article/3374812/nvidia-board-says-it-has-no-plans-reinstate-jensen-huang-ceo"
+    },
+    {
+     "t": "Fortune",
+     "u": "https://fortune.com/2026/11/12/jensen-huang-nvidia-ceo-resignation-ai-chip-founders-voting-power-board-control-mark-zuckerberg-meta-stock-market/"
     }
    ],
-   "asof": "2026-11-17",
-   "at": "11/18 10:29 KST"
+   "asof": "2026-11-25",
+   "at": "11/27 10:18 KST"
   },
   "CCJ": {
    "text": [
-    "CCJ는 10/30 3분기 실적에서 조정 순손실 200만 캐나다달러를 냈고, 키 레이크 제분소 정비로 분기 생산이 전년보다 20% 줄었습니다. 연간 생산 가이던스 상단은 2,150만 파운드에서 2,050만 파운드로 낮아졌고 비용 가이던스는 올랐습니다. 11/5에는 3분기 부진과 낮아진 연간 전망이 부담이 되어 52주 신저가를 기록했습니다."
+    "Cameco 는 10/30 에 3분기 조정 순손실 200만 캐나다달러를 발표했고, Key Lake 공장의 계획된 장기 정비로 우라늄 생산량이 20% 줄었다고 설명했습니다.",
+    "11/5 에는 시장가 주식 매각 프로그램을 10억 달러로 두 배 늘려 신주를 팔 수 있게 되었습니다.",
+    "11/16 에는 회사 소식 없이 AI 전력 관련 원전주 매도에 휩쓸려 52주 신저가로 마감했고, 일주일 동안 약 12% 내렸습니다.",
+    "11/16 주 −18.0% 하락은 이 흐름과 이어지며, 11/23 주에는 +6.1% 반등했습니다."
    ],
    "src": [
     {
-     "t": "Zacks, CCJ 3분기 콜 요약",
-     "u": "https://zacks.com/stock/news/3023346/cameco-q3-earnings-call-highlights-uranium-pricing-discipline"
+     "t": "TIKR 11/17",
+     "u": "https://www.tikr.com/blog/cameco-sinks-12-in-a-week-to-a-new-52-week-low-is-the-selling-overdone"
     },
     {
-     "t": "Vermögenszentrum, CCJ 9개월 실적",
-     "u": "https://www.vermoegenszentrum.ch/en/stock-exchange-and-markets/news/cameco-9-month-profit-falls-narrows-fy26-guidance"
-    },
-    {
-     "t": "MarketBeat, 11/5 52주 신저가",
-     "u": "https://www.marketbeat.com/instant-alerts/price-cameco-nyse-ccj-hits-new-52-week-low-heres-why-2026-11-05/"
+     "t": "Cameco 3분기 실적 요약",
+     "u": "https://www.panabee.com/news/cameco-earnings-q3-2026"
     }
    ],
-   "asof": "2026-11-17",
-   "at": "11/18 10:29 KST"
+   "asof": "2026-11-25",
+   "at": "11/27 10:18 KST"
   },
   "APP": {
    "text": [
-    "APP는 11/4 장 마감 후 3분기 매출이 55% 늘어 21.8억 달러, 순이익이 72% 늘어 14.4억 달러라고 발표했고 4분기 매출 가이던스를 23.65억~23.95억 달러로 제시했습니다. 이사회는 자사주 매입 한도를 32억 달러 늘려 총 36억 달러로 했고, 다음 거래일 주가는 약 30% 올라 11/2 주 +71.2%로 이어졌습니다. 11/12에는 SeekingAlpha에 밸류에이션을 이유로 한 투자의견 하향 글이 올라왔습니다."
+    "AppLovin 은 11/4 장 마감 후 3분기 매출이 21.8억 달러로 55% 늘었다고 발표했고, 4분기 매출 가이던스는 23.65억~23.95억 달러로 제시했습니다.",
+    "이사회는 자사주 매입 한도에 32억 달러를 추가했고, 다음 거래일 주가는 31.0% 올랐습니다. 그 영향으로 11/2 주 수익률은 +71.2% 였습니다.",
+    "11/17 에는 Reuters 가 AppLovin 이 광고 기술 업체 Criteo 인수를 논의하는 회사 중 하나라고 보도했고, 이날 주가는 약 4% 내렸습니다. 11/16 주 수익률은 −14.9% 였습니다."
    ],
    "src": [
     {
-     "t": "StockAnalysis, APP 3분기 실적",
+     "t": "StockAnalysis 3분기 실적",
      "u": "https://stockanalysis.com/news/applovin-q3-2026-earnings/"
     },
     {
-     "t": "Gulf News, 실적 후 급등",
-     "u": "https://gulfnews.com/business/markets/applovin-shares-jump-30-after-record-quarterly-profits-1.500737986"
+     "t": "AppLovin 3분기 보도자료",
+     "u": "https://finviz.com/news/415920/applovin-announces-third-quarter-2026-financial-results"
     },
     {
-     "t": "PPC Land, APP 3분기 매출",
-     "u": "https://ppc.land/applovin-revenue-gains-55-to-2-18bn-as-new-ad-models-lift-gaming/"
+     "t": "Reuters(The Star 재게재) 11/17",
+     "u": "https://www.thestar.com.my/tech/tech-news/2026/11/18/exclusive-applovin-among-firms-in-talks-to-acquire-criteo-sources-say"
     }
    ],
-   "asof": "2026-11-17",
-   "at": "11/18 10:29 KST"
+   "asof": "2026-11-25",
+   "at": "11/27 10:18 KST"
   },
   "MRNA": {
    "text": [
@@ -969,19 +975,6 @@
  },
  "runs": [
   [
-   "11/03 10:19 KST",
-   6,
-   4,
-   5,
-   4,
-   "ok",
-   22,
-   1,
-   25,
-   "claude-sonnet-5-5",
-   0.597
-  ],
-  [
    "11/04 10:19 KST",
    6,
    4,
@@ -1227,6 +1220,19 @@
    33,
    "claude-sonnet-5-5",
    0.677
+  ],
+  [
+   "11/27 10:18 KST",
+   0,
+   0,
+   6,
+   4,
+   "ok",
+   16,
+   2,
+   20,
+   "claude-sonnet-5-5",
+   0.411
   ]
  ]
 }

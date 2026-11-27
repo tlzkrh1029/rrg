@@ -1,4 +1,4 @@
-{"version":1,"updated":"2026-11-26T01:06:12Z","prev":"2026-11-25T01:06:00Z","counts":{"b":118,"p":234,"h":147},
+{"version":1,"updated":"2026-11-27T01:06:33Z","prev":"2026-11-26T01:06:12Z","counts":{"b":118,"p":236,"h":147},
 "state":{
 "b":{
 "AAOIBUSDT":{"u":"AAOI","lk":"AAOI","n":"Applied Optoelectronics","c":"stock","m":"US"},
@@ -213,6 +213,7 @@
 "HK0700USDT":{"u":"HK0700","lk":"HKEX:0700","n":"Tencent Holdings Limited (HKD quanto)","c":"stock","m":"HK","od":"2026-07-22"},
 "HK0992USDT":{"u":"HK0992","lk":"HKEX:0992","n":"Lenovo Group Limited","c":"stock","m":"HK","od":"2026-09-07"},
 "HK1810USDT":{"u":"HK1810","lk":"HKEX:1810","n":"Xiaomi Corporation","c":"stock","m":"HK","od":"2026-07-22"},
+"HK1888USDT":{"u":"HK1888","lk":"HK1888","n":"","c":"unknown","m":"HK","od":"2026-11-27"},
 "HOODUSDT":{"u":"HOOD","lk":"HOOD","n":"Robinhood Markets, Inc.","c":"stock","m":"US","od":"2026-02-02"},
 "HPEUSDT":{"u":"HPE","lk":"HPE","n":"Hewlett Packard Enterprise Company","c":"stock","m":"US","od":"2026-06-08"},
 "HUTUSDT":{"u":"HUT","lk":"HUT","n":"Hut 8 Corp.","c":"stock","m":"US","od":"2026-09-18"},
@@ -348,6 +349,7 @@
 "WENUSDT":{"u":"WEN","lk":"WEN","n":"Wendy's Company (The)","c":"stock","m":"US","od":"2026-07-09"},
 "WMTUSDT":{"u":"WMT","lk":"WMT","n":"Walmart Inc.","c":"stock","m":"US","od":"2026-05-18"},
 "XBIUSDT":{"u":"XBI","lk":"XBI","n":"State Street SPDR S&P Biotech ETF","c":"etf","m":"US","od":"2026-07-09"},
+"XIAOMIUSDT":{"u":"XIAOMI","lk":"XIAOMI","n":"","c":"unknown","m":"HK","od":"2026-11-27"},
 "XLEUSDT":{"u":"XLE","lk":"XLE","n":"State Street Energy Select Sector SPDR ETF","c":"etf","m":"US","od":"2026-06-10"},
 "XOMUSDT":{"u":"XOM","lk":"XOM","n":"ExxonMobil Holdings Corporation","c":"stock","m":"US","od":"2026-09-28"},
 "ZCSHUSDT":{"u":"ZCSH","lk":"ZCSH","n":"The Zcash ETF Shares","c":"etf","m":"US","od":"2026-10-12"},
@@ -507,6 +509,8 @@
 }
 },
 "events":[
+{"v":"p","e":"add","s":"XIAOMIUSDT","u":"XIAOMI","lk":"XIAOMI","n":"","c":"unknown","m":"HK","d":"2026-11-27","x":1,"t0":"2026-11-26T01:06:12Z","t1":"2026-11-27T01:06:33Z"},
+{"v":"p","e":"add","s":"HK1888USDT","u":"HK1888","lk":"HK1888","n":"","c":"unknown","m":"HK","d":"2026-11-27","x":1,"t0":"2026-11-26T01:06:12Z","t1":"2026-11-27T01:06:33Z"},
 {"v":"b","e":"add","s":"SOXXBUSDT","u":"SOXX","lk":"SOXX","n":"iShares Semiconductor ETF","c":"etf","m":"US","d":"2026-11-26","x":0,"t0":"2026-11-25T01:06:00Z","t1":"2026-11-26T01:06:12Z"},
 {"v":"b","e":"add","s":"IGVBUSDT","u":"IGV","lk":"IGV","n":"iShares Expanded Tech-Software Sector ETF","c":"etf","m":"US","d":"2026-11-26","x":0,"t0":"2026-11-25T01:06:00Z","t1":"2026-11-26T01:06:12Z"},
 {"v":"b","e":"add","s":"IBITBUSDT","u":"IBIT","lk":"IBIT","n":"iShares Bitcoin Trust","c":"etf","m":"US","d":"2026-11-26","x":0,"t0":"2026-11-25T01:06:00Z","t1":"2026-11-26T01:06:12Z"},
