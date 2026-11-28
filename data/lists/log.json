@@ -1,4 +1,4 @@
-{"version":1,"updated":"2026-11-27T01:06:33Z","prev":"2026-11-26T01:06:12Z","counts":{"b":118,"p":236,"h":147},
+{"version":1,"updated":"2026-11-28T01:06:13Z","prev":"2026-11-27T01:06:33Z","counts":{"b":118,"p":236,"h":147},
 "state":{
 "b":{
 "AAOIBUSDT":{"u":"AAOI","lk":"AAOI","n":"Applied Optoelectronics","c":"stock","m":"US"},
@@ -349,7 +349,7 @@
 "WENUSDT":{"u":"WEN","lk":"WEN","n":"Wendy's Company (The)","c":"stock","m":"US","od":"2026-07-09"},
 "WMTUSDT":{"u":"WMT","lk":"WMT","n":"Walmart Inc.","c":"stock","m":"US","od":"2026-05-18"},
 "XBIUSDT":{"u":"XBI","lk":"XBI","n":"State Street SPDR S&P Biotech ETF","c":"etf","m":"US","od":"2026-07-09"},
-"XIAOMIUSDT":{"u":"XIAOMI","lk":"XIAOMI","n":"","c":"unknown","m":"HK","od":"2026-11-27"},
+"XIAOMIUSDT":{"u":"XIAOMI","lk":"HKEX:1810","n":"","c":"unknown","m":"HK","od":"2026-11-27"},
 "XLEUSDT":{"u":"XLE","lk":"XLE","n":"State Street Energy Select Sector SPDR ETF","c":"etf","m":"US","od":"2026-06-10"},
 "XOMUSDT":{"u":"XOM","lk":"XOM","n":"ExxonMobil Holdings Corporation","c":"stock","m":"US","od":"2026-09-28"},
 "ZCSHUSDT":{"u":"ZCSH","lk":"ZCSH","n":"The Zcash ETF Shares","c":"etf","m":"US","od":"2026-10-12"},

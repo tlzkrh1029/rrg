@@ -5068,30 +5068,242 @@
   },
   "S:KAP:2026-11-25": {
    "none": 1,
-   "tries": 1,
-   "at": "11/27 10:18 KST",
-   "why": "Kazatomprom 날짜 검색, 우라늄주 검색, 11월 공시 검색 3회. 11/25 하락 원인 기사 없음"
+   "tries": 2,
+   "at": "11/28 10:19 KST",
+   "why": "Kazatomprom 11/25 하락과 우라늄 가격 검색에서 그날 원인을 찾지 못함"
   },
   "S:NXE:2026-11-23": {
    "none": 1,
+   "tries": 2,
+   "at": "11/28 10:19 KST",
+   "why": "우라늄 업종 11/23 움직임의 원인을 찾지 못함"
+  },
+  "S:AMT:2026-11-23": {
+   "k": "DISH 소송 합의안",
+   "ev": "DISH·EchoStar 소송을 5억 2,500만 달러 현금 수령 조건으로 합의하기로 발표함",
+   "src": [
+    {
+     "t": "American Tower 8-K 2026-11-23",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001053507/000105350726000169/amt-20261123.htm"
+    },
+    {
+     "t": "Light Reading: Dish settles with America",
+     "u": "https://lightreading.com/finance/dish-settles-with-american-tower-but-crown-castle-left-out-so-far"
+    }
+   ],
+   "by": "claude",
+   "at": "11/28 10:19 KST"
+  },
+  "S:INSM:2026-11-24": {
+   "k": "Sanofi 인수 합의",
+   "ev": "Sanofi 가 Insmed 를 주당 175달러 현금, 약 410억 달러에 인수하기로 합병 계약을 맺음",
+   "src": [
+    {
+     "t": "Insmed 8-K 보도자료",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001104506/000114036126045364/ef20086426_ex99-1.htm"
+    },
+    {
+     "t": "Fierce Pharma: Sanofi mulls Insmed buyou",
+     "u": "https://www.fiercepharma.com/pharma/facing-down-dupixent-cliff-sanofi-mulls-buyout-insmed-and-its-blockbuster-be-brinsupri"
+    }
+   ],
+   "by": "claude",
+   "at": "11/28 10:19 KST"
+  },
+  "S:AMGN:2026-11-24": {
+   "k": "BMS 소송 합의",
+   "ev": "Bristol-Myers Squibb 등과 소송 합의 계약을 맺었다고 8-K 로 공시함, 헬스케어 반등도 겹침",
+   "src": [
+    {
+     "t": "Delaware 법원 BMS v. Amgen 사건",
+     "u": "https://dockets.justia.com/docket/delaware/dedce/1:2026cv01134/94565"
+    }
+   ],
+   "by": "claude",
+   "at": "11/28 10:19 KST"
+  },
+  "S:MP:2026-11-25": {
+   "k": "중국 광물 수출 중단 연장",
+   "ev": "중국이 광물 수출 중단을 연장하고 미국 관세 인상이 예고되자 희토류주가 개장 전부터 하락함",
+   "src": [
+    {
+     "t": "S&P Global: China extends rare earth exp",
+     "u": "https://www.spglobal.com/energy/en/news-research/latest-news/metals/110926-china-extends-rare-earth-export-suspension-to-january-2027"
+    }
+   ],
+   "by": "claude",
+   "at": "11/28 10:19 KST"
+  },
+  "S:TGT:2026-11-24": {
+   "k": "소매주 실적 호조",
+   "ev": "Target 이 3분기 호실적과 연간 전망 상향을 내놓은 뒤 소매주가 블랙프라이데이 앞두고 급등함",
+   "src": [
+    {
+     "t": "Target 3분기 실적과 전망 상향",
+     "u": "https://finviz.com/news/424723/target-beats-third-quarter-earnings-estimates-and-raises-fy2026-guidance-despite-premarket-share-decline"
+    }
+   ],
+   "by": "claude",
+   "at": "11/28 10:19 KST"
+  },
+  "E:XME:2026-11-23": {
+   "none": 1,
    "tries": 1,
-   "at": "11/27 10:18 KST",
-   "why": "NexGen 날짜 검색 2회(11/23 주식, 우라늄주). 11/23 상승 원인 기사 없음"
+   "at": "11/28 10:19 KST",
+   "why": "금속·광업 주식 11/23 및 철강·금광주 랠리로 검색했으나 그날 기사를 찾지 못함"
+  },
+  "E:XLY:2026-11-24": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "11/24 소비재 업종 및 시황 검색에서 그날 기사를 찾지 못함"
+  },
+  "S:SNDK:2026-11-27": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "Sandisk 11/27 하락 원인과 Kioxia·Nvidia 검색에서 그날 자료가 없고, 제목은 급등을 말해 종가 하락과 맞지 않음"
+  },
+  "S:AAPL:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "Apple 11/23 과 Nvidia·Huang 시황 검색에서 Apple 부진의 원인을 찾지 못함"
+  },
+  "S:NEM:2026-11-27": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "11/27 금값과 Newmont 검색에서 그날 기사를 찾지 못함"
+  },
+  "S:LLY:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "제목에 원인이 분명하지 않고 별도 검색에서도 그날 원인을 확인하지 못함"
+  },
+  "S:RS:2026-11-27": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "Reliance 11/27 검색에서 그날 기사가 없음"
+  },
+  "S:RGLD:2026-11-25": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "금광 로열티 업종 11/25 원인을 찾지 못함"
+  },
+  "S:V:2026-11-25": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "결제주 11/25 시황 검색에서 뚜렷한 원인을 찾지 못함"
+  },
+  "S:HONA:2026-11-27": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "Honeywell Aerospace 11/27 검색에서 그날 원인을 찾지 못함"
+  },
+  "S:MCD:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "원인이 될 만한 기사가 없고 시장 상승 대비 부진만 확인됨"
+  },
+  "S:JNJ:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "원인이 될 만한 기사를 찾지 못함"
+  },
+  "S:ABBV:2026-11-25": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "원인이 될 만한 기사를 찾지 못함"
+  },
+  "S:KO:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "8-K 5.02 임원 변동 외에 뚜렷한 원인을 찾지 못함"
+  },
+  "S:ALLE:2026-11-24": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "제목에 원인이 없고 검색에서도 확인하지 못함"
+  },
+  "S:BIIB:2026-11-25": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "제목에 원인이 없고 검색에서도 확인하지 못함"
+  },
+  "S:CEG:2026-11-25": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "제목에 하락 원인이 없고 전력 업종 11/25 기사를 찾지 못함"
+  },
+  "S:MA:2026-11-25": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "제목이 모두 일반 기사이고 그날 뚜렷한 원인을 찾지 못함"
+  },
+  "S:KMI:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "11/23 원인이 될 기사를 찾지 못함"
+  },
+  "S:ECL:2026-11-25": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "기사 제목도 없고 검색에서 원인을 찾지 못함"
+  },
+  "S:CVCO:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "기사 제목도 없고 검색에서 원인을 찾지 못함"
+  },
+  "S:UNP:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "제목에 그날 원인이 없고 검색에서도 확인하지 못함"
+  },
+  "S:RTX:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "제목에 그날 원인이 없고 검색에서도 확인하지 못함"
+  },
+  "S:CSX:2026-11-23": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "기사 제목이 없고 검색에서 원인을 찾지 못함"
+  },
+  "S:SRE:2026-11-24": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "원인이 될 기사를 찾지 못함"
+  },
+  "S:VLY:2026-11-25": {
+   "none": 1,
+   "tries": 1,
+   "at": "11/28 10:19 KST",
+   "why": "기사 제목도 없고 검색에서 원인을 찾지 못함"
   }
  },
  "runs": [
-  [
-   "11/04 10:19 KST",
-   24,
-   19,
-   5,
-   "ok",
-   29,
-   4,
-   35,
-   "claude-sonnet-5-5",
-   0.773
-  ],
   [
    "11/04 16:12 KST",
    24,
@@ -5319,6 +5531,18 @@
    39,
    "claude-sonnet-5-5",
    0.862
+  ],
+  [
+   "11/28 10:19 KST",
+   40,
+   5,
+   28,
+   "ok",
+   28,
+   0,
+   30,
+   "claude-sonnet-5-5",
+   0.739
   ]
  ]
 }

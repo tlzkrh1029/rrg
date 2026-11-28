@@ -1,164 +1,170 @@
 {
- "asof": "2026-11-25",
- "prev_asof": "2026-11-24",
+ "asof": "2026-11-27",
+ "prev_asof": "2026-11-25",
  "alerts": [
   {
    "type": "up",
    "H": "ath",
-   "key": "ADP",
-   "name": "Automatic Data Processing, Inc.",
+   "key": "AAPL",
+   "name": "Apple Inc.",
    "etfs": [
-    "XLI"
+    "XLK"
    ],
-   "over": 0.00744,
-   "spy": "none",
-   "qqq": "none"
-  },
-  {
-   "type": "up",
-   "H": "ath",
-   "key": "DUK",
-   "name": "Duke Energy Corporation",
-   "etfs": [
-    "XLU"
-   ],
-   "over": 0.01003,
-   "spy": "none",
-   "qqq": "none"
-  },
-  {
-   "type": "up",
-   "H": "ath",
-   "key": "SN",
-   "name": "SharkNinja, Inc.",
-   "etfs": [
-    "XHB"
-   ],
-   "over": 0.01303,
-   "spy": "lit",
-   "qqq": "failed"
-  },
-  {
-   "type": "up",
-   "H": "ath",
-   "key": "MAS",
-   "name": "Masco Corporation",
-   "etfs": [
-    "XHB"
-   ],
-   "over": 0.0051,
-   "spy": "none",
-   "qqq": "none"
-  },
-  {
-   "type": "up",
-   "H": "55",
-   "key": "HD",
-   "name": "The Home Depot, Inc.",
-   "etfs": [
-    "XLY",
-    "XHB"
-   ],
-   "over": 0.01637,
-   "spy": "lit",
-   "qqq": "failed"
-  },
-  {
-   "type": "up",
-   "H": "55",
-   "key": "LOW",
-   "name": "Lowe's Companies, Inc.",
-   "etfs": [
-    "XLY",
-    "XHB"
-   ],
-   "over": 0.0153,
-   "spy": "lit",
-   "qqq": "failed"
-  },
-  {
-   "type": "up",
-   "H": "55",
-   "key": "CMCSA",
-   "name": "Comcast Corporation",
-   "etfs": [
-    "XLC"
-   ],
-   "over": 0.00508,
-   "spy": "near",
-   "qqq": "failed"
-  },
-  {
-   "type": "up",
-   "H": "55",
-   "key": "O",
-   "name": "Realty Income Corporation",
-   "etfs": [
-    "XLRE"
-   ],
-   "over": 0.01142,
-   "spy": "lit",
-   "qqq": "failed"
-  },
-  {
-   "type": "up",
-   "H": "55",
-   "key": "BMRN",
-   "name": "BioMarin Pharmaceutical Inc.",
-   "etfs": [
-    "GNOM"
-   ],
-   "over": 0.03689,
+   "over": 0.00637,
    "spy": "lit",
    "qqq": "lit"
   },
   {
    "type": "up",
-   "H": "55",
-   "key": "CSL",
-   "name": "Carlisle Companies Incorporated",
+   "H": "ath",
+   "key": "BBIO",
+   "name": "BridgeBio Pharma, Inc.",
    "etfs": [
-    "XHB"
+    "XBI"
    ],
-   "over": 0.03542,
+   "over": 0.01054,
    "spy": "lit",
    "qqq": "lit"
   },
   {
    "type": "up",
-   "H": "55",
+   "H": "ath",
+   "key": "CVCO",
+   "name": "Cavco Industries, Inc.",
+   "etfs": [
+    "XHB"
+   ],
+   "over": 0.01766,
+   "spy": "none",
+   "qqq": "none"
+  },
+  {
+   "type": "up",
+   "H": "52w",
    "key": "SKY",
    "name": "Champion Homes, Inc.",
    "etfs": [
     "XHB"
    ],
-   "over": 0.01421,
-   "spy": "lit",
-   "qqq": "lit"
+   "over": 0.0197,
+   "spy": "none",
+   "qqq": "none"
   },
   {
    "type": "up",
-   "H": "20",
-   "key": "TJX",
-   "name": "The TJX Companies, Inc.",
+   "H": "55",
+   "key": "LIN",
+   "name": "Linde plc",
    "etfs": [
-    "XLY"
+    "XLB"
    ],
-   "over": 0.01275,
+   "over": 0.01151,
+   "spy": "lit",
+   "qqq": "failed"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "WELL",
+   "name": "Welltower Inc.",
+   "etfs": [
+    "XLRE"
+   ],
+   "over": 0.0082,
+   "spy": "lit",
+   "qqq": "failed"
+  },
+  {
+   "type": "up",
+   "H": "55",
+   "key": "PRAX",
+   "name": "Praxis Precision Medicines, Inc.",
+   "etfs": [
+    "GNOM"
+   ],
+   "over": 0.03879,
    "spy": "lit",
    "qqq": "lit"
   },
   {
-   "type": "block_on",
-   "etf": "XBI",
-   "lit": 5,
-   "n": 10
+   "type": "failed",
+   "H": "ath",
+   "key": "ABBV",
+   "name": "AbbVie Inc.",
+   "etfs": [
+    "XLV"
+   ],
+   "over": -0.01068
   },
   {
-   "type": "block_on",
-   "etf": "XHB",
-   "lit": 7,
-   "n": 10
+   "type": "failed",
+   "H": "ath",
+   "key": "VRTX",
+   "name": "Vertex Pharmaceuticals Incorporated",
+   "etfs": [
+    "GNOM"
+   ],
+   "over": -0.0435
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "ABBV",
+   "name": "AbbVie Inc.",
+   "etfs": [
+    "XLV"
+   ],
+   "over": -0.01068
+  },
+  {
+   "type": "failed",
+   "H": "52w",
+   "key": "VRTX",
+   "name": "Vertex Pharmaceuticals Incorporated",
+   "etfs": [
+    "GNOM"
+   ],
+   "over": -0.0435
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "ABBV",
+   "name": "AbbVie Inc.",
+   "etfs": [
+    "XLV"
+   ],
+   "over": -0.01068
+  },
+  {
+   "type": "failed",
+   "H": "55",
+   "key": "VRTX",
+   "name": "Vertex Pharmaceuticals Incorporated",
+   "etfs": [
+    "GNOM"
+   ],
+   "over": -0.0435
+  },
+  {
+   "type": "failed",
+   "H": "20",
+   "key": "ABBV",
+   "name": "AbbVie Inc.",
+   "etfs": [
+    "XLV"
+   ],
+   "over": -0.01068
+  },
+  {
+   "type": "failed",
+   "H": "20",
+   "key": "VRTX",
+   "name": "Vertex Pharmaceuticals Incorporated",
+   "etfs": [
+    "GNOM"
+   ],
+   "over": -0.0435
   }
  ]
 }

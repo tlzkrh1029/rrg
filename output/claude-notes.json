@@ -1,91 +1,107 @@
 {
- "asof": "2026-11-25",
- "at": "11/26 10:19 KST",
+ "asof": "2026-11-27",
+ "at": "11/28 10:19 KST",
  "etfs": {
   "XLP": {
    "text": [
-    "10월 들어 AI 데이터센터 투자 수익성에 의문이 커지면서 자금이 기술주에서 방어적인 필수소비재로 옮겨 갔고, MSCI 글로벌 필수소비재 지수는 10월에 1998년 이후 가장 큰 월간 상승을 기록했습니다.",
-    "Citi가 미국과 글로벌 기술주 투자의견을 중립으로 내리고 방어주의 상대 강세가 이어질 것으로 본 점도 이 흐름에 힘을 보탰습니다."
+    "10월 말부터 AI 관련주를 팔고 방어주를 사는 흐름이 이어졌고, FT는 MSCI 글로벌 필수소비재 지수의 10월 상승률(10.6%)이 1998년 이후 가장 컸다고 전했습니다.",
+    "WMT는 11/19 3분기 실적과 함께 올해 세 번째로 연간 전망을 올렸습니다."
    ],
    "src": [
     {
-     "t": "European Business Magazine",
-     "u": "https://europeanbusinessmagazine.com/?p=146249"
-    }
-   ],
-   "kick": "AI 기술주 이탈 순환매"
-  },
-  "XLV": {
-   "text": [
-    "LLY는 10/29 3분기 실적에서 매출이 전년 대비 39% 늘고 연간 매출 전망을 910억~920억 달러로 올려 헬스케어 ETF를 끌어올렸습니다.",
-    "반면 UNH는 11/17에 다른 대형 관리형 건강보험사들과 함께 5.4% 내렸고, 한 시장 논평은 이를 규제 당국의 감시 강화 때문으로 설명했습니다."
-   ],
-   "src": [
-    {
-     "t": "Finviz 릴리 3분기 실적",
-     "u": "https://finviz.com/news/411746/eli-lilly-shares-rise-4-as-q3-earnings-exceed-estimates-and-revenue-outlook-increases"
+     "t": "European Business Magazine (FT 인용)",
+     "u": "https://europeanbusinessmagazine.com/consumer-staples-post-best-month/"
     },
     {
-     "t": "Trefis UNH 11/17",
-     "u": "https://www.trefis.com/stock/unh/articles/626290/why-is-unitedhealth-stock-falling/2026-11-18"
+     "t": "Supermarket News",
+     "u": "https://www.supermarketnews.com/finance/walmart-raises-full-year-outlook-after-strong-third-quarter-sales-ecommerce-growth"
     }
    ],
-   "kick": "릴리 가이던스 상향"
+   "kick": "AI 매도 속 방어주 선호"
+  },
+  "XLC": {
+   "text": [
+    "APP는 11/4 3분기에 매출이 55% 늘어난 21.8억 달러를 기록했고, 4분기 매출 전망이 시장 예상을 웃돌았으며 32억 달러 규모의 자사주 매입 한도도 늘렸습니다.",
+    "GOOGL은 10/28 실적 발표 뒤 AI 설비투자 부담과 마이너스 잉여현금흐름, 2027년 투자 확대 언급이 겹치면서 10/29에 급락했습니다."
+   ],
+   "src": [
+    {
+     "t": "AppLovin 3분기 실적 보도자료(SEC 8-K)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001751008/000175100826000068/exhibit991-3q26earningspre.htm"
+    },
+    {
+     "t": "StockAnalysis, AppLovin 3분기",
+     "u": "https://stockanalysis.com/news/applovin-q3-2026-earnings/"
+    },
+    {
+     "t": "Investinglive, Alphabet 실적",
+     "u": "https://investinglive.com/stocks/alphabet-slides-over-9-after-hours-as-search-miss-and-9bn-cash-burn-overshadow-cloud/"
+    }
+   ],
+   "kick": "APP 실적, GOOGL 투자 부담"
   },
   "ARKG": {
    "text": [
-    "11/2에 TWST가 약 15%, TXG가 약 12% 하락했습니다. 두 종목 모두 회사 소식은 없었고, 비싼 성장주에서 차익 실현과 자금 이탈이 나타난 영향으로 전해졌습니다.",
-    "ILMN은 10/29 3분기 실적에서 매출이 시장 예상을 밑돌아 10/30에 18.6% 하락했고, 이 충격이 유전체 도구 업종 전반의 투자심리를 더 눌렀습니다."
+    "ILMN은 10/29 3분기에 연간 전망을 올렸지만 매출이 예상에 못 미치고 연구용 소모품 부진이 드러나 10/30에 18.6% 하락했습니다.",
+    "11/2에는 뚜렷한 뉴스 없이 TXG, TWST, ABSI 등 유전체 도구주가 함께 급락했습니다. NTRA는 11/5 3분기 적자가 예상보다 크게 나오자 11/6에 14.6% 하락했습니다."
    ],
    "src": [
     {
-     "t": "TIKR 유전체주 하락",
+     "t": "Trefis, Illumina",
+     "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
+    },
+    {
+     "t": "TIKR, 유전체주 11/2 급락",
      "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
     },
     {
-     "t": "StockStory ILMN 실적",
-     "u": "https://stockstory.org/us/stocks/nasdaq/ilmn/news/earnings/illumina-nasdaqilmn-reports-sales-below-analyst-estimates-in-q3-2026-earnings-stock-drops-16percent"
+     "t": "Trefis, Natera",
+     "u": "https://www.trefis.com/stock/ntra/articles/623713/what-sent-natera-stock-lower/2026-11-07"
+    }
+   ],
+   "kick": "유전체 도구주 동반 급락"
+  },
+  "GNOM": {
+   "text": [
+    "10/30 ILMN의 급락과 11/2 유전체 도구주 동반 하락 등 유전체 업종 전반이 약세를 보였습니다.",
+    "CRSP는 11/2 발표한 3분기에 CASGEVY 매출이 9,900만 달러로 늘었지만 손실이 예상보다 컸습니다."
+   ],
+   "src": [
+    {
+     "t": "Trefis, Illumina",
+     "u": "https://www.trefis.com/stock/ilmn/articles/621870/what-sent-illumina-stock-lower/2026-11-01"
+    },
+    {
+     "t": "TIKR, 유전체주 11/2 급락",
+     "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
+    },
+    {
+     "t": "Zacks, CRSP 3분기",
+     "u": "https://zacks.com/stock/news/3021883/crsp-s-q3-loss-wider-than-expected-sales-beat-estimates"
     }
    ],
    "kick": "유전체주 동반 급락"
   },
-  "XME": {
-   "text": [
-    "11/5에 AI 관련주 중심으로 나스닥이 5.5% 급락하자 철강주가 시장보다 더 크게 떨어졌고, CLF는 12.2% 하락했습니다. 개별 회사 소식은 없었습니다.",
-    "MTRN은 11/4 3분기 실적에서 연간 전망을 올렸지만 매출이 시장 예상을 밑돌아 17.7% 하락했습니다. 11/16에는 중국 수요 부진과 연준 금리 인상 우려로 금속 가격이 내려 금속·광업주가 다시 약세를 보였습니다."
-   ],
-   "src": [
-    {
-     "t": "Trefis 철강주 11/5",
-     "u": "https://www.trefis.com/stock/stld/articles/623363/what-sent-steel-dynamics-stock-lower/2026-11-06"
-    },
-    {
-     "t": "Finviz Materion 3분기",
-     "u": "https://finviz.com/news/415825/materion-beats-and-raises-again-but-a-pass-through-revenue-miss-and-thinner-q3-margins-meet-a-stock-already-down-30-from-its-peak"
-    },
-    {
-     "t": "StockStory 금속주 11/16",
-     "u": "https://stockstory.org/us/stocks/nyse/bvn/news/why-up-down/compania-de-minas-buenaventura-companhia-siderurgica-nacional-axt-materion-and-southern-copper-shares-are-falling-what-you-need-to-know"
-    }
-   ],
-   "kick": "철강주 동반 급락"
-  },
   "DRAM": {
    "text": [
-    "11/5에 Bloomberg가 Micron이 대만의 45억 달러 규모 메모리 공장 계획을 중단했다고 보도했고, 미국 중간선거 이후 AI 투자가 느려질 수 있다는 우려가 겹쳐 MU가 17.5% 하락했습니다.",
-    "11/14에는 MU가 DRAM 가격 담합 집단소송의 기각 신청에서 졌고, Nvidia 경영진 논란으로 AI 수요가 줄 수 있다는 걱정이 커져 11/16까지 약세가 이어졌습니다."
+    "SNDK는 10/29 실적이 예상을 웃돌았지만 AI 수요 지속성과 메모리 가격 상단에 대한 우려로 10/30에 급락했고, 11/10에는 NAND 점유율 하락 보고서가 나오며 다시 떨어졌습니다.",
+    "11월 중순에는 램 부족이 예상보다 일찍 끝나는지에 대한 의문이 커지면서 MU가 5거래일 동안 20% 넘게 내렸습니다."
    ],
    "src": [
     {
-     "t": "Trefis MU 11/5",
-     "u": "https://www.trefis.com/stock/mu/articles/623345/what-sent-micron-stock-lower/2026-11-06"
+     "t": "Motley Fool, Sandisk 10/30",
+     "u": "https://www.fool.com/investing/2026/10/30/why-sandisk-stock-plunged-today/"
     },
     {
-     "t": "Motley Fool MU 11/16",
-     "u": "https://www.fool.com/investing/2026/11/16/why-micron-stock-keeps-going-down/"
+     "t": "Fast Company",
+     "u": "https://www.fastcompany.com/91519078/micron-sandisk-western-digital-stocks-down-memory-chips-why-falling"
+    },
+    {
+     "t": "Motley Fool, Sandisk 11/10",
+     "u": "https://fool.com/investing/2026/11/10/why-sandisk-stock-dropped-again-on-tuesday"
     }
    ],
-   "kick": "AI 투자 둔화 우려"
+   "kick": "메모리 공급부족 둔화 우려"
   }
  },
  "stocks": {
@@ -250,118 +266,6 @@
    "asof": "2026-11-20",
    "at": "11/21 10:18 KST"
   },
-  "PG": {
-   "text": [
-    "PG는 10/22 회계연도 1분기에 유기적 매출이 4% 늘고 핵심 EPS 2.00달러로 시장 예상 1.88달러를 웃돌았으며, 연간 유기적 매출 증가율 1~3% 전망은 유지했습니다. 이 실적 이후 주가가 올라 10/26 주부터 4주 연속 상승했습니다.",
-    "이 기간 PG는 10/30, 11/2, 11/3에 달러와 유로 채권 발행을 마쳤다고 8-K로 공시했습니다."
-   ],
-   "src": [
-    {
-     "t": "P&G 1분기 보도자료",
-     "u": "https://us.pg.com/newsroom/news-releases/PG-Announces-Fiscal-Year-2027-First-Quarter-Results/"
-    },
-    {
-     "t": "Benzinga, P&G 실적",
-     "u": "https://www.benzinga.com/node/62527709"
-    }
-   ],
-   "asof": "2026-11-16",
-   "at": "11/17 10:17 KST"
-  },
-  "SO": {
-   "text": [
-    "SO는 11/5 3분기 조정 EPS 1.94달러를 발표했고, 4분기 조정 EPS를 약 0.30달러로 제시해 올해 전체 조정 EPS를 4.70달러로 높였습니다. 이날 주가는 0.2% 올랐습니다.",
-    "11/12에는 2026년 시리즈 A 에쿼티 유닛 3,500만 주(주당 50달러) 발행을 공지했고, 이어 11/16 Evercore ISI가 투자의견 Outperform을 유지하며 목표가를 114달러로 올렸습니다."
-   ],
-   "src": [
-    {
-     "t": "GuruFocus, 서던 3분기",
-     "u": "https://www.gurufocus.com/news/9177976"
-    },
-    {
-     "t": "SEC, 에쿼티 유닛 발행 설명서",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000092122/000009212226000076/so2026equityunitsprelimpro.htm"
-    }
-   ],
-   "asof": "2026-11-16",
-   "at": "11/17 10:17 KST"
-  },
-  "CMCSA": {
-   "text": [
-    "CMCSA는 10/22 3분기에 주거용 브로드밴드 가입자가 14만 4천 명 줄었고, 재무책임자가 4분기에 10억 달러가 넘는 구조조정 비용을 반영한다고 밝혔습니다.",
-    "11/2 주 State WARN 공시로 필라델피아 634명 등 대규모 감원이 드러났고 11/4에는 구조조정과 NBC유니버설 분사를 앞두고 인력을 줄인다는 보도가 나왔습니다. 주가는 이 기간에 매주 올랐습니다."
-   ],
-   "src": [
-    {
-     "t": "Broadband Breakfast, 가입자 감소",
-     "u": "https://broadbandbreakfast.com/comcast-loses-144-000-broadband-subscribers-in-third-quarter/"
-    },
-    {
-     "t": "Light Reading, 구조조정",
-     "u": "https://lightreading.com/cable-technology/comcast-drops-more-broadband-subs-as-restructuring-and-layoffs-loom"
-    },
-    {
-     "t": "Light Reading, 주별 감원 공시",
-     "u": "https://lightreading.com/cable-technology/comcast-state-level-layoff-warnings-start-to-roll-in"
-    }
-   ],
-   "asof": "2026-11-16",
-   "at": "11/17 10:17 KST"
-  },
-  "DUK": {
-   "text": [
-    "DUK는 11/5 3분기 조정 EPS 1.99달러(전년 1.81달러)를 발표하고 2026년 조정 EPS 전망 범위를 6.70~6.80달러로 좁혔습니다. 실적 다음 거래일 주가는 0.4% 올랐습니다.",
-    "경영진은 분기 수요가 약 2% 늘어 2022년 이후 가장 강했다고 밝혔고, 11/16에는 Evercore ISI가 In-Line 의견을 유지하며 목표가를 141달러로 올렸습니다."
-   ],
-   "src": [
-    {
-     "t": "SEC, 듀크 3분기 8-K",
-     "u": "https://www.sec.gov/Archives/edgar/data/0001326160/000132616026000048/er-20260930xearningsreleas.htm"
-    },
-    {
-     "t": "Finviz, 듀크 3분기",
-     "u": "https://finviz.com/news/417164/duke-energy-reports-66-revenue-growth-and-narrows-2026-earnings-guidance"
-    }
-   ],
-   "asof": "2026-11-16",
-   "at": "11/17 10:17 KST"
-  },
-  "SBUX": {
-   "text": [
-    "SBUX는 10/29 회계연도 4분기에 전 세계 기존점 매출이 7.2%, 미국이 7.7% 늘고 조정 EPS 0.80달러로 예상을 웃돌았지만, 매출은 중국 사업의 합작 전환 영향으로 4% 줄어 예상에 못 미쳤습니다.",
-    "회사는 2027 회계연도 순매출이 1% 줄 것으로 보았고 북미 기존점 매출은 약 4% 늘 것으로 내다봤습니다. 장 마감 후 주가는 2%가량 내렸고 다음 거래일 1.7% 하락했지만 이후 3주 연속 올랐습니다."
-   ],
-   "src": [
-    {
-     "t": "AP, 스타벅스 분기 실적",
-     "u": "https://www.ny1.com/nyc/all-boroughs/ap-top-news/2026/10/29/starbucks-reports-lower-than-expected-revenue-on-softer-international-demand"
-    },
-    {
-     "t": "SEC, 스타벅스 8-K",
-     "u": "https://www.sec.gov/Archives/edgar/data/0000829224/000082922426000154/sbux-09272026xearningsrele.htm"
-    }
-   ],
-   "asof": "2026-11-16",
-   "at": "11/17 10:17 KST"
-  },
-  "UNH": {
-   "text": [
-    "UNH는 11/1 Warren 상원의원이 Amedisys 인수를 거론하며 '대형 의료를 쪼개야 한다'고 주장하면서 규제 부담이 부각됐습니다. 이 기간에 주가는 10/26 주와 11/2 주에 연속 하락했습니다.",
-    "11/3 중간선거에서 민주당이 상하원을 이기자 11/4 Centene이 12.6% 오르는 동안 UNH는 1.2% 오르는 데 그쳤고, 11/9에는 Madeline Bell을 독립이사로 선임했다고 공시했습니다."
-   ],
-   "src": [
-    {
-     "t": "TIKR, 워런과 유나이티드헬스",
-     "u": "https://www.tikr.com/blog/we-need-to-break-up-big-medicine-warren-targets-unitedhealth-as-democrats-win-congress"
-    },
-    {
-     "t": "Becker's, 선거 후 보험·병원주",
-     "u": "https://www.beckersasc.com/asc-coding-billing-and-collections/election-results-send-tenet-hca-insurer-shares-soaring-5-takeaways"
-    }
-   ],
-   "asof": "2026-11-16",
-   "at": "11/17 10:17 KST"
-  },
   "000660": {
    "text": [
     "SK hynix 는 11/3 미국 중간선거에서 민주당이 예상보다 크게 선전하자 데이터센터 증설 규제 우려가 퍼지면서 11/5 미국 상장 주식이 13.4% 하락했습니다.",
@@ -488,24 +392,25 @@
   },
   "TWST": {
    "text": [
-    "TWST 는 11/12 에 회계연도 2026 4분기 매출 1억 2,660만 달러(+28%)와 조정 EBITDA 흑자 220만 달러를 발표했지만, 2027 회계연도 매출 전망 5억 5천만~5억 6천만 달러가 4분기 증가율 28%보다 낮은 약 21% 성장이라는 점이 부담이 되어 그날 6.8% 내렸습니다. 11/13 에는 Baird 가 투자의견 Outperform 을 유지하면서 목표가를 135달러로 낮췄습니다. 11/2 이 든 주에는 유전체 관련주가 함께 크게 내렸습니다."
+    "TWST는 11/5 Bear Cave 뉴스레터가 'Problems at Twist Bioscience'라는 제목의 보고서를 냈고, 이 보고서는 TWST가 동종 업체 가운데 가장 높은 배수로 거래되며 8월 이후 상승에 과열과 숏스퀴즈가 섞였다고 지적했습니다.",
+    "11/12에 발표한 회계 4분기 매출은 1.266억 달러로 28% 늘었고 예상을 웃돌았지만, 2027 회계연도 매출 가이던스 5.5억~5.6억 달러는 약 21% 성장에 해당해 4분기 성장률보다 낮았습니다. 회사는 지분 발행과 ATM으로 약 4.25억 달러를 조달했고, 11/13에는 Baird가 목표가를 135달러로 낮췄습니다."
    ],
    "src": [
     {
-     "t": "Twist 실적 요약(Finviz)",
+     "t": "Benzinga, Bear Cave 보고서",
+     "u": "https://www.benzinga.com/node/62935399"
+    },
+    {
+     "t": "Finviz, Twist 4분기 실적 분석",
      "u": "https://finviz.com/news/421897/twist-bioscience-beats-and-exits-fy26-at-28-growth-but-an-in-line-fy27-guide-implies-slower-growth-ahead"
     },
     {
-     "t": "Twist 실적 8-K 첨부",
+     "t": "Twist 실적 보도자료(SEC 8-K)",
      "u": "https://www.sec.gov/Archives/edgar/data/0001581280/000158128026000053/twst-2026930xex991.htm"
-    },
-    {
-     "t": "TIKR 유전체주 하락",
-     "u": "https://www.tikr.com/blog/10x-genomics-sinks-12-twist-down-15-pacbio-down-10-as-genomics-stocks-give-back-rebound"
     }
    ],
-   "asof": "2026-11-18",
-   "at": "11/19 10:18 KST"
+   "asof": "2026-11-27",
+   "at": "11/28 10:19 KST"
   },
   "DIS": {
    "text": [
@@ -971,22 +876,81 @@
    ],
    "asof": "2026-11-25",
    "at": "11/26 10:19 KST"
+  },
+  "TSLA": {
+   "text": [
+    "11/10에 핀란드가 테슬라의 FSD(감독형 주행보조)를 승인했고, 11/12에는 Bloomberg가 SpaceX와의 합병 발표가 이르면 12월에 나올 수 있다고 보도했습니다.",
+    "같은 기사는 중간선거 이후 민주당 우세로 합병 기대가 약해지며 주가가 빠졌다가 자율주행 소식으로 낙폭을 대부분 되찾았다고 전했습니다. 합병에는 발행주식 과반의 찬성이 필요합니다."
+   ],
+   "src": [
+    {
+     "t": "TIKR",
+     "u": "https://www.tikr.com/blog/tesla-soars-16-in-a-week-as-musk-clears-room-for-increased-cybercab-production"
+    }
+   ],
+   "asof": "2026-11-27",
+   "at": "11/28 10:19 KST"
+  },
+  "KAP": {
+   "text": [
+    "KAP는 11/3 3분기 운영 업데이트에서 2026년 생산 가이던스를 유지했고, 1~9월 카자흐스탄 우라늄 생산량은 약 10% 늘었습니다.",
+    "10/28에는 주주들이 러시아 Uranium One 관련 우라늄 공급 계약을 처음 부결하자 회사가 계약을 다시 검토하기로 했다는 보도가 있었고, 11월 중 이 계약을 두고 주주 표결이 예정되어 있었습니다. 이 기간 주가 하락과 직접 이어지는 사건은 확인하지 못했습니다."
+   ],
+   "src": [
+    {
+     "t": "Moscow Times (Reuters 인용)",
+     "u": "https://ru.themoscowtimes.com/2026/11/03/kazakhstan-za-9-mes-uvelichil-dobychu-urana-na-10-a210373"
+    },
+    {
+     "t": "Kursiv Media",
+     "u": "https://kz.kursiv.media/en/2026-10-28/engk-yeri-kazatomprom-to-rethink-russian-uranium-deal-after-initial-shareholder-rejection/"
+    }
+   ],
+   "asof": "2026-11-27",
+   "at": "11/28 10:19 KST"
+  },
+  "VLO": {
+   "text": [
+    "VLO는 10/22 3분기 실적에서 정제마진이 배럴당 39.24달러로 1년 전 13.14달러보다 크게 올랐다고 밝혔고, 10/30에는 LyondellBasell의 휴업 중인 휴스턴 정유소를 약 3.2억 달러에 인수하기로 했습니다. 2027년 말까지 일산 16.5만 배럴 가동 재개가 목표입니다.",
+    "11/18에는 회사 발표 없이 정유주 전반이 하락하면서 VLO가 5.5% 내렸습니다. 이 시기 하락은 호르무즈 해협 재개방 합의로 유가가 떨어지며 정제마진 기대가 식은 영향이라는 보도가 있었으나 날짜는 확인하지 못했습니다."
+   ],
+   "src": [
+    {
+     "t": "Valero 3분기 실적 보도자료",
+     "u": "https://www.financialcontent.com/article/bizwire-2026-10-22-valero-energy-reports-third-quarter-2026-results"
+    },
+    {
+     "t": "Oil & Gas Journal",
+     "u": "https://www.ogj.com/general-interest/companies/news/55415528/valero-to-acquire-former-lyondellbasell-houston-oil-refinery-restart-165000-b-d-by-end-2027"
+    },
+    {
+     "t": "Trefis, 11/18 정유주 하락",
+     "u": "https://www.trefis.com/stock/vlo/articles/626950/what-sent-valero-energy-stock-lower/2026-11-19"
+    }
+   ],
+   "asof": "2026-11-27",
+   "at": "11/28 10:19 KST"
+  },
+  "QGEN": {
+   "text": [
+    "EQT가 10/22 QGEN을 주당 46.50유로, 약 108억 유로에 현금 인수하기로 합의했고 이사회가 수락을 권고했습니다. 거래 종결은 2027년 중반으로 예상됩니다.",
+    "QGEN은 11/4 3분기 매출이 3% 늘어난 5.48억 달러였다고 발표했으며, 인수 절차가 진행되는 동안 연간 가이던스를 제공하지 않기로 했습니다. 인수가가 주가를 받치는 구조여서 주간 수익률이 거의 움직이지 않았습니다."
+   ],
+   "src": [
+    {
+     "t": "MDDI, EQT 인수",
+     "u": "https://www.mddionline.com/ma/eqt-to-take-qiagen-private-in-10-8-billion-takeover"
+    },
+    {
+     "t": "QIAGEN 3분기 보도자료",
+     "u": "https://www.morningstar.com/news/business-wire/20261104576136/qiagen-reports-full-q3-2026-results"
+    }
+   ],
+   "asof": "2026-11-27",
+   "at": "11/28 10:19 KST"
   }
  },
  "runs": [
-  [
-   "11/04 10:19 KST",
-   6,
-   4,
-   6,
-   6,
-   "ok",
-   33,
-   8,
-   43,
-   "claude-sonnet-5-5",
-   0.917
-  ],
   [
    "11/04 16:12 KST",
    0,
@@ -1233,6 +1197,19 @@
    20,
    "claude-sonnet-5-5",
    0.411
+  ],
+  [
+   "11/28 10:19 KST",
+   6,
+   5,
+   6,
+   5,
+   "ok",
+   37,
+   0,
+   39,
+   "claude-sonnet-5-5",
+   0.886
   ]
  ]
 }
